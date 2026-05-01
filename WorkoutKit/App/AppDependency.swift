@@ -6,9 +6,11 @@ import Foundation
 import SwiftUI
 
 /// アプリ全体の依存をまとめる。`@Observable` ではなく struct にして
-/// 軽量に値渡しできる形にしておく(ストアは内側で MainActor 隔離)。
+/// 軽量に値渡しできる形にしておく(ストアは内側で MainActor / actor 隔離)。
 struct AppDependency {
     var proGate: ProFeatureGate
+    /// StoreKit 2 クライアント。actor なので参照渡しで OK。
+    var storeKitClient: StoreKitClient
 }
 
 // MARK: - SwiftUI Environment 拡張
@@ -16,7 +18,14 @@ struct AppDependency {
 
 private struct AppDependencyKey: EnvironmentKey {
     /// プロトコル要件は nonisolated。ProFeatureGate.init() は nonisolated 化済み。
-    static let defaultValue: AppDependency = AppDependency(proGate: ProFeatureGate())
+    /// StoreKitClient.init は actor の暗黙 nonisolated init を使う。
+    static let defaultValue: AppDependency = {
+        let gate = ProFeatureGate()
+        return AppDependency(
+            proGate: gate,
+            storeKitClient: StoreKitClient(proGate: gate)
+        )
+    }()
 }
 
 extension EnvironmentValues {
