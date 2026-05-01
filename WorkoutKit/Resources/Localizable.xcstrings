@@ -1,0 +1,227 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "All" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "すべて" } }
+      }
+    },
+    "Cautions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cautions" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "注意点" } }
+      }
+    },
+    "Close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "閉じる" } }
+      }
+    },
+    "Compound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Compound" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "複合関節" } }
+      }
+    },
+    "Equipment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Equipment" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "器具" } }
+      }
+    },
+    "Exercise library is empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exercise library is empty" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目DBが空です" } }
+      }
+    },
+    "Exercise not found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exercise not found" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目が見つかりません" } }
+      }
+    },
+    "Filters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Filters" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "絞り込み" } }
+      }
+    },
+    "Isolation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Isolation" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "単関節" } }
+      }
+    },
+    "Library" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Library" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ライブラリ" } }
+      }
+    },
+    "Mechanics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mechanics" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "動作分類" } }
+      }
+    },
+    "Muscle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Muscle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "部位" } }
+      }
+    },
+    "No exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目がありません" } }
+      }
+    },
+    "No exercises match your filters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No exercises match your filters" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "条件に一致する種目がありません" } }
+      }
+    },
+    "No matches" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No matches" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "該当なし" } }
+      }
+    },
+    "Primary muscle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Primary muscle" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "主動筋" } }
+      }
+    },
+    "Pro feature" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pro feature" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Pro 機能" } }
+      }
+    },
+    "Reset filters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reset filters" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "絞り込みをリセット" } }
+      }
+    },
+    "Search exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を検索" } }
+      }
+    },
+    "Secondary muscles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Secondary muscles" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "協働筋" } }
+      }
+    },
+    "Select an exercise" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select an exercise" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を選択" } }
+      }
+    },
+    "Steps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Steps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "手順" } }
+      }
+    },
+    "Tap an exercise to see details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap an exercise to see details" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目をタップして詳細を表示" } }
+      }
+    },
+    "This feature requires WorkoutKit Pro." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This feature requires WorkoutKit Pro." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "この機能は WorkoutKit Pro が必要です。" } }
+      }
+    },
+    "Type" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Type" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "タイプ" } }
+      }
+    },
+    "Watch on YouTube" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Watch on YouTube" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "YouTube で見る" } }
+      }
+    },
+
+    "muscle.chest"      : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Chest" } },        "ja" : { "stringUnit" : { "state" : "translated", "value" : "胸" } } } },
+    "muscle.lats"       : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Lats" } },         "ja" : { "stringUnit" : { "state" : "translated", "value" : "広背筋" } } } },
+    "muscle.traps"      : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Traps" } },        "ja" : { "stringUnit" : { "state" : "translated", "value" : "僧帽筋" } } } },
+    "muscle.deltoids"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Deltoids" } },     "ja" : { "stringUnit" : { "state" : "translated", "value" : "三角筋" } } } },
+    "muscle.biceps"     : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Biceps" } },       "ja" : { "stringUnit" : { "state" : "translated", "value" : "上腕二頭筋" } } } },
+    "muscle.triceps"    : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Triceps" } },      "ja" : { "stringUnit" : { "state" : "translated", "value" : "上腕三頭筋" } } } },
+    "muscle.forearms"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Forearms" } },     "ja" : { "stringUnit" : { "state" : "translated", "value" : "前腕" } } } },
+    "muscle.abs"        : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Abs" } },          "ja" : { "stringUnit" : { "state" : "translated", "value" : "腹直筋" } } } },
+    "muscle.obliques"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Obliques" } },     "ja" : { "stringUnit" : { "state" : "translated", "value" : "腹斜筋" } } } },
+    "muscle.lowerBack"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Lower back" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "脊柱起立筋" } } } },
+    "muscle.quadriceps" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Quadriceps" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "大腿四頭筋" } } } },
+    "muscle.hamstrings" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Hamstrings" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "ハムストリングス" } } } },
+    "muscle.glutes"     : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Glutes" } },       "ja" : { "stringUnit" : { "state" : "translated", "value" : "臀筋" } } } },
+    "muscle.calves"     : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Calves" } },       "ja" : { "stringUnit" : { "state" : "translated", "value" : "ふくらはぎ" } } } },
+    "muscle.fullBody"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Full body" } },    "ja" : { "stringUnit" : { "state" : "translated", "value" : "全身" } } } },
+
+    "equipment.bodyweight" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Bodyweight" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "自重" } } } },
+    "equipment.dumbbell"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Dumbbell" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "ダンベル" } } } },
+    "equipment.barbell"    : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Barbell" } },    "ja" : { "stringUnit" : { "state" : "translated", "value" : "バーベル" } } } },
+    "equipment.kettlebell" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Kettlebell" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ケトルベル" } } } },
+    "equipment.machine"    : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Machine" } },    "ja" : { "stringUnit" : { "state" : "translated", "value" : "マシン" } } } },
+    "equipment.cable"      : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Cable" } },      "ja" : { "stringUnit" : { "state" : "translated", "value" : "ケーブル" } } } },
+    "equipment.band"       : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Band" } },       "ja" : { "stringUnit" : { "state" : "translated", "value" : "バンド" } } } },
+    "equipment.pullupBar"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Pull-up bar" } },"ja" : { "stringUnit" : { "state" : "translated", "value" : "懸垂バー" } } } },
+    "equipment.bench"      : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Bench" } },      "ja" : { "stringUnit" : { "state" : "translated", "value" : "ベンチ" } } } },
+    "equipment.trx"        : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "TRX" } },        "ja" : { "stringUnit" : { "state" : "translated", "value" : "TRX" } } } },
+    "equipment.foamRoller" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Foam roller" } },"ja" : { "stringUnit" : { "state" : "translated", "value" : "フォームローラー" } } } },
+    "equipment.yogaMat"    : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Yoga mat" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "ヨガマット" } } } },
+
+    "type.strength"     : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Strength" } },     "ja" : { "stringUnit" : { "state" : "translated", "value" : "筋トレ" } } } },
+    "type.cardio"       : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Cardio" } },       "ja" : { "stringUnit" : { "state" : "translated", "value" : "有酸素" } } } },
+    "type.stretching"   : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Stretching" } },   "ja" : { "stringUnit" : { "state" : "translated", "value" : "ストレッチ" } } } },
+    "type.calisthenics" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Calisthenics" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "自重" } } } },
+    "type.warmup"       : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Warm-up" } },      "ja" : { "stringUnit" : { "state" : "translated", "value" : "ウォームアップ" } } } },
+    "type.plyometrics"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Plyometrics" } },  "ja" : { "stringUnit" : { "state" : "translated", "value" : "プライオメトリクス" } } } },
+
+    "mechanics.compound"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Compound" } },  "ja" : { "stringUnit" : { "state" : "translated", "value" : "複合関節" } } } },
+    "mechanics.isolation" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Isolation" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "単関節" } } } }
+  },
+  "version" : "1.0"
+}
