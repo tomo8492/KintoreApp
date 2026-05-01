@@ -1,0 +1,20 @@
+id,slug,name_en,name_ja,description_en,description_ja,introduction_en,introduction_ja,attribute_name,attribute_value
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,TYPE,STRENGTH
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,MECHANICS_TYPE,COMPOUND
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,PRIMARY_MUSCLE,QUADRICEPS
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,SECONDARY_MUSCLE,GLUTES
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,SECONDARY_MUSCLE,HAMSTRINGS
+1,barbell-back-squat,Barbell Back Squat,バーベルバックスクワット,Compound lower-body movement.,下半身の代表的な複合関節種目。,Setup the barbell on a rack.,ラックにバーベルをセットします。,EQUIPMENT,BARBELL
+2,push-up,Push-Up,プッシュアップ,"Bodyweight chest pressing pattern, beginner friendly.",自重で行う胸の押す動作。初心者向け。,,,TYPE,CALISTHENICS
+2,push-up,Push-Up,プッシュアップ,"Bodyweight chest pressing pattern, beginner friendly.",自重で行う胸の押す動作。初心者向け。,,,MECHANICS_TYPE,COMPOUND
+2,push-up,Push-Up,プッシュアップ,"Bodyweight chest pressing pattern, beginner friendly.",自重で行う胸の押す動作。初心者向け。,,,PRIMARY_MUSCLE,CHEST
+2,push-up,Push-Up,プッシュアップ,"Bodyweight chest pressing pattern, beginner friendly.",自重で行う胸の押す動作。初心者向け。,,,SECONDARY_MUSCLE,TRICEPS
+2,push-up,Push-Up,プッシュアップ,"Bodyweight chest pressing pattern, beginner friendly.",自重で行う胸の押す動作。初心者向け。,,,EQUIPMENT,BODY_ONLY
+3,cat-cow,Cat-Cow Stretch,キャットアンドカウ,Spinal mobility warm-up sequence.,背骨の可動域を広げるウォームアップ。,,,TYPE,WARMUP
+3,cat-cow,Cat-Cow Stretch,キャットアンドカウ,Spinal mobility warm-up sequence.,背骨の可動域を広げるウォームアップ。,,,PRIMARY_MUSCLE,LOWER_BACK
+3,cat-cow,Cat-Cow Stretch,キャットアンドカウ,Spinal mobility warm-up sequence.,背骨の可動域を広げるウォームアップ。,,,EQUIPMENT,YOGA_MAT
+4,broken-row,,,,,,,TYPE,STRENGTH
+5,no-attrs,Lonely Exercise,寂しい種目,No attributes provided.,属性が無い種目。,,,,
+6,bad-attr,Garbage Attr,ゴミ属性,Has an unknown attribute name.,属性名が壊れている。,,,WHATEVER,GARBAGE
+6,bad-attr,Garbage Attr,ゴミ属性,Has an unknown attribute name.,属性名が壊れている。,,,TYPE,STRENGTH
+6,bad-attr,Garbage Attr,ゴミ属性,Has an unknown attribute name.,属性名が壊れている。,,,PRIMARY_MUSCLE,CHEST
