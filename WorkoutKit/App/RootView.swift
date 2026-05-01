@@ -23,7 +23,7 @@ struct RootView: View {
             todayPlaceholder
                 .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
 
-            libraryPlaceholder
+            ExerciseListView()
                 .tabItem { Label("Library", systemImage: "books.vertical") }
 
             historyPlaceholder
@@ -35,18 +35,22 @@ struct RootView: View {
     }
 
     // MARK: - iPad (regular)
+    // iPad では Library 自身が NavigationSplitView を使うため、
+    // Root は TabView でタブ切替のみ担当する(NavigationSplitView の入れ子を避ける)。
 
     private var iPadRoot: some View {
-        NavigationSplitView {
-            List {
-                NavigationLink("Today")    { todayPlaceholder }
-                NavigationLink("Library")  { libraryPlaceholder }
-                NavigationLink("History")  { historyPlaceholder }
-                NavigationLink("Settings") { settingsPlaceholder }
-            }
-            .navigationTitle("WorkoutKit")
-        } detail: {
+        TabView {
             todayPlaceholder
+                .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+
+            ExerciseListView()
+                .tabItem { Label("Library", systemImage: "books.vertical") }
+
+            historyPlaceholder
+                .tabItem { Label("History", systemImage: "calendar") }
+
+            settingsPlaceholder
+                .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
 
@@ -57,14 +61,6 @@ struct RootView: View {
             "Today",
             systemImage: "figure.strengthtraining.traditional",
             description: Text("Builder ウィザードは Phase P1 で実装します。")
-        )
-    }
-
-    private var libraryPlaceholder: some View {
-        ContentUnavailableView(
-            "Library",
-            systemImage: "books.vertical",
-            description: Text("種目DB 一覧は Phase P3 で実装します。")
         )
     }
 
