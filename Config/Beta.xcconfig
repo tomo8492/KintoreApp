@@ -1,0 +1,16 @@
+// Config/Beta.xcconfig
+// TestFlight / 内部配布用。本番と Bundle ID を分け、本番のデータと混ざらないようにする。
+#include "Shared.xcconfig"
+
+// .beta サフィックスで本番と分離(CLAUDE.md §-1.7)
+PRODUCT_BUNDLE_IDENTIFIER = com.tomo.workoutkit.beta
+INFOPLIST_KEY_CFBundleDisplayName = WorkoutKit β
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) BETA
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BETA=1
+SWIFT_OPTIMIZATION_LEVEL = -O
+GCC_OPTIMIZATION_LEVEL = s
+ENABLE_TESTABILITY = NO
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+COPY_PHASE_STRIP = NO
+VALIDATE_PRODUCT = YES

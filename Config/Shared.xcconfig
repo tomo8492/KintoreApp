@@ -1,0 +1,40 @@
+// Config/Shared.xcconfig
+// 全 Configuration で共通する設定。CLAUDE.md §-1.1 / §-1.7 / §-1.8 準拠。
+// Info.plist にべた書きせず Build Settings 経由で参照する。
+
+// --- アイデンティティ -------------------------------------------------------
+PRODUCT_NAME = WorkoutKit
+PRODUCT_BUNDLE_IDENTIFIER = com.tomo.workoutkit
+PRODUCT_MODULE_NAME = WorkoutKit
+
+// Apple Developer Program 登録後にここを設定する(P-1)。
+// 登録までは空のままで、Xcode の Automatically manage signing に任せる。
+DEVELOPMENT_TEAM =
+
+// --- プラットフォーム ------------------------------------------------------
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator
+SDKROOT = iphoneos
+
+// 向き(iPhone は Portrait のみ、iPad は Portrait + Landscape)
+INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+
+// --- Swift / Toolchain ----------------------------------------------------
+SWIFT_VERSION = 5.10
+SWIFT_STRICT_CONCURRENCY = complete
+ENABLE_USER_SCRIPT_SANDBOXING = YES
+ENABLE_MODULE_VERIFIER = YES
+
+// --- アプリ表示 -----------------------------------------------------------
+INFOPLIST_KEY_CFBundleDisplayName = WorkoutKit
+INFOPLIST_KEY_LSApplicationCategoryType = public.app-category.healthcare-fitness
+
+// --- Asset / App Icon ----------------------------------------------------
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+
+// --- ローカライズ ---------------------------------------------------------
+DEVELOPMENT_LANGUAGE = ja
+LOCALIZATION_PREFERS_STRING_CATALOGS = YES
