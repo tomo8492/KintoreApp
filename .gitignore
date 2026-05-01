@@ -1,0 +1,63 @@
+# Xcode
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+
+# CocoaPods (not used, but keep for safety)
+Pods/
+Podfile.lock
+
+# Build artifacts
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM/
+
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
+*.cer
+AuthKey_*.p8
+ExportOptions.plist
+
+# Coverage / test artifacts
+*.xcresult
+coverage/
+*.gcda
+*.gcno
+
+# Fastlane (if added later)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Logs
+*.log
