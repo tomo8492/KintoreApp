@@ -12,6 +12,10 @@ final class ProFeatureGate {
     /// Pro 購入済みかどうか。StoreKit 2 が更新する。
     var isPro: Bool = false
 
+    /// EnvironmentKey.defaultValue から呼べるよう nonisolated にしておく。
+    /// 状態 (isPro) には触れないので MainActor 隔離なしで安全。
+    nonisolated init() {}
+
     /// 機能アクセス前のゲート。Paywall を出すかは UI 側が判断する。
     func check(_ feature: ProFeature) -> Bool {
         feature.isFreeTier || isPro

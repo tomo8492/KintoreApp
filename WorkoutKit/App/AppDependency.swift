@@ -15,10 +15,8 @@ struct AppDependency {
 // `@Environment(\.appDependency)` で View から取り出せるようにする。
 
 private struct AppDependencyKey: EnvironmentKey {
-    @MainActor
-    static var defaultValue: AppDependency {
-        AppDependency(proGate: ProFeatureGate())
-    }
+    /// プロトコル要件は nonisolated。ProFeatureGate.init() は nonisolated 化済み。
+    static let defaultValue: AppDependency = AppDependency(proGate: ProFeatureGate())
 }
 
 extension EnvironmentValues {

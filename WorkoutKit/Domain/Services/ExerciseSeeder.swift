@@ -5,6 +5,7 @@
 
 import Foundation
 import SwiftData
+import OSLog
 
 enum ExerciseSeeder {
     /// JSON の1要素に対応する DTO。Exercise への詰め替えはここで集約する。

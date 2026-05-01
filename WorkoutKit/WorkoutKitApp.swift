@@ -6,6 +6,7 @@
 
 import SwiftUI
 import SwiftData
+import OSLog
 
 @main
 struct WorkoutKitApp: App {
@@ -16,12 +17,16 @@ struct WorkoutKitApp: App {
 
     init() {
         do {
+            // ModelContainer.init(for:) は Schema インスタンスを取る。
+            // VersionedSchema 型をそのまま渡すオーバーロードは無いので
+            // 一旦 Schema(versionedSchema:) でくるんでから渡す。
+            let schema = Schema(versionedSchema: SchemaV1.self)
             let configuration = ModelConfiguration(
-                "WorkoutKit",
-                schema: Schema(versionedSchema: SchemaV1.self)
+                schema: schema,
+                isStoredInMemoryOnly: false
             )
             self.modelContainer = try ModelContainer(
-                for: SchemaV1.self,
+                for: schema,
                 migrationPlan: WorkoutKitMigrationPlan.self,
                 configurations: configuration
             )
