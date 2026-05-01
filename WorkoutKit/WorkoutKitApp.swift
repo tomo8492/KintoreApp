@@ -13,7 +13,13 @@ struct WorkoutKitApp: App {
     /// ModelContainer はアプリ起動時に1回だけ作る。
     /// `.modelContainer(_:)` で全 View に共有する(Singleton 禁止規約に抵触しない、§4.1)。
     private let modelContainer: ModelContainer
-    @State private var dependency = AppDependency(proGate: ProFeatureGate())
+    @State private var dependency: AppDependency = {
+        let gate = ProFeatureGate()
+        return AppDependency(
+            proGate: gate,
+            storeKitClient: StoreKitClient(proGate: gate)
+        )
+    }()
 
     init() {
         do {
@@ -44,6 +50,10 @@ struct WorkoutKitApp: App {
                 .environment(\.appDependency, dependency)
                 .task {
                     await runStartupSeed()
+                }
+                .task {
+                    // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
+                    await dependency.storeKitClient.start()
                 }
         }
         .modelContainer(modelContainer)
