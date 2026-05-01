@@ -1,0 +1,434 @@
+{
+  "sourceLanguage" : "en",
+  "version" : "1.0",
+  "strings" : {
+    "common.cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャンセル" } }
+      }
+    },
+    "common.save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存" } }
+      }
+    },
+    "common.done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "完了" } }
+      }
+    },
+
+    "templates.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Templates" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレート" } }
+      }
+    },
+    "templates.add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add Template" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートを追加" } }
+      }
+    },
+    "templates.use" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Use" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "使う" } }
+      }
+    },
+    "templates.duplicate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Duplicate" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "複製" } }
+      }
+    },
+    "templates.duplicate.suffix" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "(Copy)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "(コピー)" } }
+      }
+    },
+    "templates.edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "編集" } }
+      }
+    },
+    "templates.delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "削除" } }
+      }
+    },
+    "templates.delete.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete template?" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートを削除しますか?" } }
+      }
+    },
+    "templates.delete.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This cannot be undone." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "この操作は取り消せません。" } }
+      }
+    },
+    "templates.delete.confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "削除する" } }
+      }
+    },
+    "templates.empty.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Templates" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テンプレートがありません" } }
+      }
+    },
+    "templates.empty.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap + to create your first template." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "+を押して最初のテンプレートを作成しましょう。" } }
+      }
+    },
+    "templates.exerciseCountUnit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目" } }
+      }
+    },
+
+    "templates.preset.pushDay" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Push Day (PPL)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "プッシュデイ (PPL)" } }
+      }
+    },
+    "templates.preset.lowerBody" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Lower Body (Upper/Lower)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "下半身 (上下分割)" } }
+      }
+    },
+    "templates.preset.fullBody" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Full Body" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "全身" } }
+      }
+    },
+
+    "templates.detail.summary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Summary" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "概要" } }
+      }
+    },
+    "templates.detail.exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目" } }
+      }
+    },
+    "templates.detail.goal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Goal" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "目的" } }
+      }
+    },
+    "templates.detail.estimated" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Estimated" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "推定所要時間" } }
+      }
+    },
+    "templates.detail.muscles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Target Muscles" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "対象部位" } }
+      }
+    },
+    "templates.detail.musclesUnknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "—" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "—" } }
+      }
+    },
+    "templates.detail.minutes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%d min" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "約 %d 分" } }
+      }
+    },
+    "templates.detail.empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No exercises yet." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目がまだありません。" } }
+      }
+    },
+    "templates.detail.exerciseMissing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not in library" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ライブラリに無い種目" } }
+      }
+    },
+
+    "templates.create.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Template" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新規テンプレート" } }
+      }
+    },
+    "templates.create.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Name" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "名前" } }
+      }
+    },
+    "templates.create.namePlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Heavy Leg Day" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "例: 脚の日(重め)" } }
+      }
+    },
+    "templates.create.goal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Goal" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "目的" } }
+      }
+    },
+    "templates.create.slugs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exercise slugs" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目 slug" } }
+      }
+    },
+    "templates.create.slugsPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "barbell-back-squat, push-up" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "barbell-back-squat, push-up" } }
+      }
+    },
+    "templates.create.slugsHint" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Comma- or newline-separated. A picker UI will replace this in a later phase." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "カンマまたは改行区切り。Picker UI は後続フェーズで置換されます。" } }
+      }
+    },
+
+    "templates.use.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start Workout" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ワークアウト開始" } }
+      }
+    },
+    "templates.use.b2Pending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "SessionStore (B2) wiring is pending — preview only." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "SessionStore(B2)接続は未実装のためプレビュー表示のみ。" } }
+      }
+    },
+
+    "paywall.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pro Feature" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "Pro 機能" } }
+      }
+    },
+    "paywall.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unlock for ¥980 (Launch ¥600)." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "¥980(初回 ¥600)でアンロックできます。" } }
+      }
+    },
+    "paywall.dismiss" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not now" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "あとで" } }
+      }
+    },
+
+    "goal.hypertrophy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hypertrophy" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "増量" } }
+      }
+    },
+    "goal.fatLoss" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fat Loss" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "減量" } }
+      }
+    },
+    "goal.endurance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Endurance" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "筋持久力" } }
+      }
+    },
+    "goal.flexibility" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Flexibility" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "柔軟性" } }
+      }
+    },
+    "goal.cardio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cardio" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "心肺機能" } }
+      }
+    },
+
+    "muscle.chest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Chest" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "胸" } }
+      }
+    },
+    "muscle.lats" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Lats" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "広背筋" } }
+      }
+    },
+    "muscle.traps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Traps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "僧帽筋" } }
+      }
+    },
+    "muscle.deltoids" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Deltoids" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "三角筋" } }
+      }
+    },
+    "muscle.biceps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Biceps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "上腕二頭筋" } }
+      }
+    },
+    "muscle.triceps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Triceps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "上腕三頭筋" } }
+      }
+    },
+    "muscle.forearms" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Forearms" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "前腕" } }
+      }
+    },
+    "muscle.abs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Abs" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "腹筋" } }
+      }
+    },
+    "muscle.obliques" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Obliques" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "腹斜筋" } }
+      }
+    },
+    "muscle.lowerBack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Lower Back" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "脊柱起立筋" } }
+      }
+    },
+    "muscle.quadriceps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quadriceps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "大腿四頭筋" } }
+      }
+    },
+    "muscle.hamstrings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hamstrings" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ハムストリング" } }
+      }
+    },
+    "muscle.glutes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Glutes" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "臀筋" } }
+      }
+    },
+    "muscle.calves" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Calves" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ふくらはぎ" } }
+      }
+    },
+    "muscle.fullBody" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Full Body" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "全身" } }
+      }
+    }
+  }
+}

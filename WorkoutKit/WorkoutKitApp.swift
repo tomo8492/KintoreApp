@@ -53,6 +53,7 @@ struct WorkoutKitApp: App {
 
     /// 初回起動 / アップグレード時の seed 投入を非同期で実行する。
     /// 失敗してもアプリ自体は起動させる(seed なしでも UI は動く)。
+    /// テンプレ seed は Exercise seed の後に行う(プリセットが Exercise.slug を参照するため)。
     @MainActor
     private func runStartupSeed() async {
         let context = modelContainer.mainContext
@@ -61,6 +62,12 @@ struct WorkoutKitApp: App {
             Logger.app.info("startup seed completed: \(inserted) exercises inserted")
         } catch {
             Logger.app.error("startup seed failed: \(error.localizedDescription, privacy: .public)")
+        }
+        do {
+            let insertedTemplates = try TemplateSeeder.seedIfNeeded(in: context)
+            Logger.app.info("template seed completed: \(insertedTemplates) presets inserted")
+        } catch {
+            Logger.app.error("template seed failed: \(error.localizedDescription, privacy: .public)")
         }
     }
 }

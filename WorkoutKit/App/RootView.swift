@@ -23,6 +23,9 @@ struct RootView: View {
             todayPlaceholder
                 .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
 
+            templatesTab
+                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
+
             libraryPlaceholder
                 .tabItem { Label("Library", systemImage: "books.vertical") }
 
@@ -40,6 +43,11 @@ struct RootView: View {
         NavigationSplitView {
             List {
                 NavigationLink("Today")    { todayPlaceholder }
+                NavigationLink {
+                    TemplatesView()
+                } label: {
+                    Text("templates.title")
+                }
                 NavigationLink("Library")  { libraryPlaceholder }
                 NavigationLink("History")  { historyPlaceholder }
                 NavigationLink("Settings") { settingsPlaceholder }
@@ -47,6 +55,14 @@ struct RootView: View {
             .navigationTitle("WorkoutKit")
         } detail: {
             todayPlaceholder
+        }
+    }
+
+    // MARK: - Templates tab (E1 で実装)
+
+    private var templatesTab: some View {
+        NavigationStack {
+            TemplatesView()
         }
     }
 
