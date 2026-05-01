@@ -9,6 +9,8 @@ import SwiftUI
 /// 軽量に値渡しできる形にしておく(ストアは内側で MainActor 隔離)。
 struct AppDependency {
     var proGate: ProFeatureGate
+    /// 購入復元(F1 StoreKitClient が conform する。未統合ビルドでは Noop)。
+    var purchaseRestorer: any PurchaseRestoring
 }
 
 // MARK: - SwiftUI Environment 拡張
@@ -16,7 +18,10 @@ struct AppDependency {
 
 private struct AppDependencyKey: EnvironmentKey {
     /// プロトコル要件は nonisolated。ProFeatureGate.init() は nonisolated 化済み。
-    static let defaultValue: AppDependency = AppDependency(proGate: ProFeatureGate())
+    static let defaultValue: AppDependency = AppDependency(
+        proGate: ProFeatureGate(),
+        purchaseRestorer: NoopPurchaseRestorer()
+    )
 }
 
 extension EnvironmentValues {

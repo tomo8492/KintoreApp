@@ -29,7 +29,7 @@ struct RootView: View {
             historyPlaceholder
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsPlaceholder
+            SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
@@ -42,7 +42,7 @@ struct RootView: View {
                 NavigationLink("Today")    { todayPlaceholder }
                 NavigationLink("Library")  { libraryPlaceholder }
                 NavigationLink("History")  { historyPlaceholder }
-                NavigationLink("Settings") { settingsPlaceholder }
+                NavigationLink("Settings") { SettingsView() }
             }
             .navigationTitle("WorkoutKit")
         } detail: {
@@ -76,13 +76,6 @@ struct RootView: View {
         )
     }
 
-    private var settingsPlaceholder: some View {
-        ContentUnavailableView(
-            "Settings",
-            systemImage: "gearshape",
-            description: Text("設定は Phase P4 で実装します。")
-        )
-    }
 }
 
 #Preview {

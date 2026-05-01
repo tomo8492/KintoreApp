@@ -13,7 +13,14 @@ struct WorkoutKitApp: App {
     /// ModelContainer はアプリ起動時に1回だけ作る。
     /// `.modelContainer(_:)` で全 View に共有する(Singleton 禁止規約に抵触しない、§4.1)。
     private let modelContainer: ModelContainer
-    @State private var dependency = AppDependency(proGate: ProFeatureGate())
+    @State private var dependency = AppDependency(
+        proGate: ProFeatureGate(),
+        purchaseRestorer: NoopPurchaseRestorer()
+    )
+
+    /// Settings の Theme 切替を Scene ルートに反映する。
+    /// 文字列で持つのは @AppStorage の素直な使い方に合わせるため。
+    @AppStorage(SettingsKey.theme) private var themeRaw: String = ThemePreference.system.rawValue
 
     init() {
         do {
@@ -42,11 +49,16 @@ struct WorkoutKitApp: App {
         WindowGroup {
             RootView()
                 .environment(\.appDependency, dependency)
+                .preferredColorScheme(currentTheme.colorScheme)
                 .task {
                     await runStartupSeed()
                 }
         }
         .modelContainer(modelContainer)
+    }
+
+    private var currentTheme: ThemePreference {
+        ThemePreference(rawValue: themeRaw) ?? .system
     }
 
     // MARK: - Startup
