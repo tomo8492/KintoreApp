@@ -65,6 +65,10 @@ struct SessionView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     progressHeader(store: store)
                     planList(store: store)
+                    if store.isIntervalRunning, let remaining = store.intervalSecondsRemaining {
+                        IntervalCountdownView(secondsRemaining: remaining)
+                            .id("interval-countdown")
+                    }
                     if let item = store.currentItem {
                         SessionSetInputPanel(
                             store: store,

@@ -42,18 +42,22 @@ final class SessionStore {
     var inputRpe: Double? = nil
     var inputRestSeconds: Int = 60
 
-    // MARK: - C2/C3 ホック(本実装は別タスク)
+    // MARK: - C2/C3 ホック
+    //
+    // 以下の interval* / intervalTimer / intervalTask は SessionStore+Interval.swift
+    // からのみ書き込み、View は読むだけ。private にすると同モジュール別ファイル拡張から
+    // 触れないため internal のままにしている(2026-05 現行 Swift の制約)。
 
-    /// C2 IntervalTimer から差し込む残秒数。SessionStore は読むだけ。
     var intervalSecondsRemaining: Int? = nil
-    /// C2 IntervalTimer の動作中フラグ。
     var isIntervalRunning: Bool = false
-    /// セット完了通知。C3 Live Activity / 通知 / 振動などの購読者用。
+    /// セット完了通知。C3 Live Activity / 外部購読者用。
     var onSetCompleted: ((ExerciseSet) -> Void)? = nil
 
     // MARK: - Dependencies
 
     private let modelContext: ModelContext
+    let intervalTimer: IntervalTimer
+    var intervalTask: Task<Void, Never>?
 
     // MARK: - Init (新規セッション)
 
@@ -62,9 +66,11 @@ final class SessionStore {
         goal: Goal,
         output: GeneratorOutput,
         includesWarmup: Bool,
-        includesCooldown: Bool
+        includesCooldown: Bool,
+        intervalTimer: IntervalTimer = IntervalTimer()
     ) throws {
         self.modelContext = modelContext
+        self.intervalTimer = intervalTimer
         self.goal = goal
         self.plan = .from(output: output)
 
@@ -85,9 +91,11 @@ final class SessionStore {
 
     init(
         modelContext: ModelContext,
-        snapshot: SessionRestoreSnapshot
+        snapshot: SessionRestoreSnapshot,
+        intervalTimer: IntervalTimer = IntervalTimer()
     ) throws {
         self.modelContext = modelContext
+        self.intervalTimer = intervalTimer
         self.sessionId = snapshot.sessionId
         self.plan = snapshot.plan
         self.currentItemIndex = snapshot.currentItemIndex
@@ -154,13 +162,14 @@ final class SessionStore {
 
         let exercise = resolvedExercises[item.slug]
         let order = completedSets.count
+        let restSeconds = max(0, inputRestSeconds)
         let set = ExerciseSet(
             order: order,
             sectionRaw: item.section.rawValue,
             reps: max(0, inputReps),
             weightKg: max(0, inputWeightKg),
             rpe: inputRpe,
-            restSeconds: max(0, inputRestSeconds),
+            restSeconds: restSeconds,
             completedAt: .now,
             exercise: exercise
         )
@@ -175,12 +184,18 @@ final class SessionStore {
         }
 
         advanceCursor()
+
+        // セッション終了後はカウントダウンを起動しない(直前 advanceCursor で finish 済の場合)。
+        if status == .running, restSeconds > 0 {
+            startIntervalCountdown(seconds: restSeconds)
+        }
     }
 
     /// 現在種目をスキップして次種目の最初のセットへ。残りセットは記録しない。
     func skipCurrentExercise() {
         guard status == .running, currentItem != nil else { return }
         Logger.session.info("skipCurrentExercise at index=\(self.currentItemIndex)")
+        stopIntervalCountdown()
         currentSetIndex = 0
         if currentItemIndex < plan.count - 1 {
             currentItemIndex += 1
@@ -208,6 +223,7 @@ final class SessionStore {
     /// 「やめる」。finishedAt を打って status を aborted に。完了済みセットは残す。
     func abort() {
         guard status == .running else { return }
+        stopIntervalCountdown()
         if let session = fetchSession() {
             session.finishedAt = .now
             persist()
@@ -219,6 +235,7 @@ final class SessionStore {
     /// 全種目完了で呼ばれる。完了状態にして finishedAt を打つ。
     func finish() {
         guard status == .running else { return }
+        stopIntervalCountdown()
         if let session = fetchSession() {
             session.finishedAt = .now
             persist()
