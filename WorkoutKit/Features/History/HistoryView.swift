@@ -79,6 +79,8 @@ struct HistoryView: View {
     /// Pro 解放後の「全期間表示」スイッチ。proGate.isPro が false に戻れば自動で false に倒す。
     @State private var showAllHistory: Bool = false
     @State private var selectedSession: WorkoutSession?
+    /// 手動ログ入力シート (F-04 / Issue #88)。Pro ゲート通過後にのみ true になる。
+    @State private var showingManualEntry: Bool = false
 
     var body: some View {
         Group {
@@ -89,6 +91,9 @@ struct HistoryView: View {
             }
         }
         .paywallSheet(paywall: $paywall)
+        .sheet(isPresented: $showingManualEntry) {
+            ManualEntryView()
+        }
         .onChange(of: dependency.proGate.isPro) { _, newValue in
             if !newValue { showAllHistory = false }
         }
@@ -131,6 +136,15 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("history.title")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        handleManualEntryRequested()
+                    } label: {
+                        Label("history.action.manual-entry", systemImage: "square.and.pencil")
+                    }
+                }
+            }
             .navigationDestination(for: WorkoutSession.self) { session in
                 detailDestination(for: session)
             }
@@ -179,6 +193,13 @@ struct HistoryView: View {
             }
             .pickerStyle(.segmented)
             .labelsHidden()
+        }
+        ToolbarItem(placement: .topBarTrailing) {
+            Button {
+                handleManualEntryRequested()
+            } label: {
+                Label("history.action.manual-entry", systemImage: "square.and.pencil")
+            }
         }
     }
 
@@ -257,6 +278,16 @@ struct HistoryView: View {
             // Pro 解放済み: HistoryChartsView 内部で詳細チャートを描画するための
             // フラグ更新は不要(isPro を直接見て分岐するため)。
             Logger.app.info("history: advanced charts unlocked")
+        }
+    }
+
+    private func handleManualEntryRequested() {
+        PaywallTrigger.gate(
+            .manualEntry,
+            proGate: dependency.proGate,
+            paywall: $paywall
+        ) {
+            showingManualEntry = true
         }
     }
 }

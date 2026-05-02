@@ -221,7 +221,218 @@
     "type.plyometrics"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Plyometrics" } },  "ja" : { "stringUnit" : { "state" : "translated", "value" : "プライオメトリクス" } } } },
 
     "mechanics.compound"  : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Compound" } },  "ja" : { "stringUnit" : { "state" : "translated", "value" : "複合関節" } } } },
-    "mechanics.isolation" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Isolation" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "単関節" } } } }
+    "mechanics.isolation" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Isolation" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "単関節" } } } },
+
+    "manual-entry.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Manual entry" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "手動でログ" } }
+      }
+    },
+    "manual-entry.save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存" } }
+      }
+    },
+    "manual-entry.section.meta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Session" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "セッション" } }
+      }
+    },
+    "manual-entry.section.meta.footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose a past date and the goal you trained for." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "過去の日時と、その日の目的を選んでください。" } }
+      }
+    },
+    "manual-entry.date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Date" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "日時" } }
+      }
+    },
+    "manual-entry.goal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Goal" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "目的" } }
+      }
+    },
+    "manual-entry.section.exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目" } }
+      }
+    },
+    "manual-entry.section.exercises.footer.empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pick the exercises you performed, then enter sets for each." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "実施した種目を選び、各種目のセットを入力してください。" } }
+      }
+    },
+    "manual-entry.add-exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を追加" } }
+      }
+    },
+    "manual-entry.add-more-exercises" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add more" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を追加" } }
+      }
+    },
+    "manual-entry.add-set" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add set" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "セット追加" } }
+      }
+    },
+    "manual-entry.remove-exercise" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove exercise" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を削除" } }
+      }
+    },
+    "manual-entry.section.notes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notes" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ" } }
+      }
+    },
+    "manual-entry.notes.placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Optional notes" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "メモ (任意)" } }
+      }
+    },
+    "manual-entry.reps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reps" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "回数" } }
+      }
+    },
+    "manual-entry.weight-kg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Weight (kg)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "重量 (kg)" } }
+      }
+    },
+    "manual-entry.save-error.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not save" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存できませんでした" } }
+      }
+    },
+    "manual-entry.save-error.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Make sure each exercise has at least one set with reps or weight." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "各種目に少なくとも 1 セット (回数または重量) を入力してください。" } }
+      }
+    },
+    "manual-entry.picker.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pick exercises" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "種目を選択" } }
+      }
+    },
+    "manual-entry.picker.add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "追加" } }
+      }
+    },
+    "manual-entry.picker.add.count" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add (%lld)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "追加 (%lld)" } }
+      }
+    },
+    "manual-entry.picker.already-added" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Added" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "追加済み" } }
+      }
+    },
+    "manual-entry.picker.empty.subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add exercises in Library first." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "先に種目DBに種目を追加してください。" } }
+      }
+    },
+    "manual-entry.picker.no-matches.subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No exercises match your search." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "該当する種目がありません。" } }
+      }
+    },
+    "history.action.manual-entry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add manual entry" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "手動でログ" } }
+      }
+    },
+    "goal.hypertrophy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hypertrophy" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "増量" } }
+      }
+    },
+    "goal.fat-loss" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fat loss" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "減量" } }
+      }
+    },
+    "goal.endurance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Endurance" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "筋持久力" } }
+      }
+    },
+    "goal.flexibility" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Flexibility" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "柔軟性" } }
+      }
+    },
+    "goal.cardio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cardio" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "心肺機能" } }
+      }
+    }
   },
   "version" : "1.0"
 }
