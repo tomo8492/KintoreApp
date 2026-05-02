@@ -10,6 +10,7 @@
 // - View には触れない(F2: PaywallView は別タスク)。
 
 import Foundation
+import OSLog
 import StoreKit
 
 /// 購入フローの結果。UI 層で Paywall の遷移先を決める用途。
@@ -61,9 +62,11 @@ actor StoreKitClient {
     // MARK: - Init
 
     /// Test では productIDs を差し替えられるよう引数化している。
+    /// 既定値で `Self.proProductID` を参照すると covariant-Self エラーになるため、
+    /// 型名 `StoreKitClient.proProductID` を直接参照する。
     init(
         proGate: ProFeatureGate,
-        productIDs: Set<String> = [Self.proProductID]
+        productIDs: Set<String> = [StoreKitClient.proProductID]
     ) {
         self.proGate = proGate
         self.productIDs = productIDs
