@@ -16,6 +16,7 @@ struct BuilderView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var store = BuilderStore()
+    @State private var sessionPayload: SessionStartPayload?
 
     var body: some View {
         if sizeClass == .regular {
@@ -44,6 +45,14 @@ struct BuilderView: View {
                     actions: { Button("common.ok", role: .cancel) {} },
                     message: { Text(store.generationError ?? "") }
                 )
+                .navigationDestination(item: $sessionPayload) { payload in
+                    SessionView(
+                        initialOutput: payload.output,
+                        goal: payload.goal,
+                        includesWarmup: payload.includesWarmup,
+                        includesCooldown: payload.includesCooldown
+                    )
+                }
         }
     }
 
@@ -76,6 +85,14 @@ struct BuilderView: View {
                         actions: { Button("common.ok", role: .cancel) {} },
                         message: { Text(store.generationError ?? "") }
                     )
+                    .navigationDestination(item: $sessionPayload) { payload in
+                        SessionView(
+                            initialOutput: payload.output,
+                            goal: payload.goal,
+                            includesWarmup: payload.includesWarmup,
+                            includesCooldown: payload.includesCooldown
+                        )
+                    }
             }
         }
     }
@@ -176,11 +193,36 @@ struct BuilderView: View {
     // MARK: - Session start
 
     private func startSession() {
-        // TODO(B4): SessionView へ遷移する。現状は Logger に出すだけのスタブ。
-        // SessionView の API が決まったら NavigationDestination で push、
-        // または fullScreenCover で起動する形に置き換える。
-        Logger.app.info("BuilderView.startSession tapped: warmup=\(store.output?.warmup.count ?? 0), main=\(store.output?.main.count ?? 0), cooldown=\(store.output?.cooldown.count ?? 0)")
-        dismiss()
+        // SessionView へ navigationDestination で push する(C1)。
+        guard let output = store.output else {
+            Logger.app.error("BuilderView.startSession: store.output is nil")
+            return
+        }
+        Logger.app.info("BuilderView.startSession: warmup=\(output.warmup.count), main=\(output.main.count), cooldown=\(output.cooldown.count)")
+        sessionPayload = SessionStartPayload(
+            output: output,
+            goal: store.input.goal,
+            includesWarmup: store.input.includeWarmup,
+            includesCooldown: store.input.includeCooldown
+        )
+    }
+}
+
+// MARK: - Session start payload
+// BuilderView から SessionView に渡す navigationDestination(item:) 用の値型。
+// GeneratorOutput は Hashable ではないので、Hashable は id 一意性で代用する。
+struct SessionStartPayload: Hashable, Identifiable {
+    let id: UUID = UUID()
+    let output: GeneratorOutput
+    let goal: Goal
+    let includesWarmup: Bool
+    let includesCooldown: Bool
+
+    static func == (lhs: SessionStartPayload, rhs: SessionStartPayload) -> Bool {
+        lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
