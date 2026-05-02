@@ -1,7 +1,186 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
-
+    "error.data.corruption" : {
+      "comment" : "AppError.dataCorruption — SwiftData の整合性破壊時にユーザーへ提示する汎用文。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong with your data."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データに問題が発生しました"
+          }
+        }
+      }
+    },
+    "error.generator.empty" : {
+      "comment" : "AppError.generatorEmpty — Builder の条件にマッチする種目が0件のとき。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No exercises matched your filters."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "条件に合う種目が見つかりませんでした"
+          }
+        }
+      }
+    },
+    "error.import.failed" : {
+      "comment" : "AppError.importFailed — CSV/JSON 取り込み失敗時の汎用文。理由は Logger にのみ書く。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import failed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "インポートに失敗しました"
+          }
+        }
+      }
+    },
+    "error.media.missing" : {
+      "comment" : "AppError.mediaMissing — slug に対応するステップ画像が見つからないとき。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step image is unavailable."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステップ画像が見つかりませんでした"
+          }
+        }
+      }
+    },
+    "error.pro.required" : {
+      "comment" : "AppError.proRequired — Pro 機能未購入時。Paywall への導線文として使う。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This feature is available with Pro."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この機能は Pro で利用できます"
+          }
+        }
+      }
+    },
+    "error.purchase.failed" : {
+      "comment" : "AppError.purchaseFailed — StoreKit 購入失敗(キャンセル除く)時。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase failed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入処理に失敗しました"
+          }
+        }
+      }
+    },
+    "tab.history" : {
+      "comment" : "RootView 履歴タブ。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴"
+          }
+        }
+      }
+    },
+    "tab.library" : {
+      "comment" : "RootView 種目DBタブ。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Library"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブラリ"
+          }
+        }
+      }
+    },
+    "tab.settings" : {
+      "comment" : "RootView 設定タブ。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "tab.today" : {
+      "comment" : "RootView Today タブ(Builder 起点)。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }
