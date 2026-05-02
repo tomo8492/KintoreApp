@@ -36,11 +36,31 @@ final class BuilderStore {
         }
     }
 
+    // MARK: - Mode (B3)
+
+    /// 結果ステップの表示モード。Shuffle = 自動再生成、Choose = ロック付き候補選択。
+    /// CLAUDE.md §1.1 F-01a / workout-cool Issue #93 相当。
+    enum Mode: String, CaseIterable, Identifiable, Sendable {
+        case shuffle
+        case choose
+
+        var id: String { rawValue }
+
+        var titleKey: LocalizedStringKey {
+            switch self {
+            case .shuffle: return "builder.result.mode.shuffle"
+            case .choose:  return "builder.result.mode.choose"
+            }
+        }
+    }
+
     // MARK: - State
 
     var currentStep: Step = .goal
     var input: GeneratorInput
     var output: GeneratorOutput?
+    /// 結果ステップの表示モード。デフォルトは Shuffle。
+    var mode: Mode = .shuffle
     /// Generator 失敗時の表示用。AppError の中身は LocalizedError 経由で文字列化。
     var generationError: String?
     /// Generator 実行中スピナー用。
@@ -106,9 +126,29 @@ final class BuilderStore {
     }
 
     /// result ステップで再生成するためのフック(B3 Shuffle/Choose で使う)。
-    /// 入力は変えずに再シャッフルする想定。
+    /// 入力は変えずに再シャッフルする想定。lockedExerciseSlugs はそのまま尊重される。
     func regenerate(in context: ModelContext) {
         runGenerate(in: context, advanceOnSuccess: false)
+    }
+
+    // MARK: - Lock (B3 Choose mode)
+
+    /// Choose モードで選択中のロック種目 slug。
+    /// Generator 入力に直接保持される(GeneratorInput.lockedExerciseSlugs)。
+    var lockedSlugs: Set<String> { input.lockedExerciseSlugs }
+
+    /// 指定 slug のロック状態を反転する。Choose モードの行タップで呼ばれる。
+    func toggleLock(_ slug: String) {
+        if input.lockedExerciseSlugs.contains(slug) {
+            input.lockedExerciseSlugs.remove(slug)
+        } else {
+            input.lockedExerciseSlugs.insert(slug)
+        }
+    }
+
+    /// ロックを全解除する。result ステップから戻る/再開時に使用。
+    func clearLocks() {
+        input.lockedExerciseSlugs.removeAll()
     }
 
     private func runGenerate(in context: ModelContext, advanceOnSuccess: Bool) {

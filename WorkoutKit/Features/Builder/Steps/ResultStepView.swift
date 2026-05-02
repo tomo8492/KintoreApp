@@ -1,31 +1,33 @@
 // MARK: - ResultStepView
-// Builder Step 5: 生成結果。CLAUDE.md §1.1 F-01。
+// Builder Step 5: 生成結果。CLAUDE.md §1.1 F-01 / §1.1 F-01a。
 //
-// このビューは B3(Shuffle/Choose)で再生成 UI を上に増築する想定でシンプルに保つ。
-// - Shuffle ボタンは onRegenerate フックを呼ぶだけ(Choose モードは B3 で追加)。
-// - セッション開始は onStartSession フックを呼ぶ(SessionView 未実装、B4 で配線)。
+// 設計メモ:
+// - 右上に Shuffle / Choose のモード切替ピッカーを置く(B3)。
+// - Shuffle モード: 出力プレビュー + ShuffleMode(再生成ボタン)。
+// - Choose モード: ChooseMode(候補プールにロックを付ける)を表示。
+// - 種目名は @Query で全 Exercise を引き、slug → 表示名のマップで解決(B3)。
+//   同梱150種目想定なので全件 fetch でも軽量。
 
 import SwiftUI
+import SwiftData
 
 struct ResultStepView: View {
-    let output: GeneratorOutput
-    let isGenerating: Bool
-    let onRegenerate: () -> Void
+    @Bindable var store: BuilderStore
     let onStartSession: () -> Void
+
+    /// slug → Exercise 解決用。同梱規模(150種目)では全件取得が最も簡潔。
+    @Query(sort: \Exercise.slug) private var allExercises: [Exercise]
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                modePicker
+
                 summaryHeader
 
-                if !output.warmup.isEmpty {
-                    section(titleKey: "builder.step.result.section.warmup", slugs: output.warmup)
-                }
-
-                section(titleKey: "builder.step.result.section.main", slugs: output.main)
-
-                if !output.cooldown.isEmpty {
-                    section(titleKey: "builder.step.result.section.cooldown", slugs: output.cooldown)
+                switch store.mode {
+                case .shuffle: shuffleContent
+                case .choose:  chooseContent
                 }
 
                 actionButtons
@@ -35,7 +37,26 @@ struct ResultStepView: View {
         }
     }
 
-    // MARK: - Subviews
+    // MARK: - Mode picker (右上トグル)
+
+    private var modePicker: some View {
+        HStack {
+            Spacer()
+            Picker("builder.result.mode.label", selection: $store.mode) {
+                ForEach(BuilderStore.Mode.allCases) { mode in
+                    Text(mode.titleKey).tag(mode)
+                }
+            }
+            .pickerStyle(.segmented)
+            .frame(maxWidth: 220)
+        }
+    }
+
+    // MARK: - Header
+
+    private var output: GeneratorOutput {
+        store.output ?? GeneratorOutput(warmup: [], main: [], cooldown: [])
+    }
 
     private var totalCount: Int {
         output.warmup.count + output.main.count + output.cooldown.count
@@ -45,13 +66,38 @@ struct ResultStepView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text("builder.step.result.heading")
                 .font(.title2.bold())
-            // SwiftUI が \(Int) を %lld の format 引数に正しく変換する。
-            // xcstrings 側では "builder.step.result.subheading" キーで定義する。
             Text("builder.step.result.subheading \(totalCount)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
     }
+
+    // MARK: - Shuffle content
+
+    @ViewBuilder
+    private var shuffleContent: some View {
+        if !output.warmup.isEmpty {
+            section(titleKey: "builder.step.result.section.warmup", slugs: output.warmup)
+        }
+        section(titleKey: "builder.step.result.section.main", slugs: output.main)
+        if !output.cooldown.isEmpty {
+            section(titleKey: "builder.step.result.section.cooldown", slugs: output.cooldown)
+        }
+        ShuffleMode(store: store)
+    }
+
+    // MARK: - Choose content
+
+    @ViewBuilder
+    private var chooseContent: some View {
+        // メインの確定中種目だけ簡略表示(warmup/cooldown は影響しない)
+        if !output.main.isEmpty {
+            section(titleKey: "builder.step.result.section.main", slugs: output.main)
+        }
+        ChooseMode(store: store)
+    }
+
+    // MARK: - Section
 
     private func section(titleKey: LocalizedStringKey, slugs: [String]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -64,11 +110,14 @@ struct ResultStepView: View {
                             .font(.caption.bold())
                             .foregroundStyle(.secondary)
                             .frame(width: 24)
-                        // TODO(B3): Exercise を SwiftData から引いて nameJa/En を表示する。
-                        // 現状は slug をそのまま表示しておく。
-                        Text(slug)
+                        Text(displayName(for: slug))
                             .font(.body)
                         Spacer()
+                        if store.lockedSlugs.contains(slug) {
+                            Image(systemName: "lock.fill")
+                                .font(.caption)
+                                .foregroundStyle(Color.accentColor)
+                        }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
@@ -85,6 +134,18 @@ struct ResultStepView: View {
         }
     }
 
+    /// slug を Exercise.localizedName(nameJa / nameEn)に解決する。
+    /// DB に未登録の slug は slug 自体を返す(seed 未投入時の保険)。
+    private func displayName(for slug: String) -> String {
+        nameMap[slug]?.localizedName ?? slug
+    }
+
+    private var nameMap: [String: Exercise] {
+        Dictionary(uniqueKeysWithValues: allExercises.map { ($0.slug, $0) })
+    }
+
+    // MARK: - Actions
+
     private var actionButtons: some View {
         VStack(spacing: 8) {
             Button(action: onStartSession) {
@@ -97,40 +158,19 @@ struct ResultStepView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .buttonStyle(.plain)
-            .disabled(isGenerating)
-
-            Button(action: onRegenerate) {
-                HStack {
-                    if isGenerating {
-                        ProgressView().controlSize(.small)
-                    } else {
-                        Image(systemName: "shuffle")
-                    }
-                    Text("builder.step.result.action.shuffle")
-                }
-                .font(.headline)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-                .background(Color.gray.opacity(0.12))
-                .foregroundStyle(Color.primary)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-            .buttonStyle(.plain)
-            .disabled(isGenerating)
+            .disabled(store.isGenerating)
         }
         .padding(.top, 8)
     }
 }
 
 #Preview {
-    ResultStepView(
-        output: GeneratorOutput(
-            warmup: ["jumping-jacks", "arm-circles", "leg-swings"],
-            main: ["barbell-back-squat", "bench-press", "barbell-row"],
-            cooldown: ["chest-stretch", "hamstring-stretch"]
-        ),
-        isGenerating: false,
-        onRegenerate: {},
-        onStartSession: {}
+    let previewStore = BuilderStore()
+    previewStore.output = GeneratorOutput(
+        warmup: ["jumping-jacks", "arm-circles", "leg-swings"],
+        main: ["barbell-back-squat", "bench-press", "barbell-row"],
+        cooldown: ["chest-stretch", "hamstring-stretch"]
     )
+    return ResultStepView(store: previewStore, onStartSession: {})
+        .modelContainer(for: Exercise.self, inMemory: true)
 }

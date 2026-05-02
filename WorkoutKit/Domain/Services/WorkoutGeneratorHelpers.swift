@@ -1,8 +1,10 @@
 // MARK: - WorkoutGenerator ヘルパー
 // マッチ判定 / 並び替え / 乱数取りを WorkoutGenerator から切り出した内部ユーティリティ。
 // 全て pure(SwiftData / Logger に触らない)、テスト時にも単体で扱える形を保つ。
+// 末尾の candidatePool は ModelContext を受け取る例外で、Choose モード(B3)が利用する。
 
 import Foundation
+import SwiftData
 
 extension WorkoutGenerator {
 
@@ -72,5 +74,28 @@ extension WorkoutGenerator {
             lastMuscle = muscle
         }
         return result
+    }
+
+    /// Choose モード(F-01a / B3)で表示する候補プール。
+    /// `generateMain` の前段フィルタ(タイプ + equipment + muscle)と同じ条件で
+    /// 全種目を slug 昇順で返す。warmup / cooldown は含まない。
+    static func candidatePool(_ input: GeneratorInput, in context: ModelContext) throws -> [Exercise] {
+        let allowedTypes: Set<String> = (input.goal == .cardio)
+            ? [ExerciseType.cardio.rawValue]
+            : [
+                ExerciseType.strength.rawValue,
+                ExerciseType.calisthenics.rawValue,
+                ExerciseType.plyometrics.rawValue,
+            ]
+        let descriptor = FetchDescriptor<Exercise>(
+            predicate: #Predicate { allowedTypes.contains($0.typeRaw) }
+        )
+        let pool = try context.fetch(descriptor)
+        return pool
+            .filter {
+                matchesEquipment($0, allowed: input.equipment) &&
+                matchesMuscles($0, target: input.muscles)
+            }
+            .sorted { $0.slug < $1.slug }
     }
 }

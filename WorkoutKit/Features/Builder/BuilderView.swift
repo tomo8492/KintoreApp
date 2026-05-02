@@ -90,13 +90,8 @@ struct BuilderView: View {
         case .equipment: EquipmentStepView(store: store)
         case .time:      TimeStepView(store: store)
         case .result:
-            if let output = store.output {
-                ResultStepView(
-                    output: output,
-                    isGenerating: store.isGenerating,
-                    onRegenerate: { store.regenerate(in: modelContext) },
-                    onStartSession: { startSession() }
-                )
+            if store.output != nil {
+                ResultStepView(store: store, onStartSession: { startSession() })
             } else {
                 // 通常 confirm() 成功時のみ result に到達するので来ない想定だが、
                 // データ破損や戻る/進む競合の保険として placeholder を出す。
