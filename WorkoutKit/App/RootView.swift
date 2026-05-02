@@ -1,7 +1,8 @@
 // MARK: - RootView
 // CLAUDE.md §-1.15 / §5 準拠。
-// iPhone(compact)は TabView、iPad(regular)は NavigationSplitView に分岐する。
-// 各 Feature の本体は P1 以降で差し込むため、ここではタブ枠だけ用意する。
+// iPhone(compact)は TabView、iPad(regular)も TabView を使う(Library が
+// NavigationSplitView を内包するため二重ネストを避ける)。
+// 各 Feature の本体は順次差し込み、E1 で Templates タブが追加された。
 
 import SwiftUI
 
@@ -21,16 +22,19 @@ struct RootView: View {
 
     private var iPhoneRoot: some View {
         TabView {
-            todayPlaceholder
+            todayTab
                 .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+
+            templatesTab
+                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
 
             ExerciseListView()
                 .tabItem { Label("Library", systemImage: "books.vertical") }
 
-            historyPlaceholder
+            historyTab
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsPlaceholder
+            settingsTab
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
@@ -41,33 +45,47 @@ struct RootView: View {
 
     private var iPadRoot: some View {
         TabView {
-            todayPlaceholder
+            todayTab
                 .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+
+            templatesTab
+                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
 
             ExerciseListView()
                 .tabItem { Label("Library", systemImage: "books.vertical") }
 
-            historyPlaceholder
+            historyTab
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsPlaceholder
+            settingsTab
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
 
-    // MARK: - Placeholders(P1 以降で実装)
+    // MARK: - Templates tab (E1 で実装)
+
+    private var templatesTab: some View {
+        NavigationStack {
+            TemplatesView()
+        }
+    }
+
+    // MARK: - Today
 
     /// Today タブの入口。Builder ウィザードを fullScreenCover で開く CTA を出す。
     /// - iPhone/iPad とも fullScreenCover で BuilderView を独立して表示することで、
     ///   iPad 側で RootView の NavigationSplitView と BuilderView の NavigationSplitView
     ///   が二重にネストするのを避ける。
-    private var todayPlaceholder: some View {
+    private var todayTab: some View {
         VStack(spacing: 24) {
             Image(systemName: "figure.strengthtraining.traditional")
                 .font(.system(size: 64))
                 .foregroundStyle(Color.accentColor)
+                .accessibilityHidden(true)
             Text("today.heading")
                 .font(.title2.bold())
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.7)
             Text("today.subheading")
                 .font(.body)
                 .foregroundStyle(.secondary)
@@ -79,6 +97,8 @@ struct RootView: View {
             } label: {
                 Text("today.action.start-builder")
                     .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .padding(.horizontal, 28)
                     .padding(.vertical, 14)
                     .background(Color.accentColor)
@@ -86,6 +106,9 @@ struct RootView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(Text("today.action.start-builder"))
+            .accessibilityHint(Text("a11y.today.start-builder.hint"))
+            .accessibilityAddTraits(.isButton)
         }
         .padding()
         .fullScreenCover(isPresented: $isBuilderPresented) {
@@ -93,11 +116,13 @@ struct RootView: View {
         }
     }
 
-    private var historyPlaceholder: some View {
+    // MARK: - History / Settings
+
+    private var historyTab: some View {
         HistoryView()
     }
 
-    private var settingsPlaceholder: some View {
+    private var settingsTab: some View {
         ContentUnavailableView(
             "Settings",
             systemImage: "gearshape",
