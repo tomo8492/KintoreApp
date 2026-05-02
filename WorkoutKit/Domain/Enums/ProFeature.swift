@@ -15,6 +15,7 @@ enum ProFeature: String, CaseIterable, Sendable {
     case sessionPhoto       // セッションへの写真・メモ添付
     case appIconVariants    // App Icon 変更
     case watchOSCompanion   // Apple Watch 連携(v1.1+)
+    case videoLink          // YouTube Deep Link(F-02 詳細画面)
 }
 
 extension ProFeature {
