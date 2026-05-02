@@ -19,6 +19,7 @@ struct SessionView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.appDependency) private var appDependency
 
     @State private var store: SessionStore?
     @State private var initError: String?
@@ -143,10 +144,17 @@ struct SessionView: View {
 
     @MainActor
     private func prepareStore() async {
+        // C3: AppDependency 経由で LiveActivityClient を SessionStore に DI する。
+        let liveActivity = appDependency.liveActivity
+
         // 1. SceneStorage に有効な復元情報があれば復元優先
         if let snapshot = SessionRestoreSnapshot.decoded(from: snapshotString) {
             do {
-                store = try SessionStore(modelContext: modelContext, snapshot: snapshot)
+                store = try SessionStore(
+                    modelContext: modelContext,
+                    snapshot: snapshot,
+                    liveActivity: liveActivity
+                )
                 Logger.session.info("SessionView restored from snapshot")
                 return
             } catch {
@@ -168,7 +176,8 @@ struct SessionView: View {
                 goal: goal,
                 output: output,
                 includesWarmup: includesWarmup,
-                includesCooldown: includesCooldown
+                includesCooldown: includesCooldown,
+                liveActivity: liveActivity
             )
         } catch let appError as AppError {
             initError = appError.errorDescription

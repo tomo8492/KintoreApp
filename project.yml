@@ -25,6 +25,8 @@ configs:
   Beta: release
   Release: release
 
+# プロジェクト直下の configFiles はアプリ本体のデフォルト。
+# Widget Extension は target 単位で別の xcconfig を割り当てる(下記 targets セクション)。
 configFiles:
   Debug: Config/Debug.xcconfig
   Beta: Config/Beta.xcconfig
@@ -55,6 +57,10 @@ targets:
           # prompts は ChatGPT 用ドキュメント。アプリ Bundle には含めない
           - "Resources/prompts/**"
           - "Resources/prompts"
+      # C3: Live Activity の ActivityAttributes は App と Widget の双方から
+      # 参照する必要があるため、Widget 拡張ディレクトリ配下の1ファイルだけを
+      # アプリ本体の sources にも個別追加する(モジュール境界を跨いだ型共有)。
+      - path: WorkoutKitLiveActivity/SessionLiveActivityAttributes.swift
     settings:
       base:
         # Entitlements (App Group)。CLAUDE.md §-1.5。
@@ -63,11 +69,16 @@ targets:
         # ビルド時に自動生成する。手書き plist は禁止(CLAUDE.md §-1.7)。
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        # C3: Live Activity を出すには Info.plist に NSSupportsLiveActivities が必須。
+        # GENERATE_INFOPLIST_FILE=YES 環境下では INFOPLIST_KEY_* で渡せる(Bool は YES/NO)。
+        INFOPLIST_KEY_NSSupportsLiveActivities: YES
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: "0.1.0"
         # 個人開発のため自動署名に任せる(P-1 で Team を入れたら手動切替検討)。
         CODE_SIGN_STYLE: Automatic
-    dependencies: []
+    dependencies:
+      # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
+      - target: WorkoutKitLiveActivity
     scheme:
       testTargets:
         - WorkoutKitTests
@@ -83,6 +94,47 @@ targets:
         profile: Release
         analyze: Debug
         archive: Release
+
+  # ------------------------------------------------------------------
+  # WorkoutKitLiveActivity (Widget Extension, C3)
+  # CLAUDE.md §1.1 F-03 / §-1.5 準拠。ActivityKit + WidgetKit ベースの
+  # Live Activity を提供する。アプリ本体に同梱で配布。
+  # ------------------------------------------------------------------
+  WorkoutKitLiveActivity:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: WorkoutKitLiveActivity
+        excludes:
+          - "**/.gitkeep"
+          # 拡張専用 entitlements は CODE_SIGN_ENTITLEMENTS で渡すだけにする
+          - "WorkoutKitLiveActivity.entitlements"
+      # Widget Extension は別 Bundle なので、アプリ本体の String Catalog を
+      # リソースとして個別に同梱する(NGリスト規約: 文字列は xcstrings 経由)。
+      - path: WorkoutKit/Resources/Localizable.xcstrings
+        buildPhase: resources
+        type: file
+    configFiles:
+      Debug: Config/LiveActivity.xcconfig
+      Beta: Config/LiveActivity.xcconfig
+      Release: Config/LiveActivity.xcconfig
+    settings:
+      base:
+        # Widget Extension 専用 entitlements。App と同じ App Group を共有(§-1.5)。
+        CODE_SIGN_ENTITLEMENTS: WorkoutKitLiveActivity/WorkoutKitLiveActivity.entitlements
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: "0.1.0"
+        CODE_SIGN_STYLE: Automatic
+    info:
+      # GENERATE_INFOPLIST_FILE=YES でも、Widget Extension に必須の
+      # NSExtension.NSExtensionPointIdentifier は info.properties で
+      # 直接指定する必要がある(xcconfig からは渡せない)。
+      path: WorkoutKitLiveActivity/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
 
   # ------------------------------------------------------------------
   # WorkoutKitTests (Swift Testing ユニット、@testable import 用にホスト連結)

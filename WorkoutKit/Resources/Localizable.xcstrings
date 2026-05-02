@@ -1,7 +1,40 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
-
+    "session.live.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workout in progress"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ワークアウト実行中"
+          }
+        }
+      }
+    },
+    "session.live.ready" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次のセットへ"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

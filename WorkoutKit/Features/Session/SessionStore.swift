@@ -57,6 +57,8 @@ final class SessionStore {
 
     private let modelContext: ModelContext
     let intervalTimer: IntervalTimer
+    /// C3: Live Activity への通知。nil ならテスト or 機能無効。
+    let liveActivity: LiveActivityClient?
     var intervalTask: Task<Void, Never>?
 
     // MARK: - Init (新規セッション)
@@ -67,10 +69,12 @@ final class SessionStore {
         output: GeneratorOutput,
         includesWarmup: Bool,
         includesCooldown: Bool,
-        intervalTimer: IntervalTimer = IntervalTimer()
+        intervalTimer: IntervalTimer = IntervalTimer(),
+        liveActivity: LiveActivityClient? = nil
     ) throws {
         self.modelContext = modelContext
         self.intervalTimer = intervalTimer
+        self.liveActivity = liveActivity
         self.goal = goal
         self.plan = .from(output: output)
 
@@ -85,6 +89,7 @@ final class SessionStore {
 
         try resolveExercises()
         Logger.session.info("SessionStore created: id=\(session.id, privacy: .public), planCount=\(self.plan.count)")
+        startLiveActivityIfPossible()
     }
 
     // MARK: - Init (復元)
@@ -92,10 +97,12 @@ final class SessionStore {
     init(
         modelContext: ModelContext,
         snapshot: SessionRestoreSnapshot,
-        intervalTimer: IntervalTimer = IntervalTimer()
+        intervalTimer: IntervalTimer = IntervalTimer(),
+        liveActivity: LiveActivityClient? = nil
     ) throws {
         self.modelContext = modelContext
         self.intervalTimer = intervalTimer
+        self.liveActivity = liveActivity
         self.sessionId = snapshot.sessionId
         self.plan = snapshot.plan
         self.currentItemIndex = snapshot.currentItemIndex
@@ -114,6 +121,7 @@ final class SessionStore {
 
         try resolveExercises()
         Logger.session.info("SessionStore restored: id=\(id, privacy: .public), completed=\(self.completedSets.count)")
+        startLiveActivityIfPossible()
     }
 
     // MARK: - Derived
@@ -189,6 +197,12 @@ final class SessionStore {
         if status == .running, restSeconds > 0 {
             startIntervalCountdown(seconds: restSeconds)
         }
+
+        // C3: セット完了 / 種目進行に合わせて Live Activity を更新する。
+        // finish() で end が呼ばれる場合は重複しないよう running 中のみ。
+        if status == .running {
+            updateLiveActivity()
+        }
     }
 
     /// 現在種目をスキップして次種目の最初のセットへ。残りセットは記録しない。
@@ -199,6 +213,7 @@ final class SessionStore {
         currentSetIndex = 0
         if currentItemIndex < plan.count - 1 {
             currentItemIndex += 1
+            updateLiveActivity()
         } else {
             finish()
         }
@@ -218,6 +233,7 @@ final class SessionStore {
         resolvedExercises[newExercise.slug] = newExercise
         currentSetIndex = 0
         Logger.session.info("replaceCurrentExercise: -> \(newExercise.slug, privacy: .public)")
+        updateLiveActivity()
     }
 
     /// 「やめる」。finishedAt を打って status を aborted に。完了済みセットは残す。
@@ -230,6 +246,7 @@ final class SessionStore {
         }
         status = .aborted
         Logger.session.info("abort: id=\(self.sessionId, privacy: .public)")
+        endLiveActivity()
     }
 
     /// 全種目完了で呼ばれる。完了状態にして finishedAt を打つ。
@@ -242,6 +259,7 @@ final class SessionStore {
         }
         status = .finished
         Logger.session.info("finish: id=\(self.sessionId, privacy: .public), completedSets=\(self.completedSets.count)")
+        endLiveActivity()
     }
 
     // MARK: - Cursor advancement

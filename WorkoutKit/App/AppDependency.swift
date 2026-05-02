@@ -9,14 +9,20 @@ import SwiftUI
 /// 軽量に値渡しできる形にしておく(ストアは内側で MainActor 隔離)。
 struct AppDependency {
     var proGate: ProFeatureGate
+    /// C3: Live Activity ラッパー。SessionStore に DI して使う。
+    var liveActivity: LiveActivityClient
 }
 
 // MARK: - SwiftUI Environment 拡張
 // `@Environment(\.appDependency)` で View から取り出せるようにする。
 
 private struct AppDependencyKey: EnvironmentKey {
-    /// プロトコル要件は nonisolated。ProFeatureGate.init() は nonisolated 化済み。
-    static let defaultValue: AppDependency = AppDependency(proGate: ProFeatureGate())
+    /// プロトコル要件は nonisolated。ProFeatureGate.init() / LiveActivityClient.init()
+    /// は nonisolated 化済み。
+    static let defaultValue: AppDependency = AppDependency(
+        proGate: ProFeatureGate(),
+        liveActivity: LiveActivityClient()
+    )
 }
 
 extension EnvironmentValues {

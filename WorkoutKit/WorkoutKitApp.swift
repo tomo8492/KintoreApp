@@ -13,7 +13,12 @@ struct WorkoutKitApp: App {
     /// ModelContainer はアプリ起動時に1回だけ作る。
     /// `.modelContainer(_:)` で全 View に共有する(Singleton 禁止規約に抵触しない、§4.1)。
     private let modelContainer: ModelContainer
-    @State private var dependency = AppDependency(proGate: ProFeatureGate())
+    /// C3: LiveActivityClient を AppDependency に DI する。
+    /// SessionView 構築時に `appDependency.liveActivity` を SessionStore に流し込む。
+    @State private var dependency = AppDependency(
+        proGate: ProFeatureGate(),
+        liveActivity: LiveActivityClient()
+    )
 
     init() {
         do {
