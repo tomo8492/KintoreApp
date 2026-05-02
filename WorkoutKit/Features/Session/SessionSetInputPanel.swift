@@ -55,8 +55,12 @@ struct SessionSetInputPanel: View {
             Text(item.section.titleKey)
                 .font(.caption.bold())
                 .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
             Text(displayName)
                 .font(.title3.bold())
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
             let setText = String(
                 localized: "session.input.current-set",
                 defaultValue: "セット %lld / %lld"
@@ -64,7 +68,10 @@ struct SessionSetInputPanel: View {
             Text(String(format: setText, store.currentSetIndex + 1, item.plannedSetCount))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
         }
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: - Generic stepper row
@@ -79,11 +86,19 @@ struct SessionSetInputPanel: View {
         HStack {
             Text(titleKey)
                 .frame(width: 80, alignment: .leading)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
             Spacer()
             Text(display(value.wrappedValue))
                 .font(.body.monospacedDigit())
-            Stepper("", value: value, in: range, step: step)
-                .labelsHidden()
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .accessibilityHidden(true)
+            Stepper(value: value, in: range, step: step) {
+                Text(titleKey)
+            }
+            .labelsHidden()
+            .accessibilityValue(Text(display(value.wrappedValue)))
         }
     }
 
@@ -93,40 +108,63 @@ struct SessionSetInputPanel: View {
         HStack {
             Text("session.input.weight")
                 .frame(width: 80, alignment: .leading)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
             Spacer()
             Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: .kilograms))
                 .font(.body.monospacedDigit())
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .accessibilityHidden(true)
             Stepper(
-                "",
                 value: $store.inputWeightKg,
                 in: 0...500,
                 step: 0.5
-            )
+            ) {
+                Text("session.input.weight")
+            }
             .labelsHidden()
+            .accessibilityValue(Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: .kilograms)))
         }
     }
 
     // MARK: - RPE row(任意、6.0〜10.0)
 
     private var rpeRow: some View {
-        HStack {
+        let rpeText: String = {
+            if let rpe = store.inputRpe {
+                return String(format: "%.1f", rpe)
+            }
+            return String(localized: "session.input.rpe.none", defaultValue: "未設定")
+        }()
+        return HStack {
             Text("session.input.rpe")
                 .frame(width: 80, alignment: .leading)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
             Spacer()
             if let rpe = store.inputRpe {
                 Text(String(format: "%.1f", rpe))
                     .font(.body.monospacedDigit())
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .accessibilityHidden(true)
             } else {
                 Text("session.input.rpe.none")
                     .font(.body)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .accessibilityHidden(true)
             }
             Stepper(
-                "",
                 onIncrement: { adjustRpe(by: 0.5) },
                 onDecrement: { adjustRpe(by: -0.5) }
-            )
+            ) {
+                Text("session.input.rpe")
+            }
             .labelsHidden()
+            .accessibilityValue(Text(rpeText))
         }
     }
 
@@ -142,6 +180,8 @@ struct SessionSetInputPanel: View {
             Button(action: onComplete) {
                 Text("session.action.complete-set")
                     .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 12)
                     .background(Color.accentColor)
@@ -149,21 +189,31 @@ struct SessionSetInputPanel: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(Text("session.action.complete-set"))
+            .accessibilityHint(Text("a11y.session.complete.hint"))
+            .accessibilityAddTraits(.isButton)
 
             HStack(spacing: 8) {
                 Button(action: onSkip) {
                     Text("session.action.skip")
                         .font(.subheadline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
                         .background(Color.gray.opacity(0.12))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(Text("session.action.skip"))
+                .accessibilityHint(Text("a11y.session.skip.hint"))
+                .accessibilityAddTraits(.isButton)
 
                 Button(role: .destructive, action: onAbort) {
                     Text("session.action.stop")
                         .font(.subheadline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 10)
                         .background(Color.red.opacity(0.10))
@@ -171,6 +221,9 @@ struct SessionSetInputPanel: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(Text("session.action.stop"))
+                .accessibilityHint(Text("a11y.session.stop.hint"))
+                .accessibilityAddTraits(.isButton)
             }
         }
     }

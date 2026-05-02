@@ -75,8 +75,11 @@ struct ChooseMode: View {
                     ProgressView().controlSize(.small)
                 } else {
                     Image(systemName: "lock.shield")
+                        .accessibilityHidden(true)
                 }
                 Text("builder.step.result.choose.action.regenerate")
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
             }
             .font(.headline)
             .frame(maxWidth: .infinity)
@@ -87,6 +90,9 @@ struct ChooseMode: View {
         }
         .buttonStyle(.plain)
         .disabled(store.isGenerating)
+        .accessibilityLabel(Text("builder.step.result.choose.action.regenerate"))
+        .accessibilityHint(Text("a11y.builder.choose.regenerate.hint"))
+        .accessibilityAddTraits(.isButton)
     }
 
     // MARK: - Data
@@ -122,14 +128,20 @@ private struct CandidateRow: View {
                     .font(.body)
                     .foregroundStyle(isLocked ? Color.accentColor : Color.secondary)
                     .frame(width: 24)
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(exercise.localizedName)
                         .font(.body)
                         .foregroundStyle(Color.primary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
                     Text(exercise.slug)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                        .accessibilityHidden(true)
                 }
 
                 Spacer()
@@ -139,6 +151,10 @@ private struct CandidateRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(Text(exercise.localizedName))
+        .accessibilityValue(Text(isLocked ? "a11y.builder.result.locked" : "a11y.builder.result.unlocked"))
+        .accessibilityHint(Text("a11y.builder.choose.toggle.hint"))
+        .accessibilityAddTraits(isLocked ? [.isButton, .isSelected] : .isButton)
     }
 }
 

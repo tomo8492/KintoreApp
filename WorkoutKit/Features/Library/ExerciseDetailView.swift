@@ -168,13 +168,16 @@ struct ExerciseDetailView: View {
     @ViewBuilder
     private var youtubeButton: some View {
         if let query = exercise.youtubeSearchQuery, !query.isEmpty {
+            let isUnlocked = dependency.proGate.check(.videoLink)
             Button {
                 handleYouTubeTap(query: query)
             } label: {
                 Label {
                     Text("Watch on YouTube")
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.85)
                 } icon: {
-                    Image(systemName: dependency.proGate.check(.videoLink)
+                    Image(systemName: isUnlocked
                           ? "play.rectangle.fill"
                           : "lock.fill")
                 }
@@ -182,6 +185,11 @@ struct ExerciseDetailView: View {
             }
             .buttonStyle(.borderedProminent)
             .tint(.red)
+            .accessibilityLabel(Text("Watch on YouTube"))
+            .accessibilityHint(Text(isUnlocked
+                                    ? "a11y.library.youtube.unlocked.hint"
+                                    : "a11y.library.youtube.locked.hint"))
+            .accessibilityAddTraits(.isButton)
         }
     }
 

@@ -41,10 +41,17 @@ private struct GoalRow: View {
                     .font(.title2)
                     .frame(width: 32)
                     .foregroundStyle(isSelected ? Color.accentColor : .secondary)
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(titleKey).font(.headline)
-                    Text(descriptionKey).font(.subheadline).foregroundStyle(.secondary)
+                    Text(titleKey)
+                        .font(.headline)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.8)
+                    Text(descriptionKey)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(3)
                 }
 
                 Spacer()
@@ -52,6 +59,7 @@ private struct GoalRow: View {
                 if isSelected {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundStyle(Color.accentColor)
+                        .accessibilityHidden(true)
                 }
             }
             .padding()
@@ -62,6 +70,10 @@ private struct GoalRow: View {
             .padding(.horizontal)
         }
         .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text(titleKey))
+        .accessibilityHint(Text(descriptionKey))
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
     private var titleKey: LocalizedStringKey {

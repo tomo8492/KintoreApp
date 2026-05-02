@@ -41,8 +41,13 @@ struct DataIOView: View {
                     runExport()
                 } label: {
                     Label("data-io.export.csv", systemImage: "square.and.arrow.up")
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
                 }
                 .disabled(!dependency.proGate.check(.csvExport) || store.isWorking)
+                .accessibilityLabel(Text("data-io.export.csv"))
+                .accessibilityHint(Text("a11y.data-io.export.hint"))
+                .accessibilityAddTraits(.isButton)
             } header: {
                 Text("data-io.section.export")
             }
@@ -100,12 +105,19 @@ struct DataIOView: View {
         } label: {
             VStack(alignment: .leading, spacing: 2) {
                 Label(title, systemImage: pickerKind.systemImage)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
                 Text(subtitle)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(3)
             }
         }
         .disabled(store.isWorking)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text(title))
+        .accessibilityHint(Text("a11y.data-io.import.hint"))
+        .accessibilityAddTraits(.isButton)
     }
 
     // MARK: - Handlers
@@ -141,15 +153,11 @@ struct DataIOView: View {
 #Preview("Free user") {
     NavigationStack {
         DataIOView()
-            .environment(\.appDependency, AppDependency(proGate: ProFeatureGate()))
     }
 }
 
 #Preview("Pro user") {
-    let gate = ProFeatureGate()
-    gate._setProForPreview(true)
-    return NavigationStack {
+    NavigationStack {
         DataIOView()
-            .environment(\.appDependency, AppDependency(proGate: gate))
     }
 }

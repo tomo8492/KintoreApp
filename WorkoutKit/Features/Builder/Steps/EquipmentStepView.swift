@@ -56,10 +56,13 @@ private struct EquipmentChip: View {
                 Image(systemName: iconName)
                     .font(.title2)
                     .foregroundStyle(isSelected ? Color.white : Color.accentColor)
+                    .accessibilityHidden(true)
                 Text(titleKey)
                     .font(.subheadline)
                     .foregroundStyle(isSelected ? Color.white : Color.primary)
                     .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
             }
             .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
@@ -69,6 +72,9 @@ private struct EquipmentChip: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(Text(titleKey))
+        .accessibilityHint(Text("a11y.builder.equipment.toggle.hint"))
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
     /// LocalizedStringKey に文字列補間を渡すと format 引数化されてしまうため、

@@ -97,21 +97,27 @@ struct SessionView: View {
     private func progressHeader(store: SessionStore) -> some View {
         let completed = store.completedSets.count
         let total = store.plan.reduce(0) { $0 + $1.plannedSetCount }
+        let progressLabel = String(
+            localized: "session.header.progress",
+            defaultValue: "完了セット %lld / %lld"
+        )
         return VStack(alignment: .leading, spacing: 4) {
             Text("session.header.goal \(store.goal.rawValue)")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
             ProgressView(value: total > 0 ? Double(completed) / Double(total) : 0)
                 .tint(.accentColor)
-            let label = String(
-                localized: "session.header.progress",
-                defaultValue: "完了セット %lld / %lld"
-            )
-            Text(String(format: label, completed, total))
+                .accessibilityLabel(Text("a11y.session.progress.bar"))
+                .accessibilityValue(Text(String(format: progressLabel, completed, total)))
+            Text(String(format: progressLabel, completed, total))
                 .font(.caption.monospacedDigit())
                 .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
         }
         .padding(.horizontal)
+        .accessibilityElement(children: .contain)
     }
 
     // MARK: - Plan list
@@ -198,8 +204,11 @@ private struct FinishedView: View {
             Image(systemName: isAborted ? "stop.circle.fill" : "checkmark.seal.fill")
                 .font(.system(size: 72))
                 .foregroundStyle(isAborted ? Color.gray : Color.accentColor)
+                .accessibilityHidden(true)
             Text(isAborted ? "session.finished.aborted" : "session.finished.title")
                 .font(.title2.bold())
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.8)
             Text(isAborted ? "session.finished.aborted.subtitle" : "session.finished.subtitle")
                 .font(.body)
                 .foregroundStyle(.secondary)
@@ -207,6 +216,8 @@ private struct FinishedView: View {
             Button(action: onClose) {
                 Text("common.close")
                     .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .padding(.horizontal, 28)
                     .padding(.vertical, 14)
                     .background(Color.accentColor)
@@ -214,6 +225,8 @@ private struct FinishedView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(Text("common.close"))
+            .accessibilityAddTraits(.isButton)
         }
         .padding()
     }

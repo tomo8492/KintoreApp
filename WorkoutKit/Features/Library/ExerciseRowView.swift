@@ -18,11 +18,14 @@ struct ExerciseRowView: View {
                 Text(displayName)
                     .font(.body.weight(.medium))
                     .lineLimit(2)
+                    .minimumScaleFactor(0.85)
 
                 HStack(spacing: 6) {
                     Text(LibraryDisplay.muscleName(exercise.primaryMuscle))
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
 
                     if !exercise.equipment.isEmpty {
                         equipmentIcons
@@ -31,6 +34,9 @@ struct ExerciseRowView: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text(displayName))
+        .accessibilityValue(Text(LibraryDisplay.muscleName(exercise.primaryMuscle)))
     }
 
     private var displayName: String {

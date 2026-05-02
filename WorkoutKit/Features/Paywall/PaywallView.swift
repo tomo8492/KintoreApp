@@ -74,23 +74,33 @@ struct PaywallView: View {
                 Task { await runPurchase() }
             } label: {
                 Text(purchaseLabel)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 6)
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .disabled(product == nil || status == .purchasing || status == .restoring)
+            .accessibilityLabel(Text(purchaseLabel))
+            .accessibilityHint(Text("a11y.paywall.purchase.hint"))
+            .accessibilityAddTraits(.isButton)
 
             Button {
                 Task { await runRestore() }
             } label: {
                 Text(restoreLabel)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 4)
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
             .disabled(status == .purchasing || status == .restoring)
+            .accessibilityLabel(Text(restoreLabel))
+            .accessibilityHint(Text("a11y.paywall.restore.hint"))
+            .accessibilityAddTraits(.isButton)
         }
     }
 

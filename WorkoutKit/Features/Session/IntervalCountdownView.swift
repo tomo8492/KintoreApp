@@ -12,20 +12,26 @@ struct IntervalCountdownView: View {
 
     private var isWarning: Bool { secondsRemaining <= 3 }
 
+    /// F3: Reduce Motion 中はカウントダウン数字の transition / animation を抑制する。
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
         VStack(spacing: 6) {
             Text("session.interval.label")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
                 .textCase(.uppercase)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
 
             Text(formatted)
                 .font(.system(size: 56, weight: .bold, design: .rounded))
                 .monospacedDigit()
                 .foregroundStyle(isWarning ? Color.orange : Color.accentColor)
-                .contentTransition(.numericText(countsDown: true))
-                .animation(.easeOut(duration: 0.18), value: secondsRemaining)
-                .accessibilityLabel(accessibilityLabel)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+                .contentTransition(reduceMotion ? .identity : .numericText(countsDown: true))
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.18), value: secondsRemaining)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 18)
@@ -34,6 +40,9 @@ struct IntervalCountdownView: View {
                 .fill(.regularMaterial)
         )
         .padding(.horizontal)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityAddTraits(.updatesFrequently)
     }
 
     /// `MM:SS` 形式。30 秒以上は短縮表記が伝わりにくいので常に分:秒で出す。

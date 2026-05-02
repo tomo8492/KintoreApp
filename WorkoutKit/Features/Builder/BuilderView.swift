@@ -130,6 +130,8 @@ struct BuilderView: View {
                     }
                     Text(primaryButtonTitleKey)
                         .font(.headline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
@@ -142,7 +144,17 @@ struct BuilderView: View {
             .padding(.horizontal)
             .padding(.vertical, 12)
             .background(.regularMaterial)
+            .accessibilityLabel(Text(primaryButtonTitleKey))
+            .accessibilityHint(Text(primaryButtonHintKey))
+            .accessibilityAddTraits(.isButton)
         }
+    }
+
+    /// F3: VoiceOver で「次へ」「ワークアウトを生成」ボタンが何をするか説明する。
+    private var primaryButtonHintKey: LocalizedStringKey {
+        store.currentStep == .time
+            ? "a11y.builder.generate.hint"
+            : "a11y.builder.next.hint"
     }
 
     private var primaryButtonTitleKey: LocalizedStringKey {
@@ -189,10 +201,23 @@ private struct StepIndicatorRow: View {
         HStack(spacing: 12) {
             Image(systemName: iconName)
                 .foregroundStyle(color)
+                .accessibilityHidden(true)
             Text(step.titleKey)
                 .foregroundStyle(currentStep == step ? Color.primary : Color.secondary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
             Spacer()
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text(step.titleKey))
+        .accessibilityValue(Text(stepStateKey))
+    }
+
+    /// F3: VoiceOver に「完了済み / 進行中 / 未着手」を伝える。
+    private var stepStateKey: LocalizedStringKey {
+        if isCompleted { return "a11y.builder.step.completed" }
+        if step == currentStep { return "a11y.builder.step.current" }
+        return "a11y.builder.step.upcoming"
     }
 
     private var isCompleted: Bool {

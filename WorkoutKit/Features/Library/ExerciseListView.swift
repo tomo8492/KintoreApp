@@ -166,6 +166,11 @@ struct ExerciseListView: View {
                       ? "line.3.horizontal.decrease.circle.fill"
                       : "line.3.horizontal.decrease.circle")
             }
+            .accessibilityLabel(Text("a11y.library.filters"))
+            .accessibilityHint(Text("a11y.library.filters.hint"))
+            .accessibilityValue(Text(hasAnyFilter
+                                     ? "a11y.library.filters.active"
+                                     : "a11y.library.filters.none"))
         }
     }
 

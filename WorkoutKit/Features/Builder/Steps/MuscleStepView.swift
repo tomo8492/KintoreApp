@@ -96,11 +96,14 @@ private struct MuscleChip: View {
                 Text(titleKey)
                     .font(.subheadline)
                     .foregroundStyle(isSelected ? Color.white : Color.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
                 Spacer()
                 if isSelected {
                     Image(systemName: "checkmark")
                         .font(.caption)
                         .foregroundStyle(.white)
+                        .accessibilityHidden(true)
                 }
             }
             .padding(.horizontal, 12)
@@ -112,6 +115,9 @@ private struct MuscleChip: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(Text(titleKey))
+        .accessibilityHint(Text("a11y.builder.muscle.toggle.hint"))
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
     /// LocalizedStringKey は文字列補間を format 引数化するため、

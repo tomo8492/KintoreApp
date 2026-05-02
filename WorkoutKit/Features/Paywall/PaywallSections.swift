@@ -79,11 +79,16 @@ private struct PaywallFeatureRow: View {
                 Text(feature.paywallTitle)
                     .font(.body)
                     .fontWeight(isHighlighted ? .semibold : .regular)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
                 Text(feature.paywallDescription)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(3)
             }
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(isHighlighted ? [.isStaticText, .isHeader] : .isStaticText)
     }
 }
 
@@ -105,12 +110,16 @@ struct PaywallPriceSection: View {
                 if let product {
                     Text(product.displayPrice)
                         .font(.system(size: 36, weight: .bold, design: .rounded))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
                     Text(String(
                         localized: "paywall.price.one_time",
                         defaultValue: "買い切り"
                     ))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
                 } else {
                     HStack(spacing: 8) {
                         ProgressView()

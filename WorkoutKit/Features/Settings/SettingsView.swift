@@ -88,16 +88,27 @@ struct SettingsView: View {
         Section {
             HStack {
                 Label("settings.purchases.status", systemImage: "checkmark.seal")
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
                 Spacer()
                 Text(dependency.proGate.isPro ? "settings.purchases.status.pro" : "settings.purchases.status.free")
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(Text("settings.purchases.status"))
+            .accessibilityValue(Text(dependency.proGate.isPro
+                                     ? "settings.purchases.status.pro"
+                                     : "settings.purchases.status.free"))
 
             Button {
                 Task { await runRestore() }
             } label: {
                 HStack {
                     Label("settings.purchases.restore", systemImage: "arrow.clockwise")
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.85)
                     Spacer()
                     if restoreState.isRestoring {
                         ProgressView()
@@ -105,6 +116,9 @@ struct SettingsView: View {
                 }
             }
             .disabled(restoreState.isRestoring)
+            .accessibilityLabel(Text("settings.purchases.restore"))
+            .accessibilityHint(Text("a11y.settings.restore.hint"))
+            .accessibilityAddTraits(.isButton)
         } header: {
             Text("settings.section.purchases")
         } footer: {

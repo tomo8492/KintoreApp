@@ -50,8 +50,12 @@ struct TimeStepView: View {
             VStack(spacing: 2) {
                 Text("\(minutes)")
                     .font(.title3.bold())
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
                 Text("builder.step.time.unit.minutes")
                     .font(.caption)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
             .foregroundStyle(isSelected ? Color.white : Color.primary)
             .frame(maxWidth: .infinity)
@@ -62,6 +66,9 @@ struct TimeStepView: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text("a11y.builder.time.chip \(minutes)"))
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
     private var togglesSection: some View {

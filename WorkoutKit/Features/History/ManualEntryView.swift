@@ -143,12 +143,14 @@ struct ManualEntryView: View {
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Cancel") { dismiss() }
+                .accessibilityHint(Text("a11y.manual-entry.cancel.hint"))
         }
         ToolbarItem(placement: .confirmationAction) {
             Button("manual-entry.save") {
                 handleSave()
             }
             .disabled(!store.canSave)
+            .accessibilityHint(Text("a11y.manual-entry.save.hint"))
         }
     }
 

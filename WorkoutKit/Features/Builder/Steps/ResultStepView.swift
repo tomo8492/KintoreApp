@@ -105,22 +105,30 @@ struct ResultStepView: View {
                 .font(.headline)
             VStack(spacing: 0) {
                 ForEach(Array(slugs.enumerated()), id: \.offset) { index, slug in
+                    let isLocked = store.lockedSlugs.contains(slug)
                     HStack(spacing: 12) {
                         Text("\(index + 1)")
                             .font(.caption.bold())
                             .foregroundStyle(.secondary)
                             .frame(width: 24)
+                            .accessibilityHidden(true)
                         Text(displayName(for: slug))
                             .font(.body)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
                         Spacer()
-                        if store.lockedSlugs.contains(slug) {
+                        if isLocked {
                             Image(systemName: "lock.fill")
                                 .font(.caption)
                                 .foregroundStyle(Color.accentColor)
+                                .accessibilityHidden(true)
                         }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(Text("a11y.builder.result.row \(index + 1) \(displayName(for: slug))"))
+                    .accessibilityValue(Text(isLocked ? "a11y.builder.result.locked" : "a11y.builder.result.unlocked"))
 
                     if index < slugs.count - 1 {
                         Divider().padding(.leading, 48)
@@ -151,6 +159,8 @@ struct ResultStepView: View {
             Button(action: onStartSession) {
                 Text("builder.step.result.action.start")
                     .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .background(Color.accentColor)
@@ -159,6 +169,9 @@ struct ResultStepView: View {
             }
             .buttonStyle(.plain)
             .disabled(store.isGenerating)
+            .accessibilityLabel(Text("builder.step.result.action.start"))
+            .accessibilityHint(Text("a11y.builder.result.start.hint"))
+            .accessibilityAddTraits(.isButton)
         }
         .padding(.top, 8)
     }

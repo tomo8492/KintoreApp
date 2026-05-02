@@ -1,5 +1,6 @@
 {
   "sourceLanguage": "ja",
+  "version": "1.0",
   "strings": {
     "error.data.corruption": {
       "comment": "AppError.dataCorruption — SwiftData の整合性破壊時にユーザーへ提示する汎用文。",
@@ -2424,7 +2425,669 @@
           }
         }
       }
+    },
+    "a11y.builder.equipment.toggle.hint": {
+      "comment": "F3 a11y. EquipmentChip の VoiceOver ヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double-tap to toggle this equipment."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダブルタップでこの器具の選択を切り替えます"
+          }
+        }
+      }
+    },
+    "a11y.builder.generate.hint": {
+      "comment": "F3 a11y. Builder bottom bar — generate ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generates a workout from your selections."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択内容からワークアウトを生成します"
+          }
+        }
+      }
+    },
+    "a11y.builder.muscle.toggle.hint": {
+      "comment": "F3 a11y. MuscleChip のヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double-tap to toggle this muscle group."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダブルタップでこの部位の選択を切り替えます"
+          }
+        }
+      }
+    },
+    "a11y.builder.next.hint": {
+      "comment": "F3 a11y. Builder bottom bar — next ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advances to the next step."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のステップに進みます"
+          }
+        }
+      }
+    },
+    "a11y.builder.result.locked": {
+      "comment": "F3 a11y. ResultStepView の section row — ロック状態。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locked"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロック中"
+          }
+        }
+      }
+    },
+    "a11y.builder.result.row %lld %@": {
+      "comment": "F3 a11y. ResultStepView の section row label。%1: index, %2: 種目名。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item %1$lld, %2$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld 番目、%2$@"
+          }
+        }
+      }
+    },
+    "a11y.builder.result.start.hint": {
+      "comment": "F3 a11y. ResultStepView の Start Session ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Begins the workout session."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを開始します"
+          }
+        }
+      }
+    },
+    "a11y.builder.result.unlocked": {
+      "comment": "F3 a11y. ResultStepView の section row — 未ロック状態。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlocked"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未ロック"
+          }
+        }
+      }
+    },
+    "a11y.builder.step.completed": {
+      "comment": "F3 a11y. iPad sidebar の StepIndicatorRow — 完了済み。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了済み"
+          }
+        }
+      }
+    },
+    "a11y.builder.step.current": {
+      "comment": "F3 a11y. iPad sidebar の StepIndicatorRow — 進行中。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current step"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のステップ"
+          }
+        }
+      }
+    },
+    "a11y.builder.step.upcoming": {
+      "comment": "F3 a11y. iPad sidebar の StepIndicatorRow — 未着手。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未着手"
+          }
+        }
+      }
+    },
+    "a11y.builder.time.chip %lld": {
+      "comment": "F3 a11y. TimeStepView の分数チップ。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld minutes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 分"
+          }
+        }
+      }
+    },
+    "a11y.history.manual-entry.hint": {
+      "comment": "F3 a11y. HistoryView toolbar — 手動ログ追加のヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logs a workout you completed outside the app."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリ外で行った種目を手動で記録します"
+          }
+        }
+      }
+    },
+    "a11y.history.show-all.hint": {
+      "comment": "F3 a11y. HistoryView の Show all ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro feature — unlocks history older than 30 days."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能 — 31日以前の履歴を表示します"
+          }
+        }
+      }
+    },
+    "a11y.library.filters": {
+      "comment": "F3 a11y. ExerciseListView のフィルタメニュー label。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filters"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィルタ"
+          }
+        }
+      }
+    },
+    "a11y.library.filters.active": {
+      "comment": "F3 a11y. フィルタ適用中の value。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filters active"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィルタ適用中"
+          }
+        }
+      }
+    },
+    "a11y.library.filters.hint": {
+      "comment": "F3 a11y. フィルタメニュー hint。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens type / muscle / equipment filters."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目タイプ・部位・器具のフィルタを開きます"
+          }
+        }
+      }
+    },
+    "a11y.library.filters.none": {
+      "comment": "F3 a11y. フィルタ未適用時の value。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No filters"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィルタなし"
+          }
+        }
+      }
+    },
+    "a11y.library.youtube.locked.hint": {
+      "comment": "F3 a11y. ExerciseDetailView の YouTube ボタン (Pro 未解放) ヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro feature — opens the paywall."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能 — Paywall を開きます"
+          }
+        }
+      }
+    },
+    "a11y.library.youtube.unlocked.hint": {
+      "comment": "F3 a11y. ExerciseDetailView の YouTube ボタン (Pro 解放済) ヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens the YouTube app to search for this exercise."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube アプリで種目を検索します"
+          }
+        }
+      }
+    },
+    "a11y.paywall.purchase.hint": {
+      "comment": "F3 a11y. PaywallView の購入ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starts the App Store purchase flow."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store の購入フローを開始します"
+          }
+        }
+      }
+    },
+    "a11y.paywall.restore.hint": {
+      "comment": "F3 a11y. PaywallView の復元ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restores any prior Pro purchase from your Apple ID."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple ID から過去の Pro 購入を復元します"
+          }
+        }
+      }
+    },
+    "a11y.session.complete.hint": {
+      "comment": "F3 a11y. SessionSetInputPanel の完了ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Records the current set and starts the rest interval."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のセットを記録し、休憩タイマーを開始します"
+          }
+        }
+      }
+    },
+    "a11y.session.progress.bar": {
+      "comment": "F3 a11y. SessionView の ProgressView label。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Session progress"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションの進捗"
+          }
+        }
+      }
+    },
+    "a11y.session.row.completed": {
+      "comment": "F3 a11y. SessionExerciseRow — 完了済み。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了済み"
+          }
+        }
+      }
+    },
+    "a11y.session.row.current": {
+      "comment": "F3 a11y. SessionExerciseRow — 現在実施中。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在実施中"
+          }
+        }
+      }
+    },
+    "a11y.session.row.upcoming": {
+      "comment": "F3 a11y. SessionExerciseRow — 未着手。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未着手"
+          }
+        }
+      }
+    },
+    "a11y.session.skip.hint": {
+      "comment": "F3 a11y. SessionSetInputPanel の Skip ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skips the rest of this exercise."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この種目の残りセットをスキップします"
+          }
+        }
+      }
+    },
+    "a11y.session.stop.hint": {
+      "comment": "F3 a11y. SessionSetInputPanel の Stop (abort) ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aborts the workout. Progress is saved as incomplete."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを中断します。記録は未完了として保存されます"
+          }
+        }
+      }
+    },
+    "a11y.settings.restore.hint": {
+      "comment": "F3 a11y. SettingsView の Restore Purchase 行のヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Re-checks your Apple ID for prior Pro purchases."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple ID の購入履歴から Pro を復元します"
+          }
+        }
+      }
+    },
+    "a11y.templates.add.hint": {
+      "comment": "F3 a11y. TemplatesView の追加ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro feature — creates a new custom template."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能 — 新しいテンプレートを作成します"
+          }
+        }
+      }
+    },
+    "a11y.today.start-builder.hint": {
+      "comment": "F3 a11y. RootView の Builder 起動ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens the workout builder wizard."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト作成ウィザードを開きます"
+          }
+        }
+      }
+    },
+    "a11y.builder.choose.regenerate.hint": {
+      "comment": "F3 a11y. ChooseMode の再生成ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regenerates the workout while keeping locked exercises."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロック済みの種目を残してワークアウトを再生成します"
+          }
+        }
+      }
+    },
+    "a11y.builder.choose.toggle.hint": {
+      "comment": "F3 a11y. ChooseMode の候補行のヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double-tap to lock or unlock this exercise."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダブルタップで種目のロックを切り替えます"
+          }
+        }
+      }
+    },
+    "a11y.builder.shuffle.hint": {
+      "comment": "F3 a11y. ShuffleMode の再シャッフルボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reshuffles the workout with a new random pick."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ランダムにワークアウトを再生成します"
+          }
+        }
+      }
+    },
+    "a11y.data-io.export.hint": {
+      "comment": "F3 a11y. DataIOView の Export ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro feature — exports your history as a CSV file."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能 — 履歴を CSV ファイルとして書き出します"
+          }
+        }
+      }
+    },
+    "a11y.data-io.import.hint": {
+      "comment": "F3 a11y. DataIOView の Import ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro feature — imports exercises from a file."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能 — ファイルから種目を取り込みます"
+          }
+        }
+      }
+    },
+    "a11y.manual-entry.cancel.hint": {
+      "comment": "F3 a11y. ManualEntryView toolbar の Cancel ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discards the manual entry and closes the sheet."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "入力内容を破棄してシートを閉じます"
+          }
+        }
+      }
+    },
+    "a11y.manual-entry.save.hint": {
+      "comment": "F3 a11y. ManualEntryView toolbar の Save ボタンのヒント。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saves the entered workout to history."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "入力したワークアウトを履歴に保存します"
+          }
+        }
+      }
     }
-  },
-  "version": "1.0"
+  }
 }

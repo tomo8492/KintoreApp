@@ -22,8 +22,11 @@ struct ShuffleMode: View {
                     ProgressView().controlSize(.small)
                 } else {
                     Image(systemName: "shuffle")
+                        .accessibilityHidden(true)
                 }
                 Text("builder.step.result.action.shuffle")
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
             }
             .font(.headline)
             .frame(maxWidth: .infinity)
@@ -34,6 +37,9 @@ struct ShuffleMode: View {
         }
         .buttonStyle(.plain)
         .disabled(store.isGenerating)
+        .accessibilityLabel(Text("builder.step.result.action.shuffle"))
+        .accessibilityHint(Text("a11y.builder.shuffle.hint"))
+        .accessibilityAddTraits(.isButton)
     }
 
     private func regenerate() {

@@ -20,9 +20,13 @@ struct SessionExerciseRow: View {
                 Text(displayName)
                     .font(.body.weight(isCurrent ? .semibold : .regular))
                     .foregroundStyle(isCompleted ? Color.secondary : Color.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
                 Text(progressText)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
             }
             Spacer()
         }
@@ -34,6 +38,16 @@ struct SessionExerciseRow: View {
                 .strokeBorder(isCurrent ? Color.accentColor : Color.clear, lineWidth: 2)
         )
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text(displayName))
+        .accessibilityValue(Text("\(progressText) \(statusKey)"))
+    }
+
+    /// F3: VoiceOver で「現在実施中」「完了済み」「未着手」を伝える。
+    private var statusKey: String {
+        if isCompleted { return String(localized: "a11y.session.row.completed", defaultValue: "完了済み") }
+        if isCurrent   { return String(localized: "a11y.session.row.current",   defaultValue: "現在実施中") }
+        return String(localized: "a11y.session.row.upcoming", defaultValue: "未着手")
     }
 
     // MARK: - Subviews
@@ -42,6 +56,7 @@ struct SessionExerciseRow: View {
         Image(systemName: iconName)
             .foregroundStyle(iconColor)
             .font(.title3)
+            .accessibilityHidden(true)
     }
 
     private var iconName: String {

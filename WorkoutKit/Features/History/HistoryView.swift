@@ -143,6 +143,8 @@ struct HistoryView: View {
                     } label: {
                         Label("history.action.manual-entry", systemImage: "square.and.pencil")
                     }
+                    .accessibilityLabel(Text("history.action.manual-entry"))
+                    .accessibilityHint(Text("a11y.history.manual-entry.hint"))
                 }
             }
             .navigationDestination(for: WorkoutSession.self) { session in
@@ -209,7 +211,12 @@ struct HistoryView: View {
         } label: {
             Label("history.action.show-all", systemImage: "lock.fill")
                 .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
         }
+        .accessibilityLabel(Text("history.action.show-all"))
+        .accessibilityHint(Text("a11y.history.show-all.hint"))
+        .accessibilityAddTraits(.isButton)
     }
 
     @ViewBuilder

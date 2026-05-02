@@ -80,7 +80,12 @@ struct HistoryListView: View {
                     } label: {
                         Label("history.action.show-all", systemImage: "lock.fill")
                             .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.85)
                     }
+                    .accessibilityLabel(Text("history.action.show-all"))
+                    .accessibilityHint(Text("a11y.history.show-all.hint"))
+                    .accessibilityAddTraits(.isButton)
                 }
             }
         }
@@ -140,9 +145,13 @@ private struct HistoryListRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(timeOfDay)
                     .font(.body.weight(.semibold).monospacedDigit())
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                 Text(session.goal.rawValue)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
             }
             .frame(width: 76, alignment: .leading)
 
@@ -160,18 +169,26 @@ private struct HistoryListRow: View {
                     }
                 }
                 .font(.subheadline.monospacedDigit())
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
 
                 Text(setsLabel)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
             }
             Spacer(minLength: 0)
             Image(systemName: "chevron.right")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.tertiary)
+                .accessibilityHidden(true)
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text("\(timeOfDay), \(session.goal.rawValue)"))
+        .accessibilityValue(Text("\(durationLabel), \(volumeLabel), \(setsLabel)"))
     }
 
     private var timeOfDay: String {

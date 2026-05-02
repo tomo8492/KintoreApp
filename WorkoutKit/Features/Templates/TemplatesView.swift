@@ -55,6 +55,8 @@ struct TemplatesView: View {
                     }
                 }
                 .accessibilityIdentifier("templates.addButton")
+                .accessibilityLabel(Text("templates.add"))
+                .accessibilityHint(Text("a11y.templates.add.hint"))
             }
         }
         .sheet(item: $paywallFeature) { feature in
@@ -226,15 +228,21 @@ private struct TemplateRow: View {
             Image(systemName: template.isUserCreated ? "person.crop.square" : "square.stack.3d.up")
                 .foregroundStyle(.tint)
                 .frame(width: 28)
+                .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text(TemplateNaming.localizedDisplayName(for: template))
                     .font(.body)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
                 Text(TemplateNaming.subtitle(for: template))
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
             }
         }
         .padding(.vertical, 2)
+        .accessibilityElement(children: .combine)
     }
 }
 
