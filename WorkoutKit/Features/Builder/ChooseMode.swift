@@ -12,6 +12,7 @@
 
 import SwiftUI
 import SwiftData
+import OSLog
 
 struct ChooseMode: View {
     @Bindable var store: BuilderStore
@@ -104,7 +105,8 @@ struct ChooseMode: View {
         do {
             return try WorkoutGenerator.candidatePool(store.input, in: modelContext)
         } catch {
-            Logger.generator.warning("ChooseMode candidatePool failed: \(error.localizedDescription, privacy: .public)")
+            let message = error.localizedDescription
+            Logger.generator.warning("ChooseMode candidatePool failed: \(message, privacy: .public)")
             return []
         }
     }

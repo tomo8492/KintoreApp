@@ -15,8 +15,9 @@ struct WorkoutGeneratorTests {
 
     /// in-memory な ModelContainer を SchemaV1 で作る。各テストで独立。
     private static func makeContext() throws -> ModelContext {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: SchemaV1.self, configurations: config)
+        let schema = Schema(versionedSchema: SchemaV1.self)
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: schema, configurations: config)
         return ModelContext(container)
     }
 

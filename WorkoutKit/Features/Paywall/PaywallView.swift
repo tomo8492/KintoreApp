@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import OSLog
 
 // MARK: - PaywallView
 
@@ -162,7 +163,8 @@ struct PaywallView: View {
             let result = try await dependency.storeKitClient.purchase()
             handlePurchaseResult(result)
         } catch {
-            Logger.store.error("PaywallView purchase error: \(error.localizedDescription, privacy: .public)")
+            let message = error.localizedDescription
+            Logger.store.error("PaywallView purchase error: \(message, privacy: .public)")
             status = .error(message: String(
                 localized: "paywall.purchase.failed",
                 defaultValue: "購入処理に失敗しました。時間をおいて再試行してください。"
@@ -198,7 +200,8 @@ struct PaywallView: View {
         do {
             try await dependency.storeKitClient.restorePurchases()
         } catch {
-            Logger.store.error("PaywallView restore error: \(error.localizedDescription, privacy: .public)")
+            let message = error.localizedDescription
+            Logger.store.error("PaywallView restore error: \(message, privacy: .public)")
             status = .error(message: String(
                 localized: "paywall.restore.failed",
                 defaultValue: "復元に失敗しました。Apple ID に接続できているか確認してください。"

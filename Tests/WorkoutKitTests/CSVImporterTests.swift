@@ -12,11 +12,8 @@ struct CSVImporterTests {
     // MARK: - Sample loader
 
     private static func loadSample() throws -> Data {
-        // Bundle.module は SwiftPM テストターゲットでのみ動く。Xcode の場合は file パスから読む。
-        if let url = Bundle.module.url(forResource: "sample-exercises", withExtension: "csv") {
-            return try Data(contentsOf: url)
-        }
-        // フォールバック: ファイルパスから直接読む(Xcode 直接実行 / SPM 未設定時)。
+        // Xcode の xcodegen 生成ターゲットには Bundle.module が無いので
+        // #filePath から直接読む(SwiftPM とは別経路)。
         let here = URL(fileURLWithPath: #filePath)
             .deletingLastPathComponent()
             .appendingPathComponent("Resources/sample-exercises.csv")

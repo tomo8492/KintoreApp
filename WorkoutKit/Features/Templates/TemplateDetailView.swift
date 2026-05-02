@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftData
+import OSLog
 
 struct TemplateDetailView: View {
     let template: Template
@@ -104,7 +105,8 @@ struct TemplateDetailView: View {
         do {
             fetched = try modelContext.fetch(descriptor)
         } catch {
-            Logger.data.error("TemplateDetailView fetch failed: \(error.localizedDescription, privacy: .public)")
+            let message = error.localizedDescription
+            Logger.data.error("TemplateDetailView fetch failed: \(message, privacy: .public)")
             fetched = []
         }
         let bySlug = Dictionary(uniqueKeysWithValues: fetched.map { ($0.slug, $0) })

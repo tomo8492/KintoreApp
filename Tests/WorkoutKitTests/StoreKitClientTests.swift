@@ -121,15 +121,15 @@ struct StoreKitClientTests {
         #expect(isProBefore == true)
 
         // 直近の購入トランザクションを払い戻す。
-        // SKTestSession.allTransactions() は StoreKit.Transaction を返す。
-        let allTransactions = session.allTransactions()
-        guard let target = allTransactions.first(where: {
-            $0.productID == StoreKitClient.proProductID
-        }) else {
+        // SKTestSession.allTransactions() は [SKTestTransaction] を返す。
+        let allTransactions: [SKTestTransaction] = session.allTransactions()
+        let proProductID = StoreKitClient.proProductID
+        let matched = allTransactions.filter { $0.productIdentifier == proProductID }
+        guard let target = matched.first else {
             Issue.record("購入後のトランザクションが見つからない")
             return
         }
-        try session.refundTransaction(identifier: UInt(target.id))
+        try session.refundTransaction(identifier: target.identifier)
 
         // restore で currentEntitlements を再評価させる(Transaction.updates の順序に頼らない)。
         try await client.restorePurchases()

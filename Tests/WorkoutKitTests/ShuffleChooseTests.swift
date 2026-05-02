@@ -15,8 +15,9 @@ struct ShuffleChooseTests {
     // MARK: - Helpers (WorkoutGeneratorTests と同形)
 
     private static func makeContext() throws -> ModelContext {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: SchemaV1.self, configurations: config)
+        let schema = Schema(versionedSchema: SchemaV1.self)
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: schema, configurations: config)
         return ModelContext(container)
     }
 

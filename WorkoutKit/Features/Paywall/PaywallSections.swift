@@ -72,7 +72,7 @@ private struct PaywallFeatureRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
-                .foregroundStyle(isHighlighted ? .tint : .secondary)
+                .foregroundStyle(isHighlighted ? AnyShapeStyle(.tint) : AnyShapeStyle(.secondary))
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
@@ -218,6 +218,9 @@ extension ProFeature {
         case .watchOSCompanion:
             return String(localized: "paywall.feature.watch_companion.title",
                           defaultValue: "Apple Watch 連携 (v1.1+)")
+        case .videoLink:
+            return String(localized: "paywall.feature.video_link.title",
+                          defaultValue: "YouTube 動画リンク")
         }
     }
 
@@ -254,6 +257,9 @@ extension ProFeature {
         case .watchOSCompanion:
             return String(localized: "paywall.feature.watch_companion.desc",
                           defaultValue: "v1.1 以降で順次提供予定。")
+        case .videoLink:
+            return String(localized: "paywall.feature.video_link.desc",
+                          defaultValue: "種目詳細から YouTube アプリへのリンクを開く。")
         }
     }
 
@@ -290,6 +296,9 @@ extension ProFeature {
         case .watchOSCompanion:
             return String(localized: "paywall.reason.watch_companion",
                           defaultValue: "Apple Watch 連携は Pro 機能です。")
+        case .videoLink:
+            return String(localized: "paywall.reason.video_link",
+                          defaultValue: "YouTube 動画リンクは Pro 機能です。")
         }
     }
 }

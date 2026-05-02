@@ -16,8 +16,9 @@ struct HistoryExporterTests {
     // MARK: - Container
 
     private static func makeContainer() throws -> ModelContainer {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        return try ModelContainer(for: SchemaV1.self, configurations: config)
+        let schema = Schema(versionedSchema: SchemaV1.self)
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        return try ModelContainer(for: schema, configurations: config)
     }
 
     // MARK: - Fixtures

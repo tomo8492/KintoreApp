@@ -10,6 +10,7 @@
 
 import SwiftUI
 import SwiftData
+import OSLog
 
 struct TemplatesView: View {
     @Environment(\.modelContext) private var modelContext
@@ -214,7 +215,8 @@ struct TemplatesView: View {
     }
 
     private func handle(error: Error) {
-        Logger.app.error("TemplatesView error: \(error.localizedDescription, privacy: .public)")
+        let message = error.localizedDescription
+        Logger.app.error("TemplatesView error: \(message, privacy: .public)")
     }
 }
 
@@ -250,5 +252,5 @@ private struct TemplateRow: View {
     NavigationStack {
         TemplatesView()
     }
-    .modelContainer(for: SchemaV1.self, inMemory: true)
+    .modelContainer(for: Template.self, inMemory: true)
 }
