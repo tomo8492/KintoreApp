@@ -132,7 +132,9 @@ actor StoreKitClient {
 
     /// 復元購入。Apple Guideline 3.1.1 で Non-Consumable IAP の必須実装。
     /// AppStore.sync() でレシートを再取得 → currentEntitlements を再評価する。
-    func restorePurchases() async throws {
+    /// - Returns: 復元できた有効な Pro エンタイトルメントが1件以上あれば `true`。
+    @discardableResult
+    func restorePurchases() async throws -> Bool {
         do {
             try await AppStore.sync()
         } catch {
@@ -140,6 +142,7 @@ actor StoreKitClient {
             throw AppError.purchaseFailed(String(describing: error))
         }
         await refreshEntitlements()
+        return await proGate.isPro
     }
 
     // MARK: - 購読 (Transaction.updates)
@@ -237,3 +240,10 @@ actor StoreKitClient {
         return cachedProduct
     }
 }
+
+// MARK: - PurchaseRestoring 準拠
+// E3 Settings の Restore Purchase 抽象。
+// actor 隔離を跨ぐため extension で nonisolated に再宣言する。
+
+extension StoreKitClient: PurchaseRestoring {}
+

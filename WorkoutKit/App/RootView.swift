@@ -34,7 +34,7 @@ struct RootView: View {
             historyTab
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsTab
+            SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
@@ -57,7 +57,7 @@ struct RootView: View {
             historyTab
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsTab
+            SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
@@ -120,14 +120,6 @@ struct RootView: View {
 
     private var historyTab: some View {
         HistoryView()
-    }
-
-    private var settingsTab: some View {
-        ContentUnavailableView(
-            "Settings",
-            systemImage: "gearshape",
-            description: Text("設定は Phase P4 で実装します。")
-        )
     }
 }
 

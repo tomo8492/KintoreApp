@@ -15,14 +15,22 @@ struct WorkoutKitApp: App {
     private let modelContainer: ModelContainer
     /// C3: LiveActivityClient を AppDependency に DI する。
     /// F1: StoreKitClient を同梱、起動時 `start()` で entitlement の購読を開始する。
+    /// E3: 同じ StoreKitClient を purchaseRestorer としても渡す
+    /// (StoreKitClient: PurchaseRestoring 拡張)。
     @State private var dependency: AppDependency = {
         let gate = ProFeatureGate()
+        let storeKit = StoreKitClient(proGate: gate)
         return AppDependency(
             proGate: gate,
             liveActivity: LiveActivityClient(),
-            storeKitClient: StoreKitClient(proGate: gate)
+            storeKitClient: storeKit,
+            purchaseRestorer: storeKit
         )
     }()
+
+    /// E3: Settings の Theme 切替を Scene ルートに反映する。
+    /// 文字列で持つのは @AppStorage の素直な使い方に合わせるため。
+    @AppStorage(SettingsKey.theme) private var themeRaw: String = ThemePreference.system.rawValue
 
     init() {
         do {
@@ -51,6 +59,7 @@ struct WorkoutKitApp: App {
         WindowGroup {
             RootView()
                 .environment(\.appDependency, dependency)
+                .preferredColorScheme(currentTheme.colorScheme)
                 .task {
                     await runStartupSeed()
                 }
@@ -60,6 +69,10 @@ struct WorkoutKitApp: App {
                 }
         }
         .modelContainer(modelContainer)
+    }
+
+    private var currentTheme: ThemePreference {
+        ThemePreference(rawValue: themeRaw) ?? .system
     }
 
     // MARK: - Startup
