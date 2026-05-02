@@ -7,6 +7,7 @@ import SwiftUI
 
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @State private var isBuilderPresented = false
 
     var body: some View {
         if sizeClass == .regular {
@@ -52,12 +53,40 @@ struct RootView: View {
 
     // MARK: - Placeholders(P1 以降で実装)
 
+    /// Today タブの入口。Builder ウィザードを fullScreenCover で開く CTA を出す。
+    /// - iPhone/iPad とも fullScreenCover で BuilderView を独立して表示することで、
+    ///   iPad 側で RootView の NavigationSplitView と BuilderView の NavigationSplitView
+    ///   が二重にネストするのを避ける。
     private var todayPlaceholder: some View {
-        ContentUnavailableView(
-            "Today",
-            systemImage: "figure.strengthtraining.traditional",
-            description: Text("Builder ウィザードは Phase P1 で実装します。")
-        )
+        VStack(spacing: 24) {
+            Image(systemName: "figure.strengthtraining.traditional")
+                .font(.system(size: 64))
+                .foregroundStyle(Color.accentColor)
+            Text("today.heading")
+                .font(.title2.bold())
+            Text("today.subheading")
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
+            Button {
+                isBuilderPresented = true
+            } label: {
+                Text("today.action.start-builder")
+                    .font(.headline)
+                    .padding(.horizontal, 28)
+                    .padding(.vertical, 14)
+                    .background(Color.accentColor)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding()
+        .fullScreenCover(isPresented: $isBuilderPresented) {
+            BuilderView()
+        }
     }
 
     private var libraryPlaceholder: some View {
