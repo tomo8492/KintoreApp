@@ -94,11 +94,7 @@ struct RootView: View {
     }
 
     private var historyPlaceholder: some View {
-        ContentUnavailableView(
-            "History",
-            systemImage: "calendar",
-            description: Text("履歴・進捗は Phase P3 で実装します。")
-        )
+        HistoryView()
     }
 
     private var settingsPlaceholder: some View {
