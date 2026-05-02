@@ -148,4 +148,11 @@ extension Exercise {
             .split(separator: ",")
             .compactMap { Equipment(rawValue: String($0)) }
     }
+
+    /// 現在のロケール言語コードに応じて nameJa / nameEn を返す。
+    /// CLAUDE.md §-1.4 / §0.2 に従い、日本語(主)+ 英語の二択。
+    /// それ以外のロケールでは英語にフォールバック。
+    var localizedName: String {
+        Locale.current.language.languageCode?.identifier == "ja" ? nameJa : nameEn
+    }
 }

@@ -1,12 +1,14 @@
 // MARK: - RootView
 // CLAUDE.md §-1.15 / §5 準拠。
-// iPhone(compact)は TabView、iPad(regular)は NavigationSplitView に分岐する。
-// 各 Feature の本体は P1 以降で差し込むため、ここではタブ枠だけ用意する。
+// iPhone(compact)は TabView、iPad(regular)も TabView を使う(Library が
+// NavigationSplitView を内包するため二重ネストを避ける)。
+// 各 Feature の本体は順次差し込み、E1 で Templates タブが追加された。
 
 import SwiftUI
 
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @State private var isBuilderPresented = false
 
     var body: some View {
         if sizeClass == .regular {
@@ -20,68 +22,104 @@ struct RootView: View {
 
     private var iPhoneRoot: some View {
         TabView {
-            todayPlaceholder
+            todayTab
                 .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
 
-            libraryPlaceholder
+            templatesTab
+                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
+
+            ExerciseListView()
                 .tabItem { Label("Library", systemImage: "books.vertical") }
 
-            historyPlaceholder
+            historyTab
                 .tabItem { Label("History", systemImage: "calendar") }
 
-            settingsPlaceholder
+            SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
 
     // MARK: - iPad (regular)
+    // iPad では Library 自身が NavigationSplitView を使うため、
+    // Root は TabView でタブ切替のみ担当する(NavigationSplitView の入れ子を避ける)。
 
     private var iPadRoot: some View {
-        NavigationSplitView {
-            List {
-                NavigationLink("Today")    { todayPlaceholder }
-                NavigationLink("Library")  { libraryPlaceholder }
-                NavigationLink("History")  { historyPlaceholder }
-                NavigationLink("Settings") { settingsPlaceholder }
-            }
-            .navigationTitle("WorkoutKit")
-        } detail: {
-            todayPlaceholder
+        TabView {
+            todayTab
+                .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+
+            templatesTab
+                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
+
+            ExerciseListView()
+                .tabItem { Label("Library", systemImage: "books.vertical") }
+
+            historyTab
+                .tabItem { Label("History", systemImage: "calendar") }
+
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape") }
         }
     }
 
-    // MARK: - Placeholders(P1 以降で実装)
+    // MARK: - Templates tab (E1 で実装)
 
-    private var todayPlaceholder: some View {
-        ContentUnavailableView(
-            "Today",
-            systemImage: "figure.strengthtraining.traditional",
-            description: Text("Builder ウィザードは Phase P1 で実装します。")
-        )
+    private var templatesTab: some View {
+        NavigationStack {
+            TemplatesView()
+        }
     }
 
-    private var libraryPlaceholder: some View {
-        ContentUnavailableView(
-            "Library",
-            systemImage: "books.vertical",
-            description: Text("種目DB 一覧は Phase P3 で実装します。")
-        )
+    // MARK: - Today
+
+    /// Today タブの入口。Builder ウィザードを fullScreenCover で開く CTA を出す。
+    /// - iPhone/iPad とも fullScreenCover で BuilderView を独立して表示することで、
+    ///   iPad 側で RootView の NavigationSplitView と BuilderView の NavigationSplitView
+    ///   が二重にネストするのを避ける。
+    private var todayTab: some View {
+        VStack(spacing: 24) {
+            Image(systemName: "figure.strengthtraining.traditional")
+                .font(.system(size: 64))
+                .foregroundStyle(Color.accentColor)
+                .accessibilityHidden(true)
+            Text("today.heading")
+                .font(.title2.bold())
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.7)
+            Text("today.subheading")
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
+            Button {
+                isBuilderPresented = true
+            } label: {
+                Text("today.action.start-builder")
+                    .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                    .padding(.horizontal, 28)
+                    .padding(.vertical, 14)
+                    .background(Color.accentColor)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(Text("today.action.start-builder"))
+            .accessibilityHint(Text("a11y.today.start-builder.hint"))
+            .accessibilityAddTraits(.isButton)
+        }
+        .padding()
+        .fullScreenCover(isPresented: $isBuilderPresented) {
+            BuilderView()
+        }
     }
 
-    private var historyPlaceholder: some View {
-        ContentUnavailableView(
-            "History",
-            systemImage: "calendar",
-            description: Text("履歴・進捗は Phase P3 で実装します。")
-        )
-    }
+    // MARK: - History / Settings
 
-    private var settingsPlaceholder: some View {
-        ContentUnavailableView(
-            "Settings",
-            systemImage: "gearshape",
-            description: Text("設定は Phase P4 で実装します。")
-        )
+    private var historyTab: some View {
+        HistoryView()
     }
 }
 

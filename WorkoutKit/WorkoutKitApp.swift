@@ -13,7 +13,24 @@ struct WorkoutKitApp: App {
     /// ModelContainer はアプリ起動時に1回だけ作る。
     /// `.modelContainer(_:)` で全 View に共有する(Singleton 禁止規約に抵触しない、§4.1)。
     private let modelContainer: ModelContainer
-    @State private var dependency = AppDependency(proGate: ProFeatureGate())
+    /// C3: LiveActivityClient を AppDependency に DI する。
+    /// F1: StoreKitClient を同梱、起動時 `start()` で entitlement の購読を開始する。
+    /// E3: 同じ StoreKitClient を purchaseRestorer としても渡す
+    /// (StoreKitClient: PurchaseRestoring 拡張)。
+    @State private var dependency: AppDependency = {
+        let gate = ProFeatureGate()
+        let storeKit = StoreKitClient(proGate: gate)
+        return AppDependency(
+            proGate: gate,
+            liveActivity: LiveActivityClient(),
+            storeKitClient: storeKit,
+            purchaseRestorer: storeKit
+        )
+    }()
+
+    /// E3: Settings の Theme 切替を Scene ルートに反映する。
+    /// 文字列で持つのは @AppStorage の素直な使い方に合わせるため。
+    @AppStorage(SettingsKey.theme) private var themeRaw: String = ThemePreference.system.rawValue
 
     init() {
         do {
@@ -42,17 +59,27 @@ struct WorkoutKitApp: App {
         WindowGroup {
             RootView()
                 .environment(\.appDependency, dependency)
+                .preferredColorScheme(currentTheme.colorScheme)
                 .task {
                     await runStartupSeed()
                 }
+                .task {
+                    // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
+                    await dependency.storeKitClient.start()
+                }
         }
         .modelContainer(modelContainer)
+    }
+
+    private var currentTheme: ThemePreference {
+        ThemePreference(rawValue: themeRaw) ?? .system
     }
 
     // MARK: - Startup
 
     /// 初回起動 / アップグレード時の seed 投入を非同期で実行する。
     /// 失敗してもアプリ自体は起動させる(seed なしでも UI は動く)。
+    /// テンプレ seed は Exercise seed の後に行う(プリセットが Exercise.slug を参照するため)。
     @MainActor
     private func runStartupSeed() async {
         let context = modelContainer.mainContext
@@ -61,6 +88,12 @@ struct WorkoutKitApp: App {
             Logger.app.info("startup seed completed: \(inserted) exercises inserted")
         } catch {
             Logger.app.error("startup seed failed: \(error.localizedDescription, privacy: .public)")
+        }
+        do {
+            let insertedTemplates = try TemplateSeeder.seedIfNeeded(in: context)
+            Logger.app.info("template seed completed: \(insertedTemplates) presets inserted")
+        } catch {
+            Logger.app.error("template seed failed: \(error.localizedDescription, privacy: .public)")
         }
     }
 }

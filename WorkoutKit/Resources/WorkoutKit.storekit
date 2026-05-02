@@ -1,0 +1,86 @@
+{
+  "identifier" : "C0F4A3D2-9B7E-4C5A-8F61-1D2E3F4A5B6C",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "980",
+      "familyShareable" : true,
+      "internalID" : "A1B2C3D4",
+      "localizations" : [
+        {
+          "description" : "Unlock all Pro features: unlimited history, advanced charts, custom templates, CSV import/export, manual entry, custom exercises, session photos, and app icon variants.",
+          "displayName" : "WorkoutKit Pro",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "全 Pro 機能を解放: 履歴の全期間アクセス、詳細チャート、カスタムテンプレート、CSV 入出力、手動ログ、種目追加、セッション写真、App Icon 変更。",
+          "displayName" : "WorkoutKit Pro",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.tomo.workoutkit.pro.unlock",
+      "referenceName" : "WorkoutKit Pro Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "ja_JP",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

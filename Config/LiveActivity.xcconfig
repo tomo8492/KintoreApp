@@ -1,0 +1,43 @@
+// Config/LiveActivity.xcconfig
+// CLAUDE.md §-1.1 / §-1.5 / §1.1 F-03 準拠。
+// Widget Extension(WorkoutKitLiveActivity)専用の Build Settings。
+// アプリ本体とは別 Bundle ID で署名し、App Group を共有する。
+//
+// 注意: Widget Extension は Live Activity 単独提供のため、ホーム画面 Widget の
+// プロビジョニングは現状不要。将来 Home Screen Widget を出すなら別ファイル分割。
+
+// --- アイデンティティ -------------------------------------------------------
+PRODUCT_NAME = WorkoutKitLiveActivity
+PRODUCT_BUNDLE_IDENTIFIER = com.tomo.workoutkit.LiveActivity
+// アプリ本体の swiftmodule(WorkoutKit)と衝突しないようターゲット名で分離。
+PRODUCT_MODULE_NAME = WorkoutKitLiveActivity
+
+// 署名は Shared.xcconfig の DEVELOPMENT_TEAM を継承する想定。
+// P-1 で Apple Developer Program 登録後にチームを設定する。
+DEVELOPMENT_TEAM =
+
+// --- プラットフォーム ------------------------------------------------------
+// Live Activity は iOS 16.1+。本プロジェクトは iOS 17 配下のため 17.0 で揃える。
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+// Widget Extension は iPhone+iPad 両対応(本体と揃える)。
+TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator
+SDKROOT = iphoneos
+
+// --- Swift / Toolchain ----------------------------------------------------
+SWIFT_VERSION = 5.10
+SWIFT_STRICT_CONCURRENCY = complete
+ENABLE_USER_SCRIPT_SANDBOXING = YES
+
+// --- Widget Extension 専用 -------------------------------------------------
+// NSExtensionPointIdentifier は GENERATE_INFOPLIST_FILE=YES 環境では
+// INFOPLIST_KEY_* で渡せないため、project.yml の info.properties で直接指定する。
+// (xcconfig では Info.plist の任意キーを書けない既知制約)
+SKIP_INSTALL = YES
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+
+// --- Asset / アクセントカラー ---------------------------------------------
+// アプリ本体と同じ AccentColor を使えるよう、Shared.xcconfig の値を踏襲する。
+// (Asset Catalog 自体は Widget からも参照可能、Widget bundle の sources に
+//  本体の Assets.xcassets を共有する設定は project.yml 側で行う)
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    WorkoutKitLiveActivity.entitlements
+    CLAUDE.md §-1.5 / §1.1 F-03 準拠。
+    Widget Extension が App 本体と同じ App Group を共有するための entitlement。
+    ActivityKit 自体はプロセス間通信を別パスで行うが、将来 SessionStore の状態を
+    SharedDefaults / FileCoordinator 経由で覗く可能性に備えて初日から付ける。
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>com.apple.security.application-groups</key>
+    <array>
+        <string>group.com.tomo.workoutkit</string>
+    </array>
+</dict>
+</plist>
