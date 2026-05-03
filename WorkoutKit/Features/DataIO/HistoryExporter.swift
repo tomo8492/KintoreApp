@@ -57,7 +57,10 @@ enum HistoryExporter {
 
     // MARK: - Private
 
-    private static let isoFormatter: ISO8601DateFormatter = {
+    // ISO8601DateFormatter は内部状態を持つが、formatOptions / timeZone を
+    // 一度だけ設定して以降は string(from:) しか呼ばないため実質イミュータブル。
+    // Swift 6 では Sendable じゃないので nonisolated(unsafe) で明示的に共有を許可する。
+    nonisolated(unsafe) private static let isoFormatter: ISO8601DateFormatter = {
         let f = ISO8601DateFormatter()
         f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         f.timeZone = TimeZone(secondsFromGMT: 0)

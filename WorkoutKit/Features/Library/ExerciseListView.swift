@@ -229,8 +229,7 @@ struct ExerciseListView: View {
         .modelContainer(for: SchemaV1.models, inMemory: true)
 }
 
-#Preview("iPad") {
+#Preview("iPad", traits: .landscapeLeft) {
     ExerciseListView()
         .modelContainer(for: SchemaV1.models, inMemory: true)
-        .previewInterfaceOrientation(.landscapeLeft)
 }
