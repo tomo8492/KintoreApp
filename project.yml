@@ -86,6 +86,10 @@ targets:
       gatherCoverageData: true
       coverageTargets:
         - WorkoutKit
+      # Run の StoreKit Configuration を WorkoutKit.storekit に固定する。
+      # これが無いとシミュレータで Product.products(for:) が空配列を返し、
+      # Paywall に "product not found" が出る(BUG 2 / F-08)。
+      storeKitConfiguration: WorkoutKit/Resources/WorkoutKit.storekit
       # Run/Test は Debug、Profile/Analyze は Release、Archive は Release。
       # Beta は TestFlight ビルド時に手動切替。
       configs:

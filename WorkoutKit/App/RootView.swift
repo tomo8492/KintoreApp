@@ -23,19 +23,19 @@ struct RootView: View {
     private var iPhoneRoot: some View {
         TabView {
             todayTab
-                .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+                .tabItem { Label("tab.today", systemImage: "figure.strengthtraining.traditional") }
 
             templatesTab
-                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
+                .tabItem { Label("tab.templates", systemImage: "square.stack.3d.up") }
 
             ExerciseListView()
-                .tabItem { Label("Library", systemImage: "books.vertical") }
+                .tabItem { Label("tab.library", systemImage: "books.vertical") }
 
             historyTab
-                .tabItem { Label("History", systemImage: "calendar") }
+                .tabItem { Label("tab.history", systemImage: "calendar") }
 
             SettingsView()
-                .tabItem { Label("Settings", systemImage: "gearshape") }
+                .tabItem { Label("tab.settings", systemImage: "gearshape") }
         }
     }
 
@@ -46,19 +46,19 @@ struct RootView: View {
     private var iPadRoot: some View {
         TabView {
             todayTab
-                .tabItem { Label("Today", systemImage: "figure.strengthtraining.traditional") }
+                .tabItem { Label("tab.today", systemImage: "figure.strengthtraining.traditional") }
 
             templatesTab
-                .tabItem { Label { Text("templates.title") } icon: { Image(systemName: "square.stack.3d.up") } }
+                .tabItem { Label("tab.templates", systemImage: "square.stack.3d.up") }
 
             ExerciseListView()
-                .tabItem { Label("Library", systemImage: "books.vertical") }
+                .tabItem { Label("tab.library", systemImage: "books.vertical") }
 
             historyTab
-                .tabItem { Label("History", systemImage: "calendar") }
+                .tabItem { Label("tab.history", systemImage: "calendar") }
 
             SettingsView()
-                .tabItem { Label("Settings", systemImage: "gearshape") }
+                .tabItem { Label("tab.settings", systemImage: "gearshape") }
         }
     }
 
