@@ -1665,6 +1665,24 @@
         }
       }
     },
+    "builder.step.result.subheading %lld": {
+      "comment": "Builder Result step: 種目の総数表示。例: '12 種目'。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld exercises"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 種目"
+          }
+        }
+      }
+    },
     "builder.step.result.title": {
       "comment": "Builder Step: Result タイトル。",
       "extractionState": "manual",
@@ -3420,7 +3438,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Today タブから最初のワークアウトを始めましょう。"
+            "value": "今日タブから最初のワークアウトを始めましょう。"
           }
         }
       }

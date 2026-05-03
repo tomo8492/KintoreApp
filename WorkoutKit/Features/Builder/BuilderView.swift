@@ -18,11 +18,33 @@ struct BuilderView: View {
     @State private var store = BuilderStore()
 
     var body: some View {
-        if sizeClass == .regular {
-            iPadLayout
-        } else {
-            iPhoneLayout
+        Group {
+            if sizeClass == .regular {
+                iPadLayout
+            } else {
+                iPhoneLayout
+            }
         }
+        // Result ステップで「このメニューで始める」が押されたら SessionView を
+        // 全画面で被せる(C1 配線)。SessionView 終了時は onDismiss で BuilderView
+        // ごと閉じて Today タブに戻す。
+        .fullScreenCover(item: $store.sessionStart, onDismiss: handleSessionDismiss) { payload in
+            NavigationStack {
+                SessionView(
+                    initialOutput: payload.output,
+                    goal: payload.goal,
+                    includesWarmup: payload.includesWarmup,
+                    includesCooldown: payload.includesCooldown
+                )
+            }
+        }
+    }
+
+    private func handleSessionDismiss() {
+        // SessionView を閉じたら Builder も閉じて Today に戻す。
+        // ユーザー視点では「ワークアウトをやり切った/中断した → 元の画面」が直感的。
+        Logger.app.info("BuilderView: session dismissed, closing builder")
+        dismiss()
     }
 
     // MARK: - iPhone
@@ -182,12 +204,14 @@ struct BuilderView: View {
 
     // MARK: - Session start
 
+    /// Result ステップ「このメニューで始める」のハンドラ。
+    /// store.startSession() が sessionStart payload をセット → 上の fullScreenCover が反応する。
     private func startSession() {
-        // TODO(B4): SessionView へ遷移する。現状は Logger に出すだけのスタブ。
-        // SessionView の API が決まったら NavigationDestination で push、
-        // または fullScreenCover で起動する形に置き換える。
-        Logger.app.info("BuilderView.startSession tapped: warmup=\(store.output?.warmup.count ?? 0), main=\(store.output?.main.count ?? 0), cooldown=\(store.output?.cooldown.count ?? 0)")
-        dismiss()
+        let warmup = store.output?.warmup.count ?? 0
+        let main = store.output?.main.count ?? 0
+        let cooldown = store.output?.cooldown.count ?? 0
+        Logger.app.info("BuilderView.startSession tapped: warmup=\(warmup), main=\(main), cooldown=\(cooldown)")
+        store.startSession()
     }
 }
 

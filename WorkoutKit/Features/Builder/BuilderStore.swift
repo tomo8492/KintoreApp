@@ -54,6 +54,20 @@ final class BuilderStore {
         }
     }
 
+    // MARK: - Session start payload
+
+    /// Result ステップで「このメニューで始める」を押したときに、
+    /// BuilderView 側の fullScreenCover/navigationDestination が観測する値。
+    /// nil → 未開始 / 非 nil → SessionView を提示。
+    /// fullScreenCover(item:) は Identifiable を要求する。
+    struct SessionStartPayload: Identifiable, Equatable {
+        let id: UUID = UUID()
+        let output: GeneratorOutput
+        let goal: Goal
+        let includesWarmup: Bool
+        let includesCooldown: Bool
+    }
+
     // MARK: - State
 
     var currentStep: Step = .goal
@@ -65,6 +79,9 @@ final class BuilderStore {
     var generationError: String?
     /// Generator 実行中スピナー用。
     private(set) var isGenerating: Bool = false
+    /// Result ステップから SessionView へ橋渡しするためのペイロード。
+    /// BuilderView の fullScreenCover(item:) がこの値の遷移を見て SessionView を出す。
+    var sessionStart: SessionStartPayload?
 
     // MARK: - Init
 
@@ -149,6 +166,21 @@ final class BuilderStore {
     /// ロックを全解除する。result ステップから戻る/再開時に使用。
     func clearLocks() {
         input.lockedExerciseSlugs.removeAll()
+    }
+
+    // MARK: - Session start
+
+    /// 「このメニューで始める」が押されたら、BuilderView 側の fullScreenCover を
+    /// 起動するためのペイロードを組み立てる。output が無いときは no-op(本来は
+    /// Result ステップ到達時点で必ず非 nil なので例外)。
+    func startSession() {
+        guard let output else { return }
+        sessionStart = SessionStartPayload(
+            output: output,
+            goal: input.goal,
+            includesWarmup: input.includeWarmup,
+            includesCooldown: input.includeCooldown
+        )
     }
 
     private func runGenerate(in context: ModelContext, advanceOnSuccess: Bool) {

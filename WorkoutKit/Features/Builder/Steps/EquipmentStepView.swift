@@ -107,7 +107,9 @@ private struct EquipmentChip: View {
         case .machine:    return "gearshape.2"
         case .cable:      return "link"
         case .band:       return "waveform.path"
-        case .pullupBar:  return "figure.pull.up"
+        // figure.pull.up は iOS 26 で消えていてレンダーされないため、
+        // 安全な代替に置換する(同種の strength training グリフ)。
+        case .pullupBar:  return "figure.strengthtraining.functional"
         case .bench:      return "rectangle.fill"
         case .trx:        return "figure.flexibility"
         case .foamRoller: return "capsule"

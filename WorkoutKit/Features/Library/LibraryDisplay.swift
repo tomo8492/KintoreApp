@@ -58,7 +58,9 @@ enum LibraryDisplay {
         case .machine:    return "gearshape.2.fill"
         case .cable:      return "cable.connector"
         case .band:       return "circle.dashed"
-        case .pullupBar:  return "figure.pull.up"
+        // figure.pull.up は iOS 26 で消えていてレンダーされないため、
+        // 安全な代替に置換する(EquipmentStepView と同じグリフに統一)。
+        case .pullupBar:  return "figure.strengthtraining.functional"
         case .bench:      return "rectangle.fill"
         case .trx:        return "link"
         case .foamRoller: return "cylinder.fill"
