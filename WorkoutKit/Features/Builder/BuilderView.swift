@@ -17,11 +17,33 @@ struct BuilderView: View {
 
     @State private var store = BuilderStore()
 
+    /// Builder 完了後に SessionView を起動するためのトリガ。
+    /// 「セッション開始」ボタン → BuilderStore の output / input から組み立てる。
+    /// fullScreenCover(item:) で nil 解除を契機に SessionView が立ち上がる。
+    @State private var presentedSession: PresentedSession?
+
+    /// 結果画面で「セッション開始」が押された後、SessionView 経由で起動した
+    /// ワークアウトが完了した(= SessionView が dismiss された)際に Builder 自体も
+    /// 閉じて Today タブに戻るためのフラグ。
+    @State private var shouldDismissAfterSession: Bool = false
+
     var body: some View {
-        if sizeClass == .regular {
-            iPadLayout
-        } else {
-            iPhoneLayout
+        Group {
+            if sizeClass == .regular {
+                iPadLayout
+            } else {
+                iPhoneLayout
+            }
+        }
+        .fullScreenCover(item: $presentedSession, onDismiss: handleSessionDismiss) { session in
+            NavigationStack {
+                SessionView(
+                    initialOutput: session.output,
+                    goal: session.goal,
+                    includesWarmup: session.includesWarmup,
+                    includesCooldown: session.includesCooldown
+                )
+            }
         }
     }
 
@@ -182,13 +204,49 @@ struct BuilderView: View {
 
     // MARK: - Session start
 
+    /// ResultStepView の「セッション開始」から呼ばれる。
+    /// 1. BuilderStore.output を SessionView に渡せる形に詰め替える
+    /// 2. fullScreenCover を立ち上げて SessionView を表示する
+    /// 3. SessionView 終了後は Builder 自身も dismiss して Today タブに戻す
+    ///    (`shouldDismissAfterSession` を立てて onDismiss 側で dismiss)
     private func startSession() {
-        // TODO(B4): SessionView へ遷移する。現状は Logger に出すだけのスタブ。
-        // SessionView の API が決まったら NavigationDestination で push、
-        // または fullScreenCover で起動する形に置き換える。
-        Logger.app.info("BuilderView.startSession tapped: warmup=\(store.output?.warmup.count ?? 0), main=\(store.output?.main.count ?? 0), cooldown=\(store.output?.cooldown.count ?? 0)")
-        dismiss()
+        guard let output = store.output else {
+            Logger.app.warning("BuilderView.startSession: output is nil, ignoring tap")
+            return
+        }
+        Logger.app.info(
+            "BuilderView.startSession: warmup=\(output.warmup.count), main=\(output.main.count), cooldown=\(output.cooldown.count)"
+        )
+        shouldDismissAfterSession = true
+        presentedSession = PresentedSession(
+            output: output,
+            goal: store.input.goal,
+            includesWarmup: store.input.includeWarmup,
+            includesCooldown: store.input.includeCooldown
+        )
     }
+
+    /// SessionView が閉じた後の後処理。
+    /// `startSession()` から起動した場合は Builder 自体も閉じる(Today に戻す)。
+    /// それ以外(現状無いが将来 Choose mode 等から立ち上げる可能性に備える)はそのまま残す。
+    private func handleSessionDismiss() {
+        if shouldDismissAfterSession {
+            shouldDismissAfterSession = false
+            dismiss()
+        }
+    }
+}
+
+// MARK: - PresentedSession
+
+/// fullScreenCover(item:) に渡す Identifiable な箱。
+/// SessionView が必要とする最小限の起動引数だけを保持する。
+private struct PresentedSession: Identifiable, Equatable {
+    let id = UUID()
+    let output: GeneratorOutput
+    let goal: Goal
+    let includesWarmup: Bool
+    let includesCooldown: Bool
 }
 
 // MARK: - Step indicator (iPad sidebar)
