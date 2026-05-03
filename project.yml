@@ -89,6 +89,15 @@ targets:
       # Run の StoreKit Configuration を WorkoutKit.storekit に固定する。
       # これが無いとシミュレータで Product.products(for:) が空配列を返し、
       # Paywall に "product not found" が出る(BUG 2 / F-08)。
+      #
+      # 注: xcodegen 2.45.3 はこの値から `../../WorkoutKit/...` のような
+      #     scheme ファイル相対パスで identifier を埋める。Xcode 純正の
+      #     スキームエディタが書く形式(プロジェクトルート相対 = bare
+      #     "WorkoutKit/Resources/WorkoutKit.storekit")と等価だが、
+      #     リポジトリ整合性のため bare 形式に手で揃えてコミットしている。
+      #     xcodegen を再実行すると `../../` 形に戻るので、コミット前に
+      #     `WorkoutKit.xcodeproj/xcshareddata/xcschemes/WorkoutKit.xcscheme`
+      #     の identifier 行を確認すること。
       storeKitConfiguration: WorkoutKit/Resources/WorkoutKit.storekit
       # Run/Test は Debug、Profile/Analyze は Release、Archive は Release。
       # Beta は TestFlight ビルド時に手動切替。
