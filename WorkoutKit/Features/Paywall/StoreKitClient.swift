@@ -162,17 +162,30 @@ actor StoreKitClient {
     // MARK: - 内部処理
 
     /// Product.products(for:) を呼んでキャッシュする。失敗してもアプリは起動させる。
+    /// 失敗パターン分析のため、空配列 / ID 不一致 / 例外を区別してログに残す。
     private func refreshProducts() async {
+        let requestedIDs = Array(productIDs).joined(separator: ",")
+        Logger.store.info("Product.products requested: ids=\(requestedIDs, privacy: .public)")
         do {
             let products = try await Product.products(for: productIDs)
             cachedProduct = products.first { $0.id == Self.proProductID }
             if cachedProduct == nil {
-                Logger.store.error("Pro product not found in StoreKit response")
+                if products.isEmpty {
+                    // BUG 5 診断ログ: StoreKit Configuration がスキームに付いていない
+                    // か、シミュレータが scheme を読んでいない場合は配列が空になる。
+                    // (xcrun simctl launch 直接起動時はスキーム由来の Configuration
+                    //  が適用されないので空になりがち)
+                    Logger.store.error("Product.products returned empty — likely no StoreKit Configuration is attached to this run. Check the Run scheme's StoreKit Configuration setting.")
+                } else {
+                    let returnedIDs = products.map(\.id).joined(separator: ",")
+                    Logger.store.error("Pro product not found in StoreKit response. requested=\(requestedIDs, privacy: .public) returned=\(returnedIDs, privacy: .public). Check that the Configuration file's productID matches StoreKitClient.proProductID.")
+                }
             } else {
                 Logger.store.info("Pro product loaded: \(self.cachedProduct?.id ?? "?", privacy: .public)")
             }
         } catch {
-            Logger.store.error("Product.products failed: \(error.localizedDescription, privacy: .public)")
+            let message = error.localizedDescription
+            Logger.store.error("Product.products failed: \(message, privacy: .public)")
         }
     }
 
