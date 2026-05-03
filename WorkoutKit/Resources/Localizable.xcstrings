@@ -1233,6 +1233,60 @@
         }
       }
     },
+    "builder.action.generate": {
+      "comment": "Builder: 最終ステップで「生成」する。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generate workout"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを生成"
+          }
+        }
+      }
+    },
+    "builder.action.next": {
+      "comment": "Builder: 次へボタン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次へ"
+          }
+        }
+      }
+    },
+    "builder.error.generation.title": {
+      "comment": "Builder: Generator 失敗時のアラート見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generation error"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生成エラー"
+          }
+        }
+      }
+    },
     "builder.error.no-output.description": {
       "comment": "Builder: 生成失敗時の説明。",
       "extractionState": "manual",
@@ -1269,6 +1323,24 @@
         }
       }
     },
+    "builder.result.mode.choose": {
+      "comment": "Builder: Choose モードのラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose & lock"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選んでロック"
+          }
+        }
+      }
+    },
     "builder.result.mode.label": {
       "comment": "Result ステップ: Shuffle/Choose 切替の Picker ラベル。",
       "extractionState": "manual",
@@ -1283,6 +1355,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "モード"
+          }
+        }
+      }
+    },
+    "builder.result.mode.shuffle": {
+      "comment": "Builder: Shuffle モードのラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shuffle"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シャッフル"
           }
         }
       }
@@ -1305,6 +1395,24 @@
         }
       }
     },
+    "builder.step.equipment.title": {
+      "comment": "Builder Step: Equipment タイトル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equipment"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使える器具"
+          }
+        }
+      }
+    },
     "builder.step.goal.prompt": {
       "comment": "Goal ステップの説明文。",
       "extractionState": "manual",
@@ -1323,6 +1431,24 @@
         }
       }
     },
+    "builder.step.goal.title": {
+      "comment": "Builder Step: Goal タイトル(Toolbar 表示)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goal"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目的"
+          }
+        }
+      }
+    },
     "builder.step.muscle.prompt": {
       "comment": "Muscle ステップの説明文。",
       "extractionState": "manual",
@@ -1337,6 +1463,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "鍛えたい部位を1つ以上選んでください。"
+          }
+        }
+      }
+    },
+    "builder.step.muscle.title": {
+      "comment": "Builder Step: Muscle タイトル(Toolbar 表示)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Target muscles"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鍛えたい部位"
           }
         }
       }
@@ -1467,6 +1611,78 @@
         }
       }
     },
+    "builder.step.result.section.cooldown": {
+      "comment": "Result Step: クールダウン セクション見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cool-down"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クールダウン"
+          }
+        }
+      }
+    },
+    "builder.step.result.section.main": {
+      "comment": "Result Step: メイン セクション見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メイン"
+          }
+        }
+      }
+    },
+    "builder.step.result.section.warmup": {
+      "comment": "Result Step: ウォームアップ セクション見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm-up"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップ"
+          }
+        }
+      }
+    },
+    "builder.step.result.title": {
+      "comment": "Builder Step: Result タイトル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's workout"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のメニュー"
+          }
+        }
+      }
+    },
     "builder.step.time.cooldown.description": {
       "comment": "Time ステップ: クールダウン説明文。",
       "extractionState": "manual",
@@ -1553,6 +1769,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "オプション"
+          }
+        }
+      }
+    },
+    "builder.step.time.title": {
+      "comment": "Builder Step: Time タイトル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duration"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間"
           }
         }
       }
@@ -1877,7 +2111,43 @@
         }
       }
     },
+    "equipment.band.title": {
+      "comment": "Equipment: チューブ / バンド。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resistance band"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "チューブ"
+          }
+        }
+      }
+    },
     "equipment.barbell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barbell"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バーベル"
+          }
+        }
+      }
+    },
+    "equipment.barbell.title": {
+      "comment": "Equipment: バーベル。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1911,7 +2181,43 @@
         }
       }
     },
+    "equipment.bench.title": {
+      "comment": "Equipment: ベンチ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bench"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベンチ"
+          }
+        }
+      }
+    },
     "equipment.bodyweight": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bodyweight"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自重"
+          }
+        }
+      }
+    },
+    "equipment.bodyweight.title": {
+      "comment": "Equipment: 自重。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1945,7 +2251,43 @@
         }
       }
     },
+    "equipment.cable.title": {
+      "comment": "Equipment: ケーブル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cable"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ケーブル"
+          }
+        }
+      }
+    },
     "equipment.dumbbell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dumbbell"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダンベル"
+          }
+        }
+      }
+    },
+    "equipment.dumbbell.title": {
+      "comment": "Equipment: ダンベル。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1979,7 +2321,43 @@
         }
       }
     },
+    "equipment.foamRoller.title": {
+      "comment": "Equipment: フォームローラー。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foam roller"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォームローラー"
+          }
+        }
+      }
+    },
     "equipment.kettlebell": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kettlebell"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ケトルベル"
+          }
+        }
+      }
+    },
+    "equipment.kettlebell.title": {
+      "comment": "Equipment: ケトルベル。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2013,7 +2391,43 @@
         }
       }
     },
+    "equipment.machine.title": {
+      "comment": "Equipment: マシン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Machine"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マシン"
+          }
+        }
+      }
+    },
     "equipment.pullupBar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pull-up bar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "懸垂バー"
+          }
+        }
+      }
+    },
+    "equipment.pullupBar.title": {
+      "comment": "Equipment: 懸垂バー。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2047,7 +2461,43 @@
         }
       }
     },
+    "equipment.trx.title": {
+      "comment": "Equipment: TRX サスペンション。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TRX"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TRX"
+          }
+        }
+      }
+    },
     "equipment.yogaMat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yoga mat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヨガマット"
+          }
+        }
+      }
+    },
+    "equipment.yogaMat.title": {
+      "comment": "Equipment: ヨガマット。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2543,6 +2993,96 @@
         }
       }
     },
+    "history.chart.axis.month": {
+      "comment": "History Chart: 月軸ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Month"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "月"
+          }
+        }
+      }
+    },
+    "history.chart.axis.muscle": {
+      "comment": "History Chart: 部位軸ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscle"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "部位"
+          }
+        }
+      }
+    },
+    "history.chart.axis.volume": {
+      "comment": "History Chart: ボリューム軸ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボリューム"
+          }
+        }
+      }
+    },
+    "history.chart.axis.week": {
+      "comment": "History Chart: 週軸ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Week"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週"
+          }
+        }
+      }
+    },
+    "history.chart.legend.muscle": {
+      "comment": "History Chart: 部位 凡例。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscle"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "部位"
+          }
+        }
+      }
+    },
     "history.charts.advanced.locked.subtitle": {
       "comment": "チャート: Pro ロック中のサブ。",
       "extractionState": "manual",
@@ -2575,6 +3115,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "詳細チャートは Pro 機能です"
+          }
+        }
+      }
+    },
+    "history.charts.advanced.subtitle": {
+      "comment": "History Charts: 詳細サブテキスト。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare weekly, monthly, and per-muscle trends side by side."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週次・月次・部位別の傾向を一覧で確認できます。"
+          }
+        }
+      }
+    },
+    "history.charts.advanced.title": {
+      "comment": "History Charts: 詳細チャート見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced charts"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "詳細チャート"
           }
         }
       }
@@ -2647,6 +3223,60 @@
           "stringUnit": {
             "state": "translated",
             "value": "月次ボリューム"
+          }
+        }
+      }
+    },
+    "history.charts.weekly.subtitle": {
+      "comment": "History Charts: 週次サブテキスト。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total volume (reps × weight) per week."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直近の週ごとの総ボリューム(レップ × 重量)。"
+          }
+        }
+      }
+    },
+    "history.charts.weekly.title": {
+      "comment": "History Charts: 週次タイトル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly volume"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週次ボリューム"
+          }
+        }
+      }
+    },
+    "history.detail.exercise.summary.sets": {
+      "comment": "History 詳細: 種目あたりのセット数表示。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sets"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld セット"
           }
         }
       }
@@ -2831,6 +3461,42 @@
         }
       }
     },
+    "history.list.sort.newest": {
+      "comment": "History: 並び順 新しい順。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい順"
+          }
+        }
+      }
+    },
+    "history.list.sort.oldest": {
+      "comment": "History: 並び順 古い順。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oldest"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "古い順"
+          }
+        }
+      }
+    },
     "history.locked.subtitle": {
       "comment": "History: 31日以前ロックのサブ。",
       "extractionState": "manual",
@@ -2885,6 +3551,60 @@
         }
       }
     },
+    "history.mode.calendar": {
+      "comment": "History: 表示モード = カレンダー。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カレンダー"
+          }
+        }
+      }
+    },
+    "history.mode.charts": {
+      "comment": "History: 表示モード = チャート。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charts"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "チャート"
+          }
+        }
+      }
+    },
+    "history.mode.list": {
+      "comment": "History: 表示モード = リスト。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リスト"
+          }
+        }
+      }
+    },
     "history.mode.picker": {
       "comment": "History: 一覧 / カレンダー切替 Picker。",
       "extractionState": "manual",
@@ -2917,6 +3637,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "実施中"
+          }
+        }
+      }
+    },
+    "history.row.sets": {
+      "comment": "History 行: セット数表示。例: 「3 セット」",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sets"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld セット"
           }
         }
       }
@@ -3416,7 +4154,43 @@
         }
       }
     },
+    "muscle.abs.title": {
+      "comment": "Muscle: 腹直筋。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abs"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腹直筋"
+          }
+        }
+      }
+    },
     "muscle.biceps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biceps"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上腕二頭筋"
+          }
+        }
+      }
+    },
+    "muscle.biceps.title": {
+      "comment": "Muscle: 上腕二頭筋。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3450,7 +4224,43 @@
         }
       }
     },
+    "muscle.calves.title": {
+      "comment": "Muscle: ふくらはぎ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calves"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふくらはぎ"
+          }
+        }
+      }
+    },
     "muscle.chest": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸"
+          }
+        }
+      }
+    },
+    "muscle.chest.title": {
+      "comment": "Muscle: 胸。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3484,7 +4294,43 @@
         }
       }
     },
+    "muscle.deltoids.title": {
+      "comment": "Muscle: 三角筋(肩)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shoulders (Deltoids)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "肩(三角筋)"
+          }
+        }
+      }
+    },
     "muscle.forearms": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forearms"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前腕"
+          }
+        }
+      }
+    },
+    "muscle.forearms.title": {
+      "comment": "Muscle: 前腕。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3518,7 +4364,43 @@
         }
       }
     },
+    "muscle.fullBody.title": {
+      "comment": "Muscle: 全身指定。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full body"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全身"
+          }
+        }
+      }
+    },
     "muscle.glutes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Glutes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "臀筋"
+          }
+        }
+      }
+    },
+    "muscle.glutes.title": {
+      "comment": "Muscle: 臀筋。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3553,8 +4435,44 @@
         }
       }
     },
+    "muscle.group.core.title": {
+      "comment": "Muscle Group: 体幹。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体幹"
+          }
+        }
+      }
+    },
     "muscle.group.full": {
       "comment": "MuscleStepView: 全身グループ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full body"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全身"
+          }
+        }
+      }
+    },
+    "muscle.group.fullBody.title": {
+      "comment": "Muscle Group: 全身。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3589,8 +4507,44 @@
         }
       }
     },
+    "muscle.group.lowerBody.title": {
+      "comment": "Muscle Group: 下半身。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower body"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下半身"
+          }
+        }
+      }
+    },
     "muscle.group.upper": {
       "comment": "MuscleStepView: 上半身グループ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upper body"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上半身"
+          }
+        }
+      }
+    },
+    "muscle.group.upperBody.title": {
+      "comment": "Muscle Group: 上半身。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3624,7 +4578,43 @@
         }
       }
     },
+    "muscle.hamstrings.title": {
+      "comment": "Muscle: ハムストリング。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hamstrings"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハムストリング"
+          }
+        }
+      }
+    },
     "muscle.lats": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lats"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "広背筋"
+          }
+        }
+      }
+    },
+    "muscle.lats.title": {
+      "comment": "Muscle: 広背筋。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3658,7 +4648,43 @@
         }
       }
     },
+    "muscle.lowerBack.title": {
+      "comment": "Muscle: 腰背部。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower back"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腰背部"
+          }
+        }
+      }
+    },
     "muscle.obliques": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obliques"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腹斜筋"
+          }
+        }
+      }
+    },
+    "muscle.obliques.title": {
+      "comment": "Muscle: 腹斜筋。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3692,7 +4718,43 @@
         }
       }
     },
+    "muscle.quadriceps.title": {
+      "comment": "Muscle: 大腿四頭筋。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quads"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大腿四頭筋"
+          }
+        }
+      }
+    },
     "muscle.traps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traps"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "僧帽筋"
+          }
+        }
+      }
+    },
+    "muscle.traps.title": {
+      "comment": "Muscle: 僧帽筋。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3722,6 +4784,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "上腕三頭筋"
+          }
+        }
+      }
+    },
+    "muscle.triceps.title": {
+      "comment": "Muscle: 上腕三頭筋。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Triceps"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上腕三頭筋"
+          }
+        }
+      }
+    },
+    "paywall.action.close": {
+      "comment": "Paywall: 閉じるボタン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閉じる"
           }
         }
       }
@@ -4211,6 +5309,42 @@
         }
       }
     },
+    "paywall.features.title": {
+      "comment": "Paywall: 機能リスト見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's included"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro で使える機能"
+          }
+        }
+      }
+    },
+    "paywall.legal.disclaimer": {
+      "comment": "Paywall: 購入の注意書き。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases are tied to your Apple ID. Refunds follow App Store policies."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入は Apple ID に紐づきます。返金・払い戻しは App Store の規定に従います。"
+          }
+        }
+      }
+    },
     "paywall.legal.privacy": {
       "comment": "Paywall: プライバシーポリシーリンク。",
       "extractionState": "manual",
@@ -4278,6 +5412,168 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pro にアップグレード"
+          }
+        }
+      }
+    },
+    "paywall.price.loading": {
+      "comment": "Paywall: 商品ロード中の表示。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading price…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "価格を取得中…"
+          }
+        }
+      }
+    },
+    "paywall.price.note": {
+      "comment": "Paywall: 家族共有・税込についての一行。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Linked to your Apple ID. Family Sharing supported."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple ID に紐付く購入です。家族共有に対応。"
+          }
+        }
+      }
+    },
+    "paywall.price.one_time": {
+      "comment": "Paywall: 価格の補足(買い切り)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One-time purchase"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "買い切り"
+          }
+        }
+      }
+    },
+    "paywall.price.title": {
+      "comment": "Paywall: 価格行のラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Price"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "価格"
+          }
+        }
+      }
+    },
+    "paywall.price.unavailable": {
+      "comment": "Paywall: 商品ロード失敗時。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't load price"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "価格を取得できませんでした"
+          }
+        }
+      }
+    },
+    "paywall.purchase.cancelled": {
+      "comment": "Paywall: 購入キャンセル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase was cancelled."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入はキャンセルされました。"
+          }
+        }
+      }
+    },
+    "paywall.purchase.failed": {
+      "comment": "Paywall: 購入処理失敗。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase failed. Please try again later."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入処理に失敗しました。時間をおいて再試行してください。"
+          }
+        }
+      }
+    },
+    "paywall.purchase.pending": {
+      "comment": "Paywall: 購入保留。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase is pending. It will activate automatically once approved."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入は保留中です。承認後に自動的に反映されます。"
+          }
+        }
+      }
+    },
+    "paywall.purchase.verification_failed": {
+      "comment": "Paywall: レシート検証失敗。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We couldn't verify your receipt. Please contact support."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レシートの検証に失敗しました。サポートまでお問い合わせください。"
           }
         }
       }
@@ -4480,6 +5776,60 @@
         }
       }
     },
+    "paywall.restore.failed": {
+      "comment": "Paywall: 復元処理失敗。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore failed. Make sure you're signed in with your Apple ID."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元に失敗しました。Apple ID に接続できているか確認してください。"
+          }
+        }
+      }
+    },
+    "paywall.restore.no_purchase": {
+      "comment": "Paywall: 復元するものがない。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No purchases were found to restore."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元する購入は見つかりませんでした。"
+          }
+        }
+      }
+    },
+    "paywall.subtitle": {
+      "comment": "Paywall: ヘッダ下のサブコピー。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock every Pro feature with a one-time purchase."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1回の買い切りで Pro 機能をすべて解放します。"
+          }
+        }
+      }
+    },
     "paywall.title": {
       "extractionState": "manual",
       "localizations": {
@@ -4587,6 +5937,150 @@
         }
       }
     },
+    "session.finished.aborted": {
+      "comment": "Session: 中断時のラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout stopped"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを中断しました"
+          }
+        }
+      }
+    },
+    "session.finished.aborted.subtitle": {
+      "comment": "Session: 中断時のサブ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progress so far has been saved to history."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここまでの記録は履歴に保存されています。"
+          }
+        }
+      }
+    },
+    "session.finished.subtitle": {
+      "comment": "Session: 終了画面のサブ。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your workout has been saved to history."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを履歴に保存しました。"
+          }
+        }
+      }
+    },
+    "session.finished.title": {
+      "comment": "Session: 終了画面のタイトル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great work!"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おつかれさまでした!"
+          }
+        }
+      }
+    },
+    "session.header.progress": {
+      "comment": "Session ヘッダ: 進捗表示。例: 「種目 2 / 6」",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exercise %1$lld of %2$lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目 %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "session.input.current-set": {
+      "comment": "Session 入力: 現在セットの見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current set"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のセット"
+          }
+        }
+      }
+    },
+    "session.input.reps": {
+      "comment": "Session 入力: レップ数フィールド。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レップ"
+          }
+        }
+      }
+    },
+    "session.input.rest": {
+      "comment": "Session 入力: 休憩(秒)フィールド。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rest (s)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "休憩(秒)"
+          }
+        }
+      }
+    },
     "session.input.rpe": {
       "comment": "セット入力: RPE フィールドのラベル。",
       "extractionState": "manual",
@@ -4641,6 +6135,24 @@
         }
       }
     },
+    "session.interval.a11y": {
+      "comment": "Session: インターバル中の VoiceOver 文。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resting. %1$lld seconds remaining."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "休憩中。残り %1$lld 秒。"
+          }
+        }
+      }
+    },
     "session.interval.label": {
       "comment": "インターバル休憩のラベル。",
       "extractionState": "manual",
@@ -4655,6 +6167,78 @@
           "stringUnit": {
             "state": "translated",
             "value": "インターバル"
+          }
+        }
+      }
+    },
+    "session.row.set-progress": {
+      "comment": "Session 種目行: セット進捗。例: 「セット 2 / 4」",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set %1$lld of %2$lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セット %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "session.section.cooldown": {
+      "comment": "Session: クールダウン セクション。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cool-down"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クールダウン"
+          }
+        }
+      }
+    },
+    "session.section.main": {
+      "comment": "Session: メイン セクション。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メイン"
+          }
+        }
+      }
+    },
+    "session.section.warmup": {
+      "comment": "Session: ウォームアップ セクション。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm-up"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップ"
           }
         }
       }
@@ -4749,6 +6333,96 @@
         }
       }
     },
+    "settings.purchases.alert.failure.title": {
+      "comment": "Settings: 復元失敗アラート見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore failed"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元に失敗しました"
+          }
+        }
+      }
+    },
+    "settings.purchases.alert.nothing.body": {
+      "comment": "Settings: 復元するものがない本文。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Pro purchase was found on this Apple ID."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この Apple ID では Pro の購入履歴が見つかりませんでした。"
+          }
+        }
+      }
+    },
+    "settings.purchases.alert.nothing.title": {
+      "comment": "Settings: 復元するものがない見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to restore"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元する購入はありません"
+          }
+        }
+      }
+    },
+    "settings.purchases.alert.restored.body": {
+      "comment": "Settings: 復元成功アラート本文。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All Pro features are now available."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro 機能がすべて利用可能になりました。"
+          }
+        }
+      }
+    },
+    "settings.purchases.alert.restored.title": {
+      "comment": "Settings: 復元成功アラート見出し。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro restored"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro を復元しました"
+          }
+        }
+      }
+    },
     "settings.purchases.footer": {
       "comment": "Settings: 購入セクションの補足。",
       "extractionState": "manual",
@@ -4799,6 +6473,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pro の状態"
+          }
+        }
+      }
+    },
+    "settings.purchases.status.free": {
+      "comment": "Settings: Pro 状態 = 未購入。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not purchased"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未購入"
+          }
+        }
+      }
+    },
+    "settings.purchases.status.pro": {
+      "comment": "Settings: Pro 状態 = Pro。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro"
           }
         }
       }
@@ -4929,6 +6639,60 @@
         }
       }
     },
+    "settings.theme.dark": {
+      "comment": "Settings: テーマ = ダーク。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダーク"
+          }
+        }
+      }
+    },
+    "settings.theme.light": {
+      "comment": "Settings: テーマ = ライト。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ライト"
+          }
+        }
+      }
+    },
+    "settings.theme.system": {
+      "comment": "Settings: テーマ = システム。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "システムに合わせる"
+          }
+        }
+      }
+    },
     "settings.title": {
       "comment": "Settings タブのナビゲーションタイトル。",
       "extractionState": "manual",
@@ -4979,6 +6743,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "保存される重量は常に kg です。表示単位だけが切り替わります。"
+          }
+        }
+      }
+    },
+    "settings.weightUnit.kilograms": {
+      "comment": "Settings: 重量単位 = kg。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kg"
+          }
+        }
+      }
+    },
+    "settings.weightUnit.pounds": {
+      "comment": "Settings: 重量単位 = lbs。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lbs"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lbs"
           }
         }
       }
@@ -5080,6 +6880,24 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add Template"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テンプレートを追加"
+          }
+        }
+      }
+    },
+    "templates.addButton": {
+      "comment": "Templates: 追加ボタン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add template"
           }
         },
         "ja": {
@@ -5583,6 +7401,24 @@
         }
       }
     },
+    "templates.presetsSeeded.v1": {
+      "comment": "Templates: プリセット seed バージョン。内部用。表示しない。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "v1"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "v1"
+          }
+        }
+      }
+    },
     "templates.title": {
       "extractionState": "manual",
       "localizations": {
@@ -5647,6 +7483,78 @@
           "stringUnit": {
             "state": "translated",
             "value": "ワークアウト開始"
+          }
+        }
+      }
+    },
+    "templates.useButton": {
+      "comment": "Templates: 使うボタン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use this template"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このテンプレートで始める"
+          }
+        }
+      }
+    },
+    "theme.dark.title": {
+      "comment": "動的キー: ThemePreference.dark.rawValue 経由参照用。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダーク"
+          }
+        }
+      }
+    },
+    "theme.light.title": {
+      "comment": "動的キー: ThemePreference.light.rawValue 経由参照用。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ライト"
+          }
+        }
+      }
+    },
+    "theme.system.title": {
+      "comment": "動的キー: ThemePreference.system.rawValue 経由参照用。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "システムに合わせる"
           }
         }
       }
@@ -5803,6 +7711,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "ウォームアップ"
+          }
+        }
+      }
+    },
+    "weight-unit.kilograms.title": {
+      "comment": "動的キー: WeightUnitPreference.kilograms.rawValue 経由参照用。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilograms (kg)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キログラム (kg)"
+          }
+        }
+      }
+    },
+    "weight-unit.pounds.title": {
+      "comment": "動的キー: WeightUnitPreference.pounds.rawValue 経由参照用。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pounds (lbs)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ポンド (lbs)"
           }
         }
       }

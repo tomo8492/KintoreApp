@@ -98,7 +98,7 @@
       <CommandLineArguments>
       </CommandLineArguments>
       <StoreKitConfigurationFileReference
-         identifier = "../../WorkoutKit/Resources/WorkoutKit.storekit">
+         identifier = "WorkoutKit/Resources/WorkoutKit.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
