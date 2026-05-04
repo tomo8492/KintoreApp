@@ -113,7 +113,8 @@ struct HistoryListView: View {
     }
 
     private var groupedSessions: [DayGroup] {
-        let calendar = Calendar.current
+        // 日付境界はユーザー TimeZone 追従の calendar で計算する (DEBUG_REPORT Critical-3)。
+        let calendar = HistoryCutoff.defaultCalendar
         let dict = Dictionary(grouping: sessions) { calendar.startOfDay(for: $0.startedAt) }
         let keys = dict.keys.sorted(by: { sortOrder == .newest ? $0 > $1 : $0 < $1 })
         let formatter: DateFormatter = {
@@ -139,6 +140,11 @@ struct HistoryListView: View {
 
 private struct HistoryListRow: View {
     let session: WorkoutSession
+
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -209,7 +215,7 @@ private struct HistoryListRow: View {
 
     private var volumeLabel: String {
         let total = session.totalVolumeKg
-        return UnitsFormatter.formatWeight(total, preference: .kilograms)
+        return UnitsFormatter.formatWeight(total, preference: weightUnit)
     }
 
     private var setsLabel: String {

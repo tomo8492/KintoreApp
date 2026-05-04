@@ -36,6 +36,11 @@ struct ProGateLockedView: View {
 struct HistorySessionRow: View {
     let session: WorkoutSession
 
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(UnitsFormatter.formatHistoryDate(session.startedAt))
@@ -59,7 +64,7 @@ struct HistorySessionRow: View {
     }
 
     private var volumeLabel: String {
-        UnitsFormatter.formatWeight(session.totalVolumeKg, preference: .kilograms)
+        UnitsFormatter.formatWeight(session.totalVolumeKg, preference: weightUnit)
     }
 }
 

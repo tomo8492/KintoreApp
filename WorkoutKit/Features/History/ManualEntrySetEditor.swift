@@ -2,9 +2,9 @@
 // CLAUDE.md §1.1 F-04 / §-1.4 (内部単位 kg) / §11.4 準拠。
 // ManualEntryView から切り出した「種目ごとの 1 セクション」と「1 セット行」のサブビュー。
 //
-// 重量入力は kg のみ。ユーザー設定で lb 表示にするのは v1.1+ で別途追加する想定。
-// (現状 Settings 画面が未実装で WeightUnitPreference を渡す経路がないため、
-//  保存値 = 内部単位 kg で受ける = §-1.4 規約と整合させる。)
+// 保存値は常に内部単位 kg(§-1.4)。Settings の `weightUnit` 設定に応じて、
+// TextField / Stepper の表示値とラベルを kg / lb に切替える。
+// kg ↔ lb 変換は UnitsFormatter.toKilograms / lbsPerKg 経由で行う。
 
 import SwiftUI
 
@@ -68,6 +68,11 @@ struct ManualEntrySetRow: View {
     let onChange: ((inout ManualEntrySetDraft) -> Void) -> Void
 
     @State private var rpeEnabled: Bool
+
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
 
     init(
         index: Int,
@@ -157,20 +162,32 @@ struct ManualEntrySetRow: View {
         }
     }
 
+    /// 重量入力。保存値は内部単位 kg 固定。表示・入力は Settings の単位に従う。
+    /// kg 設定: 2.5 kg 刻み / lb 設定: 5 lb (≈ 2.27 kg) 刻み。
     private var weightField: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Text("manual-entry.weight-kg")
+        let labelKey: LocalizedStringKey = weightUnit == .pounds
+            ? "manual-entry.weight-lb"
+            : "manual-entry.weight-kg"
+
+        let displayBinding = Binding<Double>(
+            get: { displayedWeight(fromKg: set.weightKg) },
+            set: { newDisplay in
+                let kg = UnitsFormatter.toKilograms(newDisplay, from: weightUnit)
+                onChange { $0.weightKg = max(0, kg) }
+            }
+        )
+
+        let displayStep: Double = weightUnit == .pounds ? 5.0 : 2.5
+        let displayMax: Double = weightUnit == .pounds ? 2200.0 : 999.5
+
+        return VStack(alignment: .leading, spacing: 2) {
+            Text(labelKey)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
             HStack(spacing: 4) {
                 TextField(
-                    "manual-entry.weight-kg",
-                    value: Binding(
-                        get: { set.weightKg },
-                        set: { newValue in
-                            onChange { $0.weightKg = max(0, newValue) }
-                        }
-                    ),
+                    labelKey,
+                    value: displayBinding,
                     format: .number.precision(.fractionLength(0...2))
                 )
                 .keyboardType(.decimalPad)
@@ -179,18 +196,21 @@ struct ManualEntrySetRow: View {
                 .textFieldStyle(.roundedBorder)
 
                 Stepper(
-                    "manual-entry.weight-kg",
-                    value: Binding(
-                        get: { set.weightKg },
-                        set: { newValue in
-                            onChange { $0.weightKg = max(0, newValue) }
-                        }
-                    ),
-                    in: 0...999.5,
-                    step: 2.5
+                    labelKey,
+                    value: displayBinding,
+                    in: 0...displayMax,
+                    step: displayStep
                 )
                 .labelsHidden()
             }
+        }
+    }
+
+    /// 内部 kg を Settings に応じた表示単位の値に変換する。
+    private func displayedWeight(fromKg kg: Double) -> Double {
+        switch weightUnit {
+        case .kilograms: return kg
+        case .pounds:    return kg * 2.2046226218
         }
     }
 

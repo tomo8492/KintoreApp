@@ -14,10 +14,11 @@ struct HistoryCalendarView: View {
     /// 親 View が PaywallTrigger.gate を呼ぶ。
     let onPaywallRequested: (ProFeature) -> Void
 
-    @State private var displayedMonth: Date = Calendar.current.startOfMonth(for: .now)
+    @State private var displayedMonth: Date = HistoryCutoff.defaultCalendar.startOfMonth(for: .now)
     @State private var selectedDay: Date?
 
-    private let calendar = Calendar.current
+    /// 日付境界はユーザー TimeZone 追従の calendar で計算する (DEBUG_REPORT Critical-3)。
+    private let calendar = HistoryCutoff.defaultCalendar
 
     var body: some View {
         VStack(spacing: 12) {

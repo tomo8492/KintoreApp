@@ -21,13 +21,23 @@ final class ManualEntryStore {
     /// メモ。
     var notes: String = ""
 
+    /// セッションの所要時間 (分)。0 = 未計測 (finishedAt = startedAt として保存)。
+    /// 旧実装では「60 秒 × 総セット数」で推定していたが、3 時間セッションが
+    /// 20 分扱いになるなど集計を汚染するため撤去 (DEBUG_REPORT Critical-4)。
+    /// 1 〜 600 分 (10 時間) を許容範囲とする。
+    var durationMinutes: Int = 0
+
     /// 追加された種目 (順序保持)。各種目は 1 行以上の set draft を持つ。
     var drafts: [ManualEntryDraft] = []
 
+    /// 単体テスト / Preview から「現在時刻」を差し替えるためのフック。
+    let now: Date
+
     init(now: Date = .now) {
+        self.now = now
         // 既定は「1 時間前」。「今」を選べないよう DatePicker の in: でも制約するが、
         // 初期値も明確に過去にしておくことで「未来を選んでしまう」事故を防ぐ。
-        let calendar = Calendar.current
+        let calendar = HistoryCutoff.defaultCalendar
         self.sessionDate = calendar.date(byAdding: .hour, value: -1, to: now) ?? now
     }
 
@@ -94,9 +104,12 @@ final class ManualEntryStore {
         guard canSave else { return nil }
 
         // 過去日のはずだが、念のため未来日は now にクランプする。
-        let startedAt = min(sessionDate, .now)
-        let estimatedSeconds = max(60, totalSetCount * 60)
-        let finishedAt = startedAt.addingTimeInterval(TimeInterval(estimatedSeconds))
+        let startedAt = min(sessionDate, now)
+        // durationMinutes == 0 は「未計測」扱い: finishedAt = startedAt とし、
+        // チャート集計には所要時間ゼロのデータポイントとして残す
+        // (DEBUG_REPORT Critical-4: 自動推定の 60 秒/セットは撤去)。
+        let clampedMinutes = max(0, min(durationMinutes, 600))
+        let finishedAt = startedAt.addingTimeInterval(TimeInterval(clampedMinutes * 60))
 
         let session = WorkoutSession(
             startedAt: startedAt,

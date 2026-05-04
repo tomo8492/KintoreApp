@@ -14,9 +14,9 @@ struct WeeklyVolumePoint: Identifiable {
     let volumeKg: Double
 
     /// セット集合を「週始まり × 部位グループ」で集計する。
-    /// Calendar.current.firstWeekday を尊重する。
+    /// 週境界はユーザー TimeZone 追従の HistoryCutoff.defaultCalendar.firstWeekday を尊重する。
     static func aggregate(sessions: [WorkoutSession]) -> [WeeklyVolumePoint] {
-        let calendar = Calendar.current
+        let calendar = HistoryCutoff.defaultCalendar
         var bucket: [Date: [Muscle.Group: Double]] = [:]
 
         for session in sessions {
@@ -24,7 +24,7 @@ struct WeeklyVolumePoint: Identifiable {
                 let weight = Double(set.reps) * set.weightKg
                 guard weight > 0 else { continue }
                 guard let exercise = set.exercise else { continue }
-                let week = weekStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
+                let week = HistoryCutoff.weekStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
                 let group = exercise.primaryMuscle.group
                 bucket[week, default: [:]][group, default: 0] += weight
             }
@@ -39,11 +39,6 @@ struct WeeklyVolumePoint: Identifiable {
                 return lhs.muscleGroup.rawValue < rhs.muscleGroup.rawValue
             }
     }
-
-    private static func weekStart(for date: Date, calendar: Calendar) -> Date {
-        let comps = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
-        return calendar.date(from: comps) ?? calendar.startOfDay(for: date)
-    }
 }
 
 // MARK: - MonthlyVolumePoint (Pro)
@@ -55,24 +50,19 @@ struct MonthlyVolumePoint: Identifiable {
     let volumeKg: Double
 
     static func aggregate(sessions: [WorkoutSession]) -> [MonthlyVolumePoint] {
-        let calendar = Calendar.current
+        let calendar = HistoryCutoff.defaultCalendar
         var bucket: [Date: Double] = [:]
         for session in sessions {
             for set in session.sets {
                 let weight = Double(set.reps) * set.weightKg
                 guard weight > 0 else { continue }
-                let month = monthStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
+                let month = HistoryCutoff.monthStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
                 bucket[month, default: 0] += weight
             }
         }
         return bucket
             .map { MonthlyVolumePoint(monthStart: $0.key, volumeKg: $0.value) }
             .sorted { $0.monthStart < $1.monthStart }
-    }
-
-    private static func monthStart(for date: Date, calendar: Calendar) -> Date {
-        let comps = calendar.dateComponents([.year, .month], from: date)
-        return calendar.date(from: comps) ?? date
     }
 }
 
@@ -90,7 +80,7 @@ struct MuscleHeatmapMatrix {
     }
 
     static func aggregate(sessions: [WorkoutSession]) -> MuscleHeatmapMatrix {
-        let calendar = Calendar.current
+        let calendar = HistoryCutoff.defaultCalendar
         var bucket: [Date: [Muscle: Double]] = [:]
 
         for session in sessions {
@@ -98,7 +88,7 @@ struct MuscleHeatmapMatrix {
                 let weight = Double(set.reps) * set.weightKg
                 guard weight > 0 else { continue }
                 guard let exercise = set.exercise else { continue }
-                let week = weekStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
+                let week = HistoryCutoff.weekStart(for: set.completedAt ?? session.startedAt, calendar: calendar)
                 bucket[week, default: [:]][exercise.primaryMuscle, default: 0] += weight
             }
         }
@@ -107,11 +97,6 @@ struct MuscleHeatmapMatrix {
             muscleMap.map { Cell(weekStart: week, muscle: $0.key, volumeKg: $0.value) }
         }
         return MuscleHeatmapMatrix(cells: cells)
-    }
-
-    private static func weekStart(for date: Date, calendar: Calendar) -> Date {
-        let comps = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
-        return calendar.date(from: comps) ?? calendar.startOfDay(for: date)
     }
 }
 

@@ -11,6 +11,11 @@ import SwiftUI
 struct HistorySessionDetailView: View {
     let session: WorkoutSession
 
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
+
     var body: some View {
         List {
             headerSection
@@ -18,7 +23,7 @@ struct HistorySessionDetailView: View {
                 Section(group.displayName) {
                     exerciseSummary(group)
                     ForEach(group.sets) { set in
-                        SetRow(set: set, index: index(of: set, in: group))
+                        SetRow(set: set, index: index(of: set, in: group), weightUnit: weightUnit)
                     }
                 }
             }
@@ -74,7 +79,7 @@ struct HistorySessionDetailView: View {
     }
 
     private var volumeLabel: String {
-        UnitsFormatter.formatWeight(session.totalVolumeKg, preference: .kilograms)
+        UnitsFormatter.formatWeight(session.totalVolumeKg, preference: weightUnit)
     }
 
     // MARK: - Exercise summary row
@@ -85,7 +90,7 @@ struct HistorySessionDetailView: View {
             localized: "history.detail.exercise.summary.sets",
             defaultValue: "%lld セット"
         )
-        let totalVolume = UnitsFormatter.formatWeight(group.totalVolumeKg, preference: .kilograms)
+        let totalVolume = UnitsFormatter.formatWeight(group.totalVolumeKg, preference: weightUnit)
         return HStack {
             Text(String(format: setsTemplate, setCount))
             Spacer()
@@ -149,6 +154,7 @@ struct HistorySessionDetailView: View {
 private struct SetRow: View {
     let set: ExerciseSet
     let index: Int
+    let weightUnit: WeightUnitPreference
 
     var body: some View {
         HStack(spacing: 12) {
@@ -185,7 +191,7 @@ private struct SetRow: View {
                 }
                 if set.weightKg > 0 {
                     Label {
-                        Text(UnitsFormatter.formatWeight(set.weightKg, preference: .kilograms))
+                        Text(UnitsFormatter.formatWeight(set.weightKg, preference: weightUnit))
                     } icon: {
                         Image(systemName: "scalemass")
                     }
