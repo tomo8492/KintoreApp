@@ -1358,60 +1358,6 @@
         }
       }
     },
-    "builder.muscle.diagram.side.back": {
-      "comment": "BodyDiagramView: 後面切替ラベル。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Back"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "後面"
-          }
-        }
-      }
-    },
-    "builder.muscle.diagram.side.front": {
-      "comment": "BodyDiagramView: 前面切替ラベル。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Front"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "前面"
-          }
-        }
-      }
-    },
-    "builder.muscle.diagram.side.label": {
-      "comment": "BodyDiagramView: 前/後面 Picker のアクセシビリティラベル。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Body side"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "表示する面"
-          }
-        }
-      }
-    },
     "builder.muscle.picker.mode.diagram": {
       "comment": "MuscleStepView: 視覚ピッカーモードラベル。",
       "extractionState": "manual",
@@ -2889,23 +2835,6 @@
         }
       }
     },
-    "goal.fat-loss": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fat loss"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "減量"
-          }
-        }
-      }
-    },
     "goal.fat-loss.description": {
       "comment": "GoalStepView: 減量 説明。",
       "extractionState": "manual",
@@ -3856,6 +3785,108 @@
         }
       }
     },
+    "library.detail.cautions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cautions"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "注意点"
+          }
+        }
+      }
+    },
+    "library.detail.equipment": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equipment"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "器具"
+          }
+        }
+      }
+    },
+    "library.detail.primary-muscle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primary muscle"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主動筋"
+          }
+        }
+      }
+    },
+    "library.detail.secondary-muscles": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Secondary muscles"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "協働筋"
+          }
+        }
+      }
+    },
+    "library.detail.steps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手順"
+          }
+        }
+      }
+    },
+    "library.detail.youtube": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch on YouTube"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube で見る"
+          }
+        }
+      }
+    },
     "manual-entry.add-exercises": {
       "extractionState": "manual",
       "localizations": {
@@ -4009,6 +4040,23 @@
         }
       }
     },
+    "manual-entry.picker.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exercise library is empty"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目DBが空です"
+          }
+        }
+      }
+    },
     "manual-entry.picker.empty.subtitle": {
       "extractionState": "manual",
       "localizations": {
@@ -4026,6 +4074,57 @@
         }
       }
     },
+    "manual-entry.picker.muscle-filter": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muscle"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "部位"
+          }
+        }
+      }
+    },
+    "manual-entry.picker.muscle-filter.all": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて"
+          }
+        }
+      }
+    },
+    "manual-entry.picker.no-matches": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No matches"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "該当なし"
+          }
+        }
+      }
+    },
     "manual-entry.picker.no-matches.subtitle": {
       "extractionState": "manual",
       "localizations": {
@@ -4039,6 +4138,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "該当する種目がありません。"
+          }
+        }
+      }
+    },
+    "manual-entry.picker.search": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search exercises"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目を検索"
           }
         }
       }
@@ -7716,60 +7832,6 @@
         }
       }
     },
-    "theme.dark.title": {
-      "comment": "動的キー: ThemePreference.dark.rawValue 経由参照用。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dark"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ダーク"
-          }
-        }
-      }
-    },
-    "theme.light.title": {
-      "comment": "動的キー: ThemePreference.light.rawValue 経由参照用。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Light"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ライト"
-          }
-        }
-      }
-    },
-    "theme.system.title": {
-      "comment": "動的キー: ThemePreference.system.rawValue 経由参照用。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "System"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "システムに合わせる"
-          }
-        }
-      }
-    },
     "today.action.start-builder": {
       "comment": "Builder ウィザードを開くボタン。",
       "extractionState": "manual",
@@ -7922,42 +7984,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "ウォームアップ"
-          }
-        }
-      }
-    },
-    "weight-unit.kilograms.title": {
-      "comment": "動的キー: WeightUnitPreference.kilograms.rawValue 経由参照用。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kilograms (kg)"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "キログラム (kg)"
-          }
-        }
-      }
-    },
-    "weight-unit.pounds.title": {
-      "comment": "動的キー: WeightUnitPreference.pounds.rawValue 経由参照用。",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pounds (lbs)"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ポンド (lbs)"
           }
         }
       }

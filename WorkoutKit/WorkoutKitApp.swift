@@ -32,6 +32,11 @@ struct WorkoutKitApp: App {
     /// 文字列で持つのは @AppStorage の素直な使い方に合わせるため。
     @AppStorage(SettingsKey.theme) private var themeRaw: String = ThemePreference.system.rawValue
 
+    /// scenePhase が `.active` に戻ったタイミングで StoreKit のエンタイトルメントを
+    /// 再評価する(家族共有解除・別端末払戻し・バックグラウンド長期化からの復帰で
+    /// Transaction.updates が間に合わないケースの保険)。
+    @Environment(\.scenePhase) private var scenePhase
+
     init() {
         do {
             // ModelContainer.init(for:) は Schema インスタンスを取る。
@@ -66,6 +71,11 @@ struct WorkoutKitApp: App {
                 .task {
                     // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
                     await dependency.storeKitClient.start()
+                }
+                .onChange(of: scenePhase) { _, newPhase in
+                    if newPhase == .active {
+                        Task { await dependency.storeKitClient.refreshEntitlementsOnForeground() }
+                    }
                 }
         }
         .modelContainer(modelContainer)

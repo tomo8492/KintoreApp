@@ -73,7 +73,7 @@ struct ExerciseDetailView: View {
 
     private var steps: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Steps").font(.headline)
+            Text("library.detail.steps").font(.headline)
 
             if !descriptionHTML.isEmpty {
                 // HTMLSanitizer 経由で <script> 等を除去 → AttributedString に変換して描画。
@@ -101,7 +101,7 @@ struct ExerciseDetailView: View {
 
     private var cautionsSection: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Label("Cautions", systemImage: "exclamationmark.triangle.fill")
+            Label("library.detail.cautions", systemImage: "exclamationmark.triangle.fill")
                 .font(.headline)
                 .foregroundStyle(.orange)
 
@@ -119,11 +119,11 @@ struct ExerciseDetailView: View {
 
     private var muscleBadges: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Primary muscle").font(.headline)
+            Text("library.detail.primary-muscle").font(.headline)
             badge(LibraryDisplay.muscleName(exercise.primaryMuscle), tint: .accentColor)
 
             if !exercise.secondaryMuscles.isEmpty {
-                Text("Secondary muscles").font(.headline).padding(.top, 8)
+                Text("library.detail.secondary-muscles").font(.headline).padding(.top, 8)
                 FlowLayoutWrap {
                     ForEach(exercise.secondaryMuscles, id: \.self) { m in
                         badge(LibraryDisplay.muscleName(m), tint: .secondary)
@@ -135,7 +135,7 @@ struct ExerciseDetailView: View {
 
     private var equipmentBadges: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Equipment").font(.headline)
+            Text("library.detail.equipment").font(.headline)
             FlowLayoutWrap {
                 ForEach(exercise.equipment, id: \.self) { eq in
                     Label {
@@ -172,7 +172,7 @@ struct ExerciseDetailView: View {
                 handleYouTubeTap(query: query)
             } label: {
                 Label {
-                    Text("Watch on YouTube")
+                    Text("library.detail.youtube")
                         .lineLimit(1)
                         .minimumScaleFactor(0.85)
                 } icon: {
@@ -184,7 +184,7 @@ struct ExerciseDetailView: View {
             }
             .buttonStyle(.borderedProminent)
             .tint(.red)
-            .accessibilityLabel(Text("Watch on YouTube"))
+            .accessibilityLabel(Text("library.detail.youtube"))
             .accessibilityHint(Text(isUnlocked
                                     ? "a11y.library.youtube.unlocked.hint"
                                     : "a11y.library.youtube.locked.hint"))

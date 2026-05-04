@@ -43,7 +43,10 @@ final class LiveActivityClient {
     // MARK: - Lifecycle
 
     /// セッション開始時に Live Activity を起動する。
-    /// - 既存の Activity が残っていれば end してから新規 request する。
+    /// - 既存の Activity が残っていればローカルにキャプチャしてから `self.activity` を nil にし、
+    ///   キャプチャ済みのインスタンスをバックグラウンド Task で end する。
+    ///   `self.activity` を直接 await した先で参照するパターンだと、新規 request が先に
+    ///   走った場合に await が「新 Activity の終了」を待ってしまい永久ブロックになる。
     /// - 失敗(権限なし、内部エラー等)時は静かにログだけ残し、SessionStore は通常通り続行する。
     func start(
         attributes: SessionLiveActivityAttributes,
@@ -54,9 +57,15 @@ final class LiveActivityClient {
             return
         }
 
-        if activity != nil {
-            // 多重起動防止。前回の終了処理を待たずに走るため Task で投げて忘れる。
-            Task { await self.endInternal(reason: "restart") }
+        if let previous = activity {
+            // 旧 Activity を確定的にキャプチャして即時 self.activity をクリア。
+            // 新 request が成功すると self.activity は新 Activity を保持するため、
+            // バックグラウンド Task は previous(旧)だけを安全に終わらせられる。
+            activity = nil
+            Task {
+                await previous.end(previous.content, dismissalPolicy: .immediate)
+                Logger.session.info("LiveActivity ended (restart): id=\(previous.id, privacy: .public)")
+            }
         }
 
         do {

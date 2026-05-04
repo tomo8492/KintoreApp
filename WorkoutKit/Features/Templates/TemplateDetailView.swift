@@ -121,6 +121,7 @@ struct TemplateDetailView: View {
         let output = store.makeGeneratorOutput(from: template)
         onUse(PendingUse(
             output: output,
+            goal: template.defaultGoal,
             displayName: TemplateNaming.localizedDisplayName(for: template)
         ))
     }

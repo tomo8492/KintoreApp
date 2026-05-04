@@ -34,7 +34,7 @@ struct ManualEntryExercisePicker: View {
                 .navigationTitle("manual-entry.picker.title")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar { toolbarContent }
-                .searchable(text: $searchText, prompt: Text("Search exercises"))
+                .searchable(text: $searchText, prompt: Text("manual-entry.picker.search"))
         }
     }
 
@@ -44,13 +44,13 @@ struct ManualEntryExercisePicker: View {
     private var content: some View {
         if allExercises.isEmpty {
             ContentUnavailableView {
-                Label("Exercise library is empty", systemImage: "books.vertical")
+                Label("manual-entry.picker.empty", systemImage: "books.vertical")
             } description: {
                 Text("manual-entry.picker.empty.subtitle")
             }
         } else if filtered.isEmpty {
             ContentUnavailableView {
-                Label("No matches", systemImage: "magnifyingglass")
+                Label("manual-entry.picker.no-matches", systemImage: "magnifyingglass")
             } description: {
                 Text("manual-entry.picker.no-matches.subtitle")
             }
@@ -72,8 +72,8 @@ struct ManualEntryExercisePicker: View {
     @ViewBuilder
     private var muscleFilterSection: some View {
         Section {
-            Picker("Muscle", selection: $muscleFilter) {
-                Text("All").tag(Muscle?.none)
+            Picker("manual-entry.picker.muscle-filter", selection: $muscleFilter) {
+                Text("manual-entry.picker.muscle-filter.all").tag(Muscle?.none)
                 ForEach(Muscle.allCases, id: \.self) { m in
                     Text(LibraryDisplay.muscleName(m)).tag(Muscle?.some(m))
                 }
@@ -144,7 +144,7 @@ struct ManualEntryExercisePicker: View {
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button("Cancel") { dismiss() }
+            Button("common.cancel") { dismiss() }
         }
         ToolbarItem(placement: .confirmationAction) {
             Button {

@@ -18,6 +18,11 @@ struct ResultStepView: View {
     /// slug → Exercise 解決用。同梱規模(150種目)では全件取得が最も簡潔。
     @Query(sort: \Exercise.slug) private var allExercises: [Exercise]
 
+    /// `allExercises` から派生する slug→Exercise マップ。
+    /// computed property で書くと body 評価ごとに 150 件の Dictionary を作り直すため、
+    /// `@State` にキャッシュして `.task(id: allExercises.count)` で更新する。
+    @State private var nameMap: [String: Exercise] = [:]
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -34,6 +39,9 @@ struct ResultStepView: View {
             }
             .padding(.vertical)
             .padding(.horizontal)
+        }
+        .task(id: allExercises.count) {
+            nameMap = Dictionary(uniqueKeysWithValues: allExercises.map { ($0.slug, $0) })
         }
     }
 
@@ -146,10 +154,6 @@ struct ResultStepView: View {
     /// DB に未登録の slug は slug 自体を返す(seed 未投入時の保険)。
     private func displayName(for slug: String) -> String {
         nameMap[slug]?.localizedName ?? slug
-    }
-
-    private var nameMap: [String: Exercise] {
-        Dictionary(uniqueKeysWithValues: allExercises.map { ($0.slug, $0) })
     }
 
     // MARK: - Actions
