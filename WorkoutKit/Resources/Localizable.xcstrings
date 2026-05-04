@@ -512,6 +512,23 @@
         }
       }
     },
+    "a11y.builder.muscle.diagram.label": {
+      "comment": "F3 a11y. BodyDiagramView 全体のラベル。",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Body muscle diagram. Tap a region to select it."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "人体図ピッカー。タップで部位を選択します"
+          }
+        }
+      }
+    },
     "a11y.builder.muscle.toggle.hint": {
       "comment": "F3 a11y. MuscleChip のヒント。",
       "localizations": {
@@ -1319,6 +1336,132 @@
           "stringUnit": {
             "state": "translated",
             "value": "ワークアウトを生成できませんでした"
+          }
+        }
+      }
+    },
+    "builder.muscle.diagram.clear": {
+      "comment": "BodyDiagramView: 選択全解除ボタン。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クリア"
+          }
+        }
+      }
+    },
+    "builder.muscle.diagram.side.back": {
+      "comment": "BodyDiagramView: 後面切替ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "後面"
+          }
+        }
+      }
+    },
+    "builder.muscle.diagram.side.front": {
+      "comment": "BodyDiagramView: 前面切替ラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Front"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前面"
+          }
+        }
+      }
+    },
+    "builder.muscle.diagram.side.label": {
+      "comment": "BodyDiagramView: 前/後面 Picker のアクセシビリティラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Body side"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示する面"
+          }
+        }
+      }
+    },
+    "builder.muscle.picker.mode.diagram": {
+      "comment": "MuscleStepView: 視覚ピッカーモードラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagram"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "人体図"
+          }
+        }
+      }
+    },
+    "builder.muscle.picker.mode.label": {
+      "comment": "MuscleStepView: 人体図/リスト切替 Picker のアクセシビリティラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Picker style"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択スタイル"
+          }
+        }
+      }
+    },
+    "builder.muscle.picker.mode.list": {
+      "comment": "MuscleStepView: テキストリストモードラベル。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リスト"
           }
         }
       }

@@ -1,11 +1,29 @@
 // MARK: - MuscleStepView
 // Builder Step 2: 部位(Muscle)。CLAUDE.md §1.1 F-01。
-// 複数選択。Muscle.Group(upperBody/core/lowerBody/fullBody)で見出し分け。
+// デフォルトは BodyDiagramView(視覚ピッカー)。互換のため
+// 旧テキストチップ UI も折りたたみで併設し、ユーザーが選択できる。
 
 import SwiftUI
 
 struct MuscleStepView: View {
     @Bindable var store: BuilderStore
+
+    /// 視覚版(diagram)/ レガシー(chip)の表示モード。
+    @State private var pickerMode: PickerMode = .diagram
+
+    enum PickerMode: String, CaseIterable, Identifiable {
+        case diagram
+        case list
+
+        var id: String { rawValue }
+
+        var titleKey: LocalizedStringKey {
+            switch self {
+            case .diagram: return "builder.muscle.picker.mode.diagram"
+            case .list:    return "builder.muscle.picker.mode.list"
+            }
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -15,17 +33,40 @@ struct MuscleStepView: View {
                     .foregroundStyle(.secondary)
                     .padding(.horizontal)
 
-                ForEach(Muscle.Group.allCases, id: \.self) { group in
-                    MuscleGroupSection(
-                        group: group,
-                        muscles: musclesIn(group),
-                        selected: store.input.muscles
-                    ) { muscle in
-                        toggle(muscle)
+                Picker(selection: $pickerMode) {
+                    ForEach(PickerMode.allCases) { mode in
+                        Text(mode.titleKey).tag(mode)
                     }
+                } label: {
+                    Text("builder.muscle.picker.mode.label")
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+
+                switch pickerMode {
+                case .diagram:
+                    BodyDiagramView(selected: $store.input.muscles)
+                case .list:
+                    listMode
                 }
             }
             .padding(.vertical)
+        }
+    }
+
+    // MARK: - Legacy list mode
+
+    private var listMode: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            ForEach(Muscle.Group.allCases, id: \.self) { group in
+                MuscleGroupSection(
+                    group: group,
+                    muscles: musclesIn(group),
+                    selected: store.input.muscles
+                ) { muscle in
+                    toggle(muscle)
+                }
+            }
         }
     }
 
@@ -93,7 +134,7 @@ private struct MuscleChip: View {
     var body: some View {
         Button(action: onTap) {
             HStack {
-                Text(titleKey)
+                Text(MuscleLocalization.titleKey(for: muscle))
                     .font(.subheadline)
                     .foregroundStyle(isSelected ? Color.white : Color.primary)
                     .lineLimit(2)
@@ -115,31 +156,9 @@ private struct MuscleChip: View {
             )
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(Text(titleKey))
+        .accessibilityLabel(Text(MuscleLocalization.titleKey(for: muscle)))
         .accessibilityHint(Text("a11y.builder.muscle.toggle.hint"))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
-    }
-
-    /// LocalizedStringKey は文字列補間を format 引数化するため、
-    /// 動的キー(rawValue ごとに別キー)が必要なケースは switch で静的に書き分ける。
-    private var titleKey: LocalizedStringKey {
-        switch muscle {
-        case .chest:      return "muscle.chest.title"
-        case .lats:       return "muscle.lats.title"
-        case .traps:      return "muscle.traps.title"
-        case .deltoids:   return "muscle.deltoids.title"
-        case .biceps:     return "muscle.biceps.title"
-        case .triceps:    return "muscle.triceps.title"
-        case .forearms:   return "muscle.forearms.title"
-        case .abs:        return "muscle.abs.title"
-        case .obliques:   return "muscle.obliques.title"
-        case .lowerBack:  return "muscle.lowerBack.title"
-        case .quadriceps: return "muscle.quadriceps.title"
-        case .hamstrings: return "muscle.hamstrings.title"
-        case .glutes:     return "muscle.glutes.title"
-        case .calves:     return "muscle.calves.title"
-        case .fullBody:   return "muscle.fullBody.title"
-        }
     }
 }
 
