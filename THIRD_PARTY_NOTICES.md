@@ -1,8 +1,6 @@
 # Third-Party Notices
 
-This file lists third-party works whose ideas, design patterns, or specifications inspired parts of WorkoutKit.
-
-WorkoutKit does not bundle or redistribute any third-party code or art. The notices below are provided as design-credit / acknowledgement only.
+This file lists third-party works whose code, art, or design patterns are used in or inspired parts of WorkoutKit. WorkoutKit redistributes the items listed below under the terms of their respective licenses.
 
 ---
 
@@ -11,8 +9,10 @@ WorkoutKit does not bundle or redistribute any third-party code or art. The noti
 - **Project**: [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 - **Author**: Mathias Bradiceanu
 - **License**: MIT License
-- **Used for**: Reference for the body-diagram muscle-selection UX in `WorkoutKit/Features/Builder/BodyDiagram/`. The 5-attribute exercise schema (TYPE / PRIMARY_MUSCLE / SECONDARY_MUSCLE / EQUIPMENT / MECHANICS_TYPE), `slug`-based identifiers, and the front/back tappable body-diagram interaction pattern were inspired by this project (see `src/features/workout-builder/ui/muscle-selection.tsx`).
-- **Code reused**: None. All SwiftUI `Path` data, silhouette geometry, and muscle region shapes in `BodyDiagramShapes.swift` were drawn from scratch for this project. The exercise seed JSON is original WorkoutKit content.
+- **Used for**:
+  1. **Body diagram SVG art** — the anatomical front+back silhouette and per-muscle illustrations bundled under `WorkoutKit/Resources/Assets.xcassets/Body/` (`body-base.svg`, `body-{muscle}.svg`) are derived from `src/features/workout-builder/ui/muscle-selection.tsx` and `src/features/workout-builder/ui/muscles/*.tsx` (viewBox 535×462). SVG path data was extracted via `scripts/extract_body_svg.py`, normalized to a single fill color (gray for the silhouette, accent orange for highlights), and stripped of React handlers / hit-zone paths. No other modifications were made to the path geometry.
+  2. **Schema design reference** — the 5-attribute exercise schema (TYPE / PRIMARY_MUSCLE / SECONDARY_MUSCLE / EQUIPMENT / MECHANICS_TYPE), `slug`-based identifiers, and the muscle-selection interaction pattern were inspired by this project.
+- **Not used**: workout-cool's exercise seed data, translations, server code, or branding.
 
 ```
 MIT License

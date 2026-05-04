@@ -1,98 +1,122 @@
-// MARK: - BodyDiagramView
-// Builder F-01 部位ステップの視覚版ピッカー。
-// 人体図(前面/後面)上で筋肉領域をタップして選択/解除する。
+// MARK: - BodyDiagramView (v2 anatomical)
+// Builder F-01 部位選択を、解剖学イラスト風の人体図上で行う。
 //
-// 仕様:
-// - Front/Back セグメント切替。
-// - 各筋肉領域は Shape として描画し、選択時は accent カラーでハイライト。
-// - 「全身」など複合は別ボタン(下のクイック選択行)で提供。
-// - 選択状態は親 View が保持する Set<Muscle> に Binding で書き戻す。
+// 構成:
+// - 背景: workout-cool 由来 (MIT) の前面+背面シルエット SVG (gray)。
+// - 選択時: 各筋肉の SVG ハイライト (orange) を base の上に重ねる。
+// - タップ判定: BodyHitZones の bounding box(viewBox 535×462)を
+//   実際の表示サイズへスケールして配置。
 
 import SwiftUI
 
 struct BodyDiagramView: View {
     @Binding var selected: Set<Muscle>
 
-    @State private var side: BodySide = .front
-
-    private let designAspect: CGFloat = BodyLayout.designWidth / BodyLayout.designHeight
+    private static let viewBoxAspect: CGFloat =
+        BodyHitZones.viewBox.width / BodyHitZones.viewBox.height
 
     var body: some View {
         VStack(spacing: 12) {
-            sidePicker
-
             diagram
-                .aspectRatio(designAspect, contentMode: .fit)
-                .frame(maxWidth: 320)
-                .padding(.horizontal)
+                .aspectRatio(Self.viewBoxAspect, contentMode: .fit)
+                .frame(maxWidth: 520)
 
             quickActions
         }
     }
 
-    // MARK: - Subviews
-
-    private var sidePicker: some View {
-        Picker(selection: $side) {
-            ForEach(BodySide.allCases) { s in
-                Text(s.titleKey).tag(s)
-            }
-        } label: {
-            Text("builder.muscle.diagram.side.label")
-        }
-        .pickerStyle(.segmented)
-        .padding(.horizontal)
-    }
+    // MARK: - Diagram stack
 
     private var diagram: some View {
         ZStack {
-            // 背景シルエット
-            BodySilhouetteShape()
-                .fill(Color.gray.opacity(0.18))
-                .overlay(
-                    BodySilhouetteShape()
-                        .stroke(Color.gray.opacity(0.45), lineWidth: 1)
-                )
+            // 背景: シルエット
+            Image("Body/body-base")
+                .resizable()
+                .renderingMode(.template)
+                .foregroundStyle(silhouetteColor)
+                .scaledToFit()
 
-            // 各筋肉領域
-            switch side {
-            case .front:
-                ForEach(Array(FrontMuscleRegion.allCases.enumerated()), id: \.offset) { _, region in
-                    muscleLayer(
-                        muscle: region.muscle,
-                        path: { region.path(in: $0) }
-                    )
+            // 選択中ハイライト(全身選択時はすべての筋肉を highlight)
+            ForEach(highlightMuscles, id: \.self) { muscle in
+                if let asset = highlightAssetName(for: muscle) {
+                    Image(asset)
+                        .resizable()
+                        .scaledToFit()
+                        .transition(.opacity)
                 }
-            case .back:
-                ForEach(Array(BackMuscleRegion.allCases.enumerated()), id: \.offset) { _, region in
-                    muscleLayer(
-                        muscle: region.muscle,
-                        path: { region.path(in: $0) }
-                    )
-                }
+            }
+
+            // タップ判定オーバーレイ
+            GeometryReader { geo in
+                hitZoneLayer(in: geo.size)
             }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(Text("a11y.builder.muscle.diagram.label"))
     }
 
-    private func muscleLayer(muscle: Muscle, path: @escaping (CGRect) -> Path) -> some View {
+    /// 面積大 → 小 の順に並べて重ねるので、小さい領域が手前に来る。
+    /// ZStack はソース順に「先=下、後=上」になるため、
+    /// orderedFromLargestToSmallest はそのまま z-order として使える。
+    private func hitZoneLayer(in containerSize: CGSize) -> some View {
+        let scaleX = containerSize.width / BodyHitZones.viewBox.width
+        let scaleY = containerSize.height / BodyHitZones.viewBox.height
+        return ZStack(alignment: .topLeading) {
+            ForEach(BodyHitZones.orderedFromLargestToSmallest, id: \.self) { muscle in
+                if let zone = BodyHitZones.zones[muscle] {
+                    let scaled = CGRect(
+                        x: zone.minX * scaleX,
+                        y: zone.minY * scaleY,
+                        width: zone.width * scaleX,
+                        height: zone.height * scaleY
+                    )
+                    hitZone(for: muscle)
+                        .frame(width: scaled.width, height: scaled.height)
+                        .offset(x: scaled.minX, y: scaled.minY)
+                }
+            }
+        }
+    }
+
+    private func hitZone(for muscle: Muscle) -> some View {
         let isSelected = selected.contains(muscle) || selected.contains(.fullBody)
-        return MuscleRegionShape(pathBuilder: path)
-            .fill(isSelected ? Color.accentColor.opacity(0.85)
-                              : Color.gray.opacity(0.45))
-            .overlay(
-                MuscleRegionShape(pathBuilder: path)
-                    .stroke(isSelected ? Color.accentColor : Color.gray.opacity(0.7),
-                            lineWidth: 1)
-            )
-            .contentShape(MuscleRegionShape(pathBuilder: path))
+        return Color.clear
+            .contentShape(Rectangle())
             .onTapGesture { toggle(muscle) }
             .accessibilityElement()
             .accessibilityLabel(Text(MuscleLocalization.titleKey(for: muscle)))
             .accessibilityHint(Text("a11y.builder.muscle.toggle.hint"))
             .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
+
+    // MARK: - Highlight selection
+
+    /// 表示するハイライト SVG を選ぶ。fullBody が選ばれているときは
+    /// アセットがある全部を表示する(視覚的に「全部光る」)。
+    private var highlightMuscles: [Muscle] {
+        if selected.contains(.fullBody) {
+            return BodyHitZones.zones.keys.sorted(by: muscleOrder)
+        }
+        return Array(selected).sorted(by: muscleOrder)
+    }
+
+    private func muscleOrder(_ a: Muscle, _ b: Muscle) -> Bool {
+        a.rawValue < b.rawValue
+    }
+
+    /// 各筋肉に対応する Asset Catalog 名。fullBody は固有 SVG を持たず、
+    /// 上の `highlightMuscles` 経由で全部の SVG を重ねて表現する。
+    private func highlightAssetName(for muscle: Muscle) -> String? {
+        guard muscle != .fullBody else { return nil }
+        return "Body/body-\(muscle.rawValue)"
+    }
+
+    /// 背景シルエットの色。Light/Dark 両対応。
+    private var silhouetteColor: Color {
+        Color.gray.opacity(0.45)
+    }
+
+    // MARK: - Quick actions
 
     private var quickActions: some View {
         HStack(spacing: 8) {
@@ -144,7 +168,6 @@ struct BodyDiagramView: View {
     // MARK: - Selection logic
 
     private func toggle(_ muscle: Muscle) {
-        // 全身選択中に個別をタップしたら、全身を解除して個別を入れる(直感的UX)。
         if selected.contains(.fullBody) {
             selected.remove(.fullBody)
         }
@@ -164,24 +187,10 @@ struct BodyDiagramView: View {
     }
 }
 
-// MARK: - MuscleRegionShape
+// MARK: - Localization helper
 
-/// `Shape` プロトコルに乗せるための薄いラッパ。
-/// `path(in:)` を毎フレーム呼ぶので、`pathBuilder` 内で
-/// 巨大なオブジェクトを生成しないこと。
-private struct MuscleRegionShape: Shape {
-    let pathBuilder: (CGRect) -> Path
-
-    func path(in rect: CGRect) -> Path {
-        pathBuilder(rect)
-    }
-}
-
-// MARK: - Localization mapping
-
-/// MuscleStepView の旧 chip と同等の static 文字列キー解決を共有するヘルパ。
-/// LocalizedStringKey は文字列補間を引数化するので、
-/// 動的キー(rawValue ごと)はここで switch で書き分ける。
+/// MuscleStepView の旧 chip と共有する文字列キー解決。
+/// LocalizedStringKey は文字列補間を引数化するので、動的キーは switch で書く。
 enum MuscleLocalization {
     static func titleKey(for muscle: Muscle) -> LocalizedStringKey {
         switch muscle {
@@ -204,8 +213,8 @@ enum MuscleLocalization {
     }
 }
 
-#Preview("Body Diagram") {
-    @Previewable @State var selected: Set<Muscle> = [.chest, .biceps]
+#Preview("Body Diagram v2") {
+    @Previewable @State var selected: Set<Muscle> = [.chest, .quadriceps]
     return BodyDiagramView(selected: $selected)
         .padding()
 }
