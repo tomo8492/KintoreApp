@@ -5,7 +5,7 @@
 import Foundation
 
 enum Goal: String, Codable, CaseIterable, Sendable {
-    case hypertrophy = "hypertrophy"   // 増量
+    case hypertrophy = "hypertrophy"   // 筋肥大
     case fatLoss     = "fat-loss"      // 減量
     case endurance   = "endurance"     // 筋持久力
     case flexibility = "flexibility"   // 柔軟性

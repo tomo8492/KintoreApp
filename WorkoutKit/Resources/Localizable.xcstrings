@@ -2881,7 +2881,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "増量"
+            "value": "筋肥大"
           }
         }
       }
@@ -4412,7 +4412,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "臀筋"
+            "value": "お尻"
           }
         }
       }
@@ -4591,7 +4591,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ハムストリング"
+            "value": "ハムストリングス"
           }
         }
       }
@@ -4661,7 +4661,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "脊柱起立筋"
+            "value": "腰"
           }
         }
       }
@@ -6189,6 +6189,38 @@
         }
       }
     },
+    "session.live.ready": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のセットへ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready for the next set"
+          }
+        }
+      }
+    },
+    "session.live.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト中"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout in progress"
+          }
+        }
+      }
+    },
     "session.row.set-progress": {
       "comment": "Session 種目行: セット進捗。例: 「セット 2 / 4」",
       "extractionState": "manual",
@@ -7643,7 +7675,7 @@
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "自重"
+            "value": "自重トレ"
           }
         }
       }
