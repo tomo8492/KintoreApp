@@ -6,6 +6,10 @@
 // SessionStore.liveActivity は本拡張からのみ参照(SessionStore 本体側は protected な
 // 呼び出しヘルパー(startLiveActivityIfPossible / updateLiveActivity / endLiveActivity)
 // だけを持つ)。
+//
+// LiveActivityClient.update / end は内部で task chain に予約する同期 API。
+// 本拡張から `Task { await ... }` を投げる必要はなくなった
+// (DEBUG_REPORT Critical-2: fire-and-forget Task race を解消するため)。
 
 import Foundation
 
@@ -24,17 +28,14 @@ extension SessionStore {
     }
 
     /// セット完了 / 種目進行 / 休憩開始時に呼ぶ。
-    /// Activity.update は async だが、SessionStore 本体は同期 API なので Task で投げる。
+    /// LiveActivityClient 内の task chain に直列化して予約される。
     func updateLiveActivity() {
-        guard let liveActivity else { return }
-        let state = liveActivityState()
-        Task { await liveActivity.update(state: state) }
+        liveActivity?.update(state: liveActivityState())
     }
 
     /// セッション終了 / 中断時に呼ぶ。
     func endLiveActivity() {
-        guard let liveActivity else { return }
-        Task { await liveActivity.end() }
+        liveActivity?.end()
     }
 
     // MARK: - State 計算

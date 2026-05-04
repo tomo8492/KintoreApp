@@ -8,7 +8,11 @@ import SwiftUI
 
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
-    @State private var isBuilderPresented = false
+
+    /// Builder ウィザードが開いているかを SceneStorage で永続化する。
+    /// `@State` だとアプリのバックグラウンド復帰で false に戻り、ウィザードが
+    /// 途中で消える事象 (DEBUG_REPORT Major-11) があったため SceneStorage に切替。
+    @SceneStorage("root.isBuilderPresented") private var isBuilderPresented = false
 
     var body: some View {
         if sizeClass == .regular {

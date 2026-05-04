@@ -11,31 +11,8 @@ import SwiftUI
 import SwiftData
 import OSLog
 
-// MARK: - Free / Pro 境界
-
-/// 無料プランで参照できる履歴の窓(直近 N 日)。CLAUDE.md §-1.14 で 30 日固定。
-enum HistoryCutoff {
-    static let freeWindowDays: Int = 30
-
-    /// 「いま」から 30 日前 0:00(ユーザーロケール)。境界はその日全体を含めるため日初に揃える。
-    /// `Calendar.current.date(byAdding:)` が失敗するケースは現実的に存在しないが、
-    /// 失敗時は `.distantPast` を返して「無料窓に入らない」=実質全件 Pro 扱いにする。
-    static func freeWindowStart(now: Date = .now, calendar: Calendar = .current) -> Date {
-        guard let shifted = calendar.date(byAdding: .day, value: -freeWindowDays, to: now) else {
-            return .distantPast
-        }
-        return calendar.startOfDay(for: shifted)
-    }
-
-    /// 指定日が無料窓内か。31日以前は false。
-    static func isWithinFreeWindow(
-        _ date: Date,
-        now: Date = .now,
-        calendar: Calendar = .current
-    ) -> Bool {
-        date >= freeWindowStart(now: now, calendar: calendar)
-    }
-}
+// `HistoryCutoff` は HistoryCutoff.swift に分離 (DEBUG_REPORT Critical-3 で
+// TZ-safe 化 + 単一窓口化したため)。
 
 // MARK: - Mode
 

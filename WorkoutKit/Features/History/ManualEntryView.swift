@@ -75,11 +75,47 @@ struct ManualEntryView: View {
                     Text(LocalizedStringKey("goal.\(goal.rawValue)")).tag(goal)
                 }
             }
+
+            durationRow
         } header: {
             Text("manual-entry.section.meta")
         } footer: {
-            Text("manual-entry.section.meta.footer")
+            Text(store.durationMinutes == 0
+                 ? "manual-entry.duration.footer.unset"
+                 : "manual-entry.section.meta.footer")
         }
+    }
+
+    /// 所要時間 (分)。0 のときは「未計測」表示。
+    /// DEBUG_REPORT Critical-4: 旧実装の自動推定 (60s × セット数) は撤去し、
+    /// ユーザー入力に切替えた。0 を許容するのは「分からない」ことを明示するため。
+    private var durationRow: some View {
+        HStack {
+            Label("manual-entry.duration", systemImage: "clock")
+                .lineLimit(1)
+                .minimumScaleFactor(0.85)
+            Spacer()
+            Text(durationLabel)
+                .font(.body.monospacedDigit())
+                .foregroundStyle(store.durationMinutes == 0 ? .secondary : .primary)
+                .accessibilityHidden(true)
+            Stepper(
+                "manual-entry.duration",
+                value: $store.durationMinutes,
+                in: 0...600,
+                step: 5
+            )
+            .labelsHidden()
+            .accessibilityValue(Text(durationLabel))
+        }
+    }
+
+    private var durationLabel: String {
+        if store.durationMinutes == 0 {
+            return String(localized: "manual-entry.duration.unset", defaultValue: "未計測")
+        }
+        let template = String(localized: "manual-entry.duration.minutes", defaultValue: "%lld 分")
+        return String(format: template, store.durationMinutes)
     }
 
     @ViewBuilder

@@ -1,7 +1,8 @@
 // MARK: - SessionSetInputPanel
 // 現在セットの入力 UI。CLAUDE.md §1.1 F-03 / §-1.4 準拠。
-// - 重量は kg を Stepper で 0.5 きざみ。lbs 設定は v1.0 では SessionStore 内で kg 直入力に
-//   留め、Settings 機能(E3)導入時に UnitsFormatter.toKilograms 経由の双方向変換を入れる。
+// - 重量は内部単位 kg で SessionStore に保持。表示と Stepper の刻みは
+//   `@AppStorage(SettingsKey.weightUnit)` を読んで kg / lb を切り替える(§-1.4)。
+// - kg 設定: 0.5 kg 刻み / lb 設定: 1 lb (≈ 0.4536 kg) 刻み。
 // - reps / RPE / 休憩秒は Stepper で素早く調整。
 // - "Complete Set" ボタンは store.completeCurrentSet() を呼ぶだけ。
 
@@ -14,6 +15,22 @@ struct SessionSetInputPanel: View {
     let onComplete: () -> Void
     let onSkip: () -> Void
     let onAbort: () -> Void
+
+    /// Settings から読む重量単位。kg / lbs 切替に追従して再描画される。
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
+
+    /// Stepper の刻み(内部単位 kg)。
+    /// kg 設定: 0.5 kg / lb 設定: 1 lb を kg に換算した値。
+    private var weightStepKg: Double {
+        switch weightUnit {
+        case .kilograms: return 0.5
+        case .pounds:    return UnitsFormatter.toKilograms(1.0, from: .pounds)
+        }
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -102,7 +119,7 @@ struct SessionSetInputPanel: View {
         }
     }
 
-    // MARK: - Weight row(0.5 kg 刻み)
+    // MARK: - Weight row(kg 設定: 0.5 kg 刻み / lb 設定: 1 lb 刻み)
 
     private var weightRow: some View {
         HStack {
@@ -111,7 +128,7 @@ struct SessionSetInputPanel: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
             Spacer()
-            Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: .kilograms))
+            Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: weightUnit))
                 .font(.body.monospacedDigit())
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
@@ -119,12 +136,12 @@ struct SessionSetInputPanel: View {
             Stepper(
                 value: $store.inputWeightKg,
                 in: 0...500,
-                step: 0.5
+                step: weightStepKg
             ) {
                 Text("session.input.weight")
             }
             .labelsHidden()
-            .accessibilityValue(Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: .kilograms)))
+            .accessibilityValue(Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: weightUnit)))
         }
     }
 

@@ -3924,6 +3924,74 @@
         }
       }
     },
+    "manual-entry.duration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duration"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所要時間"
+          }
+        }
+      }
+    },
+    "manual-entry.duration.footer.unset": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a past date and goal. Leave duration at \"Not measured\" if you don't remember it — it will be excluded from time-based charts."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "過去の日時と目的を選んでください。所要時間が分からなければ「未計測」のままで構いません(集計の所要時間からは除外されます)。"
+          }
+        }
+      }
+    },
+    "manual-entry.duration.minutes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 分"
+          }
+        }
+      }
+    },
+    "manual-entry.duration.unset": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not measured"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未計測"
+          }
+        }
+      }
+    },
     "manual-entry.goal": {
       "extractionState": "manual",
       "localizations": {
@@ -4260,6 +4328,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "重量 (kg)"
+          }
+        }
+      }
+    },
+    "manual-entry.weight-lb": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weight (lb)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重量 (lb)"
           }
         }
       }
