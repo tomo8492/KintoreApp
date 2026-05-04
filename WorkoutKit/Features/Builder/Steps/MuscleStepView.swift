@@ -1,7 +1,7 @@
 // MARK: - MuscleStepView
 // Builder Step 2: 部位(Muscle)。CLAUDE.md §1.1 F-01。
-// デフォルトは BodyDiagramView(視覚ピッカー)。互換のため
-// 旧テキストチップ UI も折りたたみで併設し、ユーザーが選択できる。
+// デフォルトは BodyDiagramView(解剖学イラスト風の視覚ピッカー)。
+// 互換のため旧テキストチップ UI も併設し、ユーザーが切替可能。
 
 import SwiftUI
 

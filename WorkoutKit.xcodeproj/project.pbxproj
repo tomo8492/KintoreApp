@@ -15,7 +15,6 @@
 		0DC585245AC4D0C967F38E87 /* LibraryDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E9C974B9D87E1DE55392CD /* LibraryDisplay.swift */; };
 		0E7A1C81190C1F8BDE9471B2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B0B0C97D2DC04DCD60842B25 /* PrivacyInfo.xcprivacy */; };
 		1035B2482700352AB43E65D3 /* AttributeNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB73C1CC79C6FAA96B6B7BB /* AttributeNormalizer.swift */; };
-		117F5C01B8BB4D666C690CDE /* BodyDiagramShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926424D0D1BBB45CE3AD996E /* BodyDiagramShapes.swift */; };
 		12259F80A6B618E784224823 /* WorkoutGeneratorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F4AA3CE5ABD4BEAFEDB8A /* WorkoutGeneratorHelpers.swift */; };
 		15926915D514EFEA558C3037 /* LiveActivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D271775CA436593D9F6162B6 /* LiveActivityClient.swift */; };
 		17783EEF1034CB0701206D4C /* Muscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE98373ECFFF65A2981314 /* Muscle.swift */; };
@@ -82,6 +81,7 @@
 		AA249E36C85B096992EF2AF5 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7431AEC7430C28FF1B277E2 /* Template.swift */; };
 		AC443FE5E6B9A7E2E62FC3DE /* WorkoutKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4073821B35CB0BE342FF5F /* WorkoutKitApp.swift */; };
 		ACE2791BC07BD6B3FB10B6FD /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6788BF13408A9583B504529F /* ExerciseSet.swift */; };
+		AEC8266DD765A7CDE65892DD /* BodyHitZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B93F160651D62D431A9BF5 /* BodyHitZones.swift */; };
 		B001405393F1DE74AC1A76F8 /* DataIOStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055034FB5A2C1A3968E63D /* DataIOStore.swift */; };
 		B00D029F3AADCD1F5A611F4A /* BuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B0D3E14E19F03B4A28CA73 /* BuilderView.swift */; };
 		B197593899E2624464637936 /* ProFeatureGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087A9854EC9E574259111A5E /* ProFeatureGate.swift */; };
@@ -185,6 +185,7 @@
 		35AEA3A6AEB53505C707AA4F /* ManualEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryStore.swift; sourceTree = "<group>"; };
 		3656446EE44165F6CE1D85DA /* ExerciseSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSeeder.swift; sourceTree = "<group>"; };
 		3A2077624452330AFF0F0F94 /* CSVImporter+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSVImporter+Builder.swift"; sourceTree = "<group>"; };
+		42B93F160651D62D431A9BF5 /* BodyHitZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyHitZones.swift; sourceTree = "<group>"; };
 		46DCAFA5FD59CA1EE733A1EA /* exercises_seed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exercises_seed.json; sourceTree = "<group>"; };
 		47A4BEDF4E1F87C82DF5879A /* JSONImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONImporter.swift; sourceTree = "<group>"; };
 		48C80EDDA5818618DF5CE19A /* WorkoutKitLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutKitLiveActivity.swift; sourceTree = "<group>"; };
@@ -227,7 +228,6 @@
 		8BE3594F787C7AC1DA9AC2B7 /* TemplateSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSheets.swift; sourceTree = "<group>"; };
 		8FA6088D876E61F4E3DED87A /* OneRepMaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxCalculator.swift; sourceTree = "<group>"; };
 		90BB6DA37922EDDEE0DBF2A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		926424D0D1BBB45CE3AD996E /* BodyDiagramShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyDiagramShapes.swift; sourceTree = "<group>"; };
 		938150150F238FD682C35B9A /* OneRepMaxCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxCalculatorTests.swift; sourceTree = "<group>"; };
 		97F056756B51E92D73C65AAE /* MechanicsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicsType.swift; sourceTree = "<group>"; };
 		9A4C15495D641EEDDF565EE6 /* BuilderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderStore.swift; sourceTree = "<group>"; };
@@ -423,8 +423,8 @@
 		60A2553383BCBE7A46C392C4 /* BodyDiagram */ = {
 			isa = PBXGroup;
 			children = (
-				926424D0D1BBB45CE3AD996E /* BodyDiagramShapes.swift */,
 				692FE1AE0D33599930B8D231 /* BodyDiagramView.swift */,
+				42B93F160651D62D431A9BF5 /* BodyHitZones.swift */,
 			);
 			path = BodyDiagram;
 			sourceTree = "<group>";
@@ -826,8 +826,8 @@
 				581FDEEEBABA3D9EAC0CEE84 /* AppError.swift in Sources */,
 				1035B2482700352AB43E65D3 /* AttributeNormalizer.swift in Sources */,
 				B973E1F0E8D7EF2CC002A4AE /* AutoScrollEffect.swift in Sources */,
-				117F5C01B8BB4D666C690CDE /* BodyDiagramShapes.swift in Sources */,
 				1C75E7E54FB86D484A43CF32 /* BodyDiagramView.swift in Sources */,
+				AEC8266DD765A7CDE65892DD /* BodyHitZones.swift in Sources */,
 				1C5AA4C68E05BA872A0CE6BF /* BuilderStore.swift in Sources */,
 				B00D029F3AADCD1F5A611F4A /* BuilderView.swift in Sources */,
 				4B2F1704CA03E38BB9CAD383 /* CSVImporter+Builder.swift in Sources */,
