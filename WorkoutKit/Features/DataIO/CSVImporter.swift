@@ -27,7 +27,14 @@ enum CSVImporter {
     /// - Throws: ヘッダが致命的に欠損している場合は AppError.importFailed。
     ///   個別行の不正(必須カラム欠落 / 列挙値不正)はスキップしてログに残す。
     static func parseExercises(from data: Data) throws -> [ParsedExercise] {
-        guard let text = String(data: data, encoding: .utf8) else {
+        // HistoryExporter は Excel 互換のため UTF-8 BOM を付加する。再インポート時に
+        // 先頭セルへ BOM が混入しないよう、CSVImporter 側でも BOM を剥がしてから
+        // パースに渡す(BOM 非対称の解消)。
+        var bytes = data
+        if bytes.starts(with: [0xEF, 0xBB, 0xBF]) {
+            bytes.removeFirst(3)
+        }
+        guard let text = String(data: bytes, encoding: .utf8) else {
             Logger.importer.error("CSV is not valid UTF-8")
             throw AppError.importFailed(reason: "csv-not-utf8")
         }

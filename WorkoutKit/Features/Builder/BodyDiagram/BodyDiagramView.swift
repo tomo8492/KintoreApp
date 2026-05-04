@@ -178,11 +178,14 @@ struct BodyDiagramView: View {
         }
     }
 
+    /// 「全身」トグル。既に部位を選んでいるユーザーが全身を追加で選んだとき、
+    /// 既存選択を破壊しないよう union 動作にする(他部位は残したまま fullBody を追加)。
+    /// 解除時は fullBody だけを外し、他部位はそのまま残す。
     private func toggleFullBody() {
         if selected.contains(.fullBody) {
             selected.remove(.fullBody)
         } else {
-            selected = [.fullBody]
+            selected.insert(.fullBody)
         }
     }
 }

@@ -148,8 +148,9 @@ struct PaywallPriceSection: View {
 
 struct PaywallLegalLinks: View {
 
-    // TODO: 公開時に workoutkit.app の正式 URL に差し替える。
-    // 現状は仕様書 §-1 で URL 未確定のためプレースホルダ。
+    // TODO(P-5/release): 公開時に workoutkit.app の正式 URL に差し替える。
+    // App Store Connect 申請前(Phase P-5)までに確定 URL へ差し替えること。
+    // CLAUDE.md §-1 で URL 未確定のため現状は placeholder。
     private static let termsURL = URL(string: "https://workoutkit.app/terms")
     private static let privacyURL = URL(string: "https://workoutkit.app/privacy")
 

@@ -99,6 +99,16 @@ actor StoreKitClient {
         didStart = false
     }
 
+    /// シーンが `.active` に復帰した直後の再同期フック。
+    /// 家族共有解除や別端末での払戻しは Transaction.updates 経由でも届くが、
+    /// バックグラウンド長期化やネットワーク不通から戻ってきた直後は遅延する。
+    /// scene 復帰時に Transaction.currentEntitlements を即評価して `proGate.isPro` を
+    /// 同期する(初回 start 後にのみ走らせ、未起動状態では no-op)。
+    func refreshEntitlementsOnForeground() async {
+        guard didStart else { return }
+        await refreshEntitlements()
+    }
+
     // MARK: - 購入 / 復元
 
     /// Pro IAP の購入フロー。

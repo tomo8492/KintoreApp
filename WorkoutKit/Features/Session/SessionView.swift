@@ -20,6 +20,9 @@ struct SessionView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.appDependency) private var appDependency
+    /// F3: Reduce Motion 中はプログレスバーの値補間アニメを抑制する。
+    /// SwiftUI の ProgressView はデフォルトで暗黙アニメを掛けるため明示的に nil 指定が必要。
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @State private var store: SessionStore?
     @State private var initError: String?
@@ -125,6 +128,7 @@ struct SessionView: View {
                 .minimumScaleFactor(0.8)
             ProgressView(value: total > 0 ? Double(completed) / Double(total) : 0)
                 .tint(.accentColor)
+                .animation(reduceMotion ? nil : .default, value: completed)
                 .accessibilityLabel(Text("a11y.session.progress.bar"))
                 .accessibilityValue(Text(String(format: progressLabel, completed, total)))
             Text(String(format: progressLabel, completed, total))

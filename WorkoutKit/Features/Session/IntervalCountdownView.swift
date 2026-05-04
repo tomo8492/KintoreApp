@@ -40,8 +40,9 @@ struct IntervalCountdownView: View {
                 .fill(.regularMaterial)
         )
         .padding(.horizontal)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(accessibilityLabel)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("session.interval.label"))
+        .accessibilityValue(accessibilityValue)
         .accessibilityAddTraits(.updatesFrequently)
     }
 
@@ -53,7 +54,10 @@ struct IntervalCountdownView: View {
         return String(format: "%d:%02d", minutes, seconds)
     }
 
-    private var accessibilityLabel: Text {
+    /// `accessibilityValue` は変化したタイミングで VoiceOver が再読みする
+    /// (`accessibilityLabel` は構造的に固定なので再アナウンスしない)。
+    /// `.updatesFrequently` トレイトと併用して、毎秒の残り秒数を再アナウンス対象にする。
+    private var accessibilityValue: Text {
         let template = String(
             localized: "session.interval.a11y",
             defaultValue: "残り %lld 秒"

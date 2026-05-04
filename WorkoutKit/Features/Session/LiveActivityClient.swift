@@ -58,7 +58,10 @@ final class LiveActivityClient {
     // MARK: - Lifecycle
 
     /// セッション開始時に Live Activity を起動する。
-    /// - 既存の Activity が残っていれば end してから新規 request する。
+    /// - 既存の Activity が残っていればローカルにキャプチャしてから `self.activity` を nil にし、
+    ///   キャプチャ済みのインスタンスをバックグラウンド Task で end する。
+    ///   `self.activity` を直接 await した先で参照するパターンだと、新規 request が先に
+    ///   走った場合に await が「新 Activity の終了」を待ってしまい永久ブロックになる。
     /// - 失敗(権限なし、内部エラー等)時は静かにログだけ残し、SessionStore は通常通り続行する。
     func start(
         attributes: SessionLiveActivityAttributes,

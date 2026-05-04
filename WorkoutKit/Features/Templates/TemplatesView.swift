@@ -22,8 +22,8 @@ struct TemplatesView: View {
     /// Paywall シートの表示状態と、どの Pro 機能でブロックされたかの記録。
     @State private var paywallFeature: ProFeature?
 
-    /// 「使う」を押したテンプレ。本来は SessionStore に渡すが B2 未実装のため
-    /// 確認用の sheet で出力内容を表示する。
+    /// 「使う」を押したテンプレ。SessionView を fullScreenCover で立ち上げる。
+    /// Identifiable(=UUID 自動生成)で、新しい値が入るたびに新規シートが開く。
     @State private var pendingUseOutput: PendingUse?
 
     /// 削除確認の対象。
@@ -61,7 +61,7 @@ struct TemplatesView: View {
             }
         }
         .sheet(item: $paywallFeature) { feature in
-            PaywallStubView(feature: feature)
+            PaywallView(reason: feature)
         }
         .sheet(isPresented: $showingCreate) {
             if let store {
@@ -70,8 +70,15 @@ struct TemplatesView: View {
                 }
             }
         }
-        .sheet(item: $pendingUseOutput) { use in
-            UseTemplatePreviewSheet(output: use.output, templateName: use.displayName)
+        .fullScreenCover(item: $pendingUseOutput) { use in
+            NavigationStack {
+                SessionView(
+                    initialOutput: use.output,
+                    goal: use.goal,
+                    includesWarmup: false,
+                    includesCooldown: false
+                )
+            }
         }
         .alert(
             Text("templates.delete.title"),

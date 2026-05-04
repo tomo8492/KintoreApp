@@ -9,10 +9,13 @@ import SwiftUI
 // MARK: - PendingUse
 
 /// `pendingUseOutput` Binding 用に Identifiable を満たす軽量ラッパ。
-/// 「使う」タップで GeneratorOutput をプレビュー sheet に詰めて返す。
+/// 「使う」タップで SessionView fullScreenCover に渡すペイロード。
+/// `goal` は Template.defaultGoal をそのまま流し、warmup/cooldown は
+/// Template が main セクションしか持たないため SessionView 側で false 固定にする。
 struct PendingUse: Identifiable {
     let id = UUID()
     let output: GeneratorOutput
+    let goal: Goal
     let displayName: String
 }
 
