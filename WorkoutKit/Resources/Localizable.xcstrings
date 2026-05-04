@@ -1107,6 +1107,406 @@
         }
       }
     },
+    "about.build": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ビルド"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build"
+          }
+        }
+      }
+    },
+    "about.copyright": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "© Tomo. All rights reserved."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "© Tomo. All rights reserved."
+          }
+        }
+      }
+    },
+    "about.medical.disclaimer.body": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本アプリの内容は一般的な情報提供であり、医療助言・診断・治療の代替ではありません。痛みや不調がある場合は専門医にご相談ください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The content in this app is general information and is not a substitute for medical advice, diagnosis, or treatment. Consult a healthcare professional if you have any pain or concern."
+          }
+        }
+      }
+    },
+    "about.medical.disclaimer.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "医療助言ではありません"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not medical advice"
+          }
+        }
+      }
+    },
+    "about.tagline": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインで完結する筋トレアプリ。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A fully offline strength training app."
+          }
+        }
+      }
+    },
+    "about.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリについて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        }
+      }
+    },
+    "about.version": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
+        }
+      }
+    },
+    "builder.error.no-output.description": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生成結果が見つかりませんでした。前のステップに戻ってもう一度お試しください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No output produced. Go back and try again."
+          }
+        }
+      }
+    },
+    "builder.step.equipment.prompt": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使える器具を選んでください(複数可)。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick the equipment you have available."
+          }
+        }
+      }
+    },
+    "builder.step.goal.prompt": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のワークアウトの目的を選んでください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick today's training goal."
+          }
+        }
+      }
+    },
+    "builder.step.muscle.prompt": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鍛えたい部位を選んでください(複数可)。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick the muscle groups you want to train."
+          }
+        }
+      }
+    },
+    "builder.step.result.action.shuffle": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シャッフル"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shuffle"
+          }
+        }
+      }
+    },
+    "builder.step.result.action.start": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッション開始"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start Session"
+          }
+        }
+      }
+    },
+    "builder.step.result.choose.action.regenerate": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロックを保持して再生成"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regenerate (keep locks)"
+          }
+        }
+      }
+    },
+    "builder.step.result.choose.empty.description": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "条件に合う種目が見つかりません。前のステップで部位や器具を見直してください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No exercises match. Adjust muscles or equipment in earlier steps."
+          }
+        }
+      }
+    },
+    "builder.step.result.choose.heading": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目を選ぶ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose exercises"
+          }
+        }
+      }
+    },
+    "builder.step.result.heading": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生成されたメニュー"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your generated workout"
+          }
+        }
+      }
+    },
+    "builder.step.time.cooldown.description": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "終了後に静的ストレッチを5分前後追加します。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adds about 5 minutes of static stretches at the end."
+          }
+        }
+      }
+    },
+    "builder.step.time.cooldown.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クールダウンを含める"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include cool-down"
+          }
+        }
+      }
+    },
+    "builder.step.time.prompt": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使える時間とウォームアップ・クールダウンを設定してください。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set your available time and warm-up / cool-down options."
+          }
+        }
+      }
+    },
+    "builder.step.time.section.duration": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duration"
+          }
+        }
+      }
+    },
+    "builder.step.time.section.options": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オプション"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Options"
+          }
+        }
+      }
+    },
+    "builder.step.time.unit.minutes": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "min"
+          }
+        }
+      }
+    },
+    "builder.step.time.warmup.description": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開始前に動的ストレッチを5分前後追加します。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adds about 5 minutes of dynamic stretches at the start."
+          }
+        }
+      }
+    },
+    "builder.step.time.warmup.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップを含める"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include warm-up"
+          }
+        }
+      }
+    },
     "common.cancel": {
       "extractionState": "manual",
       "localizations": {
@@ -1120,6 +1520,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "キャンセル"
+          }
+        }
+      }
+    },
+    "common.close": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閉じる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
           }
         }
       }
@@ -1154,6 +1570,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "保存"
+          }
+        }
+      }
+    },
+    "data-io.export.csv": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "履歴を CSV にエクスポート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export history as CSV"
           }
         }
       }
@@ -1202,6 +1634,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "JSON: exercises +%@ ~%@ / sessions +%@"
+          }
+        }
+      }
+    },
+    "data-io.section.export": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エクスポート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export"
+          }
+        }
+      }
+    },
+    "data-io.section.import": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インポート"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import"
+          }
+        }
+      }
+    },
+    "data-io.section.import.footer": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CSV / JSON ファイルをファイルアプリから読み込めます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick CSV / JSON files from the Files app."
           }
         }
       }
@@ -1637,6 +2117,134 @@
         }
       }
     },
+    "history.action.show-all": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて表示"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show all"
+          }
+        }
+      }
+    },
+    "history.calendar.next-month": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次の月"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next month"
+          }
+        }
+      }
+    },
+    "history.calendar.prev-month": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前の月"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous month"
+          }
+        }
+      }
+    },
+    "history.charts.advanced.locked.subtitle": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週次・月次ボリューム、部位別ヒートマップは Pro 機能です。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly / monthly volume and per-muscle heatmaps are Pro features."
+          }
+        }
+      }
+    },
+    "history.charts.advanced.unlock": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro で詳細チャートを開く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock advanced charts with Pro"
+          }
+        }
+      }
+    },
+    "history.charts.empty": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだチャートに表示できるデータがありません。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not enough data to chart yet."
+          }
+        }
+      }
+    },
+    "history.charts.heatmap.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "部位別ヒートマップ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per-muscle heatmap"
+          }
+        }
+      }
+    },
+    "history.charts.monthly.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "月次ボリューム"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly volume"
+          }
+        }
+      }
+    },
     "history.detail.exercise.summary.sets": {
       "localizations": {
         "ja": {
@@ -1713,6 +2321,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unknown exercise"
+          }
+        }
+      }
+    },
+    "history.empty.subtitle": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを完了すると、ここに履歴が表示されます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed workouts will show up here."
+          }
+        }
+      }
+    },
+    "history.locked.subtitle": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "31日以前の履歴は Pro で表示できます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History older than 30 days is available with Pro."
+          }
+        }
+      }
+    },
+    "history.locked.unlock": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pro でロックを解除"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock with Pro"
           }
         }
       }
@@ -3441,6 +4097,54 @@
         }
       }
     },
+    "session.action.complete-set": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セット完了"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete set"
+          }
+        }
+      }
+    },
+    "session.action.skip": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目をスキップ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip exercise"
+          }
+        }
+      }
+    },
+    "session.action.stop": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やめる"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
+          }
+        }
+      }
+    },
     "session.error.no-input": {
       "localizations": {
         "ja": {
@@ -3489,6 +4193,38 @@
         }
       }
     },
+    "session.input.reps": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回数"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps"
+          }
+        }
+      }
+    },
+    "session.input.rpe": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE (主観的運動強度)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE"
+          }
+        }
+      }
+    },
     "session.input.rpe.none": {
       "localizations": {
         "ja": {
@@ -3501,6 +4237,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "not set"
+          }
+        }
+      }
+    },
+    "session.input.weight": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重量"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weight"
           }
         }
       }
@@ -3521,6 +4273,54 @@
         }
       }
     },
+    "session.interval.label": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "休憩中"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resting"
+          }
+        }
+      }
+    },
+    "session.live.ready": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のセットへ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready for the next set"
+          }
+        }
+      }
+    },
+    "session.live.title": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト中"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout in progress"
+          }
+        }
+      }
+    },
     "session.row.set-progress": {
       "localizations": {
         "ja": {
@@ -3533,6 +4333,166 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld / %lld sets"
+          }
+        }
+      }
+    },
+    "settings.language.footer": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS 標準のアプリ別言語切替を開きます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens the per-app language settings provided by iOS."
+          }
+        }
+      }
+    },
+    "settings.purchases.footer": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "家族共有が有効な場合は、家族の購入も自動的に反映されます。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If Family Sharing is on, family members' purchases apply automatically."
+          }
+        }
+      }
+    },
+    "settings.purchases.restore": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入を復元"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchases"
+          }
+        }
+      }
+    },
+    "settings.purchases.status": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステータス"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status"
+          }
+        }
+      }
+    },
+    "settings.section.about": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリについて"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        }
+      }
+    },
+    "settings.section.display": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display"
+          }
+        }
+      }
+    },
+    "settings.section.language": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "言語"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "settings.section.legal": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "法的事項"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legal"
+          }
+        }
+      }
+    },
+    "settings.section.purchases": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases"
+          }
+        }
+      }
+    },
+    "settings.weightUnit.footer": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内部ではすべて kg で保存されます。表示単位だけが切り替わります。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stored internally as kg. Only the display unit changes."
           }
         }
       }
@@ -4183,6 +5143,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "ワークアウト開始"
+          }
+        }
+      }
+    },
+    "today.action.start-builder": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ビルダーを開く"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Builder"
+          }
+        }
+      }
+    },
+    "today.heading": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日のワークアウト"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's workout"
+          }
+        }
+      }
+    },
+    "today.subheading": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目的・部位・器具・時間で5秒で組み立て。"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build a workout in seconds: goal, muscles, equipment, time."
           }
         }
       }
