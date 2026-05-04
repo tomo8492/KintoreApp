@@ -90,14 +90,21 @@ targets:
       # これが無いとシミュレータで Product.products(for:) が空配列を返し、
       # Paywall に "product not found" が出る(BUG 2 / F-08)。
       #
-      # 注: xcodegen 2.45.3 はこの値から `../../WorkoutKit/...` のような
-      #     scheme ファイル相対パスで identifier を埋める。Xcode 純正の
-      #     スキームエディタが書く形式(プロジェクトルート相対 = bare
-      #     "WorkoutKit/Resources/WorkoutKit.storekit")と等価だが、
-      #     リポジトリ整合性のため bare 形式に手で揃えてコミットしている。
-      #     xcodegen を再実行すると `../../` 形に戻るので、コミット前に
+      # ⚠ identifier path の挙動について(Xcode 26 / xcodegen 2.45.3):
+      #   - xcodegen はこの値から `../../WorkoutKit/Resources/WorkoutKit.storekit`
+      #     形式で出力する(scheme ファイル基準で 2 階層上)
+      #   - Xcode の StoreKit Test ランタイムはこれを解決できず、
+      #     Product.products(for:) が空配列で返ることがあるため、
+      #     コミット時の .xcscheme は `../WorkoutKit/Resources/WorkoutKit.storekit`
+      #     (.xcodeproj 直下基準で 1 階層上 = リポジトリルート)に
+      #     手で揃えている。xcodegen を再実行した場合は
       #     `WorkoutKit.xcodeproj/xcshareddata/xcschemes/WorkoutKit.xcscheme`
-      #     の identifier 行を確認すること。
+      #     の identifier 行を `../WorkoutKit/...` に書き戻すこと。
+      #
+      # ⚠ シミュレータ起動方法に関する注意:
+      #   `xcrun simctl launch` で直接起動すると Run スキームの StoreKit
+      #   Configuration は適用されない(scheme は Xcode IDE が解釈する設定)。
+      #   StoreKit Configuration を効かせるには Xcode の Run ボタン経由で起動する。
       storeKitConfiguration: WorkoutKit/Resources/WorkoutKit.storekit
       # Run/Test は Debug、Profile/Analyze は Release、Archive は Release。
       # Beta は TestFlight ビルド時に手動切替。

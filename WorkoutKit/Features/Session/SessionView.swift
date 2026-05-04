@@ -97,12 +97,28 @@ struct SessionView: View {
     private func progressHeader(store: SessionStore) -> some View {
         let completed = store.completedSets.count
         let total = store.plan.reduce(0) { $0 + $1.plannedSetCount }
+        // 進捗ラベルは「完了セット N / 総セット M」。xcstrings 側で
+        // session.header.progress が "セット %1$lld / %2$lld" に設定されている。
         let progressLabel = String(
             localized: "session.header.progress",
-            defaultValue: "完了セット %lld / %lld"
+            defaultValue: "セット %lld / %lld"
         )
+        // BUG A: 目的の表示名は goal.<rawValue>.title を解決してから %@ に流し込む。
+        // 直接 rawValue を埋め込むと "session.header.goal hypertrophy" のような
+        // 解決されない複合キーになり raw 表示されてしまう。
+        // 2 段階で解決する:
+        //   1. goal.<rawValue>.title をルックアップして「筋肥大」など localized
+        //      な目的名を得る。
+        //   2. session.header.goal %@(format: "目的: %@" / "Goal: %@")の %@
+        //      に上で得た localized 目的名を埋め込む。
+        let goalKey = "goal.\(store.goal.rawValue).title"
+        let localizedGoal = String(localized: String.LocalizationValue(goalKey))
+        // String(localized:) のうち `defaultValue:` 付き init は key が
+        // StaticString に固定されるため runtime interpolation キーは渡せない。
+        // String.LocalizationValue を取るオーバーロードを使う。
+        let goalLabel = String(localized: "session.header.goal \(localizedGoal)")
         return VStack(alignment: .leading, spacing: 4) {
-            Text("session.header.goal \(store.goal.rawValue)")
+            Text(goalLabel)
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
