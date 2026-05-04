@@ -1,7 +1,7 @@
 // MARK: - ExerciseDetailView
 // CLAUDE.md §1.1 F-02。種目DBの詳細画面。
-// HTMLDescriptionView は別タスク C4 で並行実装中のため、
-// 存在しない場合は plain Text で descriptionJa/En を表示するフォールバックを提供する。
+// description は HTMLSanitizer + HTMLDescriptionView(タスク C4 実装済み)で
+// AttributedString として安全にレンダリングする。
 // YouTube ボタンは ProFeatureGate.check(.videoLink) で Pro ゲート(§-1.14 / §11.4)。
 
 import SwiftUI
@@ -76,10 +76,9 @@ struct ExerciseDetailView: View {
             Text("Steps").font(.headline)
 
             if !descriptionHTML.isEmpty {
-                // TODO: replace with HTMLDescriptionView from task C4 when it lands.
-                // C4 はリッチテキストレンダラを実装中。それまでは HTML タグを除去した
-                // プレーンテキストでフォールバックする。
-                Text(Self.strippingHTMLTags(descriptionHTML))
+                // HTMLSanitizer 経由で <script> 等を除去 → AttributedString に変換して描画。
+                // 失敗時は HTMLDescriptionView 内でプレーンテキストにフォールバックされる。
+                HTMLDescriptionView(html: descriptionHTML)
                     .font(.body)
             }
 
@@ -247,20 +246,6 @@ struct ExerciseDetailView: View {
             return []
         }
         return arr
-    }
-
-    /// HTMLDescriptionView 実装(タスク C4)が来るまでの暫定。
-    /// 単純にタグを取り除き、 &nbsp; 等の頻出エンティティを置換する。
-    private static func strippingHTMLTags(_ html: String) -> String {
-        var s = html.replacingOccurrences(
-            of: "<[^>]+>", with: "", options: .regularExpression
-        )
-        s = s.replacingOccurrences(of: "&nbsp;", with: " ")
-        s = s.replacingOccurrences(of: "&amp;", with: "&")
-        s = s.replacingOccurrences(of: "&lt;", with: "<")
-        s = s.replacingOccurrences(of: "&gt;", with: ">")
-        s = s.replacingOccurrences(of: "&quot;", with: "\"")
-        return s.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
