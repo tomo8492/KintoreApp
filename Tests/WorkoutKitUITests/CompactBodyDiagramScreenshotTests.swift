@@ -77,8 +77,7 @@ final class CompactBodyDiagramScreenshotTests: XCTestCase {
                       + "(target slug: \(target.slug))")
         firstCell.tap()
 
-        // 詳細描画の安定を待つ(ExerciseAnimationView の TimelineView があるので
-        // 1秒程度の余裕を入れる)。
+        // 詳細画面の描画安定を待つ(SwiftData @Query / Image 読み込み)。
         sleep(2)
 
         let screenshot = XCUIScreen.main.screenshot()
