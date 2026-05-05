@@ -1,0 +1,47 @@
+{
+  "slug": "glute-bridge",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "up",
+      "from": {
+        "x": 0.21,
+        "y": 0.49
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "squeeze",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.glute-bridge.annotation.squeeze",
+      "color": "primary"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.glute-bridge.annotation.core",
+      "color": "info"
+    }
+  ]
+}

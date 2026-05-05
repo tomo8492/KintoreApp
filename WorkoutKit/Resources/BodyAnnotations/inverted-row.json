@@ -1,0 +1,47 @@
+{
+  "slug": "inverted-row",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "pull",
+      "from": {
+        "x": 0.79,
+        "y": 0.33
+      },
+      "to": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "body",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.inverted-row.annotation.body",
+      "color": "success"
+    },
+    {
+      "id": "scap",
+      "position": {
+        "x": 0.74,
+        "y": 0.13
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.inverted-row.annotation.scap",
+      "color": "info"
+    }
+  ]
+}

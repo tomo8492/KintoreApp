@@ -1,0 +1,47 @@
+{
+  "slug": "sissy-squat",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "knee-forward",
+      "from": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "to": {
+        "x": 0.16,
+        "y": 0.72
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "knee",
+      "position": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.sissy-squat.annotation.knee",
+      "color": "warning"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.sissy-squat.annotation.torso",
+      "color": "info"
+    }
+  ]
+}

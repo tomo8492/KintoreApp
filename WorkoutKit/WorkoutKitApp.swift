@@ -24,7 +24,8 @@ struct WorkoutKitApp: App {
             proGate: gate,
             liveActivity: LiveActivityClient(),
             storeKitClient: storeKit,
-            purchaseRestorer: storeKit
+            purchaseRestorer: storeKit,
+            annotationLoader: ExerciseAnnotationLoader()
         )
     }()
 

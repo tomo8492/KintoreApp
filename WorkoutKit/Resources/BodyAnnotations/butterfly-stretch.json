@@ -1,0 +1,33 @@
+{
+  "slug": "butterfly-stretch",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "knee",
+      "position": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.butterfly-stretch.annotation.knee",
+      "color": "primary"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.butterfly-stretch.annotation.torso",
+      "color": "info"
+    }
+  ]
+}

@@ -79,11 +79,12 @@ struct ExerciseDetailView: View {
             Text("library.detail.target-muscles")
                 .font(.headline)
 
-            CompactBodyDiagramView(
+            AnnotatedBodyDiagramView(
                 primaryMuscles: Set([exercise.primaryMuscle]),
-                secondaryMuscles: Set(exercise.secondaryMuscles)
+                secondaryMuscles: Set(exercise.secondaryMuscles),
+                annotation: dependency.annotationLoader.load(slug: exercise.slug)
             )
-            .frame(maxHeight: 220)
+            .frame(maxHeight: 260)
         }
     }
 

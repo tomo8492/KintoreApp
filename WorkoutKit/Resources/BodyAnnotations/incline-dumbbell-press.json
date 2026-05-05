@@ -1,0 +1,47 @@
+{
+  "slug": "incline-dumbbell-press",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press-up",
+      "from": {
+        "x": 0.22,
+        "y": 0.25
+      },
+      "to": {
+        "x": 0.22,
+        "y": 0.19
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "upper",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.incline-dumbbell-press.annotation.upper",
+      "color": "primary"
+    },
+    {
+      "id": "scap",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.incline-dumbbell-press.annotation.scap",
+      "color": "info"
+    }
+  ]
+}

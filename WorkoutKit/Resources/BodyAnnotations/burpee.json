@@ -1,0 +1,47 @@
+{
+  "slug": "burpee",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "jump",
+      "from": {
+        "x": 0.21,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.22,
+        "y": 0.16999999999999998
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "flow",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.burpee.annotation.flow",
+      "color": "primary"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.burpee.annotation.core",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "push-press",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "dip-drive",
+      "from": {
+        "x": 0.21,
+        "y": 0.49
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.07999999999999999
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "dip",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.push-press.annotation.dip",
+      "color": "info"
+    },
+    {
+      "id": "drive",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.push-press.annotation.drive",
+      "color": "primary"
+    }
+  ]
+}

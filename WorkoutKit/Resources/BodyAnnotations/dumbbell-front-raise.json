@@ -1,0 +1,34 @@
+{
+  "slug": "dumbbell-front-raise",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "raise",
+      "from": {
+        "x": 0.1,
+        "y": 0.4
+      },
+      "to": {
+        "x": 0.14,
+        "y": 0.18
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "front",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.dumbbell-front-raise.annotation.front",
+      "color": "primary"
+    }
+  ]
+}
