@@ -1,0 +1,35 @@
+{
+  "slug": "push-up",
+  "assetName": "push-up-1",
+  "aspect": 1.5,
+  "annotations": [
+    {
+      "id": "head",
+      "position": { "x": 0.74, "y": 0.36 },
+      "labelAnchor": { "x": 0.78, "y": 0.10 },
+      "labelKey": "form.push-up.annotation.head",
+      "color": "primary"
+    },
+    {
+      "id": "back",
+      "position": { "x": 0.42, "y": 0.50 },
+      "labelAnchor": { "x": 0.25, "y": 0.10 },
+      "labelKey": "form.push-up.annotation.back",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": { "x": 0.40, "y": 0.62 },
+      "labelAnchor": { "x": 0.22, "y": 0.92 },
+      "labelKey": "form.push-up.annotation.core",
+      "color": "neutral"
+    },
+    {
+      "id": "hand",
+      "position": { "x": 0.62, "y": 0.85 },
+      "labelAnchor": { "x": 0.78, "y": 0.92 },
+      "labelKey": "form.push-up.annotation.hand",
+      "color": "warning"
+    }
+  ]
+}

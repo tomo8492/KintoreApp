@@ -8106,6 +8106,363 @@
           }
         }
       }
+    },
+    "library.detail.form-cues": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Form Cues"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正しいフォームのポイント"
+          }
+        }
+      }
+    },
+    "form.plank.annotation.neck": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep the neck neutral (look down)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首は自然に(真下を見る)"
+          }
+        }
+      }
+    },
+    "form.plank.annotation.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep your back flat (no sag)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "背中をまっすぐに(腰を反らさない)"
+          }
+        }
+      }
+    },
+    "form.plank.annotation.abs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engage your abs and glutes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お腹とお尻に力を入れる"
+          }
+        }
+      }
+    },
+    "form.plank.annotation.elbow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elbows directly under shoulders"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "肘を肩の真下に"
+          }
+        }
+      }
+    },
+    "form.push-up.annotation.head": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep your head neutral, eyes down"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首は自然に(目線は床)"
+          }
+        }
+      }
+    },
+    "form.push-up.annotation.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Body in a straight line — no sag"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体を一直線に(腰を落とさない)"
+          }
+        }
+      }
+    },
+    "form.push-up.annotation.core": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brace your core throughout"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腹筋に力を入れる"
+          }
+        }
+      }
+    },
+    "form.push-up.annotation.hand": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hands shoulder-width, under shoulders"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手は肩幅、肩の真下に"
+          }
+        }
+      }
+    },
+    "form.air-squat.annotation.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest up, back straight"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸を張って背中をまっすぐ"
+          }
+        }
+      }
+    },
+    "form.air-squat.annotation.hip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push hips back, like sitting on a chair"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お尻を後ろに引く"
+          }
+        }
+      }
+    },
+    "form.air-squat.annotation.knee": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track knees over your toes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "膝はつま先の方向に"
+          }
+        }
+      }
+    },
+    "form.air-squat.annotation.heel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drive through your heels"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "踵に重心をかける"
+          }
+        }
+      }
+    },
+    "form.reverse-lunge.annotation.torso": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep torso upright (do not lean)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上体はまっすぐ(前傾しすぎない)"
+          }
+        }
+      }
+    },
+    "form.reverse-lunge.annotation.core": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brace the core for balance"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体幹に力を入れて安定させる"
+          }
+        }
+      }
+    },
+    "form.reverse-lunge.annotation.front-knee": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Front knee bent to 90°"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前足の膝は90度"
+          }
+        }
+      }
+    },
+    "form.reverse-lunge.annotation.back-knee": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower back knee close to the floor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "後ろ足の膝は床ギリギリまで"
+          }
+        }
+      }
+    },
+    "form.burpee.annotation.head": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep head and neck relaxed"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "頭・首はリラックス"
+          }
+        }
+      }
+    },
+    "form.burpee.annotation.plank": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep the plank in a straight line"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プランクは体を一直線に"
+          }
+        }
+      }
+    },
+    "form.burpee.annotation.hand": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hands directly under shoulders"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手は肩の真下"
+          }
+        }
+      }
+    },
+    "form.burpee.annotation.core": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brace your core throughout"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腹筋に力を入れる"
+          }
+        }
+      }
     }
   }
 }

@@ -20,6 +20,7 @@ struct ExerciseDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 header
+                annotatedFormSection
                 targetMusclesSection
                 if !cautions.isEmpty {
                     cautionsSection
@@ -66,6 +67,21 @@ struct ExerciseDetailView: View {
                 Text(introduction)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    // MARK: - Annotated form photo (F-02)
+
+    /// 写真+吹き出しアノテーションのセクション。JSON が無い種目では何も描かない。
+    /// 5 種目(push-up / air-squat / plank / reverse-lunge / burpee)のみ対応。
+    @ViewBuilder
+    private var annotatedFormSection: some View {
+        if let formView = AnnotatedFormView(slug: exercise.slug) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("library.detail.form-cues")
+                    .font(.headline)
+                formView
             }
         }
     }
@@ -118,19 +134,41 @@ struct ExerciseDetailView: View {
     }
 
     private var cautionsSection: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Label("library.detail.cautions", systemImage: "exclamationmark.triangle.fill")
-                .font(.headline)
-                .foregroundStyle(.orange)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 8) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.title3)
+                    .foregroundStyle(.orange)
+                Text("library.detail.cautions")
+                    .font(.headline)
+                    .foregroundStyle(.orange)
+            }
 
-            ForEach(Array(cautions.enumerated()), id: \.offset) { _, line in
-                Text("• \(line)")
-                    .font(.body)
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(Array(cautions.enumerated()), id: \.offset) { _, line in
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: "circle.fill")
+                            .font(.system(size: 5))
+                            .foregroundStyle(.orange)
+                            .padding(.top, 7)
+                        Text(line)
+                            .font(.subheadline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
             }
         }
-        .padding(12)
+        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.orange.opacity(0.10), in: .rect(cornerRadius: 10))
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(Color.orange.opacity(0.12))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(Color.orange.opacity(0.45), lineWidth: 1)
+        )
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: - Muscle / Equipment badges

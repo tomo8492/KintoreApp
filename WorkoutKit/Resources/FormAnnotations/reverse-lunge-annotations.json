@@ -1,0 +1,35 @@
+{
+  "slug": "reverse-lunge",
+  "assetName": "reverse-lunge-1",
+  "aspect": 0.8,
+  "annotations": [
+    {
+      "id": "torso",
+      "position": { "x": 0.42, "y": 0.50 },
+      "labelAnchor": { "x": 0.78, "y": 0.10 },
+      "labelKey": "form.reverse-lunge.annotation.torso",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": { "x": 0.45, "y": 0.62 },
+      "labelAnchor": { "x": 0.27, "y": 0.10 },
+      "labelKey": "form.reverse-lunge.annotation.core",
+      "color": "neutral"
+    },
+    {
+      "id": "front-knee",
+      "position": { "x": 0.40, "y": 0.78 },
+      "labelAnchor": { "x": 0.27, "y": 0.55 },
+      "labelKey": "form.reverse-lunge.annotation.front-knee",
+      "color": "warning"
+    },
+    {
+      "id": "back-knee",
+      "position": { "x": 0.55, "y": 0.92 },
+      "labelAnchor": { "x": 0.80, "y": 0.85 },
+      "labelKey": "form.reverse-lunge.annotation.back-knee",
+      "color": "primary"
+    }
+  ]
+}
