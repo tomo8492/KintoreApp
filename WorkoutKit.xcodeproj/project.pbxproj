@@ -24,7 +24,6 @@
 		0788E87AD2EEEC69717DAA1B /* TemplateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F2CBA6893CA5AB3753443C /* TemplateDetailView.swift */; };
 		07B233FB000E5D01208FA19C /* TimeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49CF86BEADE829814F8D72 /* TimeStepView.swift */; };
 		0841BE98940A41BCA9DC43A0 /* CommonMistakesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC932F0FA4D6D2516B4BB9 /* CommonMistakesCard.swift */; };
-		08BCF2DA2822D1489B881DE8 /* AnnotationLabelOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */; };
 		0A79BEA21E335E8A0B4ED571 /* levator-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = A03C9059E13ED1C6F5F53C97 /* levator-stretch.json */; };
 		0B67C6A0447CA075298601DB /* dumbbell-walking-lunge.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D410F563EF955108E867B7F /* dumbbell-walking-lunge.json */; };
 		0B722A1DB601F2F56E3EBCF0 /* seated-hamstring-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 76DD160E1A09786BE58D277E /* seated-hamstring-stretch.json */; };
@@ -109,7 +108,6 @@
 		351AE9685CBF80B9BA0208F7 /* wrist-flexor-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 53CF8FC4AC672114FEA8A221 /* wrist-flexor-stretch.json */; };
 		3525551E91A0F90C8C32487D /* seated-lateral-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = 434B2C7F2D58FCA81D310B16 /* seated-lateral-raise.json */; };
 		3530F64A0EAB631553ADD85D /* lat-stretch-doorway.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E8131F29E7AF879682A4F1 /* lat-stretch-doorway.json */; };
-		36137BA0A5D7B9AC96808C99 /* AnnotationArrowOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF96026A3E3596FF6D27CB9 /* AnnotationArrowOverlay.swift */; };
 		3622EC8C0950290EDE3B19A1 /* sofa-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A050FCDB4AAB75F2D584FD8 /* sofa-stretch.json */; };
 		36DB21F2BC9EFEDF2B5FD4ED /* interval-running.json in Resources */ = {isa = PBXBuildFile; fileRef = 29DDA554D9AD52D677D06D6E /* interval-running.json */; };
 		37F9A478C183E86AEA49B36F /* downward-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 196C21A1987E31B20328E7DE /* downward-dog.json */; };
@@ -159,6 +157,7 @@
 		503DC5F2BEFAA3275F248598 /* cable-shrug.json in Resources */ = {isa = PBXBuildFile; fileRef = 538DD6C0E3CFC84D2E93DA5D /* cable-shrug.json */; };
 		504F7B688B8F59137E6CF0C5 /* cable-pull-through.json in Resources */ = {isa = PBXBuildFile; fileRef = FA487ED49295B79A56E4297B /* cable-pull-through.json */; };
 		51225A26F508953A7872670D /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AC216107F0080EED87D49A /* Logging.swift */; };
+		5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */; };
 		5147BDC151EE7ECF360A7281 /* seated-calf-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = E49ED5E9C3C03FDDB294C411 /* seated-calf-raise.json */; };
 		5159BB97A479FDF0E65F24FA /* svend-press.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FA59720FD817BD44BAF0A5A /* svend-press.json */; };
 		51B53E1538C6C106329B33C3 /* foam-roller-back.json in Resources */ = {isa = PBXBuildFile; fileRef = D75BEBF50128710CCE65D390 /* foam-roller-back.json */; };
@@ -387,6 +386,7 @@
 		C9A532DEA9BC9FFAC58DFFCC /* romanian-deadlift.json in Resources */ = {isa = PBXBuildFile; fileRef = 6058C6EFED83F6781B93A45E /* romanian-deadlift.json */; };
 		CA0AFE2665C03105DC92630D /* dumbbell-tricep-kickback.json in Resources */ = {isa = PBXBuildFile; fileRef = 6354341EF6BDD8E8EC069541 /* dumbbell-tricep-kickback.json */; };
 		CA84BC784C490BD65D3EC18C /* cable-woodchopper.json in Resources */ = {isa = PBXBuildFile; fileRef = 725AF4CA837D4DC2F3F14D4B /* cable-woodchopper.json */; };
+		CA9FDCB62F40BE41CCE0AEE1 /* BodySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D10D95B1734439A63E6E5 /* BodySectionView.swift */; };
 		CADE6A04647B3FE3764BF9D3 /* BuilderStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA7A22C6F701C50C2FD82D /* BuilderStoreTests.swift */; };
 		CAE456C933B02C4D62D62933 /* zottman-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = D45E7B0509BB0F5CB198748B /* zottman-curl.json */; };
 		CB848599889C47B6C586F0E7 /* lying-leg-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 20967120EE17C6FC1DDA75B6 /* lying-leg-curl.json */; };
@@ -653,7 +653,6 @@
 		4E5F61ADD53F4D7B97E75190 /* shadow-boxing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "shadow-boxing.json"; sourceTree = "<group>"; };
 		4EC0E61D44E6BD8E871D1923 /* reverse-hyperextension.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reverse-hyperextension.json"; sourceTree = "<group>"; };
 		4EC80C805B3C6B3BFA9E93E9 /* peterson-step-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "peterson-step-up.json"; sourceTree = "<group>"; };
-		4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationLabelOverlay.swift; sourceTree = "<group>"; };
 		4FA38B1055BAF014DB4AE39A /* prayer-chest-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "prayer-chest-stretch.json"; sourceTree = "<group>"; };
 		4FF9DD49A83E87C29FFB49C3 /* cat-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cat-stretch.json"; sourceTree = "<group>"; };
 		50548A243C7F3E0BA7EF257A /* prayer-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "prayer-stretch.json"; sourceTree = "<group>"; };
@@ -722,6 +721,7 @@
 		69C85BC61075496B3E26FDDF /* ManualEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryView.swift; sourceTree = "<group>"; };
 		69CA4DC087010FDFE7904DFE /* quad-stretch-standing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "quad-stretch-standing.json"; sourceTree = "<group>"; };
 		6A49CF86BEADE829814F8D72 /* TimeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStepView.swift; sourceTree = "<group>"; };
+		6A6D10D95B1734439A63E6E5 /* BodySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySectionView.swift; sourceTree = "<group>"; };
 		6A93A59E089CE3EEB86052FC /* incline-dumbbell-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "incline-dumbbell-press.json"; sourceTree = "<group>"; };
 		6ABC4B3A0579BDC31056F217 /* running-treadmill.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "running-treadmill.json"; sourceTree = "<group>"; };
 		6ACAE5C986EF16E5785A91AC /* back-extension.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "back-extension.json"; sourceTree = "<group>"; };
@@ -776,6 +776,7 @@
 		86F4A44690A3763DCF41FE6A /* CSVImporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImporterTests.swift; sourceTree = "<group>"; };
 		8796C7723B5FA0DBAF40812D /* box-squat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "box-squat.json"; sourceTree = "<group>"; };
 		88183E28C951B759439C0EAC /* low-lunge-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "low-lunge-stretch.json"; sourceTree = "<group>"; };
+		8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body2RowLayoutScreenshotTests.swift; sourceTree = "<group>"; };
 		88E1DD55FDF95BA11CDFA653 /* russian-twist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "russian-twist.json"; sourceTree = "<group>"; };
 		8A050FCDB4AAB75F2D584FD8 /* sofa-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sofa-stretch.json"; sourceTree = "<group>"; };
 		8AA568F523151097984476BF /* machine-rdl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "machine-rdl.json"; sourceTree = "<group>"; };
@@ -951,7 +952,6 @@
 		EB23C663175013148DD6401C /* SessionExerciseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExerciseRow.swift; sourceTree = "<group>"; };
 		EB3746C5DFFF39D83581B92F /* cat-cow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cat-cow.json"; sourceTree = "<group>"; };
 		EB774DBD2F91236E1C1C1E63 /* meadows-row.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "meadows-row.json"; sourceTree = "<group>"; };
-		EBF96026A3E3596FF6D27CB9 /* AnnotationArrowOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationArrowOverlay.swift; sourceTree = "<group>"; };
 		ECEBE5A6CF7E2BDF0C39C851 /* single-leg-rdl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "single-leg-rdl.json"; sourceTree = "<group>"; };
 		EE52C96145261324E37B46F4 /* HistoryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryComponents.swift; sourceTree = "<group>"; };
 		EE8AED504E48AF7CC4CDF073 /* behind-back-shrug.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "behind-back-shrug.json"; sourceTree = "<group>"; };
@@ -1112,8 +1112,7 @@
 			isa = PBXGroup;
 			children = (
 				A1661E94950C22070BE9A791 /* AnnotatedBodyDiagramView.swift */,
-				EBF96026A3E3596FF6D27CB9 /* AnnotationArrowOverlay.swift */,
-				4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */,
+				6A6D10D95B1734439A63E6E5 /* BodySectionView.swift */,
 				F1DC932F0FA4D6D2516B4BB9 /* CommonMistakesCard.swift */,
 				18D7A97FCFF772594876BF44 /* CompactBodyDiagramView.swift */,
 				7D3C9D2CD799BCB09E3BD98D /* ExerciseDetailView.swift */,
@@ -1629,6 +1628,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
+				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
 				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
 				65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */,
@@ -2247,6 +2247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
+				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
 				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
 				80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */,
@@ -2259,14 +2260,13 @@
 			files = (
 				B5390D49792A510E90E6784F /* AboutView.swift in Sources */,
 				E3D2DE465C0828692D991DF2 /* AnnotatedBodyDiagramView.swift in Sources */,
-				36137BA0A5D7B9AC96808C99 /* AnnotationArrowOverlay.swift in Sources */,
-				08BCF2DA2822D1489B881DE8 /* AnnotationLabelOverlay.swift in Sources */,
 				577A06C75A7639DE362F804A /* AppDependency.swift in Sources */,
 				581FDEEEBABA3D9EAC0CEE84 /* AppError.swift in Sources */,
 				1035B2482700352AB43E65D3 /* AttributeNormalizer.swift in Sources */,
 				B973E1F0E8D7EF2CC002A4AE /* AutoScrollEffect.swift in Sources */,
 				1C75E7E54FB86D484A43CF32 /* BodyDiagramView.swift in Sources */,
 				AEC8266DD765A7CDE65892DD /* BodyHitZones.swift in Sources */,
+				CA9FDCB62F40BE41CCE0AEE1 /* BodySectionView.swift in Sources */,
 				1C5AA4C68E05BA872A0CE6BF /* BuilderStore.swift in Sources */,
 				B00D029F3AADCD1F5A611F4A /* BuilderView.swift in Sources */,
 				4B2F1704CA03E38BB9CAD383 /* CSVImporter+Builder.swift in Sources */,

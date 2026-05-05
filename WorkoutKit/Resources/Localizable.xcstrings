@@ -3785,6 +3785,57 @@
         }
       }
     },
+    "library.detail.body.front": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Front"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前面"
+          }
+        }
+      }
+    },
+    "library.detail.body.back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "後面"
+          }
+        }
+      }
+    },
+    "library.detail.body.no-cues": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cues for this side"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この面のコメントはありません"
+          }
+        }
+      }
+    },
     "library.detail.cautions": {
       "extractionState": "manual",
       "localizations": {
