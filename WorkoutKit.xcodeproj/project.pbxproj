@@ -71,6 +71,7 @@
 		436080D54CABB42EA92D46C6 /* CompactBodyDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7A97FCFF772594876BF44 /* CompactBodyDiagramView.swift */; };
 		4405E28D7A62075B103B4BF0 /* HistoryExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3E339036E6764D285A8CA /* HistoryExporter.swift */; };
 		44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */; };
+		45C0F3512A2B55B6EA6EA6D9 /* AnnotationLabelLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A89086281A16F09E3F0CC /* AnnotationLabelLayoutTests.swift */; };
 		4B2F1704CA03E38BB9CAD383 /* CSVImporter+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2077624452330AFF0F0F94 /* CSVImporter+Builder.swift */; };
 		4C255410BB8B1EADE228F091 /* burpee.json in Resources */ = {isa = PBXBuildFile; fileRef = DEB5F3F7F378B567FB288EFE /* burpee.json */; };
 		4D5671206195CE0EDD7CF2A4 /* IntervalTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF281BD7187460CEAAF517 /* IntervalTimerTests.swift */; };
@@ -195,6 +196,7 @@
 		FAD000D191DA16B3E8770010 /* ExerciseSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656446EE44165F6CE1D85DA /* ExerciseSeeder.swift */; };
 		FC060DB49FEACA6D14D6420C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FEFD92C6BD6823D8CAB33F3E /* Localizable.xcstrings */; };
 		FD2DC88E8C963EDF26E25721 /* UnitsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE370E36AF9BA0123DA7991 /* UnitsFormatter.swift */; };
+		FFBED643AE8B5973665C040C /* AnnotationLabelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E591FF992E536A0DB0FEE4C /* AnnotationLabelLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +316,7 @@
 		6A49CF86BEADE829814F8D72 /* TimeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStepView.swift; sourceTree = "<group>"; };
 		6A93A59E089CE3EEB86052FC /* incline-dumbbell-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "incline-dumbbell-press.json"; sourceTree = "<group>"; };
 		6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactBodyDiagramScreenshotTests.swift; sourceTree = "<group>"; };
+		6E591FF992E536A0DB0FEE4C /* AnnotationLabelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationLabelLayout.swift; sourceTree = "<group>"; };
 		6EE9CBBCD626EE7F9FEFE535 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		6F3B3C84A2731C1B05E826C7 /* plank.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plank.json; sourceTree = "<group>"; };
 		6FB3AE9546B9789586B2289F /* SessionStore+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionStore+Interval.swift"; sourceTree = "<group>"; };
@@ -349,6 +352,7 @@
 		A04D326A6170AA54EFC040B0 /* ProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeature.swift; sourceTree = "<group>"; };
 		A1661E94950C22070BE9A791 /* AnnotatedBodyDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedBodyDiagramView.swift; sourceTree = "<group>"; };
 		A2182D3C7B6EB548C6F30883 /* dumbbell-shoulder-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "dumbbell-shoulder-press.json"; sourceTree = "<group>"; };
+		A21A89086281A16F09E3F0CC /* AnnotationLabelLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationLabelLayoutTests.swift; sourceTree = "<group>"; };
 		A2911CF1E31084091859BE46 /* inverted-row.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "inverted-row.json"; sourceTree = "<group>"; };
 		A36A36BB15599FAA0C631795 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		A3C17E49CACF95533BB027C5 /* WorkoutGeneratorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutGeneratorTypes.swift; sourceTree = "<group>"; };
@@ -451,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				285AC1F9C4C7464DE80A138C /* Resources */,
+				A21A89086281A16F09E3F0CC /* AnnotationLabelLayoutTests.swift */,
 				76BA7A22C6F701C50C2FD82D /* BuilderStoreTests.swift */,
 				86F4A44690A3763DCF41FE6A /* CSVImporterTests.swift */,
 				972CC6934E1C8A86ECDFC6FC /* ExerciseAnnotationLoaderTests.swift */,
@@ -540,6 +545,7 @@
 			children = (
 				A1661E94950C22070BE9A791 /* AnnotatedBodyDiagramView.swift */,
 				EBF96026A3E3596FF6D27CB9 /* AnnotationArrowOverlay.swift */,
+				6E591FF992E536A0DB0FEE4C /* AnnotationLabelLayout.swift */,
 				4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */,
 				18D7A97FCFF772594876BF44 /* CompactBodyDiagramView.swift */,
 				7D3C9D2CD799BCB09E3BD98D /* ExerciseDetailView.swift */,
@@ -1119,6 +1125,7 @@
 				B5390D49792A510E90E6784F /* AboutView.swift in Sources */,
 				E3D2DE465C0828692D991DF2 /* AnnotatedBodyDiagramView.swift in Sources */,
 				36137BA0A5D7B9AC96808C99 /* AnnotationArrowOverlay.swift in Sources */,
+				FFBED643AE8B5973665C040C /* AnnotationLabelLayout.swift in Sources */,
 				08BCF2DA2822D1489B881DE8 /* AnnotationLabelOverlay.swift in Sources */,
 				577A06C75A7639DE362F804A /* AppDependency.swift in Sources */,
 				581FDEEEBABA3D9EAC0CEE84 /* AppError.swift in Sources */,
@@ -1221,6 +1228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C0F3512A2B55B6EA6EA6D9 /* AnnotationLabelLayoutTests.swift in Sources */,
 				CADE6A04647B3FE3764BF9D3 /* BuilderStoreTests.swift in Sources */,
 				A6C5A11510EB9DDE548EFCFC /* CSVImporterTests.swift in Sources */,
 				3F794316B0BF0728EDCBCDDE /* ExerciseAnnotationLoaderTests.swift in Sources */,
