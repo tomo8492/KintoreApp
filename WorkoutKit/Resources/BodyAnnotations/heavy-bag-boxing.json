@@ -1,0 +1,47 @@
+{
+  "slug": "heavy-bag-boxing",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press",
+      "from": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "to": {
+        "x": 0.21000000000000002,
+        "y": 0.18
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "rotate",
+      "position": {
+        "x": 0.16,
+        "y": 0.32
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.heavy-bag-boxing.annotation.rotate",
+      "color": "primary"
+    },
+    {
+      "id": "hand",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.heavy-bag-boxing.annotation.hand",
+      "color": "info"
+    }
+  ]
+}

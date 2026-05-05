@@ -1,0 +1,46 @@
+{
+  "slug": "world-greatest-stretch-static",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "spine",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.world-greatest-stretch-static.annotation.spine",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.world-greatest-stretch-static.annotation.breathe",
+      "color": "info"
+    },
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.world-greatest-stretch-static.annotation.hip",
+      "color": "success"
+    }
+  ]
+}

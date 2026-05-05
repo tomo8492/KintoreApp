@@ -1,0 +1,47 @@
+{
+  "slug": "donkey-kick",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "kick",
+      "from": {
+        "x": 0.78,
+        "y": 0.63
+      },
+      "to": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "squeeze",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.donkey-kick.annotation.squeeze",
+      "color": "primary"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.77,
+        "y": 0.38
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.donkey-kick.annotation.core",
+      "color": "info"
+    }
+  ]
+}

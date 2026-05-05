@@ -1,0 +1,34 @@
+{
+  "slug": "wrist-curl",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "curl",
+      "from": {
+        "x": 0.08,
+        "y": 0.45
+      },
+      "to": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "grip",
+      "position": {
+        "x": 0.1,
+        "y": 0.4
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.wrist-curl.annotation.grip",
+      "color": "primary"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "side-crunch",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "twist",
+      "from": {
+        "x": 0.16,
+        "y": 0.32
+      },
+      "to": {
+        "x": 0.26,
+        "y": 0.32
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "twist",
+      "position": {
+        "x": 0.16,
+        "y": 0.32
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.side-crunch.annotation.twist",
+      "color": "primary"
+    },
+    {
+      "id": "back",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.side-crunch.annotation.back",
+      "color": "info"
+    }
+  ]
+}

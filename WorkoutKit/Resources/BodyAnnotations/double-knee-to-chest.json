@@ -1,0 +1,33 @@
+{
+  "slug": "double-knee-to-chest",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "hinge",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.double-knee-to-chest.annotation.hinge",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.double-knee-to-chest.annotation.breathe",
+      "color": "info"
+    }
+  ]
+}

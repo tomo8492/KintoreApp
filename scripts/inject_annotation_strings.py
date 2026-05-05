@@ -66,6 +66,17 @@ DEFAULTS = {
     "calf":     ("ふくらはぎが伸びるのを感じる",      "Feel the calves stretching"),
     "spine":    ("背骨を長く伸ばす",                  "Lengthen the spine"),
     "chest":    ("胸を大きく開く",                    "Open the chest fully"),
+    # ----- New common ids introduced by 281-exercise expansion -----
+    "breathe":   ("呼吸を止めずに続ける",            "Keep breathing throughout"),
+    "shoulders": ("肩はリラックスして下げる",         "Keep shoulders relaxed and down"),
+    "tempo":     ("テンポをコントロールする",         "Control the tempo"),
+    "ankle":     ("足首はやわらかく動かす",           "Move smoothly through the ankle"),
+    "wrist":     ("手首はまっすぐ保つ",               "Keep wrists in a neutral line"),
+    "posture":   ("姿勢をまっすぐ保つ",               "Maintain an upright posture"),
+    "land":      ("膝を曲げてやさしく着地",           "Land softly with bent knees"),
+    "rack":      ("肩の前にしっかり乗せる",           "Rack the bar on the front delts"),
+    "alignment": ("頭から踵まで一直線",               "Keep the body in a straight line"),
+    "oblique":   ("脇腹に効かせる",                   "Engage the obliques"),
     # Special: slug-specific overrides handled below
 }
 
@@ -116,6 +127,19 @@ OVERRIDES = {
     ("standing-calf-raise", "range"): ("可動域を最大に",              "Maximize ankle range"),
     ("mountain-climber", "hip"):("お尻を上下させない",               "Keep hips level — no bouncing"),
     ("burpee", "flow"):         ("動作を流れるように繋げる",         "Flow through each phase"),
+    # ----- Shrug exercises: engage traps (default avoids them) -----
+    ("barbell-shrug", "trap"):     ("僧帽筋を真上に引き上げる",        "Shrug straight up to engage traps"),
+    ("dumbbell-shrug", "trap"):    ("僧帽筋を真上に引き上げる",        "Shrug straight up to engage traps"),
+    ("cable-shrug", "trap"):       ("僧帽筋を真上に引き上げる",        "Shrug straight up to engage traps"),
+    ("behind-back-shrug", "trap"): ("肩を真上に引き上げる",            "Lift the shoulders straight up"),
+    ("snatch-grip-shrug", "trap"): ("広いグリップで僧帽筋を引き上げる", "Shrug with the wide snatch grip"),
+    # ----- Cardio punch / battle ropes: replace lift-context defaults -----
+    ("battle-ropes", "rotate"):     ("体幹を使って大きく振る",         "Drive the ropes from the core"),
+    ("battle-ropes", "hand"):       ("グリップは緩めず手早く振る",     "Keep grip firm and the rhythm fast"),
+    ("shadow-boxing", "rotate"):    ("腰を回して力を伝える",           "Rotate the hips into each punch"),
+    ("shadow-boxing", "hand"):      ("拳は素早く戻す",                 "Snap the hand back quickly"),
+    ("heavy-bag-boxing", "rotate"): ("腰を回して力を伝える",           "Rotate the hips into each punch"),
+    ("heavy-bag-boxing", "hand"):   ("親指を握り込んで打つ",           "Tuck the thumb when you strike"),
     # accessibility fallback label
 }
 
@@ -164,21 +188,31 @@ def main():
     catalogue = json.loads(XCSTRINGS.read_text(encoding="utf-8"))
     strings = catalogue.setdefault("strings", {})
 
+    # Build a set of keys that come from explicit per-slug OVERRIDES so they are
+    # *always* re-applied (the dictionary is the source of truth for those).
+    override_keys: set[str] = set()
+    for (slug, ident) in OVERRIDES:
+        override_keys.add(f"form.{slug}.annotation.{ident}")
+
     required = collect_required_keys()
     added = 0
+    updated = 0
     skipped = 0
     for key, (ja, en) in sorted(required.items()):
-        if key in strings:
+        if key in strings and key not in override_keys:
             skipped += 1
             continue
+        if key in strings:
+            updated += 1
+        else:
+            added += 1
         strings[key] = make_unit(key, ja, en)
-        added += 1
 
     XCSTRINGS.write_text(
         json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"added {added} keys, skipped {skipped} (already present); total required {len(required)}")
+    print(f"added {added}, updated {updated}, skipped {skipped} (already present); total required {len(required)}")
 
 
 if __name__ == "__main__":

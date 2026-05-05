@@ -1,0 +1,34 @@
+{
+  "slug": "seated-calf-raise",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "up",
+      "from": {
+        "x": 0.78,
+        "y": 0.8400000000000001
+      },
+      "to": {
+        "x": 0.78,
+        "y": 0.78
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "range",
+      "position": {
+        "x": 0.78,
+        "y": 0.78
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.85
+      },
+      "labelKey": "form.seated-calf-raise.annotation.range",
+      "color": "primary"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "seated-dumbbell-press",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press-up",
+      "from": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.07999999999999999
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "press",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.seated-dumbbell-press.annotation.press",
+      "color": "primary"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.seated-dumbbell-press.annotation.core",
+      "color": "info"
+    }
+  ]
+}

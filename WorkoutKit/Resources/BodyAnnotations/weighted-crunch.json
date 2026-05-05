@@ -1,0 +1,47 @@
+{
+  "slug": "weighted-crunch",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "curl",
+      "from": {
+        "x": 0.21,
+        "y": 0.29000000000000004
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "range",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.weighted-crunch.annotation.range",
+      "color": "primary"
+    },
+    {
+      "id": "neck",
+      "position": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.weighted-crunch.annotation.neck",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "inchworm-walkout",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "jump",
+      "from": {
+        "x": 0.21,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.13
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "flow",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.inchworm-walkout.annotation.flow",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.inchworm-walkout.annotation.breathe",
+      "color": "info"
+    }
+  ]
+}

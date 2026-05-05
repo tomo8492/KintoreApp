@@ -1,0 +1,60 @@
+{
+  "slug": "dumbbell-thruster",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press-up",
+      "from": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.07999999999999999
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "drive",
+      "position": {
+        "x": 0.2,
+        "y": 0.55
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-thruster.annotation.drive",
+      "color": "primary"
+    },
+    {
+      "id": "press",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.dumbbell-thruster.annotation.press",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-thruster.annotation.core",
+      "color": "info"
+    }
+  ]
+}

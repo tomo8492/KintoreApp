@@ -1,0 +1,60 @@
+{
+  "slug": "dumbbell-farmer-walk",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "step-down",
+      "from": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "to": {
+        "x": 0.26,
+        "y": 0.49
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "posture",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.dumbbell-farmer-walk.annotation.posture",
+      "color": "success"
+    },
+    {
+      "id": "grip",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-farmer-walk.annotation.grip",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-farmer-walk.annotation.core",
+      "color": "primary"
+    }
+  ]
+}

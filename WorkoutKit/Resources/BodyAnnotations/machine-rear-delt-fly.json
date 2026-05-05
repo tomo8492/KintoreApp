@@ -1,0 +1,47 @@
+{
+  "slug": "machine-rear-delt-fly",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "open",
+      "from": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "to": {
+        "x": 0.76,
+        "y": 0.18
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "rear",
+      "position": {
+        "x": 0.71,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.machine-rear-delt-fly.annotation.rear",
+      "color": "primary"
+    },
+    {
+      "id": "scap",
+      "position": {
+        "x": 0.74,
+        "y": 0.13
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.machine-rear-delt-fly.annotation.scap",
+      "color": "info"
+    }
+  ]
+}

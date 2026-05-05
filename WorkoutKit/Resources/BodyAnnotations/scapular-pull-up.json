@@ -1,0 +1,47 @@
+{
+  "slug": "scapular-pull-up",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "flow",
+      "from": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "to": {
+        "x": 0.77,
+        "y": 0.36
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "spine",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.scapular-pull-up.annotation.spine",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.scapular-pull-up.annotation.breathe",
+      "color": "info"
+    }
+  ]
+}

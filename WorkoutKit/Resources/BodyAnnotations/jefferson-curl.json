@@ -1,0 +1,47 @@
+{
+  "slug": "jefferson-curl",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "extend",
+      "from": {
+        "x": 0.77,
+        "y": 0.48
+      },
+      "to": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "hinge",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.jefferson-curl.annotation.hinge",
+      "color": "primary"
+    },
+    {
+      "id": "squeeze",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.jefferson-curl.annotation.squeeze",
+      "color": "info"
+    }
+  ]
+}

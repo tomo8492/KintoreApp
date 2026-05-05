@@ -1,0 +1,47 @@
+{
+  "slug": "jm-press",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "press",
+      "from": {
+        "x": 0.7799999999999999,
+        "y": 0.3
+      },
+      "to": {
+        "x": 0.7799999999999999,
+        "y": 0.4
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "elbow",
+      "position": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.jm-press.annotation.elbow",
+      "color": "info"
+    },
+    {
+      "id": "range",
+      "position": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.jm-press.annotation.range",
+      "color": "primary"
+    }
+  ]
+}

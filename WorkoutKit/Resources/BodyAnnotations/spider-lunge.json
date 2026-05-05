@@ -1,0 +1,47 @@
+{
+  "slug": "spider-lunge",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "rotate",
+      "from": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "to": {
+        "x": 0.26,
+        "y": 0.49
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.spider-lunge.annotation.hip",
+      "color": "primary"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.spider-lunge.annotation.core",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "standing-side-bend",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "twist",
+      "from": {
+        "x": 0.16,
+        "y": 0.28
+      },
+      "to": {
+        "x": 0.16,
+        "y": 0.36
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "twist",
+      "position": {
+        "x": 0.16,
+        "y": 0.32
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.standing-side-bend.annotation.twist",
+      "color": "primary"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.standing-side-bend.annotation.torso",
+      "color": "info"
+    }
+  ]
+}

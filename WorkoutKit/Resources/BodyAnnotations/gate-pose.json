@@ -1,0 +1,33 @@
+{
+  "slug": "gate-pose",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "twist",
+      "position": {
+        "x": 0.16,
+        "y": 0.32
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.gate-pose.annotation.twist",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.gate-pose.annotation.breathe",
+      "color": "info"
+    }
+  ]
+}

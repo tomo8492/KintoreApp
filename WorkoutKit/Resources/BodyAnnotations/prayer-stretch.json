@@ -1,0 +1,33 @@
+{
+  "slug": "prayer-stretch",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "wrist",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.prayer-stretch.annotation.wrist",
+      "color": "primary"
+    },
+    {
+      "id": "grip",
+      "position": {
+        "x": 0.1,
+        "y": 0.4
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.prayer-stretch.annotation.grip",
+      "color": "info"
+    }
+  ]
+}

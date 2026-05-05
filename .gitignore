@@ -66,3 +66,6 @@ fastlane/test_output/
 tools/sd-batch/output/
 tools/sd-batch/__pycache__/
 tools/sd-batch/.venv/
+
+# Python build artifacts (annotation generator scripts)
+scripts/__pycache__/
