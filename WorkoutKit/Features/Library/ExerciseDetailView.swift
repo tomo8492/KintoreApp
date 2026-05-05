@@ -25,6 +25,7 @@ struct ExerciseDetailView: View {
                 if let animation = ExerciseAnimationView(slug: exercise.slug) {
                     animation
                 }
+                targetMusclesSection
                 if !cautions.isEmpty {
                     cautionsSection
                 }
@@ -71,6 +72,23 @@ struct ExerciseDetailView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
+        }
+    }
+
+    // MARK: - Target muscles diagram (F-02 prototype)
+
+    /// 「鍛える筋肉」セクション。primary を強くハイライト、secondary を薄くハイライト。
+    /// CompactBodyDiagramView が表示専用なので、本 View は単に section header と組み合わせる。
+    private var targetMusclesSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("library.detail.target-muscles")
+                .font(.headline)
+
+            CompactBodyDiagramView(
+                primaryMuscles: Set([exercise.primaryMuscle]),
+                secondaryMuscles: Set(exercise.secondaryMuscles)
+            )
+            .frame(maxHeight: 220)
         }
     }
 
