@@ -3887,6 +3887,91 @@
         }
       }
     },
+    "library.detail.animation.a11y.push-up": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push-up demonstration animation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プッシュアップの動作アニメーション"
+          }
+        }
+      }
+    },
+    "library.detail.animation.a11y.air-squat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Air squat demonstration animation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エアスクワットの動作アニメーション"
+          }
+        }
+      }
+    },
+    "library.detail.animation.a11y.plank": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plank demonstration animation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プランクの動作アニメーション"
+          }
+        }
+      }
+    },
+    "library.detail.animation.a11y.reverse-lunge": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reverse lunge demonstration animation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リバースランジの動作アニメーション"
+          }
+        }
+      }
+    },
+    "library.detail.animation.a11y.burpee": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Burpee demonstration animation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バーピーの動作アニメーション"
+          }
+        }
+      }
+    },
     "manual-entry.add-exercises": {
       "extractionState": "manual",
       "localizations": {
