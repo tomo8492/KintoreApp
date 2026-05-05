@@ -62,6 +62,9 @@ enum ExerciseAnimationKind: String, CaseIterable {
 
 struct ExerciseAnimationView: View {
     let kind: ExerciseAnimationKind
+    /// 写真カルーセルが利用可能な slug の場合のみ非 nil。
+    /// nil のときは従来通り procedural stick figure を描画する。
+    private let photoSet: ExercisePhotoSet?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
@@ -70,14 +73,26 @@ struct ExerciseAnimationView: View {
     init?(slug: String) {
         guard let k = ExerciseAnimationKind.from(slug: slug) else { return nil }
         self.kind = k
+        self.photoSet = ExercisePhotoSet.from(slug: slug)
     }
 
-    /// 直接 kind 指定で初期化(Preview 用)。
+    /// 直接 kind 指定で初期化(Preview 用)。photoSet は同 rawValue で同期する。
     init(kind: ExerciseAnimationKind) {
         self.kind = kind
+        self.photoSet = ExercisePhotoSet(rawValue: kind.rawValue)
     }
 
     var body: some View {
+        // 写真カルーセルが使えるなら最優先(本物のヒトのフォーム)。
+        // 無ければ procedural アニメーションにフォールバック(F-09 プロト)。
+        if let photoSet {
+            ExercisePhotoCarouselView(set: photoSet)
+        } else {
+            proceduralBody
+        }
+    }
+
+    private var proceduralBody: some View {
         ZStack {
             // 背景: 種目を引き立てる薄いグラデーション。
             RoundedRectangle(cornerRadius: 16)
