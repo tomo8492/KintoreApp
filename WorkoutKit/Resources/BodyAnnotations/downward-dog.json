@@ -1,0 +1,46 @@
+{
+  "slug": "downward-dog",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.downward-dog.annotation.hip",
+      "color": "primary"
+    },
+    {
+      "id": "calf",
+      "position": {
+        "x": 0.78,
+        "y": 0.78
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.85
+      },
+      "labelKey": "form.downward-dog.annotation.calf",
+      "color": "info"
+    },
+    {
+      "id": "spine",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.downward-dog.annotation.spine",
+      "color": "success"
+    }
+  ]
+}

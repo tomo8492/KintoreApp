@@ -1,0 +1,46 @@
+{
+  "slug": "plank",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "neck",
+      "position": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.plank.annotation.neck",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.plank.annotation.core",
+      "color": "primary"
+    },
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.plank.annotation.hip",
+      "color": "success"
+    }
+  ]
+}

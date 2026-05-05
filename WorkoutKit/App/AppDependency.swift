@@ -16,6 +16,9 @@ struct AppDependency {
     /// E3 Settings から呼ぶ Restore Purchase の抽象。本番は StoreKitClient
     /// を渡し、Preview / 未統合ビルドでは NoopPurchaseRestorer に差し替える。
     var purchaseRestorer: any PurchaseRestoring
+    /// F-02 詳細画面で使う「動作矢印 + アノテーション」JSON ローダー。
+    /// Bundle 越しに lazy にロードしプロセス内でキャッシュする。
+    var annotationLoader: ExerciseAnnotationLoader
 }
 
 // MARK: - SwiftUI Environment 拡張
@@ -32,7 +35,8 @@ private struct AppDependencyKey: EnvironmentKey {
             proGate: gate,
             liveActivity: LiveActivityClient(),
             storeKitClient: storeKit,
-            purchaseRestorer: storeKit
+            purchaseRestorer: storeKit,
+            annotationLoader: ExerciseAnnotationLoader()
         )
     }()
 }

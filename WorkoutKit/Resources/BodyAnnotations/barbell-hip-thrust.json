@@ -1,0 +1,47 @@
+{
+  "slug": "barbell-hip-thrust",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "up",
+      "from": {
+        "x": 0.21,
+        "y": 0.49
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "squeeze",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.barbell-hip-thrust.annotation.squeeze",
+      "color": "primary"
+    },
+    {
+      "id": "rib",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.barbell-hip-thrust.annotation.rib",
+      "color": "info"
+    }
+  ]
+}

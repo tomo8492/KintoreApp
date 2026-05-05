@@ -1,0 +1,34 @@
+{
+  "slug": "cable-crossover",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "cross",
+      "from": {
+        "x": 0.22000000000000003,
+        "y": 0.16
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "range",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.cable-crossover.annotation.range",
+      "color": "primary"
+    }
+  ]
+}

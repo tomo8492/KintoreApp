@@ -1,0 +1,47 @@
+{
+  "slug": "bulgarian-split-squat",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "front-knee",
+      "from": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "to": {
+        "x": 0.2,
+        "y": 0.72
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "balance",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.bulgarian-split-squat.annotation.balance",
+      "color": "info"
+    },
+    {
+      "id": "knee",
+      "position": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.bulgarian-split-squat.annotation.knee",
+      "color": "warning"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "decline-barbell-press",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press-up",
+      "from": {
+        "x": 0.22,
+        "y": 0.26
+      },
+      "to": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "lower",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.decline-barbell-press.annotation.lower",
+      "color": "primary"
+    }
+  ]
+}
