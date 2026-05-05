@@ -61,3 +61,8 @@ fastlane/test_output/
 
 # Logs
 *.log
+
+# tools/sd-batch — Stable Diffusion 生成画像はコミットしない(統合後 Assets.xcassets が正)
+tools/sd-batch/output/
+tools/sd-batch/__pycache__/
+tools/sd-batch/.venv/

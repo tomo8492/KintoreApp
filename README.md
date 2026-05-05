@@ -82,6 +82,20 @@ Phase **P0**(P-1 完了、Xcode プロジェクト未作成)。
 - コミット: Conventional Commits(`feat:` `fix:` `refactor:` `chore:` `docs:` `test:`)
 - View に `@State`/`@Observable` を直接持たせる方針(ViewModel は作らない)。詳細は CLAUDE.md §11
 
+## 画像生成ワークフロー(Stable Diffusion / ローカル)
+
+種目フォーム解説のステップイラストは **Mac (Apple Silicon) 上の Stable Diffusion でローカル生成** する方針。サブスク・API 課金なし、生成済み画像は Asset Catalog (`ExercisePhotos` namespace) にコミットして配布する。
+
+```bash
+# 1) Draw Things(App Store 無料)を起動 → API 有効化(Settings ▸ Server)
+# 2) 上位 50 種目を一括生成(M2 で約 10 分)
+python3 tools/sd-batch/generate.py
+# 3) Asset Catalog に統合
+python3 tools/sd-batch/integrate.py
+```
+
+詳細(モデル DL / プロンプト規約 / トラブルシューティング)は [`tools/sd-batch/README.md`](./tools/sd-batch/README.md) を参照。
+
 ## ライセンス
 
 Proprietary(個人非公開、App Store のみ)。
