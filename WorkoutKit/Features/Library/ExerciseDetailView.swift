@@ -20,11 +20,6 @@ struct ExerciseDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 header
-                // F-09 prototype: 5 種目限定の手描き procedural アニメ。
-                // slug が対応外なら nil で何も描画されない。
-                if let animation = ExerciseAnimationView(slug: exercise.slug) {
-                    animation
-                }
                 targetMusclesSection
                 if !cautions.isEmpty {
                     cautionsSection
