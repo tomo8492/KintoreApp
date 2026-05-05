@@ -29,6 +29,9 @@ enum ExerciseSeeder {
         let stepTextEnRaw: String?
         let cautionsJa: String?
         let cautionsEn: String?
+        /// 「よくある間違い」(改行区切り、optional)。Exercise モデルに同名で保存。
+        let commonMistakesJa: String?
+        let commonMistakesEn: String?
         let youtubeSearchQuery: String?
         let thumbnailFileName: String?
     }
@@ -57,7 +60,14 @@ enum ExerciseSeeder {
                 predicate: #Predicate { $0.slug == slug }
             )
             let existing = try context.fetch(descriptor)
-            if !existing.isEmpty { continue }
+            if let existingExercise = existing.first {
+                // 既存ストアでは新規追加した optional フィールド
+                // (commonMistakesJa/En)が nil のままなので、seed JSON 側に
+                // 値があれば backfill する。これがないと、初回起動済みの端末で
+                // 「よくある間違い」セクションが永久に空になる。
+                backfillNewFields(into: existingExercise, from: record)
+                continue
+            }
 
             let exercise = Exercise(
                 slug: record.slug,
@@ -79,6 +89,8 @@ enum ExerciseSeeder {
                 stepTextEnRaw: record.stepTextEnRaw ?? "[]",
                 cautionsJa: record.cautionsJa ?? "",
                 cautionsEn: record.cautionsEn ?? "",
+                commonMistakesJa: record.commonMistakesJa,
+                commonMistakesEn: record.commonMistakesEn,
                 youtubeSearchQuery: record.youtubeSearchQuery,
                 thumbnailFileName: record.thumbnailFileName
             )
@@ -91,5 +103,18 @@ enum ExerciseSeeder {
         }
         Logger.data.info("seeded \(inserted) new exercises (total records: \(records.count))")
         return inserted
+    }
+
+    /// 既存 Exercise に対して、後から SchemaV1 に追加された optional フィールドのみ backfill する。
+    /// 上書きするのは現在 nil または空のときだけ(ユーザーが将来手動編集できるようにするため)。
+    private static func backfillNewFields(into exercise: Exercise, from record: SeedRecord) {
+        if (exercise.commonMistakesJa ?? "").isEmpty,
+           let value = record.commonMistakesJa, !value.isEmpty {
+            exercise.commonMistakesJa = value
+        }
+        if (exercise.commonMistakesEn ?? "").isEmpty,
+           let value = record.commonMistakesEn, !value.isEmpty {
+            exercise.commonMistakesEn = value
+        }
     }
 }

@@ -20,7 +20,9 @@
     "cautionsJa": "膝が内側に入らないように\n背中を丸めない",
     "cautionsEn": "Don't let your knees cave inward\nKeep a neutral spine",
     "youtubeSearchQuery": "barbell back squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "push-up",
@@ -43,7 +45,9 @@
     "cautionsJa": "腰が反らないように\n肩がすくまないように",
     "cautionsEn": "Don't let your hips sag\nKeep shoulders away from ears",
     "youtubeSearchQuery": "push up proper form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "plank",
@@ -66,7 +70,9 @@
     "cautionsJa": "腰が落ちないように\n首は中立位で",
     "cautionsEn": "Don't let your hips drop\nKeep neck neutral",
     "youtubeSearchQuery": "plank exercise form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "お尻が落ちる\nお尻が上がり過ぎる\n首が反る",
+    "commonMistakesEn": "Hips sag below the line\nHips pike up too high\nNeck cranes upward"
   },
   {
     "slug": "arm-circles",
@@ -89,7 +95,9 @@
     "cautionsJa": "勢いをつけすぎない\n首をすくめない",
     "cautionsEn": "Don't swing too aggressively\nKeep neck relaxed",
     "youtubeSearchQuery": "arm circles warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "leg-swings",
@@ -112,7 +120,9 @@
     "cautionsJa": "勢いで腰を反らせない\n支持脚はまっすぐ",
     "cautionsEn": "Don't arch the lower back\nKeep the standing leg tall",
     "youtubeSearchQuery": "leg swings warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "hip-circles",
@@ -135,7 +145,9 @@
     "cautionsJa": "膝を固めない\n上体は中立を保つ",
     "cautionsEn": "Don't lock the knees\nKeep the torso steady",
     "youtubeSearchQuery": "hip circles mobility",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "cat-cow",
@@ -158,7 +170,9 @@
     "cautionsJa": "首を無理に上げない\n肩がすくまないように",
     "cautionsEn": "Don't crank the neck\nKeep shoulders away from ears",
     "youtubeSearchQuery": "cat cow stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "jumping-jacks",
@@ -181,7 +195,9 @@
     "cautionsJa": "膝に違和感が出たら中止\n着地は静かに",
     "cautionsEn": "Stop if knees feel uncomfortable\nLand softly",
     "youtubeSearchQuery": "jumping jacks warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が伸びきる\n手の動きが小さい\n反動が大き過ぎる",
+    "commonMistakesEn": "Knees lock out hard on landing\nArm motion is too small\nExcessive bouncing"
   },
   {
     "slug": "high-knees",
@@ -204,7 +220,9 @@
     "cautionsJa": "腰を反らせない\n前のめりにならない",
     "cautionsEn": "Don't arch the lower back\nStay tall, not hunched",
     "youtubeSearchQuery": "high knees warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝の位置が低い\n上体が前傾する\n腕の振りが小さい",
+    "commonMistakesEn": "Knees stay too low\nTorso pitches forward\nArm swing is too small"
   },
   {
     "slug": "butt-kicks",
@@ -227,7 +245,9 @@
     "cautionsJa": "膝に痛みが出たら中止\n腰を反らせない",
     "cautionsEn": "Stop on knee discomfort\nDon't arch the lower back",
     "youtubeSearchQuery": "butt kicks warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "上体が前傾する\n踵が尻に届かない\n腕が振れていない",
+    "commonMistakesEn": "Torso pitches forward\nHeel doesn't reach the glutes\nArms aren't engaged"
   },
   {
     "slug": "shoulder-rolls",
@@ -250,7 +270,9 @@
     "cautionsJa": "首をすくめない\n勢いでやらない",
     "cautionsEn": "Keep neck relaxed\nAvoid jerky momentum",
     "youtubeSearchQuery": "shoulder rolls mobility",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "torso-twists",
@@ -273,7 +295,9 @@
     "cautionsJa": "腰だけで捻らない、胸椎も使う\n勢いをつけすぎない",
     "cautionsEn": "Rotate from the thoracic spine, not just the lumbar\nDon't whip the motion",
     "youtubeSearchQuery": "torso twist warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "wrist-circles",
@@ -296,7 +320,9 @@
     "cautionsJa": "痛みがあれば中止\n無理な可動域に入らない",
     "cautionsEn": "Stop on pain\nDon't push beyond a comfortable range",
     "youtubeSearchQuery": "wrist circles warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "barbell-bench-press",
@@ -319,7 +345,9 @@
     "cautionsJa": "肩甲骨を寄せて下げる\n腰を過剰に反らせない",
     "cautionsEn": "Retract and depress the scapulae\nDon't over-arch the lower back",
     "youtubeSearchQuery": "barbell bench press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が大きく反る\n肘が真横に開く",
+    "commonMistakesEn": "Shoulders shrug toward the ears\nLower back overarches\nElbows flare out at 90°"
   },
   {
     "slug": "dumbbell-bench-press",
@@ -342,7 +370,9 @@
     "cautionsJa": "手首を反らせない\n肩を前に出さない",
     "cautionsEn": "Keep wrists neutral\nDon't roll the shoulders forward",
     "youtubeSearchQuery": "dumbbell bench press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が大きく反る\n肘が真横に開く",
+    "commonMistakesEn": "Shoulders shrug toward the ears\nLower back overarches\nElbows flare out at 90°"
   },
   {
     "slug": "incline-barbell-bench-press",
@@ -365,7 +395,9 @@
     "cautionsJa": "肩がすくまないように\n腰を浮かせない",
     "cautionsEn": "Don't shrug the shoulders\nKeep hips on the bench",
     "youtubeSearchQuery": "incline barbell bench press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って胸が浮く\n肩がすくむ\n肘が真横に開く",
+    "commonMistakesEn": "Lower back arches off the bench\nShoulders shrug\nElbows flare out at 90°"
   },
   {
     "slug": "incline-dumbbell-press",
@@ -388,7 +420,9 @@
     "cautionsJa": "肘をロックしない\n腰を反らせすぎない",
     "cautionsEn": "Don't lock the elbows\nAvoid excessive lower-back arch",
     "youtubeSearchQuery": "incline dumbbell press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って胸が浮く\n肩がすくむ\n肘が真横に開く",
+    "commonMistakesEn": "Lower back arches off the bench\nShoulders shrug\nElbows flare out at 90°"
   },
   {
     "slug": "decline-barbell-press",
@@ -411,7 +445,9 @@
     "cautionsJa": "バーが顔に落ちないように補助者を\n首を持ち上げない",
     "cautionsEn": "Use a spotter — bar can drop toward the face\nDon't lift the head",
     "youtubeSearchQuery": "decline barbell press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "バーが顔に向かう\n肩が浮く\n下ろしが速い",
+    "commonMistakesEn": "Bar tracks toward the face\nShoulders lift off the bench\nLowering is rushed"
   },
   {
     "slug": "dumbbell-shoulder-press",
@@ -434,7 +470,9 @@
     "cautionsJa": "腰を反らせて押し上げない\n肘をロックしない",
     "cautionsEn": "Don't push by arching the back\nDon't lock the elbows",
     "youtubeSearchQuery": "dumbbell shoulder press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が大きく反る\n肘が前に出る\n首がすくむ",
+    "commonMistakesEn": "Lower back overarches\nElbows drift forward\nShoulders shrug into the neck"
   },
   {
     "slug": "seated-barbell-shoulder-press",
@@ -457,7 +495,9 @@
     "cautionsJa": "首を前に出さない\n腰のアーチを過度に作らない",
     "cautionsEn": "Don't crane the neck forward\nAvoid excessive lumbar arch",
     "youtubeSearchQuery": "seated overhead press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が大きく反る\n肘が前に出る\n首がすくむ",
+    "commonMistakesEn": "Lower back overarches\nElbows drift forward\nShoulders shrug into the neck"
   },
   {
     "slug": "arnold-press",
@@ -480,7 +520,9 @@
     "cautionsJa": "回転を急がない\n肩をすくめない",
     "cautionsEn": "Don't rush the rotation\nDon't shrug the shoulders",
     "youtubeSearchQuery": "arnold press tutorial",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が大きく反る\n肘が前に出る\n首がすくむ",
+    "commonMistakesEn": "Lower back overarches\nElbows drift forward\nShoulders shrug into the neck"
   },
   {
     "slug": "push-press",
@@ -503,7 +545,9 @@
     "cautionsJa": "腰を反らせて押し上げない\n頭を前後に振らない",
     "cautionsEn": "Don't arch the back to push\nDon't bob the head",
     "youtubeSearchQuery": "push press technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "ディップが深すぎる\n脚の力を使わず腕だけ\n腰が反る",
+    "commonMistakesEn": "Dip too deep\nPress with arms only — no leg drive\nLower back overextends"
   },
   {
     "slug": "barbell-deadlift",
@@ -526,7 +570,9 @@
     "cautionsJa": "背中を丸めない\n膝を内に入れない",
     "cautionsEn": "Never round the lower back\nDon't let knees cave",
     "youtubeSearchQuery": "barbell deadlift form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "romanian-deadlift",
@@ -549,7 +595,9 @@
     "cautionsJa": "背中を丸めない\n膝を曲げ過ぎない",
     "cautionsEn": "Don't round the back\nDon't turn it into a squat",
     "youtubeSearchQuery": "romanian deadlift form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝を曲げ過ぎる\n腰が丸まる\nバーが前方に離れる",
+    "commonMistakesEn": "Knees bend too much\nLower back rounds\nBar drifts forward away from the legs"
   },
   {
     "slug": "sumo-deadlift",
@@ -572,7 +620,9 @@
     "cautionsJa": "膝を内側に入れない\n背中を丸めない",
     "cautionsEn": "Don't let knees collapse inward\nKeep a flat back",
     "youtubeSearchQuery": "sumo deadlift form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "trap-bar-deadlift",
@@ -595,7 +645,9 @@
     "cautionsJa": "背中を丸めない\n頭を前に突き出さない",
     "cautionsEn": "Don't round the back\nDon't crane the neck",
     "youtubeSearchQuery": "trap bar deadlift",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "front-squat",
@@ -618,7 +670,9 @@
     "cautionsJa": "肘が落ちるとバーが落ちる\n踵が浮かないように",
     "cautionsEn": "Dropping the elbows drops the bar\nDon't let heels lift",
     "youtubeSearchQuery": "front squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "goblet-squat",
@@ -641,7 +695,9 @@
     "cautionsJa": "背中を丸めない\n膝を内側に入れない",
     "cautionsEn": "Don't round the back\nDon't let knees cave",
     "youtubeSearchQuery": "goblet squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "bulgarian-split-squat",
@@ -664,7 +720,9 @@
     "cautionsJa": "前膝がつま先より大きく前に出ない\n後ろ脚に逃げない",
     "cautionsEn": "Don't let the front knee shoot way past the toes\nDon't dump weight to the rear leg",
     "youtubeSearchQuery": "bulgarian split squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内に入る\n後ろ足の膝が床に当たる\n上体が前のめりになる",
+    "commonMistakesEn": "Front knee caves in\nBack knee crashes down\nTorso pitches forward"
   },
   {
     "slug": "dumbbell-walking-lunge",
@@ -687,7 +745,9 @@
     "cautionsJa": "前膝を内側に入れない\n上体は立てる",
     "cautionsEn": "Don't let the front knee cave\nStay tall",
     "youtubeSearchQuery": "dumbbell walking lunge",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "barbell-walking-lunge",
@@ -710,7 +770,9 @@
     "cautionsJa": "バーの揺れに注意\n膝を捻らない",
     "cautionsEn": "Mind bar wobble\nDon't twist the knee",
     "youtubeSearchQuery": "barbell walking lunge",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "step-up",
@@ -733,7 +795,9 @@
     "cautionsJa": "反対側の脚で押し上げない\n段の高さを欲張らない",
     "cautionsEn": "Don't push off with the trail leg\nDon't pick a box that's too tall",
     "youtubeSearchQuery": "dumbbell step up exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反対脚で蹴って勢いをつける\n体が前傾しすぎる\n降りる動作が雑",
+    "commonMistakesEn": "Push off with the rear leg\nTorso pitches too far forward\nLowering is rushed"
   },
   {
     "slug": "barbell-hip-thrust",
@@ -756,7 +820,9 @@
     "cautionsJa": "腰を反らせて高さを出さない\n顎を引く",
     "cautionsEn": "Don't hyperextend the lower back\nTuck the chin",
     "youtubeSearchQuery": "barbell hip thrust form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って肋骨が開く\n顎が上がる\nロックアウトが浅い",
+    "commonMistakesEn": "Lower back overarches and ribs flare\nChin lifts upward\nHips don't reach lockout"
   },
   {
     "slug": "dumbbell-hip-thrust",
@@ -779,7 +845,9 @@
     "cautionsJa": "ダンベルを骨で支えない\n腰を反らせ過ぎない",
     "cautionsEn": "Use padding under the dumbbell\nDon't over-arch the back",
     "youtubeSearchQuery": "dumbbell hip thrust home",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って肋骨が開く\n顎が上がる\nロックアウトが浅い",
+    "commonMistakesEn": "Lower back overarches and ribs flare\nChin lifts upward\nHips don't reach lockout"
   },
   {
     "slug": "barbell-row",
@@ -802,7 +870,9 @@
     "cautionsJa": "体を起こして反動で引かない\n背中を丸めない",
     "cautionsEn": "Don't heave with the torso\nDon't round the back",
     "youtubeSearchQuery": "barbell row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "dumbbell-row",
@@ -825,7 +895,9 @@
     "cautionsJa": "体を捻らない\n肩をすくめない",
     "cautionsEn": "Don't twist the torso\nDon't shrug",
     "youtubeSearchQuery": "single arm dumbbell row",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "t-bar-row",
@@ -848,7 +920,9 @@
     "cautionsJa": "腰で引かない\n背中を丸めない",
     "cautionsEn": "Don't yank with the lower back\nKeep a flat back",
     "youtubeSearchQuery": "t bar row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "seated-cable-row",
@@ -871,7 +945,9 @@
     "cautionsJa": "体を後ろに倒し過ぎない\n肩をすくめない",
     "cautionsEn": "Don't lean back excessively\nDon't shrug",
     "youtubeSearchQuery": "seated cable row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "lat-pulldown",
@@ -894,7 +970,9 @@
     "cautionsJa": "反動を使わない\n首の後ろに引かない",
     "cautionsEn": "Don't use momentum\nDon't pull behind the neck",
     "youtubeSearchQuery": "lat pulldown form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "体を反らせ過ぎる\n首を前に出して引く\n肘が後ろに引けていない",
+    "commonMistakesEn": "Leans back excessively\nCranes neck forward to pull\nElbows fail to track behind the body"
   },
   {
     "slug": "clean-and-press",
@@ -917,7 +995,9 @@
     "cautionsJa": "腰を反らせて押さない\n前腕の捻りに注意",
     "cautionsEn": "Don't press by arching\nMind the wrist rotation in the catch",
     "youtubeSearchQuery": "clean and press technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "dumbbell-thruster",
@@ -940,7 +1020,9 @@
     "cautionsJa": "腰を反らせて押さない\n膝を内側に入れない",
     "cautionsEn": "Don't press with a backward bend\nDon't let knees cave",
     "youtubeSearchQuery": "dumbbell thruster form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "kettlebell-swing",
@@ -963,7 +1045,9 @@
     "cautionsJa": "腕で持ち上げない\n腰を丸めない",
     "cautionsEn": "Don't lift with the arms\nDon't round the lower back",
     "youtubeSearchQuery": "kettlebell swing form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "スクワットしてしまう\n腕で振り上げる\n腰が反って終わる",
+    "commonMistakesEn": "Squats instead of hinging\nLifts the bell with the arms\nLower back hyperextends at the top"
   },
   {
     "slug": "dumbbell-fly",
@@ -986,7 +1070,9 @@
     "cautionsJa": "肘をロックしない\n下げ過ぎて肩を痛めない",
     "cautionsEn": "Don't lock the elbows\nDon't over-stretch the shoulder",
     "youtubeSearchQuery": "dumbbell fly form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "cable-fly",
@@ -1009,7 +1095,9 @@
     "cautionsJa": "手で引かず胸で寄せる\n肘をピンと伸ばさない",
     "cautionsEn": "Lead with the chest, not the hands\nDon't fully extend elbows",
     "youtubeSearchQuery": "cable fly chest",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "pec-deck",
@@ -1032,7 +1120,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the back\nDon't shrug",
     "youtubeSearchQuery": "pec deck machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で閉じる\n腰を反らせる\n戻しが速い",
+    "commonMistakesEn": "Body english to close\nLower back arches\nEccentric is rushed"
   },
   {
     "slug": "cable-crossover",
@@ -1055,7 +1145,9 @@
     "cautionsJa": "腕力で引かない\n肘を伸ばし切らない",
     "cautionsEn": "Don't pull with the arms\nDon't fully lock the elbows",
     "youtubeSearchQuery": "cable crossover form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "straight-arm-pulldown",
@@ -1078,7 +1170,9 @@
     "cautionsJa": "反動を使わない\n前傾を維持",
     "cautionsEn": "Don't use momentum\nMaintain the hinge",
     "youtubeSearchQuery": "straight arm pulldown form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "体を反らせ過ぎる\n首を前に出して引く\n肘が後ろに引けていない",
+    "commonMistakesEn": "Leans back excessively\nCranes neck forward to pull\nElbows fail to track behind the body"
   },
   {
     "slug": "dumbbell-pullover-isolation",
@@ -1101,7 +1195,9 @@
     "cautionsJa": "腰を落とさない\n肩を痛めるほど深く下げない",
     "cautionsEn": "Don't let hips drop\nDon't over-stretch the shoulder",
     "youtubeSearchQuery": "dumbbell pullover lat",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "dumbbell-shrug",
@@ -1124,7 +1220,9 @@
     "cautionsJa": "首を回さない\n肘を曲げない",
     "cautionsEn": "Don't roll the neck\nKeep the elbows straight",
     "youtubeSearchQuery": "dumbbell shrug form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が曲がる\n肩を回す\n下ろしが速い",
+    "commonMistakesEn": "Elbows bend during the lift\nShoulders rotate instead of elevating\nEccentric is rushed"
   },
   {
     "slug": "barbell-shrug",
@@ -1147,7 +1245,9 @@
     "cautionsJa": "腰を反らせない\n首を前後に揺らさない",
     "cautionsEn": "Don't arch the back\nDon't bob the neck",
     "youtubeSearchQuery": "barbell shrug form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が曲がる\n肩を回す\n下ろしが速い",
+    "commonMistakesEn": "Elbows bend during the lift\nShoulders rotate instead of elevating\nEccentric is rushed"
   },
   {
     "slug": "cable-shrug",
@@ -1170,7 +1270,9 @@
     "cautionsJa": "首を回さない\n反動を使わない",
     "cautionsEn": "Don't roll the neck\nNo momentum",
     "youtubeSearchQuery": "cable shrug form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が曲がる\n肩を回す\n下ろしが速い",
+    "commonMistakesEn": "Elbows bend during the lift\nShoulders rotate instead of elevating\nEccentric is rushed"
   },
   {
     "slug": "dumbbell-lateral-raise",
@@ -1193,7 +1295,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "Don't use momentum\nDon't shrug",
     "youtubeSearchQuery": "lateral raise form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n肘が下がる\n反動で持ち上げる",
+    "commonMistakesEn": "Shoulders shrug into the neck\nElbows drop below the wrists\nBody english is used"
   },
   {
     "slug": "dumbbell-front-raise",
@@ -1216,7 +1320,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "Don't use momentum\nDon't shrug",
     "youtubeSearchQuery": "front raise form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n上げ過ぎて僧帽が働く\n腰を反らせる",
+    "commonMistakesEn": "Body english is used\nRaise too high — traps take over\nLower back overarches"
   },
   {
     "slug": "rear-delt-fly",
@@ -1239,7 +1345,9 @@
     "cautionsJa": "背中を丸めない\n肩をすくめない",
     "cautionsEn": "Don't round the back\nDon't shrug",
     "youtubeSearchQuery": "rear delt fly form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "cable-lateral-raise",
@@ -1262,7 +1370,9 @@
     "cautionsJa": "体を傾けない\n勢いを使わない",
     "cautionsEn": "Don't lean for momentum\nNo swinging",
     "youtubeSearchQuery": "cable lateral raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n肘が下がる\n反動で持ち上げる",
+    "commonMistakesEn": "Shoulders shrug into the neck\nElbows drop below the wrists\nBody english is used"
   },
   {
     "slug": "face-pull",
@@ -1285,7 +1395,9 @@
     "cautionsJa": "肘を下げない\n首を前に出さない",
     "cautionsEn": "Don't drop the elbows\nDon't crane the neck",
     "youtubeSearchQuery": "face pull form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が下がる\n反動で引く\n肩がすくむ",
+    "commonMistakesEn": "Elbows drop low\nBody english is used to pull\nShoulders shrug into the neck"
   },
   {
     "slug": "barbell-curl",
@@ -1308,7 +1420,9 @@
     "cautionsJa": "体を反らせて反動を使わない\n肘を前に出さない",
     "cautionsEn": "Don't swing or arch\nDon't let the elbows drift forward",
     "youtubeSearchQuery": "barbell curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "dumbbell-curl",
@@ -1331,7 +1445,9 @@
     "cautionsJa": "体を反らせない\n下ろす時に脱力しない",
     "cautionsEn": "Don't lean back\nDon't drop on the eccentric",
     "youtubeSearchQuery": "dumbbell curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "hammer-curl",
@@ -1354,7 +1470,9 @@
     "cautionsJa": "体を反らせない\n肩を巻き込まない",
     "cautionsEn": "Don't lean back\nDon't roll the shoulders forward",
     "youtubeSearchQuery": "hammer curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "preacher-curl",
@@ -1377,7 +1495,9 @@
     "cautionsJa": "肘を完全伸展しない\n重量を欲張らない",
     "cautionsEn": "Avoid full extension\nDon't go too heavy",
     "youtubeSearchQuery": "preacher curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "cable-curl",
@@ -1400,7 +1520,9 @@
     "cautionsJa": "体を反らせない\n肘を前に出さない",
     "cautionsEn": "Don't lean back\nDon't drift the elbows forward",
     "youtubeSearchQuery": "cable curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "concentration-curl",
@@ -1423,7 +1545,9 @@
     "cautionsJa": "肘を内腿から離さない\n反動を使わない",
     "cautionsEn": "Keep the elbow planted\nNo swinging",
     "youtubeSearchQuery": "concentration curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "tricep-pushdown",
@@ -1446,7 +1570,9 @@
     "cautionsJa": "肘を前後に動かさない\n前傾しすぎない",
     "cautionsEn": "Don't drift the elbows\nDon't lean over the bar",
     "youtubeSearchQuery": "tricep pushdown form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "overhead-tricep-extension",
@@ -1469,7 +1595,9 @@
     "cautionsJa": "肘を外に開かない\n首にぶつけない",
     "cautionsEn": "Keep elbows in\nDon't bonk the neck",
     "youtubeSearchQuery": "overhead tricep extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "skull-crusher",
@@ -1492,7 +1620,9 @@
     "cautionsJa": "肘を開かない\n額にぶつけない",
     "cautionsEn": "Don't flare the elbows\nDon't hit the forehead",
     "youtubeSearchQuery": "skull crusher form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肘の位置が前後に動く\n下ろしが速い",
+    "commonMistakesEn": "Elbows flare out\nElbows drift forward and back\nEccentric is rushed"
   },
   {
     "slug": "dumbbell-tricep-kickback",
@@ -1515,7 +1645,9 @@
     "cautionsJa": "肘を動かさない\n背中を丸めない",
     "cautionsEn": "Don't move the elbow\nDon't round the back",
     "youtubeSearchQuery": "tricep kickback form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "cable-tricep-rope-pushdown",
@@ -1538,7 +1670,9 @@
     "cautionsJa": "肘を前後に動かさない\n肩を巻き込まない",
     "cautionsEn": "Don't drift the elbows\nDon't roll the shoulders",
     "youtubeSearchQuery": "rope tricep pushdown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "single-arm-tricep-extension",
@@ -1561,7 +1695,9 @@
     "cautionsJa": "肘の位置を固定\n首にぶつけない",
     "cautionsEn": "Keep the elbow fixed\nDon't bump the neck",
     "youtubeSearchQuery": "one arm tricep extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "wrist-curl",
@@ -1584,7 +1720,9 @@
     "cautionsJa": "反動を使わない\n可動域を欲張らない",
     "cautionsEn": "No swinging\nStay in a comfortable range",
     "youtubeSearchQuery": "wrist curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "reverse-wrist-curl",
@@ -1607,7 +1745,9 @@
     "cautionsJa": "重量を欲張らない\n肘を浮かさない",
     "cautionsEn": "Use light weight\nKeep the elbow planted",
     "youtubeSearchQuery": "reverse wrist curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "reverse-barbell-curl",
@@ -1630,7 +1770,9 @@
     "cautionsJa": "手首を反らせ過ぎない\n反動を使わない",
     "cautionsEn": "Don't hyperextend the wrist\nNo swinging",
     "youtubeSearchQuery": "reverse barbell curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "cable-crunch",
@@ -1653,7 +1795,9 @@
     "cautionsJa": "腰を支点にしない\n首だけで丸めない",
     "cautionsEn": "Don't pivot at the hips\nDon't crunch from the neck only",
     "youtubeSearchQuery": "cable crunch form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "ab-wheel-rollout",
@@ -1676,7 +1820,9 @@
     "cautionsJa": "腰を反らせない\n勢いで戻さない",
     "cautionsEn": "Don't arch the lower back\nDon't snap back",
     "youtubeSearchQuery": "ab wheel rollout form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反る\n戻しが速く反動を使う\n肩で押す",
+    "commonMistakesEn": "Lower back overextends\nPulled back by momentum\nPushes from the shoulders"
   },
   {
     "slug": "russian-twist",
@@ -1699,7 +1845,9 @@
     "cautionsJa": "背中を丸めない\n首だけで回さない",
     "cautionsEn": "Don't slump\nRotate from the torso, not the neck",
     "youtubeSearchQuery": "russian twist form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩で振って体幹を使わない\n背中が丸まる\n脚の動きが大きい",
+    "commonMistakesEn": "Rotates from the shoulders, not the core\nBack rounds excessively\nLegs swing too much"
   },
   {
     "slug": "dumbbell-side-bend",
@@ -1722,7 +1870,9 @@
     "cautionsJa": "前後に倒さない\n勢いを使わない",
     "cautionsEn": "Don't tilt forward or back\nNo swinging",
     "youtubeSearchQuery": "dumbbell side bend",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前後に体が傾く\n可動域が狭い\n反動を使う",
+    "commonMistakesEn": "Body tips forward or back\nRange of motion is too small\nBody english is used"
   },
   {
     "slug": "cable-woodchopper",
@@ -1745,7 +1895,9 @@
     "cautionsJa": "腰だけで振らない\n膝を捻らない",
     "cautionsEn": "Don't swing from the lower back\nDon't twist the knees",
     "youtubeSearchQuery": "cable woodchopper form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腕で引く\n腰だけで回す\n戻しが速い",
+    "commonMistakesEn": "Pulls with the arms only\nRotates only at the lower back\nEccentric is rushed"
   },
   {
     "slug": "back-extension",
@@ -1768,7 +1920,9 @@
     "cautionsJa": "反動を使わない\n過伸展しない",
     "cautionsEn": "No momentum\nDon't hyperextend",
     "youtubeSearchQuery": "back extension machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰を反らせ過ぎる\n反動で起き上がる\n首が反る",
+    "commonMistakesEn": "Lower back hyperextends\nBody english to come up\nNeck cranes upward"
   },
   {
     "slug": "hyperextension",
@@ -1791,7 +1945,9 @@
     "cautionsJa": "過伸展しない\n首を反らさない",
     "cautionsEn": "Don't hyperextend\nDon't crane the neck",
     "youtubeSearchQuery": "hyperextension exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰を反らせ過ぎる\n反動で起き上がる\n首が反る",
+    "commonMistakesEn": "Lower back hyperextends\nBody english to come up\nNeck cranes upward"
   },
   {
     "slug": "leg-extension",
@@ -1814,7 +1970,9 @@
     "cautionsJa": "勢いで蹴り上げない\n膝に違和感があれば中止",
     "cautionsEn": "Don't kick the weight up\nStop on knee discomfort",
     "youtubeSearchQuery": "leg extension machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "sissy-squat",
@@ -1837,7 +1995,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n腰を反らせない",
     "cautionsEn": "Stop on knee pain\nDon't arch the lower back",
     "youtubeSearchQuery": "sissy squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "single-leg-extension",
@@ -1860,7 +2020,9 @@
     "cautionsJa": "勢いを使わない\n膝に違和感があれば中止",
     "cautionsEn": "No swinging\nStop on knee discomfort",
     "youtubeSearchQuery": "single leg extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "seated-leg-curl",
@@ -1883,7 +2045,9 @@
     "cautionsJa": "腰を浮かさない\n勢いを使わない",
     "cautionsEn": "Don't lift the hips\nNo swinging",
     "youtubeSearchQuery": "seated leg curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が浮く\n反動を使う\n可動域が浅い",
+    "commonMistakesEn": "Hips lift off the bench\nBody english is used\nRange of motion is shallow"
   },
   {
     "slug": "lying-leg-curl",
@@ -1906,7 +2070,9 @@
     "cautionsJa": "腰を浮かさない\n勢いを使わない",
     "cautionsEn": "Don't lift the hips\nNo swinging",
     "youtubeSearchQuery": "lying leg curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が浮く\n反動を使う\n可動域が浅い",
+    "commonMistakesEn": "Hips lift off the bench\nBody english is used\nRange of motion is shallow"
   },
   {
     "slug": "standing-leg-curl",
@@ -1929,7 +2095,9 @@
     "cautionsJa": "腰を反らせない\n支持脚で押し上げない",
     "cautionsEn": "Don't arch the back\nDon't push off with the standing leg",
     "youtubeSearchQuery": "standing leg curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が浮く\n反動を使う\n可動域が浅い",
+    "commonMistakesEn": "Hips lift off the bench\nBody english is used\nRange of motion is shallow"
   },
   {
     "slug": "cable-glute-kickback",
@@ -1952,7 +2120,9 @@
     "cautionsJa": "腰を反らせない\n勢いを使わない",
     "cautionsEn": "Don't arch the lower back\nNo swinging",
     "youtubeSearchQuery": "cable glute kickback",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "hip-abduction-machine",
@@ -1975,7 +2145,9 @@
     "cautionsJa": "反動を使わない\n上体を傾けない",
     "cautionsEn": "No swinging\nDon't lean for momentum",
     "youtubeSearchQuery": "hip abduction machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "背中を反らせて勢いをつける\n戻しが速い\n膝が内に入る",
+    "commonMistakesEn": "Leans back to add momentum\nEccentric is rushed\nKnees collapse inward"
   },
   {
     "slug": "glute-bridge",
@@ -1998,7 +2170,9 @@
     "cautionsJa": "腰を反らせない\n膝を内に入れない",
     "cautionsEn": "Don't over-arch the back\nDon't let knees cave",
     "youtubeSearchQuery": "glute bridge form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰だけで上げる\n顎が上がる\n可動域が浅い",
+    "commonMistakesEn": "Hips driven by lumbar extension\nChin lifts upward\nRange of motion is shallow"
   },
   {
     "slug": "standing-calf-raise",
@@ -2021,7 +2195,9 @@
     "cautionsJa": "反動を使わない\n膝を曲げない",
     "cautionsEn": "No bouncing\nKeep the knees straight",
     "youtubeSearchQuery": "standing calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "seated-calf-raise",
@@ -2044,7 +2220,9 @@
     "cautionsJa": "反動を使わない\n踵を地面に叩きつけない",
     "cautionsEn": "No bouncing\nDon't slam the heels",
     "youtubeSearchQuery": "seated calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "donkey-calf-raise",
@@ -2067,7 +2245,9 @@
     "cautionsJa": "背中を丸めない\n勢いを使わない",
     "cautionsEn": "Don't round the back\nNo bouncing",
     "youtubeSearchQuery": "donkey calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "single-leg-calf-raise",
@@ -2090,7 +2270,9 @@
     "cautionsJa": "反動を使わない\n壁に手を添えてバランスを取る",
     "cautionsEn": "No bouncing\nUse a wall for balance",
     "youtubeSearchQuery": "single leg calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "dumbbell-farmer-walk",
@@ -2113,7 +2295,9 @@
     "cautionsJa": "背中を丸めない\n肩をすくめない",
     "cautionsEn": "Don't round the back\nDon't shrug",
     "youtubeSearchQuery": "farmer walk form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "pull-up",
@@ -2136,7 +2320,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No kipping\nDon't shrug",
     "youtubeSearchQuery": "pull up form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "chin-up",
@@ -2159,7 +2345,9 @@
     "cautionsJa": "反動を使わない\n肘を急に曲げない",
     "cautionsEn": "No kipping\nDon't yank the elbows",
     "youtubeSearchQuery": "chin up form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で蹴り上げる\n肘が伸びきらない\n首が前に出る",
+    "commonMistakesEn": "Kipping with leg drive\nSkipping the dead-hang lockout\nNeck cranes forward"
   },
   {
     "slug": "dip",
@@ -2182,7 +2370,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n肘を後ろに過剰に開かない",
     "cautionsEn": "Stop on shoulder pain\nDon't flare the elbows",
     "youtubeSearchQuery": "dip exercise form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n沈み過ぎて肩を痛める\n肘が真横に開く",
+    "commonMistakesEn": "Shoulders shrug\nDrops too low — shoulder strain\nElbows flare out"
   },
   {
     "slug": "inverted-row",
@@ -2205,7 +2395,9 @@
     "cautionsJa": "腰が落ちないように\n首を前に出さない",
     "cautionsEn": "Don't let hips sag\nDon't crane the neck",
     "youtubeSearchQuery": "inverted row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "お尻が落ちる\n肩がすくむ\n引きが浅い",
+    "commonMistakesEn": "Hips sag\nShoulders shrug\nPull is too shallow"
   },
   {
     "slug": "burpee",
@@ -2228,7 +2420,9 @@
     "cautionsJa": "膝に違和感があれば中止\n腰を反らせない",
     "cautionsEn": "Stop on knee pain\nDon't arch the lower back",
     "youtubeSearchQuery": "burpee form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って着地\n肩がすくむ\n手足の位置が崩れる",
+    "commonMistakesEn": "Lands with lower back overarched\nShoulders shrug\nHand and foot placement breaks down"
   },
   {
     "slug": "mountain-climber",
@@ -2251,7 +2445,9 @@
     "cautionsJa": "腰を落とさない\n肩がすくまないように",
     "cautionsEn": "Don't let hips drop\nDon't shrug",
     "youtubeSearchQuery": "mountain climber form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "お尻が上下に揺れる\n腰が反る\n手の位置が前にずれる",
+    "commonMistakesEn": "Hips bounce up and down\nLower back overarches\nHands creep forward"
   },
   {
     "slug": "side-plank",
@@ -2274,7 +2470,9 @@
     "cautionsJa": "腰を落とさない\n首を傾けない",
     "cautionsEn": "Don't let hips drop\nDon't tilt the head",
     "youtubeSearchQuery": "side plank form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が下がる\n肩がすくむ\n首が前に出る",
+    "commonMistakesEn": "Hips drop\nShoulder shrugs\nNeck cranes forward"
   },
   {
     "slug": "crunch",
@@ -2297,7 +2495,9 @@
     "cautionsJa": "首だけで起こさない\n顎を引く",
     "cautionsEn": "Don't crunch from the neck\nTuck the chin",
     "youtubeSearchQuery": "crunch form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "bicycle-crunch",
@@ -2320,7 +2520,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "bicycle crunch form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "leg-raise",
@@ -2343,7 +2545,9 @@
     "cautionsJa": "腰を反らせない\n勢いを使わない",
     "cautionsEn": "Don't arch the lower back\nNo swinging",
     "youtubeSearchQuery": "leg raise form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "hanging-knee-raise",
@@ -2366,7 +2570,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No swinging\nDon't shrug",
     "youtubeSearchQuery": "hanging knee raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "pistol-squat",
@@ -2389,7 +2595,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let the knee cave\nDon't let the heel lift",
     "youtubeSearchQuery": "pistol squat tutorial",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "single-leg-glute-bridge",
@@ -2412,7 +2620,9 @@
     "cautionsJa": "腰を反らせ過ぎない\n膝を内側に入れない",
     "cautionsEn": "Don't over-arch the back\nDon't let the knee cave",
     "youtubeSearchQuery": "single leg glute bridge",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰だけで上げる\n顎が上がる\n可動域が浅い",
+    "commonMistakesEn": "Hips driven by lumbar extension\nChin lifts upward\nRange of motion is shallow"
   },
   {
     "slug": "air-squat",
@@ -2435,7 +2645,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let knees cave\nDon't let heels lift",
     "youtubeSearchQuery": "air squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "handstand-push-up",
@@ -2458,7 +2670,9 @@
     "cautionsJa": "首から落とさない\n壁の使い方を確認",
     "cautionsEn": "Don't crash on the head\nUse the wall for safety",
     "youtubeSearchQuery": "handstand push up tutorial",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "dragon-flag",
@@ -2481,7 +2695,9 @@
     "cautionsJa": "腰を反らせない\n首を支点にしない",
     "cautionsEn": "Don't arch the lower back\nDon't pivot from the neck",
     "youtubeSearchQuery": "dragon flag tutorial",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "tricep-dip-bench",
@@ -2504,7 +2720,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n肘を外に開かない",
     "cautionsEn": "Stop on shoulder pain\nDon't flare the elbows",
     "youtubeSearchQuery": "bench tricep dip",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "v-up",
@@ -2527,7 +2745,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "v up form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "standing-hamstring-stretch",
@@ -2550,7 +2770,9 @@
     "cautionsJa": "背中を丸めない\n膝を反張させない",
     "cautionsEn": "Don't round the back\nDon't hyperextend the knee",
     "youtubeSearchQuery": "standing hamstring stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "seated-hamstring-stretch",
@@ -2573,7 +2795,9 @@
     "cautionsJa": "背中を丸め過ぎない\n痛みを我慢しない",
     "cautionsEn": "Don't round excessively\nDon't push into pain",
     "youtubeSearchQuery": "seated hamstring stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "quad-stretch-standing",
@@ -2596,7 +2820,9 @@
     "cautionsJa": "腰を反らせない\n壁などでバランスを取る",
     "cautionsEn": "Don't arch the back\nUse a wall for balance",
     "youtubeSearchQuery": "standing quad stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "lying-quad-stretch",
@@ -2619,7 +2845,9 @@
     "cautionsJa": "腰を反らせない\n膝に痛みがあれば中止",
     "cautionsEn": "Don't arch the back\nStop on knee pain",
     "youtubeSearchQuery": "lying quad stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "butterfly-stretch",
@@ -2642,7 +2870,9 @@
     "cautionsJa": "背中を丸め過ぎない\n痛みを我慢しない",
     "cautionsEn": "Don't round excessively\nDon't push into pain",
     "youtubeSearchQuery": "butterfly stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "pigeon-pose",
@@ -2665,7 +2895,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n骨盤を傾けない",
     "cautionsEn": "Stop on knee pain\nSquare the hips",
     "youtubeSearchQuery": "pigeon pose",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "childs-pose",
@@ -2688,7 +2920,9 @@
     "cautionsJa": "首を反らさない\n膝に違和感があれば中止",
     "cautionsEn": "Don't crank the neck\nStop on knee discomfort",
     "youtubeSearchQuery": "child pose yoga",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "cobra-stretch",
@@ -2711,7 +2945,9 @@
     "cautionsJa": "腰に痛みがあれば中止\n首を過剰に反らさない",
     "cautionsEn": "Stop on lower-back pain\nDon't crank the neck back",
     "youtubeSearchQuery": "cobra stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "seated-spinal-twist",
@@ -2734,7 +2970,9 @@
     "cautionsJa": "首だけで回さない\n勢いをつけない",
     "cautionsEn": "Rotate from the spine, not just the neck\nNo bouncing",
     "youtubeSearchQuery": "seated spinal twist",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "standing-side-bend",
@@ -2757,7 +2995,9 @@
     "cautionsJa": "前後に倒さない\n肩をすくめない",
     "cautionsEn": "Don't tilt forward or back\nDon't shrug",
     "youtubeSearchQuery": "standing side bend stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前後に体が傾く\n可動域が狭い\n反動を使う",
+    "commonMistakesEn": "Body tips forward or back\nRange of motion is too small\nBody english is used"
   },
   {
     "slug": "cross-body-shoulder-stretch",
@@ -2780,7 +3020,9 @@
     "cautionsJa": "肩をすくめない\n痛みを我慢しない",
     "cautionsEn": "Don't shrug\nDon't push into pain",
     "youtubeSearchQuery": "cross body shoulder stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "doorway-chest-stretch",
@@ -2803,7 +3045,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n腰を反らせない",
     "cautionsEn": "Stop on shoulder pain\nDon't arch the back",
     "youtubeSearchQuery": "doorway chest stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "behind-the-back-shoulder-stretch",
@@ -2826,7 +3070,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n腰を反らせない",
     "cautionsEn": "Stop on shoulder pain\nDon't arch the back",
     "youtubeSearchQuery": "shoulder clasp stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "tricep-overhead-stretch",
@@ -2849,7 +3095,9 @@
     "cautionsJa": "肩をすくめない\n痛みを我慢しない",
     "cautionsEn": "Don't shrug\nDon't push into pain",
     "youtubeSearchQuery": "tricep overhead stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "wrist-flexor-stretch",
@@ -2872,7 +3120,9 @@
     "cautionsJa": "痛みを我慢しない\n肘を曲げない",
     "cautionsEn": "Don't push into pain\nKeep the elbow straight",
     "youtubeSearchQuery": "wrist flexor stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "wrist-extensor-stretch",
@@ -2895,7 +3145,9 @@
     "cautionsJa": "痛みを我慢しない\n肘を曲げない",
     "cautionsEn": "Don't push into pain\nKeep the elbow straight",
     "youtubeSearchQuery": "wrist extensor stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "neck-side-stretch",
@@ -2918,7 +3170,9 @@
     "cautionsJa": "強く引っ張らない\n肩をすくめない",
     "cautionsEn": "Don't pull hard\nDon't shrug",
     "youtubeSearchQuery": "neck side stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "upper-back-stretch",
@@ -2941,7 +3195,9 @@
     "cautionsJa": "肩をすくめない\n首を強く下げない",
     "cautionsEn": "Don't shrug\nDon't crank the neck down",
     "youtubeSearchQuery": "upper back stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "calf-stretch-wall",
@@ -2964,7 +3220,9 @@
     "cautionsJa": "腰を反らせない\nつま先の向きをまっすぐに",
     "cautionsEn": "Don't arch the back\nKeep toes pointing straight",
     "youtubeSearchQuery": "wall calf stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "downward-dog",
@@ -2987,7 +3245,9 @@
     "cautionsJa": "首を反らさない\n肩をすくめない",
     "cautionsEn": "Don't crank the neck\nDon't shrug",
     "youtubeSearchQuery": "downward dog yoga",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "forward-fold",
@@ -3010,7 +3270,9 @@
     "cautionsJa": "膝を反張させない\n背中を強く丸めない",
     "cautionsEn": "Don't hyperextend the knees\nDon't round excessively",
     "youtubeSearchQuery": "standing forward fold",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "low-lunge-stretch",
@@ -3033,7 +3295,9 @@
     "cautionsJa": "前膝がつま先より前に出ない\n腰を反らせない",
     "cautionsEn": "Don't shoot the knee far past the toes\nDon't arch the lower back",
     "youtubeSearchQuery": "low lunge hip flexor stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "figure-four-stretch",
@@ -3056,7 +3320,9 @@
     "cautionsJa": "首をすくめない\n腰を浮かさない",
     "cautionsEn": "Don't tense the neck\nDon't lift the lower back",
     "youtubeSearchQuery": "figure four stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "supine-twist",
@@ -3079,7 +3345,9 @@
     "cautionsJa": "肩を浮かさない\n勢いを使わない",
     "cautionsEn": "Keep both shoulders down\nNo bouncing",
     "youtubeSearchQuery": "supine spinal twist",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "cat-stretch",
@@ -3102,7 +3370,9 @@
     "cautionsJa": "肩をすくめない\n首を反らさない",
     "cautionsEn": "Don't shrug\nDon't crank the neck",
     "youtubeSearchQuery": "cat back stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "happy-baby-pose",
@@ -3125,7 +3395,9 @@
     "cautionsJa": "肩を浮かさない\n首をすくめない",
     "cautionsEn": "Keep shoulders down\nKeep neck relaxed",
     "youtubeSearchQuery": "happy baby pose",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "neck-flexion-stretch",
@@ -3148,7 +3420,9 @@
     "cautionsJa": "強く引っ張らない\n肩をすくめない",
     "cautionsEn": "Don't pull hard\nDon't shrug",
     "youtubeSearchQuery": "neck flexion stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "lat-stretch-doorway",
@@ -3171,7 +3445,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n腰を反らせない",
     "cautionsEn": "Stop on shoulder pain\nDon't arch the back",
     "youtubeSearchQuery": "lat stretch doorway",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "seated-forward-fold",
@@ -3194,7 +3470,9 @@
     "cautionsJa": "背中を強く丸めない\n膝を反張させない",
     "cautionsEn": "Don't round excessively\nDon't hyperextend the knees",
     "youtubeSearchQuery": "seated forward fold",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "iliotibial-band-stretch",
@@ -3217,7 +3495,9 @@
     "cautionsJa": "前後に倒さない\n膝に痛みがあれば中止",
     "cautionsEn": "Don't tilt forward or back\nStop on knee pain",
     "youtubeSearchQuery": "it band stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "running-treadmill",
@@ -3240,7 +3520,9 @@
     "cautionsJa": "長時間連続のうつむき走行を避ける\n膝に違和感があれば中止",
     "cautionsEn": "Avoid long head-down running\nStop on knee pain",
     "youtubeSearchQuery": "treadmill running form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "stationary-bike",
@@ -3263,7 +3545,9 @@
     "cautionsJa": "膝が内側に入らないように\n前傾しすぎない",
     "cautionsEn": "Don't let knees cave inward\nDon't over-hunch",
     "youtubeSearchQuery": "stationary bike workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "rowing-machine",
@@ -3286,7 +3570,9 @@
     "cautionsJa": "背中を丸めない\n腕で引きすぎない",
     "cautionsEn": "Don't round the back\nDon't lead with the arms",
     "youtubeSearchQuery": "rowing machine technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "elliptical",
@@ -3309,7 +3595,9 @@
     "cautionsJa": "前傾しすぎない\n膝を反張させない",
     "cautionsEn": "Don't lean forward\nDon't hyperextend the knees",
     "youtubeSearchQuery": "elliptical workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "jump-rope",
@@ -3332,7 +3620,9 @@
     "cautionsJa": "着地は静かに\n膝を伸ばし切らない",
     "cautionsEn": "Land softly\nDon't lock the knees",
     "youtubeSearchQuery": "jump rope workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "stair-climber",
@@ -3355,7 +3645,9 @@
     "cautionsJa": "前傾しすぎない\nハンドルにもたれ過ぎない",
     "cautionsEn": "Don't lean over the rail\nDon't dump weight on the handles",
     "youtubeSearchQuery": "stair climber workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "brisk-walking",
@@ -3378,7 +3670,9 @@
     "cautionsJa": "前傾しすぎない\n膝に違和感があれば中止",
     "cautionsEn": "Don't hunch\nStop on knee pain",
     "youtubeSearchQuery": "brisk walking workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "swimming-freestyle",
@@ -3401,7 +3695,9 @@
     "cautionsJa": "過度な無理をしない\n塩素対策に保護メガネ",
     "cautionsEn": "Don't push past safe limits\nUse goggles for chlorine",
     "youtubeSearchQuery": "freestyle swimming form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "high-intensity-interval-training",
@@ -3424,7 +3720,9 @@
     "cautionsJa": "体調が悪い日は中止\nフォームを崩さない",
     "cautionsEn": "Skip on bad days\nDon't sacrifice form",
     "youtubeSearchQuery": "hiit workout home",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "battle-ropes",
@@ -3447,7 +3745,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the back\nDon't shrug",
     "youtubeSearchQuery": "battle ropes workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "inchworm-walkout",
@@ -3470,7 +3770,9 @@
     "cautionsJa": "腰を落とさない\n肩をすくめない",
     "cautionsEn": "Don't let hips sag\nDon't shrug",
     "youtubeSearchQuery": "inchworm walkout warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "world-greatest-stretch",
@@ -3493,7 +3795,9 @@
     "cautionsJa": "膝を内側に入れない\n腰だけで回旋しない",
     "cautionsEn": "Don't let the knee cave\nRotate from the thoracic spine",
     "youtubeSearchQuery": "worlds greatest stretch warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "dynamic-lunge",
@@ -3516,7 +3820,9 @@
     "cautionsJa": "膝を内側に入れない\n上体を立てる",
     "cautionsEn": "Don't let the knee cave\nStay upright",
     "youtubeSearchQuery": "dynamic lunge warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "spider-lunge",
@@ -3539,7 +3845,9 @@
     "cautionsJa": "腰を落とさない\n肩をすくめない",
     "cautionsEn": "Don't let hips drop\nDon't shrug",
     "youtubeSearchQuery": "spider lunge mobility",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "scapular-pull-up",
@@ -3562,7 +3870,9 @@
     "cautionsJa": "肘を曲げない\n勢いを使わない",
     "cautionsEn": "Don't bend the elbows\nNo swinging",
     "youtubeSearchQuery": "scapular pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "band-pull-apart",
@@ -3585,7 +3895,9 @@
     "cautionsJa": "肩をすくめない\n肘を曲げない",
     "cautionsEn": "Don't shrug\nKeep elbows straight",
     "youtubeSearchQuery": "band pull apart warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "ankle-circles",
@@ -3608,7 +3920,9 @@
     "cautionsJa": "勢いをつけない\n痛みがあれば中止",
     "cautionsEn": "No momentum\nStop on pain",
     "youtubeSearchQuery": "ankle circles warmup",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "dead-bug",
@@ -3631,7 +3945,9 @@
     "cautionsJa": "腰を反らせない\n勢いを使わない",
     "cautionsEn": "Don't arch the lower back\nNo swinging",
     "youtubeSearchQuery": "dead bug exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "bird-dog",
@@ -3654,7 +3970,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the lower back\nDon't shrug",
     "youtubeSearchQuery": "bird dog exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "monster-walk",
@@ -3677,7 +3995,9 @@
     "cautionsJa": "バンドを緩めない\n腰を反らせない",
     "cautionsEn": "Don't let the band slack\nDon't arch the back",
     "youtubeSearchQuery": "monster walk band",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で大きく動かす\n呼吸を止める\n痛みを我慢する",
+    "commonMistakesEn": "Bouncing through the motion\nHolding the breath\nPushing through pain"
   },
   {
     "slug": "low-bar-squat",
@@ -3700,7 +4020,9 @@
     "cautionsJa": "膝を内側に入れない\n背中を丸めない",
     "cautionsEn": "Don't let knees cave\nDon't round the back",
     "youtubeSearchQuery": "low bar squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "high-bar-squat",
@@ -3723,7 +4045,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let knees cave\nDon't let heels lift",
     "youtubeSearchQuery": "high bar squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "zercher-squat",
@@ -3746,7 +4070,9 @@
     "cautionsJa": "背中を丸めない\n肘の痛み対策にパッドを使う",
     "cautionsEn": "Don't round the back\nUse a pad for elbow comfort",
     "youtubeSearchQuery": "zercher squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "box-squat",
@@ -3769,7 +4095,9 @@
     "cautionsJa": "勢いで反らない\n膝を内側に入れない",
     "cautionsEn": "Don't bounce off the box\nDon't let knees cave",
     "youtubeSearchQuery": "box squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "hack-squat-machine",
@@ -3792,7 +4120,9 @@
     "cautionsJa": "膝を内側に入れない\n腰を浮かさない",
     "cautionsEn": "Don't let knees cave\nDon't lift the lower back",
     "youtubeSearchQuery": "hack squat machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "overhead-squat",
@@ -3815,7 +4145,9 @@
     "cautionsJa": "肩の柔軟性が前提\n腰を反らせ過ぎない",
     "cautionsEn": "Requires shoulder mobility\nDon't over-arch the back",
     "youtubeSearchQuery": "overhead squat technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "landmine-squat",
@@ -3838,7 +4170,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let knees cave\nDon't let heels lift",
     "youtubeSearchQuery": "landmine squat form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "snatch-grip-deadlift",
@@ -3861,7 +4195,9 @@
     "cautionsJa": "背中を丸めない\n握力対策にストラップ可",
     "cautionsEn": "Don't round the back\nStraps allowed for grip",
     "youtubeSearchQuery": "snatch grip deadlift",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "rack-pull",
@@ -3884,7 +4220,9 @@
     "cautionsJa": "背中を丸めない\n頭を前に突き出さない",
     "cautionsEn": "Don't round the back\nDon't crane the neck",
     "youtubeSearchQuery": "rack pull form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "deficit-deadlift",
@@ -3907,7 +4245,9 @@
     "cautionsJa": "柔軟性が必要\n背中を丸めない",
     "cautionsEn": "Requires mobility\nDon't round the back",
     "youtubeSearchQuery": "deficit deadlift form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "single-leg-rdl",
@@ -3930,7 +4270,9 @@
     "cautionsJa": "背中を丸めない\n支持脚の膝を反張させない",
     "cautionsEn": "Don't round the back\nDon't hyperextend the standing knee",
     "youtubeSearchQuery": "single leg rdl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "dumbbell-romanian-deadlift",
@@ -3953,7 +4295,9 @@
     "cautionsJa": "背中を丸めない\n膝を曲げ過ぎない",
     "cautionsEn": "Don't round the back\nDon't squat down",
     "youtubeSearchQuery": "dumbbell rdl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝を曲げ過ぎる\n腰が丸まる\nバーが前方に離れる",
+    "commonMistakesEn": "Knees bend too much\nLower back rounds\nBar drifts forward away from the legs"
   },
   {
     "slug": "close-grip-bench-press",
@@ -3976,7 +4320,9 @@
     "cautionsJa": "手首を反らせない\n肘を外に開かない",
     "cautionsEn": "Keep wrists neutral\nDon't flare the elbows",
     "youtubeSearchQuery": "close grip bench press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が大きく反る\n肘が真横に開く",
+    "commonMistakesEn": "Shoulders shrug toward the ears\nLower back overarches\nElbows flare out at 90°"
   },
   {
     "slug": "floor-press",
@@ -3999,7 +4345,9 @@
     "cautionsJa": "勢いで反らない\n腰を反らせ過ぎない",
     "cautionsEn": "Don't bounce off the floor\nDon't over-arch the back",
     "youtubeSearchQuery": "floor press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "landmine-press",
@@ -4022,7 +4370,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the back\nDon't shrug",
     "youtubeSearchQuery": "landmine press form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "seated-dumbbell-press",
@@ -4045,7 +4395,9 @@
     "cautionsJa": "腰を反らせて押し上げない\n肘をロックしない",
     "cautionsEn": "Don't push by arching\nDon't lock the elbows",
     "youtubeSearchQuery": "seated dumbbell press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "one-arm-dumbbell-press",
@@ -4068,7 +4420,9 @@
     "cautionsJa": "体を傾けない\n腰を反らせない",
     "cautionsEn": "Don't lean to compensate\nDon't arch the back",
     "youtubeSearchQuery": "one arm dumbbell press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "behind-neck-press",
@@ -4091,7 +4445,9 @@
     "cautionsJa": "肩の柔軟性が前提\n首にぶつけない",
     "cautionsEn": "Requires mobility\nDon't bonk the neck",
     "youtubeSearchQuery": "behind the neck press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "pendlay-row",
@@ -4114,7 +4470,9 @@
     "cautionsJa": "背中を丸めない\n上体を起こさない",
     "cautionsEn": "Don't round the back\nDon't lift the torso",
     "youtubeSearchQuery": "pendlay row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "chest-supported-row",
@@ -4137,7 +4495,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No swinging\nDon't shrug",
     "youtubeSearchQuery": "chest supported dumbbell row",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "meadows-row",
@@ -4160,7 +4520,9 @@
     "cautionsJa": "体を捻らない\n背中を丸めない",
     "cautionsEn": "Don't twist the torso\nDon't round the back",
     "youtubeSearchQuery": "meadows row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "seal-row",
@@ -4183,7 +4545,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "seal row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "landmine-row",
@@ -4206,7 +4570,9 @@
     "cautionsJa": "背中を丸めない\n上体で反動をつけない",
     "cautionsEn": "Don't round the back\nNo torso heave",
     "youtubeSearchQuery": "landmine row form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n腰が反る\n引きが浅い",
+    "commonMistakesEn": "Shoulders shrug\nLower back overarches\nPull is too shallow"
   },
   {
     "slug": "reverse-lunge",
@@ -4229,7 +4595,9 @@
     "cautionsJa": "膝を内側に入れない\n上体を立てる",
     "cautionsEn": "Don't let knees cave\nStay upright",
     "youtubeSearchQuery": "reverse lunge form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "lateral-lunge",
@@ -4252,7 +4620,9 @@
     "cautionsJa": "膝を内側に入れない\nつま先と膝の向きを揃える",
     "cautionsEn": "Don't let knees cave\nToes and knees track together",
     "youtubeSearchQuery": "lateral lunge form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "curtsy-lunge",
@@ -4275,7 +4645,9 @@
     "cautionsJa": "膝を内側に入れない\n腰を捻らない",
     "cautionsEn": "Don't let the front knee cave\nDon't twist the lower back",
     "youtubeSearchQuery": "curtsy lunge form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前膝が内側に入る\n上体が前傾し過ぎる\n歩幅が短く膝が前に出る",
+    "commonMistakesEn": "Front knee caves in\nTorso leans too far forward\nStride too short — knee drifts past toes"
   },
   {
     "slug": "weighted-pull-up",
@@ -4298,7 +4670,9 @@
     "cautionsJa": "反動を使わない\n重量を欲張らない",
     "cautionsEn": "No kipping\nDon't go too heavy",
     "youtubeSearchQuery": "weighted pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "power-clean",
@@ -4321,7 +4695,9 @@
     "cautionsJa": "背中を丸めない\n腕で引かない",
     "cautionsEn": "Don't round the back\nDon't pull with the arms",
     "youtubeSearchQuery": "power clean technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "hang-clean",
@@ -4344,7 +4720,9 @@
     "cautionsJa": "背中を丸めない\n腕で引かない",
     "cautionsEn": "Don't round the back\nDon't pull with the arms",
     "youtubeSearchQuery": "hang clean technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "cable-pull-through",
@@ -4367,7 +4745,9 @@
     "cautionsJa": "背中を丸めない\n立ち上がる時に腰を反らせ過ぎない",
     "cautionsEn": "Don't round the back\nDon't over-arch at lockout",
     "youtubeSearchQuery": "cable pull through form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "incline-dumbbell-fly",
@@ -4390,7 +4770,9 @@
     "cautionsJa": "肘をロックしない\n下げ過ぎて肩を痛めない",
     "cautionsEn": "Don't lock the elbows\nDon't over-stretch",
     "youtubeSearchQuery": "incline dumbbell fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って胸が浮く\n肩がすくむ\n肘が真横に開く",
+    "commonMistakesEn": "Lower back arches off the bench\nShoulders shrug\nElbows flare out at 90°"
   },
   {
     "slug": "low-cable-fly",
@@ -4413,7 +4795,9 @@
     "cautionsJa": "手で引かず胸で寄せる\n腰を反らせない",
     "cautionsEn": "Lead with the chest\nDon't arch the back",
     "youtubeSearchQuery": "low cable fly chest",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "high-cable-fly",
@@ -4436,7 +4820,9 @@
     "cautionsJa": "腕で引かない\n肘を伸ばし切らない",
     "cautionsEn": "Don't pull with the arms\nDon't fully lock elbows",
     "youtubeSearchQuery": "high cable fly chest",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "machine-chest-fly",
@@ -4459,7 +4845,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the back\nDon't shrug",
     "youtubeSearchQuery": "machine chest fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "svend-press",
@@ -4482,7 +4870,9 @@
     "cautionsJa": "軽量で行う\n肩をすくめない",
     "cautionsEn": "Use light weight\nDon't shrug",
     "youtubeSearchQuery": "svend press exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "close-grip-dumbbell-press",
@@ -4505,7 +4895,9 @@
     "cautionsJa": "手首を反らせない\n肩をすくめない",
     "cautionsEn": "Keep wrists neutral\nDon't shrug",
     "youtubeSearchQuery": "close grip dumbbell press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "cable-low-fly",
@@ -4528,7 +4920,9 @@
     "cautionsJa": "腕で寄せない\n腰を反らせない",
     "cautionsEn": "Don't pull with arms only\nDon't arch the back",
     "youtubeSearchQuery": "cable low fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "single-arm-pulldown",
@@ -4551,7 +4945,9 @@
     "cautionsJa": "体を捻らない\n肩をすくめない",
     "cautionsEn": "Don't twist\nDon't shrug",
     "youtubeSearchQuery": "single arm lat pulldown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "体を反らせ過ぎる\n首を前に出して引く\n肘が後ろに引けていない",
+    "commonMistakesEn": "Leans back excessively\nCranes neck forward to pull\nElbows fail to track behind the body"
   },
   {
     "slug": "close-grip-pulldown",
@@ -4574,7 +4970,9 @@
     "cautionsJa": "反動を使わない\n前傾し過ぎない",
     "cautionsEn": "No momentum\nDon't lean back",
     "youtubeSearchQuery": "close grip pulldown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "体を反らせ過ぎる\n首を前に出して引く\n肘が後ろに引けていない",
+    "commonMistakesEn": "Leans back excessively\nCranes neck forward to pull\nElbows fail to track behind the body"
   },
   {
     "slug": "neutral-grip-pulldown",
@@ -4597,7 +4995,9 @@
     "cautionsJa": "反動を使わない\n前傾し過ぎない",
     "cautionsEn": "No momentum\nDon't lean back",
     "youtubeSearchQuery": "neutral grip pulldown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "体を反らせ過ぎる\n首を前に出して引く\n肘が後ろに引けていない",
+    "commonMistakesEn": "Leans back excessively\nCranes neck forward to pull\nElbows fail to track behind the body"
   },
   {
     "slug": "kneeling-cable-pullover",
@@ -4620,7 +5020,9 @@
     "cautionsJa": "反動を使わない\n前傾を維持",
     "cautionsEn": "No momentum\nMaintain the hinge",
     "youtubeSearchQuery": "kneeling cable pullover",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "machine-pullover-iso",
@@ -4643,7 +5045,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "machine pullover lat",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "snatch-grip-shrug",
@@ -4666,7 +5070,9 @@
     "cautionsJa": "首を回さない\n反動を使わない",
     "cautionsEn": "Don't roll the neck\nNo momentum",
     "youtubeSearchQuery": "snatch grip shrug",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が曲がる\n肩を回す\n下ろしが速い",
+    "commonMistakesEn": "Elbows bend during the lift\nShoulders rotate instead of elevating\nEccentric is rushed"
   },
   {
     "slug": "behind-back-shrug",
@@ -4689,7 +5095,9 @@
     "cautionsJa": "首を回さない\n肘を曲げない",
     "cautionsEn": "Don't roll the neck\nDon't bend the elbows",
     "youtubeSearchQuery": "behind back shrug",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が曲がる\n肩を回す\n下ろしが速い",
+    "commonMistakesEn": "Elbows bend during the lift\nShoulders rotate instead of elevating\nEccentric is rushed"
   },
   {
     "slug": "y-raise",
@@ -4712,7 +5120,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "y raise lower traps",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "seated-lateral-raise",
@@ -4735,7 +5145,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "seated lateral raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n肘が下がる\n反動で持ち上げる",
+    "commonMistakesEn": "Shoulders shrug into the neck\nElbows drop below the wrists\nBody english is used"
   },
   {
     "slug": "leaning-lateral-raise",
@@ -4758,7 +5170,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "leaning lateral raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肩がすくむ\n肘が下がる\n反動で持ち上げる",
+    "commonMistakesEn": "Shoulders shrug into the neck\nElbows drop below the wrists\nBody english is used"
   },
   {
     "slug": "cable-rear-delt-fly",
@@ -4781,7 +5195,9 @@
     "cautionsJa": "背中を丸めない\n肩をすくめない",
     "cautionsEn": "Don't round the back\nDon't shrug",
     "youtubeSearchQuery": "cable rear delt fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "machine-rear-delt-fly",
@@ -4804,7 +5220,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "machine rear delt fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "reverse-pec-deck",
@@ -4827,7 +5245,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No momentum\nDon't shrug",
     "youtubeSearchQuery": "reverse pec deck",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動で閉じる\n腰を反らせる\n戻しが速い",
+    "commonMistakesEn": "Body english to close\nLower back arches\nEccentric is rushed"
   },
   {
     "slug": "plate-front-raise",
@@ -4850,7 +5270,9 @@
     "cautionsJa": "反動を使わない\n腰を反らせない",
     "cautionsEn": "No momentum\nDon't arch the back",
     "youtubeSearchQuery": "plate front raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n上げ過ぎて僧帽が働く\n腰を反らせる",
+    "commonMistakesEn": "Body english is used\nRaise too high — traps take over\nLower back overarches"
   },
   {
     "slug": "cable-front-raise",
@@ -4873,7 +5295,9 @@
     "cautionsJa": "反動を使わない\n腰を反らせない",
     "cautionsEn": "No momentum\nDon't arch the back",
     "youtubeSearchQuery": "cable front raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n上げ過ぎて僧帽が働く\n腰を反らせる",
+    "commonMistakesEn": "Body english is used\nRaise too high — traps take over\nLower back overarches"
   },
   {
     "slug": "single-arm-cable-rear-fly",
@@ -4896,7 +5320,9 @@
     "cautionsJa": "体を捻らない\n肩をすくめない",
     "cautionsEn": "Don't twist\nDon't shrug",
     "youtubeSearchQuery": "single arm cable rear fly",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が伸びきる\n可動域が浅い\n肩がすくむ",
+    "commonMistakesEn": "Elbows lock out\nRange of motion is shallow\nShoulders shrug"
   },
   {
     "slug": "incline-dumbbell-curl",
@@ -4919,7 +5345,9 @@
     "cautionsJa": "肩を前に出さない\n反動を使わない",
     "cautionsEn": "Don't roll the shoulders forward\nNo momentum",
     "youtubeSearchQuery": "incline dumbbell curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って胸が浮く\n肩がすくむ\n肘が真横に開く",
+    "commonMistakesEn": "Lower back arches off the bench\nShoulders shrug\nElbows flare out at 90°"
   },
   {
     "slug": "spider-curl",
@@ -4942,7 +5370,9 @@
     "cautionsJa": "肩を前に出さない\n反動を使わない",
     "cautionsEn": "Don't roll the shoulders forward\nNo momentum",
     "youtubeSearchQuery": "spider curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "ez-bar-curl",
@@ -4965,7 +5395,9 @@
     "cautionsJa": "反動を使わない\n肘を前に出さない",
     "cautionsEn": "No momentum\nDon't drift the elbows",
     "youtubeSearchQuery": "ez bar curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "zottman-curl",
@@ -4988,7 +5420,9 @@
     "cautionsJa": "反動を使わない\n肘を前に出さない",
     "cautionsEn": "No momentum\nDon't drift the elbows",
     "youtubeSearchQuery": "zottman curl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "cross-body-hammer-curl",
@@ -5011,7 +5445,9 @@
     "cautionsJa": "反動を使わない\n肘を前に出さない",
     "cautionsEn": "No momentum\nDon't drift the elbows",
     "youtubeSearchQuery": "cross body hammer curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "hammer-rope-curl",
@@ -5034,7 +5470,9 @@
     "cautionsJa": "反動を使わない\n肘を前に出さない",
     "cautionsEn": "No momentum\nDon't drift the elbows",
     "youtubeSearchQuery": "rope hammer curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "preacher-machine-curl",
@@ -5057,7 +5495,9 @@
     "cautionsJa": "完全伸展しない\n重量を欲張らない",
     "cautionsEn": "Don't fully extend\nDon't go too heavy",
     "youtubeSearchQuery": "preacher machine curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "jm-press",
@@ -5080,7 +5520,9 @@
     "cautionsJa": "肘を外に開かない\n重量を欲張らない",
     "cautionsEn": "Don't flare the elbows\nDon't go too heavy",
     "youtubeSearchQuery": "jm press technique",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "tate-press",
@@ -5103,7 +5545,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n重量を欲張らない",
     "cautionsEn": "Stop on shoulder pain\nDon't go too heavy",
     "youtubeSearchQuery": "tate press exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "lying-tricep-extension",
@@ -5126,7 +5570,9 @@
     "cautionsJa": "肘を外に開かない\n頭にぶつけない",
     "cautionsEn": "Don't flare the elbows\nDon't bonk the head",
     "youtubeSearchQuery": "lying tricep extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "single-arm-pushdown",
@@ -5149,7 +5595,9 @@
     "cautionsJa": "体を捻らない\n肩をすくめない",
     "cautionsEn": "Don't twist\nDon't shrug",
     "youtubeSearchQuery": "single arm pushdown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "cable-overhead-extension",
@@ -5172,7 +5620,9 @@
     "cautionsJa": "肘を外に開かない\n腰を反らせない",
     "cautionsEn": "Don't flare the elbows\nDon't arch the back",
     "youtubeSearchQuery": "cable overhead tricep extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "bench-tricep-extension",
@@ -5195,7 +5645,9 @@
     "cautionsJa": "肘を外に開かない\n首にぶつけない",
     "cautionsEn": "Don't flare the elbows\nDon't bonk the neck",
     "youtubeSearchQuery": "bench overhead tricep extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "kneeling-tricep-pushdown",
@@ -5218,7 +5670,9 @@
     "cautionsJa": "体で押し下げない\n肩をすくめない",
     "cautionsEn": "Don't bodyweight the rep\nDon't shrug",
     "youtubeSearchQuery": "kneeling tricep pushdown",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "wrist-roller",
@@ -5241,7 +5695,9 @@
     "cautionsJa": "肩をすくめない\n肘を曲げない",
     "cautionsEn": "Don't shrug\nKeep elbows straight",
     "youtubeSearchQuery": "wrist roller forearm",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "plate-pinch",
@@ -5264,7 +5720,9 @@
     "cautionsJa": "落下注意\n肩をすくめない",
     "cautionsEn": "Watch for drops\nDon't shrug",
     "youtubeSearchQuery": "plate pinch grip",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "dead-hang",
@@ -5287,7 +5745,9 @@
     "cautionsJa": "肩を完全に脱力しない\n落下注意",
     "cautionsEn": "Don't fully decompress the shoulder\nWatch for drops",
     "youtubeSearchQuery": "dead hang grip",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "sit-up",
@@ -5310,7 +5770,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "sit up form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "decline-sit-up",
@@ -5333,7 +5795,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "decline sit up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "バーが顔に向かう\n肩が浮く\n下ろしが速い",
+    "commonMistakesEn": "Bar tracks toward the face\nShoulders lift off the bench\nLowering is rushed"
   },
   {
     "slug": "hanging-leg-raise",
@@ -5356,7 +5820,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No swinging\nDon't shrug",
     "youtubeSearchQuery": "hanging leg raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "reverse-crunch",
@@ -5379,7 +5845,9 @@
     "cautionsJa": "反動を使わない\n首をすくめない",
     "cautionsEn": "No momentum\nDon't tense the neck",
     "youtubeSearchQuery": "reverse crunch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "hollow-body-hold",
@@ -5402,7 +5870,9 @@
     "cautionsJa": "腰を浮かせない\n首だけで支えない",
     "cautionsEn": "Don't let lower back lift\nDon't strain the neck",
     "youtubeSearchQuery": "hollow body hold",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "l-sit",
@@ -5425,7 +5895,9 @@
     "cautionsJa": "肩をすくめない\n腰を丸めない",
     "cautionsEn": "Don't shrug\nDon't round the back",
     "youtubeSearchQuery": "l sit hold",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "weighted-crunch",
@@ -5448,7 +5920,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "weighted crunch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "weighted-side-bend",
@@ -5471,7 +5945,9 @@
     "cautionsJa": "前後に倒さない\n勢いを使わない",
     "cautionsEn": "Don't tilt forward or back\nNo swinging",
     "youtubeSearchQuery": "weighted side bend",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前後に体が傾く\n可動域が狭い\n反動を使う",
+    "commonMistakesEn": "Body tips forward or back\nRange of motion is too small\nBody english is used"
   },
   {
     "slug": "side-crunch",
@@ -5494,7 +5970,9 @@
     "cautionsJa": "首を引っ張らない\n腰を反らせない",
     "cautionsEn": "Don't yank the neck\nDon't arch the back",
     "youtubeSearchQuery": "side crunch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "首を手で引っ張る\n反動で起き上がる\n腰が浮く",
+    "commonMistakesEn": "Hands pull on the neck\nBody english to come up\nLower back lifts off the floor"
   },
   {
     "slug": "pallof-press",
@@ -5517,7 +5995,9 @@
     "cautionsJa": "体を捻らない\n肩をすくめない",
     "cautionsEn": "Resist rotation\nDon't shrug",
     "youtubeSearchQuery": "pallof press",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "suitcase-deadlift",
@@ -5540,7 +6020,9 @@
     "cautionsJa": "体を傾けない\n背中を丸めない",
     "cautionsEn": "Don't lean to the side\nDon't round the back",
     "youtubeSearchQuery": "suitcase deadlift form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が丸まる\nバーが体から離れる\n膝が先に伸びてバーが置き去り",
+    "commonMistakesEn": "Lower back rounds\nBar drifts away from the body\nKnees lock out before bar leaves the floor"
   },
   {
     "slug": "windshield-wipers",
@@ -5563,7 +6045,9 @@
     "cautionsJa": "反動を使わない\n肩を浮かさない",
     "cautionsEn": "No momentum\nKeep shoulders down",
     "youtubeSearchQuery": "windshield wipers",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "lateral-leg-raise",
@@ -5586,7 +6070,9 @@
     "cautionsJa": "反動を使わない\n上体を丸めない",
     "cautionsEn": "No momentum\nDon't curl the torso",
     "youtubeSearchQuery": "lateral leg raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "jefferson-curl",
@@ -5609,7 +6095,9 @@
     "cautionsJa": "軽量で行う\n痛みがあれば中止",
     "cautionsEn": "Use light weight\nStop on pain",
     "youtubeSearchQuery": "jefferson curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "reverse-hyperextension",
@@ -5632,7 +6120,9 @@
     "cautionsJa": "反動を使わない\n腰を過伸展しない",
     "cautionsEn": "No momentum\nDon't hyperextend",
     "youtubeSearchQuery": "reverse hyperextension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰を反らせ過ぎる\n反動で起き上がる\n首が反る",
+    "commonMistakesEn": "Lower back hyperextends\nBody english to come up\nNeck cranes upward"
   },
   {
     "slug": "superman",
@@ -5655,7 +6145,9 @@
     "cautionsJa": "首を反らさない\n勢いを使わない",
     "cautionsEn": "Don't crank the neck\nNo momentum",
     "youtubeSearchQuery": "superman exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "smith-machine-squat",
@@ -5678,7 +6170,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let knees cave\nDon't let heels lift",
     "youtubeSearchQuery": "smith machine squat",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "cyclist-squat",
@@ -5701,7 +6195,9 @@
     "cautionsJa": "膝を内側に入れない\n上体を立てる",
     "cautionsEn": "Don't let knees cave\nStay upright",
     "youtubeSearchQuery": "cyclist squat heel elevated",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "spanish-squat",
@@ -5724,7 +6220,9 @@
     "cautionsJa": "膝の痛みがあれば中止\n踵が浮かないように",
     "cautionsEn": "Stop on knee pain\nDon't let heels lift",
     "youtubeSearchQuery": "spanish squat band",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "wall-sit-quad",
@@ -5747,7 +6245,9 @@
     "cautionsJa": "膝が90度より深くならない\n腰を浮かさない",
     "cautionsEn": "Don't drop below 90°\nKeep the lower back on the wall",
     "youtubeSearchQuery": "wall sit",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "terminal-knee-extension",
@@ -5770,7 +6270,9 @@
     "cautionsJa": "反動を使わない\n膝に痛みがあれば中止",
     "cautionsEn": "No momentum\nStop on knee pain",
     "youtubeSearchQuery": "terminal knee extension",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "peterson-step-up",
@@ -5793,7 +6295,9 @@
     "cautionsJa": "反動を使わない\n膝に痛みがあれば中止",
     "cautionsEn": "No momentum\nStop on knee pain",
     "youtubeSearchQuery": "peterson step up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反対脚で蹴って勢いをつける\n体が前傾しすぎる\n降りる動作が雑",
+    "commonMistakesEn": "Push off with the rear leg\nTorso pitches too far forward\nLowering is rushed"
   },
   {
     "slug": "nordic-hamstring-curl",
@@ -5816,7 +6320,9 @@
     "cautionsJa": "腰を反らせない\n膝のクッションを使う",
     "cautionsEn": "Don't arch the back\nUse a knee pad",
     "youtubeSearchQuery": "nordic hamstring curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "swiss-ball-curl",
@@ -5839,7 +6345,9 @@
     "cautionsJa": "腰を落とさない\n勢いを使わない",
     "cautionsEn": "Don't drop the hips\nNo swinging",
     "youtubeSearchQuery": "swiss ball hamstring curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "slider-curl",
@@ -5862,7 +6370,9 @@
     "cautionsJa": "腰を落とさない\n勢いを使わない",
     "cautionsEn": "Don't drop the hips\nNo swinging",
     "youtubeSearchQuery": "slider hamstring curl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が前後に動く\n上体を反らせて反動\n下ろしが速い",
+    "commonMistakesEn": "Elbows drift forward and back\nBody english from the torso\nLowering is rushed"
   },
   {
     "slug": "machine-rdl",
@@ -5885,7 +6395,9 @@
     "cautionsJa": "背中を丸めない\n膝を曲げ過ぎない",
     "cautionsEn": "Don't round the back\nDon't squat down",
     "youtubeSearchQuery": "machine rdl",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "kettlebell-rdl",
@@ -5908,7 +6420,9 @@
     "cautionsJa": "背中を丸めない\n膝を曲げ過ぎない",
     "cautionsEn": "Don't round the back\nDon't squat down",
     "youtubeSearchQuery": "kettlebell rdl form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "good-morning",
@@ -5931,7 +6445,9 @@
     "cautionsJa": "背中を丸めない\n重量を欲張らない",
     "cautionsEn": "Don't round the back\nDon't go too heavy",
     "youtubeSearchQuery": "good morning exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "背中が丸まる\n膝が深く曲がる\n戻しが速い",
+    "commonMistakesEn": "Lower back rounds\nKnees bend too much\nConcentric is rushed"
   },
   {
     "slug": "frog-pump",
@@ -5954,7 +6470,9 @@
     "cautionsJa": "腰を反らせ過ぎない\n膝を内側に入れない",
     "cautionsEn": "Don't over-arch\nDon't let knees collapse in",
     "youtubeSearchQuery": "frog pump glute",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "clamshell",
@@ -5977,7 +6495,9 @@
     "cautionsJa": "腰を後ろに倒さない\n勢いを使わない",
     "cautionsEn": "Don't roll the hips back\nNo momentum",
     "youtubeSearchQuery": "clamshell glute",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "fire-hydrant",
@@ -6000,7 +6520,9 @@
     "cautionsJa": "腰を捻らない\n支持側で押し下げない",
     "cautionsEn": "Don't twist the hips\nStay even on the support side",
     "youtubeSearchQuery": "fire hydrant glute",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "donkey-kick",
@@ -6023,7 +6545,9 @@
     "cautionsJa": "腰を反らせない\n勢いを使わない",
     "cautionsEn": "Don't arch the back\nNo momentum",
     "youtubeSearchQuery": "donkey kick glute",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "abductor-machine",
@@ -6046,7 +6570,9 @@
     "cautionsJa": "反動を使わない\n上体を傾けない",
     "cautionsEn": "No momentum\nDon't lean",
     "youtubeSearchQuery": "abductor machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "hip-extension-machine",
@@ -6069,7 +6595,9 @@
     "cautionsJa": "腰を反らせない\n勢いを使わない",
     "cautionsEn": "Don't arch the back\nNo momentum",
     "youtubeSearchQuery": "hip extension machine",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "banded-glute-bridge",
@@ -6092,7 +6620,9 @@
     "cautionsJa": "腰を反らせ過ぎない\n膝を内側に入れない",
     "cautionsEn": "Don't over-arch\nDon't let knees cave",
     "youtubeSearchQuery": "banded glute bridge",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰だけで上げる\n顎が上がる\n可動域が浅い",
+    "commonMistakesEn": "Hips driven by lumbar extension\nChin lifts upward\nRange of motion is shallow"
   },
   {
     "slug": "hip-thrust-banded",
@@ -6115,7 +6645,9 @@
     "cautionsJa": "腰を反らせ過ぎない\n膝を内側に入れない",
     "cautionsEn": "Don't over-arch\nDon't let knees cave",
     "youtubeSearchQuery": "banded hip thrust",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って肋骨が開く\n顎が上がる\nロックアウトが浅い",
+    "commonMistakesEn": "Lower back overarches and ribs flare\nChin lifts upward\nHips don't reach lockout"
   },
   {
     "slug": "leg-press-calf-raise",
@@ -6138,7 +6670,9 @@
     "cautionsJa": "膝を曲げない\n反動を使わない",
     "cautionsEn": "Don't bend the knees\nNo bouncing",
     "youtubeSearchQuery": "leg press calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "smith-machine-calf-raise",
@@ -6161,7 +6695,9 @@
     "cautionsJa": "反動を使わない\n膝を曲げない",
     "cautionsEn": "No bouncing\nDon't bend the knees",
     "youtubeSearchQuery": "smith machine calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "banded-calf-raise",
@@ -6184,7 +6720,9 @@
     "cautionsJa": "膝を曲げない\n反動を使わない",
     "cautionsEn": "Don't bend the knees\nNo bouncing",
     "youtubeSearchQuery": "banded calf raise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "可動域が狭い\n膝が動く\n反動を使う",
+    "commonMistakesEn": "Range of motion is shallow\nKnees flex during the rep\nBody english is used"
   },
   {
     "slug": "sandbag-carry",
@@ -6207,7 +6745,9 @@
     "cautionsJa": "背中を丸めない\n肩をすくめない",
     "cautionsEn": "Don't round the back\nDon't shrug",
     "youtubeSearchQuery": "sandbag carry",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "wide-pull-up",
@@ -6230,7 +6770,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No kipping\nDon't shrug",
     "youtubeSearchQuery": "wide grip pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "close-grip-pull-up",
@@ -6253,7 +6795,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No kipping\nDon't shrug",
     "youtubeSearchQuery": "close grip pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "archer-pull-up",
@@ -6276,7 +6820,9 @@
     "cautionsJa": "反動を使わない\n肩に痛みがあれば中止",
     "cautionsEn": "No kipping\nStop on shoulder pain",
     "youtubeSearchQuery": "archer pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "l-sit-pull-up",
@@ -6299,7 +6845,9 @@
     "cautionsJa": "反動を使わない\n肩をすくめない",
     "cautionsEn": "No kipping\nDon't shrug",
     "youtubeSearchQuery": "l sit pull up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "キッピングで反動を使う\n肘が伸びきらない\n肩がすくむ",
+    "commonMistakesEn": "Kipping with body swing\nFailing to lock out at the bottom\nShoulders shrug toward the ears"
   },
   {
     "slug": "archer-push-up",
@@ -6322,7 +6870,9 @@
     "cautionsJa": "反対側の肘を伸ばし切らない\n腰を反らせない",
     "cautionsEn": "Don't lock the extending elbow\nDon't arch the back",
     "youtubeSearchQuery": "archer push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "diamond-push-up",
@@ -6345,7 +6895,9 @@
     "cautionsJa": "肘を外に開かない\n腰を反らせない",
     "cautionsEn": "Don't flare the elbows\nDon't arch the back",
     "youtubeSearchQuery": "diamond push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "wide-push-up",
@@ -6368,7 +6920,9 @@
     "cautionsJa": "腰を反らせない\n肩を痛めるほど下げない",
     "cautionsEn": "Don't arch the back\nDon't over-stretch the shoulders",
     "youtubeSearchQuery": "wide push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "decline-push-up",
@@ -6391,7 +6945,9 @@
     "cautionsJa": "腰を反らせない\n首を前に出さない",
     "cautionsEn": "Don't arch the back\nDon't crane the neck",
     "youtubeSearchQuery": "decline push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "バーが顔に向かう\n肩が浮く\n下ろしが速い",
+    "commonMistakesEn": "Bar tracks toward the face\nShoulders lift off the bench\nLowering is rushed"
   },
   {
     "slug": "incline-push-up",
@@ -6414,7 +6970,9 @@
     "cautionsJa": "腰を落とさない\n肩をすくめない",
     "cautionsEn": "Don't let hips sag\nDon't shrug",
     "youtubeSearchQuery": "incline push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が反って胸が浮く\n肩がすくむ\n肘が真横に開く",
+    "commonMistakesEn": "Lower back arches off the bench\nShoulders shrug\nElbows flare out at 90°"
   },
   {
     "slug": "clap-push-up",
@@ -6437,7 +6995,9 @@
     "cautionsJa": "手首を痛めないよう着地はソフトに\n腰を反らせない",
     "cautionsEn": "Land softly to spare the wrists\nDon't arch the back",
     "youtubeSearchQuery": "clap push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "pike-push-up",
@@ -6460,7 +7020,9 @@
     "cautionsJa": "肩をすくめない\n首から落とさない",
     "cautionsEn": "Don't shrug\nDon't crash on the head",
     "youtubeSearchQuery": "pike push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "pseudo-planche-push-up",
@@ -6483,7 +7045,9 @@
     "cautionsJa": "手首に注意\n腰を反らせない",
     "cautionsEn": "Watch the wrists\nDon't arch the back",
     "youtubeSearchQuery": "pseudo planche push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "spiderman-push-up",
@@ -6506,7 +7070,9 @@
     "cautionsJa": "腰を落とさない\n肩をすくめない",
     "cautionsEn": "Don't let hips sag\nDon't shrug",
     "youtubeSearchQuery": "spider man push up",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "腰が落ちる\nお尻が高く上がる\n肘が真横に開く",
+    "commonMistakesEn": "Hips sag\nHips pike up too high\nElbows flare out at 90°"
   },
   {
     "slug": "squat-jump",
@@ -6529,7 +7095,9 @@
     "cautionsJa": "膝に違和感があれば中止\n着地は静かに",
     "cautionsEn": "Stop on knee pain\nLand softly",
     "youtubeSearchQuery": "squat jump form",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "tuck-jump",
@@ -6552,7 +7120,9 @@
     "cautionsJa": "膝に違和感があれば中止\n着地は静かに",
     "cautionsEn": "Stop on knee pain\nLand softly",
     "youtubeSearchQuery": "tuck jump",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "broad-jump",
@@ -6575,7 +7145,9 @@
     "cautionsJa": "膝に違和感があれば中止\n着地は静かに",
     "cautionsEn": "Stop on knee pain\nLand softly",
     "youtubeSearchQuery": "broad jump",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "cossack-squat",
@@ -6598,7 +7170,9 @@
     "cautionsJa": "膝を内側に入れない\n踵が浮かないように",
     "cautionsEn": "Don't let the knee cave\nDon't let heels lift",
     "youtubeSearchQuery": "cossack squat",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "bear-crawl",
@@ -6621,7 +7195,9 @@
     "cautionsJa": "腰を反らせない\n肩をすくめない",
     "cautionsEn": "Don't arch the back\nDon't shrug",
     "youtubeSearchQuery": "bear crawl exercise",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "crab-walk",
@@ -6644,7 +7220,9 @@
     "cautionsJa": "腰を落とさない\n肩に痛みがあれば中止",
     "cautionsEn": "Don't drop the hips\nStop on shoulder pain",
     "youtubeSearchQuery": "crab walk",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\nフォームが崩れる",
+    "commonMistakesEn": "Body english is used\nHolding the breath\nForm breaks down"
   },
   {
     "slug": "handstand-hold",
@@ -6667,7 +7245,9 @@
     "cautionsJa": "腰を反らせない\n首から落ちないように",
     "cautionsEn": "Don't over-arch\nDon't crash on the head",
     "youtubeSearchQuery": "handstand hold wall",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n重さを優先しフォームが崩れる\n可動域が狭い",
+    "commonMistakesEn": "Body english is used\nForm breaks down chasing weight\nRange of motion is too small"
   },
   {
     "slug": "lying-hamstring-strap",
@@ -6690,7 +7270,9 @@
     "cautionsJa": "膝を反張させない\n首をすくめない",
     "cautionsEn": "Don't hyperextend the knee\nDon't tense the neck",
     "youtubeSearchQuery": "lying hamstring strap stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "half-split-stretch",
@@ -6713,7 +7295,9 @@
     "cautionsJa": "背中を丸めない\n膝に違和感があれば中止",
     "cautionsEn": "Don't round the back\nStop on knee pain",
     "youtubeSearchQuery": "half split hamstring stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "runners-stretch",
@@ -6736,7 +7320,9 @@
     "cautionsJa": "背中を丸めない\n前膝を反張させない",
     "cautionsEn": "Don't round the back\nDon't hyperextend the front knee",
     "youtubeSearchQuery": "runners stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "kneeling-quad-couch",
@@ -6759,7 +7345,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n腰を反らせ過ぎない",
     "cautionsEn": "Stop on knee pain\nDon't over-arch the back",
     "youtubeSearchQuery": "couch stretch hip flexor",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "supine-quad-stretch",
@@ -6782,7 +7370,9 @@
     "cautionsJa": "腰を反らせない\n膝に痛みがあれば中止",
     "cautionsEn": "Don't arch the back\nStop on knee pain",
     "youtubeSearchQuery": "supine quad stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "sofa-stretch",
@@ -6805,7 +7395,9 @@
     "cautionsJa": "腰を反らせ過ぎない\n膝に痛みがあれば中止",
     "cautionsEn": "Don't over-arch\nStop on knee pain",
     "youtubeSearchQuery": "sofa quad stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "standing-figure-four",
@@ -6828,7 +7420,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n壁などでバランスを取る",
     "cautionsEn": "Stop on knee pain\nUse a wall for balance",
     "youtubeSearchQuery": "standing figure four",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "deep-squat-hold",
@@ -6851,7 +7445,9 @@
     "cautionsJa": "膝を内側に入れない\n腰を丸めない",
     "cautionsEn": "Don't let knees cave\nDon't round the back",
     "youtubeSearchQuery": "deep squat hold",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "膝が内側に入る\n踵が浮く\n背中が丸まる",
+    "commonMistakesEn": "Knees cave inward\nHeels lift off the floor\nBack rounds at the bottom"
   },
   {
     "slug": "frog-stretch",
@@ -6874,7 +7470,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n腰を丸めない",
     "cautionsEn": "Stop on knee pain\nDon't round the back",
     "youtubeSearchQuery": "frog stretch hip",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "knee-to-chest",
@@ -6897,7 +7495,9 @@
     "cautionsJa": "首を浮かさない\n強く引っ張らない",
     "cautionsEn": "Don't lift the head\nDon't pull hard",
     "youtubeSearchQuery": "knee to chest stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "kneeling-doorway-stretch",
@@ -6920,7 +7520,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n腰を反らせない",
     "cautionsEn": "Stop on shoulder pain\nDon't arch the back",
     "youtubeSearchQuery": "kneeling doorway chest stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "prayer-chest-stretch",
@@ -6943,7 +7545,9 @@
     "cautionsJa": "肩を痛めない\n腰を反らせ過ぎない",
     "cautionsEn": "Stop on shoulder pain\nDon't over-arch",
     "youtubeSearchQuery": "prayer chest stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "hanging-lat-stretch",
@@ -6966,7 +7570,9 @@
     "cautionsJa": "完全に脱力しない\n落下注意",
     "cautionsEn": "Don't fully decompress\nWatch for drops",
     "youtubeSearchQuery": "hanging lat stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "kneeling-lat-stretch",
@@ -6989,7 +7595,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n腰を反らせ過ぎない",
     "cautionsEn": "Stop on shoulder pain\nDon't over-arch",
     "youtubeSearchQuery": "kneeling lat stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "side-bend-lat",
@@ -7012,7 +7620,9 @@
     "cautionsJa": "前後に倒さない\n肩をすくめない",
     "cautionsEn": "Don't tilt forward or back\nDon't shrug",
     "youtubeSearchQuery": "lat side bend stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "前後に体が傾く\n可動域が狭い\n反動を使う",
+    "commonMistakesEn": "Body tips forward or back\nRange of motion is too small\nBody english is used"
   },
   {
     "slug": "levator-stretch",
@@ -7035,7 +7645,9 @@
     "cautionsJa": "強く引っ張らない\n肩をすくめない",
     "cautionsEn": "Don't pull hard\nDon't shrug",
     "youtubeSearchQuery": "levator scapulae stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "neck-extension-stretch",
@@ -7058,7 +7670,9 @@
     "cautionsJa": "過度に反らない\n痛みがあれば中止",
     "cautionsEn": "Don't over-extend\nStop on pain",
     "youtubeSearchQuery": "neck extension stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "neck-rotation-stretch",
@@ -7081,7 +7695,9 @@
     "cautionsJa": "勢いをつけない\n痛みがあれば中止",
     "cautionsEn": "No momentum\nStop on pain",
     "youtubeSearchQuery": "neck rotation stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "sleeper-stretch",
@@ -7104,7 +7720,9 @@
     "cautionsJa": "強く押さない\n痛みがあれば中止",
     "cautionsEn": "Don't push hard\nStop on pain",
     "youtubeSearchQuery": "sleeper stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "front-delt-doorway",
@@ -7127,7 +7745,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n肘を伸ばし切る",
     "cautionsEn": "Stop on shoulder pain\nKeep the elbow straight",
     "youtubeSearchQuery": "front delt doorway stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "scapular-stretch",
@@ -7150,7 +7770,9 @@
     "cautionsJa": "強く引っ張らない\n肩をすくめない",
     "cautionsEn": "Don't pull hard\nDon't shrug",
     "youtubeSearchQuery": "scapular stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "doorway-biceps-stretch",
@@ -7173,7 +7795,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n肘を伸ばし切る",
     "cautionsEn": "Stop on shoulder pain\nKeep the elbow straight",
     "youtubeSearchQuery": "doorway biceps stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "wall-biceps-stretch",
@@ -7196,7 +7820,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n強く伸ばさない",
     "cautionsEn": "Stop on shoulder pain\nDon't over-stretch",
     "youtubeSearchQuery": "wall biceps stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "behind-head-tricep",
@@ -7219,7 +7845,9 @@
     "cautionsJa": "強く引っ張らない\n首を反らさない",
     "cautionsEn": "Don't pull hard\nDon't crank the neck back",
     "youtubeSearchQuery": "behind head tricep stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "towel-tricep-stretch",
@@ -7242,7 +7870,9 @@
     "cautionsJa": "強く引っ張らない\n肩に痛みがあれば中止",
     "cautionsEn": "Don't pull hard\nStop on shoulder pain",
     "youtubeSearchQuery": "towel tricep stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "肘が外に開く\n肩が前に出る\n戻しが速い",
+    "commonMistakesEn": "Elbows flare out\nShoulders dump forward\nEccentric is rushed"
   },
   {
     "slug": "prayer-stretch",
@@ -7265,7 +7895,9 @@
     "cautionsJa": "強く押さない\n痛みがあれば中止",
     "cautionsEn": "Don't push hard\nStop on pain",
     "youtubeSearchQuery": "prayer stretch forearm",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "reverse-prayer",
@@ -7288,7 +7920,9 @@
     "cautionsJa": "強く押さない\n肩に痛みがあれば中止",
     "cautionsEn": "Don't push hard\nStop on shoulder pain",
     "youtubeSearchQuery": "reverse prayer stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "standing-abdominal-stretch",
@@ -7311,7 +7945,9 @@
     "cautionsJa": "腰を強く反らさない\n首を反らさない",
     "cautionsEn": "Don't over-extend the back\nDon't crank the neck",
     "youtubeSearchQuery": "standing abdominal stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "sphinx-pose",
@@ -7334,7 +7970,9 @@
     "cautionsJa": "首を強く反らさない\n腰に痛みがあれば中止",
     "cautionsEn": "Don't crank the neck\nStop on lower-back pain",
     "youtubeSearchQuery": "sphinx pose",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "gate-pose",
@@ -7357,7 +7995,9 @@
     "cautionsJa": "前後に倒さない\n首を強く倒さない",
     "cautionsEn": "Don't tilt forward or back\nDon't crank the neck",
     "youtubeSearchQuery": "gate pose yoga",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "half-moon-pose",
@@ -7380,7 +8020,9 @@
     "cautionsJa": "腰を捻り過ぎない\n壁などでバランスを取る",
     "cautionsEn": "Don't over-twist\nUse a wall for balance",
     "youtubeSearchQuery": "half moon pose",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "piriformis-stretch",
@@ -7403,7 +8045,9 @@
     "cautionsJa": "首を浮かさない\n強く引っ張らない",
     "cautionsEn": "Don't lift the head\nDon't pull hard",
     "youtubeSearchQuery": "piriformis stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "knee-to-chest-stretch",
@@ -7426,7 +8070,9 @@
     "cautionsJa": "首を浮かさない\n強く引っ張らない",
     "cautionsEn": "Don't lift the head\nDon't pull hard",
     "youtubeSearchQuery": "low back knee to chest",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "double-knee-to-chest",
@@ -7449,7 +8095,9 @@
     "cautionsJa": "首を浮かさない\n強く引っ張らない",
     "cautionsEn": "Don't lift the head\nDon't pull hard",
     "youtubeSearchQuery": "double knee to chest",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "thread-the-needle",
@@ -7472,7 +8120,9 @@
     "cautionsJa": "腰だけで捻らない\n首を圧迫しない",
     "cautionsEn": "Rotate from the thorax\nDon't compress the neck",
     "youtubeSearchQuery": "thread the needle yoga",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "downward-dog-pedal",
@@ -7495,7 +8145,9 @@
     "cautionsJa": "首を反らさない\n肩をすくめない",
     "cautionsEn": "Don't crank the neck\nDon't shrug",
     "youtubeSearchQuery": "downward dog pedal calves",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "soleus-stretch",
@@ -7518,7 +8170,9 @@
     "cautionsJa": "腰を反らせない\nつま先の向きをまっすぐに",
     "cautionsEn": "Don't arch the back\nToes pointing straight",
     "youtubeSearchQuery": "soleus stretch",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "knee-to-wall-mobility",
@@ -7541,7 +8195,9 @@
     "cautionsJa": "膝に痛みがあれば中止\n踵が浮かないように",
     "cautionsEn": "Stop on knee pain\nDon't let the heel lift",
     "youtubeSearchQuery": "knee to wall ankle mobility",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "cobra-to-down-dog",
@@ -7564,7 +8220,9 @@
     "cautionsJa": "腰に痛みがあれば中止\n首を反らさない",
     "cautionsEn": "Stop on lower-back pain\nDon't crank the neck",
     "youtubeSearchQuery": "cobra to down dog flow",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "world-greatest-stretch-static",
@@ -7587,7 +8245,9 @@
     "cautionsJa": "膝を内側に入れない\n腰だけで捻らない",
     "cautionsEn": "Don't let knees cave\nRotate from the thorax",
     "youtubeSearchQuery": "worlds greatest stretch static",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "foam-roller-quad",
@@ -7610,7 +8270,9 @@
     "cautionsJa": "膝に当てない\n強い痛みがあれば中止",
     "cautionsEn": "Don't roll over the knee\nStop on sharp pain",
     "youtubeSearchQuery": "foam roller quads",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "foam-roller-it-band",
@@ -7633,7 +8295,9 @@
     "cautionsJa": "膝に当てない\n強い痛みがあれば中止",
     "cautionsEn": "Don't roll over the knee\nStop on sharp pain",
     "youtubeSearchQuery": "foam roller it band",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "foam-roller-hamstring",
@@ -7656,7 +8320,9 @@
     "cautionsJa": "膝に当てない\n強い痛みがあれば中止",
     "cautionsEn": "Don't roll over the knee\nStop on sharp pain",
     "youtubeSearchQuery": "foam roller hamstrings",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "foam-roller-lat",
@@ -7679,7 +8345,9 @@
     "cautionsJa": "肋骨に強く当てない\n強い痛みがあれば中止",
     "cautionsEn": "Don't dig into the ribs\nStop on sharp pain",
     "youtubeSearchQuery": "foam roller lats",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "foam-roller-back",
@@ -7702,7 +8370,9 @@
     "cautionsJa": "首を強く反らさない\n腰には当てない",
     "cautionsEn": "Don't crank the neck\nDon't roll the lower back",
     "youtubeSearchQuery": "foam roller upper back",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "反動を使う\n呼吸を止める\n痛みまで伸ばす",
+    "commonMistakesEn": "Bouncing into the stretch\nHolding the breath\nPushing into pain"
   },
   {
     "slug": "spinning-bike",
@@ -7725,7 +8395,9 @@
     "cautionsJa": "膝が内側に入らないように\n前傾しすぎない",
     "cautionsEn": "Don't let knees cave\nDon't over-hunch",
     "youtubeSearchQuery": "spinning bike workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "air-bike",
@@ -7748,7 +8420,9 @@
     "cautionsJa": "前傾しすぎない\n膝が内側に入らないように",
     "cautionsEn": "Don't lean forward\nDon't let knees cave",
     "youtubeSearchQuery": "air bike workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "ski-erg",
@@ -7771,7 +8445,9 @@
     "cautionsJa": "背中を丸めない\n肩をすくめない",
     "cautionsEn": "Don't round the back\nDon't shrug",
     "youtubeSearchQuery": "ski erg workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "shadow-boxing",
@@ -7794,7 +8470,9 @@
     "cautionsJa": "肩に痛みがあれば中止\n膝を伸ばし切らない",
     "cautionsEn": "Stop on shoulder pain\nDon't lock the knees",
     "youtubeSearchQuery": "shadow boxing workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "heavy-bag-boxing",
@@ -7817,7 +8495,9 @@
     "cautionsJa": "手首を痛めないようバンテージ着用\n肩に痛みがあれば中止",
     "cautionsEn": "Wrap the wrists\nStop on shoulder pain",
     "youtubeSearchQuery": "heavy bag boxing workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "sprinting",
@@ -7840,7 +8520,9 @@
     "cautionsJa": "ハム肉離れに注意\nウォームアップを省略しない",
     "cautionsEn": "Watch for hamstring strains\nDon't skip the warm-up",
     "youtubeSearchQuery": "sprint interval workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "interval-running",
@@ -7863,7 +8545,9 @@
     "cautionsJa": "ハム肉離れに注意\n膝に違和感があれば中止",
     "cautionsEn": "Watch for hamstring strains\nStop on knee pain",
     "youtubeSearchQuery": "interval running workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "step-aerobics",
@@ -7886,7 +8570,9 @@
     "cautionsJa": "膝に違和感があれば中止\n前傾しすぎない",
     "cautionsEn": "Stop on knee pain\nDon't lean forward",
     "youtubeSearchQuery": "step aerobics workout",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "swimming-breaststroke",
@@ -7909,7 +8595,9 @@
     "cautionsJa": "過度な無理をしない\n塩素対策に保護メガネ",
     "cautionsEn": "Don't push past safe limits\nUse goggles",
     "youtubeSearchQuery": "breaststroke swimming",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   },
   {
     "slug": "cycling-outdoor",
@@ -7932,6 +8620,8 @@
     "cautionsJa": "交通安全に注意\n膝に違和感があれば中止",
     "cautionsEn": "Watch for traffic\nStop on knee pain",
     "youtubeSearchQuery": "outdoor cycling cardio",
-    "thumbnailFileName": null
+    "thumbnailFileName": null,
+    "commonMistakesJa": "序盤からペースを上げ過ぎる\n水分補給を忘れる\nクールダウンを省く",
+    "commonMistakesEn": "Start too fast\nSkipping hydration\nSkipping the cool-down"
   }
 ]

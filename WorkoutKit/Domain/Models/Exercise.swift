@@ -53,6 +53,13 @@ final class Exercise {
     /// ありがちな誤フォーム等の注意点(改行区切り)。
     var cautionsJa: String
     var cautionsEn: String
+    /// 「よくある間違い」(改行区切り)。cautions より具体的な誤フォーム例を1行ずつ。
+    /// 例: "膝が内側に入る" / "踵が浮く" のような短い箇条書きを想定。
+    /// SwiftData の lightweight migration を成立させるために Optional とし、
+    /// 既存の SchemaV1 ストアを破壊せずに追加できるようにしている(CLAUDE.md §-1.3)。
+    /// 値が nil または空文字の場合は CommonMistakesCard を非表示にする。
+    var commonMistakesJa: String?
+    var commonMistakesEn: String?
     /// YouTube アプリへのDeep Link用検索クエリ(Pro機能)。
     var youtubeSearchQuery: String?
     /// ライブラリ一覧で使うサムネイルのファイル名。
@@ -89,6 +96,8 @@ final class Exercise {
         stepTextEnRaw: String = "[]",
         cautionsJa: String = "",
         cautionsEn: String = "",
+        commonMistakesJa: String? = nil,
+        commonMistakesEn: String? = nil,
         youtubeSearchQuery: String? = nil,
         thumbnailFileName: String? = nil,
         createdAt: Date = .now,
@@ -113,6 +122,8 @@ final class Exercise {
         self.stepTextEnRaw = stepTextEnRaw
         self.cautionsJa = cautionsJa
         self.cautionsEn = cautionsEn
+        self.commonMistakesJa = commonMistakesJa
+        self.commonMistakesEn = commonMistakesEn
         self.youtubeSearchQuery = youtubeSearchQuery
         self.thumbnailFileName = thumbnailFileName
         self.createdAt = createdAt
@@ -154,5 +165,28 @@ extension Exercise {
     /// それ以外のロケールでは英語にフォールバック。
     var localizedName: String {
         Locale.current.language.languageCode?.identifier == "ja" ? nameJa : nameEn
+    }
+
+    /// stepTextJaRaw / stepTextEnRaw は JSON 配列文字列で保存されている。
+    /// 復号失敗時は空配列を返す(StepsCardView は空ならセクションを描画しない)。
+    var stepsJa: [String] { Self.decodeJSONStringArray(stepTextJaRaw) }
+    var stepsEn: [String] { Self.decodeJSONStringArray(stepTextEnRaw) }
+
+    /// commonMistakesJa / En は改行区切り(cautions と同じ規約)。nil は空配列扱い。
+    var commonMistakesJaList: [String] { Self.splitNewlineList(commonMistakesJa ?? "") }
+    var commonMistakesEnList: [String] { Self.splitNewlineList(commonMistakesEn ?? "") }
+
+    private static func decodeJSONStringArray(_ raw: String) -> [String] {
+        guard let data = raw.data(using: .utf8),
+              let arr = try? JSONDecoder().decode([String].self, from: data) else {
+            return []
+        }
+        return arr
+    }
+
+    private static func splitNewlineList(_ raw: String) -> [String] {
+        raw.split(separator: "\n", omittingEmptySubsequences: true)
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
     }
 }
