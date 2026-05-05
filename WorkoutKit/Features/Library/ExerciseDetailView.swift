@@ -21,10 +21,14 @@ struct ExerciseDetailView: View {
             VStack(alignment: .leading, spacing: 20) {
                 header
                 targetMusclesSection
+                if !descriptionHTML.isEmpty {
+                    descriptionSection
+                }
+                StepsCardView(steps: stepLines)
+                CommonMistakesCard(mistakes: commonMistakeLines)
                 if !cautions.isEmpty {
                     cautionsSection
                 }
-                steps
                 muscleBadges
                 if !exercise.equipment.isEmpty {
                     equipmentBadges
@@ -88,33 +92,15 @@ struct ExerciseDetailView: View {
         }
     }
 
-    // MARK: - Description / Steps
+    // MARK: - Description / Steps / Mistakes
 
-    private var steps: some View {
+    /// HTML description 単体のセクション。手順は StepsCardView に分離。
+    private var descriptionSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("library.detail.steps").font(.headline)
-
-            if !descriptionHTML.isEmpty {
-                // HTMLSanitizer 経由で <script> 等を除去 → AttributedString に変換して描画。
-                // 失敗時は HTMLDescriptionView 内でプレーンテキストにフォールバックされる。
-                HTMLDescriptionView(html: descriptionHTML)
-                    .font(.body)
-            }
-
-            let stepList = stepTexts
-            if !stepList.isEmpty {
-                ForEach(Array(stepList.enumerated()), id: \.offset) { idx, line in
-                    HStack(alignment: .top, spacing: 8) {
-                        Text("\(idx + 1).")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.tint)
-                            .frame(width: 24, alignment: .trailing)
-                        Text(line)
-                            .font(.body)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                }
-            }
+            // HTMLSanitizer 経由で <script> 等を除去 → AttributedString に変換して描画。
+            // 失敗時は HTMLDescriptionView 内でプレーンテキストにフォールバックされる。
+            HTMLDescriptionView(html: descriptionHTML)
+                .font(.body)
         }
     }
 
@@ -246,25 +232,18 @@ struct ExerciseDetailView: View {
         isJapanese ? exercise.descriptionJa : exercise.descriptionEn
     }
 
-    private var stepTexts: [String] {
-        let raw = isJapanese ? exercise.stepTextJaRaw : exercise.stepTextEnRaw
-        return Self.decodeStringArray(raw)
+    private var stepLines: [String] {
+        isJapanese ? exercise.stepsJa : exercise.stepsEn
+    }
+
+    private var commonMistakeLines: [String] {
+        isJapanese ? exercise.commonMistakesJaList : exercise.commonMistakesEnList
     }
 
     private var cautions: [String] {
         let raw = isJapanese ? exercise.cautionsJa : exercise.cautionsEn
         return raw.split(separator: "\n").map { String($0).trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty }
-    }
-
-    // MARK: - Static helpers
-
-    private static func decodeStringArray(_ raw: String) -> [String] {
-        guard let data = raw.data(using: .utf8),
-              let arr = try? JSONDecoder().decode([String].self, from: data) else {
-            return []
-        }
-        return arr
     }
 }
 

@@ -11,6 +11,7 @@
 		004AD9F69140C99DF2079B35 /* SessionLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9102D96C7C70383403D2EF0 /* SessionLiveActivityAttributes.swift */; };
 		022D79EC61D0BFE1BBD03950 /* jump-rope.json in Resources */ = {isa = PBXBuildFile; fileRef = D67327DDF5852AE0E4C6E875 /* jump-rope.json */; };
 		0281EA4D7C607A7A43A1675C /* plate-pinch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3296765B55DF36F87DD3AB1D /* plate-pinch.json */; };
+		02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */; };
 		02A7578DCCFBB39BBF669F6F /* air-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CE5D0AAFED6572A97B7469B /* air-squat.json */; };
 		0371A67CA5E35BAB2BB130D3 /* hammer-rope-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 631953EAC021CF88B7A5979E /* hammer-rope-curl.json */; };
 		040C08A6C34714DD5473AA6D /* low-cable-fly.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D9337DAADB52BECA05B0B2A /* low-cable-fly.json */; };
@@ -22,6 +23,7 @@
 		0671DA0E46E516525B16C3C8 /* forward-fold.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E13FFBC89812A482FCE8F /* forward-fold.json */; };
 		0788E87AD2EEEC69717DAA1B /* TemplateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F2CBA6893CA5AB3753443C /* TemplateDetailView.swift */; };
 		07B233FB000E5D01208FA19C /* TimeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49CF86BEADE829814F8D72 /* TimeStepView.swift */; };
+		0841BE98940A41BCA9DC43A0 /* CommonMistakesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC932F0FA4D6D2516B4BB9 /* CommonMistakesCard.swift */; };
 		08BCF2DA2822D1489B881DE8 /* AnnotationLabelOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */; };
 		0A79BEA21E335E8A0B4ED571 /* levator-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = A03C9059E13ED1C6F5F53C97 /* levator-stretch.json */; };
 		0B67C6A0447CA075298601DB /* dumbbell-walking-lunge.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D410F563EF955108E867B7F /* dumbbell-walking-lunge.json */; };
@@ -303,6 +305,7 @@
 		9F6A0B47D2E4C313E72B1D9E /* stationary-bike.json in Resources */ = {isa = PBXBuildFile; fileRef = 85106309E1D681FFA7AC61E4 /* stationary-bike.json */; };
 		9F827181D245BF59B8F2E74B /* pallof-press.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C5A345F39C0A7CC004A8D8C /* pallof-press.json */; };
 		A0643B25B107D1022DF3D506 /* seated-barbell-shoulder-press.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C253A384ED9672056B5C9 /* seated-barbell-shoulder-press.json */; };
+		A091E84429BAAAE5F76C9098 /* StepsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1F5F2E51990F976EB2EC3 /* StepsCardView.swift */; };
 		A1C3FD288370C31B277A4676 /* single-leg-rdl.json in Resources */ = {isa = PBXBuildFile; fileRef = ECEBE5A6CF7E2BDF0C39C851 /* single-leg-rdl.json */; };
 		A24C20CDE8E62D1E16FCFEFC /* standing-hamstring-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 21BE036D894C32276CF43E3F /* standing-hamstring-stretch.json */; };
 		A303A391C9CA249DEB0D721C /* donkey-kick.json in Resources */ = {isa = PBXBuildFile; fileRef = A8A956BEC003F0295438F24F /* donkey-kick.json */; };
@@ -474,6 +477,7 @@
 		FC060DB49FEACA6D14D6420C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FEFD92C6BD6823D8CAB33F3E /* Localizable.xcstrings */; };
 		FCD848B55369D2F1C635C753 /* step-aerobics.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CA167A6C9D327D4B8D8099 /* step-aerobics.json */; };
 		FD2DC88E8C963EDF26E25721 /* UnitsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE370E36AF9BA0123DA7991 /* UnitsFormatter.swift */; };
+		FD4F048E5B21A6D3F2EF0F5E /* ExerciseStepsMistakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A0B81993D83EEBA2E7B54 /* ExerciseStepsMistakesTests.swift */; };
 		FD89ECAFF13562E04D0A1842 /* hip-extension-machine.json in Resources */ = {isa = PBXBuildFile; fileRef = 544509C0B05147111C5CAD8A /* hip-extension-machine.json */; };
 		FDD27BAA7DFEF4165EA1CF75 /* prayer-chest-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FA38B1055BAF014DB4AE39A /* prayer-chest-stretch.json */; };
 		FF9640272ABAC13BD8FD2D7D /* wall-sit-quad.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C9FBE52AEA2B7D72085AAE5 /* wall-sit-quad.json */; };
@@ -630,6 +634,7 @@
 		43E2393CD9BE0086A4E57ED5 /* superman.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = superman.json; sourceTree = "<group>"; };
 		445A517F69F7BFA4A91CC060 /* pistol-squat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pistol-squat.json"; sourceTree = "<group>"; };
 		455BE1B4F46F6896BEF46E59 /* wide-push-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "wide-push-up.json"; sourceTree = "<group>"; };
+		45D1F5F2E51990F976EB2EC3 /* StepsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCardView.swift; sourceTree = "<group>"; };
 		4620477159D361D8E4AEE67C /* high-bar-squat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "high-bar-squat.json"; sourceTree = "<group>"; };
 		46384B3680CE019CB9BC128A /* monster-walk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "monster-walk.json"; sourceTree = "<group>"; };
 		46950C1292797325C11F19CF /* arnold-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "arnold-press.json"; sourceTree = "<group>"; };
@@ -689,6 +694,7 @@
 		6046E8378E9B422A1D980555 /* dumbbell-fly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "dumbbell-fly.json"; sourceTree = "<group>"; };
 		6058C6EFED83F6781B93A45E /* romanian-deadlift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "romanian-deadlift.json"; sourceTree = "<group>"; };
 		6060D6B981F769D211E6000F /* HistoryCutoffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCutoffTests.swift; sourceTree = "<group>"; };
+		60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsMistakesScreenshotTests.swift; sourceTree = "<group>"; };
 		61EE0CE43AAD2C3304A2EC63 /* SeededGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededGenerator.swift; sourceTree = "<group>"; };
 		62192C9ACB219E2DF030ABD7 /* double-knee-to-chest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "double-knee-to-chest.json"; sourceTree = "<group>"; };
 		6246B686F0C6FC98C067DD61 /* chin-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "chin-up.json"; sourceTree = "<group>"; };
@@ -812,6 +818,7 @@
 		9FC4EDB5FD3B6C0A817F99D0 /* doorway-chest-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "doorway-chest-stretch.json"; sourceTree = "<group>"; };
 		A03C9059E13ED1C6F5F53C97 /* levator-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "levator-stretch.json"; sourceTree = "<group>"; };
 		A04D326A6170AA54EFC040B0 /* ProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeature.swift; sourceTree = "<group>"; };
+		A09A0B81993D83EEBA2E7B54 /* ExerciseStepsMistakesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStepsMistakesTests.swift; sourceTree = "<group>"; };
 		A1661E94950C22070BE9A791 /* AnnotatedBodyDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedBodyDiagramView.swift; sourceTree = "<group>"; };
 		A2182D3C7B6EB548C6F30883 /* dumbbell-shoulder-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "dumbbell-shoulder-press.json"; sourceTree = "<group>"; };
 		A2911CF1E31084091859BE46 /* inverted-row.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "inverted-row.json"; sourceTree = "<group>"; };
@@ -955,6 +962,7 @@
 		EFF9C512DB65D5DA0FE9C2EC /* pull-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pull-up.json"; sourceTree = "<group>"; };
 		F152F5A85B3D409A8A1877F1 /* foam-roller-it-band.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "foam-roller-it-band.json"; sourceTree = "<group>"; };
 		F17C5D8C101B4F2826DD7336 /* handstand-push-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "handstand-push-up.json"; sourceTree = "<group>"; };
+		F1DC932F0FA4D6D2516B4BB9 /* CommonMistakesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMistakesCard.swift; sourceTree = "<group>"; };
 		F2190085690F3F04C188783B /* supine-twist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "supine-twist.json"; sourceTree = "<group>"; };
 		F2DEF57CFC06B47C0B2C637F /* fire-hydrant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fire-hydrant.json"; sourceTree = "<group>"; };
 		F2E4071FCB4B1EBA03169886 /* clean-and-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "clean-and-press.json"; sourceTree = "<group>"; };
@@ -1018,6 +1026,7 @@
 				76BA7A22C6F701C50C2FD82D /* BuilderStoreTests.swift */,
 				86F4A44690A3763DCF41FE6A /* CSVImporterTests.swift */,
 				972CC6934E1C8A86ECDFC6FC /* ExerciseAnnotationLoaderTests.swift */,
+				A09A0B81993D83EEBA2E7B54 /* ExerciseStepsMistakesTests.swift */,
 				6060D6B981F769D211E6000F /* HistoryCutoffTests.swift */,
 				5DC915B7A3994A20CA4232B1 /* HistoryExporterTests.swift */,
 				B5B4D44774ADF3105DF7EBE5 /* HTMLSanitizerTests.swift */,
@@ -1105,12 +1114,14 @@
 				A1661E94950C22070BE9A791 /* AnnotatedBodyDiagramView.swift */,
 				EBF96026A3E3596FF6D27CB9 /* AnnotationArrowOverlay.swift */,
 				4F1BE5A69F3921DFE807917A /* AnnotationLabelOverlay.swift */,
+				F1DC932F0FA4D6D2516B4BB9 /* CommonMistakesCard.swift */,
 				18D7A97FCFF772594876BF44 /* CompactBodyDiagramView.swift */,
 				7D3C9D2CD799BCB09E3BD98D /* ExerciseDetailView.swift */,
 				F952D420AF0BDB879DF7C5A2 /* ExerciseListView.swift */,
 				1EB1CA5FA16BDB046BA89955 /* ExerciseRowView.swift */,
 				6796FB5F586A36E8BD098F82 /* HTMLDescriptionView.swift */,
 				F6E9C974B9D87E1DE55392CD /* LibraryDisplay.swift */,
+				45D1F5F2E51990F976EB2EC3 /* StepsCardView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1619,6 +1630,7 @@
 			children = (
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
+				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
 				65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */,
 			);
 			path = WorkoutKitUITests;
@@ -2236,6 +2248,7 @@
 			files = (
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
+				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
 				80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2260,6 +2273,7 @@
 				55282EF06C094C18EAF070EF /* CSVImporter.swift in Sources */,
 				52EBD4FC4385370EF22F9196 /* CSVParser.swift in Sources */,
 				1F5AD26342A5FC30CF4480EA /* ChooseMode.swift in Sources */,
+				0841BE98940A41BCA9DC43A0 /* CommonMistakesCard.swift in Sources */,
 				436080D54CABB42EA92D46C6 /* CompactBodyDiagramView.swift in Sources */,
 				B001405393F1DE74AC1A76F8 /* DataIOStore.swift in Sources */,
 				F9B09FCB30293307EDE3C47F /* DataIOView.swift in Sources */,
@@ -2327,6 +2341,7 @@
 				29C0865E5F7CB428CE0825E7 /* SettingsKeys.swift in Sources */,
 				32EBBFCDF992CB4CE0D8C9AE /* SettingsView.swift in Sources */,
 				B3294639D75405FBDBCEA4E1 /* ShuffleMode.swift in Sources */,
+				A091E84429BAAAE5F76C9098 /* StepsCardView.swift in Sources */,
 				8D2812349DDF02A7EE3D1166 /* StoreKitClient.swift in Sources */,
 				AA249E36C85B096992EF2AF5 /* Template.swift in Sources */,
 				0788E87AD2EEEC69717DAA1B /* TemplateDetailView.swift in Sources */,
@@ -2352,6 +2367,7 @@
 				CADE6A04647B3FE3764BF9D3 /* BuilderStoreTests.swift in Sources */,
 				A6C5A11510EB9DDE548EFCFC /* CSVImporterTests.swift in Sources */,
 				3F794316B0BF0728EDCBCDDE /* ExerciseAnnotationLoaderTests.swift in Sources */,
+				FD4F048E5B21A6D3F2EF0F5E /* ExerciseStepsMistakesTests.swift in Sources */,
 				E4A19B24B8048401BB59905C /* HTMLSanitizerTests.swift in Sources */,
 				74F17786F52FC3C7A5E37963 /* HistoryCutoffTests.swift in Sources */,
 				3FDC114562C1D3B39225B8EB /* HistoryExporterTests.swift in Sources */,

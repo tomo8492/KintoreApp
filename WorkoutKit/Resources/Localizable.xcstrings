@@ -20703,6 +20703,57 @@
           }
         }
       }
+    },
+    "library.detail.common-mistakes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Common Mistakes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "よくある間違い"
+          }
+        }
+      }
+    },
+    "a11y.library.detail.steps.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps card list"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手順カード一覧"
+          }
+        }
+      }
+    },
+    "a11y.library.detail.common-mistakes.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List of common mistakes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "よくある間違い一覧"
+          }
+        }
+      }
     }
   }
 }
