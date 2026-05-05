@@ -3870,6 +3870,40 @@
         }
       }
     },
+    "library.detail.target-muscles": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Target muscles"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鍛える筋肉"
+          }
+        }
+      }
+    },
+    "a11y.library.detail.target-muscles.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Body diagram showing target muscles for this exercise"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この種目で鍛える筋肉を示した人体図"
+          }
+        }
+      }
+    },
     "library.detail.youtube": {
       "extractionState": "manual",
       "localizations": {
