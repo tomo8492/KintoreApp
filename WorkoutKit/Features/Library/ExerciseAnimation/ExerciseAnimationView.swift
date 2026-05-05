@@ -1,6 +1,11 @@
 // MARK: - ExerciseAnimationView
-// プロトタイプ: 5 種目分のエクササイズアニメーション(SwiftUI 自前 procedural)。
-// CLAUDE.md §-1 Lock により動画・Lottie 同梱なし。Canvas + TimelineView で完結。
+// プロトタイプ: 5 種目分のエクササイズアニメーション。
+// 本ブランチ(sample/3d-realitykit-prototype)では SceneKit ベースの
+// 3D 手続き生成プリミティブで描画する(USDZ 等の外部素材は同梱せず
+// SCNSphere / SCNCylinder のみで構築。§-1 Lock の動画 mp4 同梱禁止に抵触しない)。
+//
+// 既存の 2D ポーズ math(`*Animation.pose(phase:)` / `StickFigurePose`)は
+// そのまま再利用しており、Snapshot Test もそのまま動く。
 //
 // Reduce Motion (`accessibilityReduceMotion`) ON 時はアニメ停止し、
 // `phase = 0.5`(中間ポーズ) を静止描画する。
@@ -63,7 +68,6 @@ enum ExerciseAnimationKind: String, CaseIterable {
 struct ExerciseAnimationView: View {
     let kind: ExerciseAnimationKind
 
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
 
     /// `slug` から初期化。対応外 slug の場合は nil。
@@ -83,33 +87,10 @@ struct ExerciseAnimationView: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(backgroundGradient)
 
-            if reduceMotion {
-                // 静止: 中間ポーズで「動きの代表」を表示。
-                Canvas { context, size in
-                    var ctx = context
-                    StickFigure.draw(
-                        kind.pose(phase: 0.5),
-                        in: &ctx,
-                        size: size,
-                        color: figureColor
-                    )
-                }
-                .padding(16)
-            } else {
-                TimelineView(.animation) { timeline in
-                    let phase = phaseValue(at: timeline.date)
-                    Canvas { context, size in
-                        var ctx = context
-                        StickFigure.draw(
-                            kind.pose(phase: phase),
-                            in: &ctx,
-                            size: size,
-                            color: figureColor
-                        )
-                    }
-                    .padding(16)
-                }
-            }
+            // SceneKit 3D ヒューマノイド。Reduce Motion は子 View 側で
+            // accessibilityReduceMotion を読み、isPaused を切り替える。
+            ExerciseScene3DView(kind: kind)
+                .padding(8)
         }
         .aspectRatio(1.6, contentMode: .fit)
         .frame(maxWidth: .infinity)
@@ -118,25 +99,7 @@ struct ExerciseAnimationView: View {
         .accessibilityAddTraits(.isImage)
     }
 
-    // MARK: - Phase
-
-    private static let referenceDate = Date(timeIntervalSinceReferenceDate: 0)
-
-    private func phaseValue(at date: Date) -> CGFloat {
-        let elapsed = date.timeIntervalSince(Self.referenceDate)
-        let cycle = kind.cycleDuration
-        guard cycle > 0 else { return 0 }
-        let normalized = elapsed.truncatingRemainder(dividingBy: cycle) / cycle
-        return CGFloat(normalized)
-    }
-
     // MARK: - Style
-
-    private var figureColor: Color {
-        // アクセントカラーは「身体」を表現するため濃いめの単色を使う。
-        // light/dark どちらでもコントラストを確保。
-        colorScheme == .dark ? Color(white: 0.92) : Color(white: 0.18)
-    }
 
     private var backgroundGradient: LinearGradient {
         let top = Color.accentColor.opacity(colorScheme == .dark ? 0.20 : 0.12)
