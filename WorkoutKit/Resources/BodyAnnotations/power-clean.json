@@ -1,0 +1,60 @@
+{
+  "slug": "power-clean",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "hip-up",
+      "from": {
+        "x": 0.21,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "hinge",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.power-clean.annotation.hinge",
+      "color": "primary"
+    },
+    {
+      "id": "drive",
+      "position": {
+        "x": 0.2,
+        "y": 0.55
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.power-clean.annotation.drive",
+      "color": "info"
+    },
+    {
+      "id": "rack",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.power-clean.annotation.rack",
+      "color": "info"
+    }
+  ]
+}

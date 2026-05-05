@@ -1,0 +1,33 @@
+{
+  "slug": "foam-roller-it-band",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.foam-roller-it-band.annotation.hip",
+      "color": "primary"
+    },
+    {
+      "id": "back",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.foam-roller-it-band.annotation.back",
+      "color": "info"
+    }
+  ]
+}

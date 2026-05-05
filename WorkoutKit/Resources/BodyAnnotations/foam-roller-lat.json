@@ -1,0 +1,33 @@
+{
+  "slug": "foam-roller-lat",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "lats",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.foam-roller-lat.annotation.lats",
+      "color": "primary"
+    },
+    {
+      "id": "spine",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.foam-roller-lat.annotation.spine",
+      "color": "info"
+    }
+  ]
+}

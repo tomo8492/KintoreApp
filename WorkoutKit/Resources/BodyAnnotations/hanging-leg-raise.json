@@ -1,0 +1,47 @@
+{
+  "slug": "hanging-leg-raise",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "curl",
+      "from": {
+        "x": 0.2,
+        "y": 0.8400000000000001
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.hanging-leg-raise.annotation.core",
+      "color": "primary"
+    },
+    {
+      "id": "brace",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.hanging-leg-raise.annotation.brace",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "incline-push-up",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "descend",
+      "from": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "to": {
+        "x": 0.22,
+        "y": 0.31
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "body",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.incline-push-up.annotation.body",
+      "color": "success"
+    },
+    {
+      "id": "hand",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.incline-push-up.annotation.hand",
+      "color": "info"
+    },
+    {
+      "id": "core",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.incline-push-up.annotation.core",
+      "color": "info"
+    }
+  ]
+}

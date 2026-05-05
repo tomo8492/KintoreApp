@@ -1,0 +1,47 @@
+{
+  "slug": "archer-pull-up",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "up",
+      "from": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "to": {
+        "x": 0.79,
+        "y": 0.19
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "scap",
+      "position": {
+        "x": 0.74,
+        "y": 0.13
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.archer-pull-up.annotation.scap",
+      "color": "info"
+    },
+    {
+      "id": "lats",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.archer-pull-up.annotation.lats",
+      "color": "primary"
+    }
+  ]
+}

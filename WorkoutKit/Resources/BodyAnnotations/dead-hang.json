@@ -1,0 +1,33 @@
+{
+  "slug": "dead-hang",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "grip",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.dead-hang.annotation.grip",
+      "color": "primary"
+    },
+    {
+      "id": "scap",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.dead-hang.annotation.scap",
+      "color": "info"
+    }
+  ]
+}

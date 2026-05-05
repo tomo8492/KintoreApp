@@ -1,0 +1,33 @@
+{
+  "slug": "knee-to-chest",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.knee-to-chest.annotation.hip",
+      "color": "primary"
+    },
+    {
+      "id": "back",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.knee-to-chest.annotation.back",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "downward-dog-pedal",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "calf",
+      "position": {
+        "x": 0.78,
+        "y": 0.78
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.85
+      },
+      "labelKey": "form.downward-dog-pedal.annotation.calf",
+      "color": "primary"
+    },
+    {
+      "id": "ankle",
+      "position": {
+        "x": 0.78,
+        "y": 0.92
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.85
+      },
+      "labelKey": "form.downward-dog-pedal.annotation.ankle",
+      "color": "info"
+    }
+  ]
+}

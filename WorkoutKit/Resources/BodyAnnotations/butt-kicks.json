@@ -1,0 +1,47 @@
+{
+  "slug": "butt-kicks",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "swing",
+      "from": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "to": {
+        "x": 0.25,
+        "y": 0.62
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.butt-kicks.annotation.hip",
+      "color": "primary"
+    },
+    {
+      "id": "balance",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.butt-kicks.annotation.balance",
+      "color": "info"
+    }
+  ]
+}

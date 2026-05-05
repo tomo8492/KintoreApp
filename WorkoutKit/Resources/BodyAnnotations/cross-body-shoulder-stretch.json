@@ -1,0 +1,33 @@
+{
+  "slug": "cross-body-shoulder-stretch",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "shoulders",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.cross-body-shoulder-stretch.annotation.shoulders",
+      "color": "primary"
+    },
+    {
+      "id": "breathe",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.cross-body-shoulder-stretch.annotation.breathe",
+      "color": "info"
+    }
+  ]
+}

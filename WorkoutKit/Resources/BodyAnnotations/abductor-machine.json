@@ -1,0 +1,47 @@
+{
+  "slug": "abductor-machine",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "kick",
+      "from": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "to": {
+        "x": 0.8400000000000001,
+        "y": 0.46
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "squeeze",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.abductor-machine.annotation.squeeze",
+      "color": "primary"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.abductor-machine.annotation.torso",
+      "color": "info"
+    }
+  ]
+}

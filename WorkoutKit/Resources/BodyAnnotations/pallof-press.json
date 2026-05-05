@@ -1,0 +1,47 @@
+{
+  "slug": "pallof-press",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "press",
+      "from": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "to": {
+        "x": 0.32,
+        "y": 0.21
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brace",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.pallof-press.annotation.brace",
+      "color": "primary"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.pallof-press.annotation.torso",
+      "color": "info"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "nordic-hamstring-curl",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "curl",
+      "from": {
+        "x": 0.78,
+        "y": 0.78
+      },
+      "to": {
+        "x": 0.78,
+        "y": 0.58
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "ham",
+      "position": {
+        "x": 0.78,
+        "y": 0.58
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.nordic-hamstring-curl.annotation.ham",
+      "color": "primary"
+    },
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.nordic-hamstring-curl.annotation.hip",
+      "color": "info"
+    }
+  ]
+}

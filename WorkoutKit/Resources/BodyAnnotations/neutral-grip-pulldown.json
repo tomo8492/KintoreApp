@@ -1,0 +1,47 @@
+{
+  "slug": "neutral-grip-pulldown",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "pull-down",
+      "from": {
+        "x": 0.79,
+        "y": 0.17
+      },
+      "to": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "lats",
+      "position": {
+        "x": 0.79,
+        "y": 0.27
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.neutral-grip-pulldown.annotation.lats",
+      "color": "primary"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.neutral-grip-pulldown.annotation.torso",
+      "color": "success"
+    }
+  ]
+}

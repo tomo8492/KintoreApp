@@ -1,0 +1,33 @@
+{
+  "slug": "upper-back-stretch",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "neck",
+      "position": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.upper-back-stretch.annotation.neck",
+      "color": "primary"
+    },
+    {
+      "id": "shoulders",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.upper-back-stretch.annotation.shoulders",
+      "color": "info"
+    }
+  ]
+}

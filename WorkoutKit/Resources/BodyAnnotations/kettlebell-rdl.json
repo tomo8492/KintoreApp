@@ -1,0 +1,60 @@
+{
+  "slug": "kettlebell-rdl",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "hip-up",
+      "from": {
+        "x": 0.21,
+        "y": 0.5
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "back",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.kettlebell-rdl.annotation.back",
+      "color": "success"
+    },
+    {
+      "id": "hinge",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.kettlebell-rdl.annotation.hinge",
+      "color": "primary"
+    },
+    {
+      "id": "legs",
+      "position": {
+        "x": 0.2,
+        "y": 0.55
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.kettlebell-rdl.annotation.legs",
+      "color": "info"
+    }
+  ]
+}

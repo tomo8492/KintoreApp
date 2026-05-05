@@ -1,0 +1,60 @@
+{
+  "slug": "curtsy-lunge",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "step-down",
+      "from": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "to": {
+        "x": 0.15999999999999998,
+        "y": 0.53
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "knee",
+      "position": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.curtsy-lunge.annotation.knee",
+      "color": "info"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.curtsy-lunge.annotation.torso",
+      "color": "success"
+    },
+    {
+      "id": "balance",
+      "position": {
+        "x": 0.21,
+        "y": 0.33
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.curtsy-lunge.annotation.balance",
+      "color": "info"
+    }
+  ]
+}

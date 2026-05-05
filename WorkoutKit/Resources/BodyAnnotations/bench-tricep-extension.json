@@ -1,0 +1,47 @@
+{
+  "slug": "bench-tricep-extension",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "extend",
+      "from": {
+        "x": 0.83,
+        "y": 0.33999999999999997
+      },
+      "to": {
+        "x": 0.83,
+        "y": 0.24
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "elbow",
+      "position": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.bench-tricep-extension.annotation.elbow",
+      "color": "primary"
+    },
+    {
+      "id": "range",
+      "position": {
+        "x": 0.71,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.bench-tricep-extension.annotation.range",
+      "color": "info"
+    }
+  ]
+}

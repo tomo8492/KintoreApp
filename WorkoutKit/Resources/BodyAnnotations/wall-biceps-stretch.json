@@ -1,0 +1,33 @@
+{
+  "slug": "wall-biceps-stretch",
+  "view": "front",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "elbow",
+      "position": {
+        "x": 0.13,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.wall-biceps-stretch.annotation.elbow",
+      "color": "primary"
+    },
+    {
+      "id": "chest",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.wall-biceps-stretch.annotation.chest",
+      "color": "info"
+    }
+  ]
+}

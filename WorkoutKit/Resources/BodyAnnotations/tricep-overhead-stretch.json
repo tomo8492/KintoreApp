@@ -1,0 +1,33 @@
+{
+  "slug": "tricep-overhead-stretch",
+  "view": "back",
+  "arrows": [],
+  "annotations": [
+    {
+      "id": "elbow",
+      "position": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.tricep-overhead-stretch.annotation.elbow",
+      "color": "primary"
+    },
+    {
+      "id": "shoulders",
+      "position": {
+        "x": 0.71,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.tricep-overhead-stretch.annotation.shoulders",
+      "color": "info"
+    }
+  ]
+}

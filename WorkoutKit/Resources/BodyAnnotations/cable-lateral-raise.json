@@ -1,0 +1,47 @@
+{
+  "slug": "cable-lateral-raise",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "raise",
+      "from": {
+        "x": 0.1,
+        "y": 0.4
+      },
+      "to": {
+        "x": 0.05,
+        "y": 0.2
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "delt",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.cable-lateral-raise.annotation.delt",
+      "color": "primary"
+    },
+    {
+      "id": "trap",
+      "position": {
+        "x": 0.74,
+        "y": 0.13
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.cable-lateral-raise.annotation.trap",
+      "color": "warning"
+    }
+  ]
+}

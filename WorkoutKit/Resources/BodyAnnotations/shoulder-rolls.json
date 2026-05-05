@@ -1,0 +1,47 @@
+{
+  "slug": "shoulder-rolls",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "rotate",
+      "from": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "to": {
+        "x": 0.27,
+        "y": 0.1
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "neck",
+      "position": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.1
+      },
+      "labelKey": "form.shoulder-rolls.annotation.neck",
+      "color": "primary"
+    },
+    {
+      "id": "shoulders",
+      "position": {
+        "x": 0.27,
+        "y": 0.18
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.shoulder-rolls.annotation.shoulders",
+      "color": "info"
+    }
+  ]
+}

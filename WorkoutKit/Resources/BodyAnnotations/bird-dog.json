@@ -1,0 +1,47 @@
+{
+  "slug": "bird-dog",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "extend",
+      "from": {
+        "x": 0.8200000000000001,
+        "y": 0.46
+      },
+      "to": {
+        "x": 0.75,
+        "y": 0.27
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "core",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.bird-dog.annotation.core",
+      "color": "primary"
+    },
+    {
+      "id": "alignment",
+      "position": {
+        "x": 0.78,
+        "y": 0.46
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.65
+      },
+      "labelKey": "form.bird-dog.annotation.alignment",
+      "color": "success"
+    }
+  ]
+}

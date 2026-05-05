@@ -1,0 +1,60 @@
+{
+  "slug": "landmine-squat",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "hip-down",
+      "from": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "to": {
+        "x": 0.21,
+        "y": 0.55
+      },
+      "curve": "straight",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "knee",
+      "position": {
+        "x": 0.2,
+        "y": 0.66
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.landmine-squat.annotation.knee",
+      "color": "info"
+    },
+    {
+      "id": "torso",
+      "position": {
+        "x": 0.22,
+        "y": 0.21
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.1
+      },
+      "labelKey": "form.landmine-squat.annotation.torso",
+      "color": "success"
+    },
+    {
+      "id": "hip",
+      "position": {
+        "x": 0.21,
+        "y": 0.45
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.landmine-squat.annotation.hip",
+      "color": "info"
+    }
+  ]
+}

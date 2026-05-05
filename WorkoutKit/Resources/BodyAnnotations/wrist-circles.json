@@ -1,0 +1,34 @@
+{
+  "slug": "wrist-circles",
+  "view": "front",
+  "arrows": [
+    {
+      "id": "rotate",
+      "from": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "to": {
+        "x": 0.04,
+        "y": 0.43
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "wrist",
+      "position": {
+        "x": 0.08,
+        "y": 0.43
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.65
+      },
+      "labelKey": "form.wrist-circles.annotation.wrist",
+      "color": "primary"
+    }
+  ]
+}

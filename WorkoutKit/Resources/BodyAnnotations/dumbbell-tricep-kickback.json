@@ -1,0 +1,47 @@
+{
+  "slug": "dumbbell-tricep-kickback",
+  "view": "back",
+  "arrows": [
+    {
+      "id": "extend",
+      "from": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "to": {
+        "x": 0.88,
+        "y": 0.38
+      },
+      "curve": "curved",
+      "color": "primary"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "elbow",
+      "position": {
+        "x": 0.83,
+        "y": 0.3
+      },
+      "labelAnchor": {
+        "x": 0.04,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-tricep-kickback.annotation.elbow",
+      "color": "warning"
+    },
+    {
+      "id": "hinge",
+      "position": {
+        "x": 0.77,
+        "y": 0.42
+      },
+      "labelAnchor": {
+        "x": 0.98,
+        "y": 0.35
+      },
+      "labelKey": "form.dumbbell-tricep-kickback.annotation.hinge",
+      "color": "info"
+    }
+  ]
+}
