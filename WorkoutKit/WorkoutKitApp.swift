@@ -62,7 +62,7 @@ struct WorkoutKitApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            rootContent
                 .environment(\.appDependency, dependency)
                 .preferredColorScheme(currentTheme.colorScheme)
                 .task {
@@ -79,6 +79,24 @@ struct WorkoutKitApp: App {
                 }
         }
         .modelContainer(modelContainer)
+    }
+
+    /// sample/2d-lottie-prototype: 環境変数 `WK_LOTTIE_GALLERY=1` のときのみ
+    /// 5 種目の ExerciseAnimationView を縦に並べた DEBUG ギャラリーを表示する。
+    /// `xcrun simctl launch` で渡すには `SIMCTL_CHILD_WK_LOTTIE_GALLERY=1` を
+    /// 親プロセスにセットする(CommandLine.arguments は simctl が自身の引数として
+    /// パースし得るため、env var を使う方が安定する)。
+    @ViewBuilder
+    private var rootContent: some View {
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["WK_LOTTIE_GALLERY"] == "1" {
+            LottieGalleryDebugView()
+        } else {
+            RootView()
+        }
+        #else
+        RootView()
+        #endif
     }
 
     private var currentTheme: ThemePreference {

@@ -32,6 +32,15 @@ configFiles:
   Beta: Config/Beta.xcconfig
   Release: Config/Release.xcconfig
 
+# SwiftPM 依存。
+# Lottie: 2D Lottie アニメサンプル (sample/2d-lottie-prototype) のため追加。
+#   - ANIMATION_RESEARCH.md 第一推奨 (A) LottieFiles + lottie-ios。
+#   - License: Apache 2.0 (Airbnb)。THIRD_PARTY_NOTICES.md に記載。
+packages:
+  Lottie:
+    url: https://github.com/airbnb/lottie-ios
+    from: 4.5.0
+
 # 設定ファイル群と README を Xcode 上のグループとして見せる。
 fileGroups:
   - Config
@@ -79,6 +88,9 @@ targets:
     dependencies:
       # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
       - target: WorkoutKitLiveActivity
+      # Lottie 2D アニメ (sample/2d-lottie-prototype)。
+      - package: Lottie
+        product: Lottie
     scheme:
       testTargets:
         - WorkoutKitTests
@@ -169,6 +181,9 @@ targets:
           - "**/.gitkeep"
     dependencies:
       - target: WorkoutKit
+      # LottieSnapshotTests が `import Lottie` を使うためテスト対象にもリンクする。
+      - package: Lottie
+        product: Lottie
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
