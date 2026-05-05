@@ -37,7 +37,7 @@ WorkoutKit の **上位 50 種目** のフォーム解説イラストを Mac (Ap
 
 - App Store 配布 = 完全無料 / 公証済み / アンチウイルス警告なし
 - Apple Silicon 専用最適化(Core ML / Metal)で他より高速
-- **ローカル HTTP API**(`gRPC` / `JSON`)を内蔵 → スクリプトから直叩き可能
+- **ローカル HTTP API**(`/sdapi/v1/txt2img` を実装、A1111 風の JSON 入出力)を内蔵 → スクリプトから直叩き可能
 - モデル/ LoRA / ControlNet を GUI で導入可能
 - 生成画像のメタデータに seed と prompt が自動埋め込み
 
@@ -50,9 +50,9 @@ WorkoutKit の **上位 50 種目** のフォーム解説イラストを Mac (Ap
 3. 推奨 LoRA(イラストスタイル統一用):
    - 「Isometric Future」または「Flat Illustration XL」(検索 → DL)
    - ※ ライセンスは商用 OK のものを必ず選ぶ(Creative ML OpenRAIL-M / Apache-2.0 など)
-4. `Settings ▸ Server` を開いて **HTTP API を有効化**
-   - Bind `127.0.0.1:7860`(既定)
-   - `Allow remote connections: OFF` のまま(セキュリティ上重要)
+4. 左サイドバー **Advanced ▸ API Server** を開いて **API Server を有効化**
+   - Protocol: `HTTP` / Port: `7860` / IP: `localhost` のまま(セキュリティ上重要)
+   - 旧バージョンでは `Settings ▸ Server` だが現行は Advanced タブ配下
 
 ### 2.2 動作確認
 
@@ -69,11 +69,25 @@ Seed:    42
 
 ### 2.3 API 動作確認
 
+Draw Things の API は **A1111 完全互換ではない**。`/sdapi/v1/sd-models` などは
+未実装(404)で、現行設定の取得は `/` か `/sdapi/v1/options` を使う:
+
 ```bash
-curl -s http://127.0.0.1:7860/sdapi/v1/sd-models | head -c 200
+# 起動確認: 現在のモデル名・解像度などが JSON で返れば OK
+curl -s http://127.0.0.1:7860/sdapi/v1/options | python3 -c \
+  "import sys,json; d=json.load(sys.stdin); print('model=',d.get('model'),'size=',d.get('width'),'x',d.get('height'))"
+
+# 生成確認: 1024×1024 / 28 steps で 1〜4 分かかる(M2 16GB の実測 251s)
+curl -s -m 600 -X POST http://127.0.0.1:7860/sdapi/v1/txt2img \
+  -H 'Content-Type: application/json' \
+  -d '{"prompt":"isometric cube","steps":4,"width":256,"height":256,"seed":1}' \
+  -o /tmp/dt.json && python3 -c \
+  "import json,base64; d=json.load(open('/tmp/dt.json')); open('/tmp/dt.png','wb').write(base64.b64decode(d['images'][0]))"
 ```
 
-200 文字程度の JSON が返れば API は生きている。
+txt2img の payload は A1111 風(`prompt` / `negative_prompt` / `sampler_name` /
+`steps` / `cfg_scale` / `width` / `height` / `seed`)。`sampler_name` に無効値
+を渡すと 422 と一緒に有効値の一覧が返る。
 
 ---
 
@@ -154,6 +168,8 @@ tools/sd-batch/
 | 症状 | 原因 / 対処 |
 |---|---|
 | `connection refused` | Draw Things が起動していない / API が無効 |
+| healthcheck で 404 | `/sdapi/v1/sd-models` を叩いていないか確認(Draw Things 未実装)。`generate.py` は `/sdapi/v1/options` を使用 |
+| 422 + `Invalid value for sampler_name` | レスポンスの `detail` に有効サンプラー一覧がある。先頭の `DPM++ 2M Karras` が無難 |
 | 生成時間が極端に遅い(M2 で 1 分超) | モデルが SD 1.5 / FP32 になっていないか確認(SDXL FP16 推奨) |
 | 同一 seed なのに毎回違う絵 | サンプラーが `Karras` 系か再確認、CFG / Steps を固定 |
 | 体型がバラバラ | `style-guide.md` のキャラクター設定をプロンプト先頭に固定 |

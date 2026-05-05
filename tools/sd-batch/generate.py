@@ -10,7 +10,10 @@ Top-50 種目のフォーム解説イラストを 1 枚ずつ生成し、
     Pillow >= 10.0    (``pip install Pillow``)  ← 任意。インストール済みなら検証に使う
 
 バックエンド:
-    ``--backend drawthings`` (既定)  Draw Things の HTTP API (Automatic1111 互換)
+    ``--backend drawthings`` (既定)  Draw Things のローカル HTTP API
+        - txt2img の payload は Automatic1111 風(prompt/sampler_name/cfg_scale 等)
+        - だが ``/sdapi/v1/sd-models`` などは未実装(A1111 完全互換ではない)
+        - healthcheck は ``/sdapi/v1/options`` を使う(``DrawThingsBackend`` 参照)
     ``--backend diffusers``           HuggingFace Diffusers + MPS
 
 参考: ``style-guide.md`` がプロンプト規約の唯一の正。
@@ -145,12 +148,36 @@ def build_negative_prompt(spec: ExerciseSpec) -> str:
 
 
 # ---------------------------------------------------------------------------
-# バックエンド: Draw Things (Automatic1111 互換 HTTP API)
+# バックエンド: Draw Things (HTTP API)
 # ---------------------------------------------------------------------------
+#
+# Draw Things の API は **Automatic1111 風** の `/sdapi/v1/txt2img` を持つが、
+# 完全互換ではない。実機で確認した挙動:
+#
+#   - GET  /                     -> 200, 現在の生成設定を JSON で返す(独自スキーマ)
+#   - GET  /sdapi/v1/options     -> 200, 上と同じく現在の生成設定を返す
+#   - POST /sdapi/v1/txt2img     -> 200, {"images": ["<base64 PNG>"]} を返す
+#                                   payload は A1111 風(prompt/negative_prompt/
+#                                   sampler_name/steps/cfg_scale/width/height/seed)
+#                                   1024×1024 / steps=28 で 30〜120s 程度
+#   - GET  /sdapi/v1/sd-models   -> 404 ★ A1111 では 200。healthcheck で誤爆する
+#   - GET  /sdapi/v1/samplers    -> 404
+#   - GET  /docs, /openapi.json  -> 404 (OpenAPI 公開なし)
+#
+#   sampler_name の有効値は POST 時に invalid を投げると 422 で一覧が返る:
+#     DPM++ 2M Karras / Euler a / DDIM / PLMS / DPM++ SDE Karras / UniPC /
+#     LCM / Euler A Substep / DPM++ SDE Substep / TCD / Euler A Trailing /
+#     DPM++ SDE Trailing / DPM++ 2M AYS / Euler A AYS / DPM++ SDE AYS /
+#     DPM++ 2M Trailing / DDIM Trailing / UniPC Trailing / ...
+#
+# つまり txt2img の payload は A1111 互換、healthcheck は別エンドポイントで
+# 行う必要がある(これが本書き直しの主因)。
 
 
 class DrawThingsBackend:
     """Draw Things が listen している sdapi/v1/txt2img を叩く."""
+
+    HEALTH_PATH = "/sdapi/v1/options"  # /sdapi/v1/sd-models は Draw Things で 404
 
     def __init__(self, api_url: str, timeout: int = 600) -> None:
         self.api_url = api_url.rstrip("/")
@@ -164,16 +191,27 @@ class DrawThingsBackend:
         self._requests = __import__("requests")
 
     def healthcheck(self) -> None:
-        url = f"{self.api_url}/sdapi/v1/sd-models"
+        url = f"{self.api_url}{self.HEALTH_PATH}"
         try:
             r = self._requests.get(url, timeout=10)
             r.raise_for_status()
         except Exception as exc:
             raise RuntimeError(
                 f"Draw Things API に接続できない({url}): {exc}\n"
-                "  - Draw Things を起動 / Settings ▸ Server で API を有効化したか確認"
+                "  - Draw Things を起動したか\n"
+                "  - 左サイドバーの Advanced ▸ API Server で\n"
+                "    Protocol=HTTP / Port=7860 / IP=localhost を有効化したか確認"
             ) from exc
-        logger.info("Draw Things API OK (%s)", url)
+        # 返ってくる JSON はモデル名や解像度などの現在設定。中身は使わないが、
+        # 期待した形になっているかだけ軽く確認しておく。
+        try:
+            options = r.json()
+        except ValueError as exc:
+            raise RuntimeError(
+                f"healthcheck: レスポンスが JSON でない({url})"
+            ) from exc
+        model = options.get("model") if isinstance(options, dict) else None
+        logger.info("Draw Things API OK (%s, model=%s)", url, model)
 
     def txt2img(
         self,
@@ -188,12 +226,29 @@ class DrawThingsBackend:
             **DEFAULT_PARAMS,
         }
         url = f"{self.api_url}/sdapi/v1/txt2img"
-        r = self._requests.post(url, json=payload, timeout=self.timeout)
-        r.raise_for_status()
+        try:
+            r = self._requests.post(url, json=payload, timeout=self.timeout)
+        except self._requests.exceptions.Timeout as exc:
+            raise RuntimeError(
+                f"txt2img タイムアウト({self.timeout}s)。"
+                "Draw Things 側の生成が steps/解像度に対して重すぎる可能性。"
+            ) from exc
+
+        # Draw Things は不正パラメータで 422 を返し、detail に有効値を入れてくれる。
+        # raise_for_status だと内容が握り潰されるので先に拾う。
+        if r.status_code >= 400:
+            try:
+                err = r.json()
+            except ValueError:
+                err = {"raw": r.text[:500]}
+            raise RuntimeError(
+                f"Draw Things が {r.status_code} を返した: {err}"
+            )
+
         data = r.json()
         images = data.get("images") or []
         if not images:
-            raise RuntimeError(f"API がイメージを返さなかった: {data}")
+            raise RuntimeError(f"API がイメージを返さなかった: keys={list(data)}")
         return base64.b64decode(images[0])
 
 
