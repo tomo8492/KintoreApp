@@ -31,7 +31,22 @@ struct HistoryListView: View {
     let onSelect: (WorkoutSession) -> Void
     let onShowAllRequested: () -> Void
 
-    @State private var sortOrder: SortOrder = .newest
+    /// 並び順は `@AppStorage` で永続化(セッション間で記憶)。
+    /// rawValue は `SortOrder` の `"newest"` / `"oldest"`。未設定時は newest。
+    @AppStorage(SettingsKey.historySortOrder) private var sortOrderRaw: String = SortOrder.newest.rawValue
+
+    private var sortOrder: SortOrder {
+        get { SortOrder(rawValue: sortOrderRaw) ?? .newest }
+        nonmutating set { sortOrderRaw = newValue.rawValue }
+    }
+
+    /// Picker から SortOrder を直接 binding したいので AppStorage の文字列とブリッジする。
+    private var sortOrderBinding: Binding<SortOrder> {
+        Binding(
+            get: { sortOrder },
+            set: { sortOrderRaw = $0.rawValue }
+        )
+    }
 
     var body: some View {
         Group {
@@ -94,7 +109,7 @@ struct HistoryListView: View {
 
     private var sortPickerSection: some View {
         Section {
-            Picker("history.list.sort", selection: $sortOrder) {
+            Picker("history.list.sort", selection: sortOrderBinding) {
                 ForEach(SortOrder.allCases) { order in
                     Text(order.titleKey).tag(order)
                 }

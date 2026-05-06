@@ -11,6 +11,9 @@ enum SettingsKey {
     static let weightUnit = "settings.weightUnit"
     /// テーマ。値は `ThemePreference.rawValue` ("system" / "light" / "dark")。
     static let theme = "settings.theme"
+    /// 履歴リストの並び順。値は `HistoryListView.SortOrder.rawValue`("newest" / "oldest")。
+    /// セッション間で記憶する。Settings 画面には出さず、履歴画面の Picker からのみ更新。
+    static let historySortOrder = "history.sortOrder"
 }
 
 /// アプリの外観。Settings で切替、Scene ルートに `.preferredColorScheme(_:)` で適用。
