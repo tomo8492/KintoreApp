@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.cable-lateral-raise.annotation.delt",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "trap",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.cable-lateral-raise.annotation.trap",
-      "color": "warning"
+      "color": "warning",
+      "side": "back"
     }
   ]
 }

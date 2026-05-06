@@ -14,7 +14,8 @@
         "y": 0.65
       },
       "labelKey": "form.prayer-stretch.annotation.wrist",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "grip",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.prayer-stretch.annotation.grip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

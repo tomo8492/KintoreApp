@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.push-press.annotation.dip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "drive",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.push-press.annotation.drive",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

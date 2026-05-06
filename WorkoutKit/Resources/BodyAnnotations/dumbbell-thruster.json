@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-thruster.annotation.drive",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "press",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.dumbbell-thruster.annotation.press",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "core",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-thruster.annotation.core",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

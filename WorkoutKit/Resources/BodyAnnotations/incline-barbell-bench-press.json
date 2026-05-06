@@ -28,20 +28,22 @@
         "y": 0.1
       },
       "labelKey": "form.incline-barbell-bench-press.annotation.upper",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "scap",
       "position": {
-        "x": 0.27,
-        "y": 0.18
+        "x": 0.74,
+        "y": 0.13
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.1
       },
       "labelKey": "form.incline-barbell-bench-press.annotation.scap",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

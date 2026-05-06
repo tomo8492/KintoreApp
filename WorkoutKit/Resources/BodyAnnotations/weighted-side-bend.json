@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.weighted-side-bend.annotation.twist",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.weighted-side-bend.annotation.torso",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

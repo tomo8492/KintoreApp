@@ -14,7 +14,8 @@
         "y": 0.1
       },
       "labelKey": "form.hollow-body-hold.annotation.neck",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "core",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.hollow-body-hold.annotation.core",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -40,7 +42,8 @@
         "y": 0.65
       },
       "labelKey": "form.hollow-body-hold.annotation.hip",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

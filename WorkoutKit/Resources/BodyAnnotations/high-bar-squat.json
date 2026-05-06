@@ -28,7 +28,8 @@
         "y": 0.65
       },
       "labelKey": "form.high-bar-squat.annotation.knee",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.high-bar-squat.annotation.torso",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.high-bar-squat.annotation.hip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

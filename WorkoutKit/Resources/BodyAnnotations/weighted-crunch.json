@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.weighted-crunch.annotation.range",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "neck",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.weighted-crunch.annotation.neck",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

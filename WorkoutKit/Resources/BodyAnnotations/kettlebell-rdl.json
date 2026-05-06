@@ -20,28 +20,30 @@
     {
       "id": "back",
       "position": {
-        "x": 0.22,
-        "y": 0.21
+        "x": 0.79,
+        "y": 0.27
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.1
       },
       "labelKey": "form.kettlebell-rdl.annotation.back",
-      "color": "success"
+      "color": "success",
+      "side": "back"
     },
     {
       "id": "hinge",
       "position": {
-        "x": 0.21,
-        "y": 0.45
+        "x": 0.77,
+        "y": 0.42
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.35
       },
       "labelKey": "form.kettlebell-rdl.annotation.hinge",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "legs",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.kettlebell-rdl.annotation.legs",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

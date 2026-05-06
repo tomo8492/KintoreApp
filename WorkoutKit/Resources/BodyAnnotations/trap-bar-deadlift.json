@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.trap-bar-deadlift.annotation.legs",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "back",
       "position": {
-        "x": 0.22,
-        "y": 0.21
+        "x": 0.79,
+        "y": 0.27
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.1
       },
       "labelKey": "form.trap-bar-deadlift.annotation.back",
-      "color": "success"
+      "color": "success",
+      "side": "back"
     }
   ]
 }

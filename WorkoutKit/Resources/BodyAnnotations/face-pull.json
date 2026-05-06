@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.face-pull.annotation.scap",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     }
   ]
 }

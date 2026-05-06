@@ -28,7 +28,8 @@
         "y": 0.65
       },
       "labelKey": "form.wrist-curl.annotation.grip",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

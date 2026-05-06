@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.plate-front-raise.annotation.front",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

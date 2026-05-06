@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.mountain-climber.annotation.core",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.mountain-climber.annotation.hip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

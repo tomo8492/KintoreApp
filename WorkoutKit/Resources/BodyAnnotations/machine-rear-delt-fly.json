@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.machine-rear-delt-fly.annotation.rear",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "scap",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.machine-rear-delt-fly.annotation.scap",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

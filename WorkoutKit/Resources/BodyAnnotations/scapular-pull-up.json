@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.scapular-pull-up.annotation.spine",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "breathe",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.scapular-pull-up.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

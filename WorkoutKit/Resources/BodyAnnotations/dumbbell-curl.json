@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-curl.annotation.elbow",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

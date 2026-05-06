@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.doorway-biceps-stretch.annotation.elbow",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "chest",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.doorway-biceps-stretch.annotation.chest",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

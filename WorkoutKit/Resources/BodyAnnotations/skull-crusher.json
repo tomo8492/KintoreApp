@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.skull-crusher.annotation.elbow",
-      "color": "warning"
+      "color": "warning",
+      "side": "back"
     }
   ]
 }

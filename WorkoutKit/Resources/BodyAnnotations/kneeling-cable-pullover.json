@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.kneeling-cable-pullover.annotation.lats",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "torso",
       "position": {
-        "x": 0.77,
-        "y": 0.42
+        "x": 0.22,
+        "y": 0.21
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.35
       },
       "labelKey": "form.kneeling-cable-pullover.annotation.torso",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

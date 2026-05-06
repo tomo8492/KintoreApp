@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.cable-crossover.annotation.range",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

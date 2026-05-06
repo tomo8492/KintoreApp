@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-shoulder-press.annotation.core",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "press",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.dumbbell-shoulder-press.annotation.press",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

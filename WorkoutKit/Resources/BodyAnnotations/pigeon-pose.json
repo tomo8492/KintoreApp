@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.pigeon-pose.annotation.hip",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.pigeon-pose.annotation.torso",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.standing-figure-four.annotation.hip",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "back",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.standing-figure-four.annotation.back",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

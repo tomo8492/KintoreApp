@@ -109,6 +109,7 @@
 		351AE9685CBF80B9BA0208F7 /* wrist-flexor-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 53CF8FC4AC672114FEA8A221 /* wrist-flexor-stretch.json */; };
 		3525551E91A0F90C8C32487D /* seated-lateral-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = 434B2C7F2D58FCA81D310B16 /* seated-lateral-raise.json */; };
 		3530F64A0EAB631553ADD85D /* lat-stretch-doorway.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E8131F29E7AF879682A4F1 /* lat-stretch-doorway.json */; };
+		3622245E817EE3FF0D302F50 /* BackSectionCuesScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E98BEF19944584BA60687 /* BackSectionCuesScreenshotTests.swift */; };
 		3622EC8C0950290EDE3B19A1 /* sofa-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A050FCDB4AAB75F2D584FD8 /* sofa-stretch.json */; };
 		36DB21F2BC9EFEDF2B5FD4ED /* interval-running.json in Resources */ = {isa = PBXBuildFile; fileRef = 29DDA554D9AD52D677D06D6E /* interval-running.json */; };
 		37F9A478C183E86AEA49B36F /* downward-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 196C21A1987E31B20328E7DE /* downward-dog.json */; };
@@ -880,6 +881,7 @@
 		C106CF0446AF147372BEC996 /* knee-to-wall-mobility.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "knee-to-wall-mobility.json"; sourceTree = "<group>"; };
 		C112AB3D3D9892F01C52B80E /* dumbbell-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "dumbbell-curl.json"; sourceTree = "<group>"; };
 		C2297B1A7ACC3A32D7626B06 /* barbell-bench-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "barbell-bench-press.json"; sourceTree = "<group>"; };
+		C28E98BEF19944584BA60687 /* BackSectionCuesScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackSectionCuesScreenshotTests.swift; sourceTree = "<group>"; };
 		C2B1DA3A41DEEED7B1403EE0 /* rowing-machine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "rowing-machine.json"; sourceTree = "<group>"; };
 		C3F225948B30B7A31C1B995F /* WorkoutKit.storekit */ = {isa = PBXFileReference; path = WorkoutKit.storekit; sourceTree = "<group>"; };
 		C5B1160A1B4CAA0CE7C34D19 /* machine-rear-delt-fly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "machine-rear-delt-fly.json"; sourceTree = "<group>"; };
@@ -1630,6 +1632,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
+				C28E98BEF19944584BA60687 /* BackSectionCuesScreenshotTests.swift */,
 				C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */,
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
@@ -2250,6 +2253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
+				3622245E817EE3FF0D302F50 /* BackSectionCuesScreenshotTests.swift in Sources */,
 				03E08C1496E339602DE7303F /* Body2RowBiggerLayoutScreenshotTests.swift in Sources */,
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,

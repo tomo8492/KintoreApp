@@ -28,12 +28,13 @@
         "y": 0.1
       },
       "labelKey": "form.barbell-shrug.annotation.trap",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "neck",
       "position": {
-        "x": 0.74,
+        "x": 0.22,
         "y": 0.1
       },
       "labelAnchor": {
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.barbell-shrug.annotation.neck",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

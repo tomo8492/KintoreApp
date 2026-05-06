@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.bench-tricep-extension.annotation.elbow",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "range",
       "position": {
-        "x": 0.71,
-        "y": 0.18
+        "x": 0.22,
+        "y": 0.21
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.1
       },
       "labelKey": "form.bench-tricep-extension.annotation.range",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

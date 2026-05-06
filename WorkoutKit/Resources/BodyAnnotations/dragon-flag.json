@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.dragon-flag.annotation.core",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "brace",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.dragon-flag.annotation.brace",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

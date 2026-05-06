@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.lat-stretch-doorway.annotation.lats",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "spine",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.lat-stretch-doorway.annotation.spine",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

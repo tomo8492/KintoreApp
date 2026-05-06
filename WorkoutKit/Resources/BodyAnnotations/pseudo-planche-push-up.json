@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.pseudo-planche-push-up.annotation.body",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "hand",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.pseudo-planche-push-up.annotation.hand",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "core",
@@ -54,7 +56,8 @@
         "y": 0.65
       },
       "labelKey": "form.pseudo-planche-push-up.annotation.core",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

@@ -28,7 +28,8 @@
         "y": 0.85
       },
       "labelKey": "form.ankle-circles.annotation.ankle",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

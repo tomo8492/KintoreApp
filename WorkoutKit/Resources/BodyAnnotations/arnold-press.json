@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.arnold-press.annotation.rotate",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

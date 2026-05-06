@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.seated-spinal-twist.annotation.twist",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "breathe",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.seated-spinal-twist.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

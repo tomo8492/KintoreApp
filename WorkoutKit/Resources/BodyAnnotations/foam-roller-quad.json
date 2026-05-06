@@ -14,7 +14,8 @@
         "y": 0.65
       },
       "labelKey": "form.foam-roller-quad.annotation.knee",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.foam-roller-quad.annotation.hip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

@@ -14,7 +14,8 @@
         "y": 0.85
       },
       "labelKey": "form.knee-to-wall-mobility.annotation.calf",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "ankle",
@@ -27,7 +28,8 @@
         "y": 0.85
       },
       "labelKey": "form.knee-to-wall-mobility.annotation.ankle",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

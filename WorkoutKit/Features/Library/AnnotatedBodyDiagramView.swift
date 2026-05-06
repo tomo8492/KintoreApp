@@ -48,12 +48,23 @@ struct AnnotatedBodyDiagramView: View {
 
     // MARK: - Cue partitioning
 
+    /// `side` フィールドが指定されていればそれを優先する。
+    /// 旧フォーマット(side 無し)は position.x で推定(0.5 未満で front)。
+    /// この二段ロジックがあれば、後付けで side を追加した既存 JSON も
+    /// 古いダウンロード版と矛盾しない。
     private var frontCues: [AnnotationLabel] {
-        annotation?.annotations.filter { $0.position.x < 0.5 } ?? []
+        annotation?.annotations.filter { isFront($0) } ?? []
     }
 
     private var backCues: [AnnotationLabel] {
-        annotation?.annotations.filter { $0.position.x >= 0.5 } ?? []
+        annotation?.annotations.filter { !isFront($0) } ?? []
+    }
+
+    private func isFront(_ cue: AnnotationLabel) -> Bool {
+        if let side = cue.side {
+            return side == .front
+        }
+        return cue.position.x < 0.5
     }
 
     // MARK: - Accessibility

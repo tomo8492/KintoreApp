@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.cable-fly.annotation.squeeze",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

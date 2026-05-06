@@ -28,7 +28,8 @@
         "y": 0.65
       },
       "labelKey": "form.leg-extension.annotation.knee",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.leg-extension.annotation.hip",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

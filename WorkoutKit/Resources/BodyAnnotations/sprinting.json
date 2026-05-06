@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.sprinting.annotation.legs",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "breathe",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.sprinting.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

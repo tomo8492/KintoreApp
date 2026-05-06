@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.hip-abduction-machine.annotation.squeeze",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "torso",
       "position": {
-        "x": 0.77,
-        "y": 0.42
+        "x": 0.22,
+        "y": 0.21
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.1
       },
       "labelKey": "form.hip-abduction-machine.annotation.torso",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

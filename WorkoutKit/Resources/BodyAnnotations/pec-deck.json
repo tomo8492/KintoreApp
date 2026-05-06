@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.pec-deck.annotation.elbow",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "squeeze",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.pec-deck.annotation.squeeze",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }
