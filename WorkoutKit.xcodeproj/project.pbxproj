@@ -94,6 +94,7 @@
 		2A4E2FAA61CCCDAA14821E47 /* scapular-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 3921EF9DD97BB09AB8A4D5D3 /* scapular-stretch.json */; };
 		2C89163964B0C51BC4BF4401 /* box-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 8796C7723B5FA0DBAF40812D /* box-squat.json */; };
 		2C991A36BE9F1E1428F11501 /* happy-baby-pose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB375F11970F70DCBBCAE92 /* happy-baby-pose.json */; };
+		2E73DA7DF972B227AAD2530D /* SessionStore+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A899807213D97343BBB43D /* SessionStore+Actions.swift */; };
 		2F1F97207A5F31E28DB58B00 /* figure-four-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 2539FA93FEC5DF43190C3DB3 /* figure-four-stretch.json */; };
 		2F6DD897114C13B90DE803C7 /* leg-extension.json in Resources */ = {isa = PBXBuildFile; fileRef = BD5F65C7C5481D16489B4EA3 /* leg-extension.json */; };
 		3096C813D151BF6B3A8FACB7 /* neutral-grip-pulldown.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CC73E6C5E00AA7698C432EA /* neutral-grip-pulldown.json */; };
@@ -375,6 +376,7 @@
 		C09B3180EE025971F44FC141 /* kettlebell-swing.json in Resources */ = {isa = PBXBuildFile; fileRef = B10BC274F5D2A4B73DCA502D /* kettlebell-swing.json */; };
 		C182D403B326031E7BD7CF4A /* MechanicsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F056756B51E92D73C65AAE /* MechanicsType.swift */; };
 		C1A40E0906E31DAEE8C7027B /* wall-biceps-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = 2786DFAAE0A359A0509B1B68 /* wall-biceps-stretch.json */; };
+		C1D53D3A201826C25FE083AC /* PaywallLegalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF671FE60F1F54F3F38139 /* PaywallLegalSection.swift */; };
 		C33052067D1298A60EEBF779 /* TemplateSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783370FDF3840CDB63A0C87E /* TemplateSeeder.swift */; };
 		C42A895B1321BA1DB3614B78 /* preacher-machine-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = F7BEBD77DF3BB9E061EEAFDB /* preacher-machine-curl.json */; };
 		C6FF16D65A2DB32E36FBC56D /* l-sit.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C54911F930E4D39BAA519 /* l-sit.json */; };
@@ -448,6 +450,7 @@
 		E79F723B7E780F91ABD3E867 /* incline-push-up.json in Resources */ = {isa = PBXBuildFile; fileRef = B483788D6529316D7291B103 /* incline-push-up.json */; };
 		E869278A36F0893A332437B7 /* wrist-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E3ABE136A89F5D1A8C58EAA /* wrist-curl.json */; };
 		E949182A6C5FA1AF8DA0405E /* cable-fly.json in Resources */ = {isa = PBXBuildFile; fileRef = AB06CB21DC27AF12301C7DEE /* cable-fly.json */; };
+		E98BDE1BA393207E7771D854 /* ProFeature+Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63087EC2AC068AA3238F6FFA /* ProFeature+Paywall.swift */; };
 		E9B0C5EDC06A058264D48B79 /* wide-pull-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C257F2DAB7D0566B9E9E45D /* wide-pull-up.json */; };
 		E9DCE6522077158547441F78 /* JSONImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4BEDF4E1F87C82DF5879A /* JSONImporter.swift */; };
 		E9E41EB1E69375822803D508 /* bench-tricep-extension.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E6EC94C78B8D7107FBA2557 /* bench-tricep-extension.json */; };
@@ -538,6 +541,7 @@
 		08865EABD77A5910AAFF790D /* gate-pose.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gate-pose.json"; sourceTree = "<group>"; };
 		08C4BE7912BE6D3B78E6CC25 /* stair-climber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "stair-climber.json"; sourceTree = "<group>"; };
 		0900F1C15DD4532CA770BB00 /* StoreKitClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitClientTests.swift; sourceTree = "<group>"; };
+		0ACF671FE60F1F54F3F38139 /* PaywallLegalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLegalSection.swift; sourceTree = "<group>"; };
 		0BEBF287EC6F1DE5A38D68F4 /* crab-walk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "crab-walk.json"; sourceTree = "<group>"; };
 		0C2F873539D2BAD5082422B0 /* single-arm-tricep-extension.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "single-arm-tricep-extension.json"; sourceTree = "<group>"; };
 		0C5A345F39C0A7CC004A8D8C /* pallof-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pallof-press.json"; sourceTree = "<group>"; };
@@ -701,6 +705,7 @@
 		6246B686F0C6FC98C067DD61 /* chin-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "chin-up.json"; sourceTree = "<group>"; };
 		62CA2A251BAFC3DFA72B1543 /* butt-kicks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "butt-kicks.json"; sourceTree = "<group>"; };
 		62FCDB0A72C9165B2C80A29E /* front-squat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "front-squat.json"; sourceTree = "<group>"; };
+		63087EC2AC068AA3238F6FFA /* ProFeature+Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProFeature+Paywall.swift"; sourceTree = "<group>"; };
 		630CE0964047BCA90B9435E0 /* one-arm-dumbbell-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "one-arm-dumbbell-press.json"; sourceTree = "<group>"; };
 		631953EAC021CF88B7A5979E /* hammer-rope-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hammer-rope-curl.json"; sourceTree = "<group>"; };
 		6319A9ACCE07BAE38D406AC1 /* sissy-squat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sissy-squat.json"; sourceTree = "<group>"; };
@@ -752,6 +757,7 @@
 		74E0B4CD73295AB849CF952D /* bird-dog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bird-dog.json"; sourceTree = "<group>"; };
 		76798E98783A1FBDB9AAA63D /* hip-abduction-machine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hip-abduction-machine.json"; sourceTree = "<group>"; };
 		768C2F4D01B295E5A5712EE4 /* weighted-pull-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "weighted-pull-up.json"; sourceTree = "<group>"; };
+		76A899807213D97343BBB43D /* SessionStore+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionStore+Actions.swift"; sourceTree = "<group>"; };
 		76BA7A22C6F701C50C2FD82D /* BuilderStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderStoreTests.swift; sourceTree = "<group>"; };
 		76DD160E1A09786BE58D277E /* seated-hamstring-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "seated-hamstring-stretch.json"; sourceTree = "<group>"; };
 		76FAE7CFDA9EEFBD5F627053 /* SessionLifecycleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLifecycleModifier.swift; sourceTree = "<group>"; };
@@ -1517,9 +1523,11 @@
 		78A597E2187D3AADADA08033 /* Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				0ACF671FE60F1F54F3F38139 /* PaywallLegalSection.swift */,
 				11BBF9DDC09DB98AD5EBF7C4 /* PaywallSections.swift */,
 				9DFA58D959E841E208E07800 /* PaywallTrigger.swift */,
 				F401FD200B0098AA1E1F4A05 /* PaywallView.swift */,
+				63087EC2AC068AA3238F6FFA /* ProFeature+Paywall.swift */,
 				087A9854EC9E574259111A5E /* ProFeatureGate.swift */,
 				0870F0485DF102A9BABD1CF4 /* ProPaywallPlaceholder.swift */,
 				724A5735C1A4C6D15C029A28 /* StoreKitClient.swift */,
@@ -1552,6 +1560,7 @@
 				65EF64BBE5F0735DBAB6E425 /* SessionPlan.swift */,
 				A890E82A1D7789AC46AAF497 /* SessionSetInputPanel.swift */,
 				6EE9CBBCD626EE7F9FEFE535 /* SessionStore.swift */,
+				76A899807213D97343BBB43D /* SessionStore+Actions.swift */,
 				6FB3AE9546B9789586B2289F /* SessionStore+Interval.swift */,
 				338BFD6D57F024D073E37695 /* SessionStore+LiveActivity.swift */,
 				17F4B5A6A130D41AF0D604CE /* SessionView.swift */,
@@ -2326,9 +2335,11 @@
 				17783EEF1034CB0701206D4C /* Muscle.swift in Sources */,
 				63EE1A25105FC34490831D2F /* MuscleStepView.swift in Sources */,
 				D8262A8065B9230B688A9832 /* OneRepMaxCalculator.swift in Sources */,
+				C1D53D3A201826C25FE083AC /* PaywallLegalSection.swift in Sources */,
 				42F1D3578EDDDFAFCABBB03D /* PaywallSections.swift in Sources */,
 				DEE63C92B51923137F89D782 /* PaywallTrigger.swift in Sources */,
 				F599E93361803A3E0735E676 /* PaywallView.swift in Sources */,
+				E98BDE1BA393207E7771D854 /* ProFeature+Paywall.swift in Sources */,
 				28ACD797B7E2125462C9D5D7 /* ProFeature.swift in Sources */,
 				B197593899E2624464637936 /* ProFeatureGate.swift in Sources */,
 				7A566EE31DF093D82773D994 /* ProPaywallPlaceholder.swift in Sources */,
@@ -2342,6 +2353,7 @@
 				004AD9F69140C99DF2079B35 /* SessionLiveActivityAttributes.swift in Sources */,
 				27488752EC5624AF44C8960D /* SessionPlan.swift in Sources */,
 				4107CE39AC3ABA3F131D3809 /* SessionSetInputPanel.swift in Sources */,
+				2E73DA7DF972B227AAD2530D /* SessionStore+Actions.swift in Sources */,
 				5E4E8D65ABAE2FE442C64FFF /* SessionStore+Interval.swift in Sources */,
 				3DAFF8320C7952D5C9C523EC /* SessionStore+LiveActivity.swift in Sources */,
 				BCB10006CFB3DC68416A3326 /* SessionStore.swift in Sources */,

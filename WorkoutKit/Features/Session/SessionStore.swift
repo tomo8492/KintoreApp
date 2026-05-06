@@ -5,6 +5,12 @@
 // - SwiftData の WorkoutSession / ExerciseSet を直接更新する(Repository 抽象は P2 で導入)。
 // - 重量は内部単位 kg、表示変換は View 側で UnitsFormatter を通す。
 // - C2 IntervalTimer / C3 Live Activity の差し込み口だけプロパティで開けておく。
+//
+// ファイル分割(CLAUDE.md「1 ファイル 300 行超で分割」):
+//   - 本ファイル: 宣言・state・両 init・derived・スナップショット・永続化ヘルパー
+//   - SessionStore+Actions.swift: completeCurrentSet / skip / replace / abort / finish
+//   - SessionStore+Interval.swift: IntervalTimer 連携
+//   - SessionStore+LiveActivity.swift: Live Activity 連携
 
 import Foundation
 import SwiftData
@@ -27,10 +33,10 @@ final class SessionStore {
 
     private(set) var sessionId: UUID
     private(set) var goal: Goal
-    private(set) var plan: [SessionPlanItem]
+    var plan: [SessionPlanItem]
     private(set) var resolvedExercises: [String: Exercise] = [:]
-    private(set) var completedSets: [ExerciseSet] = []
-    private(set) var status: Status = .running
+    var completedSets: [ExerciseSet] = []
+    var status: Status = .running
 
     var currentItemIndex: Int = 0
     var currentSetIndex: Int = 0
@@ -55,7 +61,7 @@ final class SessionStore {
 
     // MARK: - Dependencies
 
-    private let modelContext: ModelContext
+    let modelContext: ModelContext
     let intervalTimer: IntervalTimer
     /// C3: Live Activity への通知。nil ならテスト or 機能無効。
     let liveActivity: LiveActivityClient?
@@ -161,125 +167,29 @@ final class SessionStore {
         completedSets.filter { $0.exercise?.slug == item.slug }.count
     }
 
-    // MARK: - Actions: 完了
-
-    /// 現在セットを完了として確定し、次のカーソルに進める。
-    /// reps=0 / weight=0 でも記録は通す(時間ベース種目や bodyweight 用)。
-    func completeCurrentSet() {
-        guard status == .running, let item = currentItem else { return }
-
-        let exercise = resolvedExercises[item.slug]
-        let order = completedSets.count
-        let restSeconds = max(0, inputRestSeconds)
-        let set = ExerciseSet(
-            order: order,
-            sectionRaw: item.section.rawValue,
-            reps: max(0, inputReps),
-            weightKg: max(0, inputWeightKg),
-            rpe: inputRpe,
-            restSeconds: restSeconds,
-            completedAt: .now,
-            exercise: exercise
-        )
-        if let session = fetchSession() {
-            set.session = session
-            modelContext.insert(set)
-            persist()
-            completedSets.append(set)
-            onSetCompleted?(set)
-        } else {
-            Logger.session.error("completeCurrentSet: session not found id=\(self.sessionId, privacy: .public)")
-        }
-
-        advanceCursor()
-
-        // セッション終了後はカウントダウンを起動しない(直前 advanceCursor で finish 済の場合)。
-        if status == .running, restSeconds > 0 {
-            startIntervalCountdown(seconds: restSeconds)
-        }
-
-        // C3: セット完了 / 種目進行に合わせて Live Activity を更新する。
-        // finish() で end が呼ばれる場合は重複しないよう running 中のみ。
-        if status == .running {
-            updateLiveActivity()
-        }
-    }
-
-    /// 現在種目をスキップして次種目の最初のセットへ。残りセットは記録しない。
-    func skipCurrentExercise() {
-        guard status == .running, currentItem != nil else { return }
-        Logger.session.info("skipCurrentExercise at index=\(self.currentItemIndex)")
-        stopIntervalCountdown()
-        currentSetIndex = 0
-        if currentItemIndex < plan.count - 1 {
-            currentItemIndex += 1
-            updateLiveActivity()
-        } else {
-            finish()
-        }
-    }
-
-    /// 現在種目を別の Exercise に差し替える(B3 Choose / D1 Library 由来の選択肢を受ける)。
-    /// セット数は元のまま。slug 解決辞書は更新する。
-    func replaceCurrentExercise(with newExercise: Exercise) {
-        guard plan.indices.contains(currentItemIndex) else { return }
-        let oldSection = plan[currentItemIndex].section
-        let oldCount = plan[currentItemIndex].plannedSetCount
-        plan[currentItemIndex] = SessionPlanItem(
-            slug: newExercise.slug,
-            section: oldSection,
-            plannedSetCount: oldCount
-        )
-        resolvedExercises[newExercise.slug] = newExercise
-        currentSetIndex = 0
-        Logger.session.info("replaceCurrentExercise: -> \(newExercise.slug, privacy: .public)")
-        updateLiveActivity()
-    }
-
-    /// 「やめる」。finishedAt を打って status を aborted に。完了済みセットは残す。
-    func abort() {
-        guard status == .running else { return }
-        stopIntervalCountdown()
-        if let session = fetchSession() {
-            session.finishedAt = .now
-            persist()
-        }
-        status = .aborted
-        Logger.session.info("abort: id=\(self.sessionId, privacy: .public)")
-        endLiveActivity()
-    }
-
-    /// 全種目完了で呼ばれる。完了状態にして finishedAt を打つ。
-    func finish() {
-        guard status == .running else { return }
-        stopIntervalCountdown()
-        if let session = fetchSession() {
-            session.finishedAt = .now
-            persist()
-        }
-        status = .finished
-        Logger.session.info("finish: id=\(self.sessionId, privacy: .public), completedSets=\(self.completedSets.count)")
-        endLiveActivity()
-    }
-
-    // MARK: - Cursor advancement
-
-    private func advanceCursor() {
-        guard let item = currentItem else { return }
-        if currentSetIndex < item.plannedSetCount - 1 {
-            currentSetIndex += 1
-            return
-        }
-        // 種目内の最終セット完了 → 次種目へ
-        currentSetIndex = 0
-        if currentItemIndex < plan.count - 1 {
-            currentItemIndex += 1
-        } else {
-            finish()
-        }
-    }
-
     // MARK: - Persistence helpers
+    // SessionStore+Actions.swift から呼ばれるため、内部公開(internal)に開けている。
+    // ファイル外への公開はしないので extension の中にしか登場しない想定。
+
+    func replaceExercise(slug: String, with exercise: Exercise) {
+        resolvedExercises[slug] = exercise
+    }
+
+    func fetchSession() -> WorkoutSession? {
+        let id = sessionId
+        let descriptor = FetchDescriptor<WorkoutSession>(
+            predicate: #Predicate { $0.id == id }
+        )
+        return (try? modelContext.fetch(descriptor))?.first
+    }
+
+    func persist() {
+        do {
+            try modelContext.save()
+        } catch {
+            Logger.session.error("modelContext.save failed: \(error.localizedDescription, privacy: .public)")
+        }
+    }
 
     private func resolveExercises() throws {
         let slugs = Set(plan.map(\.slug))
@@ -294,22 +204,6 @@ final class SessionStore {
         if fetched.count != slugs.count {
             let missing = slugs.subtracting(fetched.map(\.slug))
             Logger.session.warning("resolveExercises: missing=\(missing.joined(separator: ","), privacy: .public)")
-        }
-    }
-
-    private func fetchSession() -> WorkoutSession? {
-        let id = sessionId
-        let descriptor = FetchDescriptor<WorkoutSession>(
-            predicate: #Predicate { $0.id == id }
-        )
-        return (try? modelContext.fetch(descriptor))?.first
-    }
-
-    private func persist() {
-        do {
-            try modelContext.save()
-        } catch {
-            Logger.session.error("modelContext.save failed: \(error.localizedDescription, privacy: .public)")
         }
     }
 }
