@@ -1,21 +1,21 @@
 // MARK: - AnnotatedBodyDiagramView
-// CLAUDE.md §1.1 F-02 強化版。CompactBodyDiagramView の上に
-// 「動作矢印 + 引き出し線付きアノテーション」をオーバーレイする
-// 表示専用 View。SD 写真が用意されない種目でも、本 View 1 つで
-// 動きと注意点が一目で分かるようにする。
+// CLAUDE.md §1.1 F-02 強化版・2 行レイアウト。
 //
-// 入力:
-//   - exercise: SwiftData の Exercise モデル(主筋/協働筋を取得)
-//   - annotation: ExerciseAnnotation? (= nil なら筋肉ハイライトのみ)
+// 仕様:
+//   - 1 行目: 「前面」セクション(タイトル + 半身図 + 番号付きキューリスト)
+//   - 2 行目: 「後面」セクション(同上)
+//   - 各 section は BodySectionView に委譲する。本 View はキューを
+//     position.x で振り分けるロジックだけを持つ。
 //
-// 描画レイヤ(背→前):
-//   1. CompactBodyDiagramView(従来の人体図 + 筋肉ハイライト)
-//   2. AnnotationArrowOverlay (Path)
-//   3. AnnotationLabelOverlay (引き出し線 + テキストカード)
+// データの取り扱い:
+//   - position.x < 0.5  → 前面セクション
+//   - position.x >= 0.5 → 後面セクション
+//   - 既存 BodyAnnotations/<slug>.json の `view` フィールドは参照しない
+//     (template によっては中央付近を使うケースがあり、x で判定するほうが堅牢)
 //
 // CLAUDE.md NG リスト:
-//   - print/force unwrap/.shared なし
 //   - 文字列は Localizable.xcstrings 経由(LocalizedStringKey)
+//   - print/force unwrap/.shared なし
 //   - View には @State / @Observable のみ(本 View は完全 stateless)
 
 import SwiftUI
@@ -25,36 +25,38 @@ struct AnnotatedBodyDiagramView: View {
     let secondaryMuscles: Set<Muscle>
     let annotation: ExerciseAnnotation?
 
-    private static let viewBoxAspect: CGFloat =
-        BodyHitZones.viewBox.width / BodyHitZones.viewBox.height
-
     var body: some View {
-        GeometryReader { proxy in
-            ZStack {
-                CompactBodyDiagramView(
-                    primaryMuscles: primaryMuscles,
-                    secondaryMuscles: secondaryMuscles
-                )
-
-                if let annotation {
-                    AnnotationArrowOverlay(
-                        arrows: annotation.arrows,
-                        canvasSize: proxy.size
-                    )
-                    AnnotationLabelOverlay(
-                        labels: annotation.annotations,
-                        canvasSize: proxy.size
-                    )
-                }
-            }
-            .frame(width: proxy.size.width, height: proxy.size.height)
+        VStack(alignment: .leading, spacing: 16) {
+            BodySectionView(
+                side: .front,
+                primaryMuscles: primaryMuscles,
+                secondaryMuscles: secondaryMuscles,
+                cues: frontCues
+            )
+            BodySectionView(
+                side: .back,
+                primaryMuscles: primaryMuscles,
+                secondaryMuscles: secondaryMuscles,
+                cues: backCues
+            )
         }
-        .aspectRatio(Self.viewBoxAspect, contentMode: .fit)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityLabel)
         .accessibilityAddTraits(.isImage)
     }
+
+    // MARK: - Cue partitioning
+
+    private var frontCues: [AnnotationLabel] {
+        annotation?.annotations.filter { $0.position.x < 0.5 } ?? []
+    }
+
+    private var backCues: [AnnotationLabel] {
+        annotation?.annotations.filter { $0.position.x >= 0.5 } ?? []
+    }
+
+    // MARK: - Accessibility
 
     private var accessibilityLabel: Text {
         if annotation == nil {
@@ -83,103 +85,75 @@ extension AnnotationColor {
     }
 }
 
-// MARK: - Preview
+// MARK: - Previews
 
 #Preview("Annotated - squat") {
-    let arrow = AnnotationArrow(
-        id: "hip-down",
-        from: AnnotationPoint(x: 0.21, y: 0.42),
-        to: AnnotationPoint(x: 0.21, y: 0.58),
-        curve: .straight,
-        color: .primary
-    )
     let knee = AnnotationLabel(
         id: "knee",
-        position: AnnotationPoint(x: 0.18, y: 0.62),
-        labelAnchor: AnnotationPoint(x: 0.02, y: 0.66),
+        position: AnnotationPoint(x: 0.20, y: 0.66),
+        labelAnchor: AnnotationPoint(x: 0.04, y: 0.65),
         labelKey: "form.barbell-back-squat.annotation.knee",
         color: .info
     )
     let back = AnnotationLabel(
         id: "back",
-        position: AnnotationPoint(x: 0.21, y: 0.30),
-        labelAnchor: AnnotationPoint(x: 0.55, y: 0.20),
+        position: AnnotationPoint(x: 0.22, y: 0.21),
+        labelAnchor: AnnotationPoint(x: 0.98, y: 0.10),
         labelKey: "form.barbell-back-squat.annotation.back",
         color: .success
+    )
+    let glute = AnnotationLabel(
+        id: "squeeze",
+        position: AnnotationPoint(x: 0.78, y: 0.46),
+        labelAnchor: AnnotationPoint(x: 0.98, y: 0.45),
+        labelKey: "form.barbell-back-squat.annotation.hip",
+        color: .primary
     )
     let annotation = ExerciseAnnotation(
         slug: "barbell-back-squat",
         view: .front,
-        arrows: [arrow],
-        annotations: [knee, back]
+        arrows: [],
+        annotations: [knee, back, glute]
     )
-
-    return AnnotatedBodyDiagramView(
-        primaryMuscles: [.quadriceps],
-        secondaryMuscles: [.glutes, .hamstrings, .lowerBack],
-        annotation: annotation
-    )
-    .padding()
+    return ScrollView {
+        AnnotatedBodyDiagramView(
+            primaryMuscles: [.quadriceps],
+            secondaryMuscles: [.glutes, .hamstrings, .lowerBack],
+            annotation: annotation
+        )
+        .padding()
+    }
 }
 
-#Preview("Annotated - plank (no arrows)") {
-    let neck = AnnotationLabel(
-        id: "neck",
-        position: AnnotationPoint(x: 0.21, y: 0.13),
-        labelAnchor: AnnotationPoint(x: 0.02, y: 0.05),
-        labelKey: "form.plank.annotation.neck",
+#Preview("Annotated - pull-up (back-only)") {
+    let scap = AnnotationLabel(
+        id: "scap",
+        position: AnnotationPoint(x: 0.74, y: 0.13),
+        labelAnchor: AnnotationPoint(x: 0.98, y: 0.10),
+        labelKey: "form.pull-up.annotation.scap",
         color: .info
     )
-    let core = AnnotationLabel(
-        id: "core",
-        position: AnnotationPoint(x: 0.21, y: 0.32),
-        labelAnchor: AnnotationPoint(x: 0.55, y: 0.40),
-        labelKey: "form.plank.annotation.core",
+    let lats = AnnotationLabel(
+        id: "lats",
+        position: AnnotationPoint(x: 0.79, y: 0.27),
+        labelAnchor: AnnotationPoint(x: 0.04, y: 0.35),
+        labelKey: "form.pull-up.annotation.lats",
         color: .primary
     )
     let annotation = ExerciseAnnotation(
-        slug: "plank",
-        view: .front,
+        slug: "pull-up",
+        view: .back,
         arrows: [],
-        annotations: [neck, core]
+        annotations: [scap, lats]
     )
-
-    return AnnotatedBodyDiagramView(
-        primaryMuscles: [.abs],
-        secondaryMuscles: [.obliques, .lowerBack, .deltoids],
-        annotation: annotation
-    )
-    .padding()
-}
-
-#Preview("Annotated - push-up") {
-    let down = AnnotationArrow(
-        id: "chest-down",
-        from: AnnotationPoint(x: 0.18, y: 0.20),
-        to: AnnotationPoint(x: 0.18, y: 0.30),
-        curve: .straight,
-        color: .primary
-    )
-    let body = AnnotationLabel(
-        id: "body",
-        position: AnnotationPoint(x: 0.21, y: 0.50),
-        labelAnchor: AnnotationPoint(x: 0.55, y: 0.55),
-        labelKey: "form.push-up.annotation.body",
-        color: .success
-    )
-    let annotation = ExerciseAnnotation(
-        slug: "push-up",
-        view: .front,
-        arrows: [down],
-        annotations: [body]
-    )
-
-    return AnnotatedBodyDiagramView(
-        primaryMuscles: [.chest],
-        secondaryMuscles: [.triceps, .deltoids, .abs],
-        annotation: annotation
-    )
-    .padding()
+    return ScrollView {
+        AnnotatedBodyDiagramView(
+            primaryMuscles: [.lats],
+            secondaryMuscles: [.biceps, .traps],
+            annotation: annotation
+        )
+        .padding()
+    }
 }
 
 #Preview("Annotated - fallback (no annotation)") {
