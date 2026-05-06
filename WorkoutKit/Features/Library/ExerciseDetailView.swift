@@ -88,7 +88,6 @@ struct ExerciseDetailView: View {
                 secondaryMuscles: Set(exercise.secondaryMuscles),
                 annotation: dependency.annotationLoader.load(slug: exercise.slug)
             )
-            .frame(maxHeight: 260)
         }
     }
 

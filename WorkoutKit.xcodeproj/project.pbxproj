@@ -14,6 +14,7 @@
 		02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */; };
 		02A7578DCCFBB39BBF669F6F /* air-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CE5D0AAFED6572A97B7469B /* air-squat.json */; };
 		0371A67CA5E35BAB2BB130D3 /* hammer-rope-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 631953EAC021CF88B7A5979E /* hammer-rope-curl.json */; };
+		03E08C1496E339602DE7303F /* Body2RowBiggerLayoutScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */; };
 		040C08A6C34714DD5473AA6D /* low-cable-fly.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D9337DAADB52BECA05B0B2A /* low-cable-fly.json */; };
 		0432EF1515EB85F1354F55A7 /* concentration-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 153FAA25B434A9044A71EE37 /* concentration-curl.json */; };
 		04AAA8C57EE6C09FCB26DFFE /* peterson-step-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EC80C805B3C6B3BFA9E93E9 /* peterson-step-up.json */; };
@@ -882,6 +883,7 @@
 		C2B1DA3A41DEEED7B1403EE0 /* rowing-machine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "rowing-machine.json"; sourceTree = "<group>"; };
 		C3F225948B30B7A31C1B995F /* WorkoutKit.storekit */ = {isa = PBXFileReference; path = WorkoutKit.storekit; sourceTree = "<group>"; };
 		C5B1160A1B4CAA0CE7C34D19 /* machine-rear-delt-fly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "machine-rear-delt-fly.json"; sourceTree = "<group>"; };
+		C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body2RowBiggerLayoutScreenshotTests.swift; sourceTree = "<group>"; };
 		C744CC8C19FD59441FCC1B72 /* shoulder-rolls.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "shoulder-rolls.json"; sourceTree = "<group>"; };
 		C81E63BF9C46C661ECF4FB8C /* incline-dumbbell-fly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "incline-dumbbell-fly.json"; sourceTree = "<group>"; };
 		C8594D61F7B26EBCD67507AA /* neck-rotation-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "neck-rotation-stretch.json"; sourceTree = "<group>"; };
@@ -1628,6 +1630,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
+				C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */,
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
 				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
@@ -2247,6 +2250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
+				03E08C1496E339602DE7303F /* Body2RowBiggerLayoutScreenshotTests.swift in Sources */,
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
 				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
