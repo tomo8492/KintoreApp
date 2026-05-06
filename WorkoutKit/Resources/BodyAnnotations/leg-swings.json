@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.leg-swings.annotation.hip",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "balance",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.leg-swings.annotation.balance",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

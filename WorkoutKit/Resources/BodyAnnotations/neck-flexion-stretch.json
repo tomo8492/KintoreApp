@@ -14,12 +14,13 @@
         "y": 0.1
       },
       "labelKey": "form.neck-flexion-stretch.annotation.neck",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "shoulders",
       "position": {
-        "x": 0.27,
+        "x": 0.71,
         "y": 0.18
       },
       "labelAnchor": {
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.neck-flexion-stretch.annotation.shoulders",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

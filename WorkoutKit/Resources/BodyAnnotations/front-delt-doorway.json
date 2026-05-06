@@ -6,7 +6,7 @@
     {
       "id": "shoulders",
       "position": {
-        "x": 0.27,
+        "x": 0.71,
         "y": 0.18
       },
       "labelAnchor": {
@@ -14,7 +14,8 @@
         "y": 0.1
       },
       "labelKey": "form.front-delt-doorway.annotation.shoulders",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "breathe",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.front-delt-doorway.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

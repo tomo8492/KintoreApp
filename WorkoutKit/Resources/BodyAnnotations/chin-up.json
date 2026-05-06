@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.chin-up.annotation.grip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "bicep",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.chin-up.annotation.bicep",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

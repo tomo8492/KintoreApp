@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.step-up.annotation.drive",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.step-up.annotation.torso",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

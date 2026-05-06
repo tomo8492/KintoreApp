@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.chest-supported-row.annotation.scap",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "hinge",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.chest-supported-row.annotation.hinge",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

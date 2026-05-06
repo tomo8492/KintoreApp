@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.cable-woodchopper.annotation.twist",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "back",
       "position": {
-        "x": 0.21,
-        "y": 0.33
+        "x": 0.79,
+        "y": 0.27
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.35
       },
       "labelKey": "form.cable-woodchopper.annotation.back",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

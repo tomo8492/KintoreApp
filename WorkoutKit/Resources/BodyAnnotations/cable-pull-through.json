@@ -20,41 +20,44 @@
     {
       "id": "hinge",
       "position": {
-        "x": 0.21,
-        "y": 0.45
+        "x": 0.77,
+        "y": 0.42
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.35
       },
       "labelKey": "form.cable-pull-through.annotation.hinge",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "back",
       "position": {
-        "x": 0.22,
-        "y": 0.21
+        "x": 0.79,
+        "y": 0.27
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.1
       },
       "labelKey": "form.cable-pull-through.annotation.back",
-      "color": "success"
+      "color": "success",
+      "side": "back"
     },
     {
       "id": "ham",
       "position": {
-        "x": 0.2,
-        "y": 0.55
+        "x": 0.78,
+        "y": 0.58
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.35
       },
       "labelKey": "form.cable-pull-through.annotation.ham",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

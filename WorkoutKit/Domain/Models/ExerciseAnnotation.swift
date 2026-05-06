@@ -50,6 +50,15 @@ enum AnnotationColor: String, Decodable, Sendable, Equatable {
     case success  // 良いフォーム指示
 }
 
+/// 解剖学的なセクション分け。前面/後面の VStack 配置で
+/// どちらのセクションに cue を載せるかを明示する。
+/// 旧データ(side 未指定)は AnnotatedBodyDiagramView 側で
+/// position.x にフォールバックする。
+enum AnnotationSide: String, Decodable, Sendable, Equatable {
+    case front
+    case back
+}
+
 struct AnnotationArrow: Decodable, Sendable, Equatable {
     let id: String
     let from: AnnotationPoint
@@ -66,4 +75,22 @@ struct AnnotationLabel: Decodable, Sendable, Equatable {
     /// LocalizedStringKey として解決される。
     let labelKey: String
     let color: AnnotationColor
+    /// このキューが前面/後面どちらのセクションに属するかを
+    /// 明示する任意フィールド。未指定なら View 側で position.x により
+    /// 推定する(0.5 未満で front)。
+    let side: AnnotationSide?
+
+    init(id: String,
+         position: AnnotationPoint,
+         labelAnchor: AnnotationPoint,
+         labelKey: String,
+         color: AnnotationColor,
+         side: AnnotationSide? = nil) {
+        self.id = id
+        self.position = position
+        self.labelAnchor = labelAnchor
+        self.labelKey = labelKey
+        self.color = color
+        self.side = side
+    }
 }

@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.crab-walk.annotation.posture",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "grip",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.crab-walk.annotation.grip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "core",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.crab-walk.annotation.core",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

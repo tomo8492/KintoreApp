@@ -14,7 +14,8 @@
         "y": 0.85
       },
       "labelKey": "form.downward-dog-pedal.annotation.calf",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "ankle",
@@ -27,7 +28,8 @@
         "y": 0.85
       },
       "labelKey": "form.downward-dog-pedal.annotation.ankle",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

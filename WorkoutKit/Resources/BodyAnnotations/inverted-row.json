@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.inverted-row.annotation.body",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "scap",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.inverted-row.annotation.scap",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

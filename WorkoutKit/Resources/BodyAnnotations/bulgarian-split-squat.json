@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.bulgarian-split-squat.annotation.balance",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "knee",
@@ -41,7 +42,8 @@
         "y": 0.65
       },
       "labelKey": "form.bulgarian-split-squat.annotation.knee",
-      "color": "warning"
+      "color": "warning",
+      "side": "front"
     }
   ]
 }

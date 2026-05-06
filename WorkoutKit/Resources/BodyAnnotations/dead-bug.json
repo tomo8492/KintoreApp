@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.dead-bug.annotation.brace",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "back",
       "position": {
-        "x": 0.21,
-        "y": 0.45
+        "x": 0.79,
+        "y": 0.27
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.35
       },
       "labelKey": "form.dead-bug.annotation.back",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

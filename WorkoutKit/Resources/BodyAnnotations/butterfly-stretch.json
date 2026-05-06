@@ -14,7 +14,8 @@
         "y": 0.65
       },
       "labelKey": "form.butterfly-stretch.annotation.knee",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.butterfly-stretch.annotation.torso",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

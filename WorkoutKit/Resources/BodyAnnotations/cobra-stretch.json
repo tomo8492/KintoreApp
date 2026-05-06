@@ -14,7 +14,8 @@
         "y": 0.1
       },
       "labelKey": "form.cobra-stretch.annotation.chest",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.cobra-stretch.annotation.hip",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

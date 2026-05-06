@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.preacher-curl.annotation.elbow",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

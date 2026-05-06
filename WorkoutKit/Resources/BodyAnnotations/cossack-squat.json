@@ -28,7 +28,8 @@
         "y": 0.65
       },
       "labelKey": "form.cossack-squat.annotation.knee",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "torso",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.cossack-squat.annotation.torso",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "balance",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.cossack-squat.annotation.balance",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

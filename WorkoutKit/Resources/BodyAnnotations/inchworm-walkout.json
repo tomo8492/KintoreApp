@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.inchworm-walkout.annotation.flow",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "breathe",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.inchworm-walkout.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

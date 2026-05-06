@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.goblet-squat.annotation.chest",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "knee",
@@ -41,7 +42,8 @@
         "y": 0.65
       },
       "labelKey": "form.goblet-squat.annotation.knee",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

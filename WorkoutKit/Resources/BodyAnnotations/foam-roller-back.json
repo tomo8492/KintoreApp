@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.foam-roller-back.annotation.hinge",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "breathe",
@@ -27,7 +28,8 @@
         "y": 0.65
       },
       "labelKey": "form.foam-roller-back.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.pull-up.annotation.scap",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     },
     {
       "id": "lats",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.pull-up.annotation.lats",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     }
   ]
 }

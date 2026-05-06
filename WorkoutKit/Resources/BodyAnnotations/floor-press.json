@@ -20,15 +20,16 @@
     {
       "id": "scap",
       "position": {
-        "x": 0.27,
-        "y": 0.18
+        "x": 0.74,
+        "y": 0.13
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.1
       },
       "labelKey": "form.floor-press.annotation.scap",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     },
     {
       "id": "range",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.floor-press.annotation.range",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "feet",
@@ -54,7 +56,8 @@
         "y": 0.65
       },
       "labelKey": "form.floor-press.annotation.feet",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

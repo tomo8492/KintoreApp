@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.ab-wheel-rollout.annotation.brace",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "hip",
@@ -41,7 +42,8 @@
         "y": 0.65
       },
       "labelKey": "form.ab-wheel-rollout.annotation.hip",
-      "color": "warning"
+      "color": "warning",
+      "side": "back"
     }
   ]
 }

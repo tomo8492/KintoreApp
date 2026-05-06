@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.swimming-freestyle.annotation.flow",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "breathe",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.swimming-freestyle.annotation.breathe",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "tempo",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.swimming-freestyle.annotation.tempo",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

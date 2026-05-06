@@ -28,7 +28,8 @@
         "y": 0.85
       },
       "labelKey": "form.donkey-calf-raise.annotation.range",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     }
   ]
 }

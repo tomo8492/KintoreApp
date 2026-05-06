@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.push-up.annotation.body",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     },
     {
       "id": "hand",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.push-up.annotation.hand",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }

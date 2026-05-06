@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.foam-roller-lat.annotation.lats",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "spine",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.foam-roller-lat.annotation.spine",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

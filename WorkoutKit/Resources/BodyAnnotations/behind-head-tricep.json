@@ -6,7 +6,7 @@
     {
       "id": "elbow",
       "position": {
-        "x": 0.83,
+        "x": 0.13,
         "y": 0.3
       },
       "labelAnchor": {
@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.behind-head-tricep.annotation.elbow",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "shoulders",
@@ -27,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.behind-head-tricep.annotation.shoulders",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

@@ -28,20 +28,22 @@
         "y": 0.35
       },
       "labelKey": "form.single-arm-tricep-extension.annotation.elbow",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     },
     {
       "id": "range",
       "position": {
-        "x": 0.83,
-        "y": 0.3
+        "x": 0.22,
+        "y": 0.21
       },
       "labelAnchor": {
         "x": 0.98,
         "y": 0.35
       },
       "labelKey": "form.single-arm-tricep-extension.annotation.range",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     }
   ]
 }

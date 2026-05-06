@@ -14,7 +14,8 @@
         "y": 0.35
       },
       "labelKey": "form.side-bend-lat.annotation.lats",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "spine",
@@ -27,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.side-bend-lat.annotation.spine",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

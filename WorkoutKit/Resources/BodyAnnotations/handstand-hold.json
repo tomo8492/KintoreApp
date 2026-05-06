@@ -28,7 +28,8 @@
         "y": 0.1
       },
       "labelKey": "form.handstand-hold.annotation.press",
-      "color": "primary"
+      "color": "primary",
+      "side": "front"
     },
     {
       "id": "core",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.handstand-hold.annotation.core",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "alignment",
@@ -54,7 +56,8 @@
         "y": 0.65
       },
       "labelKey": "form.handstand-hold.annotation.alignment",
-      "color": "success"
+      "color": "success",
+      "side": "front"
     }
   ]
 }

@@ -28,7 +28,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-tricep-kickback.annotation.elbow",
-      "color": "warning"
+      "color": "warning",
+      "side": "back"
     },
     {
       "id": "hinge",
@@ -41,7 +42,8 @@
         "y": 0.35
       },
       "labelKey": "form.dumbbell-tricep-kickback.annotation.hinge",
-      "color": "info"
+      "color": "info",
+      "side": "back"
     }
   ]
 }

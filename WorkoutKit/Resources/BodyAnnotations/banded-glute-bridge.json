@@ -20,15 +20,16 @@
     {
       "id": "squeeze",
       "position": {
-        "x": 0.21,
-        "y": 0.45
+        "x": 0.78,
+        "y": 0.46
       },
       "labelAnchor": {
         "x": 0.04,
         "y": 0.35
       },
       "labelKey": "form.banded-glute-bridge.annotation.squeeze",
-      "color": "primary"
+      "color": "primary",
+      "side": "back"
     },
     {
       "id": "rib",
@@ -41,7 +42,8 @@
         "y": 0.1
       },
       "labelKey": "form.banded-glute-bridge.annotation.rib",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     },
     {
       "id": "core",
@@ -54,7 +56,8 @@
         "y": 0.35
       },
       "labelKey": "form.banded-glute-bridge.annotation.core",
-      "color": "info"
+      "color": "info",
+      "side": "front"
     }
   ]
 }
