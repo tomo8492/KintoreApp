@@ -72,6 +72,7 @@ private struct EquipmentChip: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("equipment.\(equipment.rawValue)")
         .accessibilityLabel(Text(titleKey))
         .accessibilityHint(Text("a11y.builder.equipment.toggle.hint"))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)

@@ -75,6 +75,7 @@
 		1C75E7E54FB86D484A43CF32 /* BodyDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FE1AE0D33599930B8D231 /* BodyDiagramView.swift */; };
 		1D7C76251D7E1B4F6122726C /* dragon-flag.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABA56A4BD3C3AFCD345601E /* dragon-flag.json */; };
 		1E7C7C6CF826738E804802BD /* exercises_seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 46DCAFA5FD59CA1EE733A1EA /* exercises_seed.json */; };
+		1F547107A3E4E7426A4C46E0 /* UserFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8379A3E4FE9BFD24C6FA32 /* UserFlowTests.swift */; };
 		1F5AD26342A5FC30CF4480EA /* ChooseMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B79FA4D83471CCE513E67F /* ChooseMode.swift */; };
 		217E1DC3CB9828C3978C0A06 /* dumbbell-row.json in Resources */ = {isa = PBXBuildFile; fileRef = 52EE948F37AEDC407E8BAC04 /* dumbbell-row.json */; };
 		226D8F9AA6CC45AF55E23946 /* cable-rear-delt-fly.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2003D5FBD38F553F773D0 /* cable-rear-delt-fly.json */; };
@@ -902,6 +903,7 @@
 		C921F1E2EA744372AE208389 /* reverse-prayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "reverse-prayer.json"; sourceTree = "<group>"; };
 		C945C8D5272DEB0DA1F0DDBB /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CA571D1AE50147D62A8A4C37 /* upper-back-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "upper-back-stretch.json"; sourceTree = "<group>"; };
+		CA8379A3E4FE9BFD24C6FA32 /* UserFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlowTests.swift; sourceTree = "<group>"; };
 		CAABC37568F89225DE616D95 /* cable-low-fly.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cable-low-fly.json"; sourceTree = "<group>"; };
 		CAE497A1E25480C6EE0C78C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB7A37C6408660287F48BD7A /* banded-calf-raise.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "banded-calf-raise.json"; sourceTree = "<group>"; };
@@ -1649,6 +1651,7 @@
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
 				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
+				CA8379A3E4FE9BFD24C6FA32 /* UserFlowTests.swift */,
 				65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */,
 			);
 			path = WorkoutKitUITests;
@@ -2271,6 +2274,7 @@
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
 				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
+				1F547107A3E4E7426A4C46E0 /* UserFlowTests.swift in Sources */,
 				80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -173,6 +173,7 @@ struct ResultStepView: View {
             }
             .buttonStyle(.plain)
             .disabled(store.isGenerating)
+            .accessibilityIdentifier("builder.result.start")
             .accessibilityLabel(Text("builder.step.result.action.start"))
             .accessibilityHint(Text("a11y.builder.result.start.hint"))
             .accessibilityAddTraits(.isButton)

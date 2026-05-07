@@ -166,6 +166,7 @@ struct BuilderView: View {
             .padding(.horizontal)
             .padding(.vertical, 12)
             .background(.regularMaterial)
+            .accessibilityIdentifier("builder.primary-action")
             .accessibilityLabel(Text(primaryButtonTitleKey))
             .accessibilityHint(Text(primaryButtonHintKey))
             .accessibilityAddTraits(.isButton)

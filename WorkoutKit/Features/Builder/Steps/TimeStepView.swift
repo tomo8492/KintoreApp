@@ -66,7 +66,7 @@ struct TimeStepView: View {
             )
         }
         .buttonStyle(.plain)
-        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("time.\(minutes)")
         .accessibilityLabel(Text("a11y.builder.time.chip \(minutes)"))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }

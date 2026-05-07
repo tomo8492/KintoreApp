@@ -7245,37 +7245,37 @@
       }
     },
     "settings.weightUnit.kilograms": {
-      "comment": "Settings: 重量単位 = kg。",
+      "comment": "Settings: 重量単位 = kg。Segmented Picker の label。",
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "kg"
+            "value": "Kilograms"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "kg"
+            "value": "キログラム"
           }
         }
       }
     },
     "settings.weightUnit.pounds": {
-      "comment": "Settings: 重量単位 = lbs。",
+      "comment": "Settings: 重量単位 = lbs。Segmented Picker の label。",
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "lbs"
+            "value": "Pounds"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "lbs"
+            "value": "ポンド"
           }
         }
       }

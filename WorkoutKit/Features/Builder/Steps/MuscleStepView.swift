@@ -156,6 +156,7 @@ private struct MuscleChip: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("muscle.\(muscle.rawValue)")
         .accessibilityLabel(Text(MuscleLocalization.titleKey(for: muscle)))
         .accessibilityHint(Text("a11y.builder.muscle.toggle.hint"))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)

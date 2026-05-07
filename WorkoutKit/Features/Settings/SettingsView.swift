@@ -48,12 +48,18 @@ struct SettingsView: View {
 
     private var displaySection: some View {
         Section {
-            Picker(selection: weightUnitBinding) {
-                ForEach(WeightUnitPreference.allCases) { unit in
-                    Text(unit.localizedTitle).tag(unit)
-                }
-            } label: {
+            VStack(alignment: .leading, spacing: 6) {
                 Label("settings.weightUnit", systemImage: "scalemass")
+                Picker("settings.weightUnit", selection: weightUnitBinding) {
+                    ForEach(WeightUnitPreference.allCases) { unit in
+                        Text(unit.localizedTitle)
+                            .tag(unit)
+                            .accessibilityIdentifier("settings-weight-unit-\(unit.rawValue)")
+                    }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .accessibilityIdentifier("settings-weight-unit-picker")
             }
 
             Picker(selection: themeBinding) {
