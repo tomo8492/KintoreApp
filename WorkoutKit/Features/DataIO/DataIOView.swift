@@ -84,6 +84,9 @@ struct DataIOView: View {
         } message: { message in
             Text(message)
         }
+        .sheet(item: $store.paywallFeature) { feature in
+            PaywallView(reason: feature)
+        }
     }
 
     // MARK: - Components

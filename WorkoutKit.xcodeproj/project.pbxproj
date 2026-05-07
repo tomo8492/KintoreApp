@@ -40,6 +40,7 @@
 		1035B2482700352AB43E65D3 /* AttributeNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB73C1CC79C6FAA96B6B7BB /* AttributeNormalizer.swift */; };
 		104CB3E5ECDF54A66A1597FB /* terminal-knee-extension.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D577C77E384DA1F75B588C /* terminal-knee-extension.json */; };
 		1073BDD5F1A332E5E2917262 /* seated-leg-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = A707404BF18DA5DAC42AF292 /* seated-leg-curl.json */; };
+		10FE86440E701C32100BB72D /* DataIOStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A95B6EDB475A2DD7BE16C /* DataIOStoreTests.swift */; };
 		1135C9921E6B0A93CD8B0674 /* cable-overhead-extension.json in Resources */ = {isa = PBXBuildFile; fileRef = 146F959DDF89B53E3AE9CAA6 /* cable-overhead-extension.json */; };
 		11D08615CEC498C6B8E43563 /* foam-roller-hamstring.json in Resources */ = {isa = PBXBuildFile; fileRef = B7DB2079AAC1901F98B0DAF3 /* foam-roller-hamstring.json */; };
 		12259F80A6B618E784224823 /* WorkoutGeneratorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F4AA3CE5ABD4BEAFEDB8A /* WorkoutGeneratorHelpers.swift */; };
@@ -238,7 +239,6 @@
 		79416BDDD83A346AEC833551 /* push-press.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE625D9440EE780BBCA7A74 /* push-press.json */; };
 		7958740E8119B7152C4C6589 /* banded-calf-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = CB7A37C6408660287F48BD7A /* banded-calf-raise.json */; };
 		79C47640D7B82B3304DFCA90 /* dumbbell-pullover-isolation.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B0083378CCA300B4CC765A /* dumbbell-pullover-isolation.json */; };
-		7A566EE31DF093D82773D994 /* ProPaywallPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0870F0485DF102A9BABD1CF4 /* ProPaywallPlaceholder.swift */; };
 		7B7ED745CC8EEE192EFF5E31 /* close-grip-pulldown.json in Resources */ = {isa = PBXBuildFile; fileRef = AA35038A4FB311E432A21A5E /* close-grip-pulldown.json */; };
 		7C0961A0351BD6A538916DDE /* t-bar-row.json in Resources */ = {isa = PBXBuildFile; fileRef = CC202E3ABF1C11284C972200 /* t-bar-row.json */; };
 		7D79E16F378464E502D1AC7F /* smith-machine-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CF5F7A4D85EE5710AD5E24F /* smith-machine-squat.json */; };
@@ -390,6 +390,7 @@
 		C9106FBB53A4EEE616577FB0 /* foam-roller-it-band.json in Resources */ = {isa = PBXBuildFile; fileRef = F152F5A85B3D409A8A1877F1 /* foam-roller-it-band.json */; };
 		C951600B755C19B6FE79CA0E /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9D2CD799BCB09E3BD98D /* ExerciseDetailView.swift */; };
 		C9A532DEA9BC9FFAC58DFFCC /* romanian-deadlift.json in Resources */ = {isa = PBXBuildFile; fileRef = 6058C6EFED83F6781B93A45E /* romanian-deadlift.json */; };
+		C9C21429C189CCBAA336ED9D /* PostPurchaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E14D368CB766DB40EAE23 /* PostPurchaseTests.swift */; };
 		CA0AFE2665C03105DC92630D /* dumbbell-tricep-kickback.json in Resources */ = {isa = PBXBuildFile; fileRef = 6354341EF6BDD8E8EC069541 /* dumbbell-tricep-kickback.json */; };
 		CA84BC784C490BD65D3EC18C /* cable-woodchopper.json in Resources */ = {isa = PBXBuildFile; fileRef = 725AF4CA837D4DC2F3F14D4B /* cable-woodchopper.json */; };
 		CA9FDCB62F40BE41CCE0AEE1 /* BodySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D10D95B1734439A63E6E5 /* BodySectionView.swift */; };
@@ -538,7 +539,6 @@
 		04A3E339036E6764D285A8CA /* HistoryExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExporter.swift; sourceTree = "<group>"; };
 		077BEBC5DCD0144E11A32E1C /* Beta.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Beta.xcconfig; sourceTree = "<group>"; };
 		085D728DF9598DDDFF448203 /* y-raise.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "y-raise.json"; sourceTree = "<group>"; };
-		0870F0485DF102A9BABD1CF4 /* ProPaywallPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPaywallPlaceholder.swift; sourceTree = "<group>"; };
 		087A9854EC9E574259111A5E /* ProFeatureGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatureGate.swift; sourceTree = "<group>"; };
 		08865EABD77A5910AAFF790D /* gate-pose.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gate-pose.json"; sourceTree = "<group>"; };
 		08C4BE7912BE6D3B78E6CC25 /* stair-climber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "stair-climber.json"; sourceTree = "<group>"; };
@@ -838,6 +838,7 @@
 		A3A821772392723FCA919ECF /* brisk-walking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "brisk-walking.json"; sourceTree = "<group>"; };
 		A3C17E49CACF95533BB027C5 /* WorkoutGeneratorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutGeneratorTypes.swift; sourceTree = "<group>"; };
 		A3C32154DCD24BD651C46299 /* pseudo-planche-push-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pseudo-planche-push-up.json"; sourceTree = "<group>"; };
+		A42A95B6EDB475A2DD7BE16C /* DataIOStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataIOStoreTests.swift; sourceTree = "<group>"; };
 		A4E27C0A96348332D4BA51F5 /* curtsy-lunge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "curtsy-lunge.json"; sourceTree = "<group>"; };
 		A50730EDF8FD7E037F3A318E /* barbell-deadlift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "barbell-deadlift.json"; sourceTree = "<group>"; };
 		A67D6189682D78388F5F6AA7 /* wrist-circles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "wrist-circles.json"; sourceTree = "<group>"; };
@@ -961,6 +962,7 @@
 		E7E8131F29E7AF879682A4F1 /* lat-stretch-doorway.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lat-stretch-doorway.json"; sourceTree = "<group>"; };
 		E7EF2C7C241C9C27ABC1328D /* incline-dumbbell-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "incline-dumbbell-curl.json"; sourceTree = "<group>"; };
 		E8162387D0F921F0CB1988C7 /* standing-abdominal-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "standing-abdominal-stretch.json"; sourceTree = "<group>"; };
+		E83E14D368CB766DB40EAE23 /* PostPurchaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPurchaseTests.swift; sourceTree = "<group>"; };
 		E8AC3EE94C23819DDC9033A1 /* cable-front-raise.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cable-front-raise.json"; sourceTree = "<group>"; };
 		EB030DEE77DAA102D72A7A47 /* arm-circles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "arm-circles.json"; sourceTree = "<group>"; };
 		EB23C663175013148DD6401C /* SessionExerciseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExerciseRow.swift; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 				285AC1F9C4C7464DE80A138C /* Resources */,
 				76BA7A22C6F701C50C2FD82D /* BuilderStoreTests.swift */,
 				86F4A44690A3763DCF41FE6A /* CSVImporterTests.swift */,
+				A42A95B6EDB475A2DD7BE16C /* DataIOStoreTests.swift */,
 				972CC6934E1C8A86ECDFC6FC /* ExerciseAnnotationLoaderTests.swift */,
 				A09A0B81993D83EEBA2E7B54 /* ExerciseStepsMistakesTests.swift */,
 				6060D6B981F769D211E6000F /* HistoryCutoffTests.swift */,
@@ -1533,7 +1536,6 @@
 				F401FD200B0098AA1E1F4A05 /* PaywallView.swift */,
 				63087EC2AC068AA3238F6FFA /* ProFeature+Paywall.swift */,
 				087A9854EC9E574259111A5E /* ProFeatureGate.swift */,
-				0870F0485DF102A9BABD1CF4 /* ProPaywallPlaceholder.swift */,
 				724A5735C1A4C6D15C029A28 /* StoreKitClient.swift */,
 			);
 			path = Paywall;
@@ -1650,6 +1652,7 @@
 				C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */,
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
+				E83E14D368CB766DB40EAE23 /* PostPurchaseTests.swift */,
 				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
 				CA8379A3E4FE9BFD24C6FA32 /* UserFlowTests.swift */,
 				65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */,
@@ -2273,6 +2276,7 @@
 				03E08C1496E339602DE7303F /* Body2RowBiggerLayoutScreenshotTests.swift in Sources */,
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
+				C9C21429C189CCBAA336ED9D /* PostPurchaseTests.swift in Sources */,
 				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
 				1F547107A3E4E7426A4C46E0 /* UserFlowTests.swift in Sources */,
 				80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */,
@@ -2350,7 +2354,6 @@
 				E98BDE1BA393207E7771D854 /* ProFeature+Paywall.swift in Sources */,
 				28ACD797B7E2125462C9D5D7 /* ProFeature.swift in Sources */,
 				B197593899E2624464637936 /* ProFeatureGate.swift in Sources */,
-				7A566EE31DF093D82773D994 /* ProPaywallPlaceholder.swift in Sources */,
 				DC05CED5F4AF43574044E29F /* PurchaseRestoring.swift in Sources */,
 				C035F0024FC1CE6905ACB5B3 /* ResultStepView.swift in Sources */,
 				5BE280BE8228EF9B7173588C /* RootView.swift in Sources */,
@@ -2394,6 +2397,7 @@
 			files = (
 				CADE6A04647B3FE3764BF9D3 /* BuilderStoreTests.swift in Sources */,
 				A6C5A11510EB9DDE548EFCFC /* CSVImporterTests.swift in Sources */,
+				10FE86440E701C32100BB72D /* DataIOStoreTests.swift in Sources */,
 				3F794316B0BF0728EDCBCDDE /* ExerciseAnnotationLoaderTests.swift in Sources */,
 				FD4F048E5B21A6D3F2EF0F5E /* ExerciseStepsMistakesTests.swift in Sources */,
 				E4A19B24B8048401BB59905C /* HTMLSanitizerTests.swift in Sources */,

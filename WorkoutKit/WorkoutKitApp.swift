@@ -72,6 +72,7 @@ struct WorkoutKitApp: App {
                 .task {
                     // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
                     await dependency.storeKitClient.start()
+                    applyDebugProOverrideIfNeeded()
                 }
                 .onChange(of: scenePhase) { _, newPhase in
                     if newPhase == .active {
@@ -84,6 +85,23 @@ struct WorkoutKitApp: App {
 
     private var currentTheme: ThemePreference {
         ThemePreference(rawValue: themeRaw) ?? .system
+    }
+
+    // MARK: - Debug-only Pro override (UI test hook)
+
+    /// `-WORKOUTKIT_FAKE_PRO 1` 起動引数で proGate.isPro を強制 true にする。
+    /// post-purchase の UI 状態(YouTube ボタン解放、CSV import/export 有効化、
+    /// 31 日以前の履歴閲覧、advanced charts など)を XCUITest から検証するための
+    /// テストフック。Release ビルドでは `#if DEBUG` で完全に消える。
+    @MainActor
+    private func applyDebugProOverrideIfNeeded() {
+        #if DEBUG
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("-WORKOUTKIT_FAKE_PRO") {
+            dependency.proGate._setProForPreview(true)
+            Logger.app.info("DEBUG: WORKOUTKIT_FAKE_PRO launch arg -> proGate.isPro=true")
+        }
+        #endif
     }
 
     // MARK: - Startup

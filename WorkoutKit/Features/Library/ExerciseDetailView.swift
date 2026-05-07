@@ -44,7 +44,9 @@ struct ExerciseDetailView: View {
         .navigationBarTitleDisplayMode(.large)
         #endif
         .sheet(isPresented: $showPaywall) {
-            ProPaywallPlaceholder(feature: .videoLink)
+            // P5 IAP の本実装(PaywallView)へ差し替え。
+            // 旧 ProPaywallPlaceholder には購入導線が無く、Pro 化できなかった。
+            PaywallView(reason: .videoLink)
         }
     }
 
@@ -247,4 +249,3 @@ struct ExerciseDetailView: View {
 }
 
 // FlowLayoutWrap は WorkoutKit/Shared/FlowLayoutWrap.swift に分離。
-// ProPaywallPlaceholder は WorkoutKit/Features/Paywall/ProPaywallPlaceholder.swift に分離。
