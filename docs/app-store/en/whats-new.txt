@@ -1,0 +1,14 @@
+v1.0 Initial release.
+
+• Pick goal, muscles, equipment, and time — get a workout in five seconds
+• 345 exercises with anatomical illustrations (Front and Back sections)
+• Step-by-step guides + common mistakes + form cues
+• Live Activity support — progress and rest timer on the lock screen and Dynamic Island
+• Rest timer with sound + haptic feedback
+• History list, calendar view, persistent sort
+• 1RM (Epley formula) calculator
+• iPhone and iPad (NavigationSplitView on iPad)
+• kg / lbs toggle, Japanese / English, light / dark themes
+
+No ads, no subscription, fully offline.
+Pro features unlock with a single $7 purchase, Family Sharing supported.
