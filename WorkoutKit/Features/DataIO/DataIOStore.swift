@@ -43,6 +43,12 @@ final class DataIOStore {
     var isWorking: Bool = false
     var lastResult: String?
     var exportDocument: HistoryCSVDocument?
+    /// 「Pro 機能のため購入が必要」を伝えるシート用 binding。
+    /// View 側は `.sheet(item:)` で `PaywallView(reason:)` を提示する。
+    /// 旧実装では alert メッセージで意思表示していたが、購入導線が
+    /// 無いため Pro 機能を解放する経路が断たれていた(post-purchase
+    /// verification で発見した既知の defect)。
+    var paywallFeature: ProFeature?
 
     // MARK: - 起動
 
@@ -52,10 +58,9 @@ final class DataIOStore {
     }
 
     func showProPaywall(for feature: ProFeature) {
-        // Paywall 画面の本実装は P5 IAP フェーズ。ここではエラーで意思表示する。
-        let signal = AppError.proRequired(feature)
-        alertMessage = signal.errorDescription
-        isAlertPresented = true
+        // P5 IAP の本実装(PaywallView)を提示する。
+        // 旧実装は alert で「Pro が必要」と知らせるだけで購入導線が無かった。
+        paywallFeature = feature
     }
 
     func presentError(_ error: Error) {
