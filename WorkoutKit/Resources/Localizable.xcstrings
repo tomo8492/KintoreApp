@@ -7263,7 +7263,7 @@
       }
     },
     "settings.weightUnit.pounds": {
-      "comment": "Settings: 重量単位 = lbs。Segmented Picker の label。",
+      "comment": "Settings: 重量単位 = lbs。VoiceOver / a11y description 用の長い形。",
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -7276,6 +7276,42 @@
           "stringUnit": {
             "state": "translated",
             "value": "ポンド"
+          }
+        }
+      }
+    },
+    "settings.weightUnit.kilograms.short": {
+      "comment": "Settings: 重量単位 segmented Picker の visible label。短縮形固定(narrow 端末対応)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kg"
+          }
+        }
+      }
+    },
+    "settings.weightUnit.pounds.short": {
+      "comment": "Settings: 重量単位 segmented Picker の visible label。短縮形固定(narrow 端末対応)。",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lbs"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lbs"
           }
         }
       }

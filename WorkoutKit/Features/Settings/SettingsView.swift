@@ -52,8 +52,12 @@ struct SettingsView: View {
                 Label("settings.weightUnit", systemImage: "scalemass")
                 Picker("settings.weightUnit", selection: weightUnitBinding) {
                     ForEach(WeightUnitPreference.allCases) { unit in
-                        Text(unit.localizedTitle)
+                        // 視覚は短縮形「kg」「lbs」(iPhone SE 375pt 幅でも余裕で fit)。
+                        // VoiceOver は accessibilityLabel で「キログラム」「Kilograms」
+                        // を読み上げる。XCUITest は accessibilityIdentifier で確実に取得。
+                        Text(unit.localizedShortTitle)
                             .tag(unit)
+                            .accessibilityLabel(Text(unit.localizedTitle))
                             .accessibilityIdentifier("settings-weight-unit-\(unit.rawValue)")
                     }
                 }
