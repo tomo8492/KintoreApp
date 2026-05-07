@@ -43,10 +43,7 @@ A reference you can return to as you learn new lifts.
 • Manual entry — log workouts you did outside the app
 • CSV / JSON import (migrate from other apps)
 • CSV export
-• Custom exercise creation and editing
-• Session photos and notes
 • YouTube reference links
-• App Icon variants
 • Apple Watch companion (rolling out from v1.1)
 
 

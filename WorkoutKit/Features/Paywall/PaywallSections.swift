@@ -50,6 +50,10 @@ struct PaywallFeatureList: View {
     /// 起点となった機能。リスト中で強調マーカーを付ける。
     let highlight: ProFeature?
 
+    private var visibleFeatures: [ProFeature] {
+        ProFeature.allCases.filter(\.isShownInPaywallV1)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             Text(String(
@@ -59,7 +63,10 @@ struct PaywallFeatureList: View {
             .font(.headline)
 
             VStack(alignment: .leading, spacing: 10) {
-                ForEach(ProFeature.allCases, id: \.self) { feature in
+                // v1.0 では `isShownInPaywallV1` で v1.1+ ロードマップ機能を除外する
+                // (customExercise / sessionPhoto / appIconVariants)。
+                // 詳細は ProFeature.swift と docs/ROADMAP.md。
+                ForEach(visibleFeatures, id: \.self) { feature in
                     PaywallFeatureRow(
                         feature: feature,
                         isHighlighted: feature == highlight
