@@ -1,0 +1,230 @@
+:root {
+    --fg: #1c1c1e;
+    --fg-muted: #6e6e73;
+    --bg: #ffffff;
+    --bg-soft: #f5f5f7;
+    --border: #d2d2d7;
+    --accent: #ff6b35;
+    --link: #0066cc;
+    --warning-bg: #fff3cd;
+    --warning-border: #ffc107;
+    --warning-fg: #664d03;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans",
+                 "Hiragino Kaku Gothic ProN", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--fg);
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 96px;
+}
+
+header.doc-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+header.doc-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    line-height: 1.25;
+    color: var(--fg);
+}
+
+.lang-switch {
+    font-size: 14px;
+    color: var(--fg-muted);
+}
+
+.lang-switch a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.lang-switch a:hover {
+    text-decoration: underline;
+}
+
+dl.meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 16px;
+    margin: 16px 0 0;
+    padding: 12px 16px;
+    background: var(--bg-soft);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+dl.meta dt {
+    color: var(--fg-muted);
+    font-weight: 500;
+    margin: 0;
+}
+
+dl.meta dd {
+    margin: 0;
+    color: var(--fg);
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 48px 0 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 28px 0 12px;
+}
+
+h4 {
+    font-size: 16px;
+    margin: 20px 0 8px;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+ul, ol {
+    padding-left: 24px;
+    margin: 0 0 16px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+a {
+    color: var(--link);
+}
+
+code {
+    font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 0.92em;
+    background: var(--bg-soft);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--bg-soft);
+    font-weight: 600;
+}
+
+blockquote {
+    margin: 24px 0;
+    padding: 16px 20px;
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning-border);
+    color: var(--warning-fg);
+    border-radius: 4px;
+}
+
+blockquote p {
+    margin: 0 0 8px;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+}
+
+.toc {
+    background: var(--bg-soft);
+    padding: 16px 24px;
+    border-radius: 8px;
+    margin: 24px 0 32px;
+}
+
+.toc h2 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    border: none;
+    padding: 0;
+}
+
+.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.toc li {
+    margin-bottom: 2px;
+}
+
+footer.doc-footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--fg-muted);
+    text-align: center;
+}
+
+footer.doc-footer a {
+    color: var(--fg-muted);
+    margin: 0 8px;
+}
+
+@media (max-width: 600px) {
+    main { padding: 24px 16px 64px; }
+    header.doc-header h1 { font-size: 26px; }
+    h2 { font-size: 21px; }
+    h3 { font-size: 17px; }
+    table { font-size: 13px; }
+    th, td { padding: 6px 8px; }
+    dl.meta { grid-template-columns: 1fr; }
+    dl.meta dt { margin-top: 4px; }
+}
+
+@media print {
+    body { font-size: 11pt; line-height: 1.5; }
+    main { max-width: 100%; padding: 0; }
+    blockquote { background: none; border-left-color: #000; }
+    a { color: #000; text-decoration: none; }
+    .lang-switch, footer.doc-footer { display: none; }
+}

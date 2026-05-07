@@ -7,6 +7,23 @@
 //   `placeholderTermsURL` / `placeholderPrivacyURL` を本番 URL に
 //   差し替えること。確定 URL は Apple Developer 登録後に決まる。
 //   差し替え漏れがあると審査で reject される可能性が高い。
+//
+// 雛形ドキュメントは `docs/legal/` 配下にコミット済み:
+//   - docs/legal/privacy-policy.html       (ja)
+//   - docs/legal/privacy-policy.en.html    (en)
+//   - docs/legal/terms-of-service.html     (ja)
+//   - docs/legal/terms-of-service.en.html  (en)
+//
+// 公開候補 URL(GitHub Pages を有効化した場合):
+//   - https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html
+//   - https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html
+// 独自ドメインを取得する場合は workoutkit.app などへ差し替え。
+//
+// 公開後、以下を実施:
+//   1. `placeholderTermsURL` / `placeholderPrivacyURL` を本番 URL に書き換え
+//   2. `docs/legal/*.md` の "2026-XX-XX" を実際の公開日に更新
+//   3. `[YOUR_EMAIL]` プレースホルダを連絡先メールアドレスに差し替え
+//   4. 必要に応じて Bundle/Info.plist 経由で URL を読み込む形へリファクタ
 // =====================================================================
 
 import SwiftUI
@@ -15,6 +32,10 @@ struct PaywallLegalLinks: View {
 
     // ⚠️ 本番 URL に差し替え必須(Phase P-5)。RELEASE_AUDIT.md / RELEASE
     //   CHECKLIST にも記載済み。CLAUDE.md §-1 に従い App Store 公開時に確定。
+    //
+    // 候補 URL(GitHub Pages 有効化時):
+    //   https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html
+    //   https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html
     private static let placeholderTermsURL   = URL(string: "https://workoutkit.app/terms")
     private static let placeholderPrivacyURL = URL(string: "https://workoutkit.app/privacy")
 
