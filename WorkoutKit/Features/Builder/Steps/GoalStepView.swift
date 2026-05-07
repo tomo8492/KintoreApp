@@ -70,7 +70,7 @@ private struct GoalRow: View {
             .padding(.horizontal)
         }
         .buttonStyle(.plain)
-        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("goal.\(goal.rawValue)")
         .accessibilityLabel(Text(titleKey))
         .accessibilityHint(Text(descriptionKey))
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)

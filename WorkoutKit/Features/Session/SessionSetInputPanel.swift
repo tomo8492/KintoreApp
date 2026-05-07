@@ -206,6 +206,7 @@ struct SessionSetInputPanel: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .buttonStyle(.plain)
+            .accessibilityIdentifier("session.action.complete-set")
             .accessibilityLabel(Text("session.action.complete-set"))
             .accessibilityHint(Text("a11y.session.complete.hint"))
             .accessibilityAddTraits(.isButton)
@@ -222,6 +223,7 @@ struct SessionSetInputPanel: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("session.action.skip")
                 .accessibilityLabel(Text("session.action.skip"))
                 .accessibilityHint(Text("a11y.session.skip.hint"))
                 .accessibilityAddTraits(.isButton)
@@ -238,6 +240,7 @@ struct SessionSetInputPanel: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("session.action.stop")
                 .accessibilityLabel(Text("session.action.stop"))
                 .accessibilityHint(Text("a11y.session.stop.hint"))
                 .accessibilityAddTraits(.isButton)
