@@ -46,9 +46,12 @@ offline", "one-time ¥980 / $7 with Family Sharing".
 
 ### Description (4 000)
 Headline → Highlights → Builder wizard → Library detail → Pro feature list
-(11 items, exact match to `ProFeatureGate` cases) → Principles (no ads, no
-subscription, no tracking) → Free presets → Requirements → Medical
-disclaimer (Apple guideline 1.4.1) → Contact placeholders.
+(8 items shipping in v1.0; the 3 unimplemented `ProFeature` cases —
+`customExercise`, `sessionPhoto`, `appIconVariants` — are deferred to
+`docs/ROADMAP.md` and not advertised here, per Apple guideline 2.3) →
+Principles (no ads, no subscription, no tracking) → Free presets →
+Requirements → Medical disclaimer (Apple guideline 1.4.1) → Contact
+placeholders.
 
 The body uses single-byte half-width separators for App Store readability
 and avoids heavy emoji clusters per Apple's review patterns.
