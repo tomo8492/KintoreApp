@@ -45,10 +45,23 @@ enum ThemePreference: String, CaseIterable, Identifiable, Sendable {
 extension WeightUnitPreference: Identifiable {
     var id: String { rawValue }
 
+    /// VoiceOver / a11y description 用。長い形(「キログラム」「Kilograms」など)。
     var localizedTitle: LocalizedStringKey {
         switch self {
         case .kilograms: return "settings.weightUnit.kilograms"
         case .pounds:    return "settings.weightUnit.pounds"
+        }
+    }
+
+    /// Segmented Picker の visible label 用。短縮形「kg」「lbs」。
+    /// iPhone SE (375pt 幅) や Dynamic Type 拡大時の overflow を避けるため、
+    /// 視覚は常に 2–3 文字で固定する。VoiceOver は `localizedTitle` 経由で
+    /// 「キログラム」「Kilograms」を読み上げる(SettingsView で
+    /// `.accessibilityLabel` で上書き)。
+    var localizedShortTitle: LocalizedStringKey {
+        switch self {
+        case .kilograms: return "settings.weightUnit.kilograms.short"
+        case .pounds:    return "settings.weightUnit.pounds.short"
         }
     }
 }
