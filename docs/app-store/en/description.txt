@@ -1,0 +1,88 @@
+Today's workout, ready in five seconds.
+
+WorkoutKit is a focused fitness app that auto-generates today's training plan from four simple choices: your goal, the muscles you want to train, the equipment you can use, and the time you have. No subscriptions. No ads. Your data stays on your device.
+
+
+■ Highlights
+
+• 345 exercises bundled, fully translated in Japanese and English
+• Anatomical illustration of target muscles, split into Front and Back sections
+• Step-by-step form cues + common mistakes + cautions for every exercise
+• Live Activity support — track progress and rest timers from the lock screen and Dynamic Island
+• Set logging (weight / reps / RPE / rest seconds) stored locally with SwiftData
+• Rest timer with sound + haptic feedback
+• History list, calendar view, persistent sort order
+• 1RM (Epley formula) calculator
+• kg / lbs toggle, follows the system language (Japanese / English)
+• iPhone and iPad (NavigationSplitView on iPad)
+• Light and dark appearance
+
+
+■ The Builder wizard
+
+Pick a goal (hypertrophy / strength / fat loss / endurance / full body) → target muscles → available equipment → time budget. WorkoutKit composes the optimal session in one tap. Use Shuffle for variety or Choose to hand-pick exercises. Warm-up, main work, and cool-down are placed automatically.
+
+
+■ The Library
+
+All 345 exercises filterable by type × muscle × equipment × mechanics. Each detail page shows:
+- Anatomical highlight of the primary and secondary muscles
+- Numbered form cues placed on the front and back silhouettes
+- Step-by-step instructions
+- Common mistakes
+- Safety cautions
+
+A reference you can return to as you learn new lifts.
+
+
+■ Pro features (one-time $7 purchase)
+
+• Full history beyond the last 30 days (free tier shows the last 30 days)
+• Unlimited custom workout templates
+• Advanced charts (weekly / monthly volume, per-muscle heat map)
+• Manual entry — log workouts you did outside the app
+• CSV / JSON import (migrate from other apps)
+• CSV export
+• Custom exercise creation and editing
+• Session photos and notes
+• YouTube reference links
+• App Icon variants
+• Apple Watch companion (rolling out from v1.1)
+
+
+■ The principles
+
+• Zero ads
+• No subscriptions — one-time purchase, lifetime use
+• Family Sharing supported
+• Fully offline (network is only used for the StoreKit purchase)
+• No tracking, no data collection
+• iCloud sync is on the v1.1 roadmap
+• Built on top of MIT-licensed open-source anatomical assets
+
+
+■ Free preset templates
+
+• Push / Pull / Legs
+• Upper / Lower split
+• Full-body workout
+
+
+■ Requirements
+
+• iOS 17.0 or later
+• iPhone (portrait), iPad (portrait + landscape)
+
+
+■ Important
+
+WorkoutKit is a self-tracking tool. It is not medical advice. If you have any health condition, pain, or pre-existing injury, please consult a doctor before starting a training program. If you are unsure about form or load, working with a qualified trainer is strongly recommended.
+
+
+■ Contact and support
+
+Feedback and bug reports: [YOUR_EMAIL]
+Privacy policy: in-app → Settings → Privacy
+
+
+WorkoutKit keeps your training simple, every day.
