@@ -247,6 +247,7 @@
 		7F4F0D8B460CD80198C9CBD9 /* ShuffleChooseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0708FC2CF3E451281D55 /* ShuffleChooseTests.swift */; };
 		7FC1F7BE7B2087936CC29090 /* dumbbell-lateral-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = 549FFC83D5154BF2C844B58B /* dumbbell-lateral-raise.json */; };
 		7FF2E60B4974771BF665C1D3 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4B5A6A130D41AF0D604CE /* SessionView.swift */; };
+		8065E39F71834D013FBAB5E8 /* AppStoreScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BC4D9E9F77ADB79133EBB /* AppStoreScreenshotTests.swift */; };
 		807DA4B65C3CDB7A30EBAB81 /* world-greatest-stretch-static.json in Resources */ = {isa = PBXBuildFile; fileRef = E5B6A3B299BD0FE7E3D4D9AE /* world-greatest-stretch-static.json */; };
 		80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */; };
 		80EF1BA25AB067498BB6DD18 /* seated-cable-row.json in Resources */ = {isa = PBXBuildFile; fileRef = 56D2B0E4A683AFEF2B115BA9 /* seated-cable-row.json */; };
@@ -777,6 +778,7 @@
 		8068C54D93D4C3E194FB4740 /* standing-leg-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "standing-leg-curl.json"; sourceTree = "<group>"; };
 		80FF281BD7187460CEAAF517 /* IntervalTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerTests.swift; sourceTree = "<group>"; };
 		81D3C5B0CDDEA66B1C823375 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		830BC4D9E9F77ADB79133EBB /* AppStoreScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotTests.swift; sourceTree = "<group>"; };
 		83A56A5C156324DBB02668BD /* world-greatest-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world-greatest-stretch.json"; sourceTree = "<group>"; };
 		85106309E1D681FFA7AC61E4 /* stationary-bike.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "stationary-bike.json"; sourceTree = "<group>"; };
 		8604BAEE888B4F31CD02BBBC /* deficit-deadlift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "deficit-deadlift.json"; sourceTree = "<group>"; };
@@ -1641,6 +1643,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
+				830BC4D9E9F77ADB79133EBB /* AppStoreScreenshotTests.swift */,
 				C28E98BEF19944584BA60687 /* BackSectionCuesScreenshotTests.swift */,
 				C5B12B1FA6311AE4082039AA /* Body2RowBiggerLayoutScreenshotTests.swift */,
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
@@ -2262,6 +2265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
+				8065E39F71834D013FBAB5E8 /* AppStoreScreenshotTests.swift in Sources */,
 				3622245E817EE3FF0D302F50 /* BackSectionCuesScreenshotTests.swift in Sources */,
 				03E08C1496E339602DE7303F /* Body2RowBiggerLayoutScreenshotTests.swift in Sources */,
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
