@@ -177,6 +177,7 @@
 		581FDEEEBABA3D9EAC0CEE84 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827B2CEDD38C5E4CE4D3C56 /* AppError.swift */; };
 		58DA1277E35A433BB61DF8FF /* skull-crusher.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C8F5FA866382906A90CAC98 /* skull-crusher.json */; };
 		590D1D74415CB1B71EB6C0EF /* side-bend-lat.json in Resources */ = {isa = PBXBuildFile; fileRef = F93C9CEC8D0BCBA327853A89 /* side-bend-lat.json */; };
+		5A102E450F0E99B12E76BDF3 /* StressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DA0B404F281F297E316BC /* StressTests.swift */; };
 		5A2F09EA1D7E9C0E9AC5B201 /* lying-quad-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = DA5BB6DCA42F0149B6D23B19 /* lying-quad-stretch.json */; };
 		5A48A101DEF70CEC9318EF95 /* cable-front-raise.json in Resources */ = {isa = PBXBuildFile; fileRef = E8AC3EE94C23819DDC9033A1 /* cable-front-raise.json */; };
 		5B099CC901BDBE0E21221C13 /* IntervalCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE5E36B3C294B2D855EECFD /* IntervalCountdownView.swift */; };
@@ -374,6 +375,7 @@
 		BCE83DCEE577A0829B883AB9 /* kneeling-lat-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = F71A2F70B47CAB09DAE08C67 /* kneeling-lat-stretch.json */; };
 		BDD6CCDDCF9A9C5AD6296B41 /* hip-circles.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A787DEAC6E9C37F6BF645CD /* hip-circles.json */; };
 		BE55A31899E0485EABFC2042 /* sprinting.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8E5B7A8AC461064D8C326 /* sprinting.json */; };
+		BFA78595B1982501754D5C8D /* RecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1787324E474FAB27B5911B /* RecoveryTests.swift */; };
 		C035F0024FC1CE6905ACB5B3 /* ResultStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4218E10977DBF3119EA0A2 /* ResultStepView.swift */; };
 		C09B3180EE025971F44FC141 /* kettlebell-swing.json in Resources */ = {isa = PBXBuildFile; fileRef = B10BC274F5D2A4B73DCA502D /* kettlebell-swing.json */; };
 		C182D403B326031E7BD7CF4A /* MechanicsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F056756B51E92D73C65AAE /* MechanicsType.swift */; };
@@ -651,6 +653,7 @@
 		47A4BEDF4E1F87C82DF5879A /* JSONImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONImporter.swift; sourceTree = "<group>"; };
 		48371751CB0CF36DE99A06E7 /* cable-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cable-curl.json"; sourceTree = "<group>"; };
 		48C80EDDA5818618DF5CE19A /* WorkoutKitLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutKitLiveActivity.swift; sourceTree = "<group>"; };
+		497DA0B404F281F297E316BC /* StressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StressTests.swift; sourceTree = "<group>"; };
 		49CBF01BB6EC4C620E526A76 /* trap-bar-deadlift.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "trap-bar-deadlift.json"; sourceTree = "<group>"; };
 		4A3FF129133BE85A56C01DBD /* single-arm-pushdown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "single-arm-pushdown.json"; sourceTree = "<group>"; };
 		4C50F7BBD558AC9ED459734F /* single-leg-calf-raise.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "single-leg-calf-raise.json"; sourceTree = "<group>"; };
@@ -790,6 +793,7 @@
 		8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body2RowLayoutScreenshotTests.swift; sourceTree = "<group>"; };
 		88E1DD55FDF95BA11CDFA653 /* russian-twist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "russian-twist.json"; sourceTree = "<group>"; };
 		8A050FCDB4AAB75F2D584FD8 /* sofa-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sofa-stretch.json"; sourceTree = "<group>"; };
+		8A1787324E474FAB27B5911B /* RecoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryTests.swift; sourceTree = "<group>"; };
 		8AA568F523151097984476BF /* machine-rdl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "machine-rdl.json"; sourceTree = "<group>"; };
 		8B3563C73FED1CFA8744F648 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		8B654EFCE8764B7672BCE48F /* cross-body-hammer-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cross-body-hammer-curl.json"; sourceTree = "<group>"; };
@@ -1053,6 +1057,7 @@
 				CF2285D53CDF71BBE656CE15 /* SessionStoreTests.swift */,
 				AD7F0708FC2CF3E451281D55 /* ShuffleChooseTests.swift */,
 				0900F1C15DD4532CA770BB00 /* StoreKitClientTests.swift */,
+				497DA0B404F281F297E316BC /* StressTests.swift */,
 				220906E1A16F427C3C70AC52 /* TemplateStoreTests.swift */,
 				3346E295431BB099338518E9 /* WorkoutGeneratorTests.swift */,
 			);
@@ -1653,6 +1658,7 @@
 				8864E7698D930EF5B67F3754 /* Body2RowLayoutScreenshotTests.swift */,
 				6DF6A4E15CE9C25E00769176 /* CompactBodyDiagramScreenshotTests.swift */,
 				E83E14D368CB766DB40EAE23 /* PostPurchaseTests.swift */,
+				8A1787324E474FAB27B5911B /* RecoveryTests.swift */,
 				60E1DEC79B9F5909E67DA80E /* StepsMistakesScreenshotTests.swift */,
 				CA8379A3E4FE9BFD24C6FA32 /* UserFlowTests.swift */,
 				65330DC6866BCBA38F4677C0 /* WorkoutKitUITestsPlaceholder.swift */,
@@ -2277,6 +2283,7 @@
 				5122704092B58A1A1A0F0CAC /* Body2RowLayoutScreenshotTests.swift in Sources */,
 				44E4B3B3A3ADC1E70ABDEF2F /* CompactBodyDiagramScreenshotTests.swift in Sources */,
 				C9C21429C189CCBAA336ED9D /* PostPurchaseTests.swift in Sources */,
+				BFA78595B1982501754D5C8D /* RecoveryTests.swift in Sources */,
 				02A6F6FE56B1E590EEAEDD68 /* StepsMistakesScreenshotTests.swift in Sources */,
 				1F547107A3E4E7426A4C46E0 /* UserFlowTests.swift in Sources */,
 				80AFB2893011D728DE9A531C /* WorkoutKitUITestsPlaceholder.swift in Sources */,
@@ -2409,6 +2416,7 @@
 				3C152AA304DE402E946A7298 /* SessionStoreTests.swift in Sources */,
 				7F4F0D8B460CD80198C9CBD9 /* ShuffleChooseTests.swift in Sources */,
 				97176A172277C30115CBB341 /* StoreKitClientTests.swift in Sources */,
+				5A102E450F0E99B12E76BDF3 /* StressTests.swift in Sources */,
 				001B3EFE5736CB21798B4076 /* TemplateStoreTests.swift in Sources */,
 				96D64E40ADB8CBE3C5CB17A9 /* WorkoutGeneratorTests.swift in Sources */,
 			);
