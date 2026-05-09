@@ -70,9 +70,15 @@ struct WorkoutKitApp: App {
                     await runStartupSeed()
                 }
                 .task {
-                    // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
-                    await dependency.storeKitClient.start()
-                    applyDebugProOverrideIfNeeded()
+                    if isFakeProEnabled {
+                        // CIのテストフック: StoreKit を起動せず proGate.isPro=true で固定する。
+                        // start() 内の refreshEntitlements が currentEntitlements 空 →
+                        // isPro=false で塗り直してしまうため、こちらの分岐に入る。
+                        applyDebugProOverrideIfNeeded()
+                    } else {
+                        // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
+                        await dependency.storeKitClient.start()
+                    }
                 }
                 .onChange(of: scenePhase) { _, newPhase in
                     if newPhase == .active {
@@ -89,6 +95,15 @@ struct WorkoutKitApp: App {
 
     // MARK: - Debug-only Pro override (UI test hook)
 
+    /// `-WORKOUTKIT_FAKE_PRO 1` 起動引数の有無を返す。Release ビルドでは常に false。
+    private var isFakeProEnabled: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.arguments.contains("-WORKOUTKIT_FAKE_PRO")
+        #else
+        false
+        #endif
+    }
+
     /// `-WORKOUTKIT_FAKE_PRO 1` 起動引数で proGate.isPro を強制 true にする。
     /// post-purchase の UI 状態(YouTube ボタン解放、CSV import/export 有効化、
     /// 31 日以前の履歴閲覧、advanced charts など)を XCUITest から検証するための
@@ -96,8 +111,7 @@ struct WorkoutKitApp: App {
     @MainActor
     private func applyDebugProOverrideIfNeeded() {
         #if DEBUG
-        let args = ProcessInfo.processInfo.arguments
-        if args.contains("-WORKOUTKIT_FAKE_PRO") {
+        if isFakeProEnabled {
             dependency.proGate._setProForPreview(true)
             Logger.app.info("DEBUG: WORKOUTKIT_FAKE_PRO launch arg -> proGate.isPro=true")
         }

@@ -12,6 +12,11 @@ import SwiftUI
 struct BodyDiagramView: View {
     @Binding var selected: Set<Muscle>
 
+    /// Reduce Motion 設定がオンなら筋肉ハイライト追加/削除のフェードを抑制する。
+    /// 現状この View には withAnimation トリガーが無いため transition は実質
+    /// 発火しないが、将来 withAnimation を足したときに事故らないよう事前に紐付け。
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     private static let viewBoxAspect: CGFloat =
         BodyHitZones.viewBox.width / BodyHitZones.viewBox.height
 
@@ -42,7 +47,7 @@ struct BodyDiagramView: View {
                     Image(asset)
                         .resizable()
                         .scaledToFit()
-                        .transition(.opacity)
+                        .transition(reduceMotion ? .identity : .opacity)
                 }
             }
 

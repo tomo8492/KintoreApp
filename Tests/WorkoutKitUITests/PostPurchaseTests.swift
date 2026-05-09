@@ -39,10 +39,18 @@ final class PostPurchaseTests: XCTestCase {
                       "Settings tab not found in ja locale")
         settingsTab.tap()
 
-        // Settings の「購入状況: Pro」表示(localizable: settings.purchases.status.pro)。
-        let proLabel = app.staticTexts["Pro"]
-        XCTAssertTrue(proLabel.waitForExistence(timeout: 3),
-                      "Pro status text not visible in Settings")
+        // Settings の「購入状況」行に "Pro" が表示されていることを確認する。
+        // SettingsView の HStack は `.accessibilityElement(children: .combine)` で
+        // 1 要素にまとめられ、accessibilityLabel="購入状況"、accessibilityValue="Pro"
+        // が割り当てられる。XCUITest はその要素を `staticText` / `cell` / `other`
+        // のどれかとして公開する(iOS バージョンと List 構造で変わる)ので、
+        // descendants から幅広く拾う。
+        let proPredicate = NSPredicate(
+            format: "value == 'Pro' OR (label CONTAINS '購入状況' AND value == 'Pro')"
+        )
+        let proElement = app.descendants(matching: .any).matching(proPredicate).firstMatch
+        XCTAssertTrue(proElement.waitForExistence(timeout: 5),
+                      "Pro status not visible in Settings (combined a11y value 'Pro' expected)")
 
         snapshot(app, name: "settings-pro-status")
     }

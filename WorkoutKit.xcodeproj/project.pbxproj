@@ -299,8 +299,10 @@
 		98169AF4AC5EDF500B3EDBF3 /* jumping-jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = DEDFC7C47A998663C083E390 /* jumping-jacks.json */; };
 		98444FA8BCB4C41140BEFAA8 /* overhead-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = A9065C85085187EFB9C99812 /* overhead-squat.json */; };
 		98C30B5D4D24DE9CF9AFB849 /* dumbbell-thruster.json in Resources */ = {isa = PBXBuildFile; fileRef = FAEAC506FB58D5FB06249055 /* dumbbell-thruster.json */; };
+		9A3157C6A5CE07CF9F29BA9E /* NetworkResilienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84D359D7CF704B47026034 /* NetworkResilienceTests.swift */; };
 		9BCA05B3E23417716EB8392F /* preacher-curl.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D06E54CFCA6297190CED3FD /* preacher-curl.json */; };
 		9D138B3A3F11B3966A00F506 /* double-knee-to-chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 62192C9ACB219E2DF030ABD7 /* double-knee-to-chest.json */; };
+		9D6C73AC87690DB2C17FC028 /* AccessibilityVisualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D61FCF717F2C4005EA719 /* AccessibilityVisualTests.swift */; };
 		9D7E2CE6F681A99466B66F54 /* SessionLifecycleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FAE7CFDA9EEFBD5F627053 /* SessionLifecycleModifier.swift */; };
 		9DADDE5A4185F71281BEA024 /* HistoryChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67017405FC7EEF6B27B99660 /* HistoryChartsView.swift */; };
 		9DB86A7C58FBE261432ADE57 /* neck-flexion-stretch.json in Resources */ = {isa = PBXBuildFile; fileRef = F341E3C65BEC5DAA46B6AF4D /* neck-flexion-stretch.json */; };
@@ -814,6 +816,7 @@
 		97F056756B51E92D73C65AAE /* MechanicsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicsType.swift; sourceTree = "<group>"; };
 		9A4C15495D641EEDDF565EE6 /* BuilderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderStore.swift; sourceTree = "<group>"; };
 		9A787DEAC6E9C37F6BF645CD /* hip-circles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hip-circles.json"; sourceTree = "<group>"; };
+		9A84D359D7CF704B47026034 /* NetworkResilienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResilienceTests.swift; sourceTree = "<group>"; };
 		9B3A806D9F6D44DE2B4ABC3A /* chest-supported-row.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "chest-supported-row.json"; sourceTree = "<group>"; };
 		9B573DA3C74C638E640EE983 /* tricep-overhead-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tricep-overhead-stretch.json"; sourceTree = "<group>"; };
 		9B9AB7D1F1B146398E6A4B8F /* decline-sit-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "decline-sit-up.json"; sourceTree = "<group>"; };
@@ -949,6 +952,7 @@
 		DFB84C5802A5E69FA464C2F1 /* diamond-push-up.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "diamond-push-up.json"; sourceTree = "<group>"; };
 		DFD38FE7ECBB3EBF873191B4 /* plate-front-raise.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "plate-front-raise.json"; sourceTree = "<group>"; };
 		DFE370E36AF9BA0123DA7991 /* UnitsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsFormatter.swift; sourceTree = "<group>"; };
+		E14D61FCF717F2C4005EA719 /* AccessibilityVisualTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityVisualTests.swift; sourceTree = "<group>"; };
 		E19CFAAE433D3FAEBACB3277 /* kneeling-quad-couch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kneeling-quad-couch.json"; sourceTree = "<group>"; };
 		E22F51959A481F7ABEFC627B /* LiveActivity.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LiveActivity.xcconfig; sourceTree = "<group>"; };
 		E3584B5820420DAFDD154978 /* sleeper-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sleeper-stretch.json"; sourceTree = "<group>"; };
@@ -1048,6 +1052,7 @@
 				5DC915B7A3994A20CA4232B1 /* HistoryExporterTests.swift */,
 				B5B4D44774ADF3105DF7EBE5 /* HTMLSanitizerTests.swift */,
 				80FF281BD7187460CEAAF517 /* IntervalTimerTests.swift */,
+				9A84D359D7CF704B47026034 /* NetworkResilienceTests.swift */,
 				938150150F238FD682C35B9A /* OneRepMaxCalculatorTests.swift */,
 				EFBB67E9A1611258BA4482A2 /* PaywallTriggerTests.swift */,
 				CF2285D53CDF71BBE656CE15 /* SessionStoreTests.swift */,
@@ -1646,6 +1651,7 @@
 		B3CDBD2857E61EE1E30185DE /* WorkoutKitUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E14D61FCF717F2C4005EA719 /* AccessibilityVisualTests.swift */,
 				5FB9329DF9DAB777A91479EC /* AnnotatedDiagramAllScreenshotTests.swift */,
 				830BC4D9E9F77ADB79133EBB /* AppStoreScreenshotTests.swift */,
 				C28E98BEF19944584BA60687 /* BackSectionCuesScreenshotTests.swift */,
@@ -2270,6 +2276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6C73AC87690DB2C17FC028 /* AccessibilityVisualTests.swift in Sources */,
 				FA9820D3D320CF9DE4A3372E /* AnnotatedDiagramAllScreenshotTests.swift in Sources */,
 				8065E39F71834D013FBAB5E8 /* AppStoreScreenshotTests.swift in Sources */,
 				3622245E817EE3FF0D302F50 /* BackSectionCuesScreenshotTests.swift in Sources */,
@@ -2404,6 +2411,7 @@
 				74F17786F52FC3C7A5E37963 /* HistoryCutoffTests.swift in Sources */,
 				3FDC114562C1D3B39225B8EB /* HistoryExporterTests.swift in Sources */,
 				4D5671206195CE0EDD7CF2A4 /* IntervalTimerTests.swift in Sources */,
+				9A3157C6A5CE07CF9F29BA9E /* NetworkResilienceTests.swift in Sources */,
 				D36C941C132EC7ED8FED19C2 /* OneRepMaxCalculatorTests.swift in Sources */,
 				D2539CD10ADFC8E258712C39 /* PaywallTriggerTests.swift in Sources */,
 				3C152AA304DE402E946A7298 /* SessionStoreTests.swift in Sources */,
