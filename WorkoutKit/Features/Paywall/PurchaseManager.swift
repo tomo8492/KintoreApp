@@ -99,7 +99,9 @@ final class PurchaseManager {
     /// `setIsPro(_:)` を呼んで isPro フラグを同期する。
     /// v1.0 で `isPremium` が正本になったが、PaywallTrigger 含め 28 箇所が
     /// 旧 API を使っているため adapter として残す。
-    var proGateBridge: ((Bool) -> Void)?
+    /// `@MainActor` クロージャ型なので、AppDependency 側で
+    /// `{ [weak gate] in gate?.setIsPro(\$0) }` のように書ける(assumeIsolated 不要)。
+    var proGateBridge: (@MainActor @Sendable (Bool) -> Void)?
 
     // MARK: - Init
 

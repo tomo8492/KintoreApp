@@ -5,7 +5,7 @@
 // UserDefaults に初回起動日を保存し、現在日との差分で試用期間内/外を返す。
 //
 // 用途:
-//   - 起動時に `shouldShowHardPaywallOnLaunch` が true なら HardPaywallView を提示
+//   - 起動時に `shouldShowHardPaywallOnLaunch` が true なら PaywallView を提示
 //   - 期間内は `isWithinTrial` が true なので、Pro 機能アクセスは全部許容
 //
 // テスト容易性のため、Clock(現在時刻取得)と UserDefaults を DI 可能にする。
