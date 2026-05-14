@@ -52,7 +52,7 @@
 
 | データ              | 処理元                  | 私たちのアクセス可否                               |
 | ---------------- | -------------------- | ---------------------------------------- |
-| App 内課金(Pro 解除)  | App Store / StoreKit | ❌ 不可(購入の事実のみアプリ内で確認)                     |
+| App 内課金(プレミアム サブスクリプション)  | App Store / StoreKit | ❌ 不可(購入の事実のみアプリ内で確認)                     |
 | 領収書、決済情報         | Apple                | ❌ 一切不可                                    |
 | 集計レビュー、評価        | App Store            | ⚪ 公開ページから閲覧可能(個人特定不可)                    |
 | App Analytics 集計 | App Store Connect    | ⚪ 集計データのみ閲覧可能(個別ユーザー特定不可)                |
@@ -81,7 +81,7 @@ App Store および StoreKit における Apple の取扱いについては [App
 | ----------- | ----------------------------------------------- | ----- |
 | ローカル通知      | インターバルタイマー終了通知                                  | 任意    |
 | Live Activities | ロック画面でのセッション進捗表示                                | 任意    |
-| Family Sharing | App 内課金(Pro 解除)のファミリー共有                         | 任意    |
+| Family Sharing | App 内課金(プレミアム サブスクリプション)のファミリー共有                         | 任意    |
 
 本アプリは以下の権限を **一切要求しません**:
 
@@ -98,16 +98,26 @@ App Store および StoreKit における Apple の取扱いについては [App
 
 ## 5. 第三者サービス・SDK
 
-本アプリは **一切のサードパーティ SDK を組み込んでいません**:
+本アプリは **解析・広告・ソーシャル系のサードパーティ SDK を一切組み込んでいません**:
 
 - ❌ Google Analytics、Firebase、Mixpanel 等の解析 SDK
 - ❌ Crashlytics、Sentry 等のクラッシュレポート SDK
 - ❌ AdMob、Meta Audience Network 等の広告 SDK
 - ❌ ソーシャルログイン SDK(Facebook / Google 等)
 
-本アプリが連携する第三者サービスは、Apple の以下のサービスのみです:
+本アプリで利用する唯一のサードパーティ SDK は **課金処理用の RevenueCat** です:
 
-- **App Store / StoreKit**: App 内課金(Pro 解除)の決済処理
+- ✅ **RevenueCat**(購入処理のみ): App Store / StoreKit 2 を介した
+  サブスクリプション(月額 ¥980 / 年額 ¥4,900)の状態管理に使用します。
+  RevenueCat は購入レシートと匿名 ID(`$RCAnonymousID:*`)を扱い、
+  お客様の氏名・メールアドレス等の個人識別情報は本アプリから送信されません。
+  RevenueCat 自体の取り扱いは [RevenueCat Privacy Policy](https://www.revenuecat.com/privacy)
+  に従います。本アプリは RevenueCat の attribution / analytics 機能を **無効化** しています
+  (購入状態の同期目的でのみ使用)。
+
+本アプリが連携する第三者サービスは、Apple および RevenueCat の以下のサービスのみです:
+
+- **App Store / StoreKit**: App 内課金(プレミアム サブスクリプション)の決済処理
 - **Local Notifications**: 端末内のローカル通知
 - **iCloud Backup**(任意): お客様が iOS の iCloud バックアップを有効にしている場合のみ、本アプリのデータが Apple のバックアップに含まれます
 
