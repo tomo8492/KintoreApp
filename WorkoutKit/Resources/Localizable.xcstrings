@@ -19796,6 +19796,22 @@
         }
       }
     },
+    "session.live.workout.default": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Workout"
+          }
+        }
+      }
+    },
     "session.row.set-progress": {
       "comment": "Session 種目行: セット進捗。例: 「セット 2 / 4」",
       "extractionState": "manual",

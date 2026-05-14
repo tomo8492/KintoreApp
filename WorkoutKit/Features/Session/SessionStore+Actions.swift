@@ -43,6 +43,10 @@ extension SessionStore {
         // セッション終了後はカウントダウンを起動しない(直前 advanceCursor で finish 済の場合)。
         if status == .running, restSeconds > 0 {
             startIntervalCountdown(seconds: restSeconds)
+            // v1.0 §5-3: ロック画面 / Dynamic Island 向けのレストタイマー Live Activity も起動。
+            // バックグラウンドでも残時間が見えるよう、フォアグラウンドのカウントダウン
+            // (IntervalTimer)とは別系統で並行起動する。
+            startRestTimerLiveActivity(seconds: restSeconds)
         }
 
         // C3: セット完了 / 種目進行に合わせて Live Activity を更新する。
@@ -50,6 +54,39 @@ extension SessionStore {
         if status == .running {
             updateLiveActivity()
         }
+    }
+
+    // MARK: - Rest Timer Live Activity (v1.0 §5-3)
+
+    /// `completeCurrentSet` から呼ばれる。レスト残時間を Dynamic Island / ロック画面に表示する。
+    /// 失敗(OS が Live Activity を許可していない、Activity.request 例外等)時は
+    /// RestTimerManager 内でログを残して静かに無効化する。
+    private func startRestTimerLiveActivity(seconds: Int) {
+        // advanceCursor 済みなので currentItem は「次のセットの種目」を指している。
+        guard let item = currentItem else { return }
+        let exerciseName = resolvedExercises[item.slug]?.localizedName ?? item.slug
+        // currentSetIndex は 0-indexed なので +1 して 1-indexed の「次のセット番号」に。
+        let nextSet = currentSetIndex + 1
+        let totalForExercise = item.plannedSetCount
+        // ワークアウト名は Goal の Localized 名で代用(Template 由来は v1.1+)。
+        let workoutName = String(localized: "session.live.workout.default",
+                                 defaultValue: "ワークアウト")
+
+        RestTimerManager.shared.start(
+            seconds: seconds,
+            workoutName: workoutName,
+            exerciseName: exerciseName,
+            sessionId: sessionId,
+            nextSetNumber: nextSet,
+            totalSetsForExercise: totalForExercise
+        )
+    }
+
+    /// abort / finish 時に呼ぶ。レストタイマー Live Activity を能動的に終了する。
+    /// IntervalTimer 側の stopIntervalCountdown と一緒に呼ぶことで、
+    /// ロック画面に古い表示が残らないようにする。
+    func stopRestTimerLiveActivity() async {
+        await RestTimerManager.shared.stop()
     }
 
     /// 現在種目をスキップして次種目の最初のセットへ。残りセットは記録しない。
@@ -96,6 +133,8 @@ extension SessionStore {
         status = .aborted
         Logger.session.info("abort: id=\(self.sessionId, privacy: .public)")
         endLiveActivity()
+        // v1.0 §5-3: レストタイマー Live Activity もロック画面から消す。
+        Task { await stopRestTimerLiveActivity() }
     }
 
     /// 全種目完了で呼ばれる。完了状態にして finishedAt を打つ。
@@ -109,6 +148,8 @@ extension SessionStore {
         status = .finished
         Logger.session.info("finish: id=\(self.sessionId, privacy: .public), completedSets=\(self.completedSets.count)")
         endLiveActivity()
+        // v1.0 §5-3: レストタイマー Live Activity もロック画面から消す。
+        Task { await stopRestTimerLiveActivity() }
     }
 
     // MARK: - Cursor advancement
