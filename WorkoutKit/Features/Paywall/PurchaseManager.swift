@@ -131,13 +131,27 @@ actor PurchaseManager {
 
     private func plan(from package: Package) -> PurchasePlan {
         let product = package.storeProduct
-        let trial = product.introductoryDiscount?.subscriptionPeriod.numberOfUnits
+        let trialDays = product.introductoryDiscount.map { Self.daysIn($0.subscriptionPeriod) }
         return PurchasePlan(
             productID: product.productIdentifier,
             displayPrice: product.localizedPriceString,
-            trialDays: trial,
+            trialDays: trialDays,
             rcIdentifier: package.identifier
         )
+    }
+
+    /// `SubscriptionPeriod` を概算「日数」に変換する。
+    /// HardPaywallView の「7-day free trial」表記用なので月/年は近似でよい
+    /// (商品の最少単位は通常 .day か .week なので近似誤差は気にしない)。
+    private static func daysIn(_ period: SubscriptionPeriod) -> Int {
+        let n = period.value
+        switch period.unit {
+        case .day:   return n
+        case .week:  return n * 7
+        case .month: return n * 30
+        case .year:  return n * 365
+        @unknown default: return n
+        }
     }
 
     // MARK: - Purchase
@@ -152,13 +166,13 @@ actor PurchaseManager {
         }
         do {
             let result = try await Purchases.shared.purchase(package: pkg)
+            // RevenueCat 5.x はキャンセル時に throw せず result.userCancelled=true を返す。
+            // ErrorCode 経由のキャンセル判定は冗長なので削除(NSError 化されているため
+            // `as? ErrorCode` のキャスト自体が SDK 5.x では成立しない)。
             if result.userCancelled { return .cancelled }
             await applyEntitlements(result.customerInfo)
             return .success
         } catch {
-            if let rcErr = error as? RevenueCat.ErrorCode, rcErr == .purchaseCancelledError {
-                return .cancelled
-            }
             throw PurchaseError.underlying(error.localizedDescription)
         }
     }

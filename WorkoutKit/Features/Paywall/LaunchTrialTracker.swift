@@ -28,9 +28,12 @@ final class LaunchTrialTracker {
     private let defaults: UserDefaults
     private let now: () -> Date
 
-    init(
+    /// `AppDependency.defaultValue`(EnvironmentKey protocol 要件で nonisolated)から
+    /// 構築できるよう nonisolated init。引数値の取り回しのみで MainActor 隔離された
+    /// 状態には触れないので安全。
+    nonisolated init(
         defaults: UserDefaults = .standard,
-        now: @escaping () -> Date = { Date() }
+        now: @escaping @Sendable () -> Date = { Date() }
     ) {
         self.defaults = defaults
         self.now = now
