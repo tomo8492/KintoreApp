@@ -218,6 +218,11 @@ targets:
         excludes:
           - "**/.gitkeep"
           - "WorkoutKitWatch.entitlements"
+      # v1.0 §-1.19: 共有データ受け渡し用 2 ファイルを iPhone App と Widget の
+      # 両 target から path-include する。重複コンパイルされるが、各 Bundle に
+      # 必要な型を漏れなく含めるための明示的セット。SwiftData 依存は無い。
+      - path: WorkoutKit/Shared/TodaySessionSummary.swift
+      - path: WorkoutKit/Shared/WatchSummaryBridge.swift
     settings:
       base:
         PRODUCT_NAME: WorkoutKitWatch

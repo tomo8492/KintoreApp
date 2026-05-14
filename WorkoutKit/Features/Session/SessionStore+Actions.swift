@@ -135,6 +135,8 @@ extension SessionStore {
         endLiveActivity()
         // v1.0 §5-3: レストタイマー Live Activity もロック画面から消す。
         Task { await stopRestTimerLiveActivity() }
+        // v1.0 §-1.19: watchOS Widget 用に今日のサマリを更新(中断でもセット数は残す)。
+        writeWatchSummary(isCompletedToday: false)
     }
 
     /// 全種目完了で呼ばれる。完了状態にして finishedAt を打つ。
@@ -150,6 +152,24 @@ extension SessionStore {
         endLiveActivity()
         // v1.0 §5-3: レストタイマー Live Activity もロック画面から消す。
         Task { await stopRestTimerLiveActivity() }
+        // v1.0 §-1.19: watchOS Widget 用に「完了」+今日のセット数を反映。
+        writeWatchSummary(isCompletedToday: true)
+    }
+
+    // MARK: - Watch Widget bridge (v1.0 §-1.19)
+
+    /// 今日のセッションサマリを App Group 共有 UserDefaults に書き出す。
+    /// watchOS Widget(WorkoutKitWatch)はこの JSON を読んで Smart Stack に表示する。
+    /// 失敗時は WatchSummaryBridge 内でログを残して握りつぶす。
+    private func writeWatchSummary(isCompletedToday: Bool) {
+        let exerciseCount = Set(completedSets.compactMap { $0.exercise?.slug }).count
+        let summary = TodaySessionSummary(
+            updatedAt: .now,
+            isCompletedToday: isCompletedToday,
+            totalSetsToday: completedSets.count,
+            exerciseCountToday: exerciseCount
+        )
+        WatchSummaryBridge.write(summary)
     }
 
     // MARK: - Cursor advancement

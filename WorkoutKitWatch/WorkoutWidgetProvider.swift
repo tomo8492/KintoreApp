@@ -1,18 +1,17 @@
 // MARK: - WorkoutWidgetProvider
-// CLAUDE.md v0.5 §-1.19 準拠。
+// CLAUDE.md v1.0 §-1.19 / §3-4 / §5-4 準拠。
 //
 // TimelineProvider 実装。1 時間ごとにエントリを更新する(リアルタイム性不要)。
 //
 // データ取得:
-//   - SwiftData を App Group 共有 URL で開き、本日完了の WorkoutSession 数 +
-//     ExerciseSet 件数を数える。
-//   - 失敗時は placeholder と同じ「未実施」表示にフォールバック。
+//   - App Group 共有 UserDefaults(group.com.tomo.workoutkit)から
+//     iPhone App が書き込んだ TodaySessionSummary JSON を読む。
+//   - 値が無い / 昨日以前の値しか無い場合は WatchSummaryBridge が「今日 0 セット」を返す。
 //
-// 注意:
-//   - watchOS の Widget Extension は短命プロセスなので、ModelContainer 構築コストを
-//     可能な限り抑える(`isStoredInMemoryOnly: false`、`url:` で共有ストアを指定)。
-//   - 本実装は **スケルトン**: 共有 ModelContainer の構築は Phase 4 で実装し、
-//     現状はカウントを 0 固定で返す(ビルド可能・配置可能な最小単位)。
+// なぜ SwiftData を直接読まないか:
+//   - Domain/Models + Schema を Widget target に丸ごと持ち込むと依存が膨らみ、
+//     Widget 起動コストが上がる(Smart Stack の数秒応答制約に影響)。
+//   - サマリ値だけなら UserDefaults 1 件で十分(I/O 1 read)。
 
 import Foundation
 import WidgetKit
@@ -34,15 +33,16 @@ struct WorkoutWidgetProvider: TimelineProvider {
         completion(Timeline(entries: [entry], policy: .after(refresh)))
     }
 
-    // MARK: - Data fetch (TODO: Phase 4 で SwiftData 共有ストア接続)
+    // MARK: - Data fetch
 
-    /// 現時点では App Group 共有ストアの構築は未実装。Placeholder と同等の値を返す。
-    /// Phase 4 で `SharedModelContainer.todaySummary()` 経由に切り替える。
+    /// 今のエントリを構築する。App Group 共有 UserDefaults からサマリを読み、
+    /// 今日でなければ「未実施」へフォールバックする(WatchSummaryBridge.read 内で処理済)。
     private func currentEntry() -> WorkoutWidgetEntry {
-        WorkoutWidgetEntry(
+        let summary = WatchSummaryBridge.read()
+        return WorkoutWidgetEntry(
             date: .now,
-            isCompletedToday: false,
-            totalSetsToday: 0
+            isCompletedToday: summary.isCompletedToday,
+            totalSetsToday: summary.totalSetsToday
         )
     }
 }
