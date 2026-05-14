@@ -1,8 +1,9 @@
 // MARK: - WorkoutKitApp
-// アプリのエントリポイント。CLAUDE.md §-1.3 / §-1.5 / §4.1 準拠。
+// アプリのエントリポイント。CLAUDE.md v1.0 §3 / §4-3 / §6-3 準拠。
 // - ModelContainer は SchemaV1 + WorkoutKitMigrationPlan で構築
-// - 配置は appSupport/WorkoutKit.store(§-1.5)
-// - 起動時に ExerciseSeeder.seedIfNeeded を一度だけ走らせる
+// - 配置は appSupport/WorkoutKit.store
+// - 起動時に ExerciseSeeder / TemplateSeeder を順に走らせる
+// - v1.0: PurchaseManager.shared を configure し、ProFeatureGate にブリッジする
 
 import SwiftUI
 import SwiftData
@@ -13,16 +14,17 @@ struct WorkoutKitApp: App {
     /// ModelContainer はアプリ起動時に1回だけ作る。
     /// `.modelContainer(_:)` で全 View に共有する(Singleton 禁止規約に抵触しない、§4.1)。
     private let modelContainer: ModelContainer
-    /// C3: LiveActivityClient を AppDependency に DI する。
-    /// F1: StoreKitClient を同梱、起動時 `start()` で entitlement の購読を開始する。
-    /// E3: 同じ StoreKitClient を purchaseRestorer としても渡す
-    /// (StoreKitClient: PurchaseRestoring 拡張)。
+    /// AppDependency は v1.0 で purchaseManager / restTimer フィールドが追加された。
+    /// PurchaseManager.shared / RestTimerManager.shared は nonisolated(unsafe) static let
+    /// なので、ここで参照しても問題ない。
     @State private var dependency: AppDependency = {
         let gate = ProFeatureGate()
         let storeKit = StoreKitClient(proGate: gate)
         return AppDependency(
             proGate: gate,
             liveActivity: LiveActivityClient(),
+            restTimer: RestTimerManager.shared,
+            purchaseManager: PurchaseManager.shared,
             storeKitClient: storeKit,
             purchaseRestorer: storeKit,
             annotationLoader: ExerciseAnnotationLoader()
@@ -70,13 +72,29 @@ struct WorkoutKitApp: App {
                     await runStartupSeed()
                 }
                 .task {
-                    // CLAUDE.md §-1.14。Transaction.currentEntitlements の購読を起動時に開始。
+                    // CLAUDE.md v1.0 §6-4: PurchaseManager をまず configure。
+                    // proGateBridge を AppDependency.defaultValue ではなくここで配線する
+                    // (defaultValue は nonisolated 評価で @MainActor プロパティに書けないため)。
+                    let purchase = dependency.purchaseManager
+                    let gate = dependency.proGate
+                    purchase.proGateBridge = { [weak gate] active in
+                        gate?.setIsPro(active)
+                    }
+                    purchase.configureIfPossible()
+
+                    // 後方互換: 既存 StoreKitClient(actor) も並行で動かす。
+                    // v0.5 で完全に PurchaseManager に置換予定だが、現在は両系統を共存。
                     await dependency.storeKitClient.start()
                     applyDebugProOverrideIfNeeded()
                 }
                 .onChange(of: scenePhase) { _, newPhase in
                     if newPhase == .active {
-                        Task { await dependency.storeKitClient.refreshEntitlementsOnForeground() }
+                        Task {
+                            // v1.0: PurchaseManager 側も entitlement を再評価する
+                            // (払戻/家族共有/別端末からの状態変化を取り込むため)。
+                            await dependency.purchaseManager.refresh()
+                            await dependency.storeKitClient.refreshEntitlementsOnForeground()
+                        }
                     }
                 }
         }
