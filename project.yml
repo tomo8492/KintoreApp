@@ -72,6 +72,9 @@ targets:
       # 参照する必要があるため、Widget 拡張ディレクトリ配下の1ファイルだけを
       # アプリ本体の sources にも個別追加する(モジュール境界を跨いだ型共有)。
       - path: WorkoutKitLiveActivity/SessionLiveActivityAttributes.swift
+      # v0.5 §-1.18: RestTimer 用 ActivityAttributes も同様に共有。
+      # 本体側は Features/RestTimer/ に正本を置き、Widget 側は本体のソースを
+      # path 個別追加で参照する(Widget の sources に下のエントリを追加済み)。
     settings:
       base:
         # Entitlements (App Group)。CLAUDE.md §-1.5。
@@ -151,6 +154,9 @@ targets:
       - path: WorkoutKit/Resources/Localizable.xcstrings
         buildPhase: resources
         type: file
+      # v0.5 §-1.18: RestTimer の ActivityAttributes 正本は App 本体側に置き、
+      # Widget 側は path 個別追加で読む。これで型は 1 か所だけ存在する。
+      - path: WorkoutKit/Features/RestTimer/RestTimerAttributes.swift
     configFiles:
       Debug: Config/LiveActivity.xcconfig
       Beta: Config/LiveActivity.xcconfig
