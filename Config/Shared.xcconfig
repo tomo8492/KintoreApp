@@ -12,7 +12,9 @@ PRODUCT_MODULE_NAME = WorkoutKit
 DEVELOPMENT_TEAM =
 
 // --- プラットフォーム ------------------------------------------------------
-IPHONEOS_DEPLOYMENT_TARGET = 17.0
+// CLAUDE.md v0.5 §-1.1: サブスク化に伴い iOS 17.0 → 18.0 へ引き上げ。
+// Foundation Models Framework は iOS 26+(コード側で #available ガード)。
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
 TARGETED_DEVICE_FAMILY = 1,2
 SUPPORTED_PLATFORMS = iphoneos iphonesimulator
 SDKROOT = iphoneos
@@ -38,3 +40,9 @@ ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
 // --- ローカライズ ---------------------------------------------------------
 DEVELOPMENT_LANGUAGE = ja
 LOCALIZATION_PREFERS_STRING_CATALOGS = YES
+
+// --- v0.5: Secrets (RevenueCat API Key 等) --------------------------------
+// `Config/Secrets.xcconfig` は .gitignore 済み。各開発者が手元で作成する。
+// テンプレ: Config/Secrets.template.xcconfig 参照。
+// `Optional include` のため、未配置でもビルドは通る(空キーだと実機購入は失敗)。
+#include? "Secrets.xcconfig"
