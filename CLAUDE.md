@@ -1,545 +1,939 @@
-# WorkoutKit (仮) — iOS フィットネスコーチングアプリ 開発仕様書
+# CLAUDE.md — WorkoutKit 設計書 v1.0
 
-> **参考プロジェクト**: [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool) (★7.2k, MIT License, Next.js 15 + Prisma + PostgreSQL, Feature-Sliced Design)
-> Web版を参考に、純ネイティブiOSアプリとして再設計。
->
-> **本ドキュメントの位置づけ**: 要件定義 + アーキテクチャ設計 + Claude Code 用開発指示書(CLAUDE.md)を兼ねる。Cursor / Xcode / Claude Code から本ファイルをルートに配置して使用することを想定。
->
-> **workout-cool 由来で取り込む要素**: ① エクササイズ属性ベースのスキーマ ② TYPE/PRIMARY_MUSCLE/SECONDARY_MUSCLE/EQUIPMENT/MECHANICS_TYPE の5属性体系 ③ slug ベースのID ④ 多言語フィールド(日英2語並列) ⑤ ウォームアップ/メイン/クールダウンの3部構成セッション ⑥ Shuffle と Choose Exercise の2モード ⑦ CSVインポート対応。
+# 市場調査統合版 / Claude Code 参照用
 
------
+> **このファイルはClaude Codeが常時参照する設計書です。**
+> 実装前に必ずこのファイル全体を読み込んでください。
+> 変更時はバージョン番号とChangelog末尾を更新してください。
 
-## 🚨 §-1. 最初に確定すべき設定(Foundation Locks)
+---
 
-> **このセクションが本書で最も重要**。後から変更すると影響範囲が広いものを網羅する。Xcodeプロジェクト作成 **より前** に全項目を確定すること。
+## 目次
 
-### -1.1 アイデンティティ(✅全確定)
+1. [プロジェクト概要](#1-プロジェクト概要)
+2. [市場調査サマリー(意思決定の根拠)](#2-市場調査サマリー意思決定の根拠)
+3. [技術スタック](#3-技術スタック)
+4. [アーキテクチャ設計](#4-アーキテクチャ設計)
+5. [機能仕様](#5-機能仕様)
+6. [収益化設計](#6-収益化設計)
+7. [UI/UX設計方針](#7-uiux設計方針)
+8. [ASO戦略](#8-aso戦略)
+9. [実装ロードマップ](#9-実装ロードマップ)
+10. [品質基準・完了定義](#10-品質基準完了定義)
+11. [制約・禁止事項](#11-制約禁止事項)
+12. [Changelog](#12-changelog)
 
-|項目                          |**確定値**                                          |確定後の変更コスト                  |
-|----------------------------|-------------------------------------------------|---------------------------|
-|**App Display Name**        |`WorkoutKit` (仮、公開時に最終決定)                        |低                          |
-|**Bundle ID**               |**`com.tomo.workoutkit`**                        |**極高**(App Store公開後は実質変更不可)|
-|**Team ID**                 |Apple Developer Program 登録時に取得                   |-                          |
-|**Apple ID 名義**             |**個人アカウント**                                      |高(法人化時に移管)                 |
-|**App Store Connect Record**|TestFlight 直前(Phase P5)で作成                       |-                          |
-|**App Category**            |Primary: `Health & Fitness` / Secondary: `Sports`|中                          |
-|**Minimum iOS**             |**`iOS 18.0`**(v0.5 でサブスク化に合わせ引き上げ。Foundation Models は iOS 26 ガード)|中(v0.5 で更新)             |
-|**Supported Devices**       |**iPhone + iPad 両対応**(初版から)                      |中                          |
-|**Orientation**             |iPhone: Portrait のみ / iPad: Portrait + Landscape |中                          |
-|**License**                 |**Proprietary**(個人非公開、App Storeのみ)               |低                          |
-|**配布方法**                    |**App Store 一般公開**                               |-                          |
-|**課金モデル**                   |**ハードペイウォール**(フリー版なし、初回 3 日のお試し後にロック)             |**極高**(v0.5 で変更、サブスク化)    |
-|**サブスク 月額**                 |**¥980/月**(7 日間無料トライアル付き、Auto-renewable Subscription) |中                       |
-|**サブスク 年額**                 |**¥4,900/年**(7 日間無料トライアル付き、Auto-renewable Subscription)|中                       |
-|**Subscription Group**      |**`workoutkit.premium`** (1グループに月/年の2プラン同梱)        |中                          |
-|**月額 Product ID**           |`workoutkit_monthly_980`                          |中                          |
-|**年額 Product ID**           |`workoutkit_yearly_4900`                          |中                          |
-|**RevenueCat Entitlement**  |`premium`(プラン横断の解放フラグ)                          |低                          |
-|**課金 SDK**                  |**RevenueCat** + StoreKit 2(StoreKit 直接呼び出しは Restore Purchases / sandbox 検証用に補助で残す)|中     |
-|**旧 IAP(v0.4 互換のため記録)**    |~~`com.tomo.workoutkit.pro.unlock`(Non-Consumable, ¥980)~~ → v0.5 で廃止、移行は無し(v0.4 はベータ未配布のため) |- |
+---
 
-### -1.2 IDとスキーマの基本方針(SwiftDataで一番大事)
+## 1. プロジェクト概要
 
-**決め事**: workout-cool の `id`(数値)と `slug`(文字列)の二重持ちは継承するが、**SwiftData主キーは `slug`** とする。
+| 項目 | 内容 |
+|---|---|
+| アプリ名 | WorkoutKit |
+| Bundle ID | `com.tomo.workoutkit` |
+| カテゴリ | Health & Fitness |
+| 対象OS | iOS 18.0以上(AI機能はiOS 26以上) |
+| 対象端末 | iPhone(メイン)/ Apple Watch(ウィジェットのみ) |
+| 開発者 | Tomo(個人開発) |
+| ベースリポジトリ | workout-cool fork |
+| 収益モデル | フリーミアム → サブスクリプション(ハードペイウォール) |
+| 月額価格 | ¥980 / 月(7日間無料トライアル付き) |
+| 年額価格 | ¥4,900 / 年(7日間無料トライアル付き) |
+| 収益管理 | RevenueCat + StoreKit 2 |
+| 目標MRR(6か月) | ¥300,000(約300人有料転換) |
+| 目標MRR(12か月) | ¥980,000(約1,000人有料転換) |
 
-|観点                              |採用                                      |理由                                       |
-|--------------------------------|----------------------------------------|-----------------------------------------|
-|Exercise の主キー                   |`slug: String` (例: `barbell-back-squat`)|CSV再インポートで安定、URL/ディープリンクに使える、テストデータで読みやすい|
-|WorkoutSession / ExerciseSet 主キー|`id: UUID`                              |端末固有、衝突しない                               |
-|Template 主キー                    |`id: UUID`                              |同上                                       |
-|外部CSVの数値ID                      |`legacyCsvId: Int?` (任意保持)              |workout-cool との突合用                       |
+### コアバリュープロポジション
 
+> **「記録するだけで、AIが次のアクションを教えてくれる筋トレアプリ」**
 
-> **この決定の影響**: `slug` は世界に1つしかない安定IDになる。ローカライズで slug は変えない(英語slugで固定。日本語は表示用の `slugJa` を別カラムで持つ)。
+- オンデバイスAI(Foundation Models Framework)でプライバシー完全保護
+- Live Activitiesでセット間レストをロック画面に表示
+- Apple Watch Smart Stackで今日の記録を一目確認
 
-### -1.3 SwiftData スキーマバージョニング
+---
 
-> SwiftDataはマイグレーションを **VersionedSchema + SchemaMigrationPlan** で扱う。**初日から V1 として明示**しないと後でハマる。
+## 2. 市場調査サマリー(意思決定の根拠)
+
+> このセクションは実装の意思決定根拠です。機能の優先順位判断時に参照してください。
+
+### 2-1. 市場規模・成長性
+
+- 全世界アプリIAP収益:2024年 **$150B(+13% YoY)**、2025年 **$167B(+10.6%)**
+- **非ゲームアプリが2025年史上初めてゲーム収益を上回った**
+- Health & Fitness:2024年に **+24% YoY** の急成長カテゴリ
+- iOS ARPU $138 vs Android $72 → **iOSが収益2倍**
+- 日本市場は世界第3位($16.5B)
+
+### 2-2. 競合優位性の根拠
+
+| 機能 | 競合アプリ | WorkoutKit |
+|---|---|---|
+| AIワークアウト分析 | サーバー送信型(有料API) | **オンデバイス(無料・プライベート)** |
+| レストタイマー | アプリ内表示のみ | **Live Activities(ロック画面表示)** |
+| Apple Watch | フルアプリ必要 | **Smart Stackウィジェット(軽量)** |
+| 価格 | $9.99〜$19.99/月 | **¥980/月(競合の1/3〜1/2)** |
+
+### 2-3. 収益化モデルの根拠(RevenueCatデータ)
+
+- **ハードペイウォール**のD35転換率 **12.1%** vs フリーミアム2.1%(**5倍差**)
+- トライアル→有料転換の **50%以上が24時間以内**に発生
+- 年額プランは月額比で **年36%のユーザー保持**(月額は6.7%)
+- 週次プランは新規サブの約半数だが4か月で2/3が離脱→**年額をデフォルト推奨**
+- 平均月額サブ(iOS米国):$15.20、年額:$44.60 → ¥980/月は競争力ある価格
+
+### 2-4. 技術選定の根拠
+
+- **Foundation Models Framework(iOS 26)**:約3Bパラメータのオンデバイス推論
+  - 推論コスト¥0、プライバシー完全保護、3行でアクセス可能
+  - SmartGym、Day One、STOICなど複数アプリが既に採用
+- **Live Activities(ActivityKit)**:リテンション +2.7倍(Brazeデータ)
+- **watchOS Smart Stack**:追加実装コスト小、発見性高い
+
+### 2-5. 参入判断の根拠
+
+- Health & Fitnessカテゴリは月収$5K〜$50Kの中堅アプリが多数存在 → **個人開発の勝機あり**
+- 成功事例:HabitKit(習慣トラッカー)がMRR $15,000以上、SmartGym(AI連携フィットネス)が単独開発でARR数十万ドル
+- **「AI + フィットネス」の組み合わせは2025年最大の成長セグメント**
+
+---
+
+## 3. 技術スタック
+
+### 3-1. メインスタック
+
+```
+言語          Swift 6(strict concurrency 対応必須)
+UI            SwiftUI(全画面)
+データ         SwiftData(iOS 17以上)
+状態管理       @Observable マクロ(iOS 17以上)
+依存管理       Swift Package Manager(SPM)
+```
+
+### 3-2. フレームワーク一覧
+
+```
+Foundation Models Framework  iOS 26以上  オンデバイスAI推論
+ActivityKit                  iOS 16.2以上  Live Activities
+WidgetKit                    iOS 14以上   Home/Lock Screen/Watch Widget
+HealthKit                    iOS 8以上    歩数・心拍連携(オプション)
+StoreKit 2                   iOS 15以上   課金処理
+RevenueCat SDK               iOS 13以上   サブスク管理・分析
+```
+
+### 3-3. 外部ライブラリ(SPM)
 
 ```swift
-// Domain/Schema/SchemaV1.swift
-enum SchemaV1: VersionedSchema {
-    static var versionIdentifier: Schema.Version { .init(1, 0, 0) }
-    static var models: [any PersistentModel.Type] {
-        [Exercise.self, WorkoutSession.self, ExerciseSet.self, Template.self]
-    }
-}
-
-// Domain/Schema/MigrationPlan.swift
-enum WorkoutKitMigrationPlan: SchemaMigrationPlan {
-    static var schemas: [any VersionedSchema.Type] { [SchemaV1.self] }
-    static var stages: [MigrationStage] { [] }  // V1 のみは空
-}
-
-// WorkoutKitApp.swift
-let container = try ModelContainer(
-    for: SchemaV1.self,
-    migrationPlan: WorkoutKitMigrationPlan.self,
-    configurations: ModelConfiguration(...)
-)
+// Package.swift dependencies
+.package(url: "https://github.com/RevenueCat/purchases-ios", from: "5.0.0"),
 ```
 
-破壊的変更(カラム削除など)は必ず V2 に上げて MigrationStage を書く。**プレリリースでもこの規約を破らない**。
+### 3-4. App Groups(データ共有)
 
-### -1.4 単位系・ロケール・時刻
+```
+group.com.tomo.workoutkit
+```
 
-|項目        |**確定値**                                   |設定で変更可               |
-|----------|------------------------------------------|---------------------|
-|重量単位 デフォルト|**kg(0.1 単位、全ロケール共通)**                    |✅ Settings で lbs に切替可|
-|距離単位      |システムロケール準拠                                |✅                    |
-|体重表示      |kg(0.1 単位)                                |✅                    |
-|週の開始曜日    |システム設定に従う(`Calendar.current.firstWeekday`)|✅                    |
-|履歴の日付表示   |システムロケール                                  |-                    |
-|TimeZone  |`TimeZone.current` をセッションに記録(海外移動でズレない)   |-                    |
+> iPhone ↔ Watch ウィジェット間のSwiftDataコンテナ共有に使用
 
-**保存は常に内部単位(kg, m, UTC)で**。表示変換は View 層のみ。これを破ると履歴データが汚染される。
+### 3-5. 対象プラットフォーム
 
-### -1.5 同期とデータ所在
+```
+iOS 18.0+    メインアプリ(必須)
+iOS 26.0+    AI機能(#available分岐、非対応端末は非表示)
+watchOS 11+  Smart Stackウィジェット
+```
 
-|項目                   |v1.0 既定                                                                |v1.1+               |
-|---------------------|-----------------------------------------------------------------------|--------------------|
-|データ所在                |端末ローカル (`appSupport/WorkoutKit.store`)                                 |iCloud (CloudKit) 検討|
-|App Group            |**`group.com.tomo.workoutkit`** を **初日から作成**(watchOS/Widget で必須、後付けは面倒)|watchOS時に活用         |
-|Keychain Access Group|同上                                                                     |認証導入時               |
-|バックアップ               |iCloudバックアップ対象に含める(デフォルト)                                              |エクスポート機能(F-06)併用    |
+---
 
+## 4. アーキテクチャ設計
 
-> **App Groupだけは v1.0 で使わなくても初日に作っておく**。後から追加すると既存DBの移行が必要になる。
+### 4-1. ディレクトリ構成
 
-### -1.6 ロギング・エラー・MainActor 規約
+```
+WorkoutKit/
+├── App/
+│   ├── WorkoutKitApp.swift          // エントリーポイント・RevenueCat初期化
+│   └── AppRouter.swift              // 画面遷移管理
+│
+├── Features/
+│   ├── Workout/
+│   │   ├── WorkoutListView.swift    // ワークアウト一覧
+│   │   ├── WorkoutDetailView.swift  // ワークアウト実行画面
+│   │   ├── SetCompleteButton.swift  // セット完了ボタン
+│   │   └── WorkoutSummaryView.swift // 終了サマリー画面
+│   │
+│   ├── AICoach/                     // 【新機能】AI要約
+│   │   ├── AICoachView.swift        // サマリー画面内コンポーネント
+│   │   ├── WorkoutInsightGenerator.swift  // Foundation Models呼び出し
+│   │   └── WorkoutInsight.swift     // @Generableモデル定義
+│   │
+│   ├── LiveActivity/               // 【新機能】レストタイマー
+│   │   ├── RestTimerAttributes.swift       // ActivityAttributes定義
+│   │   ├── RestTimerLiveActivityView.swift // Dynamic Island / Lock Screen UI
+│   │   └── RestTimerManager.swift          // Activity ライフサイクル管理
+│   │
+│   ├── Paywall/                    // 【新機能】課金UI
+│   │   ├── PaywallView.swift       // ペイウォール画面
+│   │   └── PurchaseManager.swift   // RevenueCat wrapper(@Observable)
+│   │
+│   └── Settings/
+│       ├── SettingsView.swift
+│       └── RestoreView.swift       // 購入復元(審査要件)
+│
+├── Models/
+│   ├── WorkoutSession.swift        // SwiftDataモデル
+│   ├── Exercise.swift
+│   └── WorkoutSet.swift
+│
+├── Shared/
+│   ├── Extensions/
+│   ├── Helpers/
+│   └── Constants.swift             // Bundle ID、Group ID、Product ID等
+│
+└── WorkoutKitWatch/                // watchOS Extension
+    ├── WorkoutKitWatchWidget.swift
+    ├── WorkoutWidgetEntry.swift
+    └── WorkoutWidgetProvider.swift
+```
+
+### 4-2. データフロー
+
+```
+SwiftData(Shared Container: group.com.tomo.workoutkit)
+  │
+  ├── iPhone App ──→ WorkoutSession / Exercise / WorkoutSet
+  │                      │
+  │                      ├──→ AICoach(Foundation Models)
+  │                      ├──→ Live Activities(ActivityKit)
+  │                      └──→ HealthKit(オプション)
+  │
+  └── Watch Widget ──→ 今日のWorkoutSession読み取り(読み取りのみ)
+```
+
+### 4-3. 状態管理パターン
 
 ```swift
-// Shared/Logging.swift
-import OSLog
-extension Logger {
-    static let app       = Logger(subsystem: "com.tomo.workoutkit", category: "app")
-    static let data      = Logger(subsystem: "com.tomo.workoutkit", category: "data")
-    static let generator = Logger(subsystem: "com.tomo.workoutkit", category: "generator")
-    static let importer  = Logger(subsystem: "com.tomo.workoutkit", category: "importer")
-}
+// @Observable を使用(Swift 5.9以上、iOS 17以上)
+@Observable final class PurchaseManager { ... }
+@Observable final class RestTimerManager { ... }
+@Observable final class WorkoutSessionManager { ... }
 
-// Shared/AppError.swift
-enum AppError: LocalizedError {
-    case dataCorruption(String)
-    case importFailed(reason: String)
-    case generatorEmpty(GeneratorInput)
-    case videoMissing(slug: String)
-    var errorDescription: String? { /* String Catalog 経由 */ }
-}
+// Environment経由でView階層に注入
+.environment(PurchaseManager.shared)
+.environment(RestTimerManager.shared)
 ```
 
-**MainActor 規約**:
+---
 
-- すべての SwiftUI View / `@Observable` Store は `@MainActor`
-- `Repository` / `Importer` / `Generator` は **non-isolated**(必要に応じて `actor` 化)
-- `print` 禁止。**全部 `Logger`**。
-- 例外は `throws` で投げる、UI で `AppError` に正規化してから表示
+## 5. 機能仕様
 
-### -1.7 .xcconfig による設定外部化
+### 5-1. 機能一覧とフェーズ
 
-`Info.plist` のべた書きは禁止。Build Settings から呼び出す形にする:
+| 機能 | フェーズ | 対象OS | Premium? |
+|---|---|---|---|
+| ワークアウト記録(基本) | 既存 | iOS 18+ | No(フリー) |
+| 種目・セット管理 | 既存 | iOS 18+ | No(フリー) |
+| **ペイウォール(RevenueCat)** | Phase 1 | iOS 18+ | — |
+| **レストタイマー Live Activities** | Phase 2 | iOS 18+ | **Yes** |
+| **AI ワークアウト要約** | Phase 3 | iOS 26+ | **Yes** |
+| **Apple Watch Smart Stack** | Phase 4 | watchOS 11+ | **Yes** |
+| HealthKit 心拍連携 | Phase 5 | iOS 18+ | **Yes** |
+| 進捗グラフ | Phase 5 | iOS 18+ | **Yes** |
 
-```
-Config/
-├── Shared.xcconfig          // Bundle ID, Team ID, Min iOS
-├── Debug.xcconfig           // include "Shared.xcconfig"
-├── Beta.xcconfig            // TestFlight 用、別 Bundle ID 推奨 (.beta サフィックス)
-└── Release.xcconfig
-```
+> **フリー機能はワークアウト記録のみ。** プレミアム機能にタッチした瞬間にペイウォールを表示する。
 
-### -1.8 Xcode プロジェクト命名規約(後で変えると事故る)
+---
 
-|種類            |命名                                    |例                       |
-|--------------|--------------------------------------|------------------------|
-|Target 名      |`WorkoutKit`                          |-                       |
-|Test Target   |`WorkoutKitTests`, `WorkoutKitUITests`|-                       |
-|Scheme 名      |Target と同名                            |-                       |
-|Asset Catalog |`Assets.xcassets`(一つだけ)               |-                       |
-|アクセントカラー名     |`AccentColor`(SwiftUI標準名)             |-                       |
-|App Icon 名    |`AppIcon`(標準)                         |-                       |
-|String Catalog|`Localizable.xcstrings`(複数禁止、1ファイルに集約)|-                       |
-|同梱動画ファイル      |`<slug>.mp4`(全小文字、ハイフン区切り)            |`barbell-back-squat.mp4`|
-|同梱サムネイル       |`<slug>.jpg`                          |`barbell-back-squat.jpg`|
-|ODR タグ        |`videos.<muscle>`                     |`videos.chest`          |
+### 5-2. 機能詳細:AI ワークアウト要約
 
-### -1.9 Privacy / Required Reason API
+#### 概要
 
-iOS 17.4+ 必須。`PrivacyInfo.xcprivacy` を **初日から空でも作成**:
+ワークアウト終了後、当日のトレーニング内容をオンデバイスLLMで分析し、
+日本語で2〜3文のコーチングコメントを生成する。
 
-|使う API             |Reason Code                       |用途           |
-|-------------------|----------------------------------|-------------|
-|`UserDefaults`     |`CA92.1`                          |アプリ自身の設定保存   |
-|`FileTimestamp API`|`C617.1`                          |エクスポートファイル名生成|
-|(将来 HealthKit 使うなら)|別途 `NSHealthShareUsageDescription`|-            |
-
-**収集する情報**: なし。トラッキング: なし。これを揺るがさない。
-
-### -1.10 同梱種目の最低ライン(v1.0 出荷条件)
-
-|カテゴリ                |種目数      |用途                 |
-|--------------------|---------|-------------------|
-|WARMUP              |10       |F-01b ウォームアップ      |
-|STRENGTH (compound) |30       |各部位×2種目以上          |
-|STRENGTH (isolation)|50       |細部位                |
-|CALISTHENICS        |20       |自重組向け              |
-|STRETCHING          |30       |F-01b クールダウン       |
-|CARDIO              |10       |目的=cardio用         |
-|**合計**              |**150以上**|(workout-cool 同等密度)|
-
-ChatGPT で生成する場合のプロンプトは `Resources/prompts/exercise-generation.md` に同梱。
-
-### -1.11 計測・分析
-
-> **Plausible Analytics は workout-cool でも撤去された**(`chore: remove Plausible analytics integration` PR #45 確認済)。**WorkoutKit も初日からアナリティクスゼロ**。クラッシュレポートも入れない(Xcode Organizer で十分)。
-
-### -1.12 Git 戦略
-
-```
-.gitignore に追加必須:
-  *.xcuserstate
-  xcuserdata/
-  DerivedData/
-  .swiftpm/
-  *.xcodeproj/project.xcworkspace/xcuserdata/
-  Pods/                  # 念のため(本プロジェクトでは使わないが)
-  *.ipa
-  *.dSYM.zip
-  build/
-  .DS_Store
-```
-
-ブランチ戦略は **Trunk-Based**(個人開発のため `main` 直 + feature ブランチ)。`v0.1.0` から SemVer。
-
-### -1.13 一発確認チェックリスト(✅全項目確定済み 2026-05-01)
-
-- [x] Bundle ID 確定: **`com.tomo.workoutkit`**
-- [ ] Apple Developer Program アクティブ ← **未登録、P-1で登録手続き(年額99 USD、本人確認に2-3日)**
-- [ ] Team ID メモ済み ← Developer登録後に取得
-- [x] App Group ID 確定: **`group.com.tomo.workoutkit`**
-- [x] Min iOS 確定: **`17.0`**
-- [x] 対応デバイス: **iPhone + iPad**(初版から)
-- [x] アクセントカラーHEX確定: `#FF6B35`(Light)/`#FF8F66`(Dark)
-- [x] ロケール: **日本語(主) + 英語**
-- [x] ライセンス: **Proprietary**(個人非公開)
-- [x] 配布: **App Store 一般公開**
-- [x] 課金モデル: **Freemium + Pro買い切り ¥980(Launch ¥600)**
-- [x] IAP Product ID: **`com.tomo.workoutkit.pro.unlock`**
-- [x] App名: **`WorkoutKit`**(仮、公開時最終決定)
-- [x] スキーマバージョン: **`SchemaV1`(1.0.0)** から開始
-- [x] 単位系: 内部 **kg/m/UTC**、デフォルト表示は **kg + システムロケール**
-- [x] アナリティクス: **入れない**(明示的決定)
-- [x] Logger subsystem: **`com.tomo.workoutkit`**
-- [x] リポジトリ: **GitHub Private**
-- [x] 開発環境: **自宅 Mac**(個人所有)
-- [x] 動画: **同梱しない**(文字説明 + ステップイラストのみ)
-
-### -1.14 課金モデル詳細(Freemium + Pro 買い切り)
-
-**実装方針**: StoreKit 2 + Non-Consumable In-App Purchase(サブスクリプションではない)
-
-#### Pro 機能境界(A案 確定)
-
-```
-【完全無料】
-✅ Builder ウィザード(F-01 全機能)
-✅ Shuffle / Choose 両モード(F-01a)
-✅ ウォームアップ/メイン/クールダウン(F-01b)
-✅ Session 実行画面(F-03)+ Live Activity
-✅ 同梱150種目 全部閲覧・検索
-✅ 履歴(直近30日まで)
-✅ 1RM計算
-✅ プリセットテンプレート3種(PPL/上下分割/全身)
-✅ ライト/ダークモード
-✅ 日本語/英語
-✅ App Store 標準の家族共有(購入後は家族にも適用)
-
-【Pro 買い切り ¥980(Launch ¥600 / 最初の3か月)】
-🔒 履歴 31日以前(全期間アクセス)
-🔒 詳細チャート(週次/月次ボリューム、部位別ヒートマップ)
-🔒 カスタムテンプレート無制限作成
-🔒 CSV/JSON インポート(workout-cool データ取り込み)
-🔒 履歴エクスポート(CSV)
-🔒 手動ログ追加(F-04 Issue #88: アプリ外で実施した種目を記録)
-🔒 種目のカスタム追加・編集
-🔒 セッションへの写真・メモ添付
-🔒 App Icon 変更(複数バリエーション)
-🔒 Apple Watch 連携(v1.1+ で提供)
-```
-
-#### IAP 命名規約
-
-|項目              |値                                    |
-|----------------|-------------------------------------|
-|Product ID      |`com.tomo.workoutkit.pro.unlock`     |
-|Type            |Non-Consumable                       |
-|Family Sharing  |Enabled                              |
-|価格 Tier         |Tier 6(¥600 Launch) → Tier 9(¥980 通常)|
-|Restore Purchase|必須実装(App Store審査 Guideline 3.1.1)    |
-
-#### Paywall 表示タイミング(UX)
-
-|トリガー           |Paywall 表示   |
-|---------------|-------------|
-|31日以前の履歴を見ようとした|✅(最も自然)      |
-|CSVインポート機能を開いた |✅            |
-|カスタム種目を作ろうとした  |✅            |
-|手動ログ追加を開いた     |✅            |
-|アプリ起動直後        |❌(嫌われる)      |
-|Builder 完了時    |❌(コア体験を邪魔しない)|
-
-#### Pro 機能フラグの実装
-
-```swift
-// Domain/Services/ProFeatureGate.swift
-@Observable
-@MainActor
-final class ProFeatureGate {
-    var isPro: Bool = false  // StoreKit 2 で更新
-
-    func check(_ feature: ProFeature) -> Bool {
-        return isPro || feature.isFreeTier
-    }
-}
-
-enum ProFeature {
-    case unlimitedHistory
-    case advancedCharts
-    case customTemplates
-    case csvImport
-    case csvExport
-    case manualEntry
-    case customExercise
-    case sessionPhoto
-    case appIconVariants
-    case watchOSCompanion
-
-    var isFreeTier: Bool { false }  // すべてPro機能
-}
-```
-
-### -1.15 iPad 対応(初版から)
-
-iPhone + iPad 両対応のため、レイアウトを以下の方針で設計:
-
-|観点       |iPhone          |iPad                                 |
-|---------|----------------|-------------------------------------|
-|Root     |`TabView`       |**`NavigationSplitView`**(サイドバー + 詳細)|
-|Builder  |フルスクリーン Sheet   |サイドバー固定 + メイン領域でステップ表示               |
-|Session  |フルスクリーン         |Master(種目リスト)+ Detail(現在種目)          |
-|Library  |NavigationStack |NavigationSplitView                  |
-|向き       |Portrait のみ     |Portrait + Landscape                 |
-|Min Width|iPhone SE(375pt)|iPad mini(744pt)                     |
-
-**実装規約**:
-
-- `@Environment(\.horizontalSizeClass)` で `.compact`(iPhone) / `.regular`(iPad)分岐
-- `if sizeClass == .regular { NavigationSplitView { ... } } else { TabView { ... } }`
-- iPad 専用 UI は `Features/<Feature>/iPad/` サブディレクトリに分離
-- Slide Over / Stage Manager(マルチウィンドウ)対応は v1.1+
-
-**コードサイン関連**:
-
-- `UIDeviceFamily` = `[1, 2]`(iPhone + iPad)
-- `UIRequiredDeviceCapabilities` から `armv7` を除外
-- iPad の `UISupportedInterfaceOrientations~ipad` を Landscape も許可
-
-### -1.16 Apple Developer Program 登録手順(P-1 で実施)
-
-> **未登録のため、開発開始前に登録が必須**。本人確認に **2〜7営業日** かかる場合があるため、Phase P-1 の最初に着手。
-
-#### 登録ステップ(個人アカウント)
-
-1. **Apple ID 準備**: 既存の個人 Apple ID を使用(2FA有効化必須)
-1. **支払い情報**: クレジットカード(VISA/Master 推奨、JCB は弾かれる場合あり)
-1. **登録ページ**: <https://developer.apple.com/programs/enroll/>
-1. **個人選択**: "Individual / Sole Proprietor"(個人事業主登録は不要)
-1. **氏名入力**: **App Storeに表示される氏名となる**(変更困難)
-- 推奨: 漢字氏名(例: 山田太郎)→ App Store では英字表記(例: Taro Yamada)で表示される
-- ニックネーム/屋号で出したい場合は **個人事業主届出 → 法人扱いに切替** が必要
-1. **電話確認**: Apple から登録電話に確認 SMS or 通話
-1. **本人確認**: マイナンバーカード or 運転免許証の提示を求められる場合あり
-1. **支払い**: ¥14,800/年(2026年5月時点、為替変動あり)
-1. **承認**: 1〜7営業日後に "Welcome to the Apple Developer Program" メール到着
-
-#### 注意事項
-
-- **業務PC/メールでは絶対に登録しない**(NHKスプリングの所有権主張リスク)
-- 登録時の Apple ID は **業務とは無関係の個人 Apple ID** を使用
-- D-U-N-S Number は個人アカウントなら不要
-- 法人化(株式会社/合同会社)した場合は **アカウント移管が必要**(地獄)
-- **副業として申告する場合**: 課金収益は雑所得 or 事業所得。年間20万超で確定申告
-
-#### 登録後にやること(P0前)
-
-- [ ] Team ID をメモ(Member Center で確認)
-- [ ] Xcode でサインイン → "Manual" 署名は使わず "Automatically manage signing"
-- [ ] App ID を作成: `com.tomo.workoutkit`(Capabilities は P0 で順次追加)
-- [ ] App Group を作成: `group.com.tomo.workoutkit`
-- [ ] iCloud Container は v1.1+ で追加
-
------
-
------
-
-## 0. プロジェクト概要
-
-### 0.1 一行で言うと
-
-ユーザーが「目的 → 部位 → 器具」の順に絞り込み、自動生成されたワークアウトメニューを実行・記録できる **完全オフライン・サブスク不要** のiOSフィットネスアプリ。
-
-### 0.2 workout-cool との差分(なぜ純ネイティブか)
-
-|観点      |workout-cool (Web)                                                    |WorkoutKit (iOS)                |
-|--------|----------------------------------------------------------------------|--------------------------------|
-|ランタイム   |Next.js 15 / App Router                                               |SwiftUI ネイティブ                   |
-|アーキ     |Feature-Sliced Design (app/processes/widgets/features/entities/shared)|MV + Feature単位 (本書§4)           |
-|データ     |PostgreSQL + Prisma + Docker                                          |**SwiftData (端末内のみ)**           |
-|認証      |better-auth                                                           |**不要**(端末内完結)                   |
-|動画      |YouTube埋込 / 外部CDN                                                     |**動画なし**(文字説明+ステップイラスト)         |
-|i18n    |next-intl(独/西/仏/日/韓/葡/露/中の8言語)                                        |String Catalog(**日/英 のみ**, 将来拡張)|
-|データインポート|CSV(`pnpm run import:exercises-full`)                                 |**CSV/JSON 両対応** + 同梱seed       |
-|課金      |寄付ベース(Ko-fi)                                                          |**App Store(オプション、買い切り)**       |
-|オフライン   |△                                                                     |**◎ フル動作**                      |
-
-### 0.3 ターゲットユーザー
-
-- 自宅トレ中心の初〜中級者
-- ジム通いだが当日のメニューを5秒で組みたい人
-- サブスクと広告に疲れた人
-
------
-
-(以降の §1〜§12, Appendix A, 改訂履歴 は元の指示書を参照。
-本リポジトリでは仕様の根拠は §-1 Foundation Locks と §4 アーキテクチャの2セクションを最重要視する。)
-
------
-
-## 11. Claude Code への指示 (Operating Instructions、抜粋・再掲)
-
-### 11.4 やってはいけないこと(NG リスト)
-
-- ❌ UIKit(必要な時のみ可、`UIViewRepresentable` でラップする場合は理由を明記)
-- ❌ Combine(代わりに `@Observable` + async/await)
-- ❌ `print` 文の本番残し(`Logger` を使う)
-- ❌ `force unwrap` (`!`) を新規コードで使う
-- ❌ Singleton(`shared`) — 環境値 or DI で渡す(**例外**: RevenueCat の `Purchases.shared` は SDK API のため許容、ただし `PurchaseManager` ラッパー越しに利用すること)
-- ❌ ネットワーク通信(v1.0 は完全オフライン、ただし **StoreKit / RevenueCat 通信** と YouTube アプリへのDeep Linkは例外)
-- ❌ **§-1 Foundation Locks の値を勝手に変更する**(Bundle ID、App Group、SchemaV1、内部単位系、Pro 価格、サブスク Product ID 等)
-- ❌ **重量・距離・日付を表示用文字列で保存する**(常に内部単位 kg/m/UTC、表示は formatter で変換)
-- ❌ **Exercise の主キーに UUID を使う**(`slug` を主キーにする §-1.2 規約)
-- ❌ **Info.plist べた書き**(必ず xcconfig 経由)
-- ❌ アナリティクスSDK/クラッシュレポートSDK 追加(RevenueCat は課金 SDK のため例外、その attribution 機能は使わない)
-- ❌ **動画ファイル(mp4等)の同梱**(§-1 確定でステップイラスト方針)
-- ❌ Pro 機能フラグの ハードコード(`if userIsPro` などの直書き)— 必ず `ProFeatureGate.check(_:)` 経由
-- ❌ Paywall をアプリ起動直後に表示する(必ず該当機能アクセス時のみ。例外として **初回起動から 3 日経過後の起動時** は §-1.14 ハードペイウォール仕様で許可)
-- ❌ **RevenueCat API Key をソースに直書きする**(`Config/Secrets.xcconfig`(.gitignore 済)で注入)
-- ❌ **Foundation Models Framework を iOS 26 未満で呼び出す**(必ず `if #available(iOS 26, *)` で分岐)
-
------
-
-## §-1.17 AI ワークアウト要約(Foundation Models Framework、iOS 26+)
-
-> セッション完了画面で当日のトレーニング内容を **オンデバイス LLM** で 1〜3 行に要約する。
-> サーバー送信なし、推論コストゼロ、プライバシー保護完全。
-
-### 要件
-
-- iOS 26 以降のみ有効(`#available(iOS 26, *)` で分岐、非対応端末では `AICoachView` 自体を非表示)
-- `import FoundationModels` + `@Generable` マクロで構造化出力
-- 入力: 種目名 / セット数 / 総ボリューム / 前回比較
-- 出力: 日本語 2〜3 文のフィードバック
-- 生成中は `ProgressView`、失敗時はフォールバックメッセージ
-
-### `WorkoutInsight` 構造体
+#### データモデル
 
 ```swift
 import FoundationModels
 
 @Generable
 struct WorkoutInsight {
-    let summary: String      // 全体要約(1 文)
-    let highlight: String    // 今日のハイライト種目
-    let advice: String       // 明日へのアドバイス(1 文)
+    /// 全体要約(1文、最大60文字)
+    @Guide(description: "今日のトレーニング全体を1文で要約してください")
+    var summary: String
+
+    /// ハイライト種目名
+    @Guide(description: "最も成果があった種目名を1つ答えてください")
+    var highlight: String
+
+    /// 明日へのアドバイス(1文、最大60文字)
+    @Guide(description: "明日のトレーニングや回復に向けたアドバイスを1文で答えてください")
+    var advice: String
 }
 ```
 
-### 配置
-
-`Features/AICoach/AICoachView.swift` を独立コンポーネントとして実装し、`WorkoutSummaryView`(セッション完了画面)の下部に差し込む。
-
------
-
-## §-1.18 Live Activities(セット間レストタイマー)
-
-> セット完了後のレスト残時間を Dynamic Island / ロック画面に表示。
-> アプリをバックグラウンドにしても残り秒数が見える。
-
-### 要件
-
-- ActivityKit(iOS 16.2+、本アプリは iOS 18+)
-- **Dynamic Island compact**: 残秒数 + 種目名
-- **Lock Screen**: 円形プログレスバー + 残秒数
-- **更新頻度**: `Text(timerInterval:countsDown:)` のローカル描画で端末側カウントダウン(毎秒 `activity.update` は禁止 — バッテリー / iOS 18 制限のため)
-- 終了条件: レスト 0 秒到達 or `RestTimerManager.stop()` 呼び出し
-
-### `RestTimerAttributes`
+#### 実装仕様
 
 ```swift
-struct RestTimerAttributes: ActivityAttributes {
-    struct ContentState: Codable, Hashable, Sendable {
-        let endTime: Date           // この時刻まで countdown
-        let exerciseName: String
-        let nextSetNumber: Int
+// WorkoutInsightGenerator.swift
+final class WorkoutInsightGenerator {
+    func generate(from session: WorkoutSession) async -> WorkoutInsight? {
+        guard #available(iOS 26, *) else { return nil }
+
+        let model = SystemLanguageModel.default
+
+        // 可用性チェック
+        guard case .available = model.availability else { return nil }
+
+        let prompt = buildPrompt(from: session)
+
+        do {
+            let session = LanguageModelSession()
+            let result = try await session.respond(
+                to: prompt,
+                generating: WorkoutInsight.self
+            )
+            return result.content
+        } catch {
+            return nil
+        }
     }
-    let workoutName: String
+
+    private func buildPrompt(from session: WorkoutSession) -> String {
+        """
+        以下のワークアウト記録を分析して、日本語でフィードバックを生成してください。
+
+        日付: \(session.date.formatted(date: .abbreviated, time: .omitted))
+        実施種目: \(session.exercises.map { $0.name }.joined(separator: "、"))
+        総セット数: \(session.totalSets)セット
+        総ボリューム: \(session.totalVolume)kg
+        前回比較: \(session.volumeDifferenceText)
+
+        フィードバックは以下の形式で、励ましつつ具体的にお願いします。
+        """
+    }
 }
 ```
 
-### 既存 `SessionLiveActivityAttributes` との関係
+#### UIコンポーネント
 
-`Features/Session/` 配下の既存 Live Activity は **セッション全体の進捗** を表示する用途で残置。`RestTimerAttributes` は **レスト残時間** に特化した別 Activity。1 セッション中に最大 2 Activity が並走しうる(OS は最大 2 を許容)。
+```swift
+// AICoachView.swift
+struct AICoachView: View {
+    let session: WorkoutSession
 
-### 配置
+    @State private var insight: WorkoutInsight?
+    @State private var isLoading = false
 
-`Features/RestTimer/{RestTimerAttributes.swift, RestTimerManager.swift, RestTimerLiveActivityView.swift}`。
-`WorkoutKitLiveActivity` Widget Extension に `RestTimer` 用 `ActivityConfiguration` を追加(同一 Bundle で 2 Activity を提供)。
+    var body: some View {
+        if #available(iOS 26, *) {
+            VStack(alignment: .leading, spacing: 12) {
+                Label("AIコーチ", systemImage: "sparkles")
+                    .font(.headline)
 
------
+                if isLoading {
+                    ProgressView("分析中...")
+                        .frame(maxWidth: .infinity)
+                } else if let insight {
+                    InsightCardView(insight: insight)
+                } else {
+                    Text("分析できませんでした")
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .task { await loadInsight() }
+        }
+        // iOS 26未満では何も表示しない(UIを崩さない)
+    }
 
-## §-1.19 watchOS Smart Stack ウィジェット
+    private func loadInsight() async {
+        isLoading = true
+        insight = await WorkoutInsightGenerator().generate(from: session)
+        isLoading = false
+    }
+}
+```
 
-> Apple Watch の Smart Stack に **1 枚のウィジェット**だけ提供。
-> フル Watch アプリは v1.1+。今回はウィジェット拡張のみで工数最小化。
+---
 
-### 要件
+### 5-3. 機能詳細:Live Activities(レストタイマー)
 
-- watchOS 11+(本体 iOS 18 にあわせる)
-- Widget 種類: `accessoryRectangular`(Smart Stack 推奨サイズ)
-- 表示内容: 「今日: ✅ 完了 / 📅 未実施」+ 総セット数
-- データ共有: App Group `group.com.tomo.workoutkit` 経由で SwiftData ストアを参照(共有コンテナ化)
-- 更新: 1 時間ごとの `Timeline` で十分(リアルタイム性は不要)
+#### 概要
 
-### ファイル構成
+セット完了後のレスト時間をDynamic Island・ロック画面にリアルタイム表示。
+**毎秒のActivityUpdate(バッテリー消耗)は避け、終了時刻を渡して端末側でカウント。**
+
+#### ActivityAttributes 定義
+
+```swift
+// RestTimerAttributes.swift
+import ActivityKit
+
+struct RestTimerAttributes: ActivityAttributes {
+    struct ContentState: Codable, Hashable {
+        var endTime: Date          // レスト終了時刻
+        var exerciseName: String   // 現在の種目名
+        var nextSetNumber: Int     // 次のセット番号
+        var restDuration: Int      // レスト時間(秒)設定値
+    }
+
+    let workoutName: String        // ワークアウト名
+}
+```
+
+#### Dynamic Island / Lock Screen UI
+
+```swift
+// RestTimerLiveActivityView.swift
+struct RestTimerLiveActivityView: View {
+    let context: ActivityViewContext<RestTimerAttributes>
+
+    var body: some View {
+        // ロック画面 / Standby
+        HStack {
+            Image(systemName: "timer")
+                .foregroundStyle(.orange)
+
+            VStack(alignment: .leading) {
+                Text(context.state.exerciseName)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text("セット \(context.state.nextSetNumber) 準備中")
+                    .font(.headline)
+            }
+
+            Spacer()
+
+            // TimelineView を使って端末側でカウント(ActivityUpdateは不要)
+            Text(context.state.endTime, style: .timer)
+                .font(.title2.monospacedDigit())
+                .foregroundStyle(.orange)
+        }
+        .padding()
+    }
+}
+```
+
+#### Manager クラス
+
+```swift
+// RestTimerManager.swift
+@Observable final class RestTimerManager {
+    static let shared = RestTimerManager()
+
+    private var currentActivity: Activity<RestTimerAttributes>?
+
+    func start(
+        exerciseName: String,
+        setNumber: Int,
+        restSeconds: Int,
+        workoutName: String
+    ) {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+
+        let endTime = Date.now.addingTimeInterval(Double(restSeconds))
+        let attributes = RestTimerAttributes(workoutName: workoutName)
+        let state = RestTimerAttributes.ContentState(
+            endTime: endTime,
+            exerciseName: exerciseName,
+            nextSetNumber: setNumber + 1,
+            restDuration: restSeconds
+        )
+
+        let content = ActivityContent(state: state, staleDate: endTime)
+
+        do {
+            currentActivity = try Activity.request(
+                attributes: attributes,
+                content: content,
+                pushType: nil   // ローカル更新のみ
+            )
+        } catch { }
+    }
+
+    func stop() async {
+        await currentActivity?.end(nil, dismissalPolicy: .immediate)
+        currentActivity = nil
+    }
+}
+```
+
+---
+
+### 5-4. 機能詳細:Apple Watch Smart Stack ウィジェット
+
+#### 概要
+
+**Watch App本体は作らない。** Smart Stack用の `accessoryRectangular` ウィジェットのみ実装。
+
+#### TimelineEntry / Provider
+
+```swift
+// WorkoutWidgetEntry.swift
+struct WorkoutWidgetEntry: TimelineEntry {
+    let date: Date
+    let isCompleted: Bool
+    let totalSets: Int
+    let exerciseCount: Int
+}
+
+// WorkoutWidgetProvider.swift
+struct WorkoutWidgetProvider: TimelineProvider {
+    func getSnapshot(in context: Context, completion: @escaping (WorkoutWidgetEntry) -> Void) {
+        completion(WorkoutWidgetEntry(date: .now, isCompleted: false, totalSets: 0, exerciseCount: 0))
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WorkoutWidgetEntry>) -> Void) {
+        let todaySession = fetchTodaySession()  // App Groupsから読み取り
+
+        let entry = WorkoutWidgetEntry(
+            date: .now,
+            isCompleted: todaySession != nil,
+            totalSets: todaySession?.totalSets ?? 0,
+            exerciseCount: todaySession?.exercises.count ?? 0
+        )
+
+        // 1時間ごとに更新
+        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 1, to: .now)!
+        completion(Timeline(entries: [entry], policy: .after(nextUpdate)))
+    }
+
+    private func fetchTodaySession() -> WorkoutSession? {
+        // App Groups経由でSwiftDataから今日のセッションを取得
+        // group.com.tomo.workoutkit
+        return nil // TODO: 実装
+    }
+}
+```
+
+#### ウィジェットUI
+
+```swift
+// WorkoutKitWatchWidget.swift
+struct WorkoutKitWatchWidgetEntryView: View {
+    var entry: WorkoutWidgetProvider.Entry
+
+    var body: some View {
+        HStack {
+            Image(systemName: entry.isCompleted ? "checkmark.circle.fill" : "figure.strengthtraining.traditional")
+                .foregroundStyle(entry.isCompleted ? .green : .orange)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(entry.isCompleted ? "完了 ✅" : "未実施")
+                    .font(.headline)
+
+                if entry.isCompleted {
+                    Text("\(entry.exerciseCount)種目 · \(entry.totalSets)セット")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else {
+                    Text("今日トレーニングしよう")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+        }
+        .containerBackground(.fill.tertiary, for: .widget)
+    }
+}
+```
+
+---
+
+## 6. 収益化設計
+
+### 6-1. 商品定義(App Store Connect)
+
+| Product ID | 種別 | 価格 | トライアル | 表示名 |
+|---|---|---|---|---|
+| `workoutkit_monthly_980` | Auto-Renewable Subscription | ¥980/月 | 7日間無料 | WorkoutKit プレミアム(月額) |
+| `workoutkit_yearly_4900` | Auto-Renewable Subscription | ¥4,900/年 | 7日間無料 | WorkoutKit プレミアム(年額) |
+
+> **¥4,900/年 = 月あたり約¥408 → 年額は月額より¥7,372お得**(UI上でバッジ表示)
+
+### 6-2. Subscription Group
 
 ```
-WorkoutKitWatch/                      # 新 target (watchOS Widget Extension)
-├── WorkoutKitWatchWidget.swift       # WidgetKit エントリ
-├── WorkoutWidgetEntry.swift          # TimelineEntry
-├── WorkoutWidgetProvider.swift       # TimelineProvider
-└── Info.plist
+Group名: WorkoutKit Premium
+Entitlement名(RevenueCat): premium
 ```
 
------
+### 6-3. RevenueCat 初期化
 
-**改訂履歴**
+```swift
+// WorkoutKitApp.swift
+import RevenueCat
+import SwiftUI
 
-- v0.1 (2026-05-01): 初版作成
-- v0.2 (2026-05-01): workout-cool との突合せ。属性スキーマ(TYPE/MECHANICS_TYPE/SECONDARY_MUSCLE)、slug、introduction、HTMLリッチテキスト、Shuffle/Choose両モード(Issue #93)、3部構成セッション(Issue #90)、外部ログ追加(Issue #88)、自動スクロール(PR #57)、CSVインポート(F-06)、ChatGPT種目生成プロンプトを反映。Appendix A 対応マトリクスを追加。
-- v0.3 (2026-05-01): **§-1 Foundation Locks** を最上部に新設。Bundle ID/App Group/SchemaV1/単位系/MainActor規約/xcconfig/PrivacyInfo/同梱種目最低数/Git戦略 等の **後で変えられない初期設定** 26項目を確定。主キーをUUID→slug変更。Phase P-1 を追加。NGリスト強化。
-- v0.4 (2026-05-01): **Tomoさんとの確認で全項目確定**。Bundle ID `com.tomo.workoutkit`、ライセンス Proprietary、Min iOS 17.0、iPhone+iPad両対応、配布 App Store、課金 Freemium + Pro買い切り ¥980(Launch ¥600)、IAP Product ID 確定、Pro境界 A案採用、動画なし(ステップイラスト方針)、リポジトリ GitHub Private、開発環境 自宅Mac、Apple Developer 未登録(P-1 で登録)。§-1.14 課金詳細、§-1.15 iPad対応、§-1.16 Apple Developer 登録手順を新設。
-- **v0.5 (2026-05-04): 課金モデル方針転換**。 v0.4 で確定した「Freemium + 買い切り ¥980」を「**ハードペイウォール + サブスク**(¥980/月 + ¥4,900/年、7 日無料トライアル)」に切替。RevenueCat SDK を採用(SPM 経由)。Min iOS を **17.0 → 18.0** へ引き上げ。新機能として **§-1.17 AI ワークアウト要約**(Foundation Models, iOS 26+ ガード)、**§-1.18 Rest Timer Live Activity**、**§-1.19 watchOS Smart Stack ウィジェット** を Foundation Locks に追加。NG リスト更新(RevenueCat / Foundation Models / Secrets.xcconfig の扱いを明示)。
-  - 旧 IAP `com.tomo.workoutkit.pro.unlock` は廃止(v0.4 はベータ未配布のため移行ロジック不要)。
-  - 新 Product ID: `workoutkit_monthly_980` / `workoutkit_yearly_4900`、Subscription Group `workoutkit.premium`、Entitlement `premium`。
-  - `ProFeatureGate.check(_:)` API は維持(`isPro: Bool` の入口を変えない)。背後の StoreKitClient は `PurchaseManager`(RevenueCat ラッパー)に置き換え。既存 StoreKitClient は Restore / sandbox 検証用に並置で残す。
-  - Pro 機能境界 A 案(無料コア体験 + 上位機能だけ Pro)は破棄。**全機能ハードペイウォール**。ただし初回起動から 3 日間は無料試用扱いで全機能解放、3 日目以降の起動時に Paywall 強制表示。
-  - 既存 v0.4 系の release prep 物(CHANGELOG / App Store メタデータ / プライバシーポリシー / スクリーンショット)は **v0.5 用に書き直し** が必要(別 PR で対応)。
+@main
+struct WorkoutKitApp: App {
+    init() {
+        Purchases.logLevel = .debug  // リリース前は .error に変更
+        Purchases.configure(withAPIKey: Secrets.revenueCatAPIKey)
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environment(PurchaseManager.shared)
+                .environment(RestTimerManager.shared)
+        }
+    }
+}
+```
+
+### 6-4. PurchaseManager
+
+```swift
+// PurchaseManager.swift
+import RevenueCat
+
+@Observable final class PurchaseManager {
+    static let shared = PurchaseManager()
+
+    var isPremium: Bool = false
+    var isLoading: Bool = false
+
+    init() {
+        Task { await refresh() }
+    }
+
+    func refresh() async {
+        let info = try? await Purchases.shared.customerInfo()
+        isPremium = info?.entitlements["premium"]?.isActive == true
+    }
+
+    func purchase(package: Package) async throws {
+        isLoading = true
+        defer { isLoading = false }
+
+        let result = try await Purchases.shared.purchase(package: package)
+        isPremium = result.customerInfo.entitlements["premium"]?.isActive == true
+    }
+
+    func restore() async throws {
+        isLoading = true
+        defer { isLoading = false }
+
+        let info = try await Purchases.shared.restorePurchases()
+        isPremium = info.entitlements["premium"]?.isActive == true
+    }
+}
+```
+
+### 6-5. ペイウォール表示ロジック
+
+```swift
+// 表示タイミング(優先順)
+// 1. 初回起動3日後(@AppStorage("launchCount") で管理)
+// 2. プレミアム機能(AI要約 / Live Activities / Watch連携)タップ時
+// 3. Settings > プレミアムにアップグレード タップ時
+
+// 実装パターン
+.sheet(isPresented: $showPaywall) {
+    PaywallView()
+}
+```
+
+### 6-6. PaywallView 仕様
+
+```
+レイアウト(上から):
+┌─────────────────────────────────┐
+│  🏆 WorkoutKit プレミアム        │
+│  AIコーチで、もっと賢く鍛える    │
+├─────────────────────────────────┤
+│  ✨ AI ワークアウト要約          │
+│  ⏱️  Live Activityレストタイマー │
+│  ⌚ Apple Watch対応             │
+│  📊 進捗グラフ(今後追加)       │
+├─────────────────────────────────┤
+│  [年額 ¥4,900]  ← デフォルト選択 │
+│   月あたり約¥408 / 7日間無料     │
+│   💡 月額より¥7,372お得バッジ    │
+│                                 │
+│  [月額 ¥980]                    │
+│   7日間無料トライアル付き        │
+├─────────────────────────────────┤
+│  [無料で始める]  ← 年額ボタンの下│
+│  [購入を復元する]                │
+│  利用規約 / プライバシーポリシー  │
+└─────────────────────────────────┘
+```
+
+> **年額をデフォルト選択状態にする。** 月額は2番目に表示。
+> 「無料で始める」はタップするとペイウォールを閉じる(フリー機能のみ利用可)。
+
+---
+
+## 7. UI/UX設計方針
+
+### 7-1. デザイン原則
+
+- **シンプル・高速**:ワークアウト中に操作。タップ数を最小化。
+- **大きなタップターゲット**:汗をかいた手でも操作可能(最小44×44pt厳守)
+- **ダークモード必須対応**:ジム環境での視認性
+- **オレンジアクセント**:エネルギー・活力を想起。`Color.orange`
+
+### 7-2. カラーパレット
+
+```swift
+// Constants.swift 内
+enum AppColor {
+    static let accent = Color.orange
+    static let background = Color(.systemBackground)
+    static let secondaryBackground = Color(.secondarySystemBackground)
+    static let success = Color.green
+    static let destructive = Color.red
+}
+```
+
+### 7-3. フォント
+
+```swift
+// ワークアウト中の数値表示
+.font(.system(size: 48, weight: .bold, design: .rounded))
+
+// セクションヘッダー
+.font(.headline)
+
+// 補足テキスト
+.font(.caption).foregroundStyle(.secondary)
+```
+
+### 7-4. アニメーション
+
+- セット完了:チェックマーク + `hapticFeedback(.success)`
+- AI生成中:`ProgressView` + `sparkles` アイコンアニメーション
+- ペイウォール表示:`.sheet` 遷移(デフォルト)
+
+---
+
+## 8. ASO戦略
+
+### 8-1. App Store メタデータ
+
+```
+アプリ名(30文字以内):
+  WorkoutKit - AI筋トレ記録
+
+サブタイトル(30文字以内):
+  AIコーチ×Live Activityで効率UP
+
+キーワード(100文字以内):
+  筋トレ,ワークアウト,トレーニング,記録,AI,フィットネス,
+  ジム,筋肉,重量管理,体重,セット,レスト
+```
+
+### 8-2. スクリーンショット戦略(5枚)
+
+```
+1枚目: ワークアウト記録画面 + 「かんたん記録」テキスト
+2枚目: Live Activity(Dynamic Island)+ 「レストタイマーが画面に」
+3枚目: AI要約画面(AIコーチのコメント)+ 「AIが次の行動を提案」
+4枚目: Apple Watch Smart Stack + 「Apple Watchで記録確認」
+5枚目: ペイウォール画面 + 「7日間無料で始める」
+```
+
+> スクリーンショットのテキストにキーワードを自然に含める(iOS 26よりランキング要因)
+
+### 8-3. App Preview動画(30秒)
+
+```
+0〜5秒:   ワークアウト記録のシンプルな操作
+5〜15秒:  セット完了→Dynamic Islandにタイマー表示
+15〜25秒: ワークアウト終了→AI要約生成(スパークルアニメーション)
+25〜30秒: Apple Watchでの確認
+```
+
+### 8-4. カスタムプロダクトページ(CPP)計画
+
+| CPP名 | キーワード | 差別化ポイント |
+|---|---|---|
+| default | 筋トレ 記録 | バランス型 |
+| ai-coach | AI 筋トレ 分析 | AI強調 |
+| live-activity | レストタイマー Dynamic Island | 機能強調 |
+| beginners | 筋トレ 初心者 | 入門者向け |
+
+> Apple Search Ads と CPP を紐付け、CV率テスト(目標+5.9%)
+
+---
+
+## 9. 実装ロードマップ
+
+### Phase 1:収益基盤(目安:2週間)
+
+- [ ] RevenueCat SDK セットアップ
+- [ ] App Store Connect 商品登録(月額・年額)
+- [ ] PurchaseManager 実装(@Observable)
+- [ ] PaywallView 実装(仕様通り)
+- [ ] 復元購入ボタン実装(審査要件)
+- [ ] Secrets.swift 作成(.gitignore 追加)
+- [ ] `isPremium` フラグで既存機能をガード
+
+### Phase 2:Live Activities(目安:1週間)
+
+- [ ] `NSSupportsLiveActivities = YES`(Info.plist)
+- [ ] RestTimerAttributes 定義
+- [ ] RestTimerLiveActivityView(Dynamic Island + Lock Screen)
+- [ ] RestTimerManager(start / stop)
+- [ ] SetCompleteButton からの呼び出し統合
+- [ ] シミュレーターでDynamic Island 表示確認
+
+### Phase 3:AI ワークアウト要約(目安:1週間)
+
+- [ ] Foundation Models Framework リンク(iOS 26 SDK)
+- [ ] WorkoutInsight(@Generable)定義
+- [ ] WorkoutInsightGenerator 実装
+- [ ] AICoachView 実装(ローディング / エラーハンドリング含む)
+- [ ] WorkoutSummaryView への統合
+- [ ] iOS 26 シミュレーターで動作確認
+
+### Phase 4:Apple Watch ウィジェット(目安:1週間)
+
+- [ ] watchOS Extension target 追加
+- [ ] App Groups 設定(group.com.tomo.workoutkit)
+- [ ] SwiftData Shared Container 設定
+- [ ] WorkoutWidgetProvider / Entry 実装
+- [ ] WorkoutKitWatchWidgetEntryView(accessoryRectangular)実装
+- [ ] Watch シミュレーターの Smart Stack 表示確認
+
+### Phase 5:ポリッシュ・ASO(目安:1週間)
+
+- [ ] スクリーンショット 5枚作成
+- [ ] App Preview 動画作成(30秒)
+- [ ] App Store メタデータ入力
+- [ ] TestFlight 配布(10〜20人にフィードバック)
+- [ ] クラッシュゼロ確認(Xcode Organizer)
+- [ ] App Store 審査提出
+
+---
+
+## 10. 品質基準・完了定義
+
+### 10-1. 各機能の完了定義(Definition of Done)
+
+#### RevenueCat / Paywall
+
+- [ ] サンドボックス環境で月額・年額の購入フローが完走する
+- [ ] 購入後 `isPremium == true` になる
+- [ ] 復元購入が正常に動作する
+- [ ] 未購入状態でプレミアム機能タップ時にペイウォールが表示される
+- [ ] ペイウォール閉じた後にフリー機能に戻れる
+
+#### Live Activities
+
+- [ ] セット完了ボタンタップ時にDynamic Islandに種目名・秒数が表示される
+- [ ] アプリをバックグラウンドにしてもカウントが継続する
+- [ ] レスト終了後に自動でLive Activityが消える
+- [ ] 非対応端末(iPhone 14以前)でクラッシュしない
+
+#### AI ワークアウト要約
+
+- [ ] iOS 26 シミュレーターで要約テキストが生成される
+- [ ] 生成中は ProgressView が表示される
+- [ ] 生成失敗時はエラーメッセージが表示される(クラッシュしない)
+- [ ] iOS 25以下の端末ではAICoachViewが非表示になる
+
+#### Apple Watch ウィジェット
+
+- [ ] Watch シミュレーターの Smart Stack に今日の記録が表示される
+- [ ] 未記録の日は「未実施」表示になる
+- [ ] 1時間ごとに更新される
+- [ ] iPhone側でワークアウト記録後、Watch側のデータが反映される
+
+### 10-2. 審査前チェックリスト
+
+- [ ] 復元購入ボタンが設置されている(App Store審査要件)
+- [ ] プライバシーポリシーURLが設定されている
+- [ ] `NSSupportsLiveActivities` = YES(Live Activities使用時)
+- [ ] HealthKit使用する場合は `NSHealthShareUsageDescription` を記述
+- [ ] Foundation Models使用時の `NLRequestUsageDescription` を確認
+- [ ] In-App Purchase商品がApp Store Connect上でApprovedになっている
+- [ ] サンドボックスで全課金フローをテスト済み
+- [ ] iPad対応(または「iPhone only」設定を明示)
+- [ ] スクリーンショットが全対象サイズ(6.9インチ必須)で用意されている
+
+---
+
+## 11. 制約・禁止事項
+
+### 11-1. Swift 6 Concurrency
+
+```swift
+// ✅ 正しい
+@MainActor final class WorkoutSessionManager { ... }
+
+// ❌ 禁止
+final class WorkoutSessionManager {
+    var sessions: [WorkoutSession] = []  // Swift 6でコンパイルエラー
+}
+```
+
+- `@MainActor`、`Sendable`、`actor` を適切に付与すること
+- `@unchecked Sendable` の乱用禁止(理由がある場合はコメント必須)
+
+### 11-2. Foundation Models Framework
+
+```swift
+// ✅ 正しい:#available 分岐必須
+if #available(iOS 26, *) {
+    AICoachView(session: session)
+}
+
+// ❌ 禁止:分岐なしの使用
+let model = SystemLanguageModel.default  // iOS 25以下でクラッシュ
+```
+
+### 11-3. Live Activities 更新頻度
+
+```swift
+// ✅ 正しい:終了時刻を渡して端末側でカウント
+Text(endTime, style: .timer)
+
+// ❌ 禁止:毎秒 updateActivity(バッテリー消耗・AppleのRate Limit違反)
+Task {
+    while true {
+        try await Task.sleep(for: .seconds(1))
+        await activity.update(...)  // これを毎秒は禁止
+    }
+}
+```
+
+### 11-4. データ管理
+
+- SwiftData の Model Context は `@MainActor` 上で操作すること
+- バックグラウンドで重い処理をする場合は `ModelActor` を使用
+- App Groups の Container URL を直接操作する場合は必ず `FileManager` 経由
+
+### 11-5. セキュリティ
+
+```swift
+// Secrets.swift(.gitignoreに追加済みであること)
+enum Secrets {
+    static let revenueCatAPIKey = "appl_xxxxxxxxxxxxxxxxxx"
+}
+```
+
+- API KeyをハードコードしてGitにコミットすること禁止
+- Xcconfig または Secrets.swift で管理
+
+### 11-6. UI制約
+
+- タップターゲット最小44×44pt厳守
+- ダークモード・ライトモード両方でテスト必須
+- Dynamic Type(文字サイズ変更)に対応すること(`.font()` を固定 pt で指定しない)
+
+---
+
+## 12. Changelog
+
+| バージョン | 日付 | 変更内容 |
+|---|---|---|
+| v1.0 | 2026-05-15 | 市場調査統合版として新規作成。AI要約・Live Activities・Watch Widget・ペイウォールを追加 |
+
+---
+
+*このファイルは WorkoutKit プロジェクトのルートディレクトリに配置してください。*
+*Claude Code はセッション開始時にこのファイルを自動で参照します。*
