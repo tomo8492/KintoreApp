@@ -46,3 +46,7 @@ LOCALIZATION_PREFERS_STRING_CATALOGS = YES
 // テンプレ: Config/Secrets.template.xcconfig 参照。
 // `Optional include` のため、未配置でもビルドは通る(空キーだと実機購入は失敗)。
 #include? "Secrets.xcconfig"
+
+// Secrets.xcconfig 側の REVENUECAT_API_KEY を Info.plist に橋渡し。
+// 空文字でもビルドは通り、`AppSecrets.revenueCatAPIKey` が nil を返す。
+INFOPLIST_KEY_RevenueCatAPIKey = $(REVENUECAT_API_KEY)
