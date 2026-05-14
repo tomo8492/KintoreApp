@@ -31,8 +31,8 @@ struct WatchSummaryBridgeTests {
         through defaults: UserDefaults,
         now: Date = .now,
         calendar: Calendar = .current
-    ) -> TodaySessionSummary {
-        let data = try! JSONEncoder().encode(summary)
+    ) throws -> TodaySessionSummary {
+        let data = try JSONEncoder().encode(summary)
         defaults.set(data, forKey: WatchSummaryBridge.summaryKey)
 
         guard let readData = defaults.data(forKey: WatchSummaryBridge.summaryKey),
@@ -72,7 +72,7 @@ struct WatchSummaryBridgeTests {
     // MARK: - Write / read roundtrip
 
     @Test("write → read で同じサマリが返る(同日内)")
-    func writeReadRoundtripSameDay() {
+    func writeReadRoundtripSameDay() throws {
         let defaults = Self.makeDefaults()
         let now = Date()
         let summary = TodaySessionSummary(
@@ -82,12 +82,12 @@ struct WatchSummaryBridgeTests {
             exerciseCountToday: 3
         )
 
-        let result = Self.roundTrip(summary, through: defaults, now: now)
+        let result = try Self.roundTrip(summary, through: defaults, now: now)
         #expect(result == summary)
     }
 
     @Test("昨日のサマリは read 時に .empty 相当へ降格(今日のセッション 0 件表示)")
-    func staleSummaryFallsBackToEmpty() {
+    func staleSummaryFallsBackToEmpty() throws {
         let defaults = Self.makeDefaults()
         let now = Date()
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: now) ?? now
@@ -99,7 +99,7 @@ struct WatchSummaryBridgeTests {
             exerciseCountToday: 10
         )
 
-        let result = Self.roundTrip(staleSummary, through: defaults, now: now)
+        let result = try Self.roundTrip(staleSummary, through: defaults, now: now)
         #expect(result.isCompletedToday == false)
         #expect(result.totalSetsToday == 0)
         #expect(result.exerciseCountToday == 0)
