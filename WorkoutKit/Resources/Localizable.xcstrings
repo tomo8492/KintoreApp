@@ -21321,6 +21321,22 @@
           }
         }
       }
+    },
+    "workout.volume.diff.unchanged": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前回と同じボリューム"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Same volume as last time"
+          }
+        }
+      }
     }
   }
 }

@@ -23,6 +23,8 @@ import FoundationModels
 #endif
 
 /// LLM 推論に渡す入力。SessionSummaryView 側で組み立て。
+/// v1.0 §5-2 で示された `buildPrompt(from session: WorkoutSession)` 例に合わせ、
+/// `WorkoutInsightInput.from(session:previous:)` ファクトリを別途提供する。
 struct WorkoutInsightInput: Sendable, Equatable {
     /// 今日実施した種目名 + セット数 + 総ボリューム(reps × weight)。
     let todayExercises: [ExerciseLine]
@@ -35,6 +37,50 @@ struct WorkoutInsightInput: Sendable, Equatable {
         let name: String        // 表示用(日本語解決済)
         let setCount: Int
         let totalVolumeKg: Double
+    }
+}
+
+// MARK: - WorkoutSession → WorkoutInsightInput
+
+extension WorkoutInsightInput {
+
+    /// `WorkoutSession`(SwiftData @Model、非 Sendable)から
+    /// Sendable な `WorkoutInsightInput` を組み立てるファクトリ。
+    ///
+    /// MainActor 隔離下で呼び出して値だけ抜き出す:
+    /// - `previous` は前回比較用の任意 WorkoutSession(同 goal の最新を渡す等)。
+    ///   nil なら `volumeDeltaKgVsLastTime = nil` で構築。
+    /// - SessionSummaryView から `WorkoutInsightInput.from(session: session, previous: lastSession)`
+    ///   のように呼ぶ想定。
+    @MainActor
+    static func from(session: WorkoutSession, previous: WorkoutSession? = nil) -> WorkoutInsightInput {
+        // 種目ごとに setCount + totalVolume を集計。
+        // 同じ exercise が複数 set にまたがるので reduce で集約する。
+        var perExercise: [String: (count: Int, volume: Double)] = [:]
+        var order: [String] = []
+        for set in session.sets.sorted(by: { $0.order < $1.order }) {
+            guard let ex = set.exercise else { continue }
+            let name = ex.localizedName
+            if perExercise[name] == nil { order.append(name) }
+            let prev = perExercise[name] ?? (count: 0, volume: 0)
+            let added = (set.reps > 0 && set.weightKg > 0)
+                ? Double(set.reps) * set.weightKg
+                : 0
+            perExercise[name] = (count: prev.count + 1, volume: prev.volume + added)
+        }
+
+        let lines = order.compactMap { name -> ExerciseLine? in
+            guard let agg = perExercise[name] else { return nil }
+            return ExerciseLine(name: name, setCount: agg.count, totalVolumeKg: agg.volume)
+        }
+
+        let delta: Double? = previous.map { session.totalVolume - $0.totalVolume }
+
+        return WorkoutInsightInput(
+            todayExercises: lines,
+            volumeDeltaKgVsLastTime: delta,
+            goalRaw: session.goalRaw
+        )
     }
 }
 
