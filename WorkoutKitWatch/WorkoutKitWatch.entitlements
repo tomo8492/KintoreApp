@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    WorkoutKitWatch.entitlements
+    CLAUDE.md v0.5 §-1.5 / §-1.19 準拠。
+    watchOS Widget Extension が App 本体と同じ App Group を共有するための entitlement。
+    SwiftData ストアは App Group コンテナ経由で参照する(Phase 4 で実装)。
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>com.apple.security.application-groups</key>
+    <array>
+        <string>group.com.tomo.workoutkit</string>
+    </array>
+</dict>
+</plist>
