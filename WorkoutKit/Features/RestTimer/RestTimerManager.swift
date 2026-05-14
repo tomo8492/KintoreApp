@@ -1,12 +1,13 @@
 // MARK: - RestTimerManager
-// CLAUDE.md v0.5 §-1.18 / §11.4 準拠。
+// CLAUDE.md v1.0 §5-3 準拠。
 //
 // セット完了時にレストタイマー用 Live Activity を起動・終了する。
 // 既存の SessionStore IntervalTimer はフォアグラウンドのカウントダウン UI 用で、
 // 本 Manager は **バックグラウンド / ロック画面 / Dynamic Island** 用の差し込み口。
 //
-// 設計:
-//   - @MainActor。Singleton 禁止のため AppDependency 経由で SessionStore に DI。
+// 設計(v1.0 §5-3 / §4-3 状態管理パターン準拠):
+//   - @Observable @MainActor + `static let shared` パターン。
+//     View からは `.environment(RestTimerManager.shared)` で注入する。
 //   - 起動済み Activity は最大 1 個。多重起動防止のため start 前に endIfRunning する。
 //   - 失敗(権限なし / OS エラー)時は Logger に書いて静かに無効化。
 //     SessionStore の通常進行は止めない。
@@ -15,19 +16,34 @@
 
 import ActivityKit
 import Foundation
+import Observation
 import OSLog
 
+@Observable
 @MainActor
 final class RestTimerManager {
 
-    // MARK: - State
+    // MARK: - Singleton (v1.0 §5-3)
+
+    /// `.environment(RestTimerManager.shared)` で View 階層に注入する。
+    /// PurchaseManager と同様、@MainActor class の static let は nonisolated(unsafe)
+    /// 指定で lazy init を nonisolated context からも安全に通す。
+    nonisolated(unsafe) static let shared = RestTimerManager()
+
+    // MARK: - Observable state
+
+    /// 現在 Live Activity が稼働中か。View からは表示判定に使う。
+    var isRunning: Bool { activity != nil }
+
+    // MARK: - Internal state
 
     private var activity: Activity<RestTimerAttributes>?
 
     // MARK: - Init
 
-    /// AppDependency.defaultValue から呼べるよう nonisolated init。
-    /// 状態に触れないので MainActor 隔離なしで安全。
+    /// `static let shared` の lazy init を MainActor 外から通すため nonisolated。
+    /// Observable state には触らないので競合なし。
+    /// 既存の DI 経由(AppDependency.defaultValue)もそのまま動く。
     nonisolated init() {}
 
     // MARK: - Capability
