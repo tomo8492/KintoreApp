@@ -1,0 +1,95 @@
+name: test
+
+# CLAUDE.md v1.0 §-1.7 / §10-1 準拠。
+# Mac 上でしか動かない xcodebuild test をリポジトリ毎 push で実機(macOS runner)に
+# 実行させる。Linux 側エージェントは静的監査までしか出来ないため、ここが
+# 「test pass all」の唯一の機械的証明。
+
+on:
+  push:
+    branches:
+      - main
+      - "claude/**"
+      - "feature/**"
+      - "release/**"
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  xcodebuild-test:
+    name: xcodebuild test (iOS Simulator)
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    env:
+      SCHEME: WorkoutKit
+      DESTINATION: "platform=iOS Simulator,name=iPhone 16,OS=latest"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          # macos-15 runner のデフォルト Xcode を使う(iOS 18 SDK 同梱)
+          xcodebuild -version
+          xcrun --sdk iphonesimulator --show-sdk-version
+
+      - name: Install xcodegen
+        run: |
+          brew install xcodegen
+
+      - name: Stub Secrets.xcconfig
+        run: |
+          # CI ではサンドボックスでも RevenueCat 設定をスキップさせる。
+          # AppSecrets.revenueCatAPIKey は空 / placeholder のとき nil を返す。
+          cat > Config/Secrets.xcconfig <<'EOF'
+          REVENUECAT_API_KEY =
+          EOF
+
+      - name: Generate Xcode project
+        run: |
+          xcodegen generate
+
+      - name: Resolve SPM dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project WorkoutKit.xcodeproj \
+            -scheme "$SCHEME"
+
+      - name: Build for testing
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project WorkoutKit.xcodeproj \
+            -scheme "$SCHEME" \
+            -destination "$DESTINATION" \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            | tee build.log
+
+      - name: Run unit tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project WorkoutKit.xcodeproj \
+            -scheme "$SCHEME" \
+            -destination "$DESTINATION" \
+            -only-testing:WorkoutKitTests \
+            CODE_SIGNING_ALLOWED=NO \
+            | tee test.log
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-logs
+          path: |
+            build.log
+            test.log
+          retention-days: 7
