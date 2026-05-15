@@ -18743,13 +18743,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Coming in v1.1 and beyond."
+            "value": "Smart Stack widget ships in v1.0; a full companion app is planned for v1.1 and beyond."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "v1.1 以降で順次提供予定です。"
+            "value": "v1.0 では Smart Stack ウィジェットを提供。完全な Watch アプリは v1.1 以降に順次提供予定です。"
           }
         }
       }
@@ -18761,13 +18761,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apple Watch (v1.1+)"
+            "value": "Apple Watch Smart Stack"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apple Watch 連携 (v1.1+)"
+            "value": "Apple Watch Smart Stack"
           }
         }
       }
@@ -18791,19 +18791,19 @@
       }
     },
     "paywall.legal.disclaimer": {
-      "comment": "Paywall: 購入の注意書き。",
+      "comment": "Paywall: 購入の注意書き。Apple Guideline 3.1.2 (自動更新サブスク開示) を満たすため、自動更新条件・解約手段・トライアル条件・払戻に言及する。",
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchases are tied to your Apple ID. Refunds follow App Store policies."
+            "value": "Subscriptions auto-renew at the end of each period unless cancelled at least 24 hours before. Manage or cancel any time in iOS Settings → [Apple ID] → Subscriptions. Free trial converts to a paid subscription unless cancelled. Purchases are tied to your Apple ID; refunds follow App Store policy."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "購入は Apple ID に紐づきます。返金・払い戻しは App Store の規定に従います。"
+            "value": "サブスクリプションは期間終了の 24 時間前までに解約しない限り自動更新されます。iOS の「設定」→「[Apple ID 名]」→「サブスクリプション」からいつでも管理・解約できます。無料トライアル終了時に解約していない場合は有料サブスクリプションに自動的に切り替わります。購入は Apple ID に紐づき、返金は App Store の規定に従います。"
           }
         }
       }
