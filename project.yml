@@ -28,7 +28,7 @@ options:
 packages:
   RevenueCat:
     url: https://github.com/RevenueCat/purchases-ios
-    minVersion: "5.0.0"
+    from: "5.0.0"
 
 # Configurations は 3 種(CLAUDE.md §-1.7)。各 .xcconfig に紐付ける。
 configs:
@@ -93,8 +93,13 @@ targets:
     dependencies:
       # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
       - target: WorkoutKitLiveActivity
-      # v0.5 §-1.19: watchOS Smart Stack Widget。WatchKit Extension として同梱。
+      # v0.5 §-1.19: watchOS Smart Stack Widget。WatchKit Extension。
+      # iOS App の PlugIns に直接埋め込むと iOS 26+ がインストールを拒否するため
+      # (Apple のルール: watchOS extension は watchOS Companion app の中に embed する)
+      # ここでは依存だけ宣言してビルドは行うが、本体 .app には embed しない。
+      # 本物の watch 配布は別 Phase (watchOS companion app 追加) で対応する。
       - target: WorkoutKitWatch
+        embed: false
       # v0.5 §-1.1: RevenueCat(課金 SDK)。Purchases.shared は PurchaseManager 越しに利用する。
       - package: RevenueCat
         product: RevenueCat
@@ -226,7 +231,19 @@ targets:
     settings:
       base:
         PRODUCT_NAME: WorkoutKitWatch
+        # Shared.xcconfig が PRODUCT_MODULE_NAME=WorkoutKit を強制するため、
+        # 明示的に上書きしないと WorkoutKit.swiftmodule が WorkoutKit 本体と
+        # 衝突する(Multiple commands produce ...swiftmodule)。
+        PRODUCT_MODULE_NAME: WorkoutKitWatch
         PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.watchwidget
+        # Shared.xcconfig が SDKROOT=iphoneos / SUPPORTED_PLATFORMS=iphoneos*
+        # を流し込むので、watchOS target ではここで明示的に上書きする。
+        SDKROOT: watchos
+        SUPPORTED_PLATFORMS: "watchsimulator watchos"
+        TARGETED_DEVICE_FAMILY: "4"
+        # iPhone 用の Portrait 固定設定は watchOS では不要 / 不正なので空にする。
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: ""
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: ""
         # App Group 共有 entitlements(App 本体と同一)。
         CODE_SIGN_ENTITLEMENTS: WorkoutKitWatch/WorkoutKitWatch.entitlements
         GENERATE_INFOPLIST_FILE: YES
