@@ -15867,17 +15867,18 @@
       }
     },
     "hard-paywall.legal.disclaimer": {
+      "comment": "Hard paywall フッタ。Apple Guideline 3.1.2 で要求される自動更新・解約・トライアル・払戻の開示を一文に集約する。",
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "購入はあなたの Apple ID に紐付きます。年額/月額プランは期間終了の 24 時間前までにキャンセルしなければ自動更新されます。"
+            "value": "サブスクリプションは期間終了の 24 時間前までに解約しない限り自動更新されます。無料トライアル終了時に解約していない場合は有料プランに切り替わります。iOS の「設定」→「サブスクリプション」からいつでも管理・解約できます。返金は App Store の規定に従います。"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Purchases are linked to your Apple ID. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the period."
+            "value": "Subscriptions auto-renew unless cancelled at least 24 hours before the period ends. If the free trial is not cancelled, it converts to a paid subscription. Manage or cancel any time in iOS Settings → Subscriptions. Refunds follow App Store policy."
           }
         }
       }
