@@ -1,28 +1,7 @@
 {
   "identifier" : "C0F4A3D2-9B7E-4C5A-8F61-1D2E3F4A5B6C",
   "nonRenewingSubscriptions" : [],
-  "products" : [
-    {
-      "displayPrice" : "980",
-      "familyShareable" : true,
-      "internalID" : "A1B2C3D4",
-      "localizations" : [
-        {
-          "description" : "Unlock all Pro features: unlimited history, advanced charts, custom templates, CSV import/export, manual entry, custom exercises, session photos, and app icon variants.",
-          "displayName" : "WorkoutKit Pro",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "全 Pro 機能を解放: 履歴の全期間アクセス、詳細チャート、カスタムテンプレート、CSV 入出力、手動ログ、種目追加、セッション写真、App Icon 変更。",
-          "displayName" : "WorkoutKit Pro",
-          "locale" : "ja_JP"
-        }
-      ],
-      "productID" : "com.tomo.workoutkit.pro.unlock",
-      "referenceName" : "WorkoutKit Pro Unlock",
-      "type" : "NonConsumable"
-    }
-  ],
+  "products" : [],
   "settings" : {
     "_applicationInternalID" : "0",
     "_developerTeamID" : "",
@@ -31,56 +10,96 @@
     "_locale" : "ja_JP",
     "_storefront" : "JPN",
     "_storeKitErrors" : [
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Load Products"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Purchase"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Verification"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "App Store Sync"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Subscription Status"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "App Transaction"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Manage Subscriptions Sheet"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Refund Request Sheet"
-      },
-      {
-        "current" : null,
-        "enabled" : false,
-        "name" : "Offer Code Redeem Sheet"
-      }
+      { "current" : null, "enabled" : false, "name" : "Load Products" },
+      { "current" : null, "enabled" : false, "name" : "Purchase" },
+      { "current" : null, "enabled" : false, "name" : "Verification" },
+      { "current" : null, "enabled" : false, "name" : "App Store Sync" },
+      { "current" : null, "enabled" : false, "name" : "Subscription Status" },
+      { "current" : null, "enabled" : false, "name" : "App Transaction" },
+      { "current" : null, "enabled" : false, "name" : "Manage Subscriptions Sheet" },
+      { "current" : null, "enabled" : false, "name" : "Refund Request Sheet" },
+      { "current" : null, "enabled" : false, "name" : "Offer Code Redeem Sheet" }
     ]
   },
-  "subscriptionGroups" : [],
-  "version" : {
-    "major" : 4,
-    "minor" : 0
-  }
+  "subscriptionGroups" : [
+    {
+      "id" : "21B8AC91",
+      "localizations" : [
+        {
+          "description" : "WorkoutKit Premium のサブスクリプション",
+          "displayName" : "WorkoutKit Premium",
+          "locale" : "ja_JP"
+        },
+        {
+          "description" : "WorkoutKit Premium subscription",
+          "displayName" : "WorkoutKit Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "name" : "workoutkit.premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "980",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "M0001",
+          "introductoryOffer" : {
+            "internalID" : "M0001-INTRO",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "全機能を月額で。最初の 7 日間は無料トライアル。",
+              "displayName" : "Monthly Premium",
+              "locale" : "ja_JP"
+            },
+            {
+              "description" : "Unlock everything monthly. 7-day free trial.",
+              "displayName" : "Monthly Premium",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "workoutkit_monthly_980",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "WorkoutKit Premium Monthly",
+          "subscriptionGroupID" : "21B8AC91",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "4900",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "Y0001",
+          "introductoryOffer" : {
+            "internalID" : "Y0001-INTRO",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "年額なら ¥1,860 お得。最初の 7 日間は無料トライアル。",
+              "displayName" : "Yearly Premium",
+              "locale" : "ja_JP"
+            },
+            {
+              "description" : "Save ¥1,860 with yearly. 7-day free trial.",
+              "displayName" : "Yearly Premium",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "workoutkit_yearly_4900",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "WorkoutKit Premium Yearly",
+          "subscriptionGroupID" : "21B8AC91",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : { "major" : 4, "minor" : 0 }
 }

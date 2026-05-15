@@ -69,3 +69,7 @@ tools/sd-batch/.venv/
 
 # Python build artifacts (annotation generator scripts)
 scripts/__pycache__/
+
+# CLAUDE.md v0.5 §-1.1 / §11.4: RevenueCat API Key 等は Secrets.xcconfig 経由で注入
+# 値はコミット禁止、テンプレ Config/Secrets.template.xcconfig からコピーして手元で埋める
+Config/Secrets.xcconfig

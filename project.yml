@@ -11,13 +11,24 @@
 name: WorkoutKit
 options:
   bundleIdPrefix: com.tomo
+  # CLAUDE.md v0.5 §-1.1: iOS 17.0 → 18.0 (サブスク化に合わせ引き上げ)。
+  # watchOS は v0.5 §-1.19 で Smart Stack Widget だけ提供する。
   deploymentTarget:
-    iOS: "17.0"
+    iOS: "18.0"
+    watchOS: "11.0"
   developmentLanguage: ja
   defaultConfig: Debug
   groupSortPosition: top
   generateEmptyDirectories: true
   createIntermediateGroups: true
+
+# v0.5: RevenueCat を SPM で取り込み(課金 SDK)。
+# - 公式 SDK 名は `purchases-ios`(produces `RevenueCat` モジュール)。
+# - WorkoutKit target からのみ参照(Widget / Watch からは触らない)。
+packages:
+  RevenueCat:
+    url: https://github.com/RevenueCat/purchases-ios
+    minVersion: "5.0.0"
 
 # Configurations は 3 種(CLAUDE.md §-1.7)。各 .xcconfig に紐付ける。
 configs:
@@ -45,7 +56,7 @@ targets:
   WorkoutKit:
     type: application
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: WorkoutKit
         excludes:
@@ -61,6 +72,9 @@ targets:
       # 参照する必要があるため、Widget 拡張ディレクトリ配下の1ファイルだけを
       # アプリ本体の sources にも個別追加する(モジュール境界を跨いだ型共有)。
       - path: WorkoutKitLiveActivity/SessionLiveActivityAttributes.swift
+      # v1.0 §5-3: RestTimer 用 ActivityAttributes も同様に共有。
+      # 本体側は Features/LiveActivity/ に正本を置き、Widget 側は本体のソースを
+      # path 個別追加で参照する(Widget の sources に下のエントリを追加済み)。
     settings:
       base:
         # Entitlements (App Group)。CLAUDE.md §-1.5。
@@ -79,6 +93,11 @@ targets:
     dependencies:
       # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
       - target: WorkoutKitLiveActivity
+      # v0.5 §-1.19: watchOS Smart Stack Widget。WatchKit Extension として同梱。
+      - target: WorkoutKitWatch
+      # v0.5 §-1.1: RevenueCat(課金 SDK)。Purchases.shared は PurchaseManager 越しに利用する。
+      - package: RevenueCat
+        product: RevenueCat
     scheme:
       testTargets:
         - WorkoutKitTests
@@ -123,7 +142,7 @@ targets:
   WorkoutKitLiveActivity:
     type: app-extension
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: WorkoutKitLiveActivity
         excludes:
@@ -135,6 +154,9 @@ targets:
       - path: WorkoutKit/Resources/Localizable.xcstrings
         buildPhase: resources
         type: file
+      # v1.0 §5-3: RestTimer の ActivityAttributes 正本は App 本体側に置き、
+      # Widget 側は path 個別追加で読む。これで型は 1 か所だけ存在する。
+      - path: WorkoutKit/Features/LiveActivity/RestTimerAttributes.swift
     configFiles:
       Debug: Config/LiveActivity.xcconfig
       Beta: Config/LiveActivity.xcconfig
@@ -162,7 +184,7 @@ targets:
   WorkoutKitTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: Tests/WorkoutKitTests
         excludes:
@@ -182,12 +204,50 @@ targets:
         # xcconfig 側の SWIFT_STRICT_CONCURRENCY=complete を継承
 
   # ------------------------------------------------------------------
+  # WorkoutKitWatch (watchOS Widget Extension, v0.5 §-1.19)
+  # Smart Stack に accessoryRectangular ウィジェットを 1 枚提供。
+  # フルアプリではなく Widget Extension のみ(工数最小化)。
+  # SwiftData は App Group 経由で共有(URL は appSupport ではなく App Group container)。
+  # ------------------------------------------------------------------
+  WorkoutKitWatch:
+    type: app-extension
+    platform: watchOS
+    deploymentTarget: "11.0"
+    sources:
+      - path: WorkoutKitWatch
+        excludes:
+          - "**/.gitkeep"
+          - "WorkoutKitWatch.entitlements"
+      # v1.0 §-1.19: 共有データ受け渡し用 2 ファイルを iPhone App と Widget の
+      # 両 target から path-include する。重複コンパイルされるが、各 Bundle に
+      # 必要な型を漏れなく含めるための明示的セット。SwiftData 依存は無い。
+      - path: WorkoutKit/Shared/TodaySessionSummary.swift
+      - path: WorkoutKit/Shared/WatchSummaryBridge.swift
+    settings:
+      base:
+        PRODUCT_NAME: WorkoutKitWatch
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.watchwidget
+        # App Group 共有 entitlements(App 本体と同一)。
+        CODE_SIGN_ENTITLEMENTS: WorkoutKitWatch/WorkoutKitWatch.entitlements
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: "0.1.0"
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_STRICT_CONCURRENCY: complete
+    info:
+      # Widget Extension 必須キー(WidgetKit Extension Point)。
+      path: WorkoutKitWatch/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
+  # ------------------------------------------------------------------
   # WorkoutKitUITests (XCUITest プレースホルダ、現状は空。Phase P3 以降で実装)
   # ------------------------------------------------------------------
   WorkoutKitUITests:
     type: bundle.ui-testing
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: Tests/WorkoutKitUITests
         excludes:

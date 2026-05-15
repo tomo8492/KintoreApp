@@ -17,6 +17,9 @@ import WidgetKit
 struct WorkoutKitLiveActivityBundle: WidgetBundle {
     var body: some Widget {
         SessionLiveActivity()
+        // v0.5 §-1.18: レストタイマー専用 Live Activity を併存させる。
+        // 同一 Widget Bundle 内に複数 ActivityConfiguration を持てる(最大 5 まで)。
+        RestTimerLiveActivity()
     }
 }
 

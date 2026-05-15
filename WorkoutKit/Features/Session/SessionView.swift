@@ -53,10 +53,21 @@ struct SessionView: View {
     @ViewBuilder
     private func content(store: SessionStore) -> some View {
         if store.isFinished {
-            FinishedView(onClose: { dismiss() })
+            // v1.0 §-1.17: iOS 26+ では FinishedView の下に AICoachView を差し込む。
+            FinishedView(
+                store: store,
+                onClose: { dismiss() }
+            )
         } else if store.isAborted {
             // 中断時は履歴に残す合意なので、ユーザーには簡素な確認だけ出して閉じる。
-            FinishedView(onClose: { dismiss() }, isAborted: true)
+            // AI コーチは「完了したワークアウトに対するフィードバック」が前提なので
+            // 中断時は表示しない。
+            FinishedView(
+                store: store,
+                onClose: { dismiss() },
+                isAborted: true,
+                showAICoach: false
+            )
         } else {
             runningContent(store: store)
         }
@@ -214,41 +225,63 @@ struct SessionView: View {
 }
 
 // MARK: - Finished view
+// CLAUDE.md v1.0 §5-2: 完了画面の下部に AICoachView を差し込む。
+// iOS 26+ では Foundation Models で 3 行の要約を生成、25 以下では非表示。
 
 private struct FinishedView: View {
+    let store: SessionStore
     let onClose: () -> Void
     var isAborted: Bool = false
+    var showAICoach: Bool = true
 
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: isAborted ? "stop.circle.fill" : "checkmark.seal.fill")
-                .font(.system(size: 72))
-                .foregroundStyle(isAborted ? Color.gray : Color.accentColor)
-                .accessibilityHidden(true)
-            Text(isAborted ? "session.finished.aborted" : "session.finished.title")
-                .font(.title2.bold())
-                .multilineTextAlignment(.center)
-                .minimumScaleFactor(0.8)
-            Text(isAborted ? "session.finished.aborted.subtitle" : "session.finished.subtitle")
-                .font(.body)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-            Button(action: onClose) {
-                Text("common.close")
-                    .font(.headline)
-                    .lineLimit(1)
+        ScrollView {
+            VStack(spacing: 20) {
+                Image(systemName: isAborted ? "stop.circle.fill" : "checkmark.seal.fill")
+                    .font(.system(size: 72))
+                    .foregroundStyle(isAborted ? Color.gray : Color.accentColor)
+                    .accessibilityHidden(true)
+                Text(isAborted ? "session.finished.aborted" : "session.finished.title")
+                    .font(.title2.bold())
+                    .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.8)
-                    .padding(.horizontal, 28)
-                    .padding(.vertical, 14)
-                    .background(Color.accentColor)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                Text(isAborted ? "session.finished.aborted.subtitle" : "session.finished.subtitle")
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+
+                // v1.0 §-1.17 AI ワークアウト要約
+                // - 完了時のみ(abort 時は出さない、showAICoach=false で渡される)
+                // - iOS 26 未満は AICoachView.isSupported=false なので空 View
+                // - WorkoutInsightInput.from(session:previous:) で集計
+                if showAICoach, AICoachView.isSupported,
+                   let workoutSession = store.fetchSession() {
+                    AICoachView(
+                        input: WorkoutInsightInput.from(
+                            session: workoutSession,
+                            previous: nil // v1.1+: 前回比較。今は省略してフォールバック動作。
+                        )
+                    )
+                    .padding(.horizontal, 4)
+                }
+
+                Button(action: onClose) {
+                    Text("common.close")
+                        .font(.headline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                        .padding(.horizontal, 28)
+                        .padding(.vertical, 14)
+                        .background(Color.accentColor)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("common.close"))
+                .accessibilityAddTraits(.isButton)
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel(Text("common.close"))
-            .accessibilityAddTraits(.isButton)
+            .padding()
         }
-        .padding()
     }
 }
 

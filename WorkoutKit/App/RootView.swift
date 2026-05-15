@@ -8,17 +8,37 @@ import SwiftUI
 
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.appDependency) private var dependency
 
     /// Builder ウィザードが開いているかを SceneStorage で永続化する。
     /// `@State` だとアプリのバックグラウンド復帰で false に戻り、ウィザードが
     /// 途中で消える事象 (DEBUG_REPORT Major-11) があったため SceneStorage に切替。
     @SceneStorage("root.isBuilderPresented") private var isBuilderPresented = false
 
+    /// v1.0 §6-5: 初回起動 3 日後の起動時にハードペイウォールを強制表示する。
+    /// 表示判定は LaunchTrialTracker.shouldShowHardPaywallOnLaunch() で集約。
+    @State private var forcedPaywall: PaywallContext?
+    @State private var trialTracker = LaunchTrialTracker()
+
     var body: some View {
-        if sizeClass == .regular {
-            iPadRoot
-        } else {
-            iPhoneRoot
+        Group {
+            if sizeClass == .regular {
+                iPadRoot
+            } else {
+                iPhoneRoot
+            }
+        }
+        .onAppear {
+            // 初回起動日を記録(冪等)し、試用期間外 & 非 Pro なら Paywall 強制表示。
+            trialTracker.recordFirstLaunchIfNeeded()
+            if trialTracker.shouldShowHardPaywallOnLaunch(proGate: dependency.proGate) {
+                // reason=nil で起動時の包括的な提示。閉じても再表示しない
+                // (毎起動で出すと UX を破壊するため、現状は 1 ロード 1 回)。
+                forcedPaywall = PaywallContext(feature: .unlimitedHistory)
+            }
+        }
+        .sheet(item: $forcedPaywall) { ctx in
+            PaywallView(reason: ctx.feature)
         }
     }
 
