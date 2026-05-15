@@ -15,9 +15,13 @@
 // `xcodebuild test ... -test-iterations 1 ...` 経由で env を渡す。
 //
 // XCUITest は依然 XCTest 上で動くため CLAUDE.md §11.4 NG リストの除外対象。
+//
+// Swift 6: XCUIApplication / XCUIElement の API は @MainActor 隔離なので、
+// XCTestCase 子クラスに @MainActor を付けて isolate context を揃える。
 
 import XCTest
 
+@MainActor
 final class AppStoreScreenshotTests: XCTestCase {
 
     // MARK: - Environment

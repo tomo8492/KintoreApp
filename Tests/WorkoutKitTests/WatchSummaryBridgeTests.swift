@@ -110,10 +110,7 @@ struct WatchSummaryBridgeTests {
         let defaults = Self.makeDefaults()
         // 何も書き込まずに read。WatchSummaryBridge は data(forKey:) で nil を受けて
         // .empty を返す設計。
-        guard let _ = defaults.data(forKey: WatchSummaryBridge.summaryKey) else {
-            #expect(true)  // 期待通り未設定
-            return
-        }
-        Issue.record("Expected no value but found one")
+        let stored = defaults.data(forKey: WatchSummaryBridge.summaryKey)
+        #expect(stored == nil)
     }
 }

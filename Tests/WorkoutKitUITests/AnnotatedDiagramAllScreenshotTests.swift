@@ -10,6 +10,10 @@
 
 import XCTest
 
+// Swift 6: XCUIApplication / XCUIElement の API は @MainActor 隔離。
+// XCTest メソッドは既定で nonisolated なので、class 全体に @MainActor を付けて
+// テストメソッドからの UI API アクセスを isolate context 内に揃える。
+@MainActor
 final class AnnotatedDiagramAllScreenshotTests: XCTestCase {
 
     private struct Target {

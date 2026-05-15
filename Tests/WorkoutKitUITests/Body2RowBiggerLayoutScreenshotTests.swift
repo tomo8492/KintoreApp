@@ -7,6 +7,8 @@
 
 import XCTest
 
+// Swift 6: XCUI API は @MainActor 隔離 — クラス全体に @MainActor を付ける。
+@MainActor
 final class Body2RowBiggerLayoutScreenshotTests: XCTestCase {
 
     private struct Target {

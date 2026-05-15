@@ -6,6 +6,8 @@
 
 import XCTest
 
+// Swift 6: XCUI API は @MainActor 隔離 — クラス全体に @MainActor を付ける。
+@MainActor
 final class WorkoutKitUITestsPlaceholder: XCTestCase {
     /// 起動だけ確認するスモーク。クラッシュ検出が目的。
     /// Phase P3 以降で Builder ウィザードのフロー検証に置き換える。

@@ -19,9 +19,6 @@ struct AppDependency {
     /// `PurchaseManager.shared` を入れる(View 階層に直接渡したい場合は
     /// `.environment(PurchaseManager.shared)` を併用)。
     var purchaseManager: PurchaseManager
-    /// 旧 StoreKit 2 クライアント。`StoreKitClientTests` の互換のため残置。
-    /// 新規コードからは利用せず、PurchaseManager を使う。
-    var storeKitClient: StoreKitClient
     /// E3 Settings から呼ぶ Restore Purchase の抽象。v1.0 では PurchaseManager
     /// (RevenueCat 経由)を本番実装として配線する。Preview / 未統合ビルドでは
     /// NoopPurchaseRestorer に差し替え可能。
@@ -37,17 +34,15 @@ struct AppDependency {
 private struct AppDependencyKey: EnvironmentKey {
     /// プロトコル要件は nonisolated。
     /// ProFeatureGate / LiveActivityClient / RestTimerManager は nonisolated init、
-    /// StoreKitClient は actor の暗黙 nonisolated init、PurchaseManager.shared は
-    /// nonisolated(unsafe) static let なのですべて nonisolated context から構築可。
+    /// PurchaseManager.shared は nonisolated(unsafe) static let なので
+    /// すべて nonisolated context から構築可。
     static let defaultValue: AppDependency = {
         let gate = ProFeatureGate()
-        let storeKit = StoreKitClient(proGate: gate)
         return AppDependency(
             proGate: gate,
             liveActivity: LiveActivityClient(),
             restTimer: RestTimerManager.shared,
             purchaseManager: PurchaseManager.shared,
-            storeKitClient: storeKit,
             // v1.0: サブスク entitlement を RevenueCat 経由で復元するため
             // PurchaseManager.shared を Restore 実装として配線する。
             purchaseRestorer: PurchaseManager.shared,

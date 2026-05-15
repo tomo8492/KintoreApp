@@ -22,7 +22,8 @@ struct LaunchTrialTrackerTests {
     }
 
     /// 起点となる Date(2026-05-15 12:00 JST)。
-    private static let baseDate = Date(timeIntervalSince1970: 1_778_240_000)
+    /// Swift 6: @Sendable な `now:` クロージャから参照されるため nonisolated にする。
+    nonisolated private static let baseDate = Date(timeIntervalSince1970: 1_778_240_000)
 
     // MARK: - First-launch recording
 

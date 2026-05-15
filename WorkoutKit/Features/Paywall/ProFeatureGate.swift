@@ -1,7 +1,7 @@
 // MARK: - ProFeatureGate
 // CLAUDE.md §-1.14 準拠。Pro 判定は必ずこのクラス経由(NGリスト規約)。
-// StoreKit 2 の Transaction.currentEntitlements を購読し isPro を更新する。
-// 実体の StoreKit 連携は StoreKitClient(同フォルダ)が担当する。
+// v1.0 では RevenueCat の `premium` entitlement を購読する PurchaseManager から
+// `proGateBridge` 経由で setIsPro(_:) が呼ばれる(後方互換 adapter)。
 
 import Foundation
 import Observation
@@ -9,7 +9,7 @@ import Observation
 @Observable
 @MainActor
 final class ProFeatureGate {
-    /// Pro 購入済みかどうか。StoreKitClient から `setIsPro(_:)` 経由で更新される。
+    /// Pro 購入済みかどうか。PurchaseManager.proGateBridge → `setIsPro(_:)` で更新される。
     /// View からは読み取り専用の感覚で扱うこと。
     var isPro: Bool = false
 
@@ -22,8 +22,8 @@ final class ProFeatureGate {
         feature.isFreeTier || isPro
     }
 
-    /// StoreKit 由来の状態更新を受ける唯一の入口。
-    /// actor (StoreKitClient) から `await` で呼ばれることを想定している。
+    /// RevenueCat 由来の entitlement 状態更新を受ける唯一の入口。
+    /// PurchaseManager の `proGateBridge` から `@MainActor` で呼ばれる。
     /// 直接 `isPro` を書き換えるのは禁止(NG リスト: ハードコード回避)。
     func setIsPro(_ value: Bool) {
         guard isPro != value else { return }
@@ -31,7 +31,7 @@ final class ProFeatureGate {
     }
 
     /// テスト / プレビュー用に Pro 状態をセットする。
-    /// 本番コードからは StoreKitClient 経由でしか変えない。
+    /// 本番コードからは PurchaseManager 経由でしか変えない。
     func _setProForPreview(_ value: Bool) {
         isPro = value
     }

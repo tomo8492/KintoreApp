@@ -5,15 +5,16 @@
 // 環境依存で flaky なので、`-WORKOUTKIT_FAKE_PRO 1` という #if DEBUG ガード付きの
 // 起動引数で proGate.isPro を pre-flip して post-purchase 状態を再現する。
 //
-// 実際の購入トランザクションフロー(Product.purchase / Transaction.updates /
-// AppStore.sync)は Tests/WorkoutKitTests/StoreKitClientTests.swift が
-// SKTestSession で網羅している。本テストはあくまで「isPro=true になった後の
-// 各 View 状態」を凍結する役目。
+// 実際の購入トランザクションフロー(Offerings 取得 / 購入 / 復元)は
+// PurchaseManager(RevenueCat)が担当しており、サンドボックス / 実機で別途検証する。
+// 本テストはあくまで「isPro=true になった後の各 View 状態」を凍結する役目。
 //
 // 実機 / sandbox での確認は別途必要(レポート参照)。
 
 import XCTest
 
+// Swift 6: XCUI API は @MainActor 隔離 — クラス全体に @MainActor を付ける。
+@MainActor
 final class PostPurchaseTests: XCTestCase {
 
     /// 共通のアプリ起動ヘルパ。FAKE_PRO 引数を付けて launch する。

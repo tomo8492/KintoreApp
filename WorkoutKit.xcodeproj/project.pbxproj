@@ -290,7 +290,6 @@
 		8B1DCE2F58AAF6E42CD7E992 /* quad-stretch-standing.json in Resources */ = {isa = PBXBuildFile; fileRef = 69CA4DC087010FDFE7904DFE /* quad-stretch-standing.json */; };
 		8B6AC06F87BF51F67067DB3E /* single-arm-pulldown.json in Resources */ = {isa = PBXBuildFile; fileRef = 6566AAAC962E1125AE8F883D /* single-arm-pulldown.json */; };
 		8CD78C0F9B9D4FC8585F1B46 /* sit-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DA3C641E39EA0D4FE909A25 /* sit-up.json */; };
-		8D2812349DDF02A7EE3D1166 /* StoreKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A5735C1A4C6D15C029A28 /* StoreKitClient.swift */; };
 		8D6F4AEEBCD3446C685FE0C4 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3A31438B1BC17EA4BF2703 /* ExerciseType.swift */; };
 		8DDF34B5E98348518281CCCE /* thread-the-needle.json in Resources */ = {isa = PBXBuildFile; fileRef = 024B1FBCA126EFBDBCDA3795 /* thread-the-needle.json */; };
 		8E1E7EB19B282802CBF0C8D0 /* cable-crunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F5FC4B09CA5CEE942FCE06F /* cable-crunch.json */; };
@@ -307,7 +306,6 @@
 		95E7E18D6029F43E287233B8 /* incline-dumbbell-press.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93A59E089CE3EEB86052FC /* incline-dumbbell-press.json */; };
 		9651A56725933676A46E5FCC /* TodaySessionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213403C577F6D9026D83B89E /* TodaySessionSummary.swift */; };
 		96D64E40ADB8CBE3C5CB17A9 /* WorkoutGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3346E295431BB099338518E9 /* WorkoutGeneratorTests.swift */; };
-		97176A172277C30115CBB341 /* StoreKitClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0900F1C15DD4532CA770BB00 /* StoreKitClientTests.swift */; };
 		97F1519C6D92136A33473818 /* chin-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 6246B686F0C6FC98C067DD61 /* chin-up.json */; };
 		98169AF4AC5EDF500B3EDBF3 /* jumping-jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = DEDFC7C47A998663C083E390 /* jumping-jacks.json */; };
 		98444FA8BCB4C41140BEFAA8 /* overhead-squat.json in Resources */ = {isa = PBXBuildFile; fileRef = A9065C85085187EFB9C99812 /* overhead-squat.json */; };
@@ -570,7 +568,6 @@
 		08865EABD77A5910AAFF790D /* gate-pose.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gate-pose.json"; sourceTree = "<group>"; };
 		08B4514345AEAA11108DD4DF /* WorkoutKitWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WorkoutKitWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C4BE7912BE6D3B78E6CC25 /* stair-climber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "stair-climber.json"; sourceTree = "<group>"; };
-		0900F1C15DD4532CA770BB00 /* StoreKitClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitClientTests.swift; sourceTree = "<group>"; };
 		0ACF671FE60F1F54F3F38139 /* PaywallLegalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLegalSection.swift; sourceTree = "<group>"; };
 		0BEBF287EC6F1DE5A38D68F4 /* crab-walk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "crab-walk.json"; sourceTree = "<group>"; };
 		0C2F873539D2BAD5082422B0 /* single-arm-tricep-extension.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "single-arm-tricep-extension.json"; sourceTree = "<group>"; };
@@ -785,7 +782,6 @@
 		70E2FE14377438BB1E7FD69E /* landmine-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "landmine-press.json"; sourceTree = "<group>"; };
 		71BBF8C36F71D9409BCB663D /* pigeon-pose.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pigeon-pose.json"; sourceTree = "<group>"; };
 		721AB446F716923B6C3EF0D8 /* decline-barbell-press.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "decline-barbell-press.json"; sourceTree = "<group>"; };
-		724A5735C1A4C6D15C029A28 /* StoreKitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitClient.swift; sourceTree = "<group>"; };
 		725AF4CA837D4DC2F3F14D4B /* cable-woodchopper.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cable-woodchopper.json"; sourceTree = "<group>"; };
 		728E3437F30032D068231EE6 /* barbell-curl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "barbell-curl.json"; sourceTree = "<group>"; };
 		72A33758BD305CB3FF7BD9D4 /* hanging-lat-stretch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hanging-lat-stretch.json"; sourceTree = "<group>"; };
@@ -1111,7 +1107,6 @@
 				EFBB67E9A1611258BA4482A2 /* PaywallTriggerTests.swift */,
 				CF2285D53CDF71BBE656CE15 /* SessionStoreTests.swift */,
 				AD7F0708FC2CF3E451281D55 /* ShuffleChooseTests.swift */,
-				0900F1C15DD4532CA770BB00 /* StoreKitClientTests.swift */,
 				220906E1A16F427C3C70AC52 /* TemplateStoreTests.swift */,
 				482C97052F347E48E98CF4E0 /* WatchSummaryBridgeTests.swift */,
 				3346E295431BB099338518E9 /* WorkoutGeneratorTests.swift */,
@@ -1598,7 +1593,6 @@
 				63087EC2AC068AA3238F6FFA /* ProFeature+Paywall.swift */,
 				087A9854EC9E574259111A5E /* ProFeatureGate.swift */,
 				443ADD887CB99D9968A0E10C /* PurchaseManager.swift */,
-				724A5735C1A4C6D15C029A28 /* StoreKitClient.swift */,
 			);
 			path = Paywall;
 			sourceTree = "<group>";
@@ -2523,7 +2517,6 @@
 				32EBBFCDF992CB4CE0D8C9AE /* SettingsView.swift in Sources */,
 				B3294639D75405FBDBCEA4E1 /* ShuffleMode.swift in Sources */,
 				A091E84429BAAAE5F76C9098 /* StepsCardView.swift in Sources */,
-				8D2812349DDF02A7EE3D1166 /* StoreKitClient.swift in Sources */,
 				AA249E36C85B096992EF2AF5 /* Template.swift in Sources */,
 				0788E87AD2EEEC69717DAA1B /* TemplateDetailView.swift in Sources */,
 				C33052067D1298A60EEBF779 /* TemplateSeeder.swift in Sources */,
@@ -2563,7 +2556,6 @@
 				D2539CD10ADFC8E258712C39 /* PaywallTriggerTests.swift in Sources */,
 				3C152AA304DE402E946A7298 /* SessionStoreTests.swift in Sources */,
 				7F4F0D8B460CD80198C9CBD9 /* ShuffleChooseTests.swift in Sources */,
-				97176A172277C30115CBB341 /* StoreKitClientTests.swift in Sources */,
 				001B3EFE5736CB21798B4076 /* TemplateStoreTests.swift in Sources */,
 				8087F3AC57FEB787F6DCE312 /* WatchSummaryBridgeTests.swift in Sources */,
 				96D64E40ADB8CBE3C5CB17A9 /* WorkoutGeneratorTests.swift in Sources */,

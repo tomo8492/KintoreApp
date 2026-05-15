@@ -3,7 +3,7 @@
 // - 単位切替は @AppStorage(SettingsKey.weightUnit) に保存し UnitsFormatter から参照される
 // - テーマは Scene ルートに `.preferredColorScheme(_:)` で適用(WorkoutKitApp 側で読む)
 // - 言語切替は iOS Settings の per-app Language を開く方式(iOS 13+ 標準)
-// - Restore Purchase は AppDependency.purchaseRestorer 経由で StoreKitClient(F1)に到達
+// - Restore Purchase は AppDependency.purchaseRestorer 経由で PurchaseManager(RevenueCat)に到達
 // - Privacy Policy / Terms は Bundle.main の Info.plist キー(xcconfig 経由)から取得
 
 import SwiftUI

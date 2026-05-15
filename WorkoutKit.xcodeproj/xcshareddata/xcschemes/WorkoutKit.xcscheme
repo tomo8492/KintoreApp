@@ -74,9 +74,6 @@
             ReferencedContainer = "container:WorkoutKit.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
-      <StoreKitConfigurationFileReference
-         identifier = "../WorkoutKit/Resources/WorkoutKit.storekit">
-      </StoreKitConfigurationFileReference>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

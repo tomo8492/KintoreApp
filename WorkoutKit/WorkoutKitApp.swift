@@ -17,16 +17,16 @@ struct WorkoutKitApp: App {
     /// AppDependency は v1.0 で purchaseManager / restTimer フィールドが追加された。
     /// PurchaseManager.shared / RestTimerManager.shared は nonisolated(unsafe) static let
     /// なので、ここで参照しても問題ない。
+    /// v1.0: 旧 StoreKitClient(buy-once IAP `com.tomo.workoutkit.pro.unlock` 前提)は
+    /// retire 済み。Restore Purchase は PurchaseManager(RevenueCat 経由)が担当する。
     @State private var dependency: AppDependency = {
         let gate = ProFeatureGate()
-        let storeKit = StoreKitClient(proGate: gate)
         return AppDependency(
             proGate: gate,
             liveActivity: LiveActivityClient(),
             restTimer: RestTimerManager.shared,
             purchaseManager: PurchaseManager.shared,
-            storeKitClient: storeKit,
-            purchaseRestorer: storeKit,
+            purchaseRestorer: PurchaseManager.shared,
             annotationLoader: ExerciseAnnotationLoader()
         )
     }()
@@ -82,18 +82,14 @@ struct WorkoutKitApp: App {
                     }
                     purchase.configureIfPossible()
 
-                    // 後方互換: 既存 StoreKitClient(actor) も並行で動かす。
-                    // v0.5 で完全に PurchaseManager に置換予定だが、現在は両系統を共存。
-                    await dependency.storeKitClient.start()
                     applyDebugProOverrideIfNeeded()
                 }
                 .onChange(of: scenePhase) { _, newPhase in
                     if newPhase == .active {
                         Task {
-                            // v1.0: PurchaseManager 側も entitlement を再評価する
+                            // v1.0: PurchaseManager に entitlement を再評価させる
                             // (払戻/家族共有/別端末からの状態変化を取り込むため)。
                             await dependency.purchaseManager.refresh()
-                            await dependency.storeKitClient.refreshEntitlementsOnForeground()
                         }
                     }
                 }

@@ -14,7 +14,7 @@
 //     PaywallTrigger から既存通り呼べる)
 //   - PurchaseManager は AppDependency 経由で取得し、Offering / 購入 / 復元 /
 //     isPremium を読み書きする。
-//   - 旧 v0.4 PaywallView(StoreKitClient ベース)は本ファイルで上書きされた。
+//   - 旧 v0.4 PaywallView(StoreKit 2 直叩きベース)は v1.0 で本ファイルに置換済み。
 
 import SwiftUI
 import OSLog
