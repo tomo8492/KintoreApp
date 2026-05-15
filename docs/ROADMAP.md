@@ -99,5 +99,5 @@ Listed only to prevent re-discussion:
 - Built-in YouTube player (App Store guideline 4.0 — passing through to the
   YouTube app is intentional).
 - Calorie tracking / nutrition database (different product).
-- Subscription model. WorkoutKit is and will remain a one-time purchase.
-- Ads. Ever.
+- Ads. Ever. (Premium subscription is the only monetization channel.)
+- Web app, Android app, or any platform other than Apple's.

@@ -22,8 +22,9 @@ struct AppDependency {
     /// 旧 StoreKit 2 クライアント。`StoreKitClientTests` の互換のため残置。
     /// 新規コードからは利用せず、PurchaseManager を使う。
     var storeKitClient: StoreKitClient
-    /// E3 Settings から呼ぶ Restore Purchase の抽象。本番は PurchaseManager 経由、
-    /// Preview / 未統合ビルドでは NoopPurchaseRestorer に差し替える。
+    /// E3 Settings から呼ぶ Restore Purchase の抽象。v1.0 では PurchaseManager
+    /// (RevenueCat 経由)を本番実装として配線する。Preview / 未統合ビルドでは
+    /// NoopPurchaseRestorer に差し替え可能。
     var purchaseRestorer: any PurchaseRestoring
     /// F-02 詳細画面で使う「動作矢印 + アノテーション」JSON ローダー。
     /// Bundle 越しに lazy にロードしプロセス内でキャッシュする。
@@ -47,7 +48,9 @@ private struct AppDependencyKey: EnvironmentKey {
             restTimer: RestTimerManager.shared,
             purchaseManager: PurchaseManager.shared,
             storeKitClient: storeKit,
-            purchaseRestorer: storeKit,
+            // v1.0: サブスク entitlement を RevenueCat 経由で復元するため
+            // PurchaseManager.shared を Restore 実装として配線する。
+            purchaseRestorer: PurchaseManager.shared,
             annotationLoader: ExerciseAnnotationLoader()
         )
         // 注意: PurchaseManager → ProFeatureGate の bridge 配線(proGateBridge への

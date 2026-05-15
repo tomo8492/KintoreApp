@@ -1,6 +1,6 @@
 Today's workout, ready in five seconds.
 
-WorkoutKit is a focused fitness app that auto-generates today's training plan from four simple choices: your goal, the muscles you want to train, the equipment you can use, and the time you have. No subscriptions. No ads. Your data stays on your device.
+WorkoutKit is a focused fitness app that auto-generates today's training plan from four simple choices: your goal, the muscles you want to train, the equipment you can use, and the time you have. No ads. No tracking. Your data stays on your device.
 
 
 ■ Highlights
@@ -35,8 +35,9 @@ All 345 exercises filterable by type × muscle × equipment × mechanics. Each d
 A reference you can return to as you learn new lifts.
 
 
-■ Pro features (one-time $7 purchase)
+■ Premium features (7-day free trial)
 
+• ¥980/month or ¥4,900/year (annual works out to about ¥408/month)
 • Full history beyond the last 30 days (free tier shows the last 30 days)
 • Unlimited custom workout templates
 • Advanced charts (weekly / monthly volume, per-muscle heat map)
@@ -44,17 +45,18 @@ A reference you can return to as you learn new lifts.
 • CSV / JSON import (migrate from other apps)
 • CSV export
 • YouTube reference links
-• Apple Watch companion (rolling out from v1.1)
+• Rest timer Live Activity (lock screen + Dynamic Island)
+• Apple Watch Smart Stack widget — today's session at a glance
+• AI workout summary (iOS 26 and later, on-device inference)
 
 
 ■ The principles
 
-• Zero ads
-• No subscriptions — one-time purchase, lifetime use
+• Zero ads, no tracking, no data collection
 • Family Sharing supported
-• Fully offline (network is only used for the StoreKit purchase)
-• No tracking, no data collection
-• iCloud sync is on the v1.1 roadmap
+• Fully offline operation (network only for purchase / sync flows)
+• Subscription managed via your Apple ID — cancel any time from iOS Settings → Subscriptions
+• Optional iCloud Backup
 • Built on top of MIT-licensed open-source anatomical assets
 
 
@@ -67,8 +69,19 @@ A reference you can return to as you learn new lifts.
 
 ■ Requirements
 
-• iOS 17.0 or later
+• iOS 18.0 or later (AI features require iOS 26 or later)
 • iPhone (portrait), iPad (portrait + landscape)
+• Apple Watch widget requires watchOS 11 or later
+
+
+■ About the subscription
+
+• Free trial: 7 days per plan, available only once per Apple ID for the Subscription Group
+• Unless you cancel at least 24 hours before the trial ends, the paid plan starts automatically
+• Cancel any time from iOS Settings → [Apple ID] → Subscriptions
+• Even after cancellation, Premium features remain available until the end of the current period
+• Restore purchases from in-app → Settings → Restore Purchases
+• Payment is charged to the payment method linked to your Apple ID
 
 
 ■ Important
@@ -80,6 +93,7 @@ WorkoutKit is a self-tracking tool. It is not medical advice. If you have any he
 
 Feedback and bug reports: [YOUR_EMAIL]
 Privacy policy: in-app → Settings → Privacy
+Terms of Service: in-app → Settings → Terms of Service
 
 
 WorkoutKit keeps your training simple, every day.

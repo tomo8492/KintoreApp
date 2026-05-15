@@ -1287,13 +1287,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Workout tracking without subscriptions or ads"
+            "value": "Workout tracking that respects your privacy"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "サブスク不要・広告なしのワークアウト記録"
+            "value": "プライバシー重視のワークアウト記録"
           }
         }
       }

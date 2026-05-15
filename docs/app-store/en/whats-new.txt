@@ -4,11 +4,13 @@ v1.0 Initial release.
 • 345 exercises with anatomical illustrations (Front and Back sections)
 • Step-by-step guides + common mistakes + form cues
 • Live Activity support — progress and rest timer on the lock screen and Dynamic Island
+• Rest timer Live Activity + Apple Watch Smart Stack widget
+• AI workout summary (iOS 26 and later, on-device inference)
 • Rest timer with sound + haptic feedback
 • History list, calendar view, persistent sort
 • 1RM (Epley formula) calculator
 • iPhone and iPad (NavigationSplitView on iPad)
 • kg / lbs toggle, Japanese / English, light / dark themes
 
-No ads, no subscription, fully offline.
-Pro features unlock with a single $7 purchase, Family Sharing supported.
+No ads, no tracking, fully offline operation.
+Premium features unlock with a 7-day free trial, then ¥980/month or ¥4,900/year. Family Sharing supported.

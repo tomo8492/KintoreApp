@@ -255,3 +255,15 @@ final class PurchaseManager {
         }
     }
 }
+
+// MARK: - PurchaseRestoring conformance
+
+/// Settings → Restore Purchase が呼ぶ抽象。v1.0 サブスク版では本実装が本番経路。
+/// `PurchaseRestoring` は `Sendable` を要求するが、`PurchaseManager` は
+/// `@MainActor` 隔離クラスなので Swift 6 では Sendable に適合する。
+extension PurchaseManager: PurchaseRestoring {
+    /// `restore()` の薄いブリッジ。Bool は「有効な entitlement が復元できたか」。
+    func restorePurchases() async throws -> Bool {
+        try await self.restore()
+    }
+}

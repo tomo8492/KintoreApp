@@ -38,47 +38,70 @@
 1. Content created by the User in the App (workout records, templates, notes, photos, etc.; the "User Content") **belongs entirely to the User**.
 2. User Content is stored only on the User's device, and we have no access to it.
 3. The User is solely responsible for the content, legality, and accuracy of their own User Content.
-4. The User can export their own User Content in CSV format using the export feature (Pro feature).
+4. The User may export their own User Content in CSV format using the export feature (Premium feature).
 
 ---
 
-## Article 5 (In-App Purchases / Pro Features)
+## Article 5 (In-App Purchases / Premium Subscription)
 
-### 5.1 Types of Purchases
+### 5.1 Types of Purchases (v1.0)
 
-1. The App consists of free **basic features** and **Pro features** available through a one-time purchase.
-2. The Pro feature product is as follows:
-   - **Product ID**: `com.tomo.workoutkit.pro.unlock`
-   - **Type**: Non-Consumable (one-time purchase)
-   - **Price**: ¥980 (regular price), ¥600 (Launch Price, first 3 months)
-   - **No recurring charges** (this is not a subscription)
+1. The App consists of a **free trial period (3 days from first launch)** and a **Premium subscription** required for continued use after the trial (hard paywall model).
+2. The Premium subscription products are as follows:
 
-### 5.2 Family Sharing
+   | Product ID                  | Period   | Price    | Free Trial |
+   |---|---|---|---|
+   | `workoutkit_monthly_980`    | 1 month  | ¥980     | 7 days     |
+   | `workoutkit_yearly_4900`    | 1 year   | ¥4,900   | 7 days     |
 
-1. The Pro feature supports Apple's Family Sharing.
-2. After purchase, family members in the User's Family Sharing group can use the Pro feature at no additional cost.
+3. Both are **Auto-Renewable Subscriptions**.
+4. Subscription Group: `WorkoutKit Premium` (`workoutkit.premium`).
+5. The User cannot hold both monthly and yearly plans simultaneously; plan switches follow Apple's standard subscription rules.
 
-### 5.3 Restore Purchase
+### 5.2 Auto-Renewal and Cancellation
 
-1. If the User changes devices or reinstalls the App, past purchases can be restored free of charge from Settings → About → Restore Purchase.
+1. The subscription will **automatically renew for the same period unless cancelled at least 24 hours before the end of the current period**.
+2. Renewal charges are billed to the payment method associated with your Apple ID within 24 hours of the end of the current period.
+3. **How to cancel**:
+   - iOS Settings → [Apple ID name] → Subscriptions → WorkoutKit Premium → Cancel Subscription
+   - Or <https://apps.apple.com/account/subscriptions>
+4. Even after cancelling, Premium features remain available until the end of the current paid period.
+5. If you cancel during the free trial, Premium features remain available until the end of the trial and you are not charged.
+
+### 5.3 Free Trial
+
+1. Each plan includes a **7-day free trial** (only for new users who have not previously used a trial with the same Apple ID).
+2. You may cancel during the trial. Unless you cancel at least 24 hours before the trial ends, the paid subscription will begin automatically at the end of the trial.
+3. If you have previously used a trial for another plan within the same Subscription Group, an additional trial may not be granted, per Apple's policy.
+
+### 5.4 Family Sharing
+
+1. The Premium subscription supports Apple's **Family Sharing**.
+2. If the purchasing User belongs to a Family Sharing group, the family members in that group can use the Premium features at no additional cost.
+3. If the purchasing User leaves the Family Sharing group, Premium access for family members ends.
+
+### 5.5 Restore Purchase
+
+1. If the User changes devices or reinstalls the App, past subscriptions can be restored from Settings → Restore Purchases (App Store Review Guideline 3.1.1).
 2. Restoring requires sign-in with the Apple ID that made the original purchase.
 
-### 5.4 Refunds
+### 5.6 Refunds
 
-1. Refunds for in-app purchases are subject to **Apple's policy**. We cannot process individual refund requests.
+1. Refunds for subscriptions are subject to **Apple's policy**. We cannot process individual refund requests.
 2. Refund requests should be submitted by the User through:
-   - iOS Settings → [Apple ID name] → Media & Purchases → View Account → Purchase History
-   - Or <https://reportaproblem.apple.com/>
+   - <https://reportaproblem.apple.com/>
+   - Or iOS Settings → [Apple ID name] → Media & Purchases → View Account → Purchase History
 
-### 5.5 Price Changes
+### 5.7 Price Changes
 
-1. The price of the Pro feature may change without notice.
-2. Users who have already purchased are not affected by price changes (permanent access).
+1. The price of each plan may change without prior notice.
+2. Existing subscribers will be notified in advance by Apple and required to give consent in accordance with Apple's policies (effective from 2023 onwards).
+3. If consent is not given, auto-renewal will stop at the next renewal cycle.
 
-### 5.6 No Future Subscription
+### 5.8 Payment SDK (RevenueCat)
 
-1. The App **has no plans to migrate to a subscription model** in the future. Only one-time purchases will be offered.
-2. Even if the pricing model changes in a future v2.0 or later, Users who have purchased the Pro feature will continue to receive access to features available at the time of these Terms.
+1. The App uses the **RevenueCat SDK** to manage purchase state.
+2. RevenueCat processes only the purchase receipt and an anonymous ID (`$RCAnonymousID:*`). The App does not transmit any personally identifiable information such as your name or email address. See Article 5 of the Privacy Policy for details.
 
 ---
 
@@ -89,7 +112,7 @@ The User shall not engage in any of the following while using the App:
 1. **Decompiling, reverse engineering, or disassembling** the App, or attempting to extract its source code
 2. Removing or altering copyright notices, trademarks, or other proprietary markings of the App
 3. **Reselling, sublicensing, transferring, or lending** the App or information accessible through the App to third parties
-4. Bypassing in-app purchase mechanisms by fraudulent means to obtain Pro features (including jailbroken devices)
+4. Bypassing in-app purchase mechanisms by fraudulent means to obtain Premium features (including jailbroken devices)
 5. Registering content that infringes copyrights, trademarks, or other intellectual property rights, or distributing such content via the App
 6. Registering illegal, violent, discriminatory, or obscene content in the App
 7. Using the App to harm other users, third parties, or us
@@ -132,7 +155,7 @@ The User shall not engage in any of the following while using the App:
 
 1. We may **modify, improve, add to, or remove** the content, features, and conditions of the App without prior notice to the User.
 2. We may **temporarily suspend or permanently terminate** the App due to technical issues, legal requirements, or other valid reasons.
-3. In the event the App is discontinued, refunds for previously purchased Pro features are subject to Apple's refund policy.
+3. If the App is discontinued, refunds for previously paid subscription fees are subject to Apple's refund policy.
 
 ---
 
@@ -145,7 +168,7 @@ The User shall not engage in any of the following while using the App:
    - Compatibility of the App with specific OS versions or devices
    - Conduct, service changes, or terms changes of third parties (including Apple)
    - Accuracy of data entered by the User
-3. Except in cases of intentional misconduct or gross negligence, our total liability to the User shall be limited to the amount the User paid for the App in the past 12 months (no more than ¥980 / approx. USD 7).
+3. Except in cases of intentional misconduct or gross negligence, our total liability to the User shall be limited to the amount the User paid for the App within the past 12 months (no more than ¥4,900 per Apple ID).
 
 ---
 

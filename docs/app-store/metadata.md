@@ -41,17 +41,19 @@ under the brand.
 
 ### Promotional text (170, editable post-release)
 Used as the launch banner / for ASO experiments. Both locales repeat:
-"v1.0", "5-second", "345 exercises", "no ads / no subscription / fully
-offline", "one-time ¥980 / $7 with Family Sharing".
+"v1.0", "5-second", "345 exercises", "rest timer Live Activity",
+"Apple Watch widget", "Premium ¥980/月 or ¥4,900/年", "7-day free trial",
+"Family Sharing".
 
 ### Description (4 000)
-Headline → Highlights → Builder wizard → Library detail → Pro feature list
-(8 items shipping in v1.0; the 3 unimplemented `ProFeature` cases —
-`customExercise`, `sessionPhoto`, `appIconVariants` — are deferred to
-`docs/ROADMAP.md` and not advertised here, per Apple guideline 2.3) →
-Principles (no ads, no subscription, no tracking) → Free presets →
-Requirements → Medical disclaimer (Apple guideline 1.4.1) → Contact
-placeholders.
+Headline → Highlights → Builder wizard → Library detail → Premium feature
+list (11 items shipping in v1.0 incl. rest-timer Live Activity, Apple Watch
+Smart Stack widget, AI workout summary; the 3 unimplemented `ProFeature`
+cases — `customExercise`, `sessionPhoto`, `appIconVariants` — are deferred
+to `docs/ROADMAP.md` and not advertised here, per Apple guideline 2.3) →
+Principles (no ads, no tracking) → Free presets → Requirements →
+Subscription disclosure block (Apple guideline 3.1.2) → Medical disclaimer
+(Apple guideline 1.4.1) → Contact placeholders.
 
 The body uses single-byte half-width separators for App Store readability
 and avoids heavy emoji clusters per Apple's review patterns.
@@ -88,9 +90,12 @@ their changelog.
   consulting a doctor.
 - **2.3 (accurate metadata)**: Every claim in description / promo / what's
   new maps to a shipping feature in `RELEASE_AUDIT.md`.
-- **3.1.1 (in-app purchase)**: Description names the Pro purchase as a
-  one-time, non-consumable, family-shareable IAP — matches the StoreKit
-  configuration `WorkoutKit.storekit`.
+- **3.1.2 (subscriptions)**: Description includes the required disclosure
+  block — auto-renewal terms, 7-day trial, ¥980/month and ¥4,900/year
+  prices, "Subscription Group: WorkoutKit Premium", cancel-anytime via
+  iOS Settings, and Restore Purchases path. Matches the StoreKit
+  configuration `WorkoutKit.storekit` and `LICENSE_FOOTER` strings in
+  `Localizable.xcstrings`.
 - **5.1.1 (data collection)**: Description states "no tracking, no data
   collection" — matches `PrivacyInfo.xcprivacy`.
 

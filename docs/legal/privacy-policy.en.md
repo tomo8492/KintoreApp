@@ -52,7 +52,7 @@ Because the App runs on Apple's platforms, the following data is processed by Ap
 
 | Data                       | Processed By         | Our Access                                  |
 | -------------------------- | -------------------- | ------------------------------------------- |
-| In-app purchase (Pro)      | App Store / StoreKit | None (only purchase status known to App)    |
+| In-app purchase (Premium subscription) | App Store / StoreKit | None (only purchase status known to App) |
 | Receipts, payment info     | Apple                | None                                        |
 | Aggregate reviews / ratings | App Store           | View only (no individual identification)    |
 | App Analytics aggregates   | App Store Connect    | View aggregate only (no user identification) |
@@ -81,7 +81,7 @@ The App requests the minimum permissions necessary:
 | ------------------ | -------------------------------------------------- | ------------------- |
 | Local Notifications | Interval timer end notifications                   | Optional            |
 | Live Activities    | Show session progress on Lock Screen               | Optional            |
-| Family Sharing     | Sharing the Pro in-app purchase across family members | Optional         |
+| Family Sharing     | Sharing the Premium subscription across family members | Optional        |
 
 The App does **not** request any of the following:
 
@@ -98,16 +98,28 @@ The App does **not** request any of the following:
 
 ## 5. Third-Party Services and SDKs
 
-The App contains **no third-party SDKs**:
+The App contains **no analytics, advertising, or social third-party SDKs**:
 
 - ❌ No analytics SDKs (Google Analytics, Firebase, Mixpanel, etc.)
 - ❌ No crash reporting SDKs (Crashlytics, Sentry, etc.)
 - ❌ No advertising SDKs (AdMob, Meta Audience Network, etc.)
 - ❌ No social login SDKs (Facebook, Google, etc.)
 
-The only third-party services the App interacts with are Apple's:
+The only third-party SDK used by the App is **RevenueCat** for purchase processing:
 
-- **App Store / StoreKit**: Payment processing for in-app purchases (Pro unlock)
+- ✅ **RevenueCat** (purchase processing only): used to manage Premium subscription
+  state (¥980/month / ¥4,900/year) routed through the App Store / StoreKit 2.
+  RevenueCat handles the purchase receipt and an anonymous ID
+  (`$RCAnonymousID:*`); no personally identifiable information such as your
+  name or email address is transmitted from the App. RevenueCat's own data
+  handling is governed by the
+  [RevenueCat Privacy Policy](https://www.revenuecat.com/privacy).
+  The App **disables** RevenueCat's attribution / analytics features
+  (subscription state sync only).
+
+The only third-party services the App interacts with are Apple and RevenueCat:
+
+- **App Store / StoreKit**: Payment processing for the Premium subscription
 - **Local Notifications**: On-device local notifications
 - **iCloud Backup** (optional): If you have enabled iCloud Backup on iOS, App data may be included in Apple's backup.
 
@@ -115,7 +127,7 @@ The only third-party services the App interacts with are Apple's:
 
 ## 6. Bundled Content Attribution
 
-The App ships with 150+ exercises and SVG illustrations:
+The App ships with 150+ exercises and SVG illustrations (the bundled exercise database grows over time):
 
 - **Exercise data**: Created by the developer or compiled from public-domain sources
 - **SVG illustrations**: Partially derived from [workout-cool](https://github.com/Snouzy/workout-cool) (MIT License)
@@ -140,7 +152,7 @@ Because we do not collect or hold your personal information, the typical data su
 
 If you reside in the EU, EEA, or UK, you have the following rights under GDPR:
 
-- **Right of access / portability**: You can export your in-app data as CSV (Pro feature) from the Settings screen
+- **Right of access / portability**: You can export your in-app data as CSV (Premium feature) from the Settings screen
 - **Right to erasure / right to be forgotten**: Uninstalling the App via iOS standard procedures deletes all data from your device
 - **Right to object**: We do not process your data, so there is no processing activity to object to
 
