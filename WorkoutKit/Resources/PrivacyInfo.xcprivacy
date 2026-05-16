@@ -3,7 +3,10 @@
     PrivacyInfo.xcprivacy
     CLAUDE.md §-1.9 / §-1.11 準拠。
     収集情報: なし。トラッキング: なし。
-    Required Reason API は現状 UserDefaults と FileTimestamp の2点のみ。
+    Required Reason API は現状 UserDefaults のみ(@AppStorage / SettingsKey 経由)。
+    FileTimestamp 系 API (modificationDate / creationDate / attributesOfItem 等) は
+    本アプリ・テストいずれからも未参照のため宣言から外している。
+    SDK 依存 (RevenueCat 等) が内部で使う場合は SDK 自身の PrivacyInfo に集約される。
 -->
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -22,14 +25,6 @@
             <key>NSPrivacyAccessedAPITypeReasons</key>
             <array>
                 <string>CA92.1</string>
-            </array>
-        </dict>
-        <dict>
-            <key>NSPrivacyAccessedAPIType</key>
-            <string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
-            <key>NSPrivacyAccessedAPITypeReasons</key>
-            <array>
-                <string>C617.1</string>
             </array>
         </dict>
     </array>
