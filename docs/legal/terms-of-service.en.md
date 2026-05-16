@@ -2,8 +2,8 @@
 
 **App Name**: WorkoutKit (the "App")
 **Provider**: Independent developer (the "Developer", "we", "us", or "our")
-**Last Updated**: 2026-XX-XX
-**Initial Release**: 2026-XX-XX
+**Last Updated**: 2026-05-16
+**Initial Release**: 2026-05-16
 **Version**: 1.0
 
 ---
@@ -217,7 +217,7 @@ These Terms, together with the Privacy Policy, constitute the entire agreement b
 
 | Version | Date         | Changes        |
 | ------- | ------------ | -------------- |
-| 1.0     | 2026-XX-XX   | Initial release |
+| 1.0     | 2026-05-16   | Initial release |
 
 ---
 

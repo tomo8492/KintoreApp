@@ -17,8 +17,8 @@
 <dl class="meta">
 <dt>アプリ名</dt><dd>WorkoutKit</dd>
 <dt>提供者</dt><dd>個人開発者</dd>
-<dt>最終更新日</dt><dd>2026-XX-XX</dd>
-<dt>初版発行日</dt><dd>2026-XX-XX</dd>
+<dt>最終更新日</dt><dd>2026-05-16</dd>
+<dt>初版発行日</dt><dd>2026-05-16</dd>
 <dt>バージョン</dt><dd>1.0</dd>
 </dl>
 </header>
@@ -90,12 +90,12 @@
 <p>App Store および StoreKit における Apple の取扱いについては <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a> をご参照ください。</p>
 
 <h2 id="sec3">3. 通知について</h2>
-<p>本アプリは、ワークアウト中の <strong>インターバルタイマー終了通知</strong> にローカル通知(<code>UNUserNotificationCenter</code>)を使用します。</p>
+<p>本アプリは v1.0 時点で <strong>ユーザー通知センター(<code>UNUserNotificationCenter</code>)を使用していません</strong>。ワークアウト中の進捗・休憩タイマーの表示は <strong>Live Activities(ActivityKit)</strong> によって行います。</p>
 <ul>
-<li>通知は <strong>オプトイン</strong>(初回利用時にお客様の許可が必要)です</li>
-<li>通知の内容は <strong>すべて端末内で生成</strong> され、サーバーから送信されることはありません</li>
-<li>通知の許可は iOS の「設定」アプリからいつでも取消可能です</li>
+<li>Live Activities は iOS の標準仕組みで、ロック画面 / Dynamic Island に進捗を表示する一時的な UI です</li>
+<li>Live Activities の許可は iOS の「設定 → アプリ」からいつでも取消可能です</li>
 <li>プッシュ通知サービス(APNs)は使用しません</li>
+<li>ユーザーの許可ダイアログを伴うローカル通知 / リモート通知は出しません</li>
 </ul>
 
 <h2 id="sec4">4. 端末の権限(Permissions)</h2>
@@ -103,8 +103,7 @@
 <table>
 <thead><tr><th>権限</th><th>用途</th><th>必須/任意</th></tr></thead>
 <tbody>
-<tr><td>ローカル通知</td><td>インターバルタイマー終了通知</td><td>任意</td></tr>
-<tr><td>Live Activities</td><td>ロック画面でのセッション進捗表示</td><td>任意</td></tr>
+<tr><td>Live Activities</td><td>ロック画面 / Dynamic Island でのセッション進捗・休憩タイマー表示</td><td>任意</td></tr>
 <tr><td>Family Sharing</td><td>App 内課金(Pro 解除)のファミリー共有</td><td>任意</td></tr>
 </tbody>
 </table>
@@ -211,7 +210,7 @@
 <table>
 <thead><tr><th>バージョン</th><th>日付</th><th>変更内容</th></tr></thead>
 <tbody>
-<tr><td>1.0</td><td>2026-XX-XX</td><td>初版発行</td></tr>
+<tr><td>1.0</td><td>2026-05-16</td><td>初版発行</td></tr>
 </tbody>
 </table>
 

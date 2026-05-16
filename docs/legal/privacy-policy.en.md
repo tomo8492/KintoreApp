@@ -2,8 +2,8 @@
 
 **App Name**: WorkoutKit (the "App")
 **Provider**: Independent developer (the "Developer", "we", "us", or "our")
-**Last Updated**: 2026-XX-XX
-**Initial Release**: 2026-XX-XX
+**Last Updated**: 2026-05-16
+**Initial Release**: 2026-05-16
 **Version**: 1.0
 
 ---
@@ -64,12 +64,17 @@ For Apple's handling of data via the App Store and StoreKit, see [Apple Privacy 
 
 ## 3. Notifications
 
-The App uses local notifications (`UNUserNotificationCenter`) for **interval timer end notifications** during workouts.
+As of v1.0 the App does **not** use the User Notifications framework
+(`UNUserNotificationCenter`). Workout progress and rest-timer surfaces are
+provided through **Live Activities (ActivityKit)** instead.
 
-- Notifications are **opt-in** (your permission is requested on first use)
-- All notification content is **generated locally** and is never transmitted from a server
-- You can revoke permission at any time in iOS Settings
+- Live Activities are a standard iOS facility that briefly display progress
+  on the Lock Screen / Dynamic Island
+- Permission for Live Activities can be revoked at any time from iOS
+  Settings → the App
 - The App does **not** use push notification services (APNs)
+- The App does not display permission dialogs for local or remote
+  notifications
 
 ---
 
@@ -79,8 +84,7 @@ The App requests the minimum permissions necessary:
 
 | Permission         | Purpose                                            | Required / Optional |
 | ------------------ | -------------------------------------------------- | ------------------- |
-| Local Notifications | Interval timer end notifications                   | Optional            |
-| Live Activities    | Show session progress on Lock Screen               | Optional            |
+| Live Activities    | Show session progress and rest-timer on Lock Screen / Dynamic Island | Optional |
 | Family Sharing     | Sharing the Premium subscription across family members | Optional        |
 
 The App does **not** request any of the following:
@@ -254,7 +258,7 @@ This Policy is governed by and construed in accordance with the laws of Japan.
 
 | Version | Date         | Changes        |
 | ------- | ------------ | -------------- |
-| 1.0     | 2026-XX-XX   | Initial release |
+| 1.0     | 2026-05-16   | Initial release |
 
 ---
 
