@@ -5,8 +5,8 @@
 > for tomo's own records. The English block is the canonical version that
 > goes to the reviewer; the Japanese block exists only as documentation.
 >
-> All `[YOUR_EMAIL]` and `[YOUR_NAME]` placeholders are resolved at submission
-> time per `docs/app-store/urls.md`.
+> Contact email and developer name are filled below; canonical values live
+> in `docs/app-store/urls.md`.
 
 ---
 
@@ -151,8 +151,8 @@ only the SVG silhouettes, normalized and re-themed to our accent color.
 
 ### Privacy and Terms
 
-Privacy Policy URL: `https://workoutkit.app/privacy`
-Terms of Use URL:   `https://workoutkit.app/terms`
+Privacy Policy URL: `https://tomo8492.github.io/KintoreApp/legal/privacy-policy.en.html`
+Terms of Use URL:   `https://tomo8492.github.io/KintoreApp/legal/terms-of-service.en.html`
 
 Both are static pages with no analytics. The app collects nothing on
 its own, ships no analytics SDKs, and contacts no servers other than
@@ -171,13 +171,13 @@ there is no risk of over-promising at the point of sale.
 
 ### Contact
 
-Developer contact: `[YOUR_EMAIL]`. We respond within one business day.
+Developer contact: `tomo060213@gmail.com`. We respond within one business day.
 
 If anything else needs clarification we are happy to push a fresh
 build with extra in-app comments or to answer in this thread.
 Thank you again for the review.
 
-— `[YOUR_NAME]`
+— `Tomo`
 
 ---
 
@@ -296,8 +296,9 @@ Acknowledgments から閲覧可能。workout-cool の seed データ /
 
 ### Privacy Policy / Terms URL
 
-提出時に確定:`https://workoutkit.app/privacy` /
-`https://workoutkit.app/terms`。アナリティクスなし、Apple StoreKit
+本番 URL: `https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html` /
+`https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html`
+(en は `.en.html` 接尾辞付き)。アナリティクスなし、Apple StoreKit
 (RevenueCat 経由)以外への外部通信なし。`PrivacyInfo.xcprivacy`
 は tracking 0、Required Reason API 宣言済(CLAUDE.md §-1.9)。
 
@@ -310,4 +311,4 @@ v1.1+ 計画は `docs/ROADMAP.md` に明記。Paywall は実装済み機能の�
 
 ### 連絡先
 
-開発者連絡先: `[YOUR_EMAIL]`、24 時間以内に返信。
+開発者連絡先: `tomo060213@gmail.com`、24 時間以内に返信。

@@ -91,7 +91,7 @@ WorkoutKit is a self-tracking tool. It is not medical advice. If you have any he
 
 ■ Contact and support
 
-Feedback and bug reports: [YOUR_EMAIL]
+Feedback and bug reports: tomo060213@gmail.com
 Privacy policy: in-app → Settings → Privacy
 Terms of Service: in-app → Settings → Terms of Service
 

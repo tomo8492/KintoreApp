@@ -196,7 +196,7 @@ The User shall not engage in any of the following while using the App:
 For questions or concerns about these Terms:
 
 - **In the App**: Settings → About → Contact
-- **Email**: `[YOUR_EMAIL]` (to be replaced)
+- **Email**: `tomo060213@gmail.com`
 - **GitHub**: [https://github.com/tomo8492/KintoreApp/issues](https://github.com/tomo8492/KintoreApp/issues)
 
 ---

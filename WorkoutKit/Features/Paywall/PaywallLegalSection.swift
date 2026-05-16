@@ -3,41 +3,28 @@
 // PaywallSections.swift から分離(CLAUDE.md「1 ファイル 300 行超で分割」)。
 //
 // =====================================================================
-// 🚨 RELEASE BLOCKER 🚨 - App Store Connect 申請前(Phase P-5)に
-//   `placeholderTermsURL` / `placeholderPrivacyURL` を本番 URL に
-//   差し替えること。確定 URL は Apple Developer 登録後に決まる。
-//   差し替え漏れがあると審査で reject される可能性が高い。
+// 公開先 URL(v1.0 launch、GitHub Pages):
+//   - https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html    (ja)
+//   - https://tomo8492.github.io/KintoreApp/legal/privacy-policy.en.html (en)
+//   - https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html    (ja)
+//   - https://tomo8492.github.io/KintoreApp/legal/terms-of-service.en.html (en)
 //
-// 雛形ドキュメントは `docs/legal/` 配下にコミット済み:
-//   - docs/legal/privacy-policy.html       (ja)
-//   - docs/legal/privacy-policy.en.html    (en)
-//   - docs/legal/terms-of-service.html     (ja)
-//   - docs/legal/terms-of-service.en.html  (en)
+// 雛形 .md / 生成 .html は `docs/legal/` 配下にコミット済み。
+// GitHub Pages を `docs/` フォルダ source で有効化すれば配信される。
 //
-// 公開候補 URL(GitHub Pages を有効化した場合):
-//   - https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html
-//   - https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html
-// 独自ドメインを取得する場合は workoutkit.app などへ差し替え。
-//
-// 公開後、以下を実施:
-//   1. `placeholderTermsURL` / `placeholderPrivacyURL` を本番 URL に書き換え
-//   2. `docs/legal/*.md` の "2026-XX-XX" を実際の公開日に更新
-//   3. `[YOUR_EMAIL]` プレースホルダを連絡先メールアドレスに差し替え
-//   4. 必要に応じて Bundle/Info.plist 経由で URL を読み込む形へリファクタ
+// もし将来独自ドメイン (`workoutkit.app` 等) を取得する場合は、本ファイル
+// の 2 定数を書き換えるだけで切替可能(`docs/app-store/urls.md` も同期)。
 // =====================================================================
 
 import SwiftUI
 
 struct PaywallLegalLinks: View {
 
-    // ⚠️ 本番 URL に差し替え必須(Phase P-5)。RELEASE_AUDIT.md / RELEASE
-    //   CHECKLIST にも記載済み。CLAUDE.md §-1 に従い App Store 公開時に確定。
-    //
-    // 候補 URL(GitHub Pages 有効化時):
-    //   https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html
-    //   https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html
-    private static let placeholderTermsURL   = URL(string: "https://workoutkit.app/terms")
-    private static let placeholderPrivacyURL = URL(string: "https://workoutkit.app/privacy")
+    // v1.0 launch URL(GitHub Pages 配信)。ロケール別 URL に切替えたい場合は
+    // `Bundle.main.preferredLocalizations.first` を見て .en.html へ分岐する形に
+    // リファクタする(現状は ja 既定の単一 URL でも審査は通る前提)。
+    private static let placeholderTermsURL   = URL(string: "https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html")
+    private static let placeholderPrivacyURL = URL(string: "https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html")
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {

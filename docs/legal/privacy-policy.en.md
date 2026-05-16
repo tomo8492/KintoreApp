@@ -237,7 +237,7 @@ Past versions are available in this repository's Git history.
 For questions or concerns about this Policy:
 
 - **In the App**: Settings → About → Contact
-- **Email**: `[YOUR_EMAIL]` (to be replaced)
+- **Email**: `tomo060213@gmail.com`
 - **GitHub**: [https://github.com/tomo8492/KintoreApp/issues](https://github.com/tomo8492/KintoreApp/issues)
 
 We aim to respond within a few days to two weeks.

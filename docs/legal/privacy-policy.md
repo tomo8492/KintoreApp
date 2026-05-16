@@ -235,7 +235,7 @@ App Store / StoreKit の決済処理や iCloud バックアップは Apple が�
 本ポリシーに関するご質問・ご意見は、以下の方法でご連絡ください:
 
 - **アプリ内**: Settings → About → お問い合わせ
-- **メール**: `[YOUR_EMAIL]`(差替予定)
+- **メール**: `tomo060213@gmail.com`
 - **GitHub**: [https://github.com/tomo8492/KintoreApp/issues](https://github.com/tomo8492/KintoreApp/issues)
 
 回答までに数日〜2 週間程度お時間をいただく場合があります。あらかじめご了承ください。

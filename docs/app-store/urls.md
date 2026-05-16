@@ -1,39 +1,49 @@
 # App Store Connect — URL fields
 
-> Each value is a placeholder until Apple Developer enrollment closes (Phase P-1)
-> and the workoutkit.app domain / mailbox are provisioned. **All five must be
-> finalised before the first App Store submission.**
+> v1.0 launch values (filled). Defaults below point at the GitHub Pages
+> location (`tomo8492.github.io/KintoreApp/legal/`). If a custom domain
+> (e.g. `workoutkit.app`) is provisioned later, replace these in one pass.
 
-| Field | Required | Placeholder | Final source |
+| Field | Required | Value | Source |
 |---|---|---|---|
-| Support URL              | ✅ | `mailto:[YOUR_EMAIL]`               | tomo's support email or a static support page |
-| Marketing URL            | optional | `https://github.com/tomo8492/KintoreApp` (private) — leave blank if private | landing page once domain ships |
-| Privacy Policy URL       | ✅ | `https://workoutkit.app/privacy`    | hosted privacy.html (separate task) |
-| Terms of Use URL (EULA)  | optional | `https://workoutkit.app/terms`      | hosted terms.html, otherwise Apple's standard EULA applies |
-| Copyright                | ✅ | `© 2026 [YOUR_NAME]`                | individual developer name as on Apple Developer enrollment |
+| Support URL              | ✅ | `mailto:tomo060213@gmail.com`                                                | tomo's personal mail (single-person dev) |
+| Marketing URL            | optional | `https://github.com/tomo8492/KintoreApp` (currently private — leave blank in ASC if repo stays private) | replace with landing page when domain ships |
+| Privacy Policy URL       | ✅ | `https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html`            | hosted from `docs/legal/privacy-policy.html` via GitHub Pages |
+| Terms of Use URL (EULA)  | optional | `https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html`          | hosted from `docs/legal/terms-of-service.html`; if blank, Apple's standard EULA applies |
+| Copyright                | ✅ | `© 2026 Tomo`                                                                | individual developer name; should match the legal name on Apple Developer enrollment |
 
-## Where the placeholders live in code
+English variants live next to the Japanese ones:
+- `https://tomo8492.github.io/KintoreApp/legal/privacy-policy.en.html`
+- `https://tomo8492.github.io/KintoreApp/legal/terms-of-service.en.html`
+
+App Store Connect's localised metadata (en-US) should reference these
+`.en.html` versions; ja-JP metadata uses the un-suffixed `.html` versions.
+
+## Where these values live in code
 
 - `WorkoutKit/Features/Paywall/PaywallLegalSection.swift`
-  (`placeholderTermsURL`, `placeholderPrivacyURL` — flagged with 🚨 RELEASE BLOCKER 🚨).
-  Current defaults point at `https://workoutkit.app/terms` and
-  `https://workoutkit.app/privacy`; the GitHub Pages fallback
-  (`https://tomo8492.github.io/KintoreApp/legal/{terms-of-service,privacy-policy}.html`)
-  is documented in-source as a comment.
+  (`placeholderTermsURL`, `placeholderPrivacyURL`) — currently set to the
+  GitHub Pages URLs above. If a custom domain ships, update those two
+  constants in one place.
+- `docs/app-store/{ja,en}/description.txt` — support email.
+- `docs/app-store/app-review-notes.md` — reviewer-facing email + URLs.
+- `docs/legal/*.md` and `docs/legal/*.html` — author/email/copyright in
+  the document bodies.
 
-The rendered legal pages live under `docs/legal/` (`*.md` source +
-`*.html` published copy). To publish on GitHub Pages, enable Pages on
-the `main` branch with `docs/` as the source folder. Custom domain wiring
-goes in `docs/legal/CNAME` once `workoutkit.app` is provisioned.
+## Publishing the legal pages
 
-## After they're finalised
+1. Enable GitHub Pages on the `claude/init-workoutkit-ios-YHots` branch
+   (or `main` after merge) with `docs/` as the source folder.
+2. Visit the four URLs to confirm 200 OK.
+3. (Optional) If you later acquire `workoutkit.app`, add a `docs/legal/CNAME`
+   file and switch the placeholder URLs to that domain in the locations
+   above.
 
-1. Replace the two `placeholderXxxURL` constants in PaywallLegalSection.swift.
-2. Regenerate `docs/legal/*.html` from the updated `*.md` source
-   (current dates are stale on the published HTML — keep them in sync).
-3. Update `[YOUR_EMAIL]` in `docs/app-store/{ja,en}/description.txt`
-   and `docs/app-store/app-review-notes.md` (search for the literal token
-   and replace).
-4. Update `[YOUR_NAME]` in this file's Copyright row and in
-   `app-review-notes.md`'s signature line.
-5. Re-run xcodebuild build / test → push the URL-update commit.
+## TODO before App Store submission (M9)
+
+1. Confirm Apple Developer enrollment legal name matches `Tomo` (the
+   Copyright field), or update Copyright accordingly.
+2. Verify the four `tomo8492.github.io/.../...html` URLs return 200 OK
+   after Pages is enabled.
+3. Re-run xcodebuild build / test → push the URL-update commit (already
+   covered by the v1.0 placeholder-fill commit).
