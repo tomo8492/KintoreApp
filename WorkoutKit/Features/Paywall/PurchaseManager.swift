@@ -73,10 +73,10 @@ final class PurchaseManager {
     // MARK: - Singleton (CLAUDE.md v1.0 §6-4)
 
     /// `.environment(PurchaseManager.shared)` で View 階層に注入する。
-    /// @MainActor class なので Swift 6 strict concurrency では static の lazy init を
-    /// nonisolated context から触れるよう nonisolated(unsafe) を明示する。
+    /// @MainActor class は Swift 6 strict concurrency で `Sendable` に適合するため、
+    /// `nonisolated` のみで lazy init を nonisolated context からも安全に通せる。
     /// 初期化後の state アクセスは全て @MainActor 経由なのでデータ競合は起きない。
-    nonisolated(unsafe) static let shared = PurchaseManager()
+    nonisolated static let shared = PurchaseManager()
 
     // MARK: - Observable state
 

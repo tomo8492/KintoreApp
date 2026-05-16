@@ -25,8 +25,12 @@ final class LaunchTrialTracker {
 
     // MARK: - Dependencies
 
-    private let defaults: UserDefaults
-    private let now: () -> Date
+    /// `nonisolated let` で宣言することで、`nonisolated init` から MainActor 隔離違反
+    /// なしに書き込める。`@Sendable () -> Date` は Sendable なので素の `nonisolated`
+    /// でよい。`UserDefaults` は本来スレッドセーフだが Sendable 適合がないため
+    /// `nonisolated(unsafe)` で明示的にオプトアウトする。init 後は不変なので競合なし。
+    nonisolated(unsafe) private let defaults: UserDefaults
+    nonisolated private let now: @Sendable () -> Date
 
     /// `AppDependency.defaultValue`(EnvironmentKey protocol 要件で nonisolated)から
     /// 構築できるよう nonisolated init。引数値の取り回しのみで MainActor 隔離された
