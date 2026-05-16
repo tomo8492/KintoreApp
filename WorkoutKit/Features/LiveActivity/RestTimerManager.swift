@@ -14,7 +14,12 @@
 //   - LiveActivityClient(session-progress 用)と同一 Bundle で併存するため、
 //     2 個目の ActivityConfiguration として Widget Bundle 側で宣言する。
 
-import ActivityKit
+// `Activity<X>` は ActivityKit が非 Sendable のままにしているため、
+// `@MainActor` から `await activity.update/end` するとき receiver の sending 警告が
+// 出る。Apple SDK が Sendable 注釈を追加するまでの過渡期対応として、本ファイル
+// 限定で `@preconcurrency import` で抑制する(ActivityKit 自体は実用上 MainActor で
+// 使う前提なので、現状の利用パターンに競合は無い)。
+@preconcurrency import ActivityKit
 import Foundation
 import Observation
 import OSLog
@@ -26,9 +31,9 @@ final class RestTimerManager {
     // MARK: - Singleton (v1.0 §5-3)
 
     /// `.environment(RestTimerManager.shared)` で View 階層に注入する。
-    /// PurchaseManager と同様、@MainActor class の static let は nonisolated(unsafe)
-    /// 指定で lazy init を nonisolated context からも安全に通す。
-    nonisolated(unsafe) static let shared = RestTimerManager()
+    /// PurchaseManager と同様、`@MainActor` class は Sendable 適合するので
+    /// `nonisolated` のみで lazy init を nonisolated context からも安全に通せる。
+    nonisolated static let shared = RestTimerManager()
 
     // MARK: - Observable state
 
@@ -104,16 +109,20 @@ final class RestTimerManager {
     }
 
     private func endInternal(reason: String) async {
-        guard let activity else { return }
-        await activity.end(activity.content, dismissalPolicy: .immediate)
-        Logger.session.info("RestTimer ended: id=\(activity.id, privacy: .public) reason=\(reason, privacy: .public)")
+        guard let activity = self.activity else { return }
+        // `await activity.end(...)` の前に id / content をローカルへ取り出し、
+        // self.activity を nil 化して aliasing を解消する。`activity` を後段では使わない。
+        let id = activity.id
+        let content = activity.content
         self.activity = nil
+        await activity.end(content, dismissalPolicy: .immediate)
+        Logger.session.info("RestTimer ended: id=\(id, privacy: .public) reason=\(reason, privacy: .public)")
     }
 
     /// 既存 Activity の残時間だけ更新したい場合(例: ユーザーが手動で +30 秒)。
     /// endTime を伸ばす場合は新しい state を渡して update する。
     func extend(by seconds: Int) async {
-        guard let activity else { return }
+        guard let activity = self.activity else { return }
         guard seconds != 0 else { return }
         let current = activity.content.state
         let newEnd = current.endTime.addingTimeInterval(TimeInterval(seconds))

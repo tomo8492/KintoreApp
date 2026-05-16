@@ -12,6 +12,11 @@ struct ExerciseListView: View {
 
     // 同梱種目は最大 ~150 件想定(§-1.10)。インメモリで filter する方が
     // SwiftData の dynamic predicate を組み替えるより素直で速い。
+    // NOTE: Swift 6 strict concurrency が KeyPath<Exercise, String> の非 Sendable
+    // 警告を出すが、これは SwiftData @Model クラスが Sendable 適合できないことに
+    // 起因する SDK 側の問題で個別対処不可。Apple の SwiftData / KeyPath Sendable
+    // 修正待ち(2026Q3 想定)。`@preconcurrency import SwiftData` は副作用が大きい
+    // ため原則使わない方針(CLAUDE.md §-1.6 / 残 warning 整理メモ)。
     @Query(sort: [SortDescriptor(\Exercise.nameJa)]) private var allExercises: [Exercise]
 
     // --- フィルタ / 検索 state(View 直持ち) -------------------------

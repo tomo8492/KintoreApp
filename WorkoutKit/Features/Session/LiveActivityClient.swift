@@ -24,7 +24,12 @@
 // 休憩タイマーの残秒数は ContentState.intervalEndsAt(Date)で表現し、Widget 側で
 // `Text(timerInterval:)` を使ってローカル描画する。秒単位 update を打たない設計。
 
-import ActivityKit
+// `Activity<X>` は ActivityKit が非 Sendable のままにしているため、
+// `@MainActor` Task から `await activity.update/end` するとき receiver の sending
+// 警告が出る。Apple SDK が Sendable 注釈を追加するまでの過渡期対応として、
+// 本ファイル限定で `@preconcurrency import` で抑制する(本クラスは @MainActor で
+// 閉じているので実用上のレースは無い ─ ファイル先頭の設計メモ参照)。
+@preconcurrency import ActivityKit
 import Foundation
 import OSLog
 
@@ -124,9 +129,14 @@ final class LiveActivityClient {
         pendingTask = Task { @MainActor [weak self] in
             await prior?.value
             guard let self, let activity = self.activity else { return }
+            // await 前に id / content をローカル退避してから self.activity を nil 化。
+            // これで後段で activity を再参照せずに済む(@preconcurrency import で
+            // ActivityKit の非 Sendable も含めた sending 警告自体を抑制)。
+            let id = activity.id
+            let content = activity.content
             self.activity = nil
-            await activity.end(activity.content, dismissalPolicy: .immediate)
-            Logger.session.info("LiveActivity ended: id=\(activity.id, privacy: .public) reason=\(reason, privacy: .public)")
+            await activity.end(content, dismissalPolicy: .immediate)
+            Logger.session.info("LiveActivity ended: id=\(id, privacy: .public) reason=\(reason, privacy: .public)")
         }
     }
 }
