@@ -114,16 +114,12 @@ targets:
       # これが無いとシミュレータで Product.products(for:) が空配列を返し、
       # Paywall に "product not found" が出る(BUG 2 / F-08)。
       #
-      # ⚠ identifier path の挙動について(Xcode 26 / xcodegen 2.45.3):
-      #   - xcodegen はこの値から `../../WorkoutKit/Resources/WorkoutKit.storekit`
-      #     形式で出力する(scheme ファイル基準で 2 階層上)
-      #   - Xcode の StoreKit Test ランタイムはこれを解決できず、
-      #     Product.products(for:) が空配列で返ることがあるため、
-      #     コミット時の .xcscheme は `../WorkoutKit/Resources/WorkoutKit.storekit`
-      #     (.xcodeproj 直下基準で 1 階層上 = リポジトリルート)に
-      #     手で揃えている。xcodegen を再実行した場合は
-      #     `WorkoutKit.xcodeproj/xcshareddata/xcschemes/WorkoutKit.xcscheme`
-      #     の identifier 行を `../WorkoutKit/...` に書き戻すこと。
+      # identifier path の解決ルール(Xcode 26 / xcodegen 2.45.3 で検証済み):
+      #   - xcodegen は `../../WorkoutKit/Resources/WorkoutKit.storekit`
+      #     形式で出力する(.xcodeproj/xcshareddata/ 基準で 2 階層上 → リポジトリルート)
+      #   - Xcode IDE もこのパスを正しく解決する(Issue Navigator に warning 0 件)
+      #   - 過去に「../WorkoutKit/... に手で書き換えるべし」とのメモがあったが、
+      #     実際には xcodegen デフォルトの ../../ が正解。手書き不要。
       #
       # ⚠ シミュレータ起動方法に関する注意:
       #   `xcrun simctl launch` で直接起動すると Run スキームの StoreKit
