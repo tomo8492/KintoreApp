@@ -235,6 +235,27 @@ private struct FinishedView: View {
     var showAICoach: Bool = true
 
     var body: some View {
+        SessionFinishedContent(
+            session: store.fetchSession(),
+            onClose: onClose,
+            isAborted: isAborted,
+            showAICoach: showAICoach
+        )
+    }
+}
+
+// MARK: - Reusable finished content
+// `FinishedView` の本体を切り出して `WorkoutSession?` を直接受け取る形にしておく。
+// 本番経路では `FinishedView` 経由で SessionStore から取り出した session を渡す。
+// DEBUG 限定の screenshot 経路では seeded session を直接渡せるため、
+// 同じ UI を SessionStore 無しで再現できる(M6 session-summary-aicoach 撮影用)。
+struct SessionFinishedContent: View {
+    let session: WorkoutSession?
+    let onClose: () -> Void
+    var isAborted: Bool = false
+    var showAICoach: Bool = true
+
+    var body: some View {
         ScrollView {
             VStack(spacing: 20) {
                 Image(systemName: isAborted ? "stop.circle.fill" : "checkmark.seal.fill")
@@ -255,7 +276,7 @@ private struct FinishedView: View {
                 // - iOS 26 未満は AICoachView.isSupported=false なので空 View
                 // - WorkoutInsightInput.from(session:previous:) で集計
                 if showAICoach, AICoachView.isSupported,
-                   let workoutSession = store.fetchSession() {
+                   let workoutSession = session {
                     AICoachView(
                         input: WorkoutInsightInput.from(
                             session: workoutSession,
