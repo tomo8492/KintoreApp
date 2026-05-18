@@ -86,6 +86,11 @@ targets:
         # C3: Live Activity を出すには Info.plist に NSSupportsLiveActivities が必須。
         # GENERATE_INFOPLIST_FILE=YES 環境下では INFOPLIST_KEY_* で渡せる(Bool は YES/NO)。
         INFOPLIST_KEY_NSSupportsLiveActivities: YES
+        # App Store / TestFlight アップロード時の "Export Compliance" 自動応答。
+        # 本アプリは Apple 純正の TLS / HTTPS / StoreKit 通信しか使わないため
+        # 非標準暗号は使っていない = NO で OK。これを入れておかないと TF Upload の
+        # たびに手動で「暗号化使ってますか?」ダイアログを通す必要が出る。
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: "0.1.0"
         # 個人開発のため自動署名に任せる(P-1 で Team を入れたら手動切替検討)。

@@ -2587,19 +2587,19 @@
       }
     },
     "error.pro.required" : {
-      "comment" : "AppError.proRequired — Pro 機能未購入時。Paywall への導線文として使う。",
+      "comment" : "AppError.proRequired — Premium 機能未購入時。Paywall への導線文として使う。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This feature is available with Pro."
+            "value" : "This feature is available with Premium."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "この機能は Pro で利用できます"
+            "value" : "この機能はプレミアムで利用できます"
           }
         }
       }
@@ -15992,31 +15992,31 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Weekly / monthly summaries and muscle heatmaps are available with Pro."
+            "value" : "Weekly / monthly summaries and muscle heatmaps are available with Premium."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "週次・月次の集計と部位別ヒートマップは Pro でご利用いただけます。"
+            "value" : "週次・月次の集計と部位別ヒートマップはプレミアムでご利用いただけます。"
           }
         }
       }
     },
     "history.charts.advanced.locked.title" : {
-      "comment" : "チャート: Pro ロック中のタイトル。",
+      "comment" : "チャート: Premium ロック中のタイトル。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Advanced charts are a Pro feature"
+            "value" : "Advanced charts are a Premium feature"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "詳細チャートは Pro 機能です"
+            "value" : "詳細チャートはプレミアム機能です"
           }
         }
       }
@@ -19232,13 +19232,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro Feature"
+            "value" : "Premium Feature"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能"
+            "value" : "プレミアム機能"
           }
         }
       }
@@ -19261,18 +19261,19 @@
       }
     },
     "Pro feature" : {
+      "comment" : "Legacy key string. v1.0 では Premium ブランディングに統一(キー名は SwiftUI default-value 互換のため Pro 表記を維持)。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro feature"
+            "value" : "Premium feature"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能"
+            "value" : "プレミアム機能"
           }
         }
       }
@@ -21271,18 +21272,19 @@
       }
     },
     "This feature requires WorkoutKit Pro." : {
+      "comment" : "Legacy key string. v1.0 では Premium ブランディングに統一(キー名は SwiftUI default-value 互換のため Pro 表記を維持)。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This feature requires WorkoutKit Pro."
+            "value" : "This feature requires WorkoutKit Premium."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "この機能は WorkoutKit Pro が必要です。"
+            "value" : "この機能は WorkoutKit プレミアムが必要です。"
           }
         }
       }
