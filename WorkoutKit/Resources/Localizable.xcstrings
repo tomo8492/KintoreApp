@@ -183,11 +183,19 @@
       }
     },
     "a11y.builder.result.row %@ %@" : {
+      "comment" : "F3 a11y. ResultStepView の section row label。%1: index(1始まり), %2: 種目名。",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item %1$@, %2$@"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "a11y.builder.result.row %1$@ %2$@"
+            "state" : "translated",
+            "value" : "%1$@ 番目、%2$@"
           }
         }
       }
@@ -317,7 +325,22 @@
       }
     },
     "a11y.builder.time.chip %@" : {
-
+      "comment" : "F3 a11y. TimeStepView の分数チップ。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ minutes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 分"
+          }
+        }
+      }
     },
     "a11y.builder.time.chip %lld" : {
       "comment" : "F3 a11y. TimeStepView の分数チップ。",
@@ -1495,11 +1518,19 @@
       }
     },
     "builder.step.result.choose.subheading %@ %@" : {
+      "comment" : "F1 Result Step (Choose モード): 選択中種目数 / 候補種目数。%1: 選択数, %2: 候補数。",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ selected of %2$@ candidates"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "builder.step.result.choose.subheading %1$@ %2$@"
+            "state" : "translated",
+            "value" : "選択中 %1$@ / 候補 %2$@"
           }
         }
       }
@@ -1577,7 +1608,22 @@
       }
     },
     "builder.step.result.subheading %@" : {
-
+      "comment" : "Builder Result step: 種目の総数表示。例: '12 種目'。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ exercises"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 種目"
+          }
+        }
+      }
     },
     "builder.step.result.subheading %lld" : {
       "comment" : "Builder Result step: 種目の総数表示。例: '12 種目'。",
@@ -15787,7 +15833,22 @@
       }
     },
     "hard-paywall.trial.days %@" : {
-
+      "comment" : "Hard paywall: 無料試用期間の表示。例: '7-day free trial'。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@-day free trial"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 日間の無料トライアル"
+          }
+        }
+      }
     },
     "hard-paywall.trial.days %lld" : {
       "extractionState" : "stale",
@@ -19364,11 +19425,19 @@
       }
     },
     "rest.live.next-set %@ %@" : {
+      "comment" : "Rest Timer Live Activity: 次セット番号 / セット総数。%1: 次セット番号, %2: 総セット数。",
+      "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next: set %1$@ of %2$@"
+          }
+        },
         "ja" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "rest.live.next-set %1$@ %2$@"
+            "state" : "translated",
+            "value" : "次は %1$@ / %2$@ セット"
           }
         }
       }
@@ -19423,7 +19492,22 @@
       }
     },
     "RPE" : {
-
+      "comment" : "Rate of Perceived Exertion (主観的運動強度) — 国際的に通じる略語のため両言語とも RPE のまま。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPE"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RPE"
+          }
+        }
+      }
     },
     "Search exercises" : {
       "extractionState" : "manual",
