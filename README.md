@@ -1,101 +1,120 @@
 # WorkoutKit
 
-> 完全オフライン・サブスク不要の iOS フィットネスコーチングアプリ。
-> 「目的 → 部位 → 器具」の3ステップでメニューを自動生成・実行・記録できる。
+> Fully offline iOS strength-training planner & logger.
+> Three-step builder (goal → muscles → equipment), 345 bundled exercises,
+> Live Activities, Apple Watch Smart Stack widget.
 
 詳細仕様は [`CLAUDE.md`](./CLAUDE.md) を参照(Claude Code / Cursor / Xcode で本リポジトリを開くと自動で読まれる)。
 
-## ステータス
+## Status
 
-Phase **P0**(P-1 完了、Xcode プロジェクト未作成)。
-本リポジトリには Xcode プロジェクトファイル(`.xcodeproj`)は **まだ含まれていない**。下記「Mac でのプロジェクト作成手順」を参照。
+**v1.0 リリース準備中**(2026-05-16 時点)。Xcode プロジェクト・ソース・テスト・
+スクリーンショット・法務書類は揃い、`xcodebuild test -only-testing:WorkoutKitTests`
+で **155/155 グリーン**。残作業は App Store Connect 側の手動入力(`docs/DISPATCH_v1.0.md` 参照)。
+
+## Highlights
+
+- **5 秒で当日メニュー生成** — Goal × Muscle × Equipment × Time の Builder ウィザード
+- **345 種目** — 解剖図(前面・背面)つき、ja / en 両対応
+- **完全オフライン** — ネットワーク通信は App Store / StoreKit のみ
+- **Live Activities** — セッション進捗 + Rest Timer の 2 系統
+- **Apple Watch Smart Stack ウィジェット** — 今日の状況を `accessoryRectangular` で
+- **AI Coach**(iOS 26+)— Foundation Models のオンデバイス LLM で 3 行サマリ
+- **解析 / クラッシュ / 広告 SDK ゼロ** — `PrivacyInfo.xcprivacy` で明示
 
 ## ディレクトリ構成
 
 ```
 .
-├── CLAUDE.md                       # 仕様 + Claude Code 用指示書(最重要)
-├── Config/                         # xcconfig(Shared/Debug/Beta/Release)
-├── WorkoutKit/                     # ソース本体
-│   ├── WorkoutKitApp.swift         # @main、ModelContainer 構築
-│   ├── App/                        # RootView / AppDependency
-│   ├── Features/                   # Builder / Session / Library / History / Templates / Paywall / DataIO
-│   ├── Domain/                     # Models / Schema / Enums / Services / Repository
-│   ├── Shared/                     # Logging / AppError / UnitsFormatter
-│   ├── DesignSystem/               # Colors / Typography / Components
-│   └── Resources/                  # Assets / 種目seed / PrivacyInfo / ChatGPTプロンプト
-└── Tests/
-    ├── WorkoutKitTests/            # Swift Testing
-    └── WorkoutKitUITests/
+├── CLAUDE.md                           # 仕様 + Claude Code 用指示書(最重要)
+├── Config/                             # xcconfig(Shared/Debug/Beta/Release/LiveActivity)
+│   └── Secrets.template.xcconfig       # RevenueCat キーのテンプレ(本物は .gitignore)
+├── WorkoutKit.xcodeproj                # Xcode プロジェクト
+├── WorkoutKit/                         # iOS アプリ本体
+│   ├── WorkoutKitApp.swift             # @main、ModelContainer 構築
+│   ├── App/                            # RootView / AppDependency / TemplateSeeder
+│   ├── Features/                       # Builder / Session / Library / History /
+│   │                                   #   Templates / Paywall / DataIO / Settings /
+│   │                                   #   AICoach / LiveActivity
+│   ├── Domain/                         # Models / Schema / Enums / Services / Repository
+│   ├── Shared/                         # Logging / AppError / WatchSummaryBridge /
+│   │                                   #   AppSecrets / UnitsFormatter
+│   ├── DesignSystem/                   # Colors / Typography / Components
+│   └── Resources/                      # Assets / 種目 seed / PrivacyInfo /
+│                                       #   Localizable.xcstrings / WorkoutKit.storekit
+├── WorkoutKitLiveActivity/             # Widget Extension (Live Activity bundle)
+├── WorkoutKitWatch/                    # watchOS Smart Stack ウィジェット
+├── Tests/
+│   ├── WorkoutKitTests/                # Swift Testing — 155 件
+│   └── WorkoutKitUITests/              # スクリーンショット撮影含む
+└── docs/                               # 法務 / App Store / ロードマップ / Dispatch
+    ├── legal/                          # privacy-policy / terms-of-service (ja+en+html)
+    ├── app-store/                      # metadata / screenshots / app-review-notes
+    └── DISPATCH_v1.0.md                # M1-M10 マイルストーン
 ```
 
 ## 重要な確定事項(CLAUDE.md §-1 抜粋)
 
-| 項目 | 値 |
-|---|---|
-| Bundle ID | `com.tomo.workoutkit` |
-| App Group | `group.com.tomo.workoutkit` |
-| Min iOS | 17.0 |
-| 対応デバイス | iPhone + iPad |
-| 課金 | Freemium + Pro 買い切り ¥980(Launch ¥600) |
-| IAP Product ID | `com.tomo.workoutkit.pro.unlock` |
-| Schema | `SchemaV1`(1.0.0)から開始 |
-| 内部単位 | kg / m / UTC(表示は View 層で変換) |
-| アナリティクス | 入れない |
-| 動画 | 同梱しない(ステップイラスト方針) |
+| 項目                | 値                                                                  |
+|---------------------|---------------------------------------------------------------------|
+| Bundle ID           | `com.tomo.workoutkit`                                                |
+| App Group           | `group.com.tomo.workoutkit`                                          |
+| Min iOS             | 18.0 (Live Activities + watchOS Smart Stack で 18 以上が必要)        |
+| 対応デバイス        | iPhone (Portrait) + iPad (Portrait + Landscape) + Apple Watch       |
+| 課金                | Freemium + Premium サブスク(月額 ¥980 / 年額 ¥4,900 / 7 日無料試用) |
+| サブスク Group      | `workoutkit.premium`                                                 |
+| Product ID(月額)  | `workoutkit_monthly_980`                                             |
+| Product ID(年額)  | `workoutkit_yearly_4900`                                             |
+| Entitlement         | `premium`(RevenueCat 経由)                                          |
+| SwiftData Schema    | `SchemaV1`(1.0.0)から開始                                           |
+| 内部単位            | kg / m / UTC(表示は View 層で変換)                                   |
+| アナリティクス      | 入れない                                                              |
+| 動画                | 同梱しない(解剖図 + ステップ説明)                                       |
 
 これらを変更するときは CLAUDE.md と一緒に更新すること。
 
-## Mac でのプロジェクト作成手順
+## Mac でのビルド手順
 
-> Linux 環境ではビルドできない。下記は所有 Mac 上で実施する。
+```bash
+# 1. Secrets を配置(RevenueCat API キーはあとで埋めても OK)
+cp Config/Secrets.template.xcconfig Config/Secrets.xcconfig
 
-1. Xcode 16+ を起動 → File ▸ New ▸ Project ▸ iOS ▸ App
-2. 入力値:
-   - Product Name: `WorkoutKit`
-   - Interface: SwiftUI
-   - Language: Swift
-   - Storage: SwiftData
-   - Include Tests: ✅
-3. 既存ソースの取り込み:
-   - 生成された `WorkoutKitApp.swift` / `ContentView.swift` を削除
-   - 本リポジトリの `WorkoutKit/` 配下を Xcode プロジェクトに追加(Create groups)
-   - `Config/*.xcconfig` を Project ▸ Info ▸ Configurations に割り当て
-       - Debug → `Config/Debug.xcconfig`
-       - Beta(Duplicate Release から作成) → `Config/Beta.xcconfig`
-       - Release → `Config/Release.xcconfig`
-4. Capabilities 追加:
-   - App Groups: `group.com.tomo.workoutkit`
-   - (P5)In-App Purchase
-5. `WorkoutKit/Resources/exercises_seed.json` と `PrivacyInfo.xcprivacy` を Target Membership ✅ にする
-6. ビルド実行:
-   ```
-   xcodebuild -project WorkoutKit.xcodeproj \
-     -scheme WorkoutKit \
-     -destination 'platform=iOS Simulator,name=iPhone 15 Pro' build
-   ```
+# 2. テスト(WorkoutKitTests のみ。UI test は P5 で別途)
+xcodebuild test \
+  -project WorkoutKit.xcodeproj \
+  -scheme WorkoutKit \
+  -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+  -only-testing:WorkoutKitTests \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+期待: **155/155 グリーン**。失敗時は [`docs/DISPATCH_v1.0.md`](docs/DISPATCH_v1.0.md) §1 のトラブルシューティングを参照。
+
+CI も同じことをやる — `.github/workflows/test.yml`、macOS 15 runner、push 毎に自動。
 
 ## 開発フロー
 
 - ブランチ: Trunk-Based(`main` 直 + feature ブランチ)
-- 規約: Swift API Design Guidelines + SwiftLint デフォルト
+- 規約: Swift API Design Guidelines + Swift 6 strict concurrency
 - コミット: Conventional Commits(`feat:` `fix:` `refactor:` `chore:` `docs:` `test:`)
-- View に `@State`/`@Observable` を直接持たせる方針(ViewModel は作らない)。詳細は CLAUDE.md §11
+- View に `@State` / `@Observable` を直接持たせる方針(ViewModel は作らない)。詳細は CLAUDE.md §11
 
-## 画像生成ワークフロー(Stable Diffusion / ローカル)
+## v1.0 リリース進捗
 
-種目フォーム解説のステップイラストは **Mac (Apple Silicon) 上の Stable Diffusion でローカル生成** する方針。サブスク・API 課金なし、生成済み画像は Asset Catalog (`ExercisePhotos` namespace) にコミットして配布する。
+`docs/DISPATCH_v1.0.md` の §0.1 ステータスサマリを参照。要点:
 
-```bash
-# 1) Draw Things(App Store 無料)を起動 → API 有効化(Settings ▸ Server)
-# 2) 上位 50 種目を一括生成(M2 で約 10 分)
-python3 tools/sd-batch/generate.py
-# 3) Asset Catalog に統合
-python3 tools/sd-batch/integrate.py
-```
-
-詳細(モデル DL / プロンプト規約 / トラブルシューティング)は [`tools/sd-batch/README.md`](./tools/sd-batch/README.md) を参照。
+- M1 (Mac build / tests) ✅
+- M3 (RevenueCat dashboard) ✅
+- M4 (ASC subscription products) ✅
+- M5 (placeholders 置換) ✅
+- M6 (スクリーンショット 50 枚) ✅(Apple Watch のみ実機未撮影)
+- M7 (Privacy 申告) ✅
+- M8 (ASC metadata 入力) ⚠ tomo 手動入力待ち
+- M9 (TestFlight / Sandbox) 🔴 Apple Developer enrollment 後
+- M10 (App Store 審査提出) 🔴 M9 後
 
 ## ライセンス
 
 Proprietary(個人非公開、App Store のみ)。
+
+同梱の解剖図 SVG は [Snouzy/workout-cool](https://github.com/Snouzy/workout-cool) (MIT) を改変。詳細は [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) を参照。

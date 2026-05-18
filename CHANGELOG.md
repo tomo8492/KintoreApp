@@ -70,37 +70,33 @@ Initial public release.
 - Language deep-link to iOS Settings.
 - About screen with health/fitness disclaimer and acknowledgments.
 
-#### Pro features (v1.0)
-Single Non-Consumable IAP `com.tomo.workoutkit.pro.unlock`, Family Sharing
-eligible.
+#### Premium features (Auto-Renewable Subscription)
 
-> **v1.0 update**: 上記の Non-Consumable 設計は v0.4 ドラフト時点のもの。
-> v1.0 リリースでは **Auto-Renewable Subscription** モデルに切り替え、
-> Subscription Group `workoutkit.premium` 配下に月額 / 年額の 2 プランを置く:
->
-> | Product ID                  | 期間 | 価格   | 無料トライアル |
-> |---|---|---|---|
-> | `workoutkit_monthly_980`    | 1 か月 | ¥980   | 7 日間     |
-> | `workoutkit_yearly_4900`    | 1 年   | ¥4,900 | 7 日間     |
->
-> Entitlement は `premium`(RevenueCat SDK 経由)。`Purchases.shared` は
-> アプリ内で `PurchaseManager` ラッパー越しにのみ参照する。
-> ハードペイウォール仕様: 初回起動から 3 日経過後、毎ロード 1 回は強制提示。
+Subscription Group `workoutkit.premium`, Family Sharing eligible.
 
-`Transaction.currentEntitlements` ベースの旧フローは StoreKitClient として
-継続稼働しているが、v1.0 では PurchaseManager(RevenueCat ラッパー)が
-正本。Refunds と family sharing 変更は `Purchases.shared.customerInfo()` +
-RevenueCat の Transaction.updates 双方から検出される。
+| Product ID                  | Period   | Price    | Free trial |
+|-----------------------------|----------|----------|------------|
+| `workoutkit_monthly_980`    | 1 month  | ¥980     | 7 days     |
+| `workoutkit_yearly_4900`    | 1 year   | ¥4 900   | 7 days     |
 
-| `ProFeature` case   | UX surface                                |
-|---|---|
-| `unlimitedHistory`  | History list / calendar past 30 days       |
+Entitlement is `premium`, resolved through the RevenueCat SDK.
+`Purchases.shared` is only touched inside the `PurchaseManager` wrapper
+(CLAUDE.md §11-5 exception). Refunds and family-sharing changes are
+caught via both `Purchases.shared.customerInfo()` and RevenueCat's
+`Transaction.updates`.
+
+Hard paywall: first 3 calendar days from initial launch are grace
+period (tracked by `LaunchTrialTracker`). After the grace window the
+paywall is shown once per cold launch until the user subscribes.
+
+| `ProFeature` case   | UX surface                                  |
+|---------------------|---------------------------------------------|
+| `unlimitedHistory`  | History list / calendar past 30 days        |
 | `advancedCharts`    | History → Charts (weekly, monthly, heatmap) |
 | `customTemplates`   | Templates → Add / Duplicate / Delete custom |
-| `csvImport`         | Settings → Data → Import CSV / JSON        |
-| `csvExport`         | Settings → Data → Export CSV               |
-| `manualEntry`       | History → Add manual entry                 |
-| `videoLink`         | Library detail → YouTube reference link    |
+| `csvImport`         | Settings → Data → Import CSV / JSON         |
+| `csvExport`         | Settings → Data → Export CSV                |
+| `manualEntry`       | History → Add manual entry                  |
 
 #### AI workout summary (iOS 26+, `AICoachView`)
 完了画面の下部に、当日のセッションを 3 行(要約 / ハイライト種目 / 明日への
@@ -125,7 +121,7 @@ iPhone 側は `SessionStore.finish()` / `abort()` 直後にサマリを書き込
 昨日以前の値は read 時に `.empty` へダウングレードされる。
 
 #### Localization
-- 1208 keys in `Localizable.xcstrings`, fully translated in `ja` + `en`.
+- 1 257 keys in `Localizable.xcstrings`, fully translated in `ja` + `en`.
 - All UI labels, error messages, and accessibility hints localized.
 - Stable `accessibilityIdentifier` on key Builder / Session / Settings
   controls so XCUITest is locale-independent.
@@ -146,9 +142,11 @@ across this release line.
 
 - Bundle ID: `com.tomo.workoutkit`
 - App Group: `group.com.tomo.workoutkit`
-- IAP Product ID: `com.tomo.workoutkit.pro.unlock`
-- Min iOS: 17.0
-- Devices: iPhone (Portrait) + iPad (Portrait + Landscape, NavigationSplitView)
+- Subscription Group: `workoutkit.premium`
+- Product IDs: `workoutkit_monthly_980`, `workoutkit_yearly_4900`
+- Entitlement: `premium` (via RevenueCat)
+- Min iOS: 18.0 (raised from 17.0 to support Live Activities + watchOS Smart Stack)
+- Devices: iPhone (Portrait) + iPad (Portrait + Landscape, NavigationSplitView) + Apple Watch (watchOS 11+)
 - SwiftData schema: `SchemaV1` (1.0.0) with explicit migration plan
 - Internal storage: `appSupport/WorkoutKit.store` (no CloudKit in v1.0)
 - No analytics SDK, no crash-reporting SDK, no tracking

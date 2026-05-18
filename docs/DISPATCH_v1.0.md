@@ -37,6 +37,25 @@ a9a83e3 release: tighten Localizable for v1.0 subscription disclosure and watchO
 
 ---
 
+## 0.1 マイルストーン現況サマリ(2026-05-18 更新)
+
+| ID  | 内容                                | 状態 | 備考                                                                                  |
+|-----|------------------------------------|------|---------------------------------------------------------------------------------------|
+| M1  | 初回 Mac ビルド検証                | ✅   | WorkoutKitTests 155/155 グリーン(Mac-side agent 計測)                              |
+| M2  | GitHub Actions 初回パス確認        | ⚠   | `gh` CLI 認証待ち。push 後の Actions UI 確認が手動になっている                       |
+| M3  | RevenueCat dashboard セットアップ  | ✅   | Project / Products / Entitlement `premium` / Offerings 構成済                        |
+| M4  | ASC でサブスク product 作成        | ✅   | Subscription Group + 2 product + 7-day free trial 登録済                            |
+| M5  | Placeholder 一括置換               | ✅   | `[YOUR_EMAIL]` / `[YOUR_NAME]` / `workoutkit.app/*` のヒット 0 件                   |
+| M6  | スクリーンショット撮影             | ✅   | 50 PNG コミット済(iPhone+iPad ja/en+追加モード)。Apple Watch のみ実機未撮影     |
+| M7  | Privacy 申告(ASC App Privacy)    | ✅   | `docs/app-store/privacy-nutrition-label.md` の通り入力済                            |
+| M8  | ASC メタデータ入力                 | ⚠   | tomo さんの ASC UI 入力待ち。`docs/app-store/{ja,en}/*.txt` を貼るだけ              |
+| M9  | TestFlight 配布 → Sandbox 検証     | 🔴   | Apple Developer enrollment 完了が前提(M3/M4 はダッシュボード操作のみで先行可能)  |
+| M10 | App Store 審査提出                 | 🔴   | M9 グリーン後に着手                                                                  |
+
+凡例: ✅ 完了 / ⚠ 一部未了・手動待ち / 🔴 未着手・依存待ち
+
+---
+
 ## 1. M1 — 初回 Mac ビルド検証(最優先)
 
 **担当**: Mac 環境を持つ作業者(Tomo さん本人 or Mac runner)
@@ -419,5 +438,5 @@ CLAUDE.md §11 の制約と本セッションで追加された運用ルール:
 
 ---
 
-*Generated 2026-05-15 by Linux-side agent. Living document — update sections
+*Updated 2026-05-16 by Mac-side agents. Living document — update sections
 as tasks complete and commit back to this branch.*
