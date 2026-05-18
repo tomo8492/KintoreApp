@@ -17,8 +17,11 @@ PRODUCT_MODULE_NAME = WorkoutKitLiveActivity
 DEVELOPMENT_TEAM =
 
 // --- プラットフォーム ------------------------------------------------------
-// Live Activity は iOS 16.1+。本プロジェクトは iOS 17 配下のため 17.0 で揃える。
-IPHONEOS_DEPLOYMENT_TARGET = 17.0
+// Live Activity は iOS 16.1+。本プロジェクトは v1.0 サブスク化に伴い
+// iOS 18.0 にロックされているので Widget Extension も 18.0 で揃える
+// (CLAUDE.md v1.0 §-1.1)。本体と Extension で deployment target が
+// 食い違うと TestFlight アップロード時に Apple から弾かれることがある。
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
 // Widget Extension は iPhone+iPad 両対応(本体と揃える)。
 TARGETED_DEVICE_FAMILY = 1,2
 SUPPORTED_PLATFORMS = iphoneos iphonesimulator

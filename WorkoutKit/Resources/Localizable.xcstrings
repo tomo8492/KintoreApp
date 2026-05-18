@@ -372,7 +372,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能 — 履歴を CSV ファイルとして書き出します"
+            "value" : "プレミアム機能 — 履歴を CSV ファイルとして書き出します"
           }
         }
       }
@@ -389,7 +389,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能 — ファイルから種目を取り込みます"
+            "value" : "プレミアム機能 — ファイルから種目を取り込みます"
           }
         }
       }
@@ -423,7 +423,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能 — 31日以前の履歴を表示します"
+            "value" : "プレミアム機能 — 31日以前の履歴を表示します"
           }
         }
       }
@@ -579,7 +579,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能 — Paywall を開きます"
+            "value" : "プレミアム機能 — Paywall を開きます"
           }
         }
       }
@@ -838,7 +838,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能 — 新しいテンプレートを作成します"
+            "value" : "プレミアム機能 — 新しいテンプレートを作成します"
           }
         }
       }
@@ -16125,13 +16125,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "See Pro"
+            "value" : "See Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro を見る"
+            "value" : "プレミアムを見る"
           }
         }
       }
@@ -16467,13 +16467,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Upgrade to Pro to access your full workout history."
+            "value" : "Upgrade to Premium to access your full workout history."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro にアップグレードすると、すべての記録にいつでもアクセスできます。"
+            "value" : "プレミアムにアップグレードすると、すべての記録にいつでもアクセスできます。"
           }
         }
       }
@@ -16485,13 +16485,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "History older than 31 days is Pro"
+            "value" : "History older than 31 days is Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "31日以前の履歴は Pro 機能です"
+            "value" : "31日以前の履歴は プレミアム機能です"
           }
         }
       }
@@ -16503,13 +16503,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "See Pro"
+            "value" : "See Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro を見る"
+            "value" : "プレミアムを見る"
           }
         }
       }
@@ -18270,13 +18270,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Pro"
+            "value" : "Buy Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro を購入"
+            "value" : "プレミアムを購入"
           }
         }
       }
@@ -18779,7 +18779,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro で使える機能"
+            "value" : "プレミアムで使える機能"
           }
         }
       }
@@ -18862,13 +18862,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Upgrade to Pro"
+            "value" : "Upgrade to Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro にアップグレード"
+            "value" : "プレミアムにアップグレード"
           }
         }
       }
@@ -19042,13 +19042,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Advanced charts are a Pro feature."
+            "value" : "Advanced charts are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "詳細チャートは Pro 機能です。"
+            "value" : "詳細チャートは プレミアム機能です。"
           }
         }
       }
@@ -19060,13 +19060,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alternate app icons are a Pro feature."
+            "value" : "Alternate app icons are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App Icon の変更は Pro 機能です。"
+            "value" : "App Icon の変更は プレミアム機能です。"
           }
         }
       }
@@ -19078,13 +19078,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSV export is a Pro feature."
+            "value" : "CSV export is a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSV エクスポートは Pro 機能です。"
+            "value" : "CSV エクスポートは プレミアム機能です。"
           }
         }
       }
@@ -19096,13 +19096,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSV / JSON import is a Pro feature."
+            "value" : "CSV / JSON import is a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSV / JSON インポートは Pro 機能です。"
+            "value" : "CSV / JSON インポートは プレミアム機能です。"
           }
         }
       }
@@ -19114,13 +19114,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Custom exercises are a Pro feature."
+            "value" : "Custom exercises are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "カスタム種目の追加・編集は Pro 機能です。"
+            "value" : "カスタム種目の追加・編集は プレミアム機能です。"
           }
         }
       }
@@ -19132,13 +19132,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Custom templates are a Pro feature."
+            "value" : "Custom templates are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "カスタムテンプレートの作成は Pro 機能です。"
+            "value" : "カスタムテンプレートの作成は プレミアム機能です。"
           }
         }
       }
@@ -19150,13 +19150,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Manual entries are a Pro feature."
+            "value" : "Manual entries are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手動ログ追加は Pro 機能です。"
+            "value" : "手動ログ追加は プレミアム機能です。"
           }
         }
       }
@@ -19168,13 +19168,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Photos and notes are a Pro feature."
+            "value" : "Photos and notes are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "セッションへの写真・メモ添付は Pro 機能です。"
+            "value" : "セッションへの写真・メモ添付は プレミアム機能です。"
           }
         }
       }
@@ -19186,13 +19186,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro is required to view history older than 31 days."
+            "value" : "Premium is required to view history older than 31 days."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "31日以前の履歴を見るには Pro が必要です。"
+            "value" : "31日以前の履歴を見るには プレミアムが必要です。"
           }
         }
       }
@@ -19204,13 +19204,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "YouTube video links are a Pro feature."
+            "value" : "YouTube video links are a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "YouTube 動画リンクは Pro 機能です。"
+            "value" : "YouTube 動画リンクは プレミアム機能です。"
           }
         }
       }
@@ -19222,13 +19222,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apple Watch support is a Pro feature."
+            "value" : "Apple Watch support is a Premium feature."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apple Watch 連携は Pro 機能です。"
+            "value" : "Apple Watch 連携は プレミアム機能です。"
           }
         }
       }
@@ -19276,13 +19276,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unlock every Pro feature with a one-time purchase."
+            "value" : "Unlock every Premium feature with a one-time purchase."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1回の買い切りで Pro 機能をすべて解放します。"
+            "value" : "1回の買い切りで プレミアム機能をすべて解放します。"
           }
         }
       }
@@ -20138,13 +20138,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No Pro purchase was found on this Apple ID."
+            "value" : "No Premium subscription was found on this Apple ID."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "この Apple ID では Pro の購入履歴が見つかりませんでした。"
+            "value" : "この Apple ID ではプレミアムの購入履歴が見つかりませんでした。"
           }
         }
       }
@@ -20174,13 +20174,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All Pro features are now available."
+            "value" : "All Premium features are now available."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 機能がすべて利用可能になりました。"
+            "value" : "プレミアム機能がすべて利用可能になりました。"
           }
         }
       }
@@ -20192,13 +20192,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro restored"
+            "value" : "Premium restored"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro を復元しました"
+            "value" : "プレミアムを復元しました"
           }
         }
       }
@@ -20246,13 +20246,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro status"
+            "value" : "Premium status"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro の状態"
+            "value" : "プレミアム状態"
           }
         }
       }
@@ -20276,19 +20276,19 @@
       }
     },
     "settings.purchases.status.pro" : {
-      "comment" : "Settings: Pro 状態 = Pro。",
+      "comment" : "Settings: Premium 状態の表示ラベル(キー名は Legacy 互換のため .pro のまま、値だけ Premium へ更新)。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro"
+            "value" : "Premium"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro"
+            "value" : "プレミアム"
           }
         }
       }
@@ -21355,7 +21355,7 @@
         }
       }
     },
-    "This feature requires WorkoutKit Pro." : {
+    "This feature requires WorkoutKit Premium." : {
       "comment" : "Legacy key string. v1.0 では Premium ブランディングに統一(キー名は SwiftUI default-value 互換のため Pro 表記を維持)。",
       "extractionState" : "manual",
       "localizations" : {
