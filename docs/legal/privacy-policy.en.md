@@ -124,7 +124,7 @@ The only third-party SDK used by the App is **RevenueCat** for purchase processi
 The only third-party services the App interacts with are Apple and RevenueCat:
 
 - **App Store / StoreKit**: Payment processing for the Premium subscription
-- **Local Notifications**: On-device local notifications
+- **Live Activities (ActivityKit)**: Lock Screen / Dynamic Island display of session progress and rest-timer (on-device only, no external transmission)
 - **iCloud Backup** (optional): If you have enabled iCloud Backup on iOS, App data may be included in Apple's backup.
 
 ---

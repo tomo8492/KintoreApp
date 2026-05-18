@@ -120,7 +120,7 @@ App Store および StoreKit における Apple の取扱いについては [App
 本アプリが連携する第三者サービスは、Apple および RevenueCat の以下のサービスのみです:
 
 - **App Store / StoreKit**: App 内課金(プレミアム サブスクリプション)の決済処理
-- **Local Notifications**: 端末内のローカル通知
+- **Live Activities(ActivityKit)**: ロック画面 / Dynamic Island での進捗・休憩タイマー表示(端末内のみ、外部送信なし)
 - **iCloud Backup**(任意): お客様が iOS の iCloud バックアップを有効にしている場合のみ、本アプリのデータが Apple のバックアップに含まれます
 
 ---

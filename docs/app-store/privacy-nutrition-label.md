@@ -274,3 +274,103 @@ will happily accept the declarations regardless of what
 (and not have to file a Resolution Center reply later about why the
 privacy policy mentions a permission the app doesn't request), close
 Flags #1–#4 before submission.
+
+---
+
+## 7. 整合チェック 2026-05-16(3-file cross-audit)
+
+Re-ran the audit after worker commits `a8f406f` (manifest cleanup) and
+`e63df66` (legal-doc fixes). The three sources of truth are now compared
+head-to-head:
+
+- `WorkoutKit/Resources/PrivacyInfo.xcprivacy` (on-device manifest)
+- `docs/app-store/privacy-nutrition-label.md` (this file — ASC cheat sheet)
+- `docs/legal/privacy-policy.md` and `docs/legal/privacy-policy.en.md`
+  (user-facing legal text, with HTML rendered copies under `docs/legal/*.html`)
+
+### 7.1 Data Type alignment
+
+| Topic                                | Manifest                          | This cheat sheet                  | Legal docs (§5)                                      | Status |
+|--------------------------------------|-----------------------------------|-----------------------------------|------------------------------------------------------|--------|
+| `NSPrivacyTracking`                  | `false`                           | "Tracking? No everywhere"         | "no tracking" (§5)                                   | ✅ aligned |
+| `NSPrivacyCollectedDataTypes`        | `[]` (empty)                      | declares 2 types (RC-driven)      | RC mentioned in §5; data types listed in §2.3 table | ⚠ Flag #1 still open — see §4 above |
+| Purchase data sent off-device        | (n/a — manifest covers app code only) | Purchases→Purchase History (Yes) | "RevenueCat handles receipt + anonymous ID" (§5)    | ✅ aligned |
+| `$RCAnonymousID:*` user identifier   | (n/a)                             | Identifiers→User ID (Yes)         | Explicitly named in §5                              | ✅ aligned |
+| Linked to identity                   | (n/a)                             | No (anonymous, never `logIn`'d)   | "no PII transmitted" (§5)                           | ✅ aligned |
+
+### 7.2 Required-Reason API alignment
+
+| API category   | Source code uses?      | Manifest declares? | Cheat sheet says?      | Status |
+|----------------|------------------------|--------------------|------------------------|--------|
+| `UserDefaults` | ✅ yes (heavy)         | ✅ `CA92.1`        | OK (§3)                | ✅ aligned |
+| `FileTimestamp`| ❌ no (grep clean)     | ❌ removed in `a8f406f` | Flag #2 marked resolved (now noted as ✅) | ✅ aligned — see §7.5 below |
+| `SystemBootTime` / `DiskSpace` / `ActiveKeyboards` | ❌ no | ❌ no | "OK" in §3 table       | ✅ aligned |
+
+### 7.3 Notification framing alignment
+
+| Where                                                    | Current wording                                          |
+|----------------------------------------------------------|----------------------------------------------------------|
+| Source code                                              | No `UNUserNotificationCenter` usage; `ActivityKit` only |
+| `privacy-policy.md` §3                                   | "v1.0 時点で UNUserNotificationCenter を使用していません" + Live Activities |
+| `privacy-policy.en.md` §3                                | "the App does not use the User Notifications framework" + Live Activities |
+| `privacy-policy.md` §4 Permissions table                 | Lists Live Activities only (no UN row)                  |
+| `privacy-policy.en.md` §4 Permissions table              | Lists Live Activities only                              |
+| `privacy-policy.md` §5 third-party services list         | **fixed in this commit** — "Live Activities (ActivityKit)" replaces "Local Notifications" |
+| `privacy-policy.en.md` §5 third-party services list      | **fixed in this commit** — "Live Activities (ActivityKit)" replaces "Local Notifications" |
+| `privacy-policy.html` §5 summary paragraph               | **fixed in this commit** — same replacement, plus RevenueCat added to "third-party services" |
+| `privacy-policy.en.html` §5 summary paragraph            | **fixed in this commit** — same replacement              |
+| This cheat sheet §2 "Categories to leave unticked"       | No notification-related row — Apple does not surface "Notifications" as a data type, so no ASC implication |
+
+> Closes the residual Flag #3 cleanup that worker `e63df66` started in
+> the .md prose but missed in the .md §5 list and in the HTML mirrors.
+
+### 7.4 RevenueCat anonymous-ID handling alignment
+
+| Where                                            | Says                                                                                |
+|--------------------------------------------------|-------------------------------------------------------------------------------------|
+| `PurchaseManager.swift`                          | Never calls `Purchases.shared.logIn(...)` or `.setAttributes(...)`; never calls `collectDeviceIdentifiers()` |
+| `privacy-policy.md` §5                           | "匿名 ID (`$RCAnonymousID:*`) を扱い、個人識別情報は本アプリから送信されません" |
+| `privacy-policy.en.md` §5                        | "an anonymous ID (`$RCAnonymousID:*`); no personally identifiable information"     |
+| Cheat sheet §2.1 (Identifiers→User ID row)       | "Not the device IDFV/IDFA; not linked to email/name/phone"                          |
+| ASC declaration (per §2.1)                       | Identifiers→User ID = collected, Linked = No, Tracking = No                         |
+
+All four sources are mutually consistent. ✅
+
+### 7.5 Flag status after this audit
+
+| Flag | 2026-05-16 status | Resolution path                                                                 |
+|------|-------------------|---------------------------------------------------------------------------------|
+| #1 NSPrivacyCollectedDataTypes empty | ⚠ Still open | Optional manifest entries; ASC declaration is authoritative. Low priority. |
+| #2 FileTimestamp declared but unused | ✅ Resolved by worker `a8f406f` | Manifest no longer declares it. |
+| #3 Policy mentions UN notifications  | ✅ Resolved | §3 + §4 fixed by `e63df66`; §5 list + HTML mirrors fixed by this commit. |
+| #4 Placeholder XX-XX dates           | ✅ Resolved by worker `e63df66` | Real `2026-05-16` dates baked in. |
+| #5 RevenueCat coverage note          | ✅ No action needed | SDK ships its own PrivacyInfo. |
+
+Only Flag #1 remains, and it is a "nice-to-have" parity tweak rather than
+a submission blocker.
+
+### 7.6 Known divergence between `*.md` and `*.html`
+
+> Out of scope for this consistency check — flagged for tomo's next legal
+> regeneration pass.
+
+The HTML mirrors under `docs/legal/*.html` were originally produced from
+an older revision of the .md sources, then hand-tightened (you can tell
+because they have `id="sec*"` anchors and condensed prose that pandoc
+doesn't emit by default). After this commit they are consistent on the
+notification-framing point, but they still differ from the .md in two
+places that pre-date the v1.0 subscription pivot:
+
+1. `privacy-policy.html` §2.3 table row still labels the IAP entry
+   "App 内課金(Pro 解除)" instead of "App 内課金(プレミアム サブスクリプション)".
+   Same in `privacy-policy.en.html` ("In-app purchase (Pro)").
+2. The third-party SDK section in both HTML files is much shorter than
+   the .md §5 — RevenueCat's anonymous-ID disclosure paragraph is not
+   reproduced in the HTML, only summarised in the trailing one-liner.
+
+These do **not** create a Foundation-Lock violation or a privacy
+disclosure gap (the in-app About → Privacy link points to the HTML, so
+users still see the correct legal text — they just see less of it than
+the .md contains). Tomo should plan a single pandoc-or-manual
+regeneration of the HTMLs before submission so the canonical .md and
+hosted .html stay byte-traceable.
