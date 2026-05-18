@@ -23,12 +23,18 @@ concurrency:
 jobs:
   xcodebuild-test:
     name: xcodebuild test (iOS Simulator)
-    runs-on: macos-15
+    # ローカル開発環境(Xcode 26.5 / iOS 26 SDK / iPhone 17)と CI を揃える。
+    # `macos-26` は GA で Xcode 26.2 を default 採用し、iOS 26.1 / 26.2 / 26.4
+    # simulator runtime と iPhone 17 系 / iPhone Air を preinstall する
+    # (actions/runner-images images/macos/macos-26-arm64-Readme.md 参照)。
+    runs-on: macos-26
     timeout-minutes: 30
 
     env:
       SCHEME: WorkoutKit
-      DESTINATION: "platform=iOS Simulator,name=iPhone 16,OS=latest"
+      # ローカル: Xcode 26.5 + iPhone 17 / iOS 26.x で 155/155 緑。
+      # CI: iPhone 17 + OS=latest(macos-26 では iOS 26.4 が最新)に揃える。
+      DESTINATION: "platform=iOS Simulator,name=iPhone 17,OS=latest"
 
     steps:
       - name: Checkout
@@ -36,7 +42,8 @@ jobs:
 
       - name: Select Xcode
         run: |
-          # macos-15 runner のデフォルト Xcode を使う(iOS 18 SDK 同梱)
+          # macos-26 runner の default Xcode(26.2 / iOS 26 SDK 同梱)を使う。
+          # 明示的な `xcode-select -s` は不要だが、バージョン記録のため出力する。
           xcodebuild -version
           xcrun --sdk iphonesimulator --show-sdk-version
 
