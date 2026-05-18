@@ -546,4 +546,44 @@ final class AppStoreScreenshotTests: XCTestCase {
         sleep(2)
         attach("library-list-search", app: app)
     }
+
+    // MARK: - 14. History — Calendar mode
+    //
+    // 既存 test07_history は Charts mode を撮影している。本シナリオは
+    // segmented Picker を Calendar に切替えて月表示(トレ実施日ドット)を撮る。
+    // 指図書 §6 `history-calendar` 該当。Picker のラベルは
+    // `history.mode.calendar` で ja=「カレンダー」/ en=「Calendar」。
+
+    func test14_historyCalendar() throws {
+        let app = makeApp()
+        app.launch()
+        _ = tapTab(jaLabel: "履歴", enLabel: "History", in: app)
+        sleep(2)
+
+        // ToolbarItem(placement: .principal) の segmented Picker は XCUI 上で
+        // app.buttons[label] か app.segmentedControls.buttons[label] のどちらか
+        // でマッチする(SwiftUI / UIKit ブリッジ実装差)。両方試して当たれば tap。
+        let calendarLabel = locale == "en" ? "Calendar" : "カレンダー"
+
+        let segmentedBtn = app.segmentedControls.buttons[calendarLabel]
+        let plainBtn = app.buttons[calendarLabel]
+        // Picker(.inline) の Label に SF Symbol が紐づくため、images で
+        // segment 区別が必要なケースに備えて、最初に segmentedBtn を試す。
+        if segmentedBtn.waitForExistence(timeout: 3), segmentedBtn.isHittable {
+            segmentedBtn.tap()
+        } else if plainBtn.waitForExistence(timeout: 3), plainBtn.isHittable {
+            plainBtn.tap()
+        } else {
+            // 述語 fallback: label CONTAINS で再検索(Label(_:systemImage:) 形式の
+            // accessibility label に "Calendar カレンダーアイコン" 等が混じる場合)
+            let predicate = NSPredicate(format: "label CONTAINS %@", calendarLabel)
+            let anyMatch = app.buttons.matching(predicate).firstMatch
+            XCTAssertTrue(anyMatch.waitForExistence(timeout: 3),
+                          "Calendar segment not found (locale=\(locale))")
+            anyMatch.tap()
+        }
+        // カレンダー描画(現在月の grid + 実施日ドット)を待つ。
+        sleep(2)
+        attach("history-calendar", app: app)
+    }
 }
