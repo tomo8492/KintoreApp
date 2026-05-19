@@ -23,16 +23,29 @@ struct RestTimerLiveActivity: Widget {
                 .activityBackgroundTint(Color.black.opacity(0.55))
                 .activitySystemActionForegroundColor(.white)
         } dynamicIsland: { context in
+            // WWDC23 "Design dynamic Live Activities" 準拠の Dynamic Island レイアウト:
+            //   - 各エリアは Dynamic Island の丸い形状と concentric に配置
+            //   - compact / minimal は情報密度を最大化(空白を残さない)
+            //   - expanded は app の personality を出しつつタイマーを最も目立たせる
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Image(systemName: "timer")
-                        .font(.title3)
-                        .foregroundStyle(.tint)
+                    // 円形バックに timer アイコンを入れることで Dynamic Island
+                    // の rounded 形状と concentric に揃える(WWDC23 ガイドライン)。
+                    ZStack {
+                        Circle()
+                            .fill(Color.accentColor.opacity(0.2))
+                            .frame(width: 38, height: 38)
+                        Image(systemName: "timer")
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(.tint)
+                    }
+                    .accessibilityHidden(true)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text(timerInterval: .now ... context.state.endTime, countsDown: true)
-                        .font(.title3.monospacedDigit())
-                        .frame(maxWidth: 80)
+                        .font(.title2.monospacedDigit().weight(.semibold))
+                        .frame(maxWidth: 92)
+                        .foregroundStyle(.tint)
                 }
                 DynamicIslandExpandedRegion(.center) {
                     Text(context.state.exerciseName)
@@ -45,15 +58,21 @@ struct RestTimerLiveActivity: Widget {
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
             } compactLeading: {
+                // compact 状態は左右にぴったり寄せる(WWDC23: snug against the sensor)。
                 Image(systemName: "timer")
                     .foregroundStyle(.tint)
+                    .accessibilityLabel(Text("rest.live.title"))
             } compactTrailing: {
                 Text(timerInterval: .now ... context.state.endTime, countsDown: true)
                     .monospacedDigit()
+                    .foregroundStyle(.tint)
                     .frame(maxWidth: 56)
             } minimal: {
+                // minimal は情報を捨てずカウントダウン残時間を表示。
+                // 複数 Live Activity が並走したときも識別できるよう色は tint で着色。
                 Text(timerInterval: .now ... context.state.endTime, countsDown: true)
                     .monospacedDigit()
+                    .foregroundStyle(.tint)
             }
             .keylineTint(.accentColor)
         }
