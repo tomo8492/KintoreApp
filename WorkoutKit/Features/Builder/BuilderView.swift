@@ -9,6 +9,9 @@
 import SwiftUI
 import SwiftData
 import OSLog
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct BuilderView: View {
     @Environment(\.modelContext) private var modelContext
@@ -51,21 +54,32 @@ struct BuilderView: View {
 
     private var iPhoneLayout: some View {
         NavigationStack {
-            stepContent
-                .navigationTitle(store.currentStep.titleKey)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar { toolbarItems }
-                .safeAreaInset(edge: .bottom) {
-                    if store.currentStep != .result {
-                        bottomBar
-                    }
+            VStack(spacing: 0) {
+                // 2026 wizard UX: iPhone でも現在のステップが何/全何段中なのかを
+                // 視覚化する。iPad のサイドバーと等価な情報を細い 1 段に圧縮。
+                // Result ステップは「完了」フェーズなのでインジケータを出さない。
+                if store.currentStep != .result {
+                    BuilderStepProgressBar(currentStep: store.currentStep)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
                 }
-                .alert(
-                    "builder.error.generation.title",
-                    isPresented: errorPresented,
-                    actions: { Button("common.ok", role: .cancel) {} },
-                    message: { Text(store.generationError ?? "") }
-                )
+                stepContent
+            }
+            .navigationTitle(store.currentStep.titleKey)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar { toolbarItems }
+            .safeAreaInset(edge: .bottom) {
+                if store.currentStep != .result {
+                    bottomBar
+                }
+            }
+            .alert(
+                "builder.error.generation.title",
+                isPresented: errorPresented,
+                actions: { Button("common.ok", role: .cancel) {} },
+                message: { Text(store.generationError ?? "") }
+            )
         }
     }
 
@@ -132,7 +146,12 @@ struct BuilderView: View {
     private var toolbarItems: some ToolbarContent {
         if store.canGoBack {
             ToolbarItem(placement: .topBarLeading) {
-                Button("common.back") { store.back() }
+                Button("common.back") {
+                    #if canImport(UIKit)
+                    UISelectionFeedbackGenerator().selectionChanged()
+                    #endif
+                    store.back()
+                }
             }
         }
         ToolbarItem(placement: .topBarTrailing) {
@@ -141,25 +160,43 @@ struct BuilderView: View {
     }
 
     // MARK: - Bottom bar (next/generate)
+    //
+    // 2026 wizard UX 改善:
+    //   - 最終ステップ(Time → Generate)はボタン高さを増やし sparkles アイコン
+    //     を付けて「完成・実行」感を強調(完了フェーズへの達成感)。
+    //   - 「次へ」「戻る」「Generate」遷移で軽い触覚フィードバックを発火。
+    //     ジムでもステップ移動が確実に伝わる。
+    //   - 無効時は単純な gray ではなく opacity を下げて「タップ可能領域はある
+    //     が条件未達」を視覚的に明示。
 
     private var bottomBar: some View {
-        VStack(spacing: 0) {
+        let isFinal = store.currentStep == .time
+        return VStack(spacing: 0) {
             Divider()
             Button(action: handlePrimaryAction) {
-                HStack {
+                HStack(spacing: 8) {
                     if store.isGenerating {
                         ProgressView().controlSize(.small).tint(.white)
+                    } else if isFinal {
+                        Image(systemName: "sparkles")
+                            .font(.headline)
+                            .accessibilityHidden(true)
                     }
                     Text(primaryButtonTitleKey)
                         .font(.headline)
                         .lineLimit(1)
                         .minimumScaleFactor(0.8)
+                    if !isFinal && !store.isGenerating {
+                        Image(systemName: "arrow.right")
+                            .font(.subheadline.weight(.semibold))
+                            .accessibilityHidden(true)
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-                .background(store.canAdvance ? Color.accentColor : Color.gray)
+                .frame(maxWidth: .infinity, minHeight: isFinal ? 28 : 24)
+                .padding(.vertical, isFinal ? 16 : 14)
+                .background(Color.accentColor.opacity(store.canAdvance ? 1.0 : 0.35))
                 .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             .buttonStyle(.plain)
             .disabled(!store.canAdvance || store.isGenerating)
@@ -186,8 +223,15 @@ struct BuilderView: View {
 
     private func handlePrimaryAction() {
         if store.currentStep == .time {
+            // Generate は最終アクション。中程度の haptic で「実行された」感を与える。
+            #if canImport(UIKit)
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            #endif
             store.confirm(in: modelContext)
         } else {
+            #if canImport(UIKit)
+            UISelectionFeedbackGenerator().selectionChanged()
+            #endif
             store.next()
         }
     }
@@ -259,6 +303,50 @@ private struct StepIndicatorRow: View {
         if isCompleted { return .accentColor }
         if step == currentStep { return .accentColor }
         return .secondary
+    }
+}
+
+// MARK: - Step progress bar (iPhone)
+
+/// iPhone 用のシンプルなステップ進捗バー。
+/// Result を除く 4 ステップ(Goal / Muscle / Equipment / Time)を 4 セグメントで描画。
+/// - 完了済み: accent 色で塗りつぶし
+/// - 現在: accent 色 + 少し太く
+/// - 未着手: secondary opacity .25
+/// - アニメーション: `.spring` で次への遷移を柔らかく
+/// CLAUDE.md §-1.6 / Reduce Motion 中は値補間アニメを抑制する。
+private struct BuilderStepProgressBar: View {
+    let currentStep: BuilderStore.Step
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// Result を除いた進行可能ステップの順序。
+    private static let progressSteps: [BuilderStore.Step] = [.goal, .muscle, .equipment, .time]
+
+    var body: some View {
+        let total = Self.progressSteps.count
+        let currentIndex = Self.progressSteps.firstIndex(of: currentStep) ?? total
+        return HStack(spacing: 6) {
+            ForEach(Array(Self.progressSteps.enumerated()), id: \.offset) { idx, _ in
+                Capsule()
+                    .fill(fillStyle(forIndex: idx, currentIndex: currentIndex))
+                    .frame(height: idx == currentIndex ? 6 : 4)
+                    .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.85), value: currentStep)
+            }
+        }
+        .accessibilityElement()
+        .accessibilityLabel(Text("a11y.builder.progress"))
+        .accessibilityValue(Text("\(min(currentIndex + 1, total))/\(total)"))
+    }
+
+    private func fillStyle(forIndex idx: Int, currentIndex: Int) -> AnyShapeStyle {
+        if idx < currentIndex {
+            return AnyShapeStyle(Color.accentColor)
+        }
+        if idx == currentIndex {
+            return AnyShapeStyle(Color.accentColor)
+        }
+        return AnyShapeStyle(Color.secondary.opacity(0.25))
     }
 }
 

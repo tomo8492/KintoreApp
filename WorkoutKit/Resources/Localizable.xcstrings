@@ -288,6 +288,24 @@
         }
       }
     },
+    "a11y.builder.progress" : {
+      "comment" : "iPhone 用のステップ進捗バーの VoiceOver ラベル(値は「現在/全数」)。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Builder step progress"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビルダーの進捗"
+          }
+        }
+      }
+    },
     "a11y.builder.step.current" : {
       "comment" : "F3 a11y. iPad sidebar の StepIndicatorRow — 進行中。",
       "extractionState" : "stale",
