@@ -23,10 +23,12 @@ struct RootView: View {
     @State private var forcedPaywall: PaywallContext?
     @State private var trialTracker = LaunchTrialTracker()
 
+    #if DEBUG
     /// M6 screenshot 撮影用: `-WORKOUTKIT_SEED_COMPLETED_SESSION 1` 起動引数で
     /// 完了済セッションを seed し、自動で完了画面 (SessionFinishedContent) を
-    /// fullScreenCover で表示する。`#if DEBUG` で完全に消える。
+    /// fullScreenCover で表示する。**Release ビルドからは消える**(`#if DEBUG` ガード)。
     @State private var screenshotSummarySession: ScreenshotSummaryPayload?
+    #endif
 
     var body: some View {
         Group {
@@ -44,26 +46,30 @@ struct RootView: View {
                 // (毎起動で出すと UX を破壊するため、現状は 1 ロード 1 回)。
                 forcedPaywall = PaywallContext(feature: .unlimitedHistory)
             }
+            #if DEBUG
             applyScreenshotSeedIfNeeded()
+            #endif
         }
         .sheet(item: $forcedPaywall) { ctx in
             PaywallView(reason: ctx.feature)
         }
+        #if DEBUG
         .fullScreenCover(item: $screenshotSummarySession) { payload in
             SessionFinishedContent(
                 session: payload.session,
                 onClose: { screenshotSummarySession = nil }
             )
         }
+        #endif
     }
 
+    #if DEBUG
     // MARK: - Screenshot seed (DEBUG only)
 
     /// `-WORKOUTKIT_SEED_COMPLETED_SESSION 1` 起動引数を見て、完了済 WorkoutSession を
     /// modelContext に seed し、Session 完了画面を自動表示する。M6 撮影専用。
-    /// Release ビルドでは `#if DEBUG` で完全に消えるため prod に影響しない。
+    /// Release ビルドからは `#if DEBUG` ごと消える。
     private func applyScreenshotSeedIfNeeded() {
-        #if DEBUG
         let args = ProcessInfo.processInfo.arguments
         guard args.contains("-WORKOUTKIT_SEED_COMPLETED_SESSION") else { return }
         do {
@@ -73,8 +79,8 @@ struct RootView: View {
         } catch {
             Logger.app.error("DEBUG seed failed: \(error.localizedDescription, privacy: .public)")
         }
-        #endif
     }
+    #endif
 
     // MARK: - iPhone (compact)
 
@@ -188,9 +194,11 @@ struct RootView: View {
 // MARK: - Screenshot seed support (DEBUG only)
 //
 // SessionFinishedContent を sheet で表示するために WorkoutSession を Identifiable
-// 風にラップする(直接 WorkoutSession に Identifiable を生やすとモデル全体に波及
-// するため、ローカル struct で囲む)。
+// 風にラップする。**Release ビルドでは struct ごと消える**(`#if DEBUG` ガード)。
+// 直接 WorkoutSession に Identifiable を生やすとモデル全体に波及するため、
+// ローカル struct で囲んでいる。
 
+#if DEBUG
 private struct ScreenshotSummaryPayload: Identifiable {
     let session: WorkoutSession
     var id: UUID { session.id }
@@ -198,11 +206,7 @@ private struct ScreenshotSummaryPayload: Identifiable {
 
 /// DEBUG 限定 seed。M6 session-summary-aicoach 撮影用に、modelContext に
 /// 完了済 WorkoutSession + 3 セットを 1 回だけ挿入する。冪等のため、既に
-/// `isManualEntry==false && goalRaw==hypertrophy` のセッションがあれば再利用する。
-///
-/// 注意: Release ビルドでは `#if DEBUG` で本ファイルごと消える(struct 単位で囲む
-/// と Identifiable の不安定参照になるため、外部関数として括っている)。
-#if DEBUG
+/// `notes=="M6_SCREENSHOT_SEED"` のセッションがあれば再利用する。
 enum ScreenshotSessionSeeder {
     static func seed(in context: ModelContext) throws -> WorkoutSession {
         // 既存 seed があれば再利用(2 回目の起動で履歴が増殖しないように)
