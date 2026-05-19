@@ -7,6 +7,9 @@
 // - "Complete Set" ボタンは store.completeCurrentSet() を呼ぶだけ。
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct SessionSetInputPanel: View {
     @Bindable var store: SessionStore
@@ -15,6 +18,10 @@ struct SessionSetInputPanel: View {
     let onComplete: () -> Void
     let onSkip: () -> Void
     let onAbort: () -> Void
+
+    /// 中断確認アラートの表示制御。誤タップによる進行ロスを防ぐため、
+    /// destructive な中断は確認を挟む(2026 mobile gym UX ベストプラクティス)。
+    @State private var showAbortConfirmation: Bool = false
 
     /// Settings から読む重量単位。kg / lbs 切替に追従して再描画される。
     @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
@@ -191,61 +198,131 @@ struct SessionSetInputPanel: View {
     }
 
     // MARK: - Buttons
+    // 2026 gym UX ベストプラクティス:
+    //   - Complete Set は最も視認性が高く、56pt 以上のタップ領域を確保
+    //   - セット完了で `.success` haptic を発火(汗をかいた手でも操作の確証を得る)
+    //   - Stop は destructive。誤タップで進行が消えるのを防ぐため confirmation を挟む
+    //   - Skip は中程度の確認(セット記録は残る) → 軽い haptic のみで通す
 
     private var actionButtons: some View {
-        VStack(spacing: 8) {
-            Button(action: onComplete) {
-                Text("session.action.complete-set")
-                    .font(.headline)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
-                    .background(Color.accentColor)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("session.action.complete-set")
-            .accessibilityLabel(Text("session.action.complete-set"))
-            .accessibilityHint(Text("a11y.session.complete.hint"))
-            .accessibilityAddTraits(.isButton)
-
+        VStack(spacing: 10) {
+            completeButton
             HStack(spacing: 8) {
-                Button(action: onSkip) {
-                    Text("session.action.skip")
-                        .font(.subheadline)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background(Color.gray.opacity(0.12))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("session.action.skip")
-                .accessibilityLabel(Text("session.action.skip"))
-                .accessibilityHint(Text("a11y.session.skip.hint"))
-                .accessibilityAddTraits(.isButton)
-
-                Button(role: .destructive, action: onAbort) {
-                    Text("session.action.stop")
-                        .font(.subheadline)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background(Color.red.opacity(0.10))
-                        .foregroundStyle(.red)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("session.action.stop")
-                .accessibilityLabel(Text("session.action.stop"))
-                .accessibilityHint(Text("a11y.session.stop.hint"))
-                .accessibilityAddTraits(.isButton)
+                skipButton
+                stopButton
             }
         }
+        .confirmationDialog(
+            "session.stop.confirm.title",
+            isPresented: $showAbortConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("session.stop.confirm.confirm", role: .destructive) {
+                playHaptic(.warning)
+                onAbort()
+            }
+            Button("common.cancel", role: .cancel) {}
+        } message: {
+            Text("session.stop.confirm.body")
+        }
+    }
+
+    private var completeButton: some View {
+        Button {
+            playHaptic(.success)
+            onComplete()
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title3.weight(.semibold))
+                    .accessibilityHidden(true)
+                Text("session.action.complete-set")
+                    .font(.title3.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity, minHeight: 56) // 大きなタップ領域(gym UX)
+            .padding(.vertical, 14)
+            .background(Color.accentColor)
+            .foregroundStyle(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("session.action.complete-set")
+        .accessibilityLabel(Text("session.action.complete-set"))
+        .accessibilityHint(Text("a11y.session.complete.hint"))
+        .accessibilityAddTraits(.isButton)
+    }
+
+    private var skipButton: some View {
+        Button {
+            playHaptic(.light)
+            onSkip()
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "forward.end.fill")
+                    .font(.subheadline)
+                    .accessibilityHidden(true)
+                Text("session.action.skip")
+                    .font(.subheadline.weight(.medium))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity, minHeight: 44) // 44pt 最低タップ
+            .padding(.vertical, 10)
+            .background(Color.gray.opacity(0.12))
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("session.action.skip")
+        .accessibilityLabel(Text("session.action.skip"))
+        .accessibilityHint(Text("a11y.session.skip.hint"))
+        .accessibilityAddTraits(.isButton)
+    }
+
+    private var stopButton: some View {
+        Button(role: .destructive) {
+            // 直接 onAbort は呼ばず、確認ダイアログを介する。
+            playHaptic(.light)
+            showAbortConfirmation = true
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "stop.fill")
+                    .font(.subheadline)
+                    .accessibilityHidden(true)
+                Text("session.action.stop")
+                    .font(.subheadline.weight(.medium))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity, minHeight: 44)
+            .padding(.vertical, 10)
+            .background(Color.red.opacity(0.10))
+            .foregroundStyle(.red)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("session.action.stop")
+        .accessibilityLabel(Text("session.action.stop"))
+        .accessibilityHint(Text("a11y.session.stop.hint"))
+        .accessibilityAddTraits(.isButton)
+    }
+
+    // MARK: - Haptic helper
+
+    private enum HapticKind { case success, warning, light }
+
+    private func playHaptic(_ kind: HapticKind) {
+        #if canImport(UIKit)
+        switch kind {
+        case .success:
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        case .warning:
+            UINotificationFeedbackGenerator().notificationOccurred(.warning)
+        case .light:
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        }
+        #endif
     }
 
     // MARK: - Display

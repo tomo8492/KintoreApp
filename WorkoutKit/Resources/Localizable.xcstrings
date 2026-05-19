@@ -15868,6 +15868,199 @@
         }
       }
     },
+    "hard-paywall.action.start-trial %lld" : {
+      "comment" : "CTA: トライアル付きプランを選択中のメインボタン。動的に日数を埋め込む。RevenueCat 2026 ベストプラクティス: 「Continue」より具体的な「Start free trial」が conversion +31%。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start %lld-day free trial"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 日間 無料で始める"
+          }
+        }
+      }
+    },
+    "hard-paywall.action.subscribe-now" : {
+      "comment" : "CTA: トライアル無効プランまたは復帰ユーザー向け。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscribe"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレミアムに登録"
+          }
+        }
+      }
+    },
+    "hard-paywall.plan.yearly.monthly-equivalent %@" : {
+      "comment" : "年額プランの月あたり換算。Apple 推奨の price anchoring。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈ %@/month"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月あたり %@"
+          }
+        }
+      }
+    },
+    "hard-paywall.plan.yearly.percent-off %lld" : {
+      "comment" : "年額プランの割引率。月額×12 と比較した節約率。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%% OFF"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%% OFF"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.title" : {
+      "comment" : "Visual Trial Timeline の見出し。Apple-endorsed pattern。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How your free trial works"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無料トライアルの流れ"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step1.title" : {
+      "comment" : "タイムライン Step 1: 今日。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step1.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock all Premium features instantly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべての Premium 機能がすぐに使える"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step2.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day 5"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 日目"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step2.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We send you a reminder before billing starts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "課金前にリマインダーをお送りします"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step3.title %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 日目"
+          }
+        }
+      }
+    },
+    "hard-paywall.timeline.step3.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trial ends, your subscription begins. Cancel any time."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "トライアル終了 → サブスク開始。いつでも解約可。"
+          }
+        }
+      }
+    },
     "history.action.manual-entry" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19611,6 +19804,58 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "終了"
+          }
+        }
+      }
+    },
+    "session.stop.confirm.title" : {
+      "comment" : "誤タップ防止用の中断確認ダイアログのタイトル。2026 gym UX ベストプラクティスとして destructive 動作には必ず確認を挟む。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End this workout?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ワークアウトを終了しますか?"
+          }
+        }
+      }
+    },
+    "session.stop.confirm.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completed sets are saved. You can review them in History."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了済みのセットは履歴に保存されます。"
+          }
+        }
+      }
+    },
+    "session.stop.confirm.confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End Workout"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了する"
           }
         }
       }

@@ -108,7 +108,10 @@ private struct RestTimerLockScreenView: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .padding()
+        // WWDC23 "Design dynamic Live Activities" のガイドライン:
+        // ロック画面 Live Activity は 14pt 余白で統一すると、複数 Activity
+        // 並列表示時にもグリッド見えが整う。デフォルト `.padding()` は 16pt。
+        .padding(14)
     }
 }
 
