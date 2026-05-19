@@ -89,14 +89,31 @@ enum CSVParser {
     /// 1 セル分の値を CSV 仕様で安全にエスケープする。
     /// - 含まれる場合は引用符で囲む: 区切り文字 / " / 改行
     /// - 引用符は "" にエスケープ
+    /// - 先頭が `=` `+` `-` `@` `\t` `\r` の場合は Excel / Numbers / Google Sheets の
+    ///   formula injection (CWE-1236 / OWASP CSV Injection) を防ぐためシングルクォートを
+    ///   先頭に挿入する。ユーザー入力の exercise name や note を後でスプレッドシートで
+    ///   開く可能性があるため、エクスポート時点で無害化しておく。
     static func escape(_ value: String, delimiter: Character = ",") -> String {
-        let needsQuoting = value.contains(delimiter)
-            || value.contains("\"")
-            || value.contains("\n")
-            || value.contains("\r")
-        if !needsQuoting { return value }
-        let escaped = value.replacingOccurrences(of: "\"", with: "\"\"")
+        let sanitized = sanitizeFormulaPrefix(value)
+        let needsQuoting = sanitized.contains(delimiter)
+            || sanitized.contains("\"")
+            || sanitized.contains("\n")
+            || sanitized.contains("\r")
+        if !needsQuoting { return sanitized }
+        let escaped = sanitized.replacingOccurrences(of: "\"", with: "\"\"")
         return "\"\(escaped)\""
+    }
+
+    /// CSV Injection 対策。先頭文字が数式トリガなら `'` を 1 文字だけ前置する。
+    /// Excel / Numbers / Google Sheets はこの prefix を表示時に剥がしてくれる
+    /// (= 元の文字列として可読、かつ数式評価はされない)。
+    private static func sanitizeFormulaPrefix(_ value: String) -> String {
+        guard let first = value.first else { return value }
+        let triggers: Set<Character> = ["=", "+", "-", "@", "\t", "\r"]
+        if triggers.contains(first) {
+            return "'" + value
+        }
+        return value
     }
 
     /// 行 → CSV 文字列(改行は LF)。

@@ -76,8 +76,16 @@ final class RestTimerManager {
         guard seconds > 0 else { return }
 
         // 既存の rest activity が居れば畳んでから新規起動する。
-        if activity != nil {
-            Task { await endInternal(reason: "restart") }
+        // 重要: fire-and-forget で endInternal(self) を回すと、後段で代入される
+        // 新しい self.activity を Task 完了時に誤って end してしまう race があるため、
+        // 古い参照をローカルに退避してから self.activity = nil。Task は
+        // ローカル参照に対してのみ作用させる(self.activity に触らない)。
+        if let oldActivity = activity {
+            self.activity = nil
+            Task { @MainActor in
+                await oldActivity.end(oldActivity.content, dismissalPolicy: .immediate)
+                Logger.session.info("RestTimer ended: id=\(oldActivity.id, privacy: .public) reason=restart")
+            }
         }
 
         let endTime = Date().addingTimeInterval(TimeInterval(seconds))

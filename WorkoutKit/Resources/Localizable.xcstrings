@@ -15750,18 +15750,19 @@
       }
     },
     "hard-paywall.plan.yearly.badge" : {
-      "extractionState" : "stale",
+      "comment" : "年額プランのお得バッジ。月額 ¥980 × 12 = ¥11,760 - 年額 ¥4,900 = ¥6,860 が正しい差額。Apple Guideline 3.1.2 (accurate pricing) に従い実際の差額を表示する。",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Save ¥1,860"
+            "value" : "Save ¥6,860"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¥1,860 お得"
+            "value" : "¥6,860 お得"
           }
         }
       }

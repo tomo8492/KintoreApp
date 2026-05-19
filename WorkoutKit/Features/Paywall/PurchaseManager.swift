@@ -101,7 +101,17 @@ final class PurchaseManager {
     /// 旧 API を使っているため adapter として残す。
     /// `@MainActor` クロージャ型なので、AppDependency 側で
     /// `{ [weak gate] in gate?.setIsPro(\$0) }` のように書ける(assumeIsolated 不要)。
-    var proGateBridge: (@MainActor @Sendable (Bool) -> Void)?
+    ///
+    /// 重要: didSet で初回代入時にも現在の `isPremium` を流して同期する。これを
+    /// やらないと、bridge を assign する前に `refresh()` が完了したケースで
+    /// ProFeatureGate が false のまま取り残される race が発生する。
+    var proGateBridge: (@MainActor @Sendable (Bool) -> Void)? {
+        didSet {
+            // bridge が新規にセットされた瞬間、現在の entitlement を即時反映する。
+            // これで bridge assign の前に customerInfo() が返ってきていても整合が取れる。
+            proGateBridge?(isPremium)
+        }
+    }
 
     // MARK: - Init
 

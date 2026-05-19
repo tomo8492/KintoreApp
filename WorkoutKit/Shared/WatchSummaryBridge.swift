@@ -53,7 +53,12 @@ public enum WatchSummaryBridge {
 
     /// 共有 UserDefaults から読み出す。値が無い / decode 失敗時は `.empty` を返す。
     /// `Calendar.isDateInToday(_:)` で日付チェックして「昨日以前の値」なら empty にダウングレード。
-    public static func read(now: Date = .now, calendar: Calendar = .current) -> TodaySessionSummary {
+    ///
+    /// デフォルトの calendar は `.autoupdatingCurrent` を使う(CLAUDE.md §-1.4)。
+    /// プロセス寿命中にユーザーがタイムゾーンを変更しても日付境界が正しく追随するため。
+    /// `.current` は呼び出し時点のスナップショットなので Widget の長寿命プロセスでは
+    /// タイムゾーン更新を取りこぼす。
+    public static func read(now: Date = .now, calendar: Calendar = .autoupdatingCurrent) -> TodaySessionSummary {
         guard let data = defaults.data(forKey: summaryKey),
               let summary = try? JSONDecoder().decode(TodaySessionSummary.self, from: data)
         else {
