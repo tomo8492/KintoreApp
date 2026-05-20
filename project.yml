@@ -131,6 +131,19 @@ targets:
       #   Configuration は適用されない(scheme は Xcode IDE が解釈する設定)。
       #   StoreKit Configuration を効かせるには Xcode の Run ボタン経由で起動する。
       storeKitConfiguration: WorkoutKit/Resources/WorkoutKit.storekit
+      # ⚠ Run action の Sanitizer 設定について(xcodegen 2.45.3 制約):
+      #   M9 Phase 7(自己テスト)用に Run action へ Address Sanitizer /
+      #   Undefined Behavior Sanitizer を仕込んであるが、xcodegen 2.45.3 の
+      #   target-scheme shorthand は `enableAddressSanitizer` 系キーを
+      #   サポートしない(指定しても silently 無視される)。
+      #   そのため `.xcscheme` の <LaunchAction> に直接
+      #     enableAddressSanitizer = "YES"
+      #     enableUBSanitizer = "YES"
+      #   を書き込んでいる。xcodegen を再生成した場合はこの 2 属性が
+      #   消えるので、`WorkoutKit.xcodeproj/xcshareddata/xcschemes/
+      #   WorkoutKit.xcscheme` の <LaunchAction> 行に書き戻すこと。
+      #   Main Thread Checker は Xcode 既定で ON。Thread Sanitizer は
+      #   ASan と同時使用不可のため Edit Scheme で一時切替する運用。
       # Run/Test は Debug、Profile/Analyze は Release、Archive は Release。
       # Beta は TestFlight ビルド時に手動切替。
       configs:
