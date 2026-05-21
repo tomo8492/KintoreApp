@@ -103,8 +103,6 @@ final class DataIOStore {
         isWorking = true
         defer { isWorking = false }
 
-        // NOTE: KeyPath<WorkoutSession, Date> の非 Sendable 警告は SwiftData @Model
-        // が Sendable 適合できない SDK 側の問題で個別対処不可。Apple 修正待ち。
         let descriptor = FetchDescriptor<WorkoutSession>(
             sortBy: [SortDescriptor(\.startedAt, order: .reverse)]
         )

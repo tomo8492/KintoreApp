@@ -42,8 +42,6 @@ final class TemplateStore {
     /// (SwiftData の SortDescriptor は Bool を扱えないため、フェッチ後に
     /// メモリ上で安定ソートする。)
     func reload() {
-        // NOTE: KeyPath<Template, Date> の非 Sendable 警告は SwiftData @Model
-        // が Sendable 適合できない SDK 側の問題で個別対処不可。Apple 修正待ち。
         let descriptor = FetchDescriptor<Template>(
             sortBy: [SortDescriptor(\.createdAt, order: .forward)]
         )

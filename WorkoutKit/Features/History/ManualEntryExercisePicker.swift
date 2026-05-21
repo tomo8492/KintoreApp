@@ -22,9 +22,6 @@ struct ManualEntryExercisePicker: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.locale) private var locale
 
-    // NOTE: 残 Swift 6 warning(KeyPath<Exercise, String> 非 Sendable)は SwiftData
-    // @Model が Sendable 適合できない SDK 側の制約。Apple 修正待ち。
-    // ExerciseListView 側に詳述コメントあり。
     @Query(sort: [SortDescriptor(\Exercise.nameJa)]) private var allExercises: [Exercise]
 
     @State private var searchText: String = ""
