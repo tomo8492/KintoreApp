@@ -18,6 +18,12 @@ struct ChooseMode: View {
     @Bindable var store: BuilderStore
     @Environment(\.modelContext) private var modelContext
 
+    /// 候補プールのキャッシュ。computed property のままだと body 毎に
+    /// SwiftData fetch + フィルタ + ソートが走り、ロックトグルや再生成のたびに
+    /// メインスレッドを長時間占有してしまう(=画面フリーズの一因)。
+    /// 入力条件(goal/muscles/equipment)が変わった時だけ再fetchする。
+    @State private var pool: [Exercise] = []
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             header
@@ -34,6 +40,9 @@ struct ChooseMode: View {
             }
 
             regenerateButton
+        }
+        .task(id: poolKey) {
+            await reloadPool()
         }
     }
 
@@ -98,16 +107,31 @@ struct ChooseMode: View {
 
     // MARK: - Data
 
-    /// 現在の入力条件にマッチする候補プール。
-    /// SwiftData fetch はトランザクション内で軽量に動くため、計算プロパティで都度引く。
-    /// 失敗時は Logger に warning を出して空配列を返す(UI は ContentUnavailableView)。
-    private var pool: [Exercise] {
+    /// `pool` の再取得トリガー。入力条件(goal/muscles/equipment)が変わったら
+    /// .task(id:) が再発火して reloadPool() が走る。lockedExerciseSlugs は
+    /// 候補プールの母集合には影響しないので、ここには含めない(無駄fetch回避)。
+    private var poolKey: String {
+        let muscles = store.input.muscles
+            .map(\.rawValue)
+            .sorted()
+            .joined(separator: ",")
+        let equip = store.input.equipment
+            .map(\.rawValue)
+            .sorted()
+            .joined(separator: ",")
+        return "\(store.input.goal.rawValue)|\(muscles)|\(equip)"
+    }
+
+    /// 候補プールを SwiftData から取得し直してキャッシュに格納する。
+    /// MainActor 上で動くが .task で呼ばれるので body の評価とは別フレームで走る。
+    @MainActor
+    private func reloadPool() async {
         do {
-            return try WorkoutGenerator.candidatePool(store.input, in: modelContext)
+            pool = try WorkoutGenerator.candidatePool(store.input, in: modelContext)
         } catch {
             let message = error.localizedDescription
             Logger.generator.warning("ChooseMode candidatePool failed: \(message, privacy: .public)")
-            return []
+            pool = []
         }
     }
 
