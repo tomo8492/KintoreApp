@@ -183,22 +183,48 @@ final class BuilderStore {
         )
     }
 
+    /// 直近で発行した生成タスク。新しい confirm/regenerate を受けたら
+    /// 前のタスクを cancel して二重実行を防ぐ。
+    /// `private(set)` はテストが `await store.generationTask?.value` で生成完了を
+    /// 待てるようにするための観測用公開(production 側は読み書きしない)。
+    private(set) var generationTask: Task<Void, Never>?
+
     private func runGenerate(in context: ModelContext, advanceOnSuccess: Bool) {
+        // 既に走っているタスクがあれば取り消し、最新の入力に追従する。
+        generationTask?.cancel()
+
+        // ① まず isGenerating=true を反映 → SwiftUI に1フレーム描画させる(スピナー表示)
+        // ② Task { @MainActor } で次の run loop tick に生成本体を流す
+        // これにより「同期で main を埋めて画面が固まる」現象を解消し、ユーザー
+        // からはきちんとローディングインジケータが見える形にする。
         isGenerating = true
-        defer { isGenerating = false }
-        do {
-            let result = try WorkoutGenerator.generate(input, in: context)
-            output = result
-            generationError = nil
-            if advanceOnSuccess {
-                currentStep = .result
+        generationError = nil
+
+        generationTask = Task { @MainActor [weak self] in
+            guard let self else { return }
+            // 一旦 yield して SwiftUI に isGenerating の変更を描画させる。
+            await Task.yield()
+
+            // yield 中に新しい confirm/regenerate が来てこの Task が cancel された
+            // 場合は isGenerating に触れずに抜ける。defer より前に判定することで、
+            // キャンセル済みの旧 Task が後発 Task の生成中にフラグを倒す race を防ぐ。
+            guard !Task.isCancelled else { return }
+
+            defer { self.isGenerating = false }
+            do {
+                let result = try WorkoutGenerator.generate(self.input, in: context)
+                self.output = result
+                self.generationError = nil
+                if advanceOnSuccess {
+                    self.currentStep = .result
+                }
+            } catch let error as LocalizedError {
+                self.output = nil
+                self.generationError = error.errorDescription ?? String(describing: error)
+            } catch {
+                self.output = nil
+                self.generationError = error.localizedDescription
             }
-        } catch let error as LocalizedError {
-            output = nil
-            generationError = error.errorDescription ?? String(describing: error)
-        } catch {
-            output = nil
-            generationError = error.localizedDescription
         }
     }
 }

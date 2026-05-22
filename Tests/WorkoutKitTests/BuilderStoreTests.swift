@@ -113,12 +113,13 @@ struct BuilderStoreTests {
     }
 
     @Test("back() で前ステップへ。result から戻ると output と generationError が破棄される")
-    func backFromResultClearsOutput() throws {
+    func backFromResultClearsOutput() async throws {
         let context = try Self.makeContext()
         Self.seedMinimal(context)
         let store = BuilderStore(input: Self.defaultInputForChestBodyweight())
         store.currentStep = .time
         store.confirm(in: context)
+        await store.generationTask?.value
         #expect(store.currentStep == .result)
         #expect(store.output != nil)
 
@@ -190,13 +191,14 @@ struct BuilderStoreTests {
     // MARK: - confirm() / regenerate()
 
     @Test("confirm() 成功で output が埋まり currentStep=.result に進む")
-    func confirmSuccessAdvancesToResult() throws {
+    func confirmSuccessAdvancesToResult() async throws {
         let context = try Self.makeContext()
         Self.seedMinimal(context)
         let store = BuilderStore(input: Self.defaultInputForChestBodyweight())
         store.currentStep = .time
 
         store.confirm(in: context)
+        await store.generationTask?.value
 
         #expect(store.currentStep == .result)
         #expect(store.output != nil)
@@ -205,13 +207,14 @@ struct BuilderStoreTests {
     }
 
     @Test("confirm() 失敗(空 DB)では currentStep は .time のまま、generationError がセットされる")
-    func confirmFailureKeepsCurrentStep() throws {
+    func confirmFailureKeepsCurrentStep() async throws {
         let context = try Self.makeContext()
         // seed 投入なし
         let store = BuilderStore(input: Self.defaultInputForChestBodyweight())
         store.currentStep = .time
 
         store.confirm(in: context)
+        await store.generationTask?.value
 
         #expect(store.currentStep == .time)
         #expect(store.output == nil)
@@ -220,13 +223,14 @@ struct BuilderStoreTests {
     }
 
     @Test("regenerate() は currentStep を変えない(再シャッフル用フック)")
-    func regenerateDoesNotAdvance() throws {
+    func regenerateDoesNotAdvance() async throws {
         let context = try Self.makeContext()
         Self.seedMinimal(context)
         let store = BuilderStore(input: Self.defaultInputForChestBodyweight())
         store.currentStep = .result
 
         store.regenerate(in: context)
+        await store.generationTask?.value
 
         #expect(store.currentStep == .result)
         #expect(store.output != nil)
@@ -262,7 +266,7 @@ struct BuilderStoreTests {
     }
 
     @Test("startSession() は output / goal / includes flags を payload に詰める")
-    func startSessionBuildsPayload() throws {
+    func startSessionBuildsPayload() async throws {
         let context = try Self.makeContext()
         Self.seedMinimal(context)
         var input = Self.defaultInputForChestBodyweight()
@@ -271,6 +275,7 @@ struct BuilderStoreTests {
         let store = BuilderStore(input: input)
         store.currentStep = .time
         store.confirm(in: context)
+        await store.generationTask?.value
         #expect(store.output != nil)
 
         store.startSession()

@@ -99,7 +99,7 @@ struct ShuffleChooseTests {
     // MARK: - Tests
 
     @Test("ロック済み種目は regenerate 後も main に残る(seed を変えても)")
-    func lockedSlugsPersistAcrossRegenerate() throws {
+    func lockedSlugsPersistAcrossRegenerate() async throws {
         let ctx = try Self.makeContext()
         Self.seedMixed(ctx)
 
@@ -115,6 +115,7 @@ struct ShuffleChooseTests {
 
         // 1回目の生成: confirm() で result へ。
         store.confirm(in: ctx)
+        await store.generationTask?.value
         guard let firstOutput = store.output else {
             Issue.record("expected output after confirm()")
             return
@@ -132,6 +133,7 @@ struct ShuffleChooseTests {
         // 別 seed で再生成 → 並びが変わっても lock は維持されているはず。
         store.input.randomSeed = 9999
         store.regenerate(in: ctx)
+        await store.generationTask?.value
 
         guard let secondOutput = store.output else {
             Issue.record("expected output after regenerate()")
