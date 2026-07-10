@@ -10,6 +10,9 @@
 import SwiftUI
 import SwiftData
 import OSLog
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct SessionView: View {
     let initialOutput: GeneratorOutput?
@@ -255,13 +258,19 @@ struct SessionFinishedContent: View {
     var isAborted: Bool = false
     var showAICoach: Bool = true
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// F3/celebration: 完了時のみ、初回表示で 0.4→1.0 スケール + フェードインさせる。
+    /// 中断時はこの state を一切変更しないため、従来どおり静的表示のまま。
+    @State private var celebrateScale: CGFloat = 0.4
+    @State private var celebrateOpacity: Double = 0
+    @State private var celebrateBounce = false
+    @State private var hasCelebrated = false
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Image(systemName: isAborted ? "stop.circle.fill" : "checkmark.seal.fill")
-                    .font(.system(size: 72))
-                    .foregroundStyle(isAborted ? Color.gray : Color.accentColor)
-                    .accessibilityHidden(true)
+                heroIcon
                 Text(isAborted ? "session.finished.aborted" : "session.finished.title")
                     .font(.title2.bold())
                     .multilineTextAlignment(.center)
@@ -296,6 +305,59 @@ struct SessionFinishedContent: View {
                 .accessibilityAddTraits(.isButton)
             }
             .padding()
+        }
+    }
+
+    // MARK: - Hero icon / quiet celebration
+    // 完了時のみ「静かな祝福」演出:ソフトなグロー + チェックマークの
+    // スケールイン + symbolEffect(.bounce)。中断時はグロー無し・アニメ無しの
+    // 従来どおりの表示を維持する(§5-3 の Live Activity 更新頻度規約とは無関係、
+    // 単に isAborted 分岐で完全に見た目を分離しているだけ)。
+    @ViewBuilder
+    private var heroIcon: some View {
+        if isAborted {
+            Image(systemName: "stop.circle.fill")
+                .font(.system(size: 72))
+                .foregroundStyle(Color.gray)
+                .accessibilityHidden(true)
+        } else {
+            ZStack {
+                Circle()
+                    .fill(AppColor.success.opacity(0.15))
+                    .frame(width: 120, height: 120)
+                    .accessibilityHidden(true)
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 72))
+                    .foregroundStyle(AppColor.success)
+                    .symbolEffect(.bounce, options: .nonRepeating, value: celebrateBounce)
+            }
+            .scaleEffect(celebrateScale)
+            .opacity(celebrateOpacity)
+            .accessibilityHidden(true)
+            .onAppear { triggerCelebration() }
+        }
+    }
+
+    /// 完了時に一度だけ呼ぶ。Reduce Motion 中はスケール/フェードアニメと
+    /// symbolEffect のバウンスを両方スキップし、等倍・不透明で即表示する。
+    /// ハプティクスは Reduce Motion に関係なく完了の合図として一度だけ鳴らす。
+    private func triggerCelebration() {
+        guard !hasCelebrated else { return }
+        hasCelebrated = true
+
+        #if canImport(UIKit)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        #endif
+
+        if reduceMotion {
+            celebrateScale = 1.0
+            celebrateOpacity = 1.0
+        } else {
+            withAnimation(.spring(response: 0.45, dampingFraction: 0.6)) {
+                celebrateScale = 1.0
+                celebrateOpacity = 1.0
+            }
+            celebrateBounce = true
         }
     }
 }
