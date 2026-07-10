@@ -4,6 +4,9 @@
 // 互換のため旧テキストチップ UI も併設し、ユーザーが切替可能。
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct MuscleStepView: View {
     @Bindable var store: BuilderStore
@@ -131,29 +134,44 @@ private struct MuscleChip: View {
     let isSelected: Bool
     let onTap: () -> Void
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
-        Button(action: onTap) {
+        Button {
+            if !isSelected {
+                #if canImport(UIKit)
+                UISelectionFeedbackGenerator().selectionChanged()
+                #endif
+            }
+            onTap()
+        } label: {
             HStack {
                 Text(MuscleLocalization.titleKey(for: muscle))
                     .font(.subheadline)
-                    .foregroundStyle(isSelected ? Color.white : Color.primary)
+                    .foregroundStyle(Color.primary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.8)
                 Spacer()
                 if isSelected {
-                    Image(systemName: "checkmark")
-                        .font(.caption)
-                        .foregroundStyle(.white)
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.subheadline)
+                        .foregroundStyle(AppColor.accent)
+                        .transition(.scale.combined(with: .opacity))
                         .accessibilityHidden(true)
                 }
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
             .background(
-                RoundedRectangle(cornerRadius: AppRadius.chip, style: .continuous)
-                    .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .fill(isSelected ? AppColor.accent.opacity(0.12) : AppColor.secondaryBackground)
             )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .strokeBorder(isSelected ? AppColor.accent : Color.clear, lineWidth: 2)
+            )
+            .animation(reduceMotion ? nil : .spring(response: 0.3, dampingFraction: 0.8), value: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("muscle.\(muscle.rawValue)")

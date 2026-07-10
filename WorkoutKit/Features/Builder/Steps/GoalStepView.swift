@@ -3,6 +3,9 @@
 // 選択は単一(ラジオ相当)。タップで `store.input.goal` を更新する。
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct GoalStepView: View {
     @Bindable var store: BuilderStore
@@ -34,13 +37,22 @@ private struct GoalRow: View {
     let isSelected: Bool
     let onTap: () -> Void
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
-        Button(action: onTap) {
+        Button {
+            if !isSelected {
+                #if canImport(UIKit)
+                UISelectionFeedbackGenerator().selectionChanged()
+                #endif
+            }
+            onTap()
+        } label: {
             HStack(spacing: 16) {
                 Image(systemName: iconName)
                     .font(.title2)
                     .frame(width: 32)
-                    .foregroundStyle(isSelected ? Color.accentColor : .secondary)
+                    .foregroundStyle(isSelected ? AppColor.accent : .secondary)
                     .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 4) {
@@ -58,16 +70,22 @@ private struct GoalRow: View {
 
                 if isSelected {
                     Image(systemName: "checkmark.circle.fill")
-                        .foregroundStyle(Color.accentColor)
+                        .foregroundStyle(AppColor.accent)
+                        .transition(.scale.combined(with: .opacity))
                         .accessibilityHidden(true)
                 }
             }
-            .padding()
+            .padding(14)
             .background(
-                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
-                    .fill(isSelected ? Color.accentColor.opacity(0.1) : Color.gray.opacity(0.08))
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .fill(isSelected ? AppColor.accent.opacity(0.12) : AppColor.secondaryBackground)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .strokeBorder(isSelected ? AppColor.accent : Color.clear, lineWidth: 2)
             )
             .padding(.horizontal)
+            .animation(reduceMotion ? nil : .spring(response: 0.3, dampingFraction: 0.8), value: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("goal.\(goal.rawValue)")

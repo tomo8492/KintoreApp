@@ -3,9 +3,14 @@
 // 時間は Foundation Locks に従い 30 / 45 / 60 / 90 分の4択。
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct TimeStepView: View {
     @Bindable var store: BuilderStore
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// CLAUDE.md §-1 / WorkoutGenerator.swift で前提にしている候補。
     private let timeOptions: [Int] = [30, 45, 60, 90]
@@ -45,6 +50,11 @@ struct TimeStepView: View {
     private func timeChip(minutes: Int) -> some View {
         let isSelected = store.input.minutesAvailable == minutes
         return Button {
+            if !isSelected {
+                #if canImport(UIKit)
+                UISelectionFeedbackGenerator().selectionChanged()
+                #endif
+            }
             store.input.minutesAvailable = minutes
         } label: {
             VStack(spacing: 2) {
@@ -57,13 +67,28 @@ struct TimeStepView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
-            .foregroundStyle(isSelected ? Color.white : Color.primary)
+            .foregroundStyle(isSelected ? AppColor.accent : Color.primary)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
+            .padding(.vertical, 14)
             .background(
-                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
-                    .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .fill(isSelected ? AppColor.accent.opacity(0.12) : AppColor.secondaryBackground)
             )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .strokeBorder(isSelected ? AppColor.accent : Color.clear, lineWidth: 2)
+            )
+            .overlay(alignment: .topTrailing) {
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.caption)
+                        .foregroundStyle(AppColor.accent)
+                        .padding(6)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityHidden(true)
+                }
+            }
+            .animation(reduceMotion ? nil : .spring(response: 0.3, dampingFraction: 0.8), value: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("time.\(minutes)")

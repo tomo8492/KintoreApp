@@ -3,6 +3,9 @@
 // 複数選択。bodyweight だけ選んでも生成可能。
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct EquipmentStepView: View {
     @Bindable var store: BuilderStore
@@ -50,26 +53,51 @@ private struct EquipmentChip: View {
     let isSelected: Bool
     let onTap: () -> Void
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
-        Button(action: onTap) {
-            VStack(spacing: 8) {
+        Button {
+            if !isSelected {
+                #if canImport(UIKit)
+                UISelectionFeedbackGenerator().selectionChanged()
+                #endif
+            }
+            onTap()
+        } label: {
+            HStack(spacing: 10) {
                 Image(systemName: iconName)
                     .font(.title2)
-                    .foregroundStyle(isSelected ? Color.white : Color.accentColor)
+                    .foregroundStyle(isSelected ? AppColor.accent : .secondary)
+                    .frame(width: 28)
                     .accessibilityHidden(true)
+
                 Text(titleKey)
                     .font(.subheadline)
-                    .foregroundStyle(isSelected ? Color.white : Color.primary)
-                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Color.primary)
+                    .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .minimumScaleFactor(0.8)
+
+                Spacer(minLength: 0)
+
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(AppColor.accent)
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityHidden(true)
+                }
             }
-            .padding(.vertical, 14)
-            .frame(maxWidth: .infinity)
+            .padding(14)
+            .frame(maxWidth: .infinity, minHeight: 44)
             .background(
-                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
-                    .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .fill(isSelected ? AppColor.accent.opacity(0.12) : AppColor.secondaryBackground)
             )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                    .strokeBorder(isSelected ? AppColor.accent : Color.clear, lineWidth: 2)
+            )
+            .animation(reduceMotion ? nil : .spring(response: 0.3, dampingFraction: 0.8), value: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("equipment.\(equipment.rawValue)")
