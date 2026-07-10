@@ -82,10 +82,15 @@ struct HistoryListView: View {
                             HistoryListRow(session: session)
                         }
                         .buttonStyle(.plain)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
                     }
                 } header: {
                     Text(group.headerTitle)
-                        .font(.subheadline.weight(.semibold))
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .tracking(0.6)
+                        .textCase(nil)
                 }
             }
             if !showAllHistory && hasOlderSessions {
@@ -165,7 +170,7 @@ private struct HistoryListRow: View {
         HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
                 Text(timeOfDay)
-                    .font(.body.weight(.semibold).monospacedDigit())
+                    .font(.headline.monospacedDigit())
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                 Text(session.goal.rawValue)
@@ -189,7 +194,7 @@ private struct HistoryListRow: View {
                         Image(systemName: "scalemass")
                     }
                 }
-                .font(.subheadline.monospacedDigit())
+                .font(.subheadline.weight(.semibold).monospacedDigit())
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
 
@@ -205,7 +210,11 @@ private struct HistoryListRow: View {
                 .foregroundStyle(.tertiary)
                 .accessibilityHidden(true)
         }
-        .padding(.vertical, 4)
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                .fill(AppColor.secondaryBackground)
+        )
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text("\(timeOfDay), \(session.goal.rawValue)"))
