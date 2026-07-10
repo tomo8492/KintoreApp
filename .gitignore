@@ -73,3 +73,7 @@ scripts/__pycache__/
 # CLAUDE.md v0.5 §-1.1 / §11.4: RevenueCat API Key 等は Secrets.xcconfig 経由で注入
 # 値はコミット禁止、テンプレ Config/Secrets.template.xcconfig からコピーして手元で埋める
 Config/Secrets.xcconfig
+
+# Content-rework staging area — Sonnet worker が書き込む一時 override JSON。
+# 最終成果は exercises_seed.json へマージされるため追跡不要。
+docs/content-rework/
