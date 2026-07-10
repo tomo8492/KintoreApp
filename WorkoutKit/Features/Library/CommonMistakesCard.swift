@@ -47,7 +47,7 @@ struct CommonMistakesCard: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
                 RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
-                    .fill(Color.red.opacity(0.10))
+                    .fill(AppColor.destructive.opacity(0.10))
             )
             .accessibilityElement(children: .combine)
             .accessibilityLabel(Text("a11y.library.detail.common-mistakes.label"))

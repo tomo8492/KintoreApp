@@ -118,7 +118,7 @@ struct ExerciseDetailView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.orange.opacity(0.10), in: .rect(cornerRadius: AppRadius.control))
+        .background(AppColor.warning.opacity(0.10), in: .rect(cornerRadius: AppRadius.control))
     }
 
     // MARK: - Muscle / Equipment badges

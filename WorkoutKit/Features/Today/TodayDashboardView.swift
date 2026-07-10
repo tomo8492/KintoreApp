@@ -38,6 +38,10 @@ struct TodayDashboardView: View {
                 heroCard
                 weekSummaryCard
             }
+            // iPad(regular width)でカードが全幅に間延びしないよう読みやすい
+            // 上限幅に制約し、中央寄せする。iPhone では実質無効(画面幅 < 600)。
+            .frame(maxWidth: 600)
+            .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .padding(.top, 12)
             .padding(.bottom, 40)

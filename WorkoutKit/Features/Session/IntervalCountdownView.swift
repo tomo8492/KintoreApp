@@ -27,7 +27,7 @@ struct IntervalCountdownView: View {
             Text(formatted)
                 .font(.system(size: 56, weight: .bold, design: .rounded))
                 .monospacedDigit()
-                .foregroundStyle(isWarning ? Color.orange : Color.accentColor)
+                .foregroundStyle(isWarning ? AppColor.warning : AppColor.accent)
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
                 .contentTransition(reduceMotion ? .identity : .numericText(countsDown: true))

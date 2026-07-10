@@ -203,7 +203,7 @@ struct PaywallView: View {
                             Text("hard-paywall.plan.yearly.percent-off \(Self.yearlyPercentOff)")
                                 .font(.caption.bold())
                                 .padding(.horizontal, 8).padding(.vertical, 2)
-                                .background(Color.green.opacity(0.85), in: .capsule)
+                                .background(AppColor.success.opacity(0.85), in: .capsule)
                                 .foregroundStyle(.white)
                         }
                     }
