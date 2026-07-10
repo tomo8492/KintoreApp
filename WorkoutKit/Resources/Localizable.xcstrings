@@ -17012,13 +17012,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Primary muscle"
+            "value" : "Main muscles worked"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "主動筋"
+            "value" : "メインで鍛える筋肉"
           }
         }
       }
@@ -17029,13 +17029,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Secondary muscles"
+            "value" : "Also works"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "協働筋"
+            "value" : "一緒に使われる筋肉"
+          }
+        }
+      }
+    },
+    "library.detail.secondary-muscles.none" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This exercise focuses on a single muscle group."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この種目は主に 1 つの筋肉を集中して鍛えます"
           }
         }
       }
@@ -17749,7 +17766,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腹筋"
+            "value" : "お腹(腹直筋)"
+          }
+        }
+      }
+    },
+    "muscle.abs.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front of your stomach. Used when curling your torso."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お腹の前面の筋肉。上体を丸めるときに使います。"
           }
         }
       }
@@ -17767,7 +17801,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腹直筋"
+            "value" : "お腹(腹直筋)"
           }
         }
       }
@@ -17784,7 +17818,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "上腕二頭筋"
+            "value" : "力こぶ(上腕二頭筋)"
+          }
+        }
+      }
+    },
+    "muscle.biceps.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front of the upper arm. Used when bending the elbow to pull."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕の前側、力こぶになる筋肉。肘を曲げて引くときに使います。"
           }
         }
       }
@@ -17802,7 +17853,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "上腕二頭筋"
+            "value" : "力こぶ(上腕二頭筋)"
           }
         }
       }
@@ -17820,6 +17871,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ふくらはぎ"
+          }
+        }
+      }
+    },
+    "muscle.calves.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back of the lower leg. Used when rising on your toes, walking, running."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すねの裏側の筋肉。つま先立ちや歩く・走るときに使います。"
           }
         }
       }
@@ -17854,7 +17922,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸"
+            "value" : "胸(大胸筋)"
+          }
+        }
+      }
+    },
+    "muscle.chest.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Covers the front of your ribcage. Used when pushing things away from you."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸板全体を覆う大きな筋肉。物を前に押し出すときに使います。"
           }
         }
       }
@@ -17872,7 +17957,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸"
+            "value" : "胸(大胸筋)"
           }
         }
       }
@@ -17883,13 +17968,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deltoids"
+            "value" : "Shoulders (Delts)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "三角筋"
+            "value" : "肩(三角筋)"
+          }
+        }
+      }
+    },
+    "muscle.deltoids.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caps your shoulders. Used when raising your arms."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩を丸く覆う筋肉。腕を横や前に持ち上げるときに使います。"
           }
         }
       }
@@ -17901,7 +18003,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shoulders (Deltoids)"
+            "value" : "Shoulders (Delts)"
           }
         },
         "ja" : {
@@ -17925,6 +18027,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "前腕"
+          }
+        }
+      }
+    },
+    "muscle.forearms.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From elbow to wrist. Used for grip and wrist movement."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘から手首までの筋肉。握る・手首を返すときに使います。"
           }
         }
       }
@@ -17964,6 +18083,23 @@
         }
       }
     },
+    "muscle.fullBody.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Works multiple muscle groups together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の筋肉を連動させて使う種目です。"
+          }
+        }
+      }
+    },
     "muscle.fullBody.title" : {
       "comment" : "Muscle: 全身指定。",
       "extractionState" : "manual",
@@ -17971,7 +18107,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Full body"
+            "value" : "Full Body"
           }
         },
         "ja" : {
@@ -17994,7 +18130,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "お尻"
+            "value" : "お尻(臀筋)"
+          }
+        }
+      }
+    },
+    "muscle.glutes.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your largest muscle group. Powers standing up and hip extension."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お尻全体の大きな筋肉。立ち上がる・股関節を伸ばすときに使います。"
           }
         }
       }
@@ -18012,7 +18165,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "臀筋"
+            "value" : "お尻(臀筋)"
           }
         }
       }
@@ -18173,7 +18326,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ハムストリングス"
+            "value" : "太もも裏(ハムストリングス)"
+          }
+        }
+      }
+    },
+    "muscle.hamstrings.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back of the thighs. Used when bending the knee or sprinting."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "太ももの裏側の筋肉。膝を曲げる・地面を蹴るときに使います。"
           }
         }
       }
@@ -18191,7 +18361,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ハムストリング"
+            "value" : "太もも裏(ハムストリングス)"
           }
         }
       }
@@ -18202,13 +18372,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lats"
+            "value" : "Back (Lats)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "広背筋"
+            "value" : "背中(広背筋)"
+          }
+        }
+      }
+    },
+    "muscle.lats.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The widest back muscle, from armpits to waist. Used when pulling things toward you."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "脇の下から腰にかけて広がる、背中で一番大きな筋肉。物を引き寄せるときに使います。"
           }
         }
       }
@@ -18220,13 +18407,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lats"
+            "value" : "Back (Lats)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "広背筋"
+            "value" : "背中(広背筋)"
           }
         }
       }
@@ -18243,7 +18430,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腰"
+            "value" : "腰(脊柱起立筋)"
+          }
+        }
+      }
+    },
+    "muscle.lowerBack.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Runs along the spine. Keeps you upright and supports posture."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背骨に沿って腰を支える筋肉。姿勢を保つ・上体を起こすときに使います。"
           }
         }
       }
@@ -18255,13 +18459,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lower back"
+            "value" : "Lower Back"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腰背部"
+            "value" : "腰(脊柱起立筋)"
           }
         }
       }
@@ -18278,7 +18482,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腹斜筋"
+            "value" : "わき腹(腹斜筋)"
+          }
+        }
+      }
+    },
+    "muscle.obliques.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sides of your waist. Used when twisting your torso."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お腹の横、くびれ部分の筋肉。体をひねるときに使います。"
           }
         }
       }
@@ -18296,7 +18517,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腹斜筋"
+            "value" : "わき腹(腹斜筋)"
           }
         }
       }
@@ -18307,13 +18528,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quadriceps"
+            "value" : "Quads"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "大腿四頭筋"
+            "value" : "太もも前(大腿四頭筋)"
+          }
+        }
+      }
+    },
+    "muscle.quadriceps.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front of the thighs. Used when standing up or climbing stairs."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "太ももの前側の大きな筋肉。立ち上がる・階段を上るときに使います。"
           }
         }
       }
@@ -18331,7 +18569,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "大腿四頭筋"
+            "value" : "太もも前(大腿四頭筋)"
           }
         }
       }
@@ -18342,13 +18580,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Traps"
+            "value" : "Upper Back (Traps)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "僧帽筋"
+            "value" : "首・肩まわり(僧帽筋)"
+          }
+        }
+      }
+    },
+    "muscle.traps.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spans from your neck to shoulders and upper back. Used when shrugging or carrying."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "首の付け根から肩・背中上部に広がる筋肉。肩をすくめる・物を持ち上げるときに使います。"
           }
         }
       }
@@ -18360,13 +18615,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Traps"
+            "value" : "Upper Back (Traps)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "僧帽筋"
+            "value" : "首・肩まわり(僧帽筋)"
           }
         }
       }
@@ -18383,7 +18638,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "上腕三頭筋"
+            "value" : "二の腕(上腕三頭筋)"
+          }
+        }
+      }
+    },
+    "muscle.triceps.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back of the upper arm. Used when straightening the elbow to push."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕の裏側の筋肉。肘を伸ばして押すときに使います。"
           }
         }
       }
@@ -18401,7 +18673,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "上腕三頭筋"
+            "value" : "二の腕(上腕三頭筋)"
           }
         }
       }
@@ -19522,13 +19794,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Primary muscle"
+            "value" : "Main muscles worked"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "主動筋"
+            "value" : "メインで鍛える筋肉"
           }
         }
       }
@@ -19744,13 +20016,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Secondary muscles"
+            "value" : "Also works"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "協働筋"
+            "value" : "一緒に使われる筋肉"
           }
         }
       }
