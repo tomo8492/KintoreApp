@@ -67,7 +67,7 @@ private struct EquipmentChip: View {
             .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
             .background(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
             )
         }

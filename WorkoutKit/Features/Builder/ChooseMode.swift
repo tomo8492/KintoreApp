@@ -73,7 +73,7 @@ struct ChooseMode: View {
             }
         }
         .background(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                 .fill(Color.gray.opacity(0.08))
         )
     }
@@ -96,7 +96,7 @@ struct ChooseMode: View {
             .padding(.vertical, 14)
             .background(Color.accentColor.opacity(0.15))
             .foregroundStyle(Color.accentColor)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.control))
         }
         .buttonStyle(.plain)
         .disabled(store.isGenerating)

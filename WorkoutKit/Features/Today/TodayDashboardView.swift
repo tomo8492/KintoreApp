@@ -71,11 +71,14 @@ struct TodayDashboardView: View {
                 .foregroundStyle(.white)
                 .accessibilityHidden(true)
 
+            // 装飾用の見出し。ボタン側にも同じキーのラベルがあり VoiceOver が
+            // 二重読み上げしてしまうため、この Text はアクセシビリティツリーから隠す。
             Text("today.action.start-builder")
                 .font(.title3.weight(.bold))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
                 .minimumScaleFactor(0.8)
+                .accessibilityHidden(true)
 
             Button {
                 #if canImport(UIKit)
@@ -84,16 +87,11 @@ struct TodayDashboardView: View {
                 onStartBuilder()
             } label: {
                 Text("today.action.start-builder")
-                    .font(.headline)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
-                    .frame(maxWidth: .infinity, minHeight: 44)
                     .padding(.horizontal, 20)
-                    .background(Color.white)
-                    .foregroundStyle(AppColor.accent)
-                    .clipShape(RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous))
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.invertedCTA)
             .accessibilityLabel(Text("today.action.start-builder"))
             .accessibilityHint(Text("a11y.today.start-builder.hint"))
             .accessibilityAddTraits(.isButton)

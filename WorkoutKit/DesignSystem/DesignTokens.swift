@@ -74,6 +74,26 @@ struct SecondaryCTAButtonStyle: ButtonStyle {
     }
 }
 
+/// 反転 CTA(白背景 + accent 文字)。Today ヒーローカードのような accent 塗り
+/// カード内で使う「内側ボタン」向け。PrimaryCTAButtonStyle と同じ押下フィード
+/// バック(0.97 倍スケール + 微減光 + Reduce Motion ガード)を共有する。
+struct InvertedCTAButtonStyle: ButtonStyle {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .background(Color.white)
+            .foregroundStyle(AppColor.accent)
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous))
+            .opacity(configuration.isPressed ? 0.85 : 1.0)
+            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.97 : 1.0)
+            .animation(reduceMotion ? nil : .spring(response: 0.25, dampingFraction: 0.8),
+                       value: configuration.isPressed)
+    }
+}
+
 extension ButtonStyle where Self == PrimaryCTAButtonStyle {
     /// `Button { } label: { Text(...) }.buttonStyle(.primaryCTA)`
     static var primaryCTA: PrimaryCTAButtonStyle { PrimaryCTAButtonStyle() }
@@ -81,6 +101,11 @@ extension ButtonStyle where Self == PrimaryCTAButtonStyle {
 
 extension ButtonStyle where Self == SecondaryCTAButtonStyle {
     static var secondaryCTA: SecondaryCTAButtonStyle { SecondaryCTAButtonStyle() }
+}
+
+extension ButtonStyle where Self == InvertedCTAButtonStyle {
+    /// `Button { } label: { Text(...) }.buttonStyle(.invertedCTA)`
+    static var invertedCTA: InvertedCTAButtonStyle { InvertedCTAButtonStyle() }
 }
 
 // MARK: - Stat number typography

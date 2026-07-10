@@ -34,10 +34,10 @@ struct SessionExerciseRow: View {
         .padding(.horizontal, 12)
         .background(rowBackground)
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                 .strokeBorder(isCurrent ? Color.accentColor : Color.clear, lineWidth: 2)
         )
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: AppRadius.control))
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(displayName))
         .accessibilityValue(Text("\(progressText) \(statusKey)"))
@@ -72,7 +72,7 @@ struct SessionExerciseRow: View {
     }
 
     private var rowBackground: some View {
-        RoundedRectangle(cornerRadius: 10)
+        RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
             .fill(isCurrent ? Color.accentColor.opacity(0.08) : Color.gray.opacity(0.06))
     }
 

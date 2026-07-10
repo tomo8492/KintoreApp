@@ -33,7 +33,7 @@ struct ShuffleMode: View {
             .padding(.vertical, 14)
             .background(Color.gray.opacity(0.12))
             .foregroundStyle(Color.primary)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.control))
         }
         .buttonStyle(.plain)
         .disabled(store.isGenerating)

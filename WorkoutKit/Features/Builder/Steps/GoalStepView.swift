@@ -64,7 +64,7 @@ private struct GoalRow: View {
             }
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(isSelected ? Color.accentColor.opacity(0.1) : Color.gray.opacity(0.08))
             )
             .padding(.horizontal)

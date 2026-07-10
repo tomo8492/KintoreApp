@@ -50,7 +50,7 @@ struct AICoachView: View {
     /// 倣いつつ、本アプリの accentColor を中心に置く。トーンは控えめにして
     /// 通常 UI の邪魔をしない。
     private var aiBackground: some View {
-        RoundedRectangle(cornerRadius: 14, style: .continuous)
+        RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
             .fill(
                 LinearGradient(
                     colors: [
@@ -63,7 +63,7 @@ struct AICoachView: View {
                 )
             )
             .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
                     .strokeBorder(Color.accentColor.opacity(0.18), lineWidth: 1)
             )
     }

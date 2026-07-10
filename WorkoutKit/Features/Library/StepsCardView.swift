@@ -54,14 +54,14 @@ private struct StepCard: View {
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
+            RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                 .fill(Color.secondary.opacity(0.08))
         )
     }
 
     private var stepBadge: some View {
         Text("\(number)")
-            .font(.system(size: 16, weight: .bold, design: .rounded))
+            .font(.system(.callout, design: .rounded).weight(.bold))
             .monospacedDigit()
             .foregroundStyle(.white)
             .frame(width: 28, height: 28)

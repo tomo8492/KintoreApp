@@ -196,7 +196,7 @@ struct BuilderView: View {
                 .padding(.vertical, isFinal ? 16 : 14)
                 .background(Color.accentColor.opacity(store.canAdvance ? 1.0 : 0.35))
                 .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous))
             }
             .buttonStyle(.plain)
             .disabled(!store.canAdvance || store.isGenerating)

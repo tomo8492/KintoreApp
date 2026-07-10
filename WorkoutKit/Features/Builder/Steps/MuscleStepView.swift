@@ -151,7 +151,7 @@ private struct MuscleChip: View {
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity)
             .background(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: AppRadius.chip, style: .continuous)
                     .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
             )
         }

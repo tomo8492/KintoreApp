@@ -46,7 +46,7 @@ struct CommonMistakesCard: View {
             .padding(12)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(Color.red.opacity(0.10))
             )
             .accessibilityElement(children: .combine)

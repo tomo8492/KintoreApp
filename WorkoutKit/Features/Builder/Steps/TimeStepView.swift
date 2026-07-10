@@ -61,7 +61,7 @@ struct TimeStepView: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
             .background(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(isSelected ? Color.accentColor : Color.gray.opacity(0.12))
             )
         }
@@ -101,7 +101,7 @@ struct TimeStepView: View {
                 .padding(.vertical, 12)
             }
             .background(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(Color.gray.opacity(0.08))
             )
             .padding(.horizontal)
