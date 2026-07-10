@@ -52,13 +52,16 @@ struct CompactBodyDiagramView: View {
                 }
             }
 
-            // 主動筋 → 上に重ねて強くハイライト(z-order 上)
+            // 主動筋 → 上に重ねて強くハイライト(z-order 上)。
+            // SVG に色が焼き込まれておりランタイムでは tint できないため、
+            // premium グロー(shadow)はレイヤー全体に適用する。
             ForEach(orderedPrimary, id: \.self) { muscle in
                 if let asset = highlightAssetName(for: muscle) {
                     Image(asset)
                         .resizable()
                         .scaledToFit()
                         .opacity(1.0)
+                        .premiumMuscleGlow()
                 }
             }
         }
@@ -102,8 +105,34 @@ struct CompactBodyDiagramView: View {
     /// VoiceOver 用に「主動筋: 胸/協働筋: 上腕三頭筋, 三角筋」のような
     /// 一文をローカライズ済み文字列で組み立てる。muscle 名は Builder の
     /// MuscleLocalization と同じキーを使う(英訳 + 日訳が既にある)。
+    ///
+    /// primaryMuscles が空(理論上は起きないはずだが安全のため)の場合のみ、
+    /// 旧来の静的ラベルにフォールバックする。
     private var accessibilityLabel: Text {
-        Text("a11y.library.detail.target-muscles.label")
+        let primaryList = primaryMuscles.sorted(by: muscleOrder)
+        guard !primaryList.isEmpty else {
+            return Text("a11y.library.detail.target-muscles.label")
+        }
+
+        let primaryNames = primaryList.map(muscleDisplayName).joined(separator: "、")
+        let primaryLabel = String(localized: "library.detail.primary-muscle")
+        var composed = "\(primaryLabel): \(primaryNames)"
+
+        if !orderedSecondary.isEmpty {
+            let secondaryNames = orderedSecondary.map(muscleDisplayName).joined(separator: "、")
+            let secondaryLabel = String(localized: "library.detail.secondary-muscles")
+            composed += "。\(secondaryLabel): \(secondaryNames)"
+        }
+
+        return Text(composed)
+    }
+
+    /// muscle.<rawValue> は LibraryDisplay.muscleName が使っているキーと同じ
+    /// (例: muscle.chest, muscle.lowerBack)。accessibilityLabel の組み立てには
+    /// LocalizedStringKey ではなく String が必要なため、SessionView と同じ
+    /// String.LocalizationValue 経由のランタイムキー解決を使う。
+    private func muscleDisplayName(_ muscle: Muscle) -> String {
+        String(localized: String.LocalizationValue("muscle.\(muscle.rawValue)"))
     }
 }
 

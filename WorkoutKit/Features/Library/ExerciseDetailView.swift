@@ -127,9 +127,23 @@ struct ExerciseDetailView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("library.detail.primary-muscle").font(.headline)
             badge(LibraryDisplay.muscleName(exercise.primaryMuscle), tint: .accentColor)
+            // 初心者向けに「その筋肉は何をする筋肉か」を一言添える。
+            // キーは muscle.<rawValue>.description(他ワーカーが並行追加中)で、
+            // rawValue を実行時に埋め込むため SessionView と同じ
+            // String.LocalizationValue 経由のルックアップを使う。
+            Text(primaryMuscleDescription)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
 
-            if !exercise.secondaryMuscles.isEmpty {
-                Text("library.detail.secondary-muscles").font(.headline).padding(.top, 8)
+            Text("library.detail.secondary-muscles").font(.headline).padding(.top, 8)
+            if exercise.secondaryMuscles.isEmpty {
+                // 104/345 種目は協働筋が無いが、セクション自体は残しつつ
+                // 「協働筋なし」を明示する(見出しが唐突に消えるのを防ぐ)。
+                Text("library.detail.secondary-muscles.none")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
                 FlowLayoutWrap {
                     ForEach(exercise.secondaryMuscles, id: \.self) { m in
                         badge(LibraryDisplay.muscleName(m), tint: .secondary)
@@ -137,6 +151,13 @@ struct ExerciseDetailView: View {
                 }
             }
         }
+    }
+
+    /// 主動筋の初心者向け説明文。muscle.<rawValue>.description キーを
+    /// 実行時に組み立てて解決する(SessionView.progressHeader と同じ手法)。
+    private var primaryMuscleDescription: String {
+        let key = "muscle.\(exercise.primaryMuscle.rawValue).description"
+        return String(localized: String.LocalizationValue(key))
     }
 
     private var equipmentBadges: some View {

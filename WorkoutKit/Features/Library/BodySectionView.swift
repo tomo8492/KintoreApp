@@ -38,17 +38,26 @@ struct BodySectionView: View {
         VStack(alignment: .leading, spacing: 12) {
             sectionTitle
             bodyDiagram
-            cuesList
-                .frame(maxWidth: .infinity, alignment: .leading)
+            // cues が 0 件の side(220/345 種目は front/back 片側にしか
+            // キューが無い)は「この面のコメントはありません」プレースホルダーを
+            // 出さず、人体図のみを表示する(筋肉ハイライト自体は情報量がある)。
+            if !cues.isEmpty {
+                cuesList
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
+        .padding(16)
+        .premiumDiagramCard()
     }
 
     // MARK: - Title
 
     private var sectionTitle: some View {
         Text(titleKey)
-            .font(.subheadline.weight(.semibold))
+            .font(.footnote.weight(.semibold))
             .foregroundStyle(.secondary)
+            .textCase(nil)
+            .tracking(0.6)
     }
 
     private var titleKey: LocalizedStringKey {
@@ -93,21 +102,16 @@ struct BodySectionView: View {
 
     // MARK: - Cues list
 
+    /// 呼び出し元(body)で `cues.isEmpty` を弾いているため、ここに来る時点で
+    /// 必ず 1 件以上ある。
     private var cuesList: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if cues.isEmpty {
-                Text("library.detail.body.no-cues")
-                    .font(.footnote)
-                    .foregroundStyle(.tertiary)
-                    .accessibilityHidden(true)
-            } else {
-                ForEach(Array(cues.enumerated()), id: \.element.id) { idx, cue in
-                    NumberedCueRow(
-                        number: idx + 1,
-                        key: LocalizedStringKey(cue.labelKey),
-                        color: cue.color
-                    )
-                }
+            ForEach(Array(cues.enumerated()), id: \.element.id) { idx, cue in
+                NumberedCueRow(
+                    number: idx + 1,
+                    key: LocalizedStringKey(cue.labelKey),
+                    color: cue.color
+                )
             }
         }
     }
@@ -121,17 +125,7 @@ private struct NumberedDot: View {
     let diameter: CGFloat
 
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(color.fillColor)
-            Circle()
-                .stroke(Color.white, lineWidth: 1.5)
-            Text(String(number))
-                .font(.system(size: diameter * 0.55, weight: .bold))
-                .foregroundStyle(.white)
-        }
-        .frame(width: diameter, height: diameter)
-        .shadow(color: Color.black.opacity(0.18), radius: 1.5, x: 0, y: 1)
+        GradientNumberBadge(number: number, color: color.fillColor, diameter: diameter)
     }
 }
 
@@ -144,14 +138,8 @@ private struct NumberedCueRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            ZStack {
-                Circle().fill(color.fillColor)
-                Text(String(number))
-                    .font(.system(size: 12, weight: .bold))
-                    .foregroundStyle(.white)
-            }
-            .frame(width: 22, height: 22)
-            .padding(.top, 1)
+            GradientNumberBadge(number: number, color: color.fillColor, diameter: 22)
+                .padding(.top, 1)
 
             Text(key)
                 .font(.callout)

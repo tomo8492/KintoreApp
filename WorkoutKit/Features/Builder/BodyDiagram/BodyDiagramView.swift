@@ -20,6 +20,8 @@ struct BodyDiagramView: View {
             diagram
                 .aspectRatio(Self.viewBoxAspect, contentMode: .fit)
                 .frame(maxWidth: 520)
+                .padding(16)
+                .premiumDiagramCard()
 
             quickActions
         }
@@ -36,13 +38,18 @@ struct BodyDiagramView: View {
                 .foregroundStyle(silhouetteColor)
                 .scaledToFit()
 
-            // 選択中ハイライト(全身選択時はすべての筋肉を highlight)
+            // 選択中ハイライト(全身選択時はすべての筋肉を highlight)。
+            // SVG に色が焼き込まれておりランタイムでは tint できないため、
+            // premium グロー(shadow)はレイヤー全体に適用する。
+            // 選択の可視化は「ハイライト画像が表示されるかどうか」自体が
+            // 既存のインジケーターであり、色だけに依存しない(維持する)。
             ForEach(highlightMuscles, id: \.self) { muscle in
                 if let asset = highlightAssetName(for: muscle) {
                     Image(asset)
                         .resizable()
                         .scaledToFit()
                         .transition(.opacity)
+                        .premiumMuscleGlow()
                 }
             }
 

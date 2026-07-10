@@ -26,7 +26,7 @@ struct AnnotatedBodyDiagramView: View {
     let annotation: ExerciseAnnotation?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 20) {
             BodySectionView(
                 side: .front,
                 primaryMuscles: primaryMuscles,
