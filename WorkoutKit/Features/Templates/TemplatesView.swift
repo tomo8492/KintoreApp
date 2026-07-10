@@ -11,6 +11,9 @@
 import SwiftUI
 import SwiftData
 import OSLog
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct TemplatesView: View {
     @Environment(\.modelContext) private var modelContext
@@ -129,6 +132,8 @@ struct TemplatesView: View {
                     } label: {
                         TemplateRow(template: template)
                     }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
                             handleDelete(template)
@@ -206,6 +211,7 @@ struct TemplatesView: View {
         let newName = TemplateNaming.duplicateName(for: TemplateNaming.localizedDisplayName(for: template))
         do {
             _ = try store.duplicate(template, newName: newName)
+            Self.triggerLightHaptic()
         } catch {
             handle(error: error)
         }
@@ -216,6 +222,7 @@ struct TemplatesView: View {
         do {
             try store.delete(template)
             pendingDelete = nil
+            Self.triggerLightHaptic()
         } catch {
             handle(error: error)
         }
@@ -224,6 +231,15 @@ struct TemplatesView: View {
     private func handle(error: Error) {
         let message = error.localizedDescription
         Logger.app.error("TemplatesView error: \(message, privacy: .public)")
+    }
+
+    // MARK: - Haptics
+
+    /// 複製 / 削除が完了した際の軽いフィードバック。
+    private static func triggerLightHaptic() {
+        #if canImport(UIKit)
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        #endif
     }
 }
 
@@ -238,9 +254,9 @@ private struct TemplateRow: View {
                 .foregroundStyle(.tint)
                 .frame(width: 28)
                 .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(TemplateNaming.localizedDisplayName(for: template))
-                    .font(.body)
+                    .font(.headline)
                     .lineLimit(2)
                     .minimumScaleFactor(0.85)
                 Text(TemplateNaming.subtitle(for: template))
@@ -249,9 +265,36 @@ private struct TemplateRow: View {
                     .lineLimit(2)
                     .minimumScaleFactor(0.85)
             }
+            Spacer(minLength: 0)
+            if !template.isUserCreated {
+                PresetChip()
+            }
         }
-        .padding(.vertical, 2)
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: AppRadius.card, style: .continuous)
+                .fill(AppColor.secondaryBackground)
+        )
         .accessibilityElement(children: .combine)
+    }
+}
+
+// MARK: - PresetChip
+
+/// プリセットテンプレを示す小さなカプセルチップ。新規文言は追加せず、
+/// 既存の "square.stack.3d.up" アイコン(プリセット判定に既に使用)を
+/// アクセントカラーのカプセル内に再配置するだけの装飾。
+private struct PresetChip: View {
+    var body: some View {
+        Image(systemName: "square.stack.3d.up.fill")
+            .font(.caption2)
+            .foregroundStyle(AppColor.accent)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(
+                Capsule().fill(AppColor.accent.opacity(0.15))
+            )
+            .accessibilityHidden(true)
     }
 }
 

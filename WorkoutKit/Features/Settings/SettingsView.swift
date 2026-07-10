@@ -49,7 +49,11 @@ struct SettingsView: View {
     private var displaySection: some View {
         Section {
             VStack(alignment: .leading, spacing: 6) {
-                Label("settings.weightUnit", systemImage: "scalemass")
+                Label {
+                    Text("settings.weightUnit")
+                } icon: {
+                    SettingsRowIcon(systemName: "scalemass", tint: .blue)
+                }
                 Picker("settings.weightUnit", selection: weightUnitBinding) {
                     ForEach(WeightUnitPreference.allCases) { unit in
                         // 視覚は短縮形「kg」「lbs」(iPhone SE 375pt 幅でも余裕で fit)。
@@ -71,7 +75,11 @@ struct SettingsView: View {
                     Text(theme.localizedTitle).tag(theme)
                 }
             } label: {
-                Label("settings.theme", systemImage: "paintbrush")
+                Label {
+                    Text("settings.theme")
+                } icon: {
+                    SettingsRowIcon(systemName: "paintbrush", tint: .blue)
+                }
             }
         } header: {
             Text("settings.section.display")
@@ -85,7 +93,11 @@ struct SettingsView: View {
             Button {
                 openAppSettings()
             } label: {
-                Label("settings.language.openSettings", systemImage: "globe")
+                Label {
+                    Text("settings.language.openSettings")
+                } icon: {
+                    SettingsRowIcon(systemName: "globe", tint: .gray)
+                }
             }
         } header: {
             Text("settings.section.language")
@@ -97,9 +109,13 @@ struct SettingsView: View {
     private var purchasesSection: some View {
         Section {
             HStack {
-                Label("settings.purchases.status", systemImage: "checkmark.seal")
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.85)
+                Label {
+                    Text("settings.purchases.status")
+                } icon: {
+                    SettingsRowIcon(systemName: "crown.fill", tint: AppColor.accent)
+                }
+                .lineLimit(1)
+                .minimumScaleFactor(0.85)
                 Spacer()
                 Text(dependency.proGate.isPro ? "settings.purchases.status.pro" : "settings.purchases.status.free")
                     .foregroundStyle(.secondary)
@@ -116,9 +132,13 @@ struct SettingsView: View {
                 Task { await runRestore() }
             } label: {
                 HStack {
-                    Label("settings.purchases.restore", systemImage: "arrow.clockwise")
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.85)
+                    Label {
+                        Text("settings.purchases.restore")
+                    } icon: {
+                        SettingsRowIcon(systemName: "arrow.clockwise", tint: AppColor.accent)
+                    }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
                     Spacer()
                     if restoreState.isRestoring {
                         ProgressView()
@@ -141,7 +161,11 @@ struct SettingsView: View {
             NavigationLink {
                 AboutView()
             } label: {
-                Label("settings.about", systemImage: "info.circle")
+                Label {
+                    Text("settings.about")
+                } icon: {
+                    SettingsRowIcon(systemName: "info.circle", tint: .gray)
+                }
             }
         } header: {
             Text("settings.section.about")
@@ -152,12 +176,20 @@ struct SettingsView: View {
         Section {
             if let url = SettingsLinks.privacyPolicy {
                 Link(destination: url) {
-                    Label("settings.privacyPolicy", systemImage: "hand.raised")
+                    Label {
+                        Text("settings.privacyPolicy")
+                    } icon: {
+                        SettingsRowIcon(systemName: "hand.raised", tint: .gray)
+                    }
                 }
             }
             if let url = SettingsLinks.termsOfUse {
                 Link(destination: url) {
-                    Label("settings.termsOfUse", systemImage: "doc.text")
+                    Label {
+                        Text("settings.termsOfUse")
+                    } icon: {
+                        SettingsRowIcon(systemName: "doc.text", tint: .gray)
+                    }
                 }
             }
         } header: {
@@ -170,15 +202,34 @@ struct SettingsView: View {
     private var weightUnitBinding: Binding<WeightUnitPreference> {
         Binding(
             get: { WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms },
-            set: { weightUnitRaw = $0.rawValue }
+            set: { newValue in
+                if newValue.rawValue != weightUnitRaw {
+                    Self.triggerSelectionHaptic()
+                }
+                weightUnitRaw = newValue.rawValue
+            }
         )
     }
 
     private var themeBinding: Binding<ThemePreference> {
         Binding(
             get: { ThemePreference(rawValue: themeRaw) ?? .system },
-            set: { themeRaw = $0.rawValue }
+            set: { newValue in
+                if newValue.rawValue != themeRaw {
+                    Self.triggerSelectionHaptic()
+                }
+                themeRaw = newValue.rawValue
+            }
         )
+    }
+
+    // MARK: - Haptics
+
+    /// テーマ / 単位ピッカーの選択変更時に鳴らす軽い選択フィードバック。
+    private static func triggerSelectionHaptic() {
+        #if canImport(UIKit)
+        UISelectionFeedbackGenerator().selectionChanged()
+        #endif
     }
 
     private var alertBinding: Binding<Bool> {
@@ -270,6 +321,27 @@ enum SettingsLinks {
         guard let raw = Bundle.main.object(forInfoDictionaryKey: key) as? String,
               !raw.isEmpty else { return nil }
         return URL(string: raw)
+    }
+}
+
+// MARK: - SettingsRowIcon
+// iOS 標準 Settings アプリ風の「色付き角丸スクエア + 白抜きシンボル」アイコン。
+// セクションごとに意味のある色を割り当て、素の Form でも視覚的な手がかりを持たせる。
+
+private struct SettingsRowIcon: View {
+    let systemName: String
+    let tint: Color
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: AppRadius.chip, style: .continuous)
+            .fill(tint)
+            .frame(width: 28, height: 28)
+            .overlay(
+                Image(systemName: systemName)
+                    .font(.caption)
+                    .foregroundStyle(.white)
+            )
+            .accessibilityHidden(true)
     }
 }
 
