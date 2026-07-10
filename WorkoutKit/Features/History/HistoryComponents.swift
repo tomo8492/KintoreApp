@@ -23,9 +23,8 @@ struct ProGateLockedView: View {
                 onUnlock()
             } label: {
                 Text("history.locked.unlock")
-                    .padding(.horizontal, 16).padding(.vertical, 8)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.primaryCTA)
         }
     }
 }

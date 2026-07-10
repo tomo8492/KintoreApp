@@ -25,11 +25,11 @@ struct HistoryCalendarDayCell: View {
             .background(background)
             .overlay {
                 if cell.isToday {
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: AppRadius.chip)
                         .stroke(Color.accentColor, lineWidth: 1.5)
                 }
             }
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.chip))
             .overlay(alignment: .topTrailing) {
                 if cell.isLocked && cell.dayNumber != nil {
                     Image(systemName: "lock.fill")

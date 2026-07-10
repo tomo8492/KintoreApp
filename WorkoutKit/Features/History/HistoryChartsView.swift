@@ -13,6 +13,11 @@ struct HistoryChartsView: View {
     let isPro: Bool
     let onAdvancedRequested: () -> Void
 
+    @AppStorage(SettingsKey.weightUnit) private var weightUnitRaw: String = WeightUnitPreference.kilograms.rawValue
+    private var weightUnit: WeightUnitPreference {
+        WeightUnitPreference(rawValue: weightUnitRaw) ?? .kilograms
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -34,10 +39,28 @@ struct HistoryChartsView: View {
             if weeklyPoints.isEmpty {
                 emptyState
             } else {
+                totalVolumeStat
                 weeklyChart
                 legend
             }
         }
+    }
+
+    /// この画面で最も重要な数値(直近 30 日の総ボリューム)を大きく見せる。
+    /// 個々のバーの数値には statNumber() を付けない(§7 で「1画面につき主役数値は1つ」)。
+    private var totalVolumeStat: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(totalVolumeLabel)
+                .statNumber()
+            Text("history.chart.axis.volume")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    private var totalVolumeLabel: String {
+        let total = weeklyPoints.reduce(0.0) { $0 + $1.volumeKg }
+        return UnitsFormatter.formatWeight(total, preference: weightUnit)
     }
 
     private var weeklyChart: some View {
@@ -47,6 +70,7 @@ struct HistoryChartsView: View {
                 y: .value("history.chart.axis.volume", point.volumeKg)
             )
             .foregroundStyle(by: .value("history.chart.legend.muscle", point.muscleGroup.localizedTitle))
+            // Charts API の BarMark.cornerRadius(_:) パラメータ(AppRadius 対象外、意図的に維持)。
             .cornerRadius(2)
         }
         .chartLegend(.hidden)
@@ -86,6 +110,9 @@ struct HistoryChartsView: View {
                 subtitle: "history.charts.advanced.subtitle"
             )
             if isPro {
+                // 目玉機能の週間筋肉ヒートマップを Pro セクションの先頭に置く
+                // (§5-1 表の「進捗グラフ」= Premium。既存の isPro ゲートをそのまま使う)。
+                WeeklyMuscleHeatmapView(sessions: sessions)
                 MonthlyVolumeChart(points: monthlyPoints)
                 MuscleHeatmapChart(matrix: heatmap)
             } else {
@@ -105,14 +132,12 @@ struct HistoryChartsView: View {
                 onAdvancedRequested()
             } label: {
                 Text("history.charts.advanced.unlock")
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 6)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.primaryCTA)
         }
         .padding()
         .background(Color.secondary.opacity(0.08))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .clipShape(RoundedRectangle(cornerRadius: AppRadius.control))
     }
 
     // MARK: - Common bits
