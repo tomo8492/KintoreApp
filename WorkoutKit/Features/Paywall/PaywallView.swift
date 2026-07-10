@@ -225,11 +225,11 @@ struct PaywallView: View {
             }
             .padding(14)
             .background(
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(Color.secondary.opacity(0.10))
             )
             .overlay(
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .stroke(isSelected ? Color.accentColor : Color.clear, lineWidth: 2)
             )
         }
@@ -276,7 +276,7 @@ struct PaywallView: View {
                 }
                 .padding(14)
                 .background(
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                         .fill(Color.secondary.opacity(0.06))
                 )
             }
@@ -370,15 +370,9 @@ struct PaywallView: View {
                         ProgressView().controlSize(.small).tint(.white)
                     }
                     Text(ctaLabelKey)
-                        .font(.headline)
                 }
-                .frame(maxWidth: .infinity, minHeight: 28)
-                .padding(.vertical, 14)
-                .background(Color.accentColor)
-                .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.primaryCTA)
             .disabled(status != .idle || currentlySelectedPlan == nil)
             .accessibilityHint(Text("a11y.paywall.subscribe.hint"))
 

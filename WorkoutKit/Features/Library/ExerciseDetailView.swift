@@ -118,7 +118,7 @@ struct ExerciseDetailView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.orange.opacity(0.10), in: .rect(cornerRadius: 10))
+        .background(Color.orange.opacity(0.10), in: .rect(cornerRadius: AppRadius.control))
     }
 
     // MARK: - Muscle / Equipment badges
@@ -209,7 +209,7 @@ struct ExerciseDetailView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.primaryCTA)
             .tint(.red)
             .accessibilityLabel(Text("library.detail.youtube"))
             .accessibilityHint(Text(isUnlocked

@@ -36,7 +36,7 @@ struct IntervalCountdownView: View {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 18)
         .background(
-            RoundedRectangle(cornerRadius: 14)
+            RoundedRectangle(cornerRadius: AppRadius.card)
                 .fill(.regularMaterial)
         )
         .padding(.horizontal)

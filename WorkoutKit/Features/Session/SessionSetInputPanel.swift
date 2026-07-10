@@ -68,7 +68,7 @@ struct SessionSetInputPanel: View {
         }
         .padding(16)
         .background(.regularMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .clipShape(RoundedRectangle(cornerRadius: AppRadius.card))
         .padding(.horizontal)
     }
 
@@ -136,7 +136,8 @@ struct SessionSetInputPanel: View {
                 .minimumScaleFactor(0.7)
             Spacer()
             Text(UnitsFormatter.formatWeight(store.inputWeightKg, preference: weightUnit))
-                .font(.body.monospacedDigit())
+                .font(.title2.weight(.semibold))
+                .monospacedDigit()
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
                 .accessibilityHidden(true)
@@ -234,20 +235,13 @@ struct SessionSetInputPanel: View {
         } label: {
             HStack(spacing: 8) {
                 Image(systemName: "checkmark.circle.fill")
-                    .font(.title3.weight(.semibold))
                     .accessibilityHidden(true)
                 Text("session.action.complete-set")
-                    .font(.title3.weight(.semibold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             }
-            .frame(maxWidth: .infinity, minHeight: 56) // 大きなタップ領域(gym UX)
-            .padding(.vertical, 14)
-            .background(Color.accentColor)
-            .foregroundStyle(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.primaryCTA)
         .accessibilityIdentifier("session.action.complete-set")
         .accessibilityLabel(Text("session.action.complete-set"))
         .accessibilityHint(Text("a11y.session.complete.hint"))
@@ -261,19 +255,13 @@ struct SessionSetInputPanel: View {
         } label: {
             HStack(spacing: 6) {
                 Image(systemName: "forward.end.fill")
-                    .font(.subheadline)
                     .accessibilityHidden(true)
                 Text("session.action.skip")
-                    .font(.subheadline.weight(.medium))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             }
-            .frame(maxWidth: .infinity, minHeight: 44) // 44pt 最低タップ
-            .padding(.vertical, 10)
-            .background(Color.gray.opacity(0.12))
-            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.secondaryCTA)
         .accessibilityIdentifier("session.action.skip")
         .accessibilityLabel(Text("session.action.skip"))
         .accessibilityHint(Text("a11y.session.skip.hint"))
@@ -297,9 +285,9 @@ struct SessionSetInputPanel: View {
             }
             .frame(maxWidth: .infinity, minHeight: 44)
             .padding(.vertical, 10)
-            .background(Color.red.opacity(0.10))
-            .foregroundStyle(.red)
-            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .background(AppColor.destructive.opacity(0.10))
+            .foregroundStyle(AppColor.destructive)
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("session.action.stop")

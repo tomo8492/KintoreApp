@@ -141,40 +141,9 @@ struct RootView: View {
     ///   iPad 側で RootView の NavigationSplitView と BuilderView の NavigationSplitView
     ///   が二重にネストするのを避ける。
     private var todayTab: some View {
-        VStack(spacing: 24) {
-            Image(systemName: "figure.strengthtraining.traditional")
-                .font(.system(size: 64))
-                .foregroundStyle(Color.accentColor)
-                .accessibilityHidden(true)
-            Text("today.heading")
-                .font(.title2.bold())
-                .multilineTextAlignment(.center)
-                .minimumScaleFactor(0.7)
-            Text("today.subheading")
-                .font(.body)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-
-            Button {
-                isBuilderPresented = true
-            } label: {
-                Text("today.action.start-builder")
-                    .font(.headline)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                    .padding(.horizontal, 28)
-                    .padding(.vertical, 14)
-                    .background(Color.accentColor)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(Text("today.action.start-builder"))
-            .accessibilityHint(Text("a11y.today.start-builder.hint"))
-            .accessibilityAddTraits(.isButton)
+        TodayDashboardView {
+            isBuilderPresented = true
         }
-        .padding()
         .fullScreenCover(isPresented: $isBuilderPresented) {
             BuilderView()
         }

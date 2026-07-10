@@ -288,16 +288,10 @@ struct SessionFinishedContent: View {
 
                 Button(action: onClose) {
                     Text("common.close")
-                        .font(.headline)
                         .lineLimit(1)
                         .minimumScaleFactor(0.8)
-                        .padding(.horizontal, 28)
-                        .padding(.vertical, 14)
-                        .background(Color.accentColor)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.primaryCTA)
                 .accessibilityLabel(Text("common.close"))
                 .accessibilityAddTraits(.isButton)
             }

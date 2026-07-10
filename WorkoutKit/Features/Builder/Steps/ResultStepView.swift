@@ -144,7 +144,7 @@ struct ResultStepView: View {
                 }
             }
             .background(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: AppRadius.control)
                     .fill(Color.gray.opacity(0.08))
             )
         }
@@ -162,16 +162,10 @@ struct ResultStepView: View {
         VStack(spacing: 8) {
             Button(action: onStartSession) {
                 Text("builder.step.result.action.start")
-                    .font(.headline)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(Color.accentColor)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.primaryCTA)
             .disabled(store.isGenerating)
             .accessibilityIdentifier("builder.result.start")
             .accessibilityLabel(Text("builder.step.result.action.start"))

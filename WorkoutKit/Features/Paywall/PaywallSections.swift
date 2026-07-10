@@ -38,7 +38,7 @@ struct PaywallHeader: View {
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
+                    .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: AppRadius.control))
             }
         }
     }
@@ -121,7 +121,7 @@ struct PaywallPriceSection: View {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 if let product {
                     Text(product.displayPrice)
-                        .font(.system(size: 36, weight: .bold, design: .rounded))
+                        .statNumber()
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
                     Text(String(
