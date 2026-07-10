@@ -16258,6 +16258,78 @@
         }
       }
     },
+    "history.body-heatmap.title" : {
+      "comment" : "History Charts: 週間ボリューム筋肉ヒートマップの見出し。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muscles worked this week"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今週鍛えた部位"
+          }
+        }
+      }
+    },
+    "history.body-heatmap.subtitle" : {
+      "comment" : "ヒートマップの説明。色の濃淡=今週のセット数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Darker areas mean more sets this week."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色が濃い部位ほど、今週のセット数が多い部位です。"
+          }
+        }
+      }
+    },
+    "history.body-heatmap.empty" : {
+      "comment" : "ヒートマップ: 今週の記録が 0 件のとき。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No workouts logged yet this week."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今週はまだ記録がありません。"
+          }
+        }
+      }
+    },
+    "a11y.history.body-heatmap.label" : {
+      "comment" : "ヒートマップの VoiceOver ラベル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heatmap of muscles worked this week"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今週鍛えた部位のヒートマップ"
+          }
+        }
+      }
+    },
     "history.charts.advanced.locked.subtitle" : {
       "comment" : "チャート: Pro ロック中のサブ。",
       "extractionState" : "manual",
@@ -21905,6 +21977,60 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "この機能は WorkoutKit プレミアムが必要です。"
+          }
+        }
+      }
+    },
+    "today.week.title" : {
+      "comment" : "Today: 今週サマリーカードの見出し。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This week"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今週のトレーニング"
+          }
+        }
+      }
+    },
+    "today.week.sets %lld" : {
+      "comment" : "Today: 今週の合計セット数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld セット"
+          }
+        }
+      }
+    },
+    "today.week.sessions %lld" : {
+      "comment" : "Today: 今週のワークアウト回数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld workouts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 回のワークアウト"
           }
         }
       }
