@@ -82,12 +82,12 @@
           },
           "localizations" : [
             {
-              "description" : "年額なら ¥1,860 お得。最初の 7 日間は無料トライアル。",
+              "description" : "年額なら ¥6,860 お得。最初の 7 日間は無料トライアル。",
               "displayName" : "Yearly Premium",
               "locale" : "ja_JP"
             },
             {
-              "description" : "Save ¥1,860 with yearly. 7-day free trial.",
+              "description" : "Save ¥6,860 with yearly. 7-day free trial.",
               "displayName" : "Yearly Premium",
               "locale" : "en_US"
             }
