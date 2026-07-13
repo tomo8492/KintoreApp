@@ -155,7 +155,9 @@ enum FormAnnotationLoader {
 /// `slug` から JSON を読み、見つからなければ何も描かない(=呼び出し側で if-let)。
 /// `frames` が複数ある場合はセグメント付きピッカーでフェーズ(スタート/ボトム等)を切り替えられる。
 struct AnnotatedFormView: View {
-    let set: FormAnnotationSet
+    // `set` という名前は computed property の setter キーワードと衝突する
+    // (アクセサ内で行頭に置くとコンパイルエラー)ため annotationSet とする。
+    let annotationSet: FormAnnotationSet
 
     @State private var selectedFrameID: String
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -164,26 +166,26 @@ struct AnnotatedFormView: View {
     init?(slug: String, bundle: Bundle = .main) {
         guard let s = FormAnnotationLoader.load(slug: slug, bundle: bundle),
               let firstFrame = s.frames.first else { return nil }
-        self.set = s
+        self.annotationSet = s
         _selectedFrameID = State(initialValue: firstFrame.id)
     }
 
     init?(set: FormAnnotationSet) {
         guard let firstFrame = set.frames.first else { return nil }
-        self.set = set
+        self.annotationSet = set
         _selectedFrameID = State(initialValue: firstFrame.id)
     }
 
     /// 現在選択中のフレーム。見つからない場合は先頭フレームにフォールバック。
     private var currentFrame: FormAnnotationFrame {
-        set.frames.first { $0.id == selectedFrameID } ?? set.frames[0]
+        annotationSet.frames.first { $0.id == selectedFrameID } ?? annotationSet.frames[0]
     }
 
     var body: some View {
         VStack(spacing: 8) {
-            if set.frames.count > 1 {
+            if annotationSet.frames.count > 1 {
                 Picker(selection: $selectedFrameID) {
-                    ForEach(set.frames) { frame in
+                    ForEach(annotationSet.frames) { frame in
                         Text(LocalizedStringKey(frame.phaseLabelKey)).tag(frame.id)
                     }
                 } label: {
