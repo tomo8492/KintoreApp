@@ -88,7 +88,7 @@ final class PhoneWatchSyncManager: NSObject, WCSessionDelegate {
 
     nonisolated func session(
         _ session: WCSession,
-        activationDidComplete activationState: WCSessionActivationState,
+        activationDidCompleteWith activationState: WCSessionActivationState,
         error: Error?
     ) {
         if let error {
