@@ -10,6 +10,7 @@
 import SwiftUI
 import SwiftData
 import OSLog
+import StoreKit
 #if canImport(UIKit)
 import UIKit
 #endif
@@ -259,6 +260,10 @@ struct SessionFinishedContent: View {
     var showAICoach: Bool = true
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// v1.0 §6-6 相当:App Store レビュー依頼。SwiftUI ネイティブの
+    /// `requestReview` action を使い、実際に呼ぶかどうかは ReviewPrompter
+    /// (Singleton ではない static API)の判定に委ねる。
+    @Environment(\.requestReview) private var requestReview
 
     /// F3/celebration: 完了時のみ、初回表示で 0.4→1.0 スケール + フェードインさせる。
     /// 中断時はこの state を一切変更しないため、従来どおり静的表示のまま。
@@ -335,6 +340,10 @@ struct SessionFinishedContent: View {
             .opacity(celebrateOpacity)
             .accessibilityHidden(true)
             .onAppear { triggerCelebration() }
+            // v1.0 §6-6 相当: 完了セッションを記録し、条件を満たせば「静かな祝福」の
+            // 少し後(1.5秒)にレビュー依頼を出す。中断時はこの ZStack 自体が
+            // 描画されないので isAborted 分岐を別途見る必要はない。
+            .task { await handleReviewPromptIfNeeded() }
         }
     }
 
@@ -359,6 +368,19 @@ struct SessionFinishedContent: View {
             }
             celebrateBounce = true
         }
+    }
+
+    /// ワークアウト完了を ReviewPrompter に記録し、条件を満たしていれば
+    /// お祝い演出が着地するのを待ってから(1.5秒)レビュー依頼を出す。
+    /// 「割り込まない・懇願しない」という Apple のベストプラクティスに合わせ、
+    /// 演出の直後ではなく少し間を置く。
+    private func handleReviewPromptIfNeeded() async {
+        ReviewPrompter.recordFinishedSession()
+        guard ReviewPrompter.shouldPrompt() else { return }
+        try? await Task.sleep(for: .seconds(1.5))
+        guard !Task.isCancelled else { return }
+        requestReview()
+        ReviewPrompter.recordPrompted()
     }
 }
 
