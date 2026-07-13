@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-row",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-row-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.292,
+            "y": 0.738
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.6
+          },
+          "labelKey": "form.dumbbell-row.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.42,
+            "y": 0.37
+          },
+          "labelAnchor": {
+            "x": 0.104,
+            "y": 0.138
+          },
+          "labelKey": "form.dumbbell-row.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "support",
+          "position": {
+            "x": 0.842,
+            "y": 0.838
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.375
+          },
+          "labelKey": "form.dumbbell-row.annotation.support",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.25,
+            "y": 0.881
+          },
+          "labelAnchor": {
+            "x": 0.58,
+            "y": 0.94
+          },
+          "labelKey": "form.dumbbell-row.annotation.knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

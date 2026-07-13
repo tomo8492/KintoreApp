@@ -11085,6 +11085,74 @@
         }
       }
     },
+    "form.dumbbell-row.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep back flat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背中を平らに保つ"
+          }
+        }
+      }
+    },
+    "form.dumbbell-row.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Row to your hip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を腰へ引き上げる"
+          }
+        }
+      }
+    },
+    "form.dumbbell-row.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knee on the bench"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "片膝はベンチに固定"
+          }
+        }
+      }
+    },
+    "form.dumbbell-row.annotation.support" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace on bench"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支える腕はまっすぐ"
+          }
+        }
+      }
+    },
     "form.dumbbell-shoulder-press.annotation.bench" : {
       "extractionState" : "manual",
       "localizations" : {
