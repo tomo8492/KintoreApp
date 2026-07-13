@@ -99,3 +99,20 @@ extension LibraryDisplay {
     static func typeDisplayKey(_ t: ExerciseType) -> LocalizedStringKey { typeName(t) }
     static func mechanicsDisplayKey(_ m: MechanicsType) -> LocalizedStringKey { mechanicsName(m) }
 }
+
+// MARK: - Step illustrations (Phase 2-1 infra)
+// Exercise.stepImagesRaw は JSON 文字列配列("[]" がデフォルト、345 種目すべて未投入)。
+// StepsCardView がアセットカタログ照会前に使う純粋なデコードヘルパーをここに置く。
+// 破損 JSON でもクラッシュしないよう try? でフォールバックする(NG リスト: try! 禁止)。
+
+extension LibraryDisplay {
+    /// `exercise.stepImagesRaw` をデコードして画像名の配列を返す。
+    /// デコード失敗・空文字は空配列にフォールバックする。
+    static func stepImageNames(for exercise: Exercise) -> [String] {
+        guard let data = exercise.stepImagesRaw.data(using: .utf8),
+              let names = try? JSONDecoder().decode([String].self, from: data) else {
+            return []
+        }
+        return names
+    }
+}
