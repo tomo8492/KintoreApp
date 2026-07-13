@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-shoulder-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-shoulder-press-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.76,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.32
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.6,
+            "y": 0.32
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.neck",
+          "color": "info"
+        },
+        {
+          "id": "bench",
+          "position": {
+            "x": 0.7,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.65
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.bench",
+          "color": "neutral"
+        },
+        {
+          "id": "lowerback",
+          "position": {
+            "x": 0.62,
+            "y": 0.78
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.92
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.lowerback",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

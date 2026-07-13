@@ -1,0 +1,52 @@
+{
+  "slug": "dumbbell-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-curl-1",
+      "aspect": 1.456,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.47,
+            "y": 0.71
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.65
+          },
+          "labelKey": "form.dumbbell-curl.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.55,
+            "y": 0.38
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.3
+          },
+          "labelKey": "form.dumbbell-curl.annotation.shoulder",
+          "color": "info"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.39,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.3
+          },
+          "labelKey": "form.dumbbell-curl.annotation.hand",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

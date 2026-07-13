@@ -4064,6 +4064,278 @@
         }
       }
     },
+    "form.barbell-back-squat.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chest up, don't round your back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸を張り背中を丸めない"
+          }
+        }
+      }
+    },
+    "form.barbell-back-squat.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rest the bar firmly on your traps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーは僧帽筋の上にしっかり担ぐ"
+          }
+        }
+      }
+    },
+    "form.barbell-back-squat.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drive through your heels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとに重心を乗せて踏ん張る"
+          }
+        }
+      }
+    },
+    "form.barbell-back-squat.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees track in line with your toes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝がつま先と同じ方向を向くように"
+          }
+        }
+      }
+    },
+    "form.barbell-bench-press.annotation.chest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Squeeze your shoulder blades, chest up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩甲骨を寄せて胸を張る"
+          }
+        }
+      }
+    },
+    "form.barbell-bench-press.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop just short of locking out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を伸ばし切る手前で止める"
+          }
+        }
+      }
+    },
+    "form.barbell-bench-press.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grip slightly wider than shoulder width"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩幅よりやや広くバーを握る"
+          }
+        }
+      }
+    },
+    "form.barbell-bench-press.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep your hips on the bench, don't over-arch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お尻をベンチにつけたまま腰を反りすぎない"
+          }
+        }
+      }
+    },
+    "form.barbell-deadlift.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chest up, keep your back straight"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸を張って背中はまっすぐに保つ"
+          }
+        }
+      }
+    },
+    "form.barbell-deadlift.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep the bar over mid-foot"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーは足の中央の真上を通す"
+          }
+        }
+      }
+    },
+    "form.barbell-deadlift.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hinge at the hips, push them back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "股関節からお尻を引いて構える"
+          }
+        }
+      }
+    },
+    "form.barbell-deadlift.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't straighten your knees ahead of the bar"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝が先に伸びてバーが置き去りにならないように"
+          }
+        }
+      }
+    },
+    "form.barbell-row.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep your back flat, never rounded"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背中を丸めずまっすぐ保つ"
+          }
+        }
+      }
+    },
+    "form.barbell-row.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overhand grip slightly wider than shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩幅よりやや広い順手で握る"
+          }
+        }
+      }
+    },
+    "form.barbell-row.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hinge from the hips, no momentum"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わず股関節から曲げる"
+          }
+        }
+      }
+    },
+    "form.barbell-row.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep your shoulders down, don't shrug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめず下げる"
+          }
+        }
+      }
+    },
     "form.burpee.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10826,6 +11098,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
+          }
+        }
+      }
+    },
+    "form.dumbbell-curl.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin your elbow to your side"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘の位置を体側で固定する"
+          }
+        }
+      }
+    },
+    "form.dumbbell-curl.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No swinging — stay controlled on the way down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わず、下ろす時も力を抜かない"
+          }
+        }
+      }
+    },
+    "form.dumbbell-curl.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relax your shoulders, don't shrug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめず力を抜く"
+          }
+        }
+      }
+    },
+    "form.dumbbell-shoulder-press.annotation.bench" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set the bench nearly upright"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベンチをほぼ直立に設定する"
+          }
+        }
+      }
+    },
+    "form.dumbbell-shoulder-press.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't lock out your elbows"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を伸ばしきらない"
+          }
+        }
+      }
+    },
+    "form.dumbbell-shoulder-press.annotation.lowerback" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep your lower back against the pad"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を反らせずパッドに背中をつける"
+          }
+        }
+      }
+    },
+    "form.dumbbell-shoulder-press.annotation.neck" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't shrug your shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめない"
           }
         }
       }

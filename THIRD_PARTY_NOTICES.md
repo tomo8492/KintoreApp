@@ -39,11 +39,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 19 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 25 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
 | --- | --- | --- | --- |
+| `barbell-back-squat-1` | 13106591 | Airam Dato-on | https://www.pexels.com/photo/13106591/ |
+| `barbell-bench-press-1` | 3837757 | Andrea Piacquadio | https://www.pexels.com/photo/3837757/ |
+| `barbell-deadlift-1` | 1552103 | Leon Mart | https://www.pexels.com/photo/1552103/ |
+| `barbell-row-1` | 4793200 | Anete Lusina | https://www.pexels.com/photo/4793200/ |
+| `dumbbell-curl-1` | 3763115 | Andrea Piacquadio | https://www.pexels.com/photo/3763115/ |
+| `dumbbell-shoulder-press-1` | 7289370 | Alesia Kozik | https://www.pexels.com/photo/7289370/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720307 | Ketut Subiyanto | https://www.pexels.com/photo/4720307/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

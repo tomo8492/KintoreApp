@@ -1,0 +1,65 @@
+{
+  "slug": "barbell-deadlift",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "barbell-deadlift-1",
+      "aspect": 1.506,
+      "annotations": [
+        {
+          "id": "back",
+          "position": {
+            "x": 0.471,
+            "y": 0.395
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.barbell-deadlift.annotation.back",
+          "color": "primary"
+        },
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.517,
+            "y": 0.684
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.8
+          },
+          "labelKey": "form.barbell-deadlift.annotation.bar",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.4,
+            "y": 0.464
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.55
+          },
+          "labelKey": "form.barbell-deadlift.annotation.hip",
+          "color": "neutral"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.4,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.18,
+            "y": 0.9
+          },
+          "labelKey": "form.barbell-deadlift.annotation.knee",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
