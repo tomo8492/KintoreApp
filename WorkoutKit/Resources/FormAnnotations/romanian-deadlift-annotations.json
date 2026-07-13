@@ -1,0 +1,65 @@
+{
+  "slug": "romanian-deadlift",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "romanian-deadlift-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "back",
+          "position": {
+            "x": 0.58,
+            "y": 0.46
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.1
+          },
+          "labelKey": "form.romanian-deadlift.annotation.back",
+          "color": "primary"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.39,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.1
+          },
+          "labelKey": "form.romanian-deadlift.annotation.hip",
+          "color": "neutral"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.46,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.68
+          },
+          "labelKey": "form.romanian-deadlift.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.54,
+            "y": 0.66
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.86
+          },
+          "labelKey": "form.romanian-deadlift.annotation.bar",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

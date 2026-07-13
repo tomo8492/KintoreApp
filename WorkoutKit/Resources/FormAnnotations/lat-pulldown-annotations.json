@@ -1,0 +1,65 @@
+{
+  "slug": "lat-pulldown",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "lat-pulldown-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.72,
+            "y": 0.39
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.lat-pulldown.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.29,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.3
+          },
+          "labelKey": "form.lat-pulldown.annotation.elbow",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.5,
+            "y": 0.54
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.55
+          },
+          "labelKey": "form.lat-pulldown.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "thigh",
+          "position": {
+            "x": 0.24,
+            "y": 0.69
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.lat-pulldown.annotation.thigh",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

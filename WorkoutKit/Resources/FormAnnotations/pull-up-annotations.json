@@ -1,0 +1,52 @@
+{
+  "slug": "pull-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "pull-up-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.56,
+            "y": 0.28
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.pull-up.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.51,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.35
+          },
+          "labelKey": "form.pull-up.annotation.chest",
+          "color": "info"
+        },
+        {
+          "id": "swing",
+          "position": {
+            "x": 0.45,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.8
+          },
+          "labelKey": "form.pull-up.annotation.swing",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
