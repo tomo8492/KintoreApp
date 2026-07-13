@@ -26,6 +26,11 @@ struct AppDependency {
     /// F-02 詳細画面で使う「動作矢印 + アノテーション」JSON ローダー。
     /// Bundle 越しに lazy にロードしプロセス内でキャッシュする。
     var annotationLoader: ExerciseAnnotationLoader
+    /// v1.1 Watch quick-log(Phase 2-2): iPhone ↔ Apple Watch の WatchConnectivity ラッパー。
+    /// SessionStore に DI して finish() から「最近使った種目」を配信させ、
+    /// WorkoutKitApp 側で Watch → iPhone の受信ハンドラを配線する(§AppDependency.defaultValue
+    /// と同じ理由で、closure 配線は WorkoutKitApp 側の @MainActor context で行う)。
+    var watchSync: PhoneWatchSyncManager
 }
 
 // MARK: - SwiftUI Environment 拡張
@@ -46,12 +51,15 @@ private struct AppDependencyKey: EnvironmentKey {
             // v1.0: サブスク entitlement を RevenueCat 経由で復元するため
             // PurchaseManager.shared を Restore 実装として配線する。
             purchaseRestorer: PurchaseManager.shared,
-            annotationLoader: ExerciseAnnotationLoader()
+            annotationLoader: ExerciseAnnotationLoader(),
+            watchSync: PhoneWatchSyncManager()
         )
         // 注意: PurchaseManager → ProFeatureGate の bridge 配線(proGateBridge への
         //       クロージャ設定)はここで行わない。defaultValue は nonisolated 評価
         //       されるため、@MainActor の proGateBridge プロパティに書き込めない。
         //       配線は @main の WorkoutKitApp.init(@MainActor)側で実施する。
+        //       PhoneWatchSyncManager.activate() / onReceiveLoggedSets の配線も同じ理由で
+        //       WorkoutKitApp 側の `.task` で行う。
     }()
 }
 

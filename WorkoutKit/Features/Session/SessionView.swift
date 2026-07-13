@@ -194,7 +194,8 @@ struct SessionView: View {
                 store = try SessionStore(
                     modelContext: modelContext,
                     snapshot: snapshot,
-                    liveActivity: liveActivity
+                    liveActivity: liveActivity,
+                    watchSync: appDependency.watchSync
                 )
                 Logger.session.info("SessionView restored from snapshot")
                 return
@@ -218,7 +219,8 @@ struct SessionView: View {
                 output: output,
                 includesWarmup: includesWarmup,
                 includesCooldown: includesCooldown,
-                liveActivity: liveActivity
+                liveActivity: liveActivity,
+                watchSync: appDependency.watchSync
             )
         } catch let appError as AppError {
             initError = appError.errorDescription

@@ -98,13 +98,18 @@ targets:
     dependencies:
       # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
       - target: WorkoutKitLiveActivity
-      # v0.5 §-1.19: watchOS Smart Stack Widget。WatchKit Extension。
-      # iOS App の PlugIns に直接埋め込むと iOS 26+ がインストールを拒否するため
-      # (Apple のルール: watchOS extension は watchOS Companion app の中に embed する)
-      # ここでは依存だけ宣言してビルドは行うが、本体 .app には embed しない。
-      # 本物の watch 配布は別 Phase (watchOS companion app 追加) で対応する。
-      - target: WorkoutKitWatch
-        embed: false
+      # Phase 2-2 (Watch 単体記録): watchOS companion app (WorkoutKitWatchApp) を追加した。
+      # Apple のルール(watchOS extension は watchOS app の中に embed する)に従い、
+      # Smart Stack Widget (WorkoutKitWatch) は WorkoutKitWatchApp の PlugIns に embed し、
+      # iOS 本体は WorkoutKitWatchApp だけに依存する(以前の WorkoutKitWatch 直接依存 /
+      # embed: false は廃止)。
+      # ⚠ Mac 実機要検証: xcodegen はプラットフォーム watchOS の `application` ターゲットへの
+      # 依存を検出すると "Embed Watch Content" コピーフェーズ
+      # (dstPath: $(CONTENTS_FOLDER_PATH)/Watch, WatchKit2AppSubfolder) を自動生成する想定だが、
+      # xcodegen 2.45.3 での実際の Build Phases 出力は `xcodegen generate` 後に
+      # Xcode で目視確認すること。想定と異なる場合は明示的なコピーフェーズを追加する。
+      - target: WorkoutKitWatchApp
+        embed: true
       # v0.5 §-1.1: RevenueCat(課金 SDK)。Purchases.shared は PurchaseManager 越しに利用する。
       - package: RevenueCat
         product: RevenueCat
@@ -271,6 +276,62 @@ targets:
       properties:
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
+  # ------------------------------------------------------------------
+  # WorkoutKitWatchApp (watchOS 単体アプリ, Phase 2-2 Watch 単体記録)
+  # WCSession (WatchSyncPayload.swift 契約) 経由で iPhone と
+  #   - iPhone → Watch: 最近使った種目リスト(updateApplicationContext)
+  #   - Watch → iPhone: クイック記録したセット(transferUserInfo)
+  # を同期するスタンドアロン watchOS アプリ本体。
+  # Smart Stack Widget (WorkoutKitWatch) を PlugIns として同梱する。
+  # ------------------------------------------------------------------
+  WorkoutKitWatchApp:
+    type: application
+    platform: watchOS
+    deploymentTarget: "11.0"
+    sources:
+      - path: WorkoutKitWatchApp
+        excludes:
+          - "**/.gitkeep"
+          - "WorkoutKitWatchApp.entitlements"
+      # 契約 v1.1: iPhone と watchOS の両ターゲットにコンパイルされる唯一の
+      # 共有定義(WatchRecentExercise / WatchLoggedSet / WatchSyncKey / WatchSyncCoder)。
+      - path: WorkoutKit/Shared/WatchSyncPayload.swift
+      # Watch アプリ単体の Bundle なので、アプリ本体の String Catalog を
+      # リソースとして個別に同梱する(NGリスト規約: 文字列は xcstrings 経由)。
+      - path: WorkoutKit/Resources/Localizable.xcstrings
+        buildPhase: resources
+        type: file
+    settings:
+      base:
+        PRODUCT_NAME: WorkoutKitWatchApp
+        # Shared.xcconfig が PRODUCT_MODULE_NAME=WorkoutKit を強制するため、
+        # WorkoutKitWatch と同様に明示的に上書きする(swiftmodule 衝突防止)。
+        PRODUCT_MODULE_NAME: WorkoutKitWatchApp
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.watchkitapp
+        # Shared.xcconfig の iphoneos 前提設定を watchOS 向けに上書き(WorkoutKitWatch と同様)。
+        SDKROOT: watchos
+        SUPPORTED_PLATFORMS: "watchsimulator watchos"
+        TARGETED_DEVICE_FAMILY: "4"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: ""
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: ""
+        # App Group 共有 entitlements(App 本体 / WorkoutKitWatch と同一)。
+        CODE_SIGN_ENTITLEMENTS: WorkoutKitWatchApp/WorkoutKitWatchApp.entitlements
+        GENERATE_INFOPLIST_FILE: YES
+        # 単体 watchOS アプリであることを示す必須キー。
+        INFOPLIST_KEY_WKApplication: YES
+        # companion-paired(iPhone アプリ必須、Watch 単体インストール不可)。
+        # WKCompanionAppBundleIdentifier は iOS 本体からの embed 依存で解決されるため
+        # 明示指定は不要(Mac 実機での companion 紐付け表示は要確認)。
+        INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp: NO
+        INFOPLIST_KEY_CFBundleDisplayName: WorkoutKit
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: "0.1.0"
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_STRICT_CONCURRENCY: complete
+    dependencies:
+      # Smart Stack Widget を PlugIns に同梱(app-extension のデフォルト embed 挙動に任せる)。
+      - target: WorkoutKitWatch
 
   # ------------------------------------------------------------------
   # WorkoutKitUITests (XCUITest プレースホルダ、現状は空。Phase P3 以降で実装)

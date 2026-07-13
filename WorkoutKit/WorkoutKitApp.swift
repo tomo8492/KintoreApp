@@ -27,7 +27,8 @@ struct WorkoutKitApp: App {
             restTimer: RestTimerManager.shared,
             purchaseManager: PurchaseManager.shared,
             purchaseRestorer: PurchaseManager.shared,
-            annotationLoader: ExerciseAnnotationLoader()
+            annotationLoader: ExerciseAnnotationLoader(),
+            watchSync: PhoneWatchSyncManager()
         )
     }()
 
@@ -93,6 +94,19 @@ struct WorkoutKitApp: App {
                         }
                     }
                 }
+                .task {
+                    // v1.1 Watch quick-log(Phase 2-2): WCSession を activate し、
+                    // Watch → iPhone の受信ハンドラを配線する。
+                    // `self`(WorkoutKitApp は struct)を escaping closure に持ち込みたくないため、
+                    // 取り込みロジックは状態を持たない WatchQuickLogIngestor.ingest(_:into:) に
+                    // 切り出し、ここでは ModelContainer だけをキャプチャする。
+                    let sync = dependency.watchSync
+                    let container = modelContainer
+                    sync.onReceiveLoggedSets = { sets in
+                        WatchQuickLogIngestor.ingest(sets, into: container)
+                    }
+                    sync.activate()
+                }
         }
         .modelContainer(modelContainer)
     }
@@ -138,5 +152,118 @@ struct WorkoutKitApp: App {
         } catch {
             Logger.app.error("template seed failed: \(error.localizedDescription, privacy: .public)")
         }
+    }
+}
+
+// MARK: - WatchQuickLogIngestor (v1.1 Watch quick-log, Phase 2-2)
+//
+// Watch → iPhone: `PhoneWatchSyncManager.onReceiveLoggedSets` から届いた
+// `WatchLoggedSet` 群を SwiftData の WorkoutSession / ExerciseSet に取り込む。
+// ManualEntryStore.save(modelContext:exerciseLookup:) の保存パターン(§ManualEntryStore)を
+// 踏襲し、新しいスキーマフィールドは追加しない。
+//
+// 冪等化:
+//   `WatchLoggedSet.id` を UserDefaults に「直近取り込み済み ID」として最大 200 件保持し、
+//   再送・重複配信(`transferUserInfo` の到達保証キュー特性)を弾く。
+//
+// セッションの特定:
+//   WorkoutSession にはスキーマ上「Watch 由来」を示すフラグが無いため、
+//   「今日作成した Watch クイック記録セッションの id」を UserDefaults に持たせて
+//   同日中の複数回受信を同一セッションに追記する(日付が変われば新規作成)。
+@MainActor
+private enum WatchQuickLogIngestor {
+
+    private static let maxIngestedIDs = 200
+    private static let ingestedIDsKey = "watch.quickLog.ingestedSetIDs.v1"
+    private static let todaySessionIDKey = "watch.quickLog.todaySessionID.v1"
+    private static let todaySessionDateKey = "watch.quickLog.todaySessionDate.v1"
+
+    static func ingest(_ sets: [WatchLoggedSet], into container: ModelContainer) {
+        guard !sets.isEmpty else { return }
+        let context = container.mainContext
+
+        var ingestedIDs = loadIngestedIDs()
+        let ingestedSet = Set(ingestedIDs)
+        let newSets = sets.filter { !ingestedSet.contains($0.id) }
+        guard !newSets.isEmpty else {
+            Logger.app.info("watch quick-log ingest: no new sets (received=\(sets.count))")
+            return
+        }
+
+        guard let session = findOrCreateTodaySession(in: context) else {
+            Logger.app.error("watch quick-log ingest: could not resolve today's session")
+            return
+        }
+
+        var order = session.sets.count
+        var insertedCount = 0
+        for set in newSets.sorted(by: { $0.loggedAt < $1.loggedAt }) {
+            let slug = set.slug
+            let descriptor = FetchDescriptor<Exercise>(predicate: #Predicate { $0.slug == slug })
+            guard let exercise = (try? context.fetch(descriptor))?.first else {
+                Logger.app.warning("watch quick-log ingest: unknown exercise slug=\(slug, privacy: .public)")
+                continue
+            }
+            let entity = ExerciseSet(
+                order: order,
+                sectionRaw: SessionSection.main.rawValue,
+                reps: set.reps,
+                weightKg: set.weightKg,
+                restSeconds: 60,
+                completedAt: set.loggedAt,
+                exercise: exercise,
+                session: session
+            )
+            context.insert(entity)
+            order += 1
+            insertedCount += 1
+            ingestedIDs.append(set.id)
+        }
+
+        guard insertedCount > 0 else { return }
+
+        do {
+            try context.save()
+            saveIngestedIDs(ingestedIDs)
+            Logger.app.info("watch quick-log ingest: inserted \(insertedCount) sets into session=\(session.id, privacy: .public)")
+        } catch {
+            Logger.app.error("watch quick-log ingest save failed: \(error.localizedDescription, privacy: .public)")
+        }
+    }
+
+    /// 「今日の Watch クイック記録セッション」を探すか、無ければ ManualEntry と同じ
+    /// 意味論(goalRaw=hypertrophy / isManualEntry=true)で新規作成する。
+    private static func findOrCreateTodaySession(in context: ModelContext) -> WorkoutSession? {
+        let calendar = Calendar.autoupdatingCurrent
+        let now = Date.now
+        if let idString = UserDefaults.standard.string(forKey: todaySessionIDKey),
+           let id = UUID(uuidString: idString),
+           let storedDate = UserDefaults.standard.object(forKey: todaySessionDateKey) as? Date,
+           calendar.isDate(storedDate, inSameDayAs: now) {
+            let descriptor = FetchDescriptor<WorkoutSession>(predicate: #Predicate { $0.id == id })
+            if let existing = (try? context.fetch(descriptor))?.first {
+                return existing
+            }
+        }
+
+        let session = WorkoutSession(
+            goalRaw: Goal.hypertrophy.rawValue,
+            includesWarmup: false,
+            includesCooldown: false,
+            isManualEntry: true
+        )
+        context.insert(session)
+        UserDefaults.standard.set(session.id.uuidString, forKey: todaySessionIDKey)
+        UserDefaults.standard.set(now, forKey: todaySessionDateKey)
+        return session
+    }
+
+    private static func loadIngestedIDs() -> [UUID] {
+        (UserDefaults.standard.stringArray(forKey: ingestedIDsKey) ?? []).compactMap(UUID.init(uuidString:))
+    }
+
+    private static func saveIngestedIDs(_ ids: [UUID]) {
+        let capped = ids.suffix(maxIngestedIDs)
+        UserDefaults.standard.set(capped.map(\.uuidString), forKey: ingestedIDsKey)
     }
 }

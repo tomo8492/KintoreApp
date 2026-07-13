@@ -154,6 +154,36 @@ extension SessionStore {
         Task { await stopRestTimerLiveActivity() }
         // v1.0 §-1.19: watchOS Widget 用に「完了」+今日のセット数を反映。
         writeWatchSummary(isCompletedToday: true)
+        // v1.1 Watch quick-log(Phase 2-2): クイック記録の候補用に「最近使った種目」を配信。
+        sendRecentExercisesToWatch()
+    }
+
+    // MARK: - Watch quick-log bridge (v1.1 Phase 2-2)
+
+    /// このセッションで完了したセットから、種目重複なしで最大 8 件の
+    /// `WatchRecentExercise` を作って Watch に送る。Watch 側はこれをクイック記録の
+    /// 候補リスト・初期値(前回重量/回数)に使う。
+    /// `watchSync` が nil(テスト / 未 DI)の場合は何もしない。
+    private func sendRecentExercisesToWatch() {
+        guard let watchSync else { return }
+        var seenSlugs: Set<String> = []
+        var recents: [WatchRecentExercise] = []
+        // 新しく完了したセットを優先したいので逆順(直近優先)に走査する。
+        for set in completedSets.reversed() {
+            guard let exercise = set.exercise, seenSlugs.insert(exercise.slug).inserted else { continue }
+            recents.append(
+                WatchRecentExercise(
+                    slug: exercise.slug,
+                    nameJa: exercise.nameJa,
+                    nameEn: exercise.nameEn,
+                    lastWeightKg: set.weightKg > 0 ? set.weightKg : nil,
+                    lastReps: set.reps > 0 ? set.reps : nil
+                )
+            )
+            if recents.count >= 8 { break }
+        }
+        guard !recents.isEmpty else { return }
+        watchSync.sendRecentExercises(recents)
     }
 
     // MARK: - Watch Widget bridge (v1.0 §-1.19)

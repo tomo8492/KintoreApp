@@ -65,6 +65,9 @@ final class SessionStore {
     let intervalTimer: IntervalTimer
     /// C3: Live Activity への通知。nil ならテスト or 機能無効。
     let liveActivity: LiveActivityClient?
+    /// v1.1 Watch quick-log(Phase 2-2): finish() から「最近使った種目」を
+    /// Watch に配信するための DI 差し込み口。nil ならテスト or 機能無効。
+    let watchSync: PhoneWatchSyncManager?
     var intervalTask: Task<Void, Never>?
 
     // MARK: - Init (新規セッション)
@@ -76,11 +79,13 @@ final class SessionStore {
         includesWarmup: Bool,
         includesCooldown: Bool,
         intervalTimer: IntervalTimer = IntervalTimer(),
-        liveActivity: LiveActivityClient? = nil
+        liveActivity: LiveActivityClient? = nil,
+        watchSync: PhoneWatchSyncManager? = nil
     ) throws {
         self.modelContext = modelContext
         self.intervalTimer = intervalTimer
         self.liveActivity = liveActivity
+        self.watchSync = watchSync
         self.goal = goal
         self.plan = .from(output: output)
 
@@ -104,11 +109,13 @@ final class SessionStore {
         modelContext: ModelContext,
         snapshot: SessionRestoreSnapshot,
         intervalTimer: IntervalTimer = IntervalTimer(),
-        liveActivity: LiveActivityClient? = nil
+        liveActivity: LiveActivityClient? = nil,
+        watchSync: PhoneWatchSyncManager? = nil
     ) throws {
         self.modelContext = modelContext
         self.intervalTimer = intervalTimer
         self.liveActivity = liveActivity
+        self.watchSync = watchSync
         self.sessionId = snapshot.sessionId
         self.plan = snapshot.plan
         self.currentItemIndex = snapshot.currentItemIndex
