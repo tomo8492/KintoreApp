@@ -28,7 +28,7 @@
           },
           "labelAnchor": {
             "x": 0.9,
-            "y": 0.22
+            "y": 0.35
           },
           "labelKey": "form.barbell-row.annotation.shoulder",
           "color": "info"
@@ -41,7 +41,7 @@
           },
           "labelAnchor": {
             "x": 0.9,
-            "y": 0.4
+            "y": 0.5
           },
           "labelKey": "form.barbell-row.annotation.hip",
           "color": "neutral"
@@ -54,7 +54,7 @@
           },
           "labelAnchor": {
             "x": 0.92,
-            "y": 0.8
+            "y": 0.88
           },
           "labelKey": "form.barbell-row.annotation.grip",
           "color": "warning"

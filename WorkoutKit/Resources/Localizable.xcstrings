@@ -3390,13 +3390,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep a neutral spine"
+            "value" : "Keep back straight"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
+            "value" : "背中はまっすぐ保つ"
           }
         }
       }
@@ -4064,23 +4064,6 @@
         }
       }
     },
-    "form.barbell-back-squat.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, don't round your back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張り背中を丸めない"
-          }
-        }
-      }
-    },
     "form.barbell-back-squat.annotation.bar" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4115,36 +4098,19 @@
         }
       }
     },
-    "form.barbell-back-squat.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track in line with your toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝がつま先と同じ方向を向くように"
-          }
-        }
-      }
-    },
     "form.barbell-bench-press.annotation.chest" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Squeeze your shoulder blades, chest up"
+            "value" : "Retract shoulders"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肩甲骨を寄せて胸を張る"
+            "value" : "肩甲骨を寄せる"
           }
         }
       }
@@ -4155,13 +4121,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stop just short of locking out"
+            "value" : "Don't lock elbows"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘を伸ばし切る手前で止める"
+            "value" : "肘は伸ばし切らない"
           }
         }
       }
@@ -4172,13 +4138,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grip slightly wider than shoulder width"
+            "value" : "Grip a bit wider"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肩幅よりやや広くバーを握る"
+            "value" : "やや広めに握る"
           }
         }
       }
@@ -4189,30 +4155,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your hips on the bench, don't over-arch"
+            "value" : "Don't over-arch"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "お尻をベンチにつけたまま腰を反りすぎない"
-          }
-        }
-      }
-    },
-    "form.barbell-deadlift.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, keep your back straight"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って背中はまっすぐに保つ"
+            "value" : "腰を反りすぎない"
           }
         }
       }
@@ -4223,13 +4172,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep the bar over mid-foot"
+            "value" : "Bar over mid-foot"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "バーは足の中央の真上を通す"
+            "value" : "バーは足の中央の真上"
           }
         }
       }
@@ -4240,13 +4189,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hinge at the hips, push them back"
+            "value" : "Hinge at the hips"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "股関節からお尻を引いて構える"
+            "value" : "お尻を引いて構える"
           }
         }
       }
@@ -4257,13 +4206,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Don't straighten your knees ahead of the bar"
+            "value" : "Don't lock knees before the bar"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "膝が先に伸びてバーが置き去りにならないように"
+            "value" : "バーより先に膝を伸ばさない"
           }
         }
       }
@@ -4274,13 +4223,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your back flat, never rounded"
+            "value" : "Keep back flat"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "背中を丸めずまっすぐ保つ"
+            "value" : "背中はまっすぐ"
           }
         }
       }
@@ -4291,13 +4240,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Overhand grip slightly wider than shoulders"
+            "value" : "Grip slightly wide"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肩幅よりやや広い順手で握る"
+            "value" : "順手でやや広めに握る"
           }
         }
       }
@@ -4308,13 +4257,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hinge from the hips, no momentum"
+            "value" : "Hinge at the hips"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "反動を使わず股関節から曲げる"
+            "value" : "股関節から曲げる"
           }
         }
       }
@@ -4325,13 +4274,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your shoulders down, don't shrug"
+            "value" : "Don't shrug"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肩をすくめず下げる"
+            "value" : "肩をすくめない"
           }
         }
       }
@@ -6552,13 +6501,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Pin your elbow"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘は体側に固定"
           }
         }
       }
@@ -11102,23 +11051,6 @@
         }
       }
     },
-    "form.dumbbell-curl.annotation.elbow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pin your elbow to your side"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肘の位置を体側で固定する"
-          }
-        }
-      }
-    },
     "form.dumbbell-curl.annotation.hand" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11142,13 +11074,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Relax your shoulders, don't shrug"
+            "value" : "Relax shoulders"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肩をすくめず力を抜く"
+            "value" : "肩の力を抜く"
           }
         }
       }
@@ -11159,13 +11091,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Set the bench nearly upright"
+            "value" : "Set bench upright"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ベンチをほぼ直立に設定する"
+            "value" : "ベンチはほぼ直立に"
           }
         }
       }
@@ -11176,7 +11108,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Don't lock out your elbows"
+            "value" : "Don't lock elbows"
           }
         },
         "ja" : {
@@ -11193,13 +11125,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your lower back against the pad"
+            "value" : "Back on the pad"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "腰を反らせずパッドに背中をつける"
+            "value" : "背中をパッドにつける"
           }
         }
       }

@@ -283,11 +283,22 @@ private struct AnnotationLeaderLine: View {
 }
 
 /// 吹き出し本体(角丸 + 影 + 色付き左ボーダー)。
+///
+/// 見切れ防止: アンカーはカードの「希望中心」でしかなく、カードの実サイズを
+/// 計測した上で矩形全体が写真内(margin 4pt)に収まるよう中心を自動シフトする。
+/// 端寄りアンカー(x=0.9 等)でもカード半分がはみ出さない。
+/// tools/check_form_annotations.py が同じロジックで重なり・見切れを静的検査する
+/// (レイアウト定数を変えるときは両方を更新すること)。
 private struct AnnotationCard: View {
     let text: LocalizedStringKey
     let anchor: CGPoint
     let size: CGSize
     let color: Color
+
+    /// 計測したカードの実サイズ。初回レイアウト後に確定する。
+    @State private var cardSize: CGSize = .zero
+
+    private static let margin: CGFloat = 4
 
     var body: some View {
         Text(text)
@@ -307,10 +318,26 @@ private struct AnnotationCard: View {
             // 横幅の上限を写真幅の 45% に縮め、長い文言は折り返す。
             .frame(maxWidth: size.width * 0.45, alignment: .leading)
             .fixedSize(horizontal: false, vertical: true)
-            .position(
-                x: clamp(anchor.x * size.width, lower: 4, upper: size.width - 4),
-                y: clamp(anchor.y * size.height, lower: 4, upper: size.height - 4)
-            )
+            .onGeometryChange(for: CGSize.self) { proxy in
+                proxy.size
+            } action: { newSize in
+                cardSize = newSize
+            }
+            .position(clampedCenter())
+    }
+
+    /// カード矩形が写真内に完全に収まるよう中心座標をクランプする。
+    /// サイズ計測前(cardSize == .zero)は従来どおり 4pt クランプで近似。
+    private func clampedCenter() -> CGPoint {
+        let halfW = max(cardSize.width / 2, 0) + Self.margin
+        let halfH = max(cardSize.height / 2, 0) + Self.margin
+        let x = clamp(anchor.x * size.width,
+                      lower: min(halfW, size.width / 2),
+                      upper: max(size.width - halfW, size.width / 2))
+        let y = clamp(anchor.y * size.height,
+                      lower: min(halfH, size.height / 2),
+                      upper: max(size.height - halfH, size.height / 2))
+        return CGPoint(x: x, y: y)
     }
 
     private func clamp(_ value: CGFloat, lower: CGFloat, upper: CGFloat) -> CGFloat {

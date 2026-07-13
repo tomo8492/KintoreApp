@@ -40,8 +40,8 @@
             "y": 0.464
           },
           "labelAnchor": {
-            "x": 0.13,
-            "y": 0.55
+            "x": 0.1,
+            "y": 0.3
           },
           "labelKey": "form.barbell-deadlift.annotation.hip",
           "color": "neutral"

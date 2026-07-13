@@ -14,8 +14,8 @@
             "y": 0.194
           },
           "labelAnchor": {
-            "x": 0.35,
-            "y": 0.09
+            "x": 0.12,
+            "y": 0.4
           },
           "labelKey": "form.barbell-bench-press.annotation.grip",
           "color": "primary"
@@ -40,8 +40,8 @@
             "y": 0.35
           },
           "labelAnchor": {
-            "x": 0.15,
-            "y": 0.15
+            "x": 0.13,
+            "y": 0.18
           },
           "labelKey": "form.barbell-bench-press.annotation.chest",
           "color": "neutral"

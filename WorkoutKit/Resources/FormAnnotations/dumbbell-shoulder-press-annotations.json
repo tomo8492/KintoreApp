@@ -15,7 +15,7 @@
           },
           "labelAnchor": {
             "x": 0.92,
-            "y": 0.32
+            "y": 0.45
           },
           "labelKey": "form.dumbbell-shoulder-press.annotation.elbow",
           "color": "primary"
@@ -40,8 +40,8 @@
             "y": 0.72
           },
           "labelAnchor": {
-            "x": 0.92,
-            "y": 0.65
+            "x": 0.8,
+            "y": 0.92
           },
           "labelKey": "form.dumbbell-shoulder-press.annotation.bench",
           "color": "neutral"
@@ -53,8 +53,8 @@
             "y": 0.78
           },
           "labelAnchor": {
-            "x": 0.9,
-            "y": 0.92
+            "x": 0.12,
+            "y": 0.9
           },
           "labelKey": "form.dumbbell-shoulder-press.annotation.lowerback",
           "color": "warning"
