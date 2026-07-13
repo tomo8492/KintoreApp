@@ -20,6 +20,7 @@ struct ExerciseDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 header
+                annotatedFormSection
                 targetMusclesSection
                 if !descriptionHTML.isEmpty {
                     descriptionSection
@@ -72,6 +73,23 @@ struct ExerciseDetailView: View {
                 Text(introduction)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    // MARK: - Annotated form photo (real-photo cue overlay)
+
+    /// 実写写真ベースのフォームキュー(復元機能)。対応 JSON
+    /// (`Resources/FormAnnotations/<slug>-annotations.json`)が無い種目では
+    /// `AnnotatedFormView` が `nil` を返すため、セクションごと非表示になる
+    /// (見た目を崩さないフェイルセーフ)。
+    @ViewBuilder
+    private var annotatedFormSection: some View {
+        if let formView = AnnotatedFormView(slug: exercise.slug) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("library.detail.form-cues")
+                    .font(.headline)
+                formView
             }
         }
     }
