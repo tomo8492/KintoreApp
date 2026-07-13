@@ -1,35 +1,65 @@
 {
   "slug": "air-squat",
-  "assetName": "air-squat-1",
-  "aspect": 0.667,
-  "annotations": [
+  "frames": [
     {
-      "id": "back",
-      "position": { "x": 0.50, "y": 0.20 },
-      "labelAnchor": { "x": 0.22, "y": 0.08 },
-      "labelKey": "form.air-squat.annotation.back",
-      "color": "info"
-    },
-    {
-      "id": "hip",
-      "position": { "x": 0.45, "y": 0.42 },
-      "labelAnchor": { "x": 0.20, "y": 0.40 },
-      "labelKey": "form.air-squat.annotation.hip",
-      "color": "primary"
-    },
-    {
-      "id": "knee",
-      "position": { "x": 0.62, "y": 0.55 },
-      "labelAnchor": { "x": 0.78, "y": 0.10 },
-      "labelKey": "form.air-squat.annotation.knee",
-      "color": "warning"
-    },
-    {
-      "id": "heel",
-      "position": { "x": 0.32, "y": 0.78 },
-      "labelAnchor": { "x": 0.78, "y": 0.92 },
-      "labelKey": "form.air-squat.annotation.heel",
-      "color": "neutral"
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "air-squat-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "back",
+          "position": {
+            "x": 0.5,
+            "y": 0.2
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.3
+          },
+          "labelKey": "form.air-squat.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.84,
+            "y": 0.37
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.55
+          },
+          "labelKey": "form.air-squat.annotation.hip",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.75,
+            "y": 0.47
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.6
+          },
+          "labelKey": "form.air-squat.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.8,
+            "y": 0.82
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.95
+          },
+          "labelKey": "form.air-squat.annotation.heel",
+          "color": "neutral"
+        }
+      ]
     }
   ]
 }

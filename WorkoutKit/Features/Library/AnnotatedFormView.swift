@@ -62,14 +62,71 @@ enum FormPhotoAnnotationColor: String, Codable, CaseIterable {
     }
 }
 
-/// `<slug>-annotations.json` のルート。
-struct FormAnnotationSet: Codable, Equatable {
-    let slug: String
+/// 1 枚の写真(=1 フェーズ)を表すフレーム。
+/// 例: スクワットの「スタート(立位)」「ボトム(しゃがみきり)」をそれぞれ 1 フレームとして持つ。
+struct FormAnnotationFrame: Codable, Identifiable, Equatable {
+    /// フレーム ID(slug 内ユニーク)。
+    let id: String
+    /// フェーズ名の Localizable キー(例: `form.phase.start` / `form.phase.bottom`)。
+    let phaseLabelKey: String
     /// 紐付ける写真の Asset 名(`ExercisePhotos/<assetName>`)。
     let assetName: String
     /// 写真のアスペクト比(width / height)。レイアウト計算に使う。
     let aspect: Double
     let annotations: [FormAnnotation]
+
+    enum CodingKeys: String, CodingKey {
+        case id, phaseLabelKey, assetName, aspect, annotations
+    }
+}
+
+/// `<slug>-annotations.json` のルート。
+/// v1(レガシー)は `assetName` / `aspect` / `annotations` をルート直下に持つ単一フレーム形式。
+/// v2 は `frames` 配列で複数フェーズ(スタート/ボトム等)を保持する。
+/// デコード時にレガシー形式を検出したら `frames` 1 件(`phaseLabelKey = "form.phase.start"`)に
+/// 変換して読み込むため、呼び出し側は常に `frames` だけを見ればよい。
+struct FormAnnotationSet: Equatable {
+    let slug: String
+    let frames: [FormAnnotationFrame]
+}
+
+extension FormAnnotationSet: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case slug, frames
+        // レガシー(v1)フィールド。
+        case assetName, aspect, annotations
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let slug = try container.decode(String.self, forKey: .slug)
+
+        if let frames = try container.decodeIfPresent([FormAnnotationFrame].self, forKey: .frames) {
+            self.slug = slug
+            self.frames = frames
+        } else {
+            // レガシー形式: ルート直下の assetName/aspect/annotations を単一フレームへ移送。
+            let assetName = try container.decode(String.self, forKey: .assetName)
+            let aspect = try container.decode(Double.self, forKey: .aspect)
+            let annotations = try container.decode([FormAnnotation].self, forKey: .annotations)
+            self.slug = slug
+            self.frames = [
+                FormAnnotationFrame(
+                    id: "\(slug)-legacy",
+                    phaseLabelKey: "form.phase.start",
+                    assetName: assetName,
+                    aspect: aspect,
+                    annotations: annotations
+                )
+            ]
+        }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(slug, forKey: .slug)
+        try container.encode(frames, forKey: .frames)
+    }
 }
 
 // MARK: - Loader
@@ -96,61 +153,91 @@ enum FormAnnotationLoader {
 
 /// 写真 + 吹き出しアノテーションのコンテナ。
 /// `slug` から JSON を読み、見つからなければ何も描かない(=呼び出し側で if-let)。
+/// `frames` が複数ある場合はセグメント付きピッカーでフェーズ(スタート/ボトム等)を切り替えられる。
 struct AnnotatedFormView: View {
     let set: FormAnnotationSet
 
-    /// `slug` から初期化。対応 JSON が無い場合は nil を返すフェイルセーフ。
+    @State private var selectedFrameID: String
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// `slug` から初期化。対応 JSON が無い、またはフレームが 0 件の場合は nil を返すフェイルセーフ。
     init?(slug: String, bundle: Bundle = .main) {
-        guard let s = FormAnnotationLoader.load(slug: slug, bundle: bundle) else { return nil }
+        guard let s = FormAnnotationLoader.load(slug: slug, bundle: bundle),
+              let firstFrame = s.frames.first else { return nil }
         self.set = s
+        _selectedFrameID = State(initialValue: firstFrame.id)
     }
 
-    init(set: FormAnnotationSet) {
+    init?(set: FormAnnotationSet) {
+        guard let firstFrame = set.frames.first else { return nil }
         self.set = set
+        _selectedFrameID = State(initialValue: firstFrame.id)
+    }
+
+    /// 現在選択中のフレーム。見つからない場合は先頭フレームにフォールバック。
+    private var currentFrame: FormAnnotationFrame {
+        set.frames.first { $0.id == selectedFrameID } ?? set.frames[0]
     }
 
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .topLeading) {
-                Image("ExercisePhotos/\(set.assetName)", bundle: .main)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: proxy.size.height)
-                    .clipped()
-
-                // 引き出し線 → ドット → ラベル を annotation ごとに描画。
-                // 線が円の上に乗らないよう、線→ドット→ラベル の順で重ねる。
-                ForEach(set.annotations) { ann in
-                    AnnotationLeaderLine(
-                        from: ann.position.cgPoint,
-                        to: ann.labelAnchor.cgPoint,
-                        size: proxy.size,
-                        color: ann.color.tint
-                    )
+        VStack(spacing: 8) {
+            if set.frames.count > 1 {
+                Picker(selection: $selectedFrameID) {
+                    ForEach(set.frames) { frame in
+                        Text(LocalizedStringKey(frame.phaseLabelKey)).tag(frame.id)
+                    }
+                } label: {
+                    EmptyView()
                 }
-                ForEach(set.annotations) { ann in
-                    AnnotationDot(
-                        position: ann.position.cgPoint,
-                        size: proxy.size,
-                        color: ann.color.tint
-                    )
-                }
-                ForEach(set.annotations) { ann in
-                    AnnotationCard(
-                        text: LocalizedStringKey(ann.labelKey),
-                        anchor: ann.labelAnchor.cgPoint,
-                        size: proxy.size,
-                        color: ann.color.tint
-                    )
-                    .accessibilityLabel(Text(LocalizedStringKey(ann.labelKey)))
-                }
+                .pickerStyle(.segmented)
             }
+
+            GeometryReader { proxy in
+                ZStack(alignment: .topLeading) {
+                    Image("ExercisePhotos/\(currentFrame.assetName)", bundle: .main)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: proxy.size.width, height: proxy.size.height)
+                        .clipped()
+                        .id(currentFrame.id)
+                        .transition(.opacity)
+
+                    // 引き出し線 → ドット → ラベル を annotation ごとに描画。
+                    // 線が円の上に乗らないよう、線→ドット→ラベル の順で重ねる。
+                    ForEach(currentFrame.annotations) { ann in
+                        AnnotationLeaderLine(
+                            from: ann.position.cgPoint,
+                            to: ann.labelAnchor.cgPoint,
+                            size: proxy.size,
+                            color: ann.color.tint
+                        )
+                    }
+                    ForEach(currentFrame.annotations) { ann in
+                        AnnotationDot(
+                            position: ann.position.cgPoint,
+                            size: proxy.size,
+                            color: ann.color.tint
+                        )
+                    }
+                    ForEach(currentFrame.annotations) { ann in
+                        AnnotationCard(
+                            text: LocalizedStringKey(ann.labelKey),
+                            anchor: ann.labelAnchor.cgPoint,
+                            size: proxy.size,
+                            color: ann.color.tint
+                        )
+                        .accessibilityLabel(Text(LocalizedStringKey(ann.labelKey)))
+                    }
+                }
+                // reduce motion がオンの場合は即切り替え、オフならクロスフェード。
+                .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: selectedFrameID)
+            }
+            .aspectRatio(currentFrame.aspect, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            // 人体図(AnnotatedBodyDiagramView)と同格の大型イラストカードなので
+            // DesignTokens の "大型カード" 定義に合わせ AppRadius.hero を使う。
+            .clipShape(RoundedRectangle(cornerRadius: AppRadius.hero, style: .continuous))
         }
-        .aspectRatio(set.aspect, contentMode: .fit)
-        .frame(maxWidth: .infinity)
-        // 人体図(AnnotatedBodyDiagramView)と同格の大型イラストカードなので
-        // DesignTokens の "大型カード" 定義に合わせ AppRadius.hero を使う。
-        .clipShape(RoundedRectangle(cornerRadius: AppRadius.hero, style: .continuous))
         .accessibilityElement(children: .contain)
     }
 }
@@ -233,11 +320,20 @@ private struct AnnotationCard: View {
 
 #if DEBUG
 #Preview("Plank annotations") {
-    if let set = FormAnnotationLoader.load(slug: "plank") {
-        AnnotatedFormView(set: set)
+    if let set = FormAnnotationLoader.load(slug: "plank"), let view = AnnotatedFormView(set: set) {
+        view
             .padding()
     } else {
         Text("plank-annotations.json not bundled in preview")
+    }
+}
+
+#Preview("Reverse lunge (2 frames)") {
+    if let set = FormAnnotationLoader.load(slug: "reverse-lunge"), let view = AnnotatedFormView(set: set) {
+        view
+            .padding()
+    } else {
+        Text("reverse-lunge-annotations.json not bundled in preview")
     }
 }
 #endif

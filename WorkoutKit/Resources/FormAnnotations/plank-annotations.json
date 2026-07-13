@@ -1,35 +1,41 @@
 {
   "slug": "plank",
-  "assetName": "plank-1",
-  "aspect": 1.5,
-  "annotations": [
+  "frames": [
     {
-      "id": "neck",
-      "position": { "x": 0.78, "y": 0.46 },
-      "labelAnchor": { "x": 0.80, "y": 0.10 },
-      "labelKey": "form.plank.annotation.neck",
-      "color": "primary"
-    },
-    {
-      "id": "back",
-      "position": { "x": 0.50, "y": 0.43 },
-      "labelAnchor": { "x": 0.30, "y": 0.10 },
-      "labelKey": "form.plank.annotation.back",
-      "color": "info"
-    },
-    {
-      "id": "abs",
-      "position": { "x": 0.45, "y": 0.55 },
-      "labelAnchor": { "x": 0.22, "y": 0.90 },
-      "labelKey": "form.plank.annotation.abs",
-      "color": "neutral"
-    },
-    {
-      "id": "elbow",
-      "position": { "x": 0.72, "y": 0.62 },
-      "labelAnchor": { "x": 0.78, "y": 0.92 },
-      "labelKey": "form.plank.annotation.elbow",
-      "color": "warning"
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "plank-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": { "x": 0.78, "y": 0.46 },
+          "labelAnchor": { "x": 0.80, "y": 0.10 },
+          "labelKey": "form.plank.annotation.neck",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": { "x": 0.50, "y": 0.43 },
+          "labelAnchor": { "x": 0.30, "y": 0.10 },
+          "labelKey": "form.plank.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "abs",
+          "position": { "x": 0.45, "y": 0.55 },
+          "labelAnchor": { "x": 0.22, "y": 0.90 },
+          "labelKey": "form.plank.annotation.abs",
+          "color": "neutral"
+        },
+        {
+          "id": "elbow",
+          "position": { "x": 0.72, "y": 0.62 },
+          "labelAnchor": { "x": 0.78, "y": 0.92 },
+          "labelKey": "form.plank.annotation.elbow",
+          "color": "warning"
+        }
+      ]
     }
   ]
 }

@@ -1,35 +1,65 @@
 {
   "slug": "burpee",
-  "assetName": "burpee-1",
-  "aspect": 0.667,
-  "annotations": [
+  "frames": [
     {
-      "id": "head",
-      "position": { "x": 0.20, "y": 0.65 },
-      "labelAnchor": { "x": 0.27, "y": 0.40 },
-      "labelKey": "form.burpee.annotation.head",
-      "color": "primary"
-    },
-    {
-      "id": "plank",
-      "position": { "x": 0.50, "y": 0.55 },
-      "labelAnchor": { "x": 0.78, "y": 0.10 },
-      "labelKey": "form.burpee.annotation.plank",
-      "color": "info"
-    },
-    {
-      "id": "hand",
-      "position": { "x": 0.30, "y": 0.83 },
-      "labelAnchor": { "x": 0.27, "y": 0.10 },
-      "labelKey": "form.burpee.annotation.hand",
-      "color": "warning"
-    },
-    {
-      "id": "core",
-      "position": { "x": 0.55, "y": 0.62 },
-      "labelAnchor": { "x": 0.78, "y": 0.92 },
-      "labelKey": "form.burpee.annotation.core",
-      "color": "neutral"
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "burpee-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "head",
+          "position": {
+            "x": 0.2,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.27,
+            "y": 0.4
+          },
+          "labelKey": "form.burpee.annotation.head",
+          "color": "primary"
+        },
+        {
+          "id": "plank",
+          "position": {
+            "x": 0.45,
+            "y": 0.52
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.1
+          },
+          "labelKey": "form.burpee.annotation.plank",
+          "color": "info"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.3,
+            "y": 0.83
+          },
+          "labelAnchor": {
+            "x": 0.08,
+            "y": 0.72
+          },
+          "labelKey": "form.burpee.annotation.hand",
+          "color": "warning"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.55,
+            "y": 0.52
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.45
+          },
+          "labelKey": "form.burpee.annotation.core",
+          "color": "neutral"
+        }
+      ]
     }
   ]
 }

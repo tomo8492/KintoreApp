@@ -10830,6 +10830,40 @@
         }
       }
     },
+    "form.phase.bottom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボトム"
+          }
+        }
+      }
+    },
+    "form.phase.start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スタート"
+          }
+        }
+      }
+    },
     "form.pigeon-pose.annotation.hip" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11761,6 +11795,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "後ろ足の膝は床ギリギリまで"
+          }
+        }
+      }
+    },
+    "form.reverse-lunge.annotation.back-leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep the back leg long for balance"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後ろ脚は長く伸ばしてバランスを取る"
           }
         }
       }
