@@ -254,7 +254,7 @@ targets:
         # 明示的に上書きしないと WorkoutKit.swiftmodule が WorkoutKit 本体と
         # 衝突する(Multiple commands produce ...swiftmodule)。
         PRODUCT_MODULE_NAME: WorkoutKitWatch
-        PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.watchwidget
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.watchkitapp.watchwidget
         # Shared.xcconfig が SDKROOT=iphoneos / SUPPORTED_PLATFORMS=iphoneos*
         # を流し込むので、watchOS target ではここで明示的に上書きする。
         SDKROOT: watchos

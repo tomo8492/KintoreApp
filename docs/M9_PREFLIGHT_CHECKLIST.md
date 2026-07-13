@@ -177,7 +177,7 @@
 5. Bundle ID が以下と一致しているか確認(変更しない):
    - WorkoutKit: `com.tomo.workoutkit` / `com.tomo.workoutkit.beta`(Beta config)
    - WorkoutKitLiveActivity: `com.tomo.workoutkit.LiveActivity`
-   - WorkoutKitWatch: `com.tomo.workoutkit.watchwidget`
+   - WorkoutKitWatch: `com.tomo.workoutkit.watchkitapp.watchwidget`
 6. App Group 確認(全 target で共有): `group.com.tomo.workoutkit`
 7. **Automatically manage signing** ✓ をオンのまま。
 
