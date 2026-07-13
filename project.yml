@@ -321,8 +321,10 @@ targets:
         # 単体 watchOS アプリであることを示す必須キー。
         INFOPLIST_KEY_WKApplication: YES
         # companion-paired(iPhone アプリ必須、Watch 単体インストール不可)。
-        # WKCompanionAppBundleIdentifier は iOS 本体からの embed 依存で解決されるため
-        # 明示指定は不要(Mac 実機での companion 紐付け表示は要確認)。
+        # CI run #42 で判明: embed 依存だけでは解決されず、シミュレータへの
+        # インストール時に _validateCompanionAppStateInWatchKitApp が
+        # 「companion 不明」で失敗する。明示宣言が必須。
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.tomo.workoutkit
         INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp: NO
         INFOPLIST_KEY_CFBundleDisplayName: WorkoutKit
         CURRENT_PROJECT_VERSION: 1
