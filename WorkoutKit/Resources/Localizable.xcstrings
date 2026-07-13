@@ -480,6 +480,24 @@
         }
       }
     },
+    "a11y.library.detail.step-image %lld" : {
+      "comment" : "図解 UI: 手順に紐づくフォームイラストの VoiceOver ラベル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Illustration for step %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手順 %lld の図解"
+          }
+        }
+      }
+    },
     "a11y.library.detail.steps.label" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22221,6 +22239,132 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "YouTube で見る"
+          }
+        }
+      }
+    },
+    "watch.quicklog.title" : {
+      "comment" : "Watch アプリ: クイック記録画面のタイトル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Log"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クイック記録"
+          }
+        }
+      }
+    },
+    "watch.quicklog.empty" : {
+      "comment" : "Watch アプリ: iPhone 側の履歴が未同期のときの空状態。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do a workout on iPhone first — your recent exercises will appear here."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone でワークアウトすると、よく使う種目がここに表示されます"
+          }
+        }
+      }
+    },
+    "watch.quicklog.reps" : {
+      "comment" : "Watch アプリ: レップ入力ラベル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レップ"
+          }
+        }
+      }
+    },
+    "watch.quicklog.weight" : {
+      "comment" : "Watch アプリ: 重量入力ラベル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重量"
+          }
+        }
+      }
+    },
+    "watch.quicklog.logset" : {
+      "comment" : "Watch アプリ: セット記録ボタン。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Set"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セットを記録"
+          }
+        }
+      }
+    },
+    "watch.quicklog.saved" : {
+      "comment" : "Watch アプリ: 記録完了の確認表示。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logged!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "記録しました"
+          }
+        }
+      }
+    },
+    "watch.quicklog.sync-note" : {
+      "comment" : "Watch アプリ: 同期に関する補足。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syncs to your iPhone"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhone に同期されます"
           }
         }
       }

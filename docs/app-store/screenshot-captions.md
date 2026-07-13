@@ -13,29 +13,29 @@ the order they should appear in App Store Connect (slot 1 = hero).
 
 ## iPhone — 6.7" (1290 × 2796)
 
-### 1. today-hero
+### 1. library-detail-annotated(フォーム解説 — 競合が真似できない画を先頭に)
+- **ja**: 全345種目に日本語のフォーム解説\n呼吸・効く部位・よくある間違いまで\n初心者でも迷わない
+- **en**: 345 exercises, coached in plain language\nBreathing, feel cues, common mistakes\nBuilt for beginners
+
+### 2. today-hero
 - **ja**: 5秒で今日のメニュー\n目的・部位・器具を選ぶだけ
 - **en**: Today's workout in 5 seconds\nPick goal, muscles, equipment
 
-### 2. builder-result
+### 3. builder-result
 - **ja**: ウォームアップから整って一発生成\n気分が乗らない日もShuffleで\n最適な構成へ即座に切替
 - **en**: Warm-up to cool-down, planned\nShuffle when you need a change\nPicks the best split for you
 
-### 3. session-running
+### 4. session-running
 - **ja**: 重量・レップ・RPEを軽快に記録\n休憩タイマー付き
 - **en**: Log weight, reps, RPE in seconds\nRest timer is built in
 
-### 4. session-rest-timer-live-activity
+### 5. session-rest-timer-live-activity
 - **ja**: ロック画面でも休憩タイマー\nDynamic Island対応\n毎秒 push なしの省電力描画
 - **en**: Rest timer on the lock screen\nDynamic Island ready\nBattery-friendly local rendering
 
-### 5. session-summary-aicoach
+### 6. session-summary-aicoach
 - **ja**: 終了直後にAIコーチが3行で要約\n完全オンデバイス推論(iOS 26+)\nデータは端末から出ない
 - **en**: AI coach summarises in 3 lines\nFully on-device (iOS 26 and later)\nNothing leaves your device
-
-### 6. library-detail-annotated
-- **ja**: 全345種目に解剖学イラスト\n前面・後面のフォームポイントを\n番号付きでひと目で
-- **en**: 345 exercises, anatomy view\nNumbered form cues on front and back\nLearn lifts at a glance
 
 ### 7. library-list-search
 - **ja**: タイプ × 部位 × 器具で素早く検索\n日本語・英語どちらでも
