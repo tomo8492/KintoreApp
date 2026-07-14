@@ -1,0 +1,52 @@
+{
+  "slug": "standing-hamstring-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "standing-hamstring-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.29,
+            "y": 0.85
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.72
+          },
+          "labelKey": "form.standing-hamstring-stretch.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "legs",
+          "position": {
+            "x": 0.4,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.65,
+            "y": 0.55
+          },
+          "labelKey": "form.standing-hamstring-stretch.annotation.legs",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.41,
+            "y": 0.37
+          },
+          "labelAnchor": {
+            "x": 0.65,
+            "y": 0.15
+          },
+          "labelKey": "form.standing-hamstring-stretch.annotation.hip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
