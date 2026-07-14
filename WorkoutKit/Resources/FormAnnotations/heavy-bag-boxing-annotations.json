@@ -1,0 +1,65 @@
+{
+  "slug": "heavy-bag-boxing",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "heavy-bag-boxing-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "punch",
+          "position": {
+            "x": 0.53,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.6
+          },
+          "labelKey": "form.heavy-bag-boxing.annotation.punch",
+          "color": "primary"
+        },
+        {
+          "id": "guard",
+          "position": {
+            "x": 0.66,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.3
+          },
+          "labelKey": "form.heavy-bag-boxing.annotation.guard",
+          "color": "warning"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.8,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.6
+          },
+          "labelKey": "form.heavy-bag-boxing.annotation.hips",
+          "color": "info"
+        },
+        {
+          "id": "stance",
+          "position": {
+            "x": 0.63,
+            "y": 0.92
+          },
+          "labelAnchor": {
+            "x": 0.35,
+            "y": 0.9
+          },
+          "labelKey": "form.heavy-bag-boxing.annotation.stance",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
