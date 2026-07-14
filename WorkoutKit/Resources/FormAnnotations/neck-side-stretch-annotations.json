@@ -1,0 +1,52 @@
+{
+  "slug": "neck-side-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "neck-side-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "tilt",
+          "position": {
+            "x": 0.42,
+            "y": 0.28
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.neck-side-stretch.annotation.tilt",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.65,
+            "y": 0.56
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.45
+          },
+          "labelKey": "form.neck-side-stretch.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.55,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.2,
+            "y": 0.8
+          },
+          "labelKey": "form.neck-side-stretch.annotation.posture",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
