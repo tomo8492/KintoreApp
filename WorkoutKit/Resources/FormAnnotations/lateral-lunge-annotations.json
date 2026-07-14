@@ -1,0 +1,52 @@
+{
+  "slug": "lateral-lunge",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "lateral-lunge-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "bentknee",
+          "position": {
+            "x": 0.32,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.48
+          },
+          "labelKey": "form.lateral-lunge.annotation.bentknee",
+          "color": "primary"
+        },
+        {
+          "id": "straightleg",
+          "position": {
+            "x": 0.72,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.5
+          },
+          "labelKey": "form.lateral-lunge.annotation.straightleg",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.47,
+            "y": 0.45
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.25
+          },
+          "labelKey": "form.lateral-lunge.annotation.torso",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
