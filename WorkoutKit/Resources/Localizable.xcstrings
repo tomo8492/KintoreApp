@@ -4427,13 +4427,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lower knees toward floor"
+            "value" : "Ease knees down"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "膝を床に近づける"
+            "value" : "膝をゆっくり下げる"
           }
         }
       }
@@ -13206,6 +13206,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "脚から漕ぎ出す"
+          }
+        }
+      }
+    },
+    "form.butterfly-stretch.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sit tall"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背筋を伸ばして座る"
+          }
+        }
+      }
+    },
+    "form.butterfly-stretch.annotation.feet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soles together"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "足裏を合わせる"
           }
         }
       }

@@ -1,0 +1,52 @@
+{
+  "slug": "butterfly-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "butterfly-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.34,
+            "y": 0.93
+          },
+          "labelAnchor": {
+            "x": 0.7,
+            "y": 0.97
+          },
+          "labelKey": "form.butterfly-stretch.annotation.feet",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.15,
+            "y": 0.77
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.55
+          },
+          "labelKey": "form.butterfly-stretch.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.3,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "labelKey": "form.butterfly-stretch.annotation.back",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
