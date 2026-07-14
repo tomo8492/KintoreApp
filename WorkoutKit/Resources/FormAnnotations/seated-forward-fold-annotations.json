@@ -1,0 +1,52 @@
+{
+  "slug": "seated-forward-fold",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-forward-fold-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.39,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.seated-forward-fold.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "legs",
+          "position": {
+            "x": 0.68,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.85
+          },
+          "labelKey": "form.seated-forward-fold.annotation.legs",
+          "color": "info"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.7,
+            "y": 0.46
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.35
+          },
+          "labelKey": "form.seated-forward-fold.annotation.back",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
