@@ -1,0 +1,65 @@
+{
+  "slug": "seated-cable-row",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-cable-row-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "pull",
+          "position": {
+            "x": 0.49,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.48
+          },
+          "labelKey": "form.seated-cable-row.annotation.pull",
+          "color": "primary"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.3
+          },
+          "labelKey": "form.seated-cable-row.annotation.chest",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.72,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.75
+          },
+          "labelKey": "form.seated-cable-row.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.35,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.55,
+            "y": 0.9
+          },
+          "labelKey": "form.seated-cable-row.annotation.knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

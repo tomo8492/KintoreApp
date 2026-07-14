@@ -3356,13 +3356,30 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Pin your elbows"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を体側に固定"
+          }
+        }
+      }
+    },
+    "form.barbell-curl.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoulder-width grip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩幅で握る"
           }
         }
       }
@@ -3373,13 +3390,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chest up, brace your core"
+            "value" : "Don't lean back"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を張って体幹を固める"
+            "value" : "上体を反らさない"
           }
         }
       }
@@ -7634,23 +7651,6 @@
         }
       }
     },
-    "form.front-squat.annotation.elbow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep elbows high and forward"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肘を高く前に出す"
-          }
-        }
-      }
-    },
     "form.front-squat.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7664,23 +7664,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
-    "form.front-squat.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
           }
         }
       }
@@ -9266,23 +9249,6 @@
         }
       }
     },
-    "form.kettlebell-swing.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive the swing from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ヒップヒンジで前後に振る"
-          }
-        }
-      }
-    },
     "form.knee-to-chest-stretch.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9772,23 +9738,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.lat-pulldown.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
           }
         }
       }
@@ -11221,6 +11170,108 @@
         }
       }
     },
+    "form.front-squat.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep elbows high"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を高く保つ"
+          }
+        }
+      }
+    },
+    "form.front-squat.annotation.rack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bar on front delts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーは肩の前に乗せる"
+          }
+        }
+      }
+    },
+    "form.front-squat.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stay upright"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上体を立てる"
+          }
+        }
+      }
+    },
+    "form.hanging-leg-raise.annotation.legs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slow, controlled legs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "脚はゆっくり上げ下げ"
+          }
+        }
+      }
+    },
+    "form.hanging-leg-raise.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't shrug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめない"
+          }
+        }
+      }
+    },
+    "form.hanging-leg-raise.annotation.swing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't swing"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を振らない"
+          }
+        }
+      }
+    },
     "form.kettlebell-swing.annotation.arms" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11353,6 +11404,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上体は反らしすぎない"
+          }
+        }
+      }
+    },
+    "form.seated-cable-row.annotation.chest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chest up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸を張って引く"
+          }
+        }
+      }
+    },
+    "form.seated-cable-row.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep knees soft"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝は軽く曲げる"
+          }
+        }
+      }
+    },
+    "form.seated-cable-row.annotation.pull" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull elbows back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を後ろに引く"
+          }
+        }
+      }
+    },
+    "form.seated-cable-row.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't lean back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を反らさない"
           }
         }
       }
@@ -12632,23 +12751,6 @@
         }
       }
     },
-    "form.romanian-deadlift.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
     "form.romanian-deadlift.annotation.ham" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -13053,23 +13155,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.seated-cable-row.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep torso upright"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
           }
         }
       }

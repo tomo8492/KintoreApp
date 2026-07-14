@@ -1,0 +1,65 @@
+{
+  "slug": "front-squat",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "front-squat-1",
+      "aspect": 1.506,
+      "annotations": [
+        {
+          "id": "rack",
+          "position": {
+            "x": 0.62,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.25
+          },
+          "labelKey": "form.front-squat.annotation.rack",
+          "color": "info"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.56,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.72
+          },
+          "labelKey": "form.front-squat.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.5,
+            "y": 0.66
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.55
+          },
+          "labelKey": "form.front-squat.annotation.torso",
+          "color": "neutral"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.38,
+            "y": 0.77
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.92
+          },
+          "labelKey": "form.front-squat.annotation.knee",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

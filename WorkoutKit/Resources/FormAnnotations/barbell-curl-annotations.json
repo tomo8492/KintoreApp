@@ -1,0 +1,52 @@
+{
+  "slug": "barbell-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "barbell-curl-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.66,
+            "y": 0.64
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.75
+          },
+          "labelKey": "form.barbell-curl.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.54,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.barbell-curl.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.6,
+            "y": 0.52
+          },
+          "labelAnchor": {
+            "x": 0.2,
+            "y": 0.15
+          },
+          "labelKey": "form.barbell-curl.annotation.grip",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}
