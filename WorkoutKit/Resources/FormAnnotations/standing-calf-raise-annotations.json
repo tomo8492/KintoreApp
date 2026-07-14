@@ -1,0 +1,52 @@
+{
+  "slug": "standing-calf-raise",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "standing-calf-raise-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.42,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.82
+          },
+          "labelKey": "form.standing-calf-raise.annotation.heel",
+          "color": "primary"
+        },
+        {
+          "id": "ball",
+          "position": {
+            "x": 0.48,
+            "y": 0.85
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.95
+          },
+          "labelKey": "form.standing-calf-raise.annotation.ball",
+          "color": "info"
+        },
+        {
+          "id": "calf",
+          "position": {
+            "x": 0.46,
+            "y": 0.45
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.4
+          },
+          "labelKey": "form.standing-calf-raise.annotation.calf",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
