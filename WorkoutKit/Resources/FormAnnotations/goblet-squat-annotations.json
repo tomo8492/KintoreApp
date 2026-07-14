@@ -1,0 +1,65 @@
+{
+  "slug": "goblet-squat",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "goblet-squat-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.708,
+            "y": 0.606
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.5
+          },
+          "labelKey": "form.goblet-squat.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.692,
+            "y": 0.778
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.9
+          },
+          "labelKey": "form.goblet-squat.annotation.heel",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.542,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.55
+          },
+          "labelKey": "form.goblet-squat.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "kettlebell",
+          "position": {
+            "x": 0.542,
+            "y": 0.489
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.2
+          },
+          "labelKey": "form.goblet-squat.annotation.kettlebell",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

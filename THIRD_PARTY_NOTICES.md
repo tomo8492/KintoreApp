@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 75 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 93 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -100,6 +100,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `doorway-chest-stretch-1` | 4720286 | Ketut Subiyanto | https://www.pexels.com/photo/4720286/ |
 | `neck-side-stretch-1` | 8033048 | (photographer TBD) | https://www.pexels.com/photo/8033048/ |
 | `tricep-overhead-stretch-1` | 6388359 | (photographer TBD) | https://www.pexels.com/photo/6388359/ |
+| `cable-curl-1` | 29850900 | Foad Shariyati | https://www.pexels.com/photo/29850900/ |
+| `cable-fly-1` | 10754972 | Ronin | https://www.pexels.com/photo/10754972/ |
+| `cat-stretch-1` | 7663035 | Anastasia Shuraeva | https://www.pexels.com/photo/7663035/ |
+| `cross-body-shoulder-stretch-1` | 8173417 | Kampus Production | https://www.pexels.com/photo/8173417/ |
+| `decline-push-up-1` | 8401198 | RDNE Stock project | https://www.pexels.com/photo/8401198/ |
+| `dip-1` | 4803710 | Ketut Subiyanto | https://www.pexels.com/photo/4803710/ |
+| `dumbbell-romanian-deadlift-1` | 14604676 | viridianaor | https://www.pexels.com/photo/14604676/ |
+| `dumbbell-walking-lunge-1` | 8846122 | Mart Production | https://www.pexels.com/photo/8846122/ |
+| `forward-fold-1` | 17440584 | Vi Nguyen | https://www.pexels.com/photo/17440584/ |
+| `goblet-squat-1` | 14020554 | Cesar Perez | https://www.pexels.com/photo/14020554/ |
+| `knee-to-chest-1` | 7662437 | Anastasia Shuraeva | https://www.pexels.com/photo/7662437/ |
+| `leg-extension-1` | 19722966 | Nikolai Veksharev | https://www.pexels.com/photo/19722966/ |
+| `low-lunge-stretch-1` | 6303729 | Klaus Nielsen | https://www.pexels.com/photo/6303729/ |
+| `pike-push-up-1` | 6388372 | Tima Miroshnichenko | https://www.pexels.com/photo/6388372/ |
+| `seated-spinal-twist-1` | 4534688 | Vlada Karpovich | https://www.pexels.com/photo/4534688/ |
+| `sphinx-pose-1` | 6958056 | Thirdman | https://www.pexels.com/photo/6958056/ |
+| `tricep-pushdown-1` | 29084391 | Foad Shariyati | https://www.pexels.com/photo/29084391/ |
+| `wide-push-up-1` | 4995975 | Valerie V | https://www.pexels.com/photo/4995975/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720307 | Ketut Subiyanto | https://www.pexels.com/photo/4720307/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

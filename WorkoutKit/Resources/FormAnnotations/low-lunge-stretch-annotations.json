@@ -1,0 +1,65 @@
+{
+  "slug": "low-lunge-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "low-lunge-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "front-knee",
+          "position": {
+            "x": 0.342,
+            "y": 0.789
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.95
+          },
+          "labelKey": "form.low-lunge-stretch.annotation.front-knee",
+          "color": "primary"
+        },
+        {
+          "id": "back-knee",
+          "position": {
+            "x": 0.6,
+            "y": 0.895
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.82
+          },
+          "labelKey": "form.low-lunge-stretch.annotation.back-knee",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.475,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.3
+          },
+          "labelKey": "form.low-lunge-stretch.annotation.hip",
+          "color": "warning"
+        },
+        {
+          "id": "arms",
+          "position": {
+            "x": 0.675,
+            "y": 0.233
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.08
+          },
+          "labelKey": "form.low-lunge-stretch.annotation.arms",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

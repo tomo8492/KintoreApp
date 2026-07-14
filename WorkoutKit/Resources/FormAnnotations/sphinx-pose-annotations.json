@@ -1,0 +1,65 @@
+{
+  "slug": "sphinx-pose",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "sphinx-pose-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "forearm",
+          "position": {
+            "x": 0.2167,
+            "y": 0.685
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.89
+          },
+          "labelKey": "form.sphinx-pose.annotation.forearm",
+          "color": "info"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.2917,
+            "y": 0.4438
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.11
+          },
+          "labelKey": "form.sphinx-pose.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.3708,
+            "y": 0.525
+          },
+          "labelAnchor": {
+            "x": 0.79,
+            "y": 0.11
+          },
+          "labelKey": "form.sphinx-pose.annotation.chest",
+          "color": "primary"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.4333,
+            "y": 0.6063
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.42
+          },
+          "labelKey": "form.sphinx-pose.annotation.hips",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

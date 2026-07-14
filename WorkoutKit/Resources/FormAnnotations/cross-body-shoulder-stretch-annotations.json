@@ -1,0 +1,52 @@
+{
+  "slug": "cross-body-shoulder-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cross-body-shoulder-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.517,
+            "y": 0.372
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.4
+          },
+          "labelKey": "form.cross-body-shoulder-stretch.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.396,
+            "y": 0.433
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.3
+          },
+          "labelKey": "form.cross-body-shoulder-stretch.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.167,
+            "y": 0.433
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.9
+          },
+          "labelKey": "form.cross-body-shoulder-stretch.annotation.hand",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

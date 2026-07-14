@@ -1,0 +1,52 @@
+{
+  "slug": "cable-fly",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cable-fly-1",
+      "aspect": 1.587,
+      "annotations": [
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.5,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.5,
+            "y": 0.88
+          },
+          "labelKey": "form.cable-fly.annotation.chest",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.81,
+            "y": 0.41
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.1
+          },
+          "labelKey": "form.cable-fly.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.14,
+            "y": 0.47
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.65
+          },
+          "labelKey": "form.cable-fly.annotation.grip",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

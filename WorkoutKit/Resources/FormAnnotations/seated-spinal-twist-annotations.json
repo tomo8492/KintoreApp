@@ -1,0 +1,65 @@
+{
+  "slug": "seated-spinal-twist",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-spinal-twist-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.617,
+            "y": 0.591
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.15
+          },
+          "labelKey": "form.seated-spinal-twist.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.638,
+            "y": 0.711
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.seated-spinal-twist.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.367,
+            "y": 0.667
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.2
+          },
+          "labelKey": "form.seated-spinal-twist.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "support-hand",
+          "position": {
+            "x": 0.233,
+            "y": 0.933
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.55
+          },
+          "labelKey": "form.seated-spinal-twist.annotation.support-hand",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

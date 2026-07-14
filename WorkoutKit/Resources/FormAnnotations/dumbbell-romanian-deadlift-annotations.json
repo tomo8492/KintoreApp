@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-romanian-deadlift",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-romanian-deadlift-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.283,
+            "y": 0.633
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.dumbbell-romanian-deadlift.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.467,
+            "y": 0.406
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.dumbbell-romanian-deadlift.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.317,
+            "y": 0.444
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.3
+          },
+          "labelKey": "form.dumbbell-romanian-deadlift.annotation.hip",
+          "color": "info"
+        },
+        {
+          "id": "dumbbell",
+          "position": {
+            "x": 0.483,
+            "y": 0.711
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.75
+          },
+          "labelKey": "form.dumbbell-romanian-deadlift.annotation.dumbbell",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

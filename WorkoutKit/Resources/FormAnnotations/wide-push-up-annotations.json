@@ -1,0 +1,52 @@
+{
+  "slug": "wide-push-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "wide-push-up-1",
+      "aspect": 0.563,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.17,
+            "y": 0.61
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.15
+          },
+          "labelKey": "form.wide-push-up.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.79,
+            "y": 0.465
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.wide-push-up.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.5,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.5,
+            "y": 0.9
+          },
+          "labelKey": "form.wide-push-up.annotation.core",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

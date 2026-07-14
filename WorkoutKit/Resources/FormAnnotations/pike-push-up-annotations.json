@@ -1,0 +1,52 @@
+{
+  "slug": "pike-push-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "pike-push-up-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.5,
+            "y": 0.29
+          },
+          "labelAnchor": {
+            "x": 0.2,
+            "y": 0.1
+          },
+          "labelKey": "form.pike-push-up.annotation.hips",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.5,
+            "y": 0.54
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.5
+          },
+          "labelKey": "form.pike-push-up.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.62,
+            "y": 0.85
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.75
+          },
+          "labelKey": "form.pike-push-up.annotation.hand",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

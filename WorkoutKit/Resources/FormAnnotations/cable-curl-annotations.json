@@ -1,0 +1,52 @@
+{
+  "slug": "cable-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cable-curl-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.16,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.3
+          },
+          "labelKey": "form.cable-curl.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.44,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.55
+          },
+          "labelKey": "form.cable-curl.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.85,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.cable-curl.annotation.grip",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

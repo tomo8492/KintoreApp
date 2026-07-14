@@ -1,0 +1,52 @@
+{
+  "slug": "tricep-pushdown",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "tricep-pushdown-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.71,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.89,
+            "y": 0.55
+          },
+          "labelKey": "form.tricep-pushdown.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.53,
+            "y": 0.86
+          },
+          "labelAnchor": {
+            "x": 0.25,
+            "y": 0.89
+          },
+          "labelKey": "form.tricep-pushdown.annotation.grip",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.62,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.89,
+            "y": 0.2
+          },
+          "labelKey": "form.tricep-pushdown.annotation.torso",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

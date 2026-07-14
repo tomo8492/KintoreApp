@@ -1,0 +1,65 @@
+{
+  "slug": "forward-fold",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "forward-fold-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.5,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.42
+          },
+          "labelKey": "form.forward-fold.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.475,
+            "y": 0.28
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.25
+          },
+          "labelKey": "form.forward-fold.annotation.hip",
+          "color": "primary"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.4333,
+            "y": 0.75
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.forward-fold.annotation.neck",
+          "color": "info"
+        },
+        {
+          "id": "arms",
+          "position": {
+            "x": 0.4833,
+            "y": 0.6889
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.6
+          },
+          "labelKey": "form.forward-fold.annotation.arms",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

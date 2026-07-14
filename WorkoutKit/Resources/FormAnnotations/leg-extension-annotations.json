@@ -1,0 +1,52 @@
+{
+  "slug": "leg-extension",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "leg-extension-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.66,
+            "y": 0.61
+          },
+          "labelAnchor": {
+            "x": 0.89,
+            "y": 0.38
+          },
+          "labelKey": "form.leg-extension.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "pad",
+          "position": {
+            "x": 0.32,
+            "y": 0.79
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.9
+          },
+          "labelKey": "form.leg-extension.annotation.pad",
+          "color": "info"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.81,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.89,
+            "y": 0.82
+          },
+          "labelKey": "form.leg-extension.annotation.grip",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

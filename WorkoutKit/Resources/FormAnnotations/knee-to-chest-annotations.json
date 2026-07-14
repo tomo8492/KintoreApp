@@ -1,0 +1,65 @@
+{
+  "slug": "knee-to-chest",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "knee-to-chest-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.483,
+            "y": 0.628
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.12
+          },
+          "labelKey": "form.knee-to-chest.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.375,
+            "y": 0.728
+          },
+          "labelAnchor": {
+            "x": 0.68,
+            "y": 0.88
+          },
+          "labelKey": "form.knee-to-chest.annotation.hands",
+          "color": "info"
+        },
+        {
+          "id": "head",
+          "position": {
+            "x": 0.283,
+            "y": 0.839
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.9
+          },
+          "labelKey": "form.knee-to-chest.annotation.head",
+          "color": "warning"
+        },
+        {
+          "id": "other-knee",
+          "position": {
+            "x": 0.375,
+            "y": 0.606
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.knee-to-chest.annotation.other-knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-walking-lunge",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-walking-lunge-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "front_knee",
+          "position": {
+            "x": 0.383,
+            "y": 0.669
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.82
+          },
+          "labelKey": "form.dumbbell-walking-lunge.annotation.front_knee",
+          "color": "primary"
+        },
+        {
+          "id": "back_knee",
+          "position": {
+            "x": 0.542,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.28
+          },
+          "labelKey": "form.dumbbell-walking-lunge.annotation.back_knee",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.517,
+            "y": 0.325
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.dumbbell-walking-lunge.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "dumbbell",
+          "position": {
+            "x": 0.45,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.82
+          },
+          "labelKey": "form.dumbbell-walking-lunge.annotation.dumbbell",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
