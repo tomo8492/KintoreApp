@@ -1,0 +1,52 @@
+{
+  "slug": "supine-twist",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "supine-twist-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knees",
+          "position": {
+            "x": 0.62,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.3
+          },
+          "labelKey": "form.supine-twist.annotation.knees",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.36,
+            "y": 0.66
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.35
+          },
+          "labelKey": "form.supine-twist.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.27,
+            "y": 0.84
+          },
+          "labelAnchor": {
+            "x": 0.6,
+            "y": 0.88
+          },
+          "labelKey": "form.supine-twist.annotation.arm",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}
