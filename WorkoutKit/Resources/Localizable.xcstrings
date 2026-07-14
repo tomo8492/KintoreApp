@@ -7215,13 +7215,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chest up, brace your core"
+            "value" : "Stay upright"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を張って体幹を固める"
+            "value" : "上体を立てる"
           }
         }
       }
@@ -13495,6 +13495,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "両肩は床につける"
+          }
+        }
+      }
+    },
+    "form.dynamic-lunge.annotation.backleg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back leg long"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後ろ脚は伸ばす"
+          }
+        }
+      }
+    },
+    "form.dynamic-lunge.annotation.frontknee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front knee at 90°"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前膝は90度に"
           }
         }
       }

@@ -1,0 +1,52 @@
+{
+  "slug": "dynamic-lunge",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dynamic-lunge-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "frontknee",
+          "position": {
+            "x": 0.58,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.55
+          },
+          "labelKey": "form.dynamic-lunge.annotation.frontknee",
+          "color": "primary"
+        },
+        {
+          "id": "backleg",
+          "position": {
+            "x": 0.75,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.5
+          },
+          "labelKey": "form.dynamic-lunge.annotation.backleg",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.58,
+            "y": 0.38
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.15
+          },
+          "labelKey": "form.dynamic-lunge.annotation.torso",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
