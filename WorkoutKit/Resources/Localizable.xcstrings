@@ -13278,6 +13278,40 @@
         }
       }
     },
+    "form.quad-stretch-standing.annotation.foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heel to glutes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "踵をお尻へ引き寄せる"
+          }
+        }
+      }
+    },
+    "form.quad-stretch-standing.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stay upright"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上体はまっすぐ"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -14083,13 +14117,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Knees track over toes"
+            "value" : "Knee points down"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "膝はつま先方向に"
+            "value" : "膝は下に向ける"
           }
         }
       }

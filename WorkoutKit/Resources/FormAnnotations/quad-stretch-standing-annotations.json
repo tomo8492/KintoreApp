@@ -1,0 +1,52 @@
+{
+  "slug": "quad-stretch-standing",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "quad-stretch-standing-1",
+      "aspect": 0.812,
+      "annotations": [
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.41,
+            "y": 0.57
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.45
+          },
+          "labelKey": "form.quad-stretch-standing.annotation.foot",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.42,
+            "y": 0.82
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.quad-stretch-standing.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.58,
+            "y": 0.38
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.25
+          },
+          "labelKey": "form.quad-stretch-standing.annotation.torso",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
