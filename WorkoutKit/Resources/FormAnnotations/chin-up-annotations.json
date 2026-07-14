@@ -1,0 +1,52 @@
+{
+  "slug": "chin-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "chin-up-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.35,
+            "y": 0.3
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.chin-up.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "chin",
+          "position": {
+            "x": 0.5,
+            "y": 0.32
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.chin-up.annotation.chin",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.5,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.6
+          },
+          "labelKey": "form.chin-up.annotation.core",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

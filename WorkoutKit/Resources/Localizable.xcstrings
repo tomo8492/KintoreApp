@@ -5090,13 +5090,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grip the bar tightly"
+            "value" : "Underhand grip"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グリップを強く握る"
+            "value" : "逆手で肩幅に握る"
           }
         }
       }
@@ -9034,13 +9034,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Body in a straight line"
+            "value" : "Keep body straight"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "頭から踵まで一直線"
+            "value" : "体は一直線に保つ"
           }
         }
       }
@@ -9068,13 +9068,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hands slightly wider than shoulders"
+            "value" : "Hands on the bench"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手は肩幅よりやや広く"
+            "value" : "手は肩幅で台に"
           }
         }
       }
@@ -12853,6 +12853,159 @@
         }
       }
     },
+    "form.chin-up.annotation.chin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chin over the bar"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "あごをバーの上へ"
+          }
+        }
+      }
+    },
+    "form.chin-up.annotation.core" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't swing"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を振らない"
+          }
+        }
+      }
+    },
+    "form.incline-push-up.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't flare elbows"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘は開きすぎない"
+          }
+        }
+      }
+    },
+    "form.step-up.annotation.foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whole foot on box"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "足裏全体を台に"
+          }
+        }
+      }
+    },
+    "form.step-up.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Front leg drives"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前脚で押し上げる"
+          }
+        }
+      }
+    },
+    "form.step-up.annotation.rearleg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No push-off cheat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わない"
+          }
+        }
+      }
+    },
+    "form.tricep-dip-bench.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bend elbows back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘は真後ろに曲げる"
+          }
+        }
+      }
+    },
+    "form.tricep-dip-bench.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hips by the bench"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お尻はベンチの近くに"
+          }
+        }
+      }
+    },
+    "form.tricep-dip-bench.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't shrug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめない"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -16276,13 +16429,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chest up, brace your core"
+            "value" : "Stay upright"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を張って体幹を固める"
+            "value" : "上体はまっすぐ"
           }
         }
       }
@@ -16973,13 +17126,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hands slightly wider than shoulders"
+            "value" : "Hands beside hips"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手は肩幅よりやや広く"
+            "value" : "手はお尻の横に置く"
           }
         }
       }

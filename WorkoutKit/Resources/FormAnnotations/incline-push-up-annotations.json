@@ -1,0 +1,52 @@
+{
+  "slug": "incline-push-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "incline-push-up-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.54,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.incline-push-up.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "body",
+          "position": {
+            "x": 0.38,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.18
+          },
+          "labelKey": "form.incline-push-up.annotation.body",
+          "color": "warning"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.47,
+            "y": 0.47
+          },
+          "labelAnchor": {
+            "x": 0.7,
+            "y": 0.3
+          },
+          "labelKey": "form.incline-push-up.annotation.elbow",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}
