@@ -1,0 +1,65 @@
+{
+  "slug": "high-knees",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "high-knees-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.35,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.1
+          },
+          "labelKey": "form.high-knees.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.52,
+            "y": 0.35
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.high-knees.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.75,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.45
+          },
+          "labelKey": "form.high-knees.annotation.arm",
+          "color": "info"
+        },
+        {
+          "id": "landing",
+          "position": {
+            "x": 0.585,
+            "y": 0.815
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.high-knees.annotation.landing",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

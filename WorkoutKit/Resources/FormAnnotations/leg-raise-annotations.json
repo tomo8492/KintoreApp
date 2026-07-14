@@ -1,0 +1,65 @@
+{
+  "slug": "leg-raise",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "leg-raise-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "legs",
+          "position": {
+            "x": 0.4,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.3
+          },
+          "labelKey": "form.leg-raise.annotation.legs",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.4,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.leg-raise.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.3,
+            "y": 0.24
+          },
+          "labelAnchor": {
+            "x": 0.65,
+            "y": 0.06
+          },
+          "labelKey": "form.leg-raise.annotation.feet",
+          "color": "info"
+        },
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.leg-raise.annotation.hands",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

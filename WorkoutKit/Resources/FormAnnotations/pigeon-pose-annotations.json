@@ -1,0 +1,65 @@
+{
+  "slug": "pigeon-pose",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "pigeon-pose-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.565,
+            "y": 0.585
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.pigeon-pose.annotation.hips",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.3,
+            "y": 0.82
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.55
+          },
+          "labelKey": "form.pigeon-pose.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.87,
+            "y": 0.755
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.5
+          },
+          "labelKey": "form.pigeon-pose.annotation.leg",
+          "color": "info"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.735,
+            "y": 0.765
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.9
+          },
+          "labelKey": "form.pigeon-pose.annotation.hand",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

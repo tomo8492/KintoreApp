@@ -1,0 +1,52 @@
+{
+  "slug": "cobra-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cobra-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.715,
+            "y": 0.485
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.cobra-stretch.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "lowerback",
+          "position": {
+            "x": 0.555,
+            "y": 0.688
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.55
+          },
+          "labelKey": "form.cobra-stretch.annotation.lowerback",
+          "color": "info"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.685,
+            "y": 0.84
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.7
+          },
+          "labelKey": "form.cobra-stretch.annotation.hand",
+          "color": "primary"
+        }
+      ]
+    }
+  ]
+}

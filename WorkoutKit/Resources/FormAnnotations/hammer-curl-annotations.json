@@ -1,0 +1,52 @@
+{
+  "slug": "hammer-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "hammer-curl-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.6,
+            "y": 0.656
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.7
+          },
+          "labelKey": "form.hammer-curl.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.85,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.hammer-curl.annotation.elbow",
+          "color": "info"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.767,
+            "y": 0.444
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.hammer-curl.annotation.shoulder",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

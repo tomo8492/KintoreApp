@@ -1,0 +1,65 @@
+{
+  "slug": "cat-cow",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cat-cow-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.475,
+            "y": 0.245
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.cat-cow.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.58,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.cat-cow.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.845,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.6
+          },
+          "labelKey": "form.cat-cow.annotation.foot",
+          "color": "neutral"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.335,
+            "y": 0.845
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.9
+          },
+          "labelKey": "form.cat-cow.annotation.hand",
+          "color": "primary"
+        }
+      ]
+    }
+  ]
+}

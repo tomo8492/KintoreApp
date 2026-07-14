@@ -1,0 +1,65 @@
+{
+  "slug": "sit-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "sit-up-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.7,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.sit-up.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.58,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.75
+          },
+          "labelKey": "form.sit-up.annotation.hands",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.1
+          },
+          "labelKey": "form.sit-up.annotation.core",
+          "color": "primary"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.25,
+            "y": 0.74
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.9
+          },
+          "labelKey": "form.sit-up.annotation.feet",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

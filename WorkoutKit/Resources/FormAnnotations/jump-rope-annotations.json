@@ -1,0 +1,65 @@
+{
+  "slug": "jump-rope",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "jump-rope-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.62,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.1
+          },
+          "labelKey": "form.jump-rope.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.52,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.85
+          },
+          "labelKey": "form.jump-rope.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.465,
+            "y": 0.865
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.9
+          },
+          "labelKey": "form.jump-rope.annotation.feet",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.5,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.1
+          },
+          "labelKey": "form.jump-rope.annotation.torso",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

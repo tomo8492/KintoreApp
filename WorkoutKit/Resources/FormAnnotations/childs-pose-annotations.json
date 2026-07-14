@@ -1,0 +1,65 @@
+{
+  "slug": "childs-pose",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "childs-pose-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.49,
+            "y": 0.505
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.3
+          },
+          "labelKey": "form.childs-pose.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.555,
+            "y": 0.435
+          },
+          "labelAnchor": {
+            "x": 0.35,
+            "y": 0.1
+          },
+          "labelKey": "form.childs-pose.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.66,
+            "y": 0.415
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.15
+          },
+          "labelKey": "form.childs-pose.annotation.hips",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.325,
+            "y": 0.575
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.85
+          },
+          "labelKey": "form.childs-pose.annotation.hand",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

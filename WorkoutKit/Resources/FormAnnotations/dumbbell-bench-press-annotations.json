@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-bench-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-bench-press-1",
+      "aspect": 1.365,
+      "annotations": [
+        {
+          "id": "wrist",
+          "position": {
+            "x": 0.542,
+            "y": 0.171
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.dumbbell-bench-press.annotation.wrist",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.56,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.dumbbell-bench-press.annotation.elbow",
+          "color": "info"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.433,
+            "y": 0.592
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.45
+          },
+          "labelKey": "form.dumbbell-bench-press.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.125,
+            "y": 0.705
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.9
+          },
+          "labelKey": "form.dumbbell-bench-press.annotation.hip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

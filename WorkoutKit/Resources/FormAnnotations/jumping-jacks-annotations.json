@@ -1,0 +1,65 @@
+{
+  "slug": "jumping-jacks",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "jumping-jacks-1",
+      "aspect": 0.563,
+      "annotations": [
+        {
+          "id": "arms",
+          "position": {
+            "x": 0.67,
+            "y": 0.14
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.08
+          },
+          "labelKey": "form.jumping-jacks.annotation.arms",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.31,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.08,
+            "y": 0.85
+          },
+          "labelKey": "form.jumping-jacks.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "landing",
+          "position": {
+            "x": 0.825,
+            "y": 0.855
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.6
+          },
+          "labelKey": "form.jumping-jacks.annotation.landing",
+          "color": "primary"
+        },
+        {
+          "id": "momentum",
+          "position": {
+            "x": 0.5,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.08,
+            "y": 0.4
+          },
+          "labelKey": "form.jumping-jacks.annotation.momentum",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "wall-sit-quad",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "wall-sit-quad-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.585,
+            "y": 0.655
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.6
+          },
+          "labelKey": "form.wall-sit-quad.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.34,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.wall-sit-quad.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "breath",
+          "position": {
+            "x": 0.42,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.wall-sit-quad.annotation.breath",
+          "color": "info"
+        },
+        {
+          "id": "ankle",
+          "position": {
+            "x": 0.62,
+            "y": 0.85
+          },
+          "labelAnchor": {
+            "x": 0.82,
+            "y": 0.95
+          },
+          "labelKey": "form.wall-sit-quad.annotation.ankle",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

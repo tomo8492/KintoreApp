@@ -1,0 +1,65 @@
+{
+  "slug": "squat-jump",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "squat-jump-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.554,
+            "y": 0.369
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.35
+          },
+          "labelKey": "form.squat-jump.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.19,
+            "y": 0.16
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.08
+          },
+          "labelKey": "form.squat-jump.annotation.hands",
+          "color": "info"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.545,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.78
+          },
+          "labelKey": "form.squat-jump.annotation.feet",
+          "color": "warning"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.62,
+            "y": 0.17
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.08
+          },
+          "labelKey": "form.squat-jump.annotation.torso",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "bicycle-crunch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "bicycle-crunch-1",
+      "aspect": 1.498,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.79,
+            "y": 0.34
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.08
+          },
+          "labelKey": "form.bicycle-crunch.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "obliques",
+          "position": {
+            "x": 0.66,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.85
+          },
+          "labelKey": "form.bicycle-crunch.annotation.obliques",
+          "color": "primary"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.22,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.08,
+            "y": 0.1
+          },
+          "labelKey": "form.bicycle-crunch.annotation.leg",
+          "color": "info"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.61,
+            "y": 0.54
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.85
+          },
+          "labelKey": "form.bicycle-crunch.annotation.back",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

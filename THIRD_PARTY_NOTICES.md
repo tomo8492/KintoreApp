@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 39 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 57 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -64,6 +64,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `romanian-deadlift-1` | 14623740 | Miguel González | https://www.pexels.com/photo/14623740/ |
 | `russian-twist-1` | 6740053 | Mikhail Nilov | https://www.pexels.com/photo/6740053/ |
 | `side-plank-1` | 6303452 | Klaus Nielsen | https://www.pexels.com/photo/6303452/ |
+| `bicycle-crunch-1` | 8038640 | Roman Odintsov | https://www.pexels.com/photo/8038640/ |
+| `bird-dog-1` | 6454196 | Marta Wave | https://www.pexels.com/photo/6454196/ |
+| `cat-cow-1` | 7663225 | Anastasia Shuraeva | https://www.pexels.com/photo/7663225/ |
+| `childs-pose-1` | 4127307 | Gustavo Fring | https://www.pexels.com/photo/4127307/ |
+| `cobra-stretch-1` | 6787216 | Marcus Aurelius | https://www.pexels.com/photo/6787216/ |
+| `downward-dog-1` | 7664139 | Anastasia Shuraeva | https://www.pexels.com/photo/7664139/ |
+| `dumbbell-bench-press-1` | 3839310 | Andrea Piacquadio | https://www.pexels.com/photo/3839310/ |
+| `dumbbell-lateral-raise-1` | 5327464 | Tima Miroshnichenko | https://www.pexels.com/photo/5327464/ |
+| `hammer-curl-1` | 30672394 | foad shariyati | https://www.pexels.com/photo/30672394/ |
+| `high-knees-1` | 4194670 | Dinielle De Veyra | https://www.pexels.com/photo/4194670/ |
+| `jump-rope-1` | 8401106 | RDNE Stock project | https://www.pexels.com/photo/8401106/ |
+| `jumping-jacks-1` | 7298411 | Kindel Media | https://www.pexels.com/photo/7298411/ |
+| `leg-raise-1` | 6283634 | Anna Shvets | https://www.pexels.com/photo/6283634/ |
+| `pigeon-pose-1` | 7318689 | MART PRODUCTION | https://www.pexels.com/photo/7318689/ |
+| `seated-dumbbell-press-1` | 4164756 | Ivan S | https://www.pexels.com/photo/4164756/ |
+| `sit-up-1` | 8401120 | RDNE Stock project | https://www.pexels.com/photo/8401120/ |
+| `squat-jump-1` | 13327298 | Jordan Bergendahl | https://www.pexels.com/photo/13327298/ |
+| `wall-sit-quad-1` | 6740055 | Mikhail Nilov | https://www.pexels.com/photo/6740055/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720307 | Ketut Subiyanto | https://www.pexels.com/photo/4720307/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

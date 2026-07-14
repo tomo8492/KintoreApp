@@ -1,0 +1,65 @@
+{
+  "slug": "seated-dumbbell-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-dumbbell-press-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.495,
+            "y": 0.325
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.seated-dumbbell-press.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "lowerback",
+          "position": {
+            "x": 0.567,
+            "y": 0.544
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.6
+          },
+          "labelKey": "form.seated-dumbbell-press.annotation.lowerback",
+          "color": "warning"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.808,
+            "y": 0.194
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.seated-dumbbell-press.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "bench",
+          "position": {
+            "x": 0.75,
+            "y": 0.444
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.85
+          },
+          "labelKey": "form.seated-dumbbell-press.annotation.bench",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

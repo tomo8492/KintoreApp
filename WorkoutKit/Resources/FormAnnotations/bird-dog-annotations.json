@@ -1,0 +1,65 @@
+{
+  "slug": "bird-dog",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "bird-dog-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "back",
+          "position": {
+            "x": 0.53,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.35,
+            "y": 0.08
+          },
+          "labelKey": "form.bird-dog.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.08,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.85
+          },
+          "labelKey": "form.bird-dog.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.87,
+            "y": 0.31
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.06
+          },
+          "labelKey": "form.bird-dog.annotation.leg",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.63,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.92,
+            "y": 0.75
+          },
+          "labelKey": "form.bird-dog.annotation.hip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
