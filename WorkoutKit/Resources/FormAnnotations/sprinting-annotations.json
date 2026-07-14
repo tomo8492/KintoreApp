@@ -1,0 +1,65 @@
+{
+  "slug": "sprinting",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "sprinting-1",
+      "aspect": 0.563,
+      "annotations": [
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.571,
+            "y": 0.357
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.1
+          },
+          "labelKey": "form.sprinting.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.46,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.14,
+            "y": 0.11
+          },
+          "labelKey": "form.sprinting.annotation.torso",
+          "color": "neutral"
+        },
+        {
+          "id": "hamstring",
+          "position": {
+            "x": 0.448,
+            "y": 0.556
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.78
+          },
+          "labelKey": "form.sprinting.annotation.hamstring",
+          "color": "warning"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.541,
+            "y": 0.642
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.85
+          },
+          "labelKey": "form.sprinting.annotation.foot",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

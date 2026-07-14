@@ -1,0 +1,65 @@
+{
+  "slug": "shadow-boxing",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "shadow-boxing-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "guard",
+          "position": {
+            "x": 0.422,
+            "y": 0.389
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.1
+          },
+          "labelKey": "form.shadow-boxing.annotation.guard",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.513,
+            "y": 0.376
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.shadow-boxing.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "punch",
+          "position": {
+            "x": 0.711,
+            "y": 0.379
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.6
+          },
+          "labelKey": "form.shadow-boxing.annotation.punch",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.288,
+            "y": 0.656
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.shadow-boxing.annotation.knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

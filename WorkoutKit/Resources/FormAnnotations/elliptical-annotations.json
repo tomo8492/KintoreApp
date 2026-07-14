@@ -1,0 +1,65 @@
+{
+  "slug": "elliptical",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "elliptical-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.338,
+            "y": 0.317
+          },
+          "labelAnchor": {
+            "x": 0.14,
+            "y": 0.11
+          },
+          "labelKey": "form.elliptical.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.433,
+            "y": 0.283
+          },
+          "labelAnchor": {
+            "x": 0.68,
+            "y": 0.11
+          },
+          "labelKey": "form.elliptical.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.458,
+            "y": 0.498
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.6
+          },
+          "labelKey": "form.elliptical.annotation.knee",
+          "color": "neutral"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.388,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.8
+          },
+          "labelKey": "form.elliptical.annotation.foot",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

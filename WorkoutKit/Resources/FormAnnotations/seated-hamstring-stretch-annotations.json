@@ -1,0 +1,65 @@
+{
+  "slug": "seated-hamstring-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-hamstring-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.59,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.15
+          },
+          "labelKey": "form.seated-hamstring-stretch.annotation.chest",
+          "color": "primary"
+        },
+        {
+          "id": "reach",
+          "position": {
+            "x": 0.8,
+            "y": 0.675
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.5
+          },
+          "labelKey": "form.seated-hamstring-stretch.annotation.reach",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.44,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.58
+          },
+          "labelKey": "form.seated-hamstring-stretch.annotation.knee",
+          "color": "neutral"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.67,
+            "y": 0.73
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.seated-hamstring-stretch.annotation.foot",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

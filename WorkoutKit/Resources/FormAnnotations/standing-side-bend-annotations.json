@@ -1,0 +1,65 @@
+{
+  "slug": "standing-side-bend",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "standing-side-bend-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.855,
+            "y": 0.285
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.1
+          },
+          "labelKey": "form.standing-side-bend.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.565,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.35,
+            "y": 0.1
+          },
+          "labelKey": "form.standing-side-bend.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.615,
+            "y": 0.605
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.75
+          },
+          "labelKey": "form.standing-side-bend.annotation.hip",
+          "color": "info"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.23,
+            "y": 0.95
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.standing-side-bend.annotation.feet",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

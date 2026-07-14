@@ -1,0 +1,65 @@
+{
+  "slug": "calf-stretch-wall",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "calf-stretch-wall-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.16,
+            "y": 0.89
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.88
+          },
+          "labelKey": "form.calf-stretch-wall.annotation.heel",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.23,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.48
+          },
+          "labelKey": "form.calf-stretch-wall.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "toe",
+          "position": {
+            "x": 0.47,
+            "y": 0.8
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.35
+          },
+          "labelKey": "form.calf-stretch-wall.annotation.toe",
+          "color": "neutral"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.34,
+            "y": 0.315
+          },
+          "labelAnchor": {
+            "x": 0.28,
+            "y": 0.11
+          },
+          "labelKey": "form.calf-stretch-wall.annotation.back",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
