@@ -6314,13 +6314,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Open the chest fully"
+            "value" : "Feel the chest open"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を大きく開く"
+            "value" : "胸の伸びを感じる"
           }
         }
       }
@@ -13529,6 +13529,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "前膝は90度に"
+          }
+        }
+      }
+    },
+    "form.doorway-chest-stretch.annotation.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn away gently"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を反対側へ開く"
+          }
+        }
+      }
+    },
+    "form.doorway-chest-stretch.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hand on the frame"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手を枠にかける"
           }
         }
       }

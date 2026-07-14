@@ -1,0 +1,52 @@
+{
+  "slug": "doorway-chest-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "doorway-chest-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.23,
+            "y": 0.26
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.1
+          },
+          "labelKey": "form.doorway-chest-stretch.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.66,
+            "y": 0.45
+          },
+          "labelAnchor": {
+            "x": 0.42,
+            "y": 0.68
+          },
+          "labelKey": "form.doorway-chest-stretch.annotation.chest",
+          "color": "primary"
+        },
+        {
+          "id": "body",
+          "position": {
+            "x": 0.8,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.88
+          },
+          "labelKey": "form.doorway-chest-stretch.annotation.body",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
