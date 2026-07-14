@@ -1,0 +1,65 @@
+{
+  "slug": "crunch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "crunch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.38,
+            "y": 0.63
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.crunch.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.46,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.4,
+            "y": 0.42
+          },
+          "labelKey": "form.crunch.annotation.shoulder",
+          "color": "primary"
+        },
+        {
+          "id": "abs",
+          "position": {
+            "x": 0.47,
+            "y": 0.73
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.15
+          },
+          "labelKey": "form.crunch.annotation.abs",
+          "color": "neutral"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.72,
+            "y": 0.78
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.93
+          },
+          "labelKey": "form.crunch.annotation.feet",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

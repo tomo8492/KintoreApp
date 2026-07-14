@@ -1,0 +1,65 @@
+{
+  "slug": "russian-twist",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "russian-twist-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "ball",
+          "position": {
+            "x": 0.5,
+            "y": 0.615
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.15
+          },
+          "labelKey": "form.russian-twist.annotation.ball",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.3,
+            "y": 0.8
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.russian-twist.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.55,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.45
+          },
+          "labelKey": "form.russian-twist.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.78,
+            "y": 0.92
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.75
+          },
+          "labelKey": "form.russian-twist.annotation.feet",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

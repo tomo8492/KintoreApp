@@ -6512,6 +6512,125 @@
         }
       }
     },
+    "form.crunch.annotation.abs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace your abs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お腹に力を入れる"
+          }
+        }
+      }
+    },
+    "form.crunch.annotation.feet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feet flat on floor"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "足は床につける"
+          }
+        }
+      }
+    },
+    "form.crunch.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Curl shoulders up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩甲骨を浮かす"
+          }
+        }
+      }
+    },
+    "form.glute-bridge.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avoid overarching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を反らし過ぎない"
+          }
+        }
+      }
+    },
+    "form.glute-bridge.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Push through heels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "踵で床を押す"
+          }
+        }
+      }
+    },
+    "form.glute-bridge.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Squeeze glutes up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お尻を締めて上げる"
+          }
+        }
+      }
+    },
+    "form.glute-bridge.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees hip-width"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を内に入れない"
+          }
+        }
+      }
+    },
     "form.dumbbell-curl.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11476,6 +11595,142 @@
         }
       }
     },
+    "form.mountain-climber.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep back flat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を反らさない"
+          }
+        }
+      }
+    },
+    "form.mountain-climber.annotation.hands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hands stay stacked"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手は肩の真下に"
+          }
+        }
+      }
+    },
+    "form.mountain-climber.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drive knee in fast"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "素早く膝を引く"
+          }
+        }
+      }
+    },
+    "form.mountain-climber.annotation.leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep leg extended"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後ろ脚は伸ばす"
+          }
+        }
+      }
+    },
+    "form.russian-twist.annotation.ball" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold at chest"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸の前でキープ"
+          }
+        }
+      }
+    },
+    "form.russian-twist.annotation.feet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heels stay down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとは床に"
+          }
+        }
+      }
+    },
+    "form.russian-twist.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bend knees lightly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を軽く曲げる"
+          }
+        }
+      }
+    },
+    "form.russian-twist.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lean torso back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上体を後ろに倒す"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -13495,6 +13750,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩ではなく体幹で回旋"
+          }
+        }
+      }
+    },
+    "form.side-plank.annotation.arm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reach arm upward"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕を天井へ伸ばす"
+          }
+        }
+      }
+    },
+    "form.side-plank.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stack hand below"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手は肩の真下に"
           }
         }
       }

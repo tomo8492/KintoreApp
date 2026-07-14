@@ -1,0 +1,65 @@
+{
+  "slug": "glute-bridge",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "glute-bridge-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.3,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.glute-bridge.annotation.knee",
+          "color": "neutral"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.6,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.35
+          },
+          "labelKey": "form.glute-bridge.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.16,
+            "y": 0.82
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.6
+          },
+          "labelKey": "form.glute-bridge.annotation.heel",
+          "color": "primary"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.5,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.65,
+            "y": 0.12
+          },
+          "labelKey": "form.glute-bridge.annotation.hip",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

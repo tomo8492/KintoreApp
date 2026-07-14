@@ -1,0 +1,65 @@
+{
+  "slug": "mountain-climber",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "mountain-climber-1",
+      "aspect": 1.498,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.365,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.mountain-climber.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.5,
+            "y": 0.49
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.08
+          },
+          "labelKey": "form.mountain-climber.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.64,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.mountain-climber.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.74,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.88
+          },
+          "labelKey": "form.mountain-climber.annotation.leg",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
