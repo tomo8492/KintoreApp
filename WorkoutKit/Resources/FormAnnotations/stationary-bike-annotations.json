@@ -1,0 +1,65 @@
+{
+  "slug": "stationary-bike",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "stationary-bike-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.48,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.44,
+            "y": 0.92
+          },
+          "labelKey": "form.stationary-bike.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.62,
+            "y": 0.38
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.stationary-bike.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.29,
+            "y": 0.66
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.5
+          },
+          "labelKey": "form.stationary-bike.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.7,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.52
+          },
+          "labelKey": "form.stationary-bike.annotation.hip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

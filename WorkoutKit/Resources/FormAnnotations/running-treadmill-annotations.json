@@ -1,0 +1,65 @@
+{
+  "slug": "running-treadmill",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "running-treadmill-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "gaze",
+          "position": {
+            "x": 0.6,
+            "y": 0.24
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.running-treadmill.annotation.gaze",
+          "color": "warning"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.57,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.38
+          },
+          "labelKey": "form.running-treadmill.annotation.arm",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.46,
+            "y": 0.38
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.35
+          },
+          "labelKey": "form.running-treadmill.annotation.torso",
+          "color": "neutral"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.62,
+            "y": 0.86
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.95
+          },
+          "labelKey": "form.running-treadmill.annotation.foot",
+          "color": "primary"
+        }
+      ]
+    }
+  ]
+}

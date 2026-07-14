@@ -13006,6 +13006,142 @@
         }
       }
     },
+    "form.running-treadmill.annotation.arm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swing arms lightly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕をリズムよく振る"
+          }
+        }
+      }
+    },
+    "form.running-treadmill.annotation.foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Land mid-belt"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベルト中央で着地"
+          }
+        }
+      }
+    },
+    "form.running-treadmill.annotation.gaze" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look ahead"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目線は前方へ"
+          }
+        }
+      }
+    },
+    "form.running-treadmill.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stay upright"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上体はまっすぐ"
+          }
+        }
+      }
+    },
+    "form.stationary-bike.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't hunch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背中を丸めすぎない"
+          }
+        }
+      }
+    },
+    "form.stationary-bike.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light grip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハンドルに軽く添える"
+          }
+        }
+      }
+    },
+    "form.stationary-bike.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set saddle height"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サドル高を合わせる"
+          }
+        }
+      }
+    },
+    "form.stationary-bike.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees track ahead"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝はまっすぐ前に"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
