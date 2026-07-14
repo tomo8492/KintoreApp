@@ -13618,6 +13618,40 @@
         }
       }
     },
+    "form.tricep-overhead-stretch.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull gently"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反対の手で軽く引く"
+          }
+        }
+      }
+    },
+    "form.tricep-overhead-stretch.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't arch back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体は反らさない"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -17755,13 +17789,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Elbow behind head"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を頭の後ろへ"
           }
         }
       }

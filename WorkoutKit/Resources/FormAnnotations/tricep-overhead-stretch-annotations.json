@@ -1,0 +1,52 @@
+{
+  "slug": "tricep-overhead-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "tricep-overhead-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.58,
+            "y": 0.18
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.08
+          },
+          "labelKey": "form.tricep-overhead-stretch.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.47,
+            "y": 0.22
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.tricep-overhead-stretch.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.52,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.55
+          },
+          "labelKey": "form.tricep-overhead-stretch.annotation.torso",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}
