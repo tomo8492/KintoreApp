@@ -15692,6 +15692,23 @@
         }
       }
     },
+    "form.barbell-back-squat.annotation.hip2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hips below knees"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "股関節が膝より下"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {

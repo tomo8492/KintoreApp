@@ -60,6 +60,53 @@
           "color": "warning"
         }
       ]
+    },
+    {
+      "id": "bottom",
+      "phaseLabelKey": "form.phase.bottom",
+      "assetName": "push-up-2",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "head-2",
+          "position": {
+            "x": 0.64,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.push-up.annotation.head",
+          "color": "primary"
+        },
+        {
+          "id": "back-2",
+          "position": {
+            "x": 0.37,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.push-up.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "core-2",
+          "position": {
+            "x": 0.3,
+            "y": 0.73
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.62
+          },
+          "labelKey": "form.push-up.annotation.core",
+          "color": "neutral"
+        }
+      ]
     }
   ]
 }
