@@ -1,0 +1,65 @@
+{
+  "slug": "incline-dumbbell-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "incline-dumbbell-press-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "dumbbells",
+          "position": {
+            "x": 0.744,
+            "y": 0.209
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.1
+          },
+          "labelKey": "form.incline-dumbbell-press.annotation.dumbbells",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.736,
+            "y": 0.446
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.6
+          },
+          "labelKey": "form.incline-dumbbell-press.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "bench",
+          "position": {
+            "x": 0.821,
+            "y": 0.763
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.9
+          },
+          "labelKey": "form.incline-dumbbell-press.annotation.bench",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.425,
+            "y": 0.844
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.15
+          },
+          "labelKey": "form.incline-dumbbell-press.annotation.core",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

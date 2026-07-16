@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-front-raise",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-front-raise-1",
+      "aspect": 0.8,
+      "annotations": [
+        {
+          "id": "raise",
+          "position": {
+            "x": 0.833,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.dumbbell-front-raise.annotation.raise",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.583,
+            "y": 0.423
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.65
+          },
+          "labelKey": "form.dumbbell-front-raise.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.325,
+            "y": 0.407
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.58
+          },
+          "labelKey": "form.dumbbell-front-raise.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "tempo",
+          "position": {
+            "x": 0.458,
+            "y": 0.822
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.9
+          },
+          "labelKey": "form.dumbbell-front-raise.annotation.tempo",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

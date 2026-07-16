@@ -1,0 +1,65 @@
+{
+  "slug": "dead-hang",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dead-hang-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.575,
+            "y": 0.3
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.dead-hang.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.46,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.35
+          },
+          "labelKey": "form.dead-hang.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.505,
+            "y": 0.57
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.55
+          },
+          "labelKey": "form.dead-hang.annotation.core",
+          "color": "info"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.5,
+            "y": 0.88
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.dead-hang.annotation.feet",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

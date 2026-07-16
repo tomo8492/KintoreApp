@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 101 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 111 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -126,6 +126,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `sprinting-1` | 31675724 | Ciro Palomba | https://www.pexels.com/photo/31675724/ |
 | `standing-side-bend-1` | 5331224 | Monstera Production | https://www.pexels.com/photo/5331224/ |
 | `heavy-bag-boxing-1` | 7991688 | (photographer TBD) | https://www.pexels.com/photo/7991688/ |
+| `brisk-walking-1` | 4939431 | Nataliya Vaitkevich | https://www.pexels.com/photo/4939431/ |
+| `dead-hang-1` | 8520197 | KoolShooters | https://www.pexels.com/photo/8520197/ |
+| `deep-squat-hold-1` | 8401147 | RDNE Stock project | https://www.pexels.com/photo/8401147/ |
+| `dumbbell-fly-1` | 18060194 | marcuschanmedia | https://www.pexels.com/photo/18060194/ |
+| `dumbbell-front-raise-1` | 29793977 | Foad Shariyati | https://www.pexels.com/photo/29793977/ |
+| `dumbbell-tricep-kickback-1` | 14099909 | Karen Irala | https://www.pexels.com/photo/14099909/ |
+| `ez-bar-curl-1` | 6999014 | Monstera Production | https://www.pexels.com/photo/6999014/ |
+| `hanging-knee-raise-1` | 8520073 | KoolShooters | https://www.pexels.com/photo/8520073/ |
+| `incline-dumbbell-press-1` | 15917308 | Doğu Tuncer | https://www.pexels.com/photo/15917308/ |
+| `swimming-freestyle-1` | 18353095 | Erika Reyes | https://www.pexels.com/photo/18353095/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720307 | Ketut Subiyanto | https://www.pexels.com/photo/4720307/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

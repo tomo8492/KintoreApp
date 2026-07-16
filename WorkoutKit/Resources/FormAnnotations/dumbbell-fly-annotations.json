@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-fly",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-fly-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "dumbbell",
+          "position": {
+            "x": 0.106,
+            "y": 0.125
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.88
+          },
+          "labelKey": "form.dumbbell-fly.annotation.dumbbell",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.233,
+            "y": 0.613
+          },
+          "labelAnchor": {
+            "x": 0.35,
+            "y": 0.1
+          },
+          "labelKey": "form.dumbbell-fly.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.556,
+            "y": 0.438
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.88
+          },
+          "labelKey": "form.dumbbell-fly.annotation.chest",
+          "color": "neutral"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.819,
+            "y": 0.604
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.1
+          },
+          "labelKey": "form.dumbbell-fly.annotation.shoulder",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "swimming-freestyle",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "swimming-freestyle-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "head",
+          "position": {
+            "x": 0.71,
+            "y": 0.46
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.swimming-freestyle.annotation.head",
+          "color": "info"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.55,
+            "y": 0.46
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.swimming-freestyle.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.38,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.8
+          },
+          "labelKey": "form.swimming-freestyle.annotation.shoulder",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

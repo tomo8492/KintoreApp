@@ -1,0 +1,65 @@
+{
+  "slug": "deep-squat-hold",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "deep-squat-hold-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "back",
+          "position": {
+            "x": 0.467,
+            "y": 0.42
+          },
+          "labelAnchor": {
+            "x": 0.14,
+            "y": 0.14
+          },
+          "labelKey": "form.deep-squat-hold.annotation.back",
+          "color": "neutral"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.55,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.18
+          },
+          "labelKey": "form.deep-squat-hold.annotation.elbow",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.577,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.85
+          },
+          "labelKey": "form.deep-squat-hold.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.43,
+            "y": 0.87
+          },
+          "labelAnchor": {
+            "x": 0.14,
+            "y": 0.65
+          },
+          "labelKey": "form.deep-squat-hold.annotation.heel",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

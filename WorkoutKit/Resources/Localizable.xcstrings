@@ -5906,13 +5906,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grip the bar tightly"
+            "value" : "Shoulder-wide grip"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グリップを強く握る"
+            "value" : "順手で肩幅に握る"
           }
         }
       }
@@ -6042,13 +6042,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep a neutral spine"
+            "value" : "Keep back straight"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
+            "value" : "背中は丸めない"
           }
         }
       }
@@ -6705,13 +6705,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Soft elbow bend, locked in place"
+            "value" : "Keep elbows bent"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘を軽く曲げて固定"
+            "value" : "肘は軽く曲げて固定"
           }
         }
       }
@@ -7113,13 +7113,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Elbow fixed at hip"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を腰の高さに固定"
           }
         }
       }
@@ -7130,13 +7130,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hinge from the hips"
+            "value" : "Hinge at the hips"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
+            "value" : "股関節から前傾する"
           }
         }
       }
@@ -7283,13 +7283,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Keep elbows pinned"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を脇に固定する"
           }
         }
       }
@@ -7300,13 +7300,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chest up, brace your core"
+            "value" : "Don't lean back"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を張って体幹を固める"
+            "value" : "上体を反らさない"
           }
         }
       }
@@ -15059,6 +15059,550 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "足は前後に開く"
+          }
+        }
+      }
+    },
+    "form.brisk-walking.annotation.arm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swing arms freely"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕を軽く振る"
+          }
+        }
+      }
+    },
+    "form.brisk-walking.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heel strikes first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとから着地"
+          }
+        }
+      }
+    },
+    "form.brisk-walking.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soft landing knee"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝はやわらかく"
+          }
+        }
+      }
+    },
+    "form.brisk-walking.annotation.posture" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep back straight"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背すじを伸ばす"
+          }
+        }
+      }
+    },
+    "form.dead-hang.annotation.core" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breathe naturally"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自然に呼吸を続ける"
+          }
+        }
+      }
+    },
+    "form.dead-hang.annotation.feet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check space below"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "着地スペースを確保"
+          }
+        }
+      }
+    },
+    "form.dead-hang.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relax shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩の力を抜く"
+          }
+        }
+      }
+    },
+    "form.deep-squat-hold.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press knees open"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘で膝を押す"
+          }
+        }
+      }
+    },
+    "form.deep-squat-hold.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep heels down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "踵は床につけたまま"
+          }
+        }
+      }
+    },
+    "form.deep-squat-hold.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees track out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝は外向きに"
+          }
+        }
+      }
+    },
+    "form.dumbbell-fly.annotation.chest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Squeeze at the top"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸を絞るように戻す"
+          }
+        }
+      }
+    },
+    "form.dumbbell-fly.annotation.dumbbell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arc dumbbells out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "弧を描くように開く"
+          }
+        }
+      }
+    },
+    "form.dumbbell-fly.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't overstretch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下げすぎに注意"
+          }
+        }
+      }
+    },
+    "form.dumbbell-front-raise.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep elbows soft"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘は軽く曲げて固定"
+          }
+        }
+      }
+    },
+    "form.dumbbell-front-raise.annotation.raise" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raise to shoulder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩の高さまで挙げる"
+          }
+        }
+      }
+    },
+    "form.dumbbell-front-raise.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't shrug"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩はすくめない"
+          }
+        }
+      }
+    },
+    "form.dumbbell-front-raise.annotation.tempo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't use momentum"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わない"
+          }
+        }
+      }
+    },
+    "form.dumbbell-tricep-kickback.annotation.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep chest open"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背中を丸めない"
+          }
+        }
+      }
+    },
+    "form.dumbbell-tricep-kickback.annotation.extend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Push straight back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後方へまっすぐ伸ばす"
+          }
+        }
+      }
+    },
+    "form.ez-bar-curl.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eases wrist strain"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "波型バーで手首保護"
+          }
+        }
+      }
+    },
+    "form.ez-bar-curl.annotation.wrist" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't bend wrists"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手首は自然な角度"
+          }
+        }
+      }
+    },
+    "form.hanging-knee-raise.annotation.abs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No swinging"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わない"
+          }
+        }
+      }
+    },
+    "form.hanging-knee-raise.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoulder-wide grip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩幅よりやや広く握る"
+          }
+        }
+      }
+    },
+    "form.hanging-knee-raise.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees to chest"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を胸に引き上げる"
+          }
+        }
+      }
+    },
+    "form.hanging-knee-raise.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relax shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩はすくめない"
+          }
+        }
+      }
+    },
+    "form.incline-dumbbell-press.annotation.bench" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set bench incline"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベンチは斜めに設定"
+          }
+        }
+      }
+    },
+    "form.incline-dumbbell-press.annotation.core" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace your core"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腹に軽く力を入れる"
+          }
+        }
+      }
+    },
+    "form.incline-dumbbell-press.annotation.dumbbells" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop before touch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "触れる手前で止める"
+          }
+        }
+      }
+    },
+    "form.incline-dumbbell-press.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't lock elbow"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を伸ばし切らない"
+          }
+        }
+      }
+    },
+    "form.swimming-freestyle.annotation.arm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lift elbow high"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を高く運ぶ"
+          }
+        }
+      }
+    },
+    "form.swimming-freestyle.annotation.head" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breathe sideways"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "横向きで息継ぎ"
+          }
+        }
+      }
+    },
+    "form.swimming-freestyle.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll from shoulder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩からしっかり回す"
           }
         }
       }

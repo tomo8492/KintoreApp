@@ -1,0 +1,65 @@
+{
+  "slug": "dumbbell-tricep-kickback",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-tricep-kickback-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.678,
+            "y": 0.523
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.12
+          },
+          "labelKey": "form.dumbbell-tricep-kickback.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "extend",
+          "position": {
+            "x": 0.667,
+            "y": 0.775
+          },
+          "labelAnchor": {
+            "x": 0.25,
+            "y": 0.9
+          },
+          "labelKey": "form.dumbbell-tricep-kickback.annotation.extend",
+          "color": "primary"
+        },
+        {
+          "id": "hinge",
+          "position": {
+            "x": 0.775,
+            "y": 0.525
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.28
+          },
+          "labelKey": "form.dumbbell-tricep-kickback.annotation.hinge",
+          "color": "info"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.521,
+            "y": 0.381
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.15
+          },
+          "labelKey": "form.dumbbell-tricep-kickback.annotation.back",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

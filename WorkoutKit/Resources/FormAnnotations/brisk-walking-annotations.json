@@ -1,0 +1,65 @@
+{
+  "slug": "brisk-walking",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "brisk-walking-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.49,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.25,
+            "y": 0.12
+          },
+          "labelKey": "form.brisk-walking.annotation.posture",
+          "color": "primary"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.36,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.5
+          },
+          "labelKey": "form.brisk-walking.annotation.arm",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.5625,
+            "y": 0.675
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.3
+          },
+          "labelKey": "form.brisk-walking.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.575,
+            "y": 0.855
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.brisk-walking.annotation.heel",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
