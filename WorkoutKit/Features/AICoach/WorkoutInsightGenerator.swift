@@ -37,9 +37,9 @@ struct WorkoutInsightInput: Sendable, Equatable {
         let name: String        // 表示用(日本語解決済)
         /// `Exercise.slug`。FormAnnotationLoader でフォーム注釈 JSON を引くためのキー。
         /// デフォルト値を持たせることで、slug を持たない既存の呼び出し元(プレビュー等)を
-        /// 壊さずに追加できるようにしている(構造体の自動 memberwise init が
-        /// デフォルト値付きパラメータとして生成する)。
-        let slug: String = ""
+        /// 壊さずに追加できるようにしている(memberwise init がデフォルト値付き
+        /// パラメータを生成するのは `var` のみ。`let` だと init から除外される)。
+        var slug: String = ""
         let setCount: Int
         let totalVolumeKg: Double
     }
