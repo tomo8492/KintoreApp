@@ -154,6 +154,15 @@ enum FormAnnotationLoader {
 /// 写真 + 吹き出しアノテーションのコンテナ。
 /// `slug` から JSON を読み、見つからなければ何も描かない(=呼び出し側で if-let)。
 /// `frames` が複数ある場合はセグメント付きピッカーでフェーズ(スタート/ボトム等)を切り替えられる。
+///
+/// Phase D-1(フレーム自動再生): `frames.count > 1` の種目は 2.5 秒間隔で
+/// フェーズを自動的にループ表示する(Timer/Combine は使わず `.task(id:)` +
+/// `Task.sleep` による構造化並行性で実装)。Reduce Motion が有効な環境では
+/// 自動再生を行わず、ピッカーでの手動切替えのみに留める。ユーザーがピッカーを
+/// 手動操作した場合は 10 秒だけ自動再生を止め、その後また自動ループを再開する。
+/// `@MainActor` は AICoachView と同じ理由(async task から @State を直接
+/// 更新するための隔離)で付与している。
+@MainActor
 struct AnnotatedFormView: View {
     // `set` という名前は computed property の setter キーワードと衝突する
     // (アクセサ内で行頭に置くとコンパイルエラー)ため annotationSet とする。
@@ -161,6 +170,17 @@ struct AnnotatedFormView: View {
 
     @State private var selectedFrameID: String
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// 自動再生ループの世代カウンタ。手動操作のたびにインクリメントして
+    /// `.task(id:)` を強制的に再起動(=直前のループを cancel)する。
+    @State private var autoPlayGeneration: Int = 0
+    /// 直近の手動操作日時。自動再生再開までの 10 秒待機の起点にする。
+    @State private var lastManualInteraction: Date?
+
+    /// 自動再生の切替え間隔。
+    private static let autoPlayInterval: TimeInterval = 2.5
+    /// 手動操作後、自動再生を再開するまでの静止時間。
+    private static let manualPauseDuration: TimeInterval = 10
 
     /// `slug` から初期化。対応 JSON が無い、またはフレームが 0 件の場合は nil を返すフェイルセーフ。
     init?(slug: String, bundle: Bundle = .main) {
@@ -184,7 +204,7 @@ struct AnnotatedFormView: View {
     var body: some View {
         VStack(spacing: 8) {
             if annotationSet.frames.count > 1 {
-                Picker(selection: $selectedFrameID) {
+                Picker(selection: manualFrameSelection) {
                     ForEach(annotationSet.frames) { frame in
                         Text(LocalizedStringKey(frame.phaseLabelKey)).tag(frame.id)
                     }
@@ -252,6 +272,74 @@ struct AnnotatedFormView: View {
             .premiumDiagramCard(cornerRadius: AppRadius.hero)
         }
         .accessibilityElement(children: .contain)
+        // フレーム自動再生ループ本体。id が変わるたびに直前のループを
+        // cancel して新しいループを開始する(SwiftUI `.task(id:)` の標準挙動)。
+        // 世代(autoPlayGeneration)は手動操作のたびにインクリメントされるため、
+        // これにより「手動操作 → 直前のループを止めて 10 秒待ってから再開」を実現する。
+        .task(id: autoPlayTaskKey) {
+            await runAutoPlayLoop()
+        }
+    }
+
+    /// `.task(id:)` に渡すキー。世代・Reduce Motion・slug をまとめて 1 つの
+    /// 文字列にすることで、いずれかが変わった時だけループを再起動させる。
+    private var autoPlayTaskKey: String {
+        "\(annotationSet.slug)-\(autoPlayGeneration)-\(reduceMotion)"
+    }
+
+    /// ピッカー専用の Binding。ユーザーが実際にタップした時だけ `pauseAutoPlay()`
+    /// を呼ぶ(自動再生側の `advanceToNextFrame()` はこの Binding を経由せず
+    /// `selectedFrameID` を直接書き換えるため、自動切替えは「手動操作」として
+    /// 扱われず一時停止のトリガーにならない)。
+    private var manualFrameSelection: Binding<String> {
+        Binding(
+            get: { selectedFrameID },
+            set: { newValue in
+                selectedFrameID = newValue
+                pauseAutoPlay()
+            }
+        )
+    }
+
+    /// 手動操作を記録し、自動再生ループを再起動(=一時停止)する。
+    private func pauseAutoPlay() {
+        lastManualInteraction = .now
+        autoPlayGeneration += 1
+    }
+
+    /// 2.5 秒間隔でフレームを進める無限ループ。Reduce Motion がオンの場合や
+    /// フレームが 1 枚以下の場合は何もせず即 return する。
+    /// Timer/Combine は使わず `Task.sleep` のみで実装(CLAUDE.md §11 準拠)。
+    /// `.task(id:)` が id 変化時・View 破棄時に自動で cancel してくれるため、
+    /// 明示的な後始末は不要。
+    private func runAutoPlayLoop() async {
+        guard annotationSet.frames.count > 1, !reduceMotion else { return }
+
+        // 直近の手動操作から manualPauseDuration 秒経っていなければ、
+        // 残り時間分だけ先に待ってからループを開始する。
+        if let last = lastManualInteraction {
+            let remaining = Self.manualPauseDuration - Date.now.timeIntervalSince(last)
+            if remaining > 0 {
+                try? await Task.sleep(for: .seconds(remaining))
+            }
+        }
+        guard !Task.isCancelled else { return }
+
+        while !Task.isCancelled {
+            try? await Task.sleep(for: .seconds(Self.autoPlayInterval))
+            guard !Task.isCancelled else { return }
+            advanceToNextFrame()
+        }
+    }
+
+    /// 現在のフレームの次(末尾なら先頭に循環)へ selectedFrameID を進める。
+    /// クロスフェード自体は body 側の `.animation(value: selectedFrameID)` が
+    /// 既存ロジックのまま処理するため、ここでは値の更新のみ行う。
+    private func advanceToNextFrame() {
+        let frames = annotationSet.frames
+        guard let currentIndex = frames.firstIndex(where: { $0.id == selectedFrameID }) else { return }
+        let nextIndex = (currentIndex + 1) % frames.count
+        selectedFrameID = frames[nextIndex].id
     }
 }
 

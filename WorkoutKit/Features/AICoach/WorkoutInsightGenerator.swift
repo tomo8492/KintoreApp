@@ -35,6 +35,11 @@ struct WorkoutInsightInput: Sendable, Equatable {
 
     struct ExerciseLine: Sendable, Equatable {
         let name: String        // 表示用(日本語解決済)
+        /// `Exercise.slug`。FormAnnotationLoader でフォーム注釈 JSON を引くためのキー。
+        /// デフォルト値を持たせることで、slug を持たない既存の呼び出し元(プレビュー等)を
+        /// 壊さずに追加できるようにしている(構造体の自動 memberwise init が
+        /// デフォルト値付きパラメータとして生成する)。
+        let slug: String = ""
         let setCount: Int
         let totalVolumeKg: Double
     }
@@ -56,22 +61,24 @@ extension WorkoutInsightInput {
     static func from(session: WorkoutSession, previous: WorkoutSession? = nil) -> WorkoutInsightInput {
         // 種目ごとに setCount + totalVolume を集計。
         // 同じ exercise が複数 set にまたがるので reduce で集約する。
-        var perExercise: [String: (count: Int, volume: Double)] = [:]
+        // キーは表示名ではなく slug にする(表示名だけでは JP/EN 切替え時や
+        // 同名種目で衝突し得るため。slug は Exercise の主キーで安定)。
+        var perExercise: [String: (name: String, count: Int, volume: Double)] = [:]
         var order: [String] = []
         for set in session.sets.sorted(by: { $0.order < $1.order }) {
             guard let ex = set.exercise else { continue }
-            let name = ex.localizedName
-            if perExercise[name] == nil { order.append(name) }
-            let prev = perExercise[name] ?? (count: 0, volume: 0)
+            let slug = ex.slug
+            if perExercise[slug] == nil { order.append(slug) }
+            let prev = perExercise[slug] ?? (name: ex.localizedName, count: 0, volume: 0)
             let added = (set.reps > 0 && set.weightKg > 0)
                 ? Double(set.reps) * set.weightKg
                 : 0
-            perExercise[name] = (count: prev.count + 1, volume: prev.volume + added)
+            perExercise[slug] = (name: prev.name, count: prev.count + 1, volume: prev.volume + added)
         }
 
-        let lines = order.compactMap { name -> ExerciseLine? in
-            guard let agg = perExercise[name] else { return nil }
-            return ExerciseLine(name: name, setCount: agg.count, totalVolumeKg: agg.volume)
+        let lines = order.compactMap { slug -> ExerciseLine? in
+            guard let agg = perExercise[slug] else { return nil }
+            return ExerciseLine(name: agg.name, slug: slug, setCount: agg.count, totalVolumeKg: agg.volume)
         }
 
         let delta: Double? = previous.map { session.totalVolume - $0.totalVolume }
@@ -147,7 +154,48 @@ enum WorkoutInsightGenerator {
             let sign = delta >= 0 ? "+" : ""
             lines.append("前回比較: 総ボリューム \(sign)\(Int(delta)) kg")
         }
+        // Phase D-2(キュー連動): フォーム注釈 JSON を持つ種目があれば、
+        // その日本語キュー文言を「参考」として添付する。これにより advice が
+        // 「膝はつま先方向に」のような具体的な文言を参照しやすくなる。
+        // JSON を持たない種目(345種目中まだ一部のみ)は単にスキップされる。
+        if let cueContext = buildCueContext(input.todayExercises) {
+            lines.append(cueContext)
+        }
         return lines.joined(separator: "\n")
+    }
+
+    /// 今日実施した種目のうち、最大 `maxExercises` 件について
+    /// `FormAnnotationLoader.load(slug:)` でフォーム注釈 JSON を引き、
+    /// 見つかった種目ごとに先頭フレームの上位 `maxCuesPerExercise` 件の
+    /// キュー文言(`labelKey` を実行時解決した日本語テキスト)を
+    /// 「種目名=キュー1・キュー2」の形でまとめる。
+    ///
+    /// 該当種目が 1 つも無ければ nil を返す(プロンプトに余計な行を足さない)。
+    /// FormAnnotationLoader / FormAnnotationSet は純粋な JSON デコードのみで
+    /// OS バージョン依存が無いため、iOS 26 未満でも呼び出し自体は安全。
+    /// ただしこのメソッド自体は buildPrompt からのみ呼ばれ、buildPrompt は
+    /// #if canImport(FoundationModels) / @available(iOS 26, *) の内側にある。
+    @available(iOS 26, *)
+    private static func buildCueContext(_ exercises: [WorkoutInsightInput.ExerciseLine]) -> String? {
+        let maxExercises = 3
+        let maxCuesPerExercise = 2
+
+        var parts: [String] = []
+        for ex in exercises {
+            guard parts.count < maxExercises else { break }
+            guard let set = FormAnnotationLoader.load(slug: ex.slug),
+                  let firstFrame = set.frames.first else { continue }
+
+            let cueTexts = firstFrame.annotations
+                .prefix(maxCuesPerExercise)
+                .map { String(localized: String.LocalizationValue($0.labelKey)) }
+            guard !cueTexts.isEmpty else { continue }
+
+            parts.append("\(ex.name)=\(cueTexts.joined(separator: "・"))")
+        }
+
+        guard !parts.isEmpty else { return nil }
+        return "フォームの要点(参考): " + parts.joined(separator: "、")
     }
     #endif
 }
