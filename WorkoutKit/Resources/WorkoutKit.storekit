@@ -41,7 +41,7 @@
         {
           "adHocOffers" : [],
           "codeOffers" : [],
-          "displayPrice" : "980",
+          "displayPrice" : "680",
           "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "M0001",
@@ -62,7 +62,7 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "workoutkit_monthly_980",
+          "productID" : "workoutkit_monthly_680",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "WorkoutKit Premium Monthly",
           "subscriptionGroupID" : "21B8AC91",
@@ -82,12 +82,12 @@
           },
           "localizations" : [
             {
-              "description" : "年額なら ¥6,860 お得。最初の 7 日間は無料トライアル。",
+              "description" : "年額なら ¥3,260 お得。最初の 7 日間は無料トライアル。",
               "displayName" : "Yearly Premium",
               "locale" : "ja_JP"
             },
             {
-              "description" : "Save ¥6,860 with yearly. 7-day free trial.",
+              "description" : "Save ¥3,260 with yearly. 7-day free trial.",
               "displayName" : "Yearly Premium",
               "locale" : "en_US"
             }

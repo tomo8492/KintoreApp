@@ -51,7 +51,7 @@
 
    | Product ID                  | Period   | Price    | Free Trial |
    |---|---|---|---|
-   | `workoutkit_monthly_980`    | 1 month  | ¥980     | 7 days     |
+   | `workoutkit_monthly_680`    | 1 month  | ¥680     | 7 days     |
    | `workoutkit_yearly_4900`    | 1 year   | ¥4,900   | 7 days     |
 
 3. Both are **Auto-Renewable Subscriptions**.

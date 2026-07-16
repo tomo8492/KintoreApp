@@ -141,7 +141,7 @@ https://github.com/tomo8492/KintoreApp/actions
 1. https://app.revenuecat.com にログイン → New Project: `WorkoutKit`
 2. Apps → iOS app: bundle ID `com.tomo.workoutkit`
 3. Products → Add Product:
-   - `workoutkit_monthly_980` / Auto-Renewable Subscription
+   - `workoutkit_monthly_680` / Auto-Renewable Subscription
    - `workoutkit_yearly_4900` / Auto-Renewable Subscription
 4. Entitlements → New Entitlement: `premium`、上記 2 product を attach
 5. Offerings → Current: 2 product を `$rc_monthly` / `$rc_annual` package に紐付け
@@ -175,7 +175,7 @@ Paywall を出して、Offerings が空でないことを確認(空なら dashbo
 2. **App Information** → Privacy Policy URL、Subcategory(Health & Fitness)を埋める
 3. **In-App Purchases and Subscriptions** → Subscription Groups → New: `WorkoutKit Premium`(reference name) / display name は localized
 4. Subscription Group 内に 2 product:
-   - `workoutkit_monthly_980` / Subscription Duration: 1 Month / Price: 月額 ¥980
+   - `workoutkit_monthly_680` / Subscription Duration: 1 Month / Price: 月額 ¥680
    - `workoutkit_yearly_4900` / Subscription Duration: 1 Year / Price: 年額 ¥4,900
 5. 各 product に **Introductory Offer**:
    - Free Trial / 7 days / All territories / First-time subscribers only

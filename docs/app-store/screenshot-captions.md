@@ -50,8 +50,8 @@ the order they should appear in App Store Connect (slot 1 = hero).
 - **en**: PPL, Upper-Lower, Full-body\nThree free presets
 
 ### 10. paywall
-- **ja**: 月額 ¥980 / 年額 ¥4,900\n7日間の無料トライアル付き\nファミリー共有対応・いつでも解約可
-- **en**: ¥980/month or ¥4,900/year\n7-day free trial\nCancel any time, Family Sharing
+- **ja**: 月額 ¥680 / 年額 ¥4,900\n7日間の無料トライアル付き\nファミリー共有対応・いつでも解約可
+- **en**: ¥680/month or ¥4,900/year\n7-day free trial\nCancel any time, Family Sharing
 
 ---
 

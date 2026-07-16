@@ -42,7 +42,7 @@ under the brand.
 ### Promotional text (170, editable post-release)
 Used as the launch banner / for ASO experiments. Both locales repeat:
 "v1.0", "5-second", "345 exercises", "rest timer Live Activity",
-"Apple Watch widget", "Premium ¥980/月 or ¥4,900/年", "7-day free trial",
+"Apple Watch widget", "Premium ¥680/月 or ¥4,900/年", "7-day free trial",
 "Family Sharing".
 
 ### Description (4 000)
@@ -91,7 +91,7 @@ their changelog.
 - **2.3 (accurate metadata)**: Every claim in description / promo / what's
   new maps to a shipping feature in `RELEASE_AUDIT.md`.
 - **3.1.2 (subscriptions)**: Description includes the required disclosure
-  block — auto-renewal terms, 7-day trial, ¥980/month and ¥4,900/year
+  block — auto-renewal terms, 7-day trial, ¥680/month and ¥4,900/year
   prices, "Subscription Group: WorkoutKit Premium", cancel-anytime via
   iOS Settings, and Restore Purchases path. Matches the StoreKit
   configuration `WorkoutKit.storekit` and `LICENSE_FOOTER` strings in

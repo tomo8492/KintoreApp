@@ -64,7 +64,7 @@
    ```
 6. RevenueCat ダッシュボードの **Entitlements** で `premium` を作成(コードは `PurchaseManager.swift` で `info.entitlements["premium"]` を見にいく既存実装)。
 7. **Products** に 2 件追加:
-   - `workoutkit_monthly_980` → Entitlement: premium
+   - `workoutkit_monthly_680` → Entitlement: premium
    - `workoutkit_yearly_4900` → Entitlement: premium
 8. **Offerings** で `default` offering を作成し、上の 2 product をアサイン(monthly / annual パッケージ)。
 
@@ -106,9 +106,9 @@
 3. グループ内で **+ Subscription**:
    - **Monthly**:
      - Reference Name: `WorkoutKit Premium Monthly`
-     - Product ID: **`workoutkit_monthly_980`**
+     - Product ID: **`workoutkit_monthly_680`**
      - Duration: 1 Month
-     - Price: ¥980 / month(Tier は ASC で自動マッピング)
+     - Price: ¥680 / month(Tier は ASC で自動マッピング)
    - **Yearly**:
      - Reference Name: `WorkoutKit Premium Yearly`
      - Product ID: **`workoutkit_yearly_4900`**
@@ -133,7 +133,7 @@
 **Completion check**: 2 product が ASC 側で **Ready to Submit** 表示 + RevenueCat ダッシュボードに同じ product ID が同期されている。
 
 **Troubleshooting**:
-- Product ID が変更不可 → 名前を一度設定すると変更できない。**Foundation Lock §-1.14 通りに正確に入力**: `workoutkit_monthly_980` / `workoutkit_yearly_4900`(アンダースコア、半角小文字)。
+- Product ID が変更不可 → 名前を一度設定すると変更できない。**Foundation Lock §-1.14 通りに正確に入力**: `workoutkit_monthly_680` / `workoutkit_yearly_4900`(アンダースコア、半角小文字)。
 - Localization 入力をスキップすると `Missing Metadata` で submit が止まる。
 - Free Trial は同一 Subscription Group 内で **1 回しか** ユーザーごとに付与されない(Apple 既定動作)。Terms of Service の §5.3 に明記済(`docs/legal/terms-of-service.md`)。
 

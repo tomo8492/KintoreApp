@@ -38,7 +38,7 @@ Subscription Group (`workoutkit.premium`, named "WorkoutKit Premium"):
 
 | Product ID                | Period   | Price    | Free trial |
 |---|---|---|---|
-| `workoutkit_monthly_980`  | 1 month  | ¥980     | 7 days     |
+| `workoutkit_monthly_680`  | 1 month  | ¥680     | 7 days     |
 | `workoutkit_yearly_4900`  | 1 year   | ¥4,900   | 7 days     |
 
 Both unlock the same `premium` entitlement. There are no consumables, no
@@ -206,7 +206,7 @@ Auto-Renewable Subscription 2 種を投入:
 
 | Product ID                | 期間   | 価格    | 無料トライアル |
 |---|---|---|---|
-| `workoutkit_monthly_980`  | 1 か月 | ¥980   | 7 日間 |
+| `workoutkit_monthly_680`  | 1 か月 | ¥680   | 7 日間 |
 | `workoutkit_yearly_4900`  | 1 年   | ¥4,900 | 7 日間 |
 
 どちらも `premium` Entitlement を解放する同一機能セット。Consumable や

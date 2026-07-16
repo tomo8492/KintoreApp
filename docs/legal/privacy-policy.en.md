@@ -112,7 +112,7 @@ The App contains **no analytics, advertising, or social third-party SDKs**:
 The only third-party SDK used by the App is **RevenueCat** for purchase processing:
 
 - ✅ **RevenueCat** (purchase processing only): used to manage Premium subscription
-  state (¥980/month / ¥4,900/year) routed through the App Store / StoreKit 2.
+  state (¥680/month / ¥4,900/year) routed through the App Store / StoreKit 2.
   RevenueCat handles the purchase receipt and an anonymous ID
   (`$RCAnonymousID:*`); no personally identifiable information such as your
   name or email address is transmitted from the App. RevenueCat's own data

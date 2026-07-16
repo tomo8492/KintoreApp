@@ -2,11 +2,11 @@
 // CLAUDE.md v1.0 §6-6 準拠。
 //
 // サブスク前提のハードペイウォール。月額 / 年額の 2 プランを並べ、年額をデフォルト選択。
-// 「月額より ¥6,860 お得」バッジ + 7 日無料トライアルを強調する。
+// 「月額より ¥3,260 お得」バッジ + 7 日無料トライアルを強調する。
 //
 // 2026 UX ベストプラクティス(RevenueCat + Adapty + Apple HIG 統合):
 //   - Visual Trial Timeline(Apple-endorsed): 今日 / 5 日目リマインダー / 7 日目課金
-//   - Price anchoring: 年額に「月あたり ¥408」「58% OFF」を併記
+//   - Price anchoring: 年額に「月あたり ¥408」「40% OFF」を併記
 //   - Dynamic CTA copy: トライアル有なら「7 日間 無料で始める」、無なら「プレミアムに登録」
 //   - Haptic feedback: プラン選択時の `.selection` フィードバック
 //   - Cancel anytime trust signal: plan subtitle に明示
@@ -43,9 +43,9 @@ struct PaywallView: View {
     enum PlanKind { case monthly, yearly }
     enum Status: Equatable { case idle, purchasing, restoring }
 
-    /// 年額の割引率(¥980×12 = ¥11,760 → ¥4,900 で約 58.3% OFF)。
+    /// 年額の割引率(¥680×12 = ¥8,160 → ¥4,900 で約 39.9% OFF)。
     /// Localizable に %lld で渡す。
-    private static let yearlyPercentOff: Int = 58
+    private static let yearlyPercentOff: Int = 40
 
     var body: some View {
         ScrollView {
@@ -118,11 +118,11 @@ struct PaywallView: View {
 
     private var featuresSection: some View {
         VStack(alignment: .leading, spacing: 12) {
+            featureRow(icon: "sparkles",               titleKey: "hard-paywall.feature.ai")
             featureRow(icon: "clock.arrow.circlepath", titleKey: "hard-paywall.feature.history")
             featureRow(icon: "chart.bar.xaxis",        titleKey: "hard-paywall.feature.charts")
             featureRow(icon: "square.stack.3d.up",     titleKey: "hard-paywall.feature.templates")
             featureRow(icon: "square.and.arrow.down",  titleKey: "hard-paywall.feature.csv")
-            featureRow(icon: "sparkles",               titleKey: "hard-paywall.feature.ai")
             featureRow(icon: "applewatch",             titleKey: "hard-paywall.feature.watch")
         }
         .padding(.horizontal, 8)
@@ -155,7 +155,7 @@ struct PaywallView: View {
             planCard(
                 kind: .monthly,
                 titleKey: "hard-paywall.plan.monthly.title",
-                priceText: offering?.monthly?.displayPrice ?? "¥980",
+                priceText: offering?.monthly?.displayPrice ?? "¥680",
                 subtitleKey: "hard-paywall.plan.monthly.subtitle",
                 badgeKey: nil,
                 trialDays: offering?.monthly?.trialDays,

@@ -20925,13 +20925,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AI coach workout summary (iOS 26+)"
+            "value" : "On-device AI coach summary — your data never leaves your iPhone (iOS 26+)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AI コーチによるワークアウト要約 (iOS 26+)"
+            "value" : "オンデバイス AI コーチ要約 — データは端末の外に出ません(iOS 26+)"
           }
         }
       }
@@ -21073,19 +21073,19 @@
       }
     },
     "hard-paywall.plan.yearly.badge" : {
-      "comment" : "年額プランのお得バッジ。月額 ¥980 × 12 = ¥11,760 - 年額 ¥4,900 = ¥6,860 が正しい差額。Apple Guideline 3.1.2 (accurate pricing) に従い実際の差額を表示する。",
+      "comment" : "年額プランのお得バッジ。月額 ¥680 × 12 = ¥8,160 - 年額 ¥4,900 = ¥3,260 が正しい差額。Apple Guideline 3.1.2 (accurate pricing) に従い実際の差額を表示する。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Save ¥6,860"
+            "value" : "Save ¥3,260"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¥6,860 お得"
+            "value" : "¥3,260 お得"
           }
         }
       }

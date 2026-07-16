@@ -61,9 +61,9 @@
 | App Group           | `group.com.tomo.workoutkit`                                          |
 | Min iOS             | 18.0 (Live Activities + watchOS Smart Stack で 18 以上が必要)        |
 | 対応デバイス        | iPhone (Portrait) + iPad (Portrait + Landscape) + Apple Watch       |
-| 課金                | Freemium + Premium サブスク(月額 ¥980 / 年額 ¥4,900 / 7 日無料試用) |
+| 課金                | Freemium + Premium サブスク(月額 ¥680 / 年額 ¥4,900 / 7 日無料試用) |
 | サブスク Group      | `workoutkit.premium`                                                 |
-| Product ID(月額)  | `workoutkit_monthly_980`                                             |
+| Product ID(月額)  | `workoutkit_monthly_680`                                             |
 | Product ID(年額)  | `workoutkit_yearly_4900`                                             |
 | Entitlement         | `premium`(RevenueCat 経由)                                          |
 | SwiftData Schema    | `SchemaV1`(1.0.0)から開始                                           |

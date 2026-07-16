@@ -110,7 +110,7 @@ App Store および StoreKit における Apple の取扱いについては [App
 本アプリで利用する唯一のサードパーティ SDK は **課金処理用の RevenueCat** です:
 
 - ✅ **RevenueCat**(購入処理のみ): App Store / StoreKit 2 を介した
-  サブスクリプション(月額 ¥980 / 年額 ¥4,900)の状態管理に使用します。
+  サブスクリプション(月額 ¥680 / 年額 ¥4,900)の状態管理に使用します。
   RevenueCat は購入レシートと匿名 ID(`$RCAnonymousID:*`)を扱い、
   お客様の氏名・メールアドレス等の個人識別情報は本アプリから送信されません。
   RevenueCat 自体の取り扱いは [RevenueCat Privacy Policy](https://www.revenuecat.com/privacy)
