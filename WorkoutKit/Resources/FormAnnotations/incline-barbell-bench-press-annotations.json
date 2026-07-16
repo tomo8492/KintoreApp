@@ -1,0 +1,65 @@
+{
+  "slug": "incline-barbell-bench-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "incline-barbell-bench-press-1",
+      "aspect": 1.6,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.61,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.incline-barbell-bench-press.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.49,
+            "y": 0.8
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.37
+          },
+          "labelKey": "form.incline-barbell-bench-press.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.25,
+            "y": 0.51
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.incline-barbell-bench-press.annotation.bar",
+          "color": "info"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.555,
+            "y": 0.575
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.08
+          },
+          "labelKey": "form.incline-barbell-bench-press.annotation.neck",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

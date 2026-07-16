@@ -1,0 +1,65 @@
+{
+  "slug": "cable-tricep-rope-pushdown",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cable-tricep-rope-pushdown-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.79,
+            "y": 0.53
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.cable-tricep-rope-pushdown.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.35,
+            "y": 0.61
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.45
+          },
+          "labelKey": "form.cable-tricep-rope-pushdown.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.53,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.45,
+            "y": 0.9
+          },
+          "labelKey": "form.cable-tricep-rope-pushdown.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.7,
+            "y": 0.3
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.75
+          },
+          "labelKey": "form.cable-tricep-rope-pushdown.annotation.shoulder",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

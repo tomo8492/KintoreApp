@@ -1,0 +1,65 @@
+{
+  "slug": "spinning-bike",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "spinning-bike-1",
+      "aspect": 0.8,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.85,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.spinning-bike.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.542,
+            "y": 0.32
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.spinning-bike.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.517,
+            "y": 0.633
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.75
+          },
+          "labelKey": "form.spinning-bike.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.375,
+            "y": 0.82
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.spinning-bike.annotation.foot",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

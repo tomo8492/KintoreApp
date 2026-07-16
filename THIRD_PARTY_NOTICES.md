@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 114 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 125 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -139,6 +139,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `barbell-bench-press-2` | 3837743 | Andrea Piacquadio | https://www.pexels.com/photo/3837743/ |
 | `dumbbell-shoulder-press-2` | 7289371 | Alesia Kozik | https://www.pexels.com/photo/7289371/ |
 | `barbell-back-squat-2` | 13106588 | Airam Dato-on | https://www.pexels.com/photo/13106588/ |
+| `ab-wheel-rollout-1` | 8032772 | Mart Production | https://www.pexels.com/photo/8032772/ |
+| `back-extension-1` | 4127505 | Gustavo Fring | https://www.pexels.com/photo/4127505/ |
+| `cable-crossover-1` | 10754972 | Ronin | https://www.pexels.com/photo/10754972/ |
+| `cable-tricep-rope-pushdown-1` | 17626054 | Wolrider | https://www.pexels.com/photo/17626054/ |
+| `concentration-curl-1` | 8401861 | RDNE Stock project | https://www.pexels.com/photo/8401861/ |
+| `downward-dog-pedal-1` | 3758148 | Alexy Almond | https://www.pexels.com/photo/3758148/ |
+| `incline-barbell-bench-press-1` | 3916762 | Olly | https://www.pexels.com/photo/3916762/ |
+| `interval-running-1` | 37938353 | Cristian Camilo Estrada | https://www.pexels.com/photo/37938353/ |
+| `spinning-bike-1` | 19962070 | Benedito Lima Jr | https://www.pexels.com/photo/19962070/ |
+| `sumo-deadlift-1` | 5209197 | Grzegorz | https://www.pexels.com/photo/5209197/ |
+| `wide-pull-up-1` | 14591603 | Alia Alcantara | https://www.pexels.com/photo/14591603/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720305 | Ketut Subiyanto | https://www.pexels.com/photo/4720305/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

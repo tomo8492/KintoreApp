@@ -1,0 +1,65 @@
+{
+  "slug": "downward-dog-pedal",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "downward-dog-pedal-1",
+      "aspect": 1.498,
+      "annotations": [
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.492,
+            "y": 0.549
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.downward-dog-pedal.annotation.hips",
+          "color": "primary"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.35,
+            "y": 0.861
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.7
+          },
+          "labelKey": "form.downward-dog-pedal.annotation.heel",
+          "color": "info"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.692,
+            "y": 0.905
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.72
+          },
+          "labelKey": "form.downward-dog-pedal.annotation.hand",
+          "color": "warning"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.542,
+            "y": 0.762
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.downward-dog-pedal.annotation.neck",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

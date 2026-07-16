@@ -1,0 +1,65 @@
+{
+  "slug": "concentration-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "concentration-curl-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.455,
+            "y": 0.675
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.78
+          },
+          "labelKey": "form.concentration-curl.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "bicep",
+          "position": {
+            "x": 0.4,
+            "y": 0.57
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.concentration-curl.annotation.bicep",
+          "color": "info"
+        },
+        {
+          "id": "base",
+          "position": {
+            "x": 0.608,
+            "y": 0.74
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.concentration-curl.annotation.base",
+          "color": "warning"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.56,
+            "y": 0.34
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.concentration-curl.annotation.shoulder",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

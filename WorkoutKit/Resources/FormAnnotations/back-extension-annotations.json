@@ -1,0 +1,65 @@
+{
+  "slug": "back-extension",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "back-extension-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.478,
+            "y": 0.235
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.08
+          },
+          "labelKey": "form.back-extension.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.63,
+            "y": 0.34
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.back-extension.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.667,
+            "y": 0.55
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.45
+          },
+          "labelKey": "form.back-extension.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.708,
+            "y": 0.775
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.9
+          },
+          "labelKey": "form.back-extension.annotation.hips",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

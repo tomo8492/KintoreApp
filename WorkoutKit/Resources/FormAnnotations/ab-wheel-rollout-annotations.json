@@ -1,0 +1,65 @@
+{
+  "slug": "ab-wheel-rollout",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "ab-wheel-rollout-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.875,
+            "y": 0.583
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.ab-wheel-rollout.annotation.hip",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.79,
+            "y": 0.45
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.08
+          },
+          "labelKey": "form.ab-wheel-rollout.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.27,
+            "y": 0.73
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.9
+          },
+          "labelKey": "form.ab-wheel-rollout.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.83,
+            "y": 0.51
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.08
+          },
+          "labelKey": "form.ab-wheel-rollout.annotation.core",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

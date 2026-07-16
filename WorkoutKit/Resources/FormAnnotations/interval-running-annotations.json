@@ -1,0 +1,65 @@
+{
+  "slug": "interval-running",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "interval-running-1",
+      "aspect": 1.478,
+      "annotations": [
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.392,
+            "y": 0.406
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.interval-running.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.358,
+            "y": 0.32
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.interval-running.annotation.posture",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.417,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.interval-running.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.15,
+            "y": 0.813
+          },
+          "labelAnchor": {
+            "x": 0.38,
+            "y": 0.9
+          },
+          "labelKey": "form.interval-running.annotation.foot",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
