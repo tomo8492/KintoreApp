@@ -1,0 +1,65 @@
+{
+  "slug": "barbell-walking-lunge",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "barbell-walking-lunge-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "front-knee",
+          "position": {
+            "x": 0.47,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.barbell-walking-lunge.annotation.front-knee",
+          "color": "warning"
+        },
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.47,
+            "y": 0.24
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.barbell-walking-lunge.annotation.bar",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.46,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.barbell-walking-lunge.annotation.torso",
+          "color": "info"
+        },
+        {
+          "id": "back-knee",
+          "position": {
+            "x": 0.54,
+            "y": 0.74
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.55
+          },
+          "labelKey": "form.barbell-walking-lunge.annotation.back-knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

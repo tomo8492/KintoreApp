@@ -3577,13 +3577,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chest up, brace your core"
+            "value" : "Stay upright"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "胸を張って体幹を固める"
+            "value" : "上体を起こす"
           }
         }
       }
@@ -5158,13 +5158,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brace your core"
+            "value" : "Keep body straight"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "お腹に力を入れる"
+            "value" : "体を一直線に保つ"
           }
         }
       }
@@ -5549,13 +5549,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Knees track over toes"
+            "value" : "Knee points out"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "膝はつま先方向に"
+            "value" : "膝は外向きに"
           }
         }
       }
@@ -6008,13 +6008,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep the neck neutral"
+            "value" : "Don't strain neck"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "首は自然に保つ"
+            "value" : "首に負担かけない"
           }
         }
       }
@@ -16389,6 +16389,1111 @@
         }
       }
     },
+    "form.cossack-squat.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heel stays down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとは床に"
+          }
+        }
+      }
+    },
+    "form.cossack-squat.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drive with glutes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お尻の力で押す"
+          }
+        }
+      }
+    },
+    "form.cossack-squat.annotation.leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extend other leg"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反対脚は伸ばす"
+          }
+        }
+      }
+    },
+    "form.cycling-outdoor.annotation.breathing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breathe steadily"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "呼吸止めず走行"
+          }
+        }
+      }
+    },
+    "form.cycling-outdoor.annotation.helmet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check helmet fit"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ヘルメット確認"
+          }
+        }
+      }
+    },
+    "form.cycling-outdoor.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mind knee pain"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝に違和感注意"
+          }
+        }
+      }
+    },
+    "form.cycling-outdoor.annotation.pedal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steady pedal pace"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一定ペースを保つ"
+          }
+        }
+      }
+    },
+    "form.decline-sit-up.annotation.ankle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock your legs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "脚を固定"
+          }
+        }
+      }
+    },
+    "form.decline-sit-up.annotation.hips" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watch low back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰に注意"
+          }
+        }
+      }
+    },
+    "form.half-moon-pose.annotation.bottom-hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hand toward floor"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手を床に近づける"
+          }
+        }
+      }
+    },
+    "form.half-moon-pose.annotation.extended-leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extend leg level"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "脚を水平に伸ばす"
+          }
+        }
+      }
+    },
+    "form.half-moon-pose.annotation.standing-leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balance on foot"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "軸足でバランス"
+          }
+        }
+      }
+    },
+    "form.half-moon-pose.annotation.top-arm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reach arm up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上腕を天井へ"
+          }
+        }
+      }
+    },
+    "form.handstand-hold.annotation.hands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press palms down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手のひらで支える"
+          }
+        }
+      }
+    },
+    "form.handstand-hold.annotation.legs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep legs straight"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一直線をキープ"
+          }
+        }
+      }
+    },
+    "form.handstand-hold.annotation.lower-back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avoid overarching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を反らせすぎない"
+          }
+        }
+      }
+    },
+    "form.handstand-hold.annotation.shoulders" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩で体を支える"
+          }
+        }
+      }
+    },
+    "form.overhead-squat.annotation.core" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace your core"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体幹を固める"
+          }
+        }
+      }
+    },
+    "form.overhead-squat.annotation.depth" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Squat to parallel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "太ももが床と平行"
+          }
+        }
+      }
+    },
+    "form.overhead-squat.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock arms overhead"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕を頭上でロック"
+          }
+        }
+      }
+    },
+    "form.overhead-squat.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Push through heels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとで踏み込む"
+          }
+        }
+      }
+    },
+    "form.power-clean.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rack on collarbone"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鎖骨の上でキャッチ"
+          }
+        }
+      }
+    },
+    "form.power-clean.annotation.elbow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drive elbows up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を高く上げる"
+          }
+        }
+      }
+    },
+    "form.power-clean.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grip at shoulder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩幅で握る"
+          }
+        }
+      }
+    },
+    "form.power-clean.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bend knees, catch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を曲げて受ける"
+          }
+        }
+      }
+    },
+    "form.seated-leg-curl.annotation.hip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep hips on seat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を浮かせない"
+          }
+        }
+      }
+    },
+    "form.seated-leg-curl.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No swinging"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わない"
+          }
+        }
+      }
+    },
+    "form.seated-leg-curl.annotation.pad" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pad rests on shin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パッドをすね下に"
+          }
+        }
+      }
+    },
+    "form.seated-leg-curl.annotation.thigh" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hamstrings working"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "太もも裏に効く"
+          }
+        }
+      }
+    },
+    "form.swimming-breaststroke.annotation.arm-pull" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull arms inward"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕を胸元に引く"
+          }
+        }
+      }
+    },
+    "form.swimming-breaststroke.annotation.breathing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time your breath"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "息継ぎのタイミング"
+          }
+        }
+      }
+    },
+    "form.swimming-breaststroke.annotation.goggles" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wear goggles"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゴーグル着用"
+          }
+        }
+      }
+    },
+    "form.swimming-breaststroke.annotation.pace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep steady pace"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無理なくペース"
+          }
+        }
+      }
+    },
+    "form.air-bike.annotation.fan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync arms and legs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腕と脚を同期"
+          }
+        }
+      }
+    },
+    "form.air-bike.annotation.foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep a steady pace"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一定のペースで"
+          }
+        }
+      }
+    },
+    "form.air-bike.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't lean on bar"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体重を預けない"
+          }
+        }
+      }
+    },
+    "form.air-bike.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep knees aligned"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を内側に入れない"
+          }
+        }
+      }
+    },
+    "form.barbell-walking-lunge.annotation.back-knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hover above floor"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "床すれすれで止める"
+          }
+        }
+      }
+    },
+    "form.barbell-walking-lunge.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rest bar on traps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーは肩に乗せる"
+          }
+        }
+      }
+    },
+    "form.barbell-walking-lunge.annotation.front-knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't cave knee in"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を内側に入れない"
+          }
+        }
+      }
+    },
+    "form.clap-push-up.annotation.feet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explode upward"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "力強く飛び上がる"
+          }
+        }
+      }
+    },
+    "form.clap-push-up.annotation.hands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Land softly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "着地はソフトに"
+          }
+        }
+      }
+    },
+    "form.close-grip-pull-up.annotation.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No kipping swing"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を揺らさない"
+          }
+        }
+      }
+    },
+    "form.close-grip-pull-up.annotation.hands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Narrow grip width"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手は肩幅より狭く"
+          }
+        }
+      }
+    },
+    "form.close-grip-pull-up.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoulders down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめない"
+          }
+        }
+      }
+    },
+    "form.crab-walk.annotation.foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step diagonally"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "対角に手足を動かす"
+          }
+        }
+      }
+    },
+    "form.crab-walk.annotation.hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protect your wrist"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手首に負担をかけない"
+          }
+        }
+      }
+    },
+    "form.crab-walk.annotation.hips" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep hips lifted"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を高く保つ"
+          }
+        }
+      }
+    },
+    "form.crab-walk.annotation.leg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep steps small"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歩幅は小さく保つ"
+          }
+        }
+      }
+    },
+    "form.inchworm-walkout.annotation.hands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press palms flat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手のひらを床につける"
+          }
+        }
+      }
+    },
+    "form.inchworm-walkout.annotation.hips" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep hips high"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰を高く保つ"
+          }
+        }
+      }
+    },
+    "form.inchworm-walkout.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soften your knees"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝を軽く曲げる"
+          }
+        }
+      }
+    },
+    "form.pec-deck.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No momentum"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反動を使わない"
+          }
+        }
+      }
+    },
+    "form.pec-deck.annotation.lowback" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back flat on seat"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰をシートに密着"
+          }
+        }
+      }
+    },
+    "form.pec-deck.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relax shoulders"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩をすくめない"
+          }
+        }
+      }
+    },
+    "form.single-arm-tricep-extension.annotation.base" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep base stable"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "姿勢を安定させる"
+          }
+        }
+      }
+    },
+    "form.single-arm-tricep-extension.annotation.dumbbell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't hit head"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "頭にぶつけない"
+          }
+        }
+      }
+    },
+    "form.single-arm-tricep-extension.annotation.tricep" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stretch triceps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二の腕を伸ばす"
+          }
+        }
+      }
+    },
+    "form.smith-machine-squat.annotation.bar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bar on traps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーは肩に乗せる"
+          }
+        }
+      }
+    },
+    "form.smith-machine-squat.annotation.heel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep heels down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "かかとは浮かせない"
+          }
+        }
+      }
+    },
+    "form.smith-machine-squat.annotation.rail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guided by rails"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レールに沿って動く"
+          }
+        }
+      }
+    },
+    "form.world-greatest-stretch.annotation.back_foot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extend back leg"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後ろ脚まっすぐ伸ばす"
+          }
+        }
+      }
+    },
+    "form.world-greatest-stretch.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track knee outward"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝は外向きに"
+          }
+        }
+      }
+    },
+    "form.world-greatest-stretch.annotation.raised_hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotate slowly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゆっくり回旋する"
+          }
+        }
+      }
+    },
+    "form.world-greatest-stretch.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotate your chest"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "腰でなく胸から回す"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18588,13 +19693,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Keep elbow fixed"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を固定する"
           }
         }
       }
@@ -19013,13 +20118,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Knees track over toes"
+            "value" : "Knees track out"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "膝はつま先方向に"
+            "value" : "膝は外向きに"
           }
         }
       }

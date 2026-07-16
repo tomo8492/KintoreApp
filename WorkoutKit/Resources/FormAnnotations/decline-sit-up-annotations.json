@@ -1,0 +1,52 @@
+{
+  "slug": "decline-sit-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "decline-sit-up-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "ankle",
+          "position": {
+            "x": 0.24,
+            "y": 0.29
+          },
+          "labelAnchor": {
+            "x": 0.18,
+            "y": 0.9
+          },
+          "labelKey": "form.decline-sit-up.annotation.ankle",
+          "color": "primary"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.56,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.82,
+            "y": 0.9
+          },
+          "labelKey": "form.decline-sit-up.annotation.hips",
+          "color": "neutral"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.765,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.decline-sit-up.annotation.neck",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

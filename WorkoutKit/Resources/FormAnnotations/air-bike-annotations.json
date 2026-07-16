@@ -1,0 +1,65 @@
+{
+  "slug": "air-bike",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "air-bike-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.4,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.15
+          },
+          "labelKey": "form.air-bike.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "fan",
+          "position": {
+            "x": 0.29,
+            "y": 0.71
+          },
+          "labelAnchor": {
+            "x": 0.14,
+            "y": 0.9
+          },
+          "labelKey": "form.air-bike.annotation.fan",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.49,
+            "y": 0.545
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.5
+          },
+          "labelKey": "form.air-bike.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.51,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.85
+          },
+          "labelKey": "form.air-bike.annotation.foot",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

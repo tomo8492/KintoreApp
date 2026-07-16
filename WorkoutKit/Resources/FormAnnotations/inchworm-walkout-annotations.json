@@ -1,0 +1,52 @@
+{
+  "slug": "inchworm-walkout",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "inchworm-walkout-1",
+      "aspect": 1.39,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.66,
+            "y": 0.88
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.inchworm-walkout.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.62,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.inchworm-walkout.annotation.hips",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.63,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.55
+          },
+          "labelKey": "form.inchworm-walkout.annotation.knee",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

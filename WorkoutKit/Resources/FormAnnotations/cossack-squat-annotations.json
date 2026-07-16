@@ -1,0 +1,65 @@
+{
+  "slug": "cossack-squat",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cossack-squat-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.275,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.cossack-squat.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.35,
+            "y": 0.54
+          },
+          "labelAnchor": {
+            "x": 0.2,
+            "y": 0.88
+          },
+          "labelKey": "form.cossack-squat.annotation.hip",
+          "color": "neutral"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.54,
+            "y": 0.65
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.cossack-squat.annotation.leg",
+          "color": "info"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.75,
+            "y": 0.775
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.55
+          },
+          "labelKey": "form.cossack-squat.annotation.heel",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

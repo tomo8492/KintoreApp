@@ -1,0 +1,65 @@
+{
+  "slug": "handstand-hold",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "handstand-hold-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.3,
+            "y": 0.795
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.handstand-hold.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "shoulders",
+          "position": {
+            "x": 0.46,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.3
+          },
+          "labelKey": "form.handstand-hold.annotation.shoulders",
+          "color": "info"
+        },
+        {
+          "id": "lower-back",
+          "position": {
+            "x": 0.47,
+            "y": 0.505
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.35
+          },
+          "labelKey": "form.handstand-hold.annotation.lower-back",
+          "color": "warning"
+        },
+        {
+          "id": "legs",
+          "position": {
+            "x": 0.4,
+            "y": 0.18
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.6
+          },
+          "labelKey": "form.handstand-hold.annotation.legs",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

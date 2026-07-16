@@ -1,0 +1,65 @@
+{
+  "slug": "smith-machine-squat",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "smith-machine-squat-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.483,
+            "y": 0.444
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.13
+          },
+          "labelKey": "form.smith-machine-squat.annotation.bar",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.358,
+            "y": 0.683
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "labelKey": "form.smith-machine-squat.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "rail",
+          "position": {
+            "x": 0.092,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.smith-machine-squat.annotation.rail",
+          "color": "neutral"
+        },
+        {
+          "id": "heel",
+          "position": {
+            "x": 0.358,
+            "y": 0.917
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.75
+          },
+          "labelKey": "form.smith-machine-squat.annotation.heel",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

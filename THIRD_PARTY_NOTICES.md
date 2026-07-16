@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 125 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 144 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -150,6 +150,25 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `spinning-bike-1` | 19962070 | Benedito Lima Jr | https://www.pexels.com/photo/19962070/ |
 | `sumo-deadlift-1` | 5209197 | Grzegorz | https://www.pexels.com/photo/5209197/ |
 | `wide-pull-up-1` | 14591603 | Alia Alcantara | https://www.pexels.com/photo/14591603/ |
+| `cossack-squat-1` | 7746278 | Polina Tankilevitch | https://www.pexels.com/photo/7746278/ |
+| `cycling-outdoor-1` | 4417283 | Rubenstein Rebello | https://www.pexels.com/photo/4417283/ |
+| `decline-sit-up-1` | 4162548 | Ivan S | https://www.pexels.com/photo/4162548/ |
+| `half-moon-pose-1` | 3758057 | Alexy Almond | https://www.pexels.com/photo/3758057/ |
+| `handstand-hold-1` | 19254707 | Jean-Daniel Francoeur | https://www.pexels.com/photo/19254707/ |
+| `overhead-squat-1` | 35975074 | Wolf Art | https://www.pexels.com/photo/35975074/ |
+| `power-clean-1` | 34237217 | Cristian Camilo Estrada | https://www.pexels.com/photo/34237217/ |
+| `seated-leg-curl-1` | 6539840 | RDNE Stock project | https://www.pexels.com/photo/6539840/ |
+| `swimming-breaststroke-1` | 31820088 | david hou | https://www.pexels.com/photo/31820088/ |
+| `air-bike-1` | 6388368 | Tima Miroshnichenko | https://www.pexels.com/photo/6388368/ |
+| `barbell-walking-lunge-1` | 3076514 | Jonathan Borba | https://www.pexels.com/photo/3076514/ |
+| `clap-push-up-1` | 4976936 | Abdulrhman Alkady | https://www.pexels.com/photo/4976936/ |
+| `close-grip-pull-up-1` | 12895247 | Niko Twisty | https://www.pexels.com/photo/12895247/ |
+| `crab-walk-1` | 6995831 | Alena Shekhovtcova | https://www.pexels.com/photo/6995831/ |
+| `inchworm-walkout-1` | 3756510 | Alexy Almond | https://www.pexels.com/photo/3756510/ |
+| `pec-deck-1` | 14616295 | Abdulrhman Alkady | https://www.pexels.com/photo/14616295/ |
+| `single-arm-tricep-extension-1` | 38167598 | Fernando Capetillo | https://www.pexels.com/photo/38167598/ |
+| `smith-machine-squat-1` | 5327530 | Tima Miroshnichenko | https://www.pexels.com/photo/5327530/ |
+| `world-greatest-stretch-1` | 13993530 | Niko Twisty | https://www.pexels.com/photo/13993530/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720305 | Ketut Subiyanto | https://www.pexels.com/photo/4720305/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

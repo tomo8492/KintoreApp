@@ -1,0 +1,65 @@
+{
+  "slug": "world-greatest-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "world-greatest-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.63,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.world-greatest-stretch.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.6,
+            "y": 0.43
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.22
+          },
+          "labelKey": "form.world-greatest-stretch.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "raised_hand",
+          "position": {
+            "x": 0.565,
+            "y": 0.03
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.35
+          },
+          "labelKey": "form.world-greatest-stretch.annotation.raised_hand",
+          "color": "info"
+        },
+        {
+          "id": "back_foot",
+          "position": {
+            "x": 0.15,
+            "y": 0.9
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.7
+          },
+          "labelKey": "form.world-greatest-stretch.annotation.back_foot",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

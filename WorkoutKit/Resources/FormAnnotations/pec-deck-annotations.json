@@ -1,0 +1,52 @@
+{
+  "slug": "pec-deck",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "pec-deck-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.405,
+            "y": 0.465
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.pec-deck.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "lowback",
+          "position": {
+            "x": 0.4,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.pec-deck.annotation.lowback",
+          "color": "primary"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.579,
+            "y": 0.494
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.12
+          },
+          "labelKey": "form.pec-deck.annotation.grip",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

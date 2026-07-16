@@ -1,0 +1,52 @@
+{
+  "slug": "clap-push-up",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "clap-push-up-1",
+      "aspect": 1.279,
+      "annotations": [
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.79,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.87
+          },
+          "labelKey": "form.clap-push-up.annotation.hands",
+          "color": "primary"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.15,
+            "y": 0.62
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.87
+          },
+          "labelKey": "form.clap-push-up.annotation.feet",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.55,
+            "y": 0.47
+          },
+          "labelAnchor": {
+            "x": 0.45,
+            "y": 0.13
+          },
+          "labelKey": "form.clap-push-up.annotation.core",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

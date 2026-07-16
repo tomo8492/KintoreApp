@@ -1,0 +1,65 @@
+{
+  "slug": "swimming-breaststroke",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "swimming-breaststroke-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "goggles",
+          "position": {
+            "x": 0.478,
+            "y": 0.315
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.swimming-breaststroke.annotation.goggles",
+          "color": "info"
+        },
+        {
+          "id": "arm-pull",
+          "position": {
+            "x": 0.565,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.swimming-breaststroke.annotation.arm-pull",
+          "color": "warning"
+        },
+        {
+          "id": "breathing",
+          "position": {
+            "x": 0.47,
+            "y": 0.395
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.swimming-breaststroke.annotation.breathing",
+          "color": "primary"
+        },
+        {
+          "id": "pace",
+          "position": {
+            "x": 0.51,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.swimming-breaststroke.annotation.pace",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

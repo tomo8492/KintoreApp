@@ -1,0 +1,65 @@
+{
+  "slug": "seated-leg-curl",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "seated-leg-curl-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.242,
+            "y": 0.3875
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.12
+          },
+          "labelKey": "form.seated-leg-curl.annotation.hip",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.358,
+            "y": 0.431
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.seated-leg-curl.annotation.knee",
+          "color": "info"
+        },
+        {
+          "id": "thigh",
+          "position": {
+            "x": 0.483,
+            "y": 0.419
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.12
+          },
+          "labelKey": "form.seated-leg-curl.annotation.thigh",
+          "color": "primary"
+        },
+        {
+          "id": "pad",
+          "position": {
+            "x": 0.75,
+            "y": 0.4125
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.seated-leg-curl.annotation.pad",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

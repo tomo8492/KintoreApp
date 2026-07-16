@@ -1,0 +1,65 @@
+{
+  "slug": "half-moon-pose",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "half-moon-pose-1",
+      "aspect": 1.498,
+      "annotations": [
+        {
+          "id": "extended-leg",
+          "position": {
+            "x": 0.155,
+            "y": 0.335
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.6
+          },
+          "labelKey": "form.half-moon-pose.annotation.extended-leg",
+          "color": "primary"
+        },
+        {
+          "id": "top-arm",
+          "position": {
+            "x": 0.565,
+            "y": 0.185
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.15
+          },
+          "labelKey": "form.half-moon-pose.annotation.top-arm",
+          "color": "info"
+        },
+        {
+          "id": "bottom-hand",
+          "position": {
+            "x": 0.575,
+            "y": 0.845
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.65
+          },
+          "labelKey": "form.half-moon-pose.annotation.bottom-hand",
+          "color": "warning"
+        },
+        {
+          "id": "standing-leg",
+          "position": {
+            "x": 0.49,
+            "y": 0.92
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.88
+          },
+          "labelKey": "form.half-moon-pose.annotation.standing-leg",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

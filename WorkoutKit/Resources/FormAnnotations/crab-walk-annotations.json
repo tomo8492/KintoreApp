@@ -1,0 +1,65 @@
+{
+  "slug": "crab-walk",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "crab-walk-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "hips",
+          "position": {
+            "x": 0.55,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.1
+          },
+          "labelKey": "form.crab-walk.annotation.hips",
+          "color": "primary"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.76,
+            "y": 0.715
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.crab-walk.annotation.hand",
+          "color": "warning"
+        },
+        {
+          "id": "foot",
+          "position": {
+            "x": 0.28,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.9
+          },
+          "labelKey": "form.crab-walk.annotation.foot",
+          "color": "info"
+        },
+        {
+          "id": "leg",
+          "position": {
+            "x": 0.15,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.2
+          },
+          "labelKey": "form.crab-walk.annotation.leg",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

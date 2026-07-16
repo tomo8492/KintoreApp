@@ -1,0 +1,65 @@
+{
+  "slug": "power-clean",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "power-clean-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "bar",
+          "position": {
+            "x": 0.567,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.45,
+            "y": 0.08
+          },
+          "labelKey": "form.power-clean.annotation.bar",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.658,
+            "y": 0.528
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.2
+          },
+          "labelKey": "form.power-clean.annotation.elbow",
+          "color": "warning"
+        },
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.358,
+            "y": 0.506
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.power-clean.annotation.hand",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.517,
+            "y": 0.753
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.power-clean.annotation.knee",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

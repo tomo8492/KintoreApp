@@ -1,0 +1,65 @@
+{
+  "slug": "cycling-outdoor",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "cycling-outdoor-1",
+      "aspect": 1.25,
+      "annotations": [
+        {
+          "id": "helmet",
+          "position": {
+            "x": 0.38,
+            "y": 0.45
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.cycling-outdoor.annotation.helmet",
+          "color": "primary"
+        },
+        {
+          "id": "pedal",
+          "position": {
+            "x": 0.304,
+            "y": 0.67
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.85
+          },
+          "labelKey": "form.cycling-outdoor.annotation.pedal",
+          "color": "info"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.345,
+            "y": 0.605
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.cycling-outdoor.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "breathing",
+          "position": {
+            "x": 0.325,
+            "y": 0.493
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.15
+          },
+          "labelKey": "form.cycling-outdoor.annotation.breathing",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
