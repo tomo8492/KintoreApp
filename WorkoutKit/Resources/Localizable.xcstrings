@@ -21754,6 +21754,23 @@
         }
       }
     },
+    "library.detail.form-photo-coming-soon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form photos are being added over time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォーム写真は順次追加中です"
+          }
+        }
+      }
+    },
     "library.detail.primary-muscle" : {
       "extractionState" : "manual",
       "localizations" : {

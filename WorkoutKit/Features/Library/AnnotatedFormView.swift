@@ -206,6 +206,8 @@ struct AnnotatedFormView: View {
 
                     // 引き出し線 → ドット → ラベル を annotation ごとに描画。
                     // 線が円の上に乗らないよう、線→ドット→ラベル の順で重ねる。
+                    // 線・ドットは純粋な装飾(情報はラベルの AnnotationCard 側にのみ
+                    // ある)なので VoiceOver からは隠し、カードだけが読み上げられるようにする。
                     ForEach(currentFrame.annotations) { ann in
                         AnnotationLeaderLine(
                             from: ann.position.cgPoint,
@@ -213,6 +215,7 @@ struct AnnotatedFormView: View {
                             size: proxy.size,
                             color: ann.color.tint
                         )
+                        .accessibilityHidden(true)
                     }
                     ForEach(currentFrame.annotations) { ann in
                         AnnotationDot(
@@ -220,6 +223,7 @@ struct AnnotatedFormView: View {
                             size: proxy.size,
                             color: ann.color.tint
                         )
+                        .accessibilityHidden(true)
                     }
                     ForEach(currentFrame.annotations) { ann in
                         AnnotationCard(
@@ -239,6 +243,13 @@ struct AnnotatedFormView: View {
             // 人体図(AnnotatedBodyDiagramView)と同格の大型イラストカードなので
             // DesignTokens の "大型カード" 定義に合わせ AppRadius.hero を使う。
             .clipShape(RoundedRectangle(cornerRadius: AppRadius.hero, style: .continuous))
+            // PremiumCardStyle.swift の "quiet luxury" 装飾(ヘアライン境界線 +
+            // 外側シャドウ)を直下の BodySectionView/BodyDiagramView と同格で適用する。
+            // premiumDiagramCard() 自体は padding を持たない(呼び出し側の裁量)ため、
+            // 上の .clipShape で写真をぴったりトリムした後にこのまま重ねるだけで
+            // 写真は edge-to-edge を保ったまま境界線・影だけが追加される
+            // (新しい色・半径は増やさず、既存トークン AppRadius.hero を再利用)。
+            .premiumDiagramCard(cornerRadius: AppRadius.hero)
         }
         .accessibilityElement(children: .contain)
     }
@@ -318,6 +329,12 @@ private struct AnnotationCard: View {
             // 横幅の上限を写真幅の 45% に縮め、長い文言は折り返す。
             .frame(maxWidth: size.width * 0.45, alignment: .leading)
             .fixedSize(horizontal: false, vertical: true)
+            // 高密度オーバーレイのため拡大上限を設ける(本文のステップ解説は
+            // 無制限のまま)。写真上に複数カードを重ねる都合上、文字を無制限に
+            // 拡大すると tools/check_form_annotations.py が守るクランプ幅を
+            // 超えてカード同士が重なる・見切れるため、意図的な例外として
+            // ここだけ .large を上限にする。
+            .dynamicTypeSize(...DynamicTypeSize.large)
             .onGeometryChange(for: CGSize.self) { proxy in
                 proxy.size
             } action: { newSize in

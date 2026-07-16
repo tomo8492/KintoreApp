@@ -81,8 +81,9 @@ struct ExerciseDetailView: View {
 
     /// 実写写真ベースのフォームキュー(復元機能)。対応 JSON
     /// (`Resources/FormAnnotations/<slug>-annotations.json`)が無い種目では
-    /// `AnnotatedFormView` が `nil` を返すため、セクションごと非表示になる
-    /// (見た目を崩さないフェイルセーフ)。
+    /// `AnnotatedFormView` が `nil` を返す。345 種目中 258 種目はまだ未整備のため、
+    /// カードを丸ごと消す代わりに `formPhotoComingSoonRow` の控えめな 1 行フッターへ
+    /// フォールバックする(機能の存在をライブラリ全体に伝えるための合図)。
     @ViewBuilder
     private var annotatedFormSection: some View {
         if let formView = AnnotatedFormView(slug: exercise.slug) {
@@ -91,7 +92,22 @@ struct ExerciseDetailView: View {
                     .font(.headline)
                 formView
             }
+        } else {
+            formPhotoComingSoonRow
         }
+    }
+
+    /// 実写注釈 JSON が未整備の種目(345 種目中 258 種目)向けの控えめな合図。
+    /// カード装飾は使わず 1 行のフッターキャプションのみ表示し、
+    /// 「今は無いが今後増える」ことをライブラリ全体に伝える(CLAUDE.md §7 準拠)。
+    private var formPhotoComingSoonRow: some View {
+        Label {
+            Text("library.detail.form-photo-coming-soon")
+                .font(.footnote)
+        } icon: {
+            Image(systemName: "camera")
+        }
+        .foregroundStyle(.secondary)
     }
 
     // MARK: - Target muscles diagram (F-02)

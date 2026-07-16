@@ -92,3 +92,16 @@ the order they should appear in App Store Connect (slot 1 = hero).
 - Match the language tone in `description.txt` (ja: polite-but-friendly,
   en: concise and motivational).
 - 1–2 emojis maximum across the whole gallery (none required).
+
+---
+
+## Phase A follow-up (2026-07-16)
+
+Screenshot #1 (`library-detail-annotated`) was originally captured before the
+form-photo annotation system had real content behind it. Coverage is now
+87/345 exercises (25.2%), including all major barbell lifts. Re-capture #1
+using one of the newly-covered major-lift exercises — **barbell-back-squat**
+recommended (2-frame start/bottom, high search intent, strong visual proof of
+the "coached in plain language" hook) — instead of a placeholder/lightly
+covered exercise. No image files were touched as part of this change; this is
+a capture-queue note only.
