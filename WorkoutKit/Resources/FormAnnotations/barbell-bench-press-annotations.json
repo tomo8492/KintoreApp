@@ -60,6 +60,66 @@
           "color": "warning"
         }
       ]
+    },
+    {
+      "id": "top",
+      "phaseLabelKey": "form.phase.top",
+      "assetName": "barbell-bench-press-2",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "grip-2",
+          "position": {
+            "x": 0.485,
+            "y": 0.26
+          },
+          "labelAnchor": {
+            "x": 0.2,
+            "y": 0.06
+          },
+          "labelKey": "form.barbell-bench-press.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "elbow-2",
+          "position": {
+            "x": 0.545,
+            "y": 0.48
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.58
+          },
+          "labelKey": "form.barbell-bench-press.annotation.elbow2",
+          "color": "info"
+        },
+        {
+          "id": "bar-2",
+          "position": {
+            "x": 0.58,
+            "y": 0.31
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.06
+          },
+          "labelKey": "form.barbell-bench-press.annotation.bar2",
+          "color": "warning"
+        },
+        {
+          "id": "chest-2",
+          "position": {
+            "x": 0.56,
+            "y": 0.75
+          },
+          "labelAnchor": {
+            "x": 0.62,
+            "y": 0.9
+          },
+          "labelKey": "form.barbell-bench-press.annotation.chest",
+          "color": "neutral"
+        }
+      ]
     }
   ]
 }

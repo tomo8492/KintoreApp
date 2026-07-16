@@ -60,6 +60,66 @@
           "color": "warning"
         }
       ]
+    },
+    {
+      "id": "top",
+      "phaseLabelKey": "form.phase.top",
+      "assetName": "dumbbell-shoulder-press-2",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow-2",
+          "position": {
+            "x": 0.24,
+            "y": 0.37
+          },
+          "labelAnchor": {
+            "x": 0.1,
+            "y": 0.47
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "grip-2",
+          "position": {
+            "x": 0.58,
+            "y": 0.19
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.05
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.grip2",
+          "color": "neutral"
+        },
+        {
+          "id": "neck-2",
+          "position": {
+            "x": 0.46,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.3,
+            "y": 0.1
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.neck",
+          "color": "info"
+        },
+        {
+          "id": "core-2",
+          "position": {
+            "x": 0.48,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.6
+          },
+          "labelKey": "form.dumbbell-shoulder-press.annotation.core2",
+          "color": "warning"
+        }
+      ]
     }
   ]
 }
