@@ -408,11 +408,35 @@ struct PaywallView: View {
     }
 
     private var footerSection: some View {
-        Text("hard-paywall.legal.disclaimer")
-            .font(.caption2)
-            .foregroundStyle(.secondary)
-            .multilineTextAlignment(.center)
-            .padding(.top, 8)
+        VStack(spacing: 8) {
+            legalLinksRow
+            Text("hard-paywall.legal.disclaimer")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+        }
+        .padding(.top, 8)
+    }
+
+    /// 審査要件: ペイウォール画面から Terms of Use / Privacy Policy に直接到達できること。
+    /// URL は SettingsView と同じ SettingsLinks(Info.plist カスタムキー経由)を再利用する。
+    @ViewBuilder
+    private var legalLinksRow: some View {
+        HStack(spacing: 16) {
+            if let url = SettingsLinks.termsOfUse {
+                Link(destination: url) {
+                    Text("settings.termsOfUse")
+                }
+                .font(.footnote)
+            }
+            if let url = SettingsLinks.privacyPolicy {
+                Link(destination: url) {
+                    Text("settings.privacyPolicy")
+                }
+                .font(.footnote)
+            }
+        }
+        .frame(maxWidth: .infinity)
     }
 
     private var closeButton: some View {

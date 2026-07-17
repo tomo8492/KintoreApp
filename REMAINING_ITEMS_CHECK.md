@@ -1,5 +1,7 @@
 # WorkoutKit v1.0 Remaining-Items Check
 
+> ⚠ 2026-07-17 注記: 本書の購入フロー検証(Restore Purchase 等)は旧 StoreKitClient 実装(削除済み)を対象としたもの。現行の RevenueCat ベース PurchaseManager に対する再検証は未実施であり、本書の ✅ は現行コードの保証にはならない。M9_PREFLIGHT_CHECKLIST.md のサンドボックス検証を正とする。
+
 **Date**: 2026-05-07
 **Branch**: `qa/remaining-items-check` (base `claude/init-workoutkit-ios-YHots` @ `8bd1af9`)
 **Goal**: 実機が無い状態で検証可能なすべての残項目を潰し、最終 Sanity 判定を出す。
@@ -226,7 +228,7 @@ $ grep -rn "UNUserNotificationCenter\|requestAuthorization\|UNAuthorizationOptio
 - [ ] Apple Developer Team 選択 + Bundle ID `com.tomo.workoutkit` 登録
 - [ ] App Group `group.com.tomo.workoutkit` の Capability 確認
 - [ ] 実機 USB 接続 + 信頼
-- [ ] Privacy Policy / Terms of Use の本番 URL 差し替え(`Info.plist` の `WKPrivacyPolicyURL` / `WKTermsOfUseURL` 経由、xcconfig 注入)
+- [x] Privacy Policy / Terms of Use の本番 URL 差し替え(`Info.plist` の `WKPrivacyPolicyURL` / `WKTermsOfUseURL` 経由、xcconfig 注入)✅ — 2026-07-17 に project.yml の WorkoutKit target へ `INFOPLIST_KEY_WKPrivacyPolicyURL` / `INFOPLIST_KEY_WKTermsOfUseURL` として配線済み(本番 GitHub Pages URL)。PaywallView.footerSection にも Terms/Privacy リンクを追加。
 - [ ] App Store Connect レコード作成(Phase P5)
 - [ ] TestFlight 提出 → Sandbox 購入確認
 

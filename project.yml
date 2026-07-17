@@ -95,6 +95,16 @@ targets:
         MARKETING_VERSION: "0.1.0"
         # 個人開発のため自動署名に任せる(P-1 で Team を入れたら手動切替検討)。
         CODE_SIGN_STYLE: Automatic
+    info:
+      # Audit fix (2026-07-17): Privacy Policy / Terms of Use の URL を
+      # Info.plist カスタムキーとして外部化する(SettingsView.SettingsLinks /
+      # PaywallView.footerSection が Bundle.main.object(forInfoDictionaryKey:) で読む)。
+      # LiveActivity ターゲットと同じ理由で、カスタムキーは INFOPLIST_KEY_* では
+      # 渡せないため info.properties で直接指定する(GENERATE_INFOPLIST_FILE とマージされる)。
+      path: WorkoutKit/Info.plist
+      properties:
+        WKPrivacyPolicyURL: https://tomo8492.github.io/KintoreApp/legal/privacy-policy.html
+        WKTermsOfUseURL: https://tomo8492.github.io/KintoreApp/legal/terms-of-service.html
     dependencies:
       # C3: Widget Extension を本体に同梱して App Store / TestFlight に配布する。
       - target: WorkoutKitLiveActivity
@@ -247,6 +257,12 @@ targets:
       # 必要な型を漏れなく含めるための明示的セット。SwiftData 依存は無い。
       - path: WorkoutKit/Shared/TodaySessionSummary.swift
       - path: WorkoutKit/Shared/WatchSummaryBridge.swift
+      # Audit fix (2026-07-17): Widget Extension は WorkoutKitWatchApp とは別 Bundle
+      # なので、String Catalog を明示的に同梱しないと watch-widget.* キーが解決できない
+      # (WorkoutKitLiveActivity / WorkoutKitWatchApp と同じパターン)。
+      - path: WorkoutKit/Resources/Localizable.xcstrings
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_NAME: WorkoutKitWatch

@@ -15,6 +15,8 @@
 import Foundation
 import OSLog
 
+// `@unchecked Sendable` の根拠: NSCache はスレッドセーフであり、`bundle` は init 後に
+// 再代入されない不変値、他に可変状態を持たないため並行アクセスしても安全。
 final class ExerciseAnnotationLoader: @unchecked Sendable {
     private let bundle: Bundle
     private let cache = NSCache<NSString, CachedEntry>()

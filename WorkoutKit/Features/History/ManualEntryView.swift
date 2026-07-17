@@ -178,7 +178,7 @@ struct ManualEntryView: View {
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button("Cancel") { dismiss() }
+            Button("common.cancel") { dismiss() }
                 .accessibilityHint(Text("a11y.manual-entry.cancel.hint"))
         }
         ToolbarItem(placement: .confirmationAction) {

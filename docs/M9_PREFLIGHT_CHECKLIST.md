@@ -10,7 +10,7 @@
 | 2. RevenueCat API key 取得 + 投入 | 30 分 | `Config/Secrets.xcconfig` に key が入りビルドが通る |
 | 3. ASC レコード作成(アプリ + IAP) | 1 時間 | Bundle ID `com.tomo.workoutkit` と 2 product が ASC 側に存在 |
 | 4. GitHub Pages 有効化 | 5 分 | legal 4 URL が 200 OK |
-| 5. Xcode で Signing → Team 設定 | 10 分 | 全 3 target の warning「requires a development team」消失 |
+| 5. Xcode で Signing → Team 設定 | 10 分 | 全 4 target の warning「requires a development team」消失 |
 | 6. Xcode → Archive → ASC アップロード | 30 分 | Organizer に IPA が出る + ASC のビルドリストに反映 |
 | 7. TestFlight でテスター追加 → 自己テスト | 1 時間 | 実機にインストールしてクラッシュなしで起動 |
 | 8. App Privacy / Nutrition Label 申告 | 30 分 | 「Privacy Practices」が ✓ 表示 |
@@ -169,14 +169,16 @@
 
 1. Xcode で WorkoutKit.xcodeproj を開く。
 2. 左 Project Navigator → 青いプロジェクトアイコンクリック → 上部 **Signing & Capabilities** タブ。
-3. 3 つの target すべてに対し:
+3. 4 つの target すべてに対し:
    - **WorkoutKit**(Beta / Debug / Release それぞれ)
    - **WorkoutKitLiveActivity**
+   - **WorkoutKitWatchApp**
    - **WorkoutKitWatch**
 4. 各 target の **Team** ドロップダウン → Phase 1 で登録した Team を選択。
 5. Bundle ID が以下と一致しているか確認(変更しない):
    - WorkoutKit: `com.tomo.workoutkit` / `com.tomo.workoutkit.beta`(Beta config)
    - WorkoutKitLiveActivity: `com.tomo.workoutkit.LiveActivity`
+   - WorkoutKitWatchApp: `com.tomo.workoutkit.watchkitapp`
    - WorkoutKitWatch: `com.tomo.workoutkit.watchkitapp.watchwidget`
 6. App Group 確認(全 target で共有): `group.com.tomo.workoutkit`
 7. **Automatically manage signing** ✓ をオンのまま。

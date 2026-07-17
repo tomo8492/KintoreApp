@@ -1964,6 +1964,24 @@
         }
       }
     },
+    "common.delete" : {
+      "comment" : "汎用「削除」ボタン。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
     "common.done" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2755,23 +2773,6 @@
         }
       }
     },
-    "form.ab-wheel-rollout.annotation.brace" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace abs to protect lower back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰が反らないよう腹圧を保つ"
-          }
-        }
-      }
-    },
     "form.ab-wheel-rollout.annotation.hip" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2819,57 +2820,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.air-bike.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.air-bike.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.air-bike.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
           }
         }
       }
@@ -2938,23 +2888,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
-    "form.air-squat.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
           }
         }
       }
@@ -3112,40 +3045,6 @@
         }
       }
     },
-    "form.back-extension.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.back-extension.annotation.squeeze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Squeeze hard at the top"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頂点でしっかり収縮"
-          }
-        }
-      }
-    },
     "form.band-pull-apart.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3265,23 +3164,6 @@
         }
       }
     },
-    "form.barbell-back-squat.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
     "form.barbell-back-squat.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3295,57 +3177,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
-    "form.barbell-bench-press.annotation.feet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive feet into the floor"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "足を床にしっかり押し付ける"
-          }
-        }
-      }
-    },
-    "form.barbell-bench-press.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.barbell-bench-press.annotation.touch" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Touch bar to mid-chest"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸の中央でバーを止める"
           }
         }
       }
@@ -3418,40 +3249,6 @@
         }
       }
     },
-    "form.barbell-deadlift.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.barbell-deadlift.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
     "form.barbell-hip-thrust.annotation.rib" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3482,40 +3279,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "頂点でしっかり収縮"
-          }
-        }
-      }
-    },
-    "form.barbell-row.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.barbell-row.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
           }
         }
       }
@@ -3554,23 +3317,6 @@
         }
       }
     },
-    "form.barbell-walking-lunge.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
     "form.barbell-walking-lunge.annotation.torso" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3584,40 +3330,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上体を起こす"
-          }
-        }
-      }
-    },
-    "form.battle-ropes.annotation.hand" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep grip firm and the rhythm fast"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "グリップは緩めず手早く振る"
-          }
-        }
-      }
-    },
-    "form.battle-ropes.annotation.rotate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive the ropes from the core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "体幹を使って大きく振る"
           }
         }
       }
@@ -3720,23 +3432,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肘を頭の後ろへ"
-          }
-        }
-      }
-    },
-    "form.behind-head-tricep.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
           }
         }
       }
@@ -3860,57 +3555,6 @@
         }
       }
     },
-    "form.bicycle-crunch.annotation.twist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate from the core, not shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.bird-dog.annotation.alignment" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep the body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
-    "form.bird-dog.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
     "form.box-squat.annotation.hip" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3958,57 +3602,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.brisk-walking.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.brisk-walking.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.brisk-walking.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
           }
         }
       }
@@ -4319,23 +3912,6 @@
         }
       }
     },
-    "form.burpee.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flow through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "動作を流れるように繋げる"
-          }
-        }
-      }
-    },
     "form.burpee.annotation.hand" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4438,40 +4014,6 @@
         }
       }
     },
-    "form.butterfly-stretch.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.cable-crossover.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cross hands at the centre line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸の中心で交差させる"
-          }
-        }
-      }
-    },
     "form.cable-crunch.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4536,23 +4078,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上体を反らさない"
-          }
-        }
-      }
-    },
-    "form.cable-fly.annotation.squeeze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Squeeze chest at the centre"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸の中心でしっかり収縮"
           }
         }
       }
@@ -4846,23 +4371,6 @@
         }
       }
     },
-    "form.cable-tricep-rope-pushdown.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use full range of motion"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
     "form.cable-woodchopper.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4893,108 +4401,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.calf-stretch-wall.annotation.ankle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through the ankle"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "足首はやわらかく動かす"
-          }
-        }
-      }
-    },
-    "form.calf-stretch-wall.annotation.calf" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the calves stretching"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ふくらはぎが伸びるのを感じる"
-          }
-        }
-      }
-    },
-    "form.cat-cow.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.cat-cow.annotation.spine" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lengthen the spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背骨を長く伸ばす"
-          }
-        }
-      }
-    },
-    "form.cat-stretch.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.cat-stretch.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
           }
         }
       }
@@ -5050,40 +4456,6 @@
         }
       }
     },
-    "form.childs-pose.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sink hips toward heels"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お尻をかかとに近づける"
-          }
-        }
-      }
-    },
-    "form.chin-up.annotation.bicep" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pull with the biceps"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "上腕二頭筋でしっかり引く"
-          }
-        }
-      }
-    },
     "form.chin-up.annotation.grip" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5135,23 +4507,6 @@
         }
       }
     },
-    "form.clap-push-up.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
     "form.clap-push-up.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5165,23 +4520,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "体を一直線に保つ"
-          }
-        }
-      }
-    },
-    "form.clap-push-up.annotation.hand" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hands slightly wider than shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "手は肩幅よりやや広く"
           }
         }
       }
@@ -5339,40 +4677,6 @@
         }
       }
     },
-    "form.close-grip-pull-up.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.close-grip-pull-up.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
     "form.close-grip-pulldown.annotation.lats" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5403,40 +4707,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.cobra-stretch.annotation.chest" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open the chest fully"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を大きく開く"
-          }
-        }
-      }
-    },
-    "form.cobra-stretch.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips on the floor"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤を床につけたまま"
           }
         }
       }
@@ -5509,40 +4779,6 @@
         }
       }
     },
-    "form.concentration-curl.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.cossack-squat.annotation.balance" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips square"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤の左右差に注意"
-          }
-        }
-      }
-    },
     "form.cossack-squat.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5556,74 +4792,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "膝は外向きに"
-          }
-        }
-      }
-    },
-    "form.cossack-squat.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.crab-walk.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.crab-walk.annotation.grip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grip the bar tightly"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "グリップを強く握る"
-          }
-        }
-      }
-    },
-    "form.crab-walk.annotation.posture" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maintain an upright posture"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "姿勢をまっすぐ保つ"
           }
         }
       }
@@ -5662,40 +4830,6 @@
         }
       }
     },
-    "form.cross-body-shoulder-stretch.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.cross-body-shoulder-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
-          }
-        }
-      }
-    },
     "form.crunch.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5709,23 +4843,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "首を引っ張らない"
-          }
-        }
-      }
-    },
-    "form.crunch.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lift only until shoulder blades leave the floor"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨が床から離れる程度"
           }
         }
       }
@@ -5777,40 +4894,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.cycling-outdoor.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.cycling-outdoor.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
           }
         }
       }
@@ -5917,23 +5000,6 @@
         }
       }
     },
-    "form.dead-hang.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
     "form.decline-barbell-press.annotation.lower" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5947,57 +5013,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸の下部に効かせる"
-          }
-        }
-      }
-    },
-    "form.decline-push-up.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
-    "form.decline-push-up.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.decline-push-up.annotation.hand" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hands slightly wider than shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "手は肩幅よりやや広く"
           }
         }
       }
@@ -6019,23 +5034,6 @@
         }
       }
     },
-    "form.decline-sit-up.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use full range of motion"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
     "form.deep-squat-hold.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6049,23 +5047,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "背中は丸めない"
-          }
-        }
-      }
-    },
-    "form.deep-squat-hold.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
           }
         }
       }
@@ -6172,40 +5153,6 @@
         }
       }
     },
-    "form.dip.annotation.lean" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lean forward to target chest"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "やや前傾姿勢で胸に効かせる"
-          }
-        }
-      }
-    },
-    "form.dip.annotation.low" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't drop shoulders too low"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩を下げ過ぎない"
-          }
-        }
-      }
-    },
     "form.donkey-calf-raise.annotation.range" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6291,23 +5238,6 @@
         }
       }
     },
-    "form.doorway-chest-stretch.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
     "form.doorway-chest-stretch.annotation.chest" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6359,91 +5289,6 @@
         }
       }
     },
-    "form.downward-dog-pedal.annotation.ankle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through the ankle"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "足首はやわらかく動かす"
-          }
-        }
-      }
-    },
-    "form.downward-dog-pedal.annotation.calf" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the calves stretching"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ふくらはぎが伸びるのを感じる"
-          }
-        }
-      }
-    },
-    "form.downward-dog.annotation.calf" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the calves stretching"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ふくらはぎが伸びるのを感じる"
-          }
-        }
-      }
-    },
-    "form.downward-dog.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push hips up and back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お尻を高く押し上げる"
-          }
-        }
-      }
-    },
-    "form.downward-dog.annotation.spine" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lengthen the spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背骨を長く伸ばす"
-          }
-        }
-      }
-    },
     "form.dragon-flag.annotation.brace" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6474,40 +5319,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-bench-press.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use a deeper ROM with dumbbells"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダンベルなら可動域広く"
-          }
-        }
-      }
-    },
-    "form.dumbbell-bench-press.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
           }
         }
       }
@@ -6716,40 +5527,6 @@
         }
       }
     },
-    "form.dumbbell-fly.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use full range of motion"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
-    "form.dumbbell-front-raise.annotation.front" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop at shoulder height"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩の高さで止める"
-          }
-        }
-      }
-    },
     "form.dumbbell-hip-thrust.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6801,40 +5578,6 @@
         }
       }
     },
-    "form.dumbbell-lateral-raise.annotation.delt" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Raise to shoulder height"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩のラインまで上げる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-lateral-raise.annotation.trap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't shrug into the traps"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "僧帽筋ですくみ過ぎない"
-          }
-        }
-      }
-    },
     "form.dumbbell-pullover-isolation.annotation.lats" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6882,108 +5625,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "背中はまっすぐに"
-          }
-        }
-      }
-    },
-    "form.dumbbell-romanian-deadlift.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-romanian-deadlift.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.dumbbell-row.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-row.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-shoulder-press.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't arch the lower back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰を反らさない"
-          }
-        }
-      }
-    },
-    "form.dumbbell-shoulder-press.annotation.press" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press straight overhead"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭の上にまっすぐ押し上げる"
           }
         }
       }
@@ -7056,57 +5697,6 @@
         }
       }
     },
-    "form.dumbbell-thruster.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-thruster.annotation.drive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive explosively with legs"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で爆発的に押し上げる"
-          }
-        }
-      }
-    },
-    "form.dumbbell-thruster.annotation.press" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press straight overhead"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭の上にまっすぐ押し上げる"
-          }
-        }
-      }
-    },
     "form.dumbbell-tricep-kickback.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7141,23 +5731,6 @@
         }
       }
     },
-    "form.dumbbell-walking-lunge.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
     "form.dumbbell-walking-lunge.annotation.torso" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7175,40 +5748,6 @@
         }
       }
     },
-    "form.dynamic-lunge.annotation.balance" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips square"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤の左右差に注意"
-          }
-        }
-      }
-    },
-    "form.dynamic-lunge.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
     "form.dynamic-lunge.annotation.torso" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7222,57 +5761,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上体を立てる"
-          }
-        }
-      }
-    },
-    "form.elliptical.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.elliptical.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.elliptical.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
           }
         }
       }
@@ -7617,40 +6105,6 @@
         }
       }
     },
-    "form.forward-fold.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.forward-fold.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
-          }
-        }
-      }
-    },
     "form.frog-pump.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7821,57 +6275,6 @@
         }
       }
     },
-    "form.glute-bridge.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.glute-bridge.annotation.squeeze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Squeeze hard at the top"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頂点でしっかり収縮"
-          }
-        }
-      }
-    },
-    "form.goblet-squat.annotation.chest" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open the chest fully"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を大きく開く"
-          }
-        }
-      }
-    },
     "form.goblet-squat.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7974,40 +6377,6 @@
         }
       }
     },
-    "form.half-moon-pose.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.half-moon-pose.annotation.twist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate from the core, not shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
     "form.half-split-stretch.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -8021,23 +6390,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "背中まっすぐ"
-          }
-        }
-      }
-    },
-    "form.half-split-stretch.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
           }
         }
       }
@@ -8089,57 +6441,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.handstand-hold.annotation.alignment" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep the body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
-    "form.handstand-hold.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.handstand-hold.annotation.press" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press straight overhead"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭の上にまっすぐ押し上げる"
           }
         }
       }
@@ -8246,108 +6547,6 @@
         }
       }
     },
-    "form.hanging-knee-raise.annotation.brace" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace abs to protect lower back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰が反らないよう腹圧を保つ"
-          }
-        }
-      }
-    },
-    "form.hanging-knee-raise.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.hanging-lat-stretch.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.hanging-lat-stretch.annotation.spine" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lengthen the spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背骨を長く伸ばす"
-          }
-        }
-      }
-    },
-    "form.hanging-leg-raise.annotation.brace" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace abs to protect lower back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰が反らないよう腹圧を保つ"
-          }
-        }
-      }
-    },
-    "form.hanging-leg-raise.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
     "form.happy-baby-pose.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -8378,40 +6577,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.heavy-bag-boxing.annotation.hand" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tuck the thumb when you strike"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "親指を握り込んで打つ"
-          }
-        }
-      }
-    },
-    "form.heavy-bag-boxing.annotation.rotate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate the hips into each punch"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰を回して力を伝える"
           }
         }
       }
@@ -8497,91 +6662,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "頂点でしっかり収縮"
-          }
-        }
-      }
-    },
-    "form.high-intensity-interval-training.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.high-intensity-interval-training.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.high-intensity-interval-training.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
-          }
-        }
-      }
-    },
-    "form.high-knees.annotation.balance" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips square"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤の左右差に注意"
-          }
-        }
-      }
-    },
-    "form.high-knees.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
           }
         }
       }
@@ -8858,74 +6938,6 @@
         }
       }
     },
-    "form.inchworm-walkout.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.inchworm-walkout.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.incline-barbell-bench-press.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.incline-barbell-bench-press.annotation.upper" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Target the upper chest"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸の上部に効かせる"
-          }
-        }
-      }
-    },
     "form.incline-dumbbell-curl.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -8994,40 +7006,6 @@
         }
       }
     },
-    "form.incline-dumbbell-press.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.incline-dumbbell-press.annotation.upper" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Target the upper chest"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸の上部に効かせる"
-          }
-        }
-      }
-    },
     "form.incline-push-up.annotation.body" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9045,23 +7023,6 @@
         }
       }
     },
-    "form.incline-push-up.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
     "form.incline-push-up.annotation.hand" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9075,57 +7036,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "手は肩幅で台に"
-          }
-        }
-      }
-    },
-    "form.interval-running.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.interval-running.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.interval-running.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
           }
         }
       }
@@ -9232,74 +7142,6 @@
         }
       }
     },
-    "form.jump-rope.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.jump-rope.annotation.calf" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the calves stretching"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ふくらはぎが伸びるのを感じる"
-          }
-        }
-      }
-    },
-    "form.jumping-jacks.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.jumping-jacks.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
     "form.kettlebell-rdl.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9351,23 +7193,6 @@
         }
       }
     },
-    "form.kettlebell-swing.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace abs to protect the spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腹圧で腰を守る"
-          }
-        }
-      }
-    },
     "form.knee-to-chest-stretch.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9398,40 +7223,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.knee-to-chest.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.knee-to-chest.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
           }
         }
       }
@@ -9844,23 +7635,6 @@
         }
       }
     },
-    "form.lat-pulldown.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
     "form.lat-stretch-doorway.annotation.lats" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9929,40 +7703,6 @@
         }
       }
     },
-    "form.lateral-lunge.annotation.balance" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips square"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤の左右差に注意"
-          }
-        }
-      }
-    },
-    "form.lateral-lunge.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
     "form.lateral-lunge.annotation.torso" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10014,23 +7754,6 @@
         }
       }
     },
-    "form.leg-extension.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips planted on the seat"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤をシートに固定"
-          }
-        }
-      }
-    },
     "form.leg-extension.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10061,40 +7784,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
-    "form.leg-raise.annotation.brace" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace abs to protect lower back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰が反らないよう腹圧を保つ"
-          }
-        }
-      }
-    },
-    "form.leg-raise.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
           }
         }
       }
@@ -10146,23 +7835,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "強く引っ張らない"
-          }
-        }
-      }
-    },
-    "form.levator-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
           }
         }
       }
@@ -10265,23 +7937,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "腰を反らせすぎない"
-          }
-        }
-      }
-    },
-    "form.low-lunge-stretch.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
           }
         }
       }
@@ -10626,74 +8281,6 @@
         }
       }
     },
-    "form.mountain-climber.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.mountain-climber.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips level — no bouncing"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お尻を上下させない"
-          }
-        }
-      }
-    },
-    "form.neck-extension-stretch.annotation.neck" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep the neck neutral"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "首は自然に保つ"
-          }
-        }
-      }
-    },
-    "form.neck-extension-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
-          }
-        }
-      }
-    },
     "form.neck-flexion-stretch.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10741,57 +8328,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "首の側面が伸びる"
-          }
-        }
-      }
-    },
-    "form.neck-rotation-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
-          }
-        }
-      }
-    },
-    "form.neck-side-stretch.annotation.neck" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep the neck neutral"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "首は自然に保つ"
-          }
-        }
-      }
-    },
-    "form.neck-side-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
           }
         }
       }
@@ -10864,91 +8400,6 @@
         }
       }
     },
-    "form.one-arm-dumbbell-press.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.one-arm-dumbbell-press.annotation.press" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press straight overhead"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭の上にまっすぐ押し上げる"
-          }
-        }
-      }
-    },
-    "form.overhead-squat.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
-    "form.overhead-squat.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
-          }
-        }
-      }
-    },
-    "form.overhead-squat.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
     "form.overhead-tricep-extension.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -10996,40 +8447,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.pec-deck.annotation.elbow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pin elbows in place"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肘の位置を固定する"
-          }
-        }
-      }
-    },
-    "form.pec-deck.annotation.squeeze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hold one second in the middle"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "中央で1秒キープ"
           }
         }
       }
@@ -12203,23 +9620,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩をすくめない"
-          }
-        }
-      }
-    },
-    "form.hammer-curl.annotation.chest" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't lean back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "上体を反らさない"
           }
         }
       }
@@ -18599,74 +15999,6 @@
         }
       }
     },
-    "form.pigeon-pose.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stretch the front-leg glute"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "前脚側のお尻を伸ばす"
-          }
-        }
-      }
-    },
-    "form.pigeon-pose.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.pike-push-up.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
-    "form.pike-push-up.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
     "form.pike-push-up.annotation.hand" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18854,23 +16186,6 @@
         }
       }
     },
-    "form.plank.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep core tight throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腹筋に常に力を入れる"
-          }
-        }
-      }
-    },
     "form.plank.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18888,23 +16203,6 @@
         }
       }
     },
-    "form.plank.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't let hips sag"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お尻が落ちないように"
-          }
-        }
-      }
-    },
     "form.plank.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18918,23 +16216,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "首は自然に保つ"
-          }
-        }
-      }
-    },
-    "form.plate-front-raise.annotation.front" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Target the front delts"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "フロントデルトに効かせる"
           }
         }
       }
@@ -18973,57 +16254,6 @@
         }
       }
     },
-    "form.power-clean.annotation.drive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive explosively with legs"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で爆発的に押し上げる"
-          }
-        }
-      }
-    },
-    "form.power-clean.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.power-clean.annotation.rack" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rack the bar on the front delts"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩の前にしっかり乗せる"
-          }
-        }
-      }
-    },
     "form.prayer-chest-stretch.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19054,40 +16284,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "胸を大きく開く"
-          }
-        }
-      }
-    },
-    "form.prayer-stretch.annotation.grip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grip the bar tightly"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "グリップを強く握る"
-          }
-        }
-      }
-    },
-    "form.prayer-stretch.annotation.wrist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep wrists in a neutral line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "手首はまっすぐ保つ"
           }
         }
       }
@@ -19194,40 +16390,6 @@
         }
       }
     },
-    "form.pull-up.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.pull-up.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
     "form.push-press.annotation.dip" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19279,23 +16441,6 @@
         }
       }
     },
-    "form.push-up.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
     "form.push-up.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19343,23 +16488,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "首は自然に(目線は床)"
-          }
-        }
-      }
-    },
-    "form.quad-stretch-standing.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
           }
         }
       }
@@ -19670,23 +16798,6 @@
         }
       }
     },
-    "form.reverse-lunge.annotation.balance" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep hips square"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "骨盤の左右差に注意"
-          }
-        }
-      }
-    },
     "form.reverse-lunge.annotation.core" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19717,23 +16828,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "前足の膝は90度"
-          }
-        }
-      }
-    },
-    "form.reverse-lunge.annotation.knee" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Knees track over toes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝はつま先方向に"
           }
         }
       }
@@ -19840,91 +16934,6 @@
         }
       }
     },
-    "form.romanian-deadlift.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
-          }
-        }
-      }
-    },
-    "form.romanian-deadlift.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.rowing-machine.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.rowing-machine.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.rowing-machine.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
-          }
-        }
-      }
-    },
     "form.runners-stretch.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19955,108 +16964,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ハムストリングを意識する"
-          }
-        }
-      }
-    },
-    "form.running-treadmill.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.running-treadmill.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.running-treadmill.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
-          }
-        }
-      }
-    },
-    "form.russian-twist.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avoid rounding the back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中を丸めない"
-          }
-        }
-      }
-    },
-    "form.russian-twist.annotation.twist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate from the core, not shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.sandbag-carry.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
           }
         }
       }
@@ -20231,23 +17138,6 @@
         }
       }
     },
-    "form.seated-cable-row.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
     "form.seated-calf-raise.annotation.range" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20265,40 +17155,6 @@
         }
       }
     },
-    "form.seated-dumbbell-press.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.seated-dumbbell-press.annotation.press" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press straight overhead"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭の上にまっすぐ押し上げる"
-          }
-        }
-      }
-    },
     "form.seated-forward-fold.annotation.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20312,57 +17168,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "股関節から倒す"
-          }
-        }
-      }
-    },
-    "form.seated-forward-fold.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
-          }
-        }
-      }
-    },
-    "form.seated-hamstring-stretch.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.seated-hamstring-stretch.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
           }
         }
       }
@@ -20401,91 +17206,6 @@
         }
       }
     },
-    "form.seated-leg-curl.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fully contract the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムを完全収縮"
-          }
-        }
-      }
-    },
-    "form.seated-spinal-twist.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.seated-spinal-twist.annotation.twist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate from the core, not shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.shadow-boxing.annotation.hand" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snap the hand back quickly"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "拳は素早く戻す"
-          }
-        }
-      }
-    },
-    "form.shadow-boxing.annotation.rotate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate the hips into each punch"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "腰を回して力を伝える"
-          }
-        }
-      }
-    },
     "form.shoulder-rolls.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20516,40 +17236,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩はリラックスして下げる"
-          }
-        }
-      }
-    },
-    "form.side-bend-lat.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.side-bend-lat.annotation.spine" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lengthen the spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背骨を長く伸ばす"
           }
         }
       }
@@ -20775,23 +17461,6 @@
         }
       }
     },
-    "form.single-arm-tricep-extension.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use full range of motion"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
     "form.single-leg-calf-raise.annotation.range" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20996,23 +17665,6 @@
         }
       }
     },
-    "form.sit-up.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use full range of motion"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
-          }
-        }
-      }
-    },
     "form.ski-erg.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21166,23 +17818,6 @@
         }
       }
     },
-    "form.smith-machine-squat.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
     "form.smith-machine-squat.annotation.knee" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21196,23 +17831,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "膝は外向きに"
-          }
-        }
-      }
-    },
-    "form.smith-machine-squat.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
           }
         }
       }
@@ -21438,23 +18056,6 @@
         }
       }
     },
-    "form.sphinx-pose.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
     "form.spider-curl.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21574,108 +18175,6 @@
         }
       }
     },
-    "form.spinning-bike.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.spinning-bike.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.sprinting.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.sprinting.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.squat-jump.annotation.drive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive explosively with legs"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で爆発的に押し上げる"
-          }
-        }
-      }
-    },
-    "form.squat-jump.annotation.land" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Land softly with bent knees"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "膝を曲げてやさしく着地"
-          }
-        }
-      }
-    },
     "form.stair-climber.annotation.breathe" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21706,57 +18205,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.standing-abdominal-stretch.annotation.chest" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open the chest fully"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を大きく開く"
-          }
-        }
-      }
-    },
-    "form.standing-abdominal-stretch.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
-    "form.standing-calf-raise.annotation.range" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maximize ankle range"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可動域を最大に"
           }
         }
       }
@@ -21795,40 +18243,6 @@
         }
       }
     },
-    "form.standing-hamstring-stretch.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.standing-hamstring-stretch.annotation.ham" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feel the hamstrings"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ハムストリングを意識する"
-          }
-        }
-      }
-    },
     "form.standing-leg-curl.annotation.ham" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21859,125 +18273,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
-    "form.standing-side-bend.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
-          }
-        }
-      }
-    },
-    "form.standing-side-bend.annotation.twist" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotate from the core, not shoulders"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.stationary-bike.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.stationary-bike.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.step-aerobics.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.step-aerobics.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
-    "form.step-up.annotation.drive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive through the front heel"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "前足の踵で押し上げる"
           }
         }
       }
@@ -22033,57 +18328,6 @@
         }
       }
     },
-    "form.suitcase-deadlift.annotation.back" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a neutral spine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "背中をまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.suitcase-deadlift.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
-    "form.suitcase-deadlift.annotation.legs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Push the floor away"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で床を押し返す"
-          }
-        }
-      }
-    },
     "form.sumo-deadlift.annotation.stance" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22097,23 +18341,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "つま先は外向き"
-          }
-        }
-      }
-    },
-    "form.sumo-deadlift.annotation.torso" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chest up, brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "胸を張って体幹を固める"
           }
         }
       }
@@ -22186,40 +18413,6 @@
         }
       }
     },
-    "form.supine-twist.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.supine-twist.annotation.hinge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinge from the hips"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を蝶番のように曲げる"
-          }
-        }
-      }
-    },
     "form.svend-press.annotation.feet" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22267,108 +18460,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.swimming-breaststroke.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.swimming-breaststroke.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.swimming-breaststroke.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
-          }
-        }
-      }
-    },
-    "form.swimming-freestyle.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.swimming-freestyle.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
-    "form.swimming-freestyle.annotation.tempo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control the tempo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "テンポをコントロールする"
           }
         }
       }
@@ -22645,40 +18736,6 @@
         }
       }
     },
-    "form.tricep-dip-bench.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
-          }
-        }
-      }
-    },
-    "form.tricep-dip-bench.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
     "form.tricep-dip-bench.annotation.hand" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22713,23 +18770,6 @@
         }
       }
     },
-    "form.tricep-overhead-stretch.annotation.shoulders" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep shoulders relaxed and down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩はリラックスして下げる"
-          }
-        }
-      }
-    },
     "form.tricep-pushdown.annotation.elbow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22743,23 +18783,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肘を固定する"
-          }
-        }
-      }
-    },
-    "form.tuck-jump.annotation.drive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drive explosively with legs"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "脚で爆発的に押し上げる"
           }
         }
       }
@@ -22883,57 +18906,6 @@
         }
       }
     },
-    "form.wall-sit-quad.annotation.core" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brace your core"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "お腹に力を入れる"
-          }
-        }
-      }
-    },
-    "form.wall-sit-quad.annotation.hip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sit hips back"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "股関節を後ろに引く"
-          }
-        }
-      }
-    },
-    "form.wall-sit-quad.annotation.neck" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep the neck neutral"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "首は自然に保つ"
-          }
-        }
-      }
-    },
     "form.weighted-crunch.annotation.neck" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -23032,57 +19004,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "肩ではなく体幹で回旋"
-          }
-        }
-      }
-    },
-    "form.wide-pull-up.annotation.lats" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Focus on lats"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "広背筋に集中する"
-          }
-        }
-      }
-    },
-    "form.wide-pull-up.annotation.scap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pinch shoulder blades"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "肩甲骨を寄せる"
-          }
-        }
-      }
-    },
-    "form.wide-push-up.annotation.body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body in a straight line"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "頭から踵まで一直線"
           }
         }
       }
@@ -23206,40 +19127,6 @@
         }
       }
     },
-    "form.world-greatest-stretch.annotation.breathe" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep breathing throughout"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "呼吸を止めずに続ける"
-          }
-        }
-      }
-    },
-    "form.world-greatest-stretch.annotation.flow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Move smoothly through each phase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一連の動作を素早く流れるように"
-          }
-        }
-      }
-    },
     "form.wrist-circles.annotation.wrist" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -23304,23 +19191,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "手首はまっすぐ保つ"
-          }
-        }
-      }
-    },
-    "form.wrist-flexor-stretch.annotation.grip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grip the bar tightly"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "グリップを強く握る"
           }
         }
       }
@@ -26996,96 +22866,6 @@
         }
       }
     },
-    "paywall.action.close" : {
-      "comment" : "Paywall: 閉じるボタン。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "閉じる"
-          }
-        }
-      }
-    },
-    "paywall.action.purchase" : {
-      "comment" : "Paywall: 購入ボタン。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buy Premium"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "プレミアムを購入"
-          }
-        }
-      }
-    },
-    "paywall.action.purchasing" : {
-      "comment" : "Paywall: 購入処理中ラベル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchasing…"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購入処理中…"
-          }
-        }
-      }
-    },
-    "paywall.action.restore" : {
-      "comment" : "Paywall: 復元ボタン。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore Purchase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購入を復元"
-          }
-        }
-      }
-    },
-    "paywall.action.restoring" : {
-      "comment" : "Paywall: 復元中ラベル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restoring…"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "復元中…"
-          }
-        }
-      }
-    },
     "paywall.alert.title" : {
       "comment" : "Paywall: 購入失敗 / 復元失敗 / 設定不備のときに出すアラートのタイトル。本文は statusMessage に動的に入る。",
       "extractionState" : "manual",
@@ -27104,652 +22884,6 @@
         }
       }
     },
-    "paywall.dismiss" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not now"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "あとで"
-          }
-        }
-      }
-    },
-    "paywall.feature.advanced_charts.desc" : {
-      "comment" : "Paywall 機能: 詳細チャート 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly / monthly volume and muscle heatmaps."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "週次・月次のボリューム、部位別ヒートマップを表示。"
-          }
-        }
-      }
-    },
-    "paywall.feature.advanced_charts.title" : {
-      "comment" : "Paywall 機能: 詳細チャート タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Advanced charts"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "詳細チャート"
-          }
-        }
-      }
-    },
-    "paywall.feature.app_icon.desc" : {
-      "comment" : "Paywall 機能: AppIcon 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Switch between alternate icons on your home screen."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ホーム画面のアイコンを切り替えられます。"
-          }
-        }
-      }
-    },
-    "paywall.feature.app_icon.title" : {
-      "comment" : "Paywall 機能: AppIcon タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alternate app icons"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App Icon バリエーション"
-          }
-        }
-      }
-    },
-    "paywall.feature.csv_export.desc" : {
-      "comment" : "Paywall 機能: CSV エクスポート 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Export history as CSV for backup or analysis."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "履歴を CSV で書き出してバックアップや分析に使えます。"
-          }
-        }
-      }
-    },
-    "paywall.feature.csv_export.title" : {
-      "comment" : "Paywall 機能: CSV エクスポート タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CSV export"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CSV エクスポート"
-          }
-        }
-      }
-    },
-    "paywall.feature.csv_import.desc" : {
-      "comment" : "Paywall 機能: CSV インポート 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Import data from other apps or workout-cool."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "他アプリや workout-cool からデータを取り込み。"
-          }
-        }
-      }
-    },
-    "paywall.feature.csv_import.title" : {
-      "comment" : "Paywall 機能: CSV インポート タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CSV / JSON import"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CSV / JSON インポート"
-          }
-        }
-      }
-    },
-    "paywall.feature.custom_exercise.desc" : {
-      "comment" : "Paywall 機能: カスタム種目 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add and edit your own exercises beyond the bundled set."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "同梱種目に加えて自分だけの種目を追加・編集できます。"
-          }
-        }
-      }
-    },
-    "paywall.feature.custom_exercise.title" : {
-      "comment" : "Paywall 機能: カスタム種目 タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Custom exercises"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "種目のカスタム追加・編集"
-          }
-        }
-      }
-    },
-    "paywall.feature.custom_templates.desc" : {
-      "comment" : "Paywall 機能: カスタムテンプレ 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create unlimited custom templates of your own."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自分だけのワークアウトテンプレートを無制限に作成。"
-          }
-        }
-      }
-    },
-    "paywall.feature.custom_templates.title" : {
-      "comment" : "Paywall 機能: カスタムテンプレ タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlimited custom templates"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "カスタムテンプレート無制限"
-          }
-        }
-      }
-    },
-    "paywall.feature.manual_entry.desc" : {
-      "comment" : "Paywall 機能: 手動ログ 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Log workouts you did outside the app."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アプリ外で実施したワークアウトを後から記録。"
-          }
-        }
-      }
-    },
-    "paywall.feature.manual_entry.title" : {
-      "comment" : "Paywall 機能: 手動ログ タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Manual entries"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "手動ログ追加"
-          }
-        }
-      }
-    },
-    "paywall.feature.session_photo.desc" : {
-      "comment" : "Paywall 機能: 写真メモ 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Attach photos and notes to your sessions."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "セッションに写真とメモを残せます。"
-          }
-        }
-      }
-    },
-    "paywall.feature.session_photo.title" : {
-      "comment" : "Paywall 機能: 写真メモ タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Photos & notes"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "セッション写真・メモ添付"
-          }
-        }
-      }
-    },
-    "paywall.feature.unlimited_history.desc" : {
-      "comment" : "Paywall 機能: 履歴無制限 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Access every session, even from over 31 days ago."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "31日以前のセッションを含めて全期間にアクセス。"
-          }
-        }
-      }
-    },
-    "paywall.feature.unlimited_history.title" : {
-      "comment" : "Paywall 機能: 履歴無制限 タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlimited history"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全期間の履歴"
-          }
-        }
-      }
-    },
-    "paywall.feature.video_link.desc" : {
-      "comment" : "Paywall 機能: 動画リンク 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open YouTube videos from the exercise detail screen."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "種目詳細から YouTube アプリへ動画リンクを開きます。"
-          }
-        }
-      }
-    },
-    "paywall.feature.video_link.title" : {
-      "comment" : "Paywall 機能: 動画リンク タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "YouTube video links"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "YouTube 動画リンク"
-          }
-        }
-      }
-    },
-    "paywall.feature.watch_companion.desc" : {
-      "comment" : "Paywall 機能: Watch 連携 説明。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Smart Stack widget ships in v1.0; a full companion app is planned for v1.1 and beyond."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "v1.0 では Smart Stack ウィジェットを提供。完全な Watch アプリは v1.1 以降に順次提供予定です。"
-          }
-        }
-      }
-    },
-    "paywall.feature.watch_companion.title" : {
-      "comment" : "Paywall 機能: Watch 連携 タイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watch Smart Stack"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watch Smart Stack"
-          }
-        }
-      }
-    },
-    "paywall.features.title" : {
-      "comment" : "Paywall: 機能リスト見出し。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "What's included"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "プレミアムで使える機能"
-          }
-        }
-      }
-    },
-    "paywall.legal.disclaimer" : {
-      "comment" : "Paywall: 購入の注意書き。Apple Guideline 3.1.2 (自動更新サブスク開示) を満たすため、自動更新条件・解約手段・トライアル条件・払戻に言及する。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Subscriptions auto-renew at the end of each period unless cancelled at least 24 hours before. Manage or cancel any time in iOS Settings → [Apple ID] → Subscriptions. Free trial converts to a paid subscription unless cancelled. Purchases are tied to your Apple ID; refunds follow App Store policy."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "サブスクリプションは期間終了の 24 時間前までに解約しない限り自動更新されます。iOS の「設定」→「[Apple ID 名]」→「サブスクリプション」からいつでも管理・解約できます。無料トライアル終了時に解約していない場合は有料サブスクリプションに自動的に切り替わります。購入は Apple ID に紐づき、返金は App Store の規定に従います。"
-          }
-        }
-      }
-    },
-    "paywall.legal.privacy" : {
-      "comment" : "Paywall: プライバシーポリシーリンク。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Privacy Policy"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "プライバシーポリシー"
-          }
-        }
-      }
-    },
-    "paywall.legal.terms" : {
-      "comment" : "Paywall: 利用規約リンク。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terms of Use"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "利用規約"
-          }
-        }
-      }
-    },
-    "paywall.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlock for ¥980 (Launch ¥600)."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¥980(初回 ¥600)でアンロックできます。"
-          }
-        }
-      }
-    },
-    "paywall.nav.title" : {
-      "comment" : "Paywall ナビゲーションタイトル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upgrade to Premium"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "プレミアムにアップグレード"
-          }
-        }
-      }
-    },
-    "paywall.price.loading" : {
-      "comment" : "Paywall: 商品ロード中の表示。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading price…"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "価格を取得中…"
-          }
-        }
-      }
-    },
-    "paywall.price.note" : {
-      "comment" : "Paywall: 家族共有・税込についての一行。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Linked to your Apple ID. Family Sharing supported."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple ID に紐付く購入です。家族共有に対応。"
-          }
-        }
-      }
-    },
-    "paywall.price.one_time" : {
-      "comment" : "Paywall: 価格の補足(買い切り)。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "One-time purchase"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "買い切り"
-          }
-        }
-      }
-    },
-    "paywall.price.title" : {
-      "comment" : "Paywall: 価格行のラベル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Price"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "価格"
-          }
-        }
-      }
-    },
-    "paywall.price.unavailable" : {
-      "comment" : "Paywall: 商品ロード失敗時。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Couldn't load price"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "価格を取得できませんでした"
-          }
-        }
-      }
-    },
-    "paywall.purchase.cancelled" : {
-      "comment" : "Paywall: 購入キャンセル。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchase was cancelled."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購入はキャンセルされました。"
-          }
-        }
-      }
-    },
-    "paywall.purchase.failed" : {
-      "comment" : "Paywall: 購入処理失敗。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchase failed. Please try again later."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購入処理に失敗しました。時間をおいて再試行してください。"
-          }
-        }
-      }
-    },
     "paywall.purchase.pending" : {
       "comment" : "Paywall: 購入保留。",
       "extractionState" : "manual",
@@ -27764,24 +22898,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "購入は保留中です。承認後に自動的に反映されます。"
-          }
-        }
-      }
-    },
-    "paywall.purchase.verification_failed" : {
-      "comment" : "Paywall: レシート検証失敗。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We couldn't verify your receipt. Please contact support."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "レシートの検証に失敗しました。サポートまでお問い合わせください。"
           }
         }
       }
@@ -27984,24 +23100,6 @@
         }
       }
     },
-    "paywall.restore.failed" : {
-      "comment" : "Paywall: 復元処理失敗。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore failed. Make sure you're signed in with your Apple ID."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "復元に失敗しました。Apple ID に接続できているか確認してください。"
-          }
-        }
-      }
-    },
     "paywall.restore.no_purchase" : {
       "comment" : "Paywall: 復元するものがない。",
       "extractionState" : "manual",
@@ -28016,41 +23114,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "復元する購入は見つかりませんでした。"
-          }
-        }
-      }
-    },
-    "paywall.subtitle" : {
-      "comment" : "Paywall: ヘッダ下のサブコピー。",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlock every Premium feature with a one-time purchase."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1回の買い切りで プレミアム機能をすべて解放します。"
-          }
-        }
-      }
-    },
-    "paywall.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium Feature"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "プレミアム機能"
           }
         }
       }
@@ -30434,6 +25497,78 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "クイック記録"
+          }
+        }
+      }
+    },
+    "watch-widget.description" : {
+      "comment" : "Watch Smart Stack ウィジェットの description(ウィジェットギャラリーに表示)。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's workout status"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日のワークアウト状況"
+          }
+        }
+      }
+    },
+    "watch-widget.sets %lld" : {
+      "comment" : "Watch Smart Stack ウィジェット: 今日記録したセット数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld セット"
+          }
+        }
+      }
+    },
+    "watch-widget.status.completed" : {
+      "comment" : "Watch Smart Stack ウィジェット: 今日のワークアウトが完了しているステータス。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
+    "watch-widget.status.not-yet" : {
+      "comment" : "Watch Smart Stack ウィジェット: 今日まだワークアウトしていないステータス。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未実施"
           }
         }
       }

@@ -20,7 +20,7 @@ import SwiftUI
 /// 人体図を収めるカードの背景・ヘアライン境界線・影をまとめた ViewModifier。
 /// カード自体に padding は含まない(呼び出し側でコンテンツ padding を制御する)。
 struct PremiumDiagramCardStyle: ViewModifier {
-    var cornerRadius: CGFloat = 18
+    var cornerRadius: CGFloat = AppRadius.hero
 
     func body(content: Content) -> some View {
         content
@@ -71,7 +71,7 @@ struct PremiumDiagramCardStyle: ViewModifier {
 
 extension View {
     /// 人体図カードの premium 背景・境界線・影を適用する。
-    func premiumDiagramCard(cornerRadius: CGFloat = 18) -> some View {
+    func premiumDiagramCard(cornerRadius: CGFloat = AppRadius.hero) -> some View {
         modifier(PremiumDiagramCardStyle(cornerRadius: cornerRadius))
     }
 }

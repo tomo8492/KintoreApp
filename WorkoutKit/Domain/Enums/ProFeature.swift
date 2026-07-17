@@ -16,7 +16,7 @@ enum ProFeature: String, CaseIterable, Sendable {
     case videoLink          // YouTube Deep Link(F-02 詳細画面)
 
     // MARK: v1.1+ Roadmap — enum case は残し、UI gate と App Store 掲載は v1.1 で追加
-    // 詳細は docs/ROADMAP.md。Paywall リストには `isShownInPaywallV1` で出さない。
+    // 詳細は docs/ROADMAP.md。
     case customExercise     // v1.1: ユーザー作成種目の管理 UI(Library 内 Add/Edit)
     case sessionPhoto       // v1.1: セッション写真添付(WorkoutSession に attachment 追加)
     case appIconVariants    // v1.1: 代替アイコン(Assets に AlternateAppIcon を追加)
@@ -28,16 +28,4 @@ enum ProFeature: String, CaseIterable, Sendable {
 extension ProFeature {
     /// 今のところ全て Pro 限定。将来 freemium 切り出しが発生したらここで分岐する。
     var isFreeTier: Bool { false }
-
-    /// v1.0 の Paywall 機能リスト(`PaywallFeatureList`)に表示するかどうか。
-    /// false の case は実装が v1.1+ なので App Store 提出版では非表示にする。
-    /// `watchOSCompanion` は description に "(v1.1+)" と明示しているため例外的に表示する。
-    var isShownInPaywallV1: Bool {
-        switch self {
-        case .customExercise, .sessionPhoto, .appIconVariants:
-            return false
-        default:
-            return true
-        }
-    }
 }

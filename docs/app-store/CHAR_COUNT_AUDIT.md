@@ -51,6 +51,29 @@
 - Japanese fields all have generous headroom; safe to expand if needed
   during a future content pass.
 
+## 2026-07-17 update — name / subtitle repositioning (AI-first, form-guide differentiator)
+
+> CLAUDE.md v1.2 ASO 改訂に合わせて `name.txt` / `subtitle.txt` (ja + en) を更新。
+> **この節が name.txt / subtitle.txt に関する最新の値。上の「Results」表の
+> 該当 4 行(`ja/name.txt`, `ja/subtitle.txt`, `en/name.txt`, `en/subtitle.txt`)は
+> この節が発行された時点で superseded(古い値のまま残しているのは履歴参照用)。**
+
+| File                              | New value                            | Unicode | UTF-16 | Limit | Status |
+|------------------------------------|---------------------------------------|--------:|-------:|------:|--------|
+| `docs/app-store/ja/name.txt`       | `WorkoutKit - AI筋トレ記録`           | 20      | 20     | 30    | ✅ OK  |
+| `docs/app-store/ja/subtitle.txt`   | `フォームが分かるAI筋トレ記録`         | 15      | 15     | 30    | ✅ OK  |
+| `docs/app-store/en/name.txt`       | `WorkoutKit - AI Workout Log`         | 27      | 27     | 30    | ✅ OK  |
+| `docs/app-store/en/subtitle.txt`   | `Form-guided AI workout log`          | 26      | 26     | 30    | ✅ OK  |
+
+Previous values (now retired):
+- `ja/name.txt`: `WorkoutKit - シンプル筋トレ記録`
+- `ja/subtitle.txt`: `目的×部位×器具で5秒生成・全345種目`
+- `en/name.txt`: `WorkoutKit - Simple Tracker`
+- `en/subtitle.txt`: `5-second smart workout planner`
+
+All four new strings verified ≤ 30 chars (both Unicode codepoint count and
+UTF-16 length, computed with the same method as the section below).
+
 ## Audit method (reproducible)
 
 ```bash

@@ -1,1 +1,1 @@
-WorkoutKit - Simple Tracker
+WorkoutKit - AI Workout Log

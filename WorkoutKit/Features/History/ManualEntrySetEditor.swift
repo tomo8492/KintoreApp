@@ -33,7 +33,7 @@ struct ManualEntryExerciseSection: View {
                     Button(role: .destructive) {
                         onRemoveSet(set.id)
                     } label: {
-                        Label("Delete", systemImage: "trash")
+                        Label("common.delete", systemImage: "trash")
                     }
                 }
             }

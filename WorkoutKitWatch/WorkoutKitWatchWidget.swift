@@ -30,7 +30,7 @@ struct WorkoutKitWatchWidget: Widget {
             WorkoutWidgetView(entry: entry)
         }
         .configurationDisplayName("WorkoutKit")
-        .description("今日のワークアウト状況")
+        .description(Text("watch-widget.description"))
         .supportedFamilies([.accessoryRectangular])
     }
 }
@@ -44,11 +44,11 @@ struct WorkoutWidgetView: View {
         HStack(spacing: 8) {
             statusBadge
             VStack(alignment: .leading, spacing: 2) {
-                Text(entry.isCompletedToday ? "完了" : "未実施")
+                Text(entry.isCompletedToday ? "watch-widget.status.completed" : "watch-widget.status.not-yet")
                     .font(.headline)
                     .lineLimit(1)
                 if entry.isCompletedToday {
-                    Text("\(entry.totalSetsToday) セット")
+                    Text("watch-widget.sets \(entry.totalSetsToday)")
                         .font(.caption2.monospacedDigit())
                         .foregroundStyle(.secondary)
                 } else {
