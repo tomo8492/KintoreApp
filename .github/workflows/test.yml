@@ -100,3 +100,20 @@ jobs:
             build.log
             test.log
           retention-days: 7
+
+  annotations-qa:
+    name: Form annotations QA (static, no Xcode)
+    # Mac ランナーの xcodebuild ジョブとは独立した、Linux 上だけで完結する
+    # 高速な静的検査ジョブ。tools/check_form_annotations.py が
+    # AnnotatedFormView のレイアウト定数を再現して吹き出しの重なり・見切れを
+    # 検出するため、Xcode 不要かつ数秒で終わる(§参照: tools/check_form_annotations.py 冒頭コメント)。
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run form annotations QA
+        run: |
+          python3 tools/check_form_annotations.py
