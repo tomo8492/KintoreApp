@@ -3713,13 +3713,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin elbows in place"
+            "value" : "Elbow behind head"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "肘の位置を固定する"
+            "value" : "肘を頭の後ろへ"
           }
         }
       }
@@ -18276,6 +18276,295 @@
         }
       }
     },
+    "form.behind-head-tricep.annotation.grip" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull elbow gently"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反対の手で引く"
+          }
+        }
+      }
+    },
+    "form.behind-head-tricep.annotation.neck" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep neck neutral"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "首は反らさない"
+          }
+        }
+      }
+    },
+    "form.behind-head-tricep.annotation.tricep" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Triceps stretches"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二の腕が伸びる"
+          }
+        }
+      }
+    },
+    "form.dumbbell-thruster.annotation.dumbbell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoulder height"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩の高さで構える"
+          }
+        }
+      }
+    },
+    "form.dumbbell-thruster.annotation.knee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knees track out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "膝は外向き"
+          }
+        }
+      }
+    },
+    "form.dumbbell-thruster.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chest stays tall"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胸を張る"
+          }
+        }
+      }
+    },
+    "form.neck-extension-stretch.annotation.caution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't overextend"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反らし過ぎ注意"
+          }
+        }
+      }
+    },
+    "form.neck-extension-stretch.annotation.chin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lift chin up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顎を天井へ"
+          }
+        }
+      }
+    },
+    "form.neck-extension-stretch.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoulders down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩は下げる"
+          }
+        }
+      }
+    },
+    "form.neck-extension-stretch.annotation.throat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Throat stretches"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喉が伸びる"
+          }
+        }
+      }
+    },
+    "form.one-arm-dumbbell-press.annotation.brace_hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brace your torso"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反対の手で支える"
+          }
+        }
+      }
+    },
+    "form.one-arm-dumbbell-press.annotation.dumbbell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock out overhead"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肘を伸ばし切る"
+          }
+        }
+      }
+    },
+    "form.one-arm-dumbbell-press.annotation.shoulder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stack over shoulder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "肩の真上に押す"
+          }
+        }
+      }
+    },
+    "form.one-arm-dumbbell-press.annotation.torso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep torso upright"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体を傾けない"
+          }
+        }
+      }
+    },
+    "form.wrist-flexor-stretch.annotation.fingers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't force it"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無理に伸ばさない"
+          }
+        }
+      }
+    },
+    "form.wrist-flexor-stretch.annotation.forearm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forearm stretches"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前腕が伸びる"
+          }
+        }
+      }
+    },
+    "form.wrist-flexor-stretch.annotation.push_hand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull fingers back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "指を手前に引く"
+          }
+        }
+      }
+    },
     "form.phase.bottom" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -23042,13 +23331,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep wrists in a neutral line"
+            "value" : "Extend the wrist"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "手首はまっすぐ保つ"
+            "value" : "手首を伸ばす"
           }
         }
       }

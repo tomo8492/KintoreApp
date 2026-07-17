@@ -1,0 +1,65 @@
+{
+  "slug": "wrist-flexor-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "wrist-flexor-stretch-1",
+      "aspect": 0.563,
+      "annotations": [
+        {
+          "id": "wrist",
+          "position": {
+            "x": 0.42,
+            "y": 0.3
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.45
+          },
+          "labelKey": "form.wrist-flexor-stretch.annotation.wrist",
+          "color": "primary"
+        },
+        {
+          "id": "push_hand",
+          "position": {
+            "x": 0.5,
+            "y": 0.18
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.1
+          },
+          "labelKey": "form.wrist-flexor-stretch.annotation.push_hand",
+          "color": "info"
+        },
+        {
+          "id": "forearm",
+          "position": {
+            "x": 0.7,
+            "y": 0.12
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.55
+          },
+          "labelKey": "form.wrist-flexor-stretch.annotation.forearm",
+          "color": "neutral"
+        },
+        {
+          "id": "fingers",
+          "position": {
+            "x": 0.35,
+            "y": 0.72
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.87
+          },
+          "labelKey": "form.wrist-flexor-stretch.annotation.fingers",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "neck-extension-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "neck-extension-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "chin",
+          "position": {
+            "x": 0.44,
+            "y": 0.37
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.neck-extension-stretch.annotation.chin",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.32,
+            "y": 0.68
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.5
+          },
+          "labelKey": "form.neck-extension-stretch.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "throat",
+          "position": {
+            "x": 0.6,
+            "y": 0.54
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.12
+          },
+          "labelKey": "form.neck-extension-stretch.annotation.throat",
+          "color": "info"
+        },
+        {
+          "id": "caution",
+          "position": {
+            "x": 0.53,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.42
+          },
+          "labelKey": "form.neck-extension-stretch.annotation.caution",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

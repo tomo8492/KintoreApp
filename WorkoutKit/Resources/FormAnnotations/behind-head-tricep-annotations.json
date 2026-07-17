@@ -1,0 +1,65 @@
+{
+  "slug": "behind-head-tricep",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "behind-head-tricep-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.335,
+            "y": 0.315
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.11
+          },
+          "labelKey": "form.behind-head-tricep.annotation.elbow",
+          "color": "primary"
+        },
+        {
+          "id": "tricep",
+          "position": {
+            "x": 0.275,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.66
+          },
+          "labelKey": "form.behind-head-tricep.annotation.tricep",
+          "color": "neutral"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.475,
+            "y": 0.325
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.1
+          },
+          "labelKey": "form.behind-head-tricep.annotation.grip",
+          "color": "info"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.44,
+            "y": 0.44
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.42
+          },
+          "labelKey": "form.behind-head-tricep.annotation.neck",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "dumbbell-thruster",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "dumbbell-thruster-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "dumbbell",
+          "position": {
+            "x": 0.45,
+            "y": 0.2
+          },
+          "labelAnchor": {
+            "x": 0.13,
+            "y": 0.11
+          },
+          "labelKey": "form.dumbbell-thruster.annotation.dumbbell",
+          "color": "primary"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.73,
+            "y": 0.33
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.11
+          },
+          "labelKey": "form.dumbbell-thruster.annotation.torso",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.83,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.44
+          },
+          "labelKey": "form.dumbbell-thruster.annotation.knee",
+          "color": "info"
+        }
+      ]
+    }
+  ]
+}

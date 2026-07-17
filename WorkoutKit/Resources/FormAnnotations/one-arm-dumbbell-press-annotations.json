@@ -1,0 +1,65 @@
+{
+  "slug": "one-arm-dumbbell-press",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "one-arm-dumbbell-press-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "dumbbell",
+          "position": {
+            "x": 0.615,
+            "y": 0.205
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.23
+          },
+          "labelKey": "form.one-arm-dumbbell-press.annotation.dumbbell",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.61,
+            "y": 0.33
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.48
+          },
+          "labelKey": "form.one-arm-dumbbell-press.annotation.shoulder",
+          "color": "neutral"
+        },
+        {
+          "id": "brace_hand",
+          "position": {
+            "x": 0.56,
+            "y": 0.4
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.74
+          },
+          "labelKey": "form.one-arm-dumbbell-press.annotation.brace_hand",
+          "color": "info"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.5,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.6
+          },
+          "labelKey": "form.one-arm-dumbbell-press.annotation.torso",
+          "color": "warning"
+        }
+      ]
+    }
+  ]
+}

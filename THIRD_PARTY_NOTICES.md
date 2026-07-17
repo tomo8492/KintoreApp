@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 157 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 162 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -182,6 +182,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `step-aerobics-1` | 6285206 | Gustavo Fring | https://www.pexels.com/photo/6285206/ |
 | `suitcase-deadlift-1` | 13318589 | Styves Exantus | https://www.pexels.com/photo/13318589/ |
 | `tuck-jump-1` | 13327298 | Jordan Bergendahl | https://www.pexels.com/photo/13327298/ |
+| `behind-head-tricep-1` | 7869581 | Barbara Olsen | https://www.pexels.com/photo/7869581/ |
+| `dumbbell-thruster-1` | 4587364 | Anna Shvets | https://www.pexels.com/photo/4587364/ |
+| `neck-extension-stretch-1` | 7900674 | Ron Lach | https://www.pexels.com/photo/7900674/ |
+| `one-arm-dumbbell-press-1` | 13106583 | Airam Dato-on | https://www.pexels.com/photo/13106583/ |
+| `wrist-flexor-stretch-1` | 7298394 | Kindel Media | https://www.pexels.com/photo/7298394/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720305 | Ketut Subiyanto | https://www.pexels.com/photo/4720305/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |
