@@ -1,0 +1,65 @@
+{
+  "slug": "levator-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "levator-stretch-1",
+      "aspect": 1.498,
+      "annotations": [
+        {
+          "id": "hand",
+          "position": {
+            "x": 0.567,
+            "y": 0.175
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.15
+          },
+          "labelKey": "form.levator-stretch.annotation.hand",
+          "color": "primary"
+        },
+        {
+          "id": "tilt",
+          "position": {
+            "x": 0.467,
+            "y": 0.375
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.55
+          },
+          "labelKey": "form.levator-stretch.annotation.tilt",
+          "color": "info"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.542,
+            "y": 0.524
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.levator-stretch.annotation.neck",
+          "color": "warning"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.792,
+            "y": 0.599
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.85
+          },
+          "labelKey": "form.levator-stretch.annotation.shoulder",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

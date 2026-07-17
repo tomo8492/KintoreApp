@@ -1,0 +1,65 @@
+{
+  "slug": "sandbag-carry",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "sandbag-carry-1",
+      "aspect": 0.633,
+      "annotations": [
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.358,
+            "y": 0.495
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.08
+          },
+          "labelKey": "form.sandbag-carry.annotation.posture",
+          "color": "info"
+        },
+        {
+          "id": "chest",
+          "position": {
+            "x": 0.4,
+            "y": 0.564
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.5
+          },
+          "labelKey": "form.sandbag-carry.annotation.chest",
+          "color": "primary"
+        },
+        {
+          "id": "breath",
+          "position": {
+            "x": 0.35,
+            "y": 0.437
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.1
+          },
+          "labelKey": "form.sandbag-carry.annotation.breath",
+          "color": "warning"
+        },
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.517,
+            "y": 0.738
+          },
+          "labelAnchor": {
+            "x": 0.78,
+            "y": 0.9
+          },
+          "labelKey": "form.sandbag-carry.annotation.grip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "standing-abdominal-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "standing-abdominal-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "arms",
+          "position": {
+            "x": 0.46,
+            "y": 0.475
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.12
+          },
+          "labelKey": "form.standing-abdominal-stretch.annotation.arms",
+          "color": "primary"
+        },
+        {
+          "id": "gaze",
+          "position": {
+            "x": 0.4,
+            "y": 0.58
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.28
+          },
+          "labelKey": "form.standing-abdominal-stretch.annotation.gaze",
+          "color": "info"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.385,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.8,
+            "y": 0.62
+          },
+          "labelKey": "form.standing-abdominal-stretch.annotation.back",
+          "color": "warning"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.3,
+            "y": 0.965
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.8
+          },
+          "labelKey": "form.standing-abdominal-stretch.annotation.feet",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

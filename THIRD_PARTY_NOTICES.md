@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - **Source**: [Pexels](https://www.pexels.com/) — stock photo platform
 - **License**: [Pexels License](https://www.pexels.com/license/)
 - **Summary**: Free for commercial use, no attribution required, modification allowed. Prohibited: selling unaltered copies, misrepresenting endorsements, redistributing on competing stock platforms, using as trademarks.
-- **Used for**: 144 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
+- **Used for**: 157 exercise demonstration photos bundled under `WorkoutKit/Resources/Assets.xcassets/ExercisePhotos/<name>.imageset/`. Displayed in `AnnotatedFormView` (form-cue overlay on the Library detail screen; see `WorkoutKit/Resources/FormAnnotations/<slug>-annotations.json` for the per-exercise annotation data). Source URL pattern: `https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200`.
 - **Attribution**: not required by the license, but listed below as a courtesy.
 
 | Asset | Pexels ID | Photographer | Page |
@@ -169,6 +169,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 | `single-arm-tricep-extension-1` | 38167598 | Fernando Capetillo | https://www.pexels.com/photo/38167598/ |
 | `smith-machine-squat-1` | 5327530 | Tima Miroshnichenko | https://www.pexels.com/photo/5327530/ |
 | `world-greatest-stretch-1` | 13993530 | Niko Twisty | https://www.pexels.com/photo/13993530/ |
+| `half-split-stretch-1` | 6453958 | Marta Wave | https://www.pexels.com/photo/6453958/ |
+| `hanging-lat-stretch-1` | 8520197 | KoolShooters | https://www.pexels.com/photo/8520197/ |
+| `high-intensity-interval-training-1` | 3076511 | Jonathan Borba | https://www.pexels.com/photo/3076511/ |
+| `levator-stretch-1` | 6765043 | Kampus Production | https://www.pexels.com/photo/6765043/ |
+| `neck-rotation-stretch-1` | 7900679 | Ron Lach | https://www.pexels.com/photo/7900679/ |
+| `plate-front-raise-1` | 3855207 | Andrea Piacquadio | https://www.pexels.com/photo/3855207/ |
+| `prayer-stretch-1` | 8436445 | Yan Krukau | https://www.pexels.com/photo/8436445/ |
+| `sandbag-carry-1` | 38508144 | Cristian Camilo Estrada | https://www.pexels.com/photo/38508144/ |
+| `side-bend-lat-1` | 5331224 | Gabby K | https://www.pexels.com/photo/5331224/ |
+| `standing-abdominal-stretch-1` | 6293198 | cottonbro studio | https://www.pexels.com/photo/6293198/ |
+| `step-aerobics-1` | 6285206 | Gustavo Fring | https://www.pexels.com/photo/6285206/ |
+| `suitcase-deadlift-1` | 13318589 | Styves Exantus | https://www.pexels.com/photo/13318589/ |
+| `tuck-jump-1` | 13327298 | Jordan Bergendahl | https://www.pexels.com/photo/13327298/ |
 | `push-up-1` | 4720304 | Ketut Subiyanto | https://www.pexels.com/photo/4720304/ |
 | `push-up-2` | 4720305 | Ketut Subiyanto | https://www.pexels.com/photo/4720305/ |
 | `push-up-3` | 4720314 | Ketut Subiyanto | https://www.pexels.com/photo/4720314/ |

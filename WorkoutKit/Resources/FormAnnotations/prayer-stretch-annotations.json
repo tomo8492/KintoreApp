@@ -1,0 +1,65 @@
+{
+  "slug": "prayer-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "prayer-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "palms",
+          "position": {
+            "x": 0.5,
+            "y": 0.556
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.15
+          },
+          "labelKey": "form.prayer-stretch.annotation.palms",
+          "color": "primary"
+        },
+        {
+          "id": "elbowr",
+          "position": {
+            "x": 0.775,
+            "y": 0.544
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.prayer-stretch.annotation.elbowr",
+          "color": "info"
+        },
+        {
+          "id": "fingers",
+          "position": {
+            "x": 0.5,
+            "y": 0.489
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.85
+          },
+          "labelKey": "form.prayer-stretch.annotation.fingers",
+          "color": "warning"
+        },
+        {
+          "id": "elbowl",
+          "position": {
+            "x": 0.242,
+            "y": 0.544
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.prayer-stretch.annotation.elbowl",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

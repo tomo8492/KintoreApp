@@ -1,0 +1,65 @@
+{
+  "slug": "suitcase-deadlift",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "suitcase-deadlift-1",
+      "aspect": 1.119,
+      "annotations": [
+        {
+          "id": "load",
+          "position": {
+            "x": 0.733,
+            "y": 0.886
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.85
+          },
+          "labelKey": "form.suitcase-deadlift.annotation.load",
+          "color": "primary"
+        },
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.542,
+            "y": 0.466
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.1
+          },
+          "labelKey": "form.suitcase-deadlift.annotation.posture",
+          "color": "info"
+        },
+        {
+          "id": "lean",
+          "position": {
+            "x": 0.517,
+            "y": 0.699
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.6
+          },
+          "labelKey": "form.suitcase-deadlift.annotation.lean",
+          "color": "warning"
+        },
+        {
+          "id": "breath",
+          "position": {
+            "x": 0.458,
+            "y": 0.14
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.22
+          },
+          "labelKey": "form.suitcase-deadlift.annotation.breath",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

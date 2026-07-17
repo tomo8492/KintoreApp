@@ -1,0 +1,65 @@
+{
+  "slug": "side-bend-lat",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "side-bend-lat-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.825,
+            "y": 0.303
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.12
+          },
+          "labelKey": "form.side-bend-lat.annotation.arm",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.704,
+            "y": 0.414
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.side-bend-lat.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "torso",
+          "position": {
+            "x": 0.55,
+            "y": 0.533
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.75
+          },
+          "labelKey": "form.side-bend-lat.annotation.torso",
+          "color": "info"
+        },
+        {
+          "id": "hip",
+          "position": {
+            "x": 0.633,
+            "y": 0.583
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.8
+          },
+          "labelKey": "form.side-bend-lat.annotation.hip",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

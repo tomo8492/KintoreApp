@@ -1,0 +1,65 @@
+{
+  "slug": "hanging-lat-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "hanging-lat-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.575,
+            "y": 0.336
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.hanging-lat-stretch.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.463,
+            "y": 0.539
+          },
+          "labelAnchor": {
+            "x": 0.9,
+            "y": 0.2
+          },
+          "labelKey": "form.hanging-lat-stretch.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.508,
+            "y": 0.583
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.62
+          },
+          "labelKey": "form.hanging-lat-stretch.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "feet",
+          "position": {
+            "x": 0.5,
+            "y": 0.969
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.9
+          },
+          "labelKey": "form.hanging-lat-stretch.annotation.feet",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

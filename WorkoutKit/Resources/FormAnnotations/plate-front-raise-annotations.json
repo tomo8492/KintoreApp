@@ -1,0 +1,65 @@
+{
+  "slug": "plate-front-raise",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "plate-front-raise-1",
+      "aspect": 1.533,
+      "annotations": [
+        {
+          "id": "grip",
+          "position": {
+            "x": 0.5,
+            "y": 0.562
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.15
+          },
+          "labelKey": "form.plate-front-raise.annotation.grip",
+          "color": "primary"
+        },
+        {
+          "id": "elbow",
+          "position": {
+            "x": 0.342,
+            "y": 0.677
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.85
+          },
+          "labelKey": "form.plate-front-raise.annotation.elbow",
+          "color": "info"
+        },
+        {
+          "id": "core",
+          "position": {
+            "x": 0.458,
+            "y": 0.741
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.85
+          },
+          "labelKey": "form.plate-front-raise.annotation.core",
+          "color": "warning"
+        },
+        {
+          "id": "breath",
+          "position": {
+            "x": 0.467,
+            "y": 0.307
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.08
+          },
+          "labelKey": "form.plate-front-raise.annotation.breath",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

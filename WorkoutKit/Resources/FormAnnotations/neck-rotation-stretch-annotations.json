@@ -1,0 +1,65 @@
+{
+  "slug": "neck-rotation-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "neck-rotation-stretch-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "face",
+          "position": {
+            "x": 0.467,
+            "y": 0.361
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.1
+          },
+          "labelKey": "form.neck-rotation-stretch.annotation.face",
+          "color": "primary"
+        },
+        {
+          "id": "neck",
+          "position": {
+            "x": 0.692,
+            "y": 0.528
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.35
+          },
+          "labelKey": "form.neck-rotation-stretch.annotation.neck",
+          "color": "info"
+        },
+        {
+          "id": "shoulder",
+          "position": {
+            "x": 0.208,
+            "y": 0.567
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.4
+          },
+          "labelKey": "form.neck-rotation-stretch.annotation.shoulder",
+          "color": "warning"
+        },
+        {
+          "id": "breathe",
+          "position": {
+            "x": 0.5,
+            "y": 0.7
+          },
+          "labelAnchor": {
+            "x": 0.85,
+            "y": 0.09
+          },
+          "labelKey": "form.neck-rotation-stretch.annotation.breathe",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

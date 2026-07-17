@@ -1,0 +1,65 @@
+{
+  "slug": "step-aerobics",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "step-aerobics-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "posture",
+          "position": {
+            "x": 0.47,
+            "y": 0.47
+          },
+          "labelAnchor": {
+            "x": 0.12,
+            "y": 0.35
+          },
+          "labelKey": "form.step-aerobics.annotation.posture",
+          "color": "warning"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.565,
+            "y": 0.605
+          },
+          "labelAnchor": {
+            "x": 0.89,
+            "y": 0.8
+          },
+          "labelKey": "form.step-aerobics.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "arm",
+          "position": {
+            "x": 0.68,
+            "y": 0.6
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.15
+          },
+          "labelKey": "form.step-aerobics.annotation.arm",
+          "color": "info"
+        },
+        {
+          "id": "step",
+          "position": {
+            "x": 0.58,
+            "y": 0.86
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.89
+          },
+          "labelKey": "form.step-aerobics.annotation.step",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

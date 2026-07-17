@@ -1,0 +1,65 @@
+{
+  "slug": "half-split-stretch",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "half-split-stretch-1",
+      "aspect": 1.5,
+      "annotations": [
+        {
+          "id": "toes",
+          "position": {
+            "x": 0.108,
+            "y": 0.813
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.2
+          },
+          "labelKey": "form.half-split-stretch.annotation.toes",
+          "color": "primary"
+        },
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.615,
+            "y": 0.73
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.15
+          },
+          "labelKey": "form.half-split-stretch.annotation.knee",
+          "color": "warning"
+        },
+        {
+          "id": "back",
+          "position": {
+            "x": 0.567,
+            "y": 0.533
+          },
+          "labelAnchor": {
+            "x": 0.88,
+            "y": 0.45
+          },
+          "labelKey": "form.half-split-stretch.annotation.back",
+          "color": "info"
+        },
+        {
+          "id": "hands",
+          "position": {
+            "x": 0.425,
+            "y": 0.863
+          },
+          "labelAnchor": {
+            "x": 0.75,
+            "y": 0.85
+          },
+          "labelKey": "form.half-split-stretch.annotation.hands",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}

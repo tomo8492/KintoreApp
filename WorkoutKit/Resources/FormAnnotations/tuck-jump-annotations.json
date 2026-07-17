@@ -1,0 +1,65 @@
+{
+  "slug": "tuck-jump",
+  "frames": [
+    {
+      "id": "start",
+      "phaseLabelKey": "form.phase.start",
+      "assetName": "tuck-jump-1",
+      "aspect": 0.667,
+      "annotations": [
+        {
+          "id": "knee",
+          "position": {
+            "x": 0.55,
+            "y": 0.356
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.3
+          },
+          "labelKey": "form.tuck-jump.annotation.knee",
+          "color": "primary"
+        },
+        {
+          "id": "land",
+          "position": {
+            "x": 0.642,
+            "y": 0.5
+          },
+          "labelAnchor": {
+            "x": 0.87,
+            "y": 0.65
+          },
+          "labelKey": "form.tuck-jump.annotation.land",
+          "color": "warning"
+        },
+        {
+          "id": "arms",
+          "position": {
+            "x": 0.183,
+            "y": 0.161
+          },
+          "labelAnchor": {
+            "x": 0.15,
+            "y": 0.8
+          },
+          "labelKey": "form.tuck-jump.annotation.arms",
+          "color": "info"
+        },
+        {
+          "id": "exhale",
+          "position": {
+            "x": 0.383,
+            "y": 0.106
+          },
+          "labelAnchor": {
+            "x": 0.7,
+            "y": 0.11
+          },
+          "labelKey": "form.tuck-jump.annotation.exhale",
+          "color": "neutral"
+        }
+      ]
+    }
+  ]
+}
