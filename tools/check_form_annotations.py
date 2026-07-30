@@ -150,5 +150,74 @@ def main():
     return 0
 
 
+def main_all():
+    """レイアウト検査 + 注釈キー実在検査の両方を実行する。"""
+    layout_rc = main()
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    problems = check_label_keys_exist(root)
+    if problems:
+        print("\n".join(problems))
+        print(f"\n{len(problems)} violations (label key existence)")
+        return 1
+    print("OK: 注釈キーは全て xcstrings に ja/en 揃って存在(FormAnnotations + BodyAnnotations)")
+    return layout_rc
+
+
+
+# ---------------------------------------------------------------------------
+# 追加検査 (2026-07-30): 注釈 JSON が参照するローカライズキーの実在確認。
+#
+# 経緯: 「未参照キーの整理」で FormAnnotations だけを突き合わせた結果、同じ
+# form.<slug>.annotation.<id> 名前空間を使う BodyAnnotations 側の参照キー 243 件
+# を誤って削除し、136 種目の人体図でキー文字列が画面に露出する回帰を起こした。
+# 再発防止のため、両ディレクトリの参照キーが xcstrings に ja/en 揃って存在する
+# ことを CI (annotations-qa ジョブ) で必ず検査する。
+# ---------------------------------------------------------------------------
+
+def _collect_label_keys(path):
+    keys = set()
+    for name in sorted(os.listdir(path)):
+        if not name.endswith(".json"):
+            continue
+        with open(os.path.join(path, name), encoding="utf-8") as fh:
+            payload = json.load(fh)
+
+        def walk(node):
+            if isinstance(node, dict):
+                for key, value in node.items():
+                    if key in ("labelKey", "phaseLabelKey") and isinstance(value, str):
+                        keys.add((name, value))
+                    else:
+                        walk(value)
+            elif isinstance(node, list):
+                for item in node:
+                    walk(item)
+
+        walk(payload)
+    return keys
+
+
+def check_label_keys_exist(repo_root):
+    catalog_path = os.path.join(repo_root, "WorkoutKit/Resources/Localizable.xcstrings")
+    with open(catalog_path, encoding="utf-8") as fh:
+        catalog = json.load(fh)["strings"]
+
+    problems = []
+    for rel in ("WorkoutKit/Resources/FormAnnotations", "WorkoutKit/Resources/BodyAnnotations"):
+        directory = os.path.join(repo_root, rel)
+        if not os.path.isdir(directory):
+            continue
+        for source, key in sorted(_collect_label_keys(directory)):
+            entry = catalog.get(key)
+            if entry is None:
+                problems.append(f"NG {rel}/{source}: キー未定義 '{key}'")
+                continue
+            localizations = entry.get("localizations", {})
+            for lang in ("ja", "en"):
+                if lang not in localizations:
+                    problems.append(f"NG {rel}/{source}: '{key}' に {lang} 訳が無い")
+    return problems
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main_all())
