@@ -192,14 +192,11 @@ extension SessionStore {
     /// watchOS Widget(WorkoutKitWatch)はこの JSON を読んで Smart Stack に表示する。
     /// 失敗時は WatchSummaryBridge 内でログを残して握りつぶす。
     private func writeWatchSummary(isCompletedToday: Bool) {
-        let exerciseCount = Set(completedSets.compactMap { $0.exercise?.slug }).count
-        let summary = TodaySessionSummary(
-            updatedAt: .now,
-            isCompletedToday: isCompletedToday,
-            totalSetsToday: completedSets.count,
-            exerciseCountToday: exerciseCount
-        )
+        let summary = TodaySessionSummary.build(from: completedSets, isCompletedToday: isCompletedToday)
         WatchSummaryBridge.write(summary)
+        // Audit A1: App Group はデバイスごとに独立しているため、Watch 側の Smart Stack
+        // Widget にはこの WatchConnectivity 経由の配信でしか届かない。
+        watchSync?.sendTodaySummary(summary)
     }
 
     // MARK: - Cursor advancement

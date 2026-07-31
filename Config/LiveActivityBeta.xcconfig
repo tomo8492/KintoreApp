@@ -1,0 +1,9 @@
+// Config/LiveActivityBeta.xcconfig
+// Audit A4: LiveActivity.xcconfig は全 Config 共通で本番 Bundle ID
+// (com.tomo.workoutkit.LiveActivity)をハードコードしている。Beta ビルドだけ
+// 本体 App(Config/Beta.xcconfig)と同じ .beta サフィックス規約に揃えるため、
+// ベースを #include したうえで PRODUCT_BUNDLE_IDENTIFIER だけ上書きする。
+
+#include "LiveActivity.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.tomo.workoutkit.beta.LiveActivity

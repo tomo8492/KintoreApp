@@ -21,10 +21,13 @@ App Store Connect's localised metadata (en-US) should reference these
 
 ## Where these values live in code
 
-- `WorkoutKit/Features/Paywall/PaywallLegalSection.swift`
-  (`placeholderTermsURL`, `placeholderPrivacyURL`) — currently set to the
-  GitHub Pages URLs above. If a custom domain ships, update those two
-  constants in one place.
+- The URLs live in `project.yml`, on the `WorkoutKit` app target's
+  `info.properties` (`WKPrivacyPolicyURL` / `WKTermsOfUseURL`), and are
+  read at runtime via `SettingsLinks` in
+  `WorkoutKit/Features/Settings/SettingsView.swift`. Both `SettingsView`
+  and `PaywallView` reuse `SettingsLinks` for their legal-link rows. If a
+  custom domain ships, update the two `info.properties` values in
+  `project.yml` in one place.
 - `docs/app-store/{ja,en}/description.txt` — support email.
 - `docs/app-store/app-review-notes.md` — reviewer-facing email + URLs.
 - `docs/legal/*.md` and `docs/legal/*.html` — author/email/copyright in

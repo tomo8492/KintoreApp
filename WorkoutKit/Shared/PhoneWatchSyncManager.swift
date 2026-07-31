@@ -42,6 +42,17 @@ final class PhoneWatchSyncManager: NSObject, WCSessionDelegate {
     /// nonisolated 評価のためここでは配線しない、AppDependency.swift と同じ注意)。
     var onReceiveLoggedSets: (@MainActor ([WatchLoggedSet]) -> Void)?
 
+    // MARK: - applicationContext state (Audit A1)
+    //
+    // `WCSession.updateApplicationContext(_:)` は辞書全体を置き換える(差分マージされない)。
+    // `recentExercises` と `todaySummary` は別々のタイミングで送信されるため、送信のたびに
+    // 直近値をここに保持しておき、送信時は常に両方を詰め直して送る。
+    // (もう一つの選択肢だった `session.applicationContext` の読み出し + マージではなく、
+    //  こちらのプロパティ保持方式を採用: 送信元がこの 1 クラスに閉じているため状態管理が
+    //  簡単で、activationState 未確定時のフォールバックも自然に書けるため。)
+    private var lastRecentExercises: [WatchRecentExercise]?
+    private var lastTodaySummary: TodaySessionSummary?
+
     // MARK: - Init
 
     /// AppDependency.defaultValue(nonisolated context)から構築できるよう nonisolated。
@@ -69,18 +80,46 @@ final class PhoneWatchSyncManager: NSObject, WCSessionDelegate {
     /// 「最近使った種目」を Watch に配信する。上書き型(最新状態のみ必要)なので
     /// `updateApplicationContext` を使う。失敗はログのみ、呼び出し元は続行してよい。
     func sendRecentExercises(_ items: [WatchRecentExercise]) {
+        lastRecentExercises = items
+        sendApplicationContext()
+    }
+
+    /// v1.1 Audit A1: 「今日のサマリ」を Watch に配信する。Watch 側(WatchSyncClient)は
+    /// これを受けて App Group 共有ストア(WatchSummaryBridge)に書き込み、Smart Stack
+    /// Widget のタイムラインを再読込する。上書き型なので `updateApplicationContext` を使う。
+    func sendTodaySummary(_ summary: TodaySessionSummary) {
+        lastTodaySummary = summary
+        sendApplicationContext()
+    }
+
+    /// `lastRecentExercises` / `lastTodaySummary` の直近値をまとめて 1 つの
+    /// applicationContext として送信する。どちらか一方しか無い場合はそのキーだけ詰める
+    /// (まだ一度も送っていない側を空配列/ダミー値で上書きしてしまわないため)。
+    private func sendApplicationContext() {
         guard WCSession.isSupported() else { return }
         let session = WCSession.default
         guard session.activationState == .activated else {
-            watchSyncLogger.info("sendRecentExercises: session not activated yet, skipping")
+            watchSyncLogger.info("sendApplicationContext: session not activated yet, skipping")
             return
         }
+        var context: [String: Any] = [:]
         do {
-            let data = try WatchSyncCoder.encode(items)
-            try session.updateApplicationContext([WatchSyncKey.recentExercises: data])
-            watchSyncLogger.info("sendRecentExercises: sent \(items.count, privacy: .public) items")
+            if let lastRecentExercises {
+                context[WatchSyncKey.recentExercises] = try WatchSyncCoder.encode(lastRecentExercises)
+            }
+            if let lastTodaySummary {
+                context[WatchSyncKey.todaySummary] = try WatchSyncCoder.encode(lastTodaySummary)
+            }
         } catch {
-            watchSyncLogger.error("sendRecentExercises failed: \(error.localizedDescription, privacy: .public)")
+            watchSyncLogger.error("sendApplicationContext encode failed: \(error.localizedDescription, privacy: .public)")
+            return
+        }
+        guard !context.isEmpty else { return }
+        do {
+            try session.updateApplicationContext(context)
+            watchSyncLogger.info("sendApplicationContext: sent keys=\(context.keys.count, privacy: .public)")
+        } catch {
+            watchSyncLogger.error("sendApplicationContext failed: \(error.localizedDescription, privacy: .public)")
         }
     }
 
@@ -141,6 +180,10 @@ final class PhoneWatchSyncManager {
 
     func sendRecentExercises(_ items: [WatchRecentExercise]) {
         watchSyncLogger.info("WatchConnectivity unavailable in this build; sendRecentExercises no-op")
+    }
+
+    func sendTodaySummary(_ summary: TodaySessionSummary) {
+        watchSyncLogger.info("WatchConnectivity unavailable in this build; sendTodaySummary no-op")
     }
 }
 

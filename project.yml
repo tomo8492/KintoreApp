@@ -68,6 +68,10 @@ targets:
           # prompts は ChatGPT 用ドキュメント。アプリ Bundle には含めない
           - "Resources/prompts/**"
           - "Resources/prompts"
+          # Audit A5: StoreKit Configuration はシミュレータ/Xcode Run スキーム専用の
+          # テスト用ファイル。出荷アプリの Bundle には含めない
+          # (scheme.storeKitConfiguration の参照パスは別物なので影響しない)。
+          - "Resources/WorkoutKit.storekit"
       # C3: Live Activity の ActivityAttributes は App と Widget の双方から
       # 参照する必要があるため、Widget 拡張ディレクトリ配下の1ファイルだけを
       # アプリ本体の sources にも個別追加する(モジュール境界を跨いだ型共有)。
@@ -193,7 +197,10 @@ targets:
       - path: WorkoutKit/Features/LiveActivity/RestTimerAttributes.swift
     configFiles:
       Debug: Config/LiveActivity.xcconfig
-      Beta: Config/LiveActivity.xcconfig
+      # Audit A4: LiveActivity.xcconfig は PRODUCT_BUNDLE_IDENTIFIER を本番 id で
+      # ハードコードしているため、Beta だけ .beta サフィックス版を #include したうえで
+      # 上書きする専用 xcconfig を割り当てる(本体 App / WatchApp / WatchWidget と規約を揃える)。
+      Beta: Config/LiveActivityBeta.xcconfig
       Release: Config/LiveActivity.xcconfig
     settings:
       base:
@@ -286,6 +293,11 @@ targets:
         MARKETING_VERSION: "0.1.0"
         CODE_SIGN_STYLE: Automatic
         SWIFT_STRICT_CONCURRENCY: complete
+      # Audit A4: Beta ビルドは本体 App / WorkoutKitWatchApp と同じ .beta サフィックス
+      # 規約に揃える(settings.base の本番 id を config 別に上書き)。
+      configs:
+        Beta:
+          PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.beta.watchkitapp.watchwidget
     info:
       # Widget Extension 必須キー(WidgetKit Extension Point)。
       path: WorkoutKitWatch/Info.plist
@@ -313,6 +325,11 @@ targets:
       # 契約 v1.1: iPhone と watchOS の両ターゲットにコンパイルされる唯一の
       # 共有定義(WatchRecentExercise / WatchLoggedSet / WatchSyncKey / WatchSyncCoder)。
       - path: WorkoutKit/Shared/WatchSyncPayload.swift
+      # Audit A1: WatchSyncClient が受信した todaySummary を Smart Stack Widget 用の
+      # App Group ストアへ中継するために必要(WorkoutKitWatch target と同じ path-include
+      # パターン)。SwiftData 依存は無い。
+      - path: WorkoutKit/Shared/TodaySessionSummary.swift
+      - path: WorkoutKit/Shared/WatchSummaryBridge.swift
       # Watch アプリ単体の Bundle なので、アプリ本体の String Catalog を
       # リソースとして個別に同梱する(NGリスト規約: 文字列は xcstrings 経由)。
       - path: WorkoutKit/Resources/Localizable.xcstrings
@@ -340,6 +357,9 @@ targets:
         # CI run #42 で判明: embed 依存だけでは解決されず、シミュレータへの
         # インストール時に _validateCompanionAppStateInWatchKitApp が
         # 「companion 不明」で失敗する。明示宣言が必須。
+        # Audit A4: Beta では companion 側の bundle id も .beta サフィックスに
+        # なるため、下の settings.configs.Beta で本キーを上書きする(CI-#42 の
+        # 教訓通り明示宣言必須の原則は Beta でも同じ)。
         INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.tomo.workoutkit
         INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp: NO
         INFOPLIST_KEY_CFBundleDisplayName: WorkoutKit
@@ -347,6 +367,17 @@ targets:
         MARKETING_VERSION: "0.1.0"
         CODE_SIGN_STYLE: Automatic
         SWIFT_STRICT_CONCURRENCY: complete
+        # Audit A3: watchOS 単体アプリの AppIcon スロット(Assets.xcassets/AppIcon.appiconset)
+        # を参照させる。画像自体は別途 owner が差し込む(スロットは本コミットで用意済み)。
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      # Audit A4: Beta ビルドは本体 App と同じ .beta サフィックス規約に揃える
+      # (Config/Beta.xcconfig が PRODUCT_BUNDLE_IDENTIFIER=com.tomo.workoutkit.beta を
+      # 設定するのに対し、WatchApp/WatchWidget は settings.base で本番 id を直書きして
+      # いるため、xcconfig 側の分岐だけでは Beta に追随しない。ここで config 別に上書きする)。
+      configs:
+        Beta:
+          PRODUCT_BUNDLE_IDENTIFIER: com.tomo.workoutkit.beta.watchkitapp
+          INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.tomo.workoutkit.beta
     dependencies:
       # Smart Stack Widget を PlugIns に同梱(app-extension のデフォルト embed 挙動に任せる)。
       - target: WorkoutKitWatch

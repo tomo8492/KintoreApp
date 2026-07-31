@@ -103,7 +103,7 @@ struct WorkoutKitApp: App {
                     let sync = dependency.watchSync
                     let container = modelContainer
                     sync.onReceiveLoggedSets = { sets in
-                        WatchQuickLogIngestor.ingest(sets, into: container)
+                        WatchQuickLogIngestor.ingest(sets, into: container, watchSync: sync)
                     }
                     sync.activate()
                 }
@@ -170,6 +170,18 @@ struct WorkoutKitApp: App {
 //   WorkoutSession にはスキーマ上「Watch 由来」を示すフラグが無いため、
 //   「今日作成した Watch クイック記録セッションの id」を UserDefaults に持たせて
 //   同日中の複数回受信を同一セッションに追記する(日付が変われば新規作成)。
+//
+// Audit A2:
+//   - `finishedAt` を毎回スタンプする。History / Today は `finishedAt != nil` で
+//     フィルタするため(HistoryView.swift / TodayDashboardView.swift)、これが無いと
+//     Watch 由来のセットが一覧にもダッシュボードにも一切出てこない。
+//   - phantom session ロールバック: 新規作成した WorkoutSession に 1 件もセットが
+//     入らなかった場合(全件が unknown slug 等)、空セッションを context から
+//     `delete` して autosave による永続化を防ぐ(既存セッションへの追記失敗時は
+//     何も壊れていないので削除しない)。
+//   - 保存成功後、今日のサマリを Watch Widget 用に再配信する
+//     (WatchSummaryBridge.write は iPhone 側ストアの整合性維持、
+//     watchSync.sendTodaySummary は Watch 側 Smart Stack Widget への配信)。
 @MainActor
 private enum WatchQuickLogIngestor {
 
@@ -178,7 +190,10 @@ private enum WatchQuickLogIngestor {
     private static let todaySessionIDKey = "watch.quickLog.todaySessionID.v1"
     private static let todaySessionDateKey = "watch.quickLog.todaySessionDate.v1"
 
-    static func ingest(_ sets: [WatchLoggedSet], into container: ModelContainer) {
+    /// - Parameter watchSync: 取り込み後に「今日のサマリ」を Watch へ配信するための DI。
+    ///   `WatchQuickLogIngestor` は static のため、呼び出し元(WorkoutKitApp の
+    ///   `.task` クロージャ)が `dependency.watchSync` をそのまま渡す。
+    static func ingest(_ sets: [WatchLoggedSet], into container: ModelContainer, watchSync: PhoneWatchSyncManager) {
         guard !sets.isEmpty else { return }
         let context = container.mainContext
 
@@ -190,10 +205,7 @@ private enum WatchQuickLogIngestor {
             return
         }
 
-        guard let session = findOrCreateTodaySession(in: context) else {
-            Logger.app.error("watch quick-log ingest: could not resolve today's session")
-            return
-        }
+        let (session, isNewSession) = findOrCreateTodaySession(in: context)
 
         var order = session.sets.count
         var insertedCount = 0
@@ -220,12 +232,30 @@ private enum WatchQuickLogIngestor {
             ingestedIDs.append(set.id)
         }
 
-        guard insertedCount > 0 else { return }
+        guard insertedCount > 0 else {
+            if isNewSession {
+                // このセッションはこの呼び出しで新規作成したが 1 件も有効なセットが
+                // 無かった(全件 unknown slug 等)。空のまま context に残すと autosave で
+                // phantom session が永続化されてしまうため削除し、UserDefaults の
+                // 「今日のセッション」参照もリセットして矛盾を防ぐ(次回呼び出しで作り直す)。
+                context.delete(session)
+                UserDefaults.standard.removeObject(forKey: todaySessionIDKey)
+                UserDefaults.standard.removeObject(forKey: todaySessionDateKey)
+                Logger.app.info("watch quick-log ingest: no valid sets, rolled back phantom session")
+            }
+            return
+        }
+
+        // Audit A2: History / Today の `finishedAt != nil` フィルタに乗せるため、
+        // 取り込んだセットのうち最新の loggedAt を finishedAt としてスタンプする。
+        // 新規作成 / 既存セッションへの追記、どちらのパスでも同じ扱いにする。
+        session.finishedAt = newSets.map(\.loggedAt).max() ?? .now
 
         do {
             try context.save()
             saveIngestedIDs(ingestedIDs)
             Logger.app.info("watch quick-log ingest: inserted \(insertedCount) sets into session=\(session.id, privacy: .public)")
+            pushTodaySummary(session: session, watchSync: watchSync)
         } catch {
             Logger.app.error("watch quick-log ingest save failed: \(error.localizedDescription, privacy: .public)")
         }
@@ -233,7 +263,8 @@ private enum WatchQuickLogIngestor {
 
     /// 「今日の Watch クイック記録セッション」を探すか、無ければ ManualEntry と同じ
     /// 意味論(goalRaw=hypertrophy / isManualEntry=true)で新規作成する。
-    private static func findOrCreateTodaySession(in context: ModelContext) -> WorkoutSession? {
+    /// `isNew` は phantom session ロールバック(Audit A2)判定に使う。
+    private static func findOrCreateTodaySession(in context: ModelContext) -> (session: WorkoutSession, isNew: Bool) {
         let calendar = Calendar.autoupdatingCurrent
         let now = Date.now
         if let idString = UserDefaults.standard.string(forKey: todaySessionIDKey),
@@ -242,7 +273,7 @@ private enum WatchQuickLogIngestor {
            calendar.isDate(storedDate, inSameDayAs: now) {
             let descriptor = FetchDescriptor<WorkoutSession>(predicate: #Predicate { $0.id == id })
             if let existing = (try? context.fetch(descriptor))?.first {
-                return existing
+                return (existing, false)
             }
         }
 
@@ -255,7 +286,16 @@ private enum WatchQuickLogIngestor {
         context.insert(session)
         UserDefaults.standard.set(session.id.uuidString, forKey: todaySessionIDKey)
         UserDefaults.standard.set(now, forKey: todaySessionDateKey)
-        return session
+        return (session, true)
+    }
+
+    /// 保存成功後、今日のサマリを iPhone 側ストアと Watch の双方へ反映する。
+    /// Watch クイック記録には明示的な「完了」概念が無いため、1 セットでも保存できていれば
+    /// `isCompletedToday: true` として扱う(SessionStore.finish() と同じ意味論)。
+    private static func pushTodaySummary(session: WorkoutSession, watchSync: PhoneWatchSyncManager) {
+        let summary = TodaySessionSummary.build(from: session.sets, isCompletedToday: true)
+        WatchSummaryBridge.write(summary)
+        watchSync.sendTodaySummary(summary)
     }
 
     private static func loadIngestedIDs() -> [UUID] {

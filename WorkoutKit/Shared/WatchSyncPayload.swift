@@ -43,6 +43,11 @@ struct WatchLoggedSet: Codable, Identifiable, Hashable, Sendable {
 enum WatchSyncKey {
     /// applicationContext: `Data`(`[WatchRecentExercise]` の JSON)
     static let recentExercises = "wk.recentExercises.v1"
+    /// applicationContext: `Data`(`TodaySessionSummary` の JSON)。
+    /// Smart Stack Widget(WorkoutKitWatch)が読む App Group ストアへ、Watch 単体
+    /// アプリ側から中継するために使う(Audit A1: App Group はデバイスごとに独立
+    /// しているため、iPhone → Watch の配信が唯一の到達経路)。
+    static let todaySummary = "wk.todaySummary.v1"
     /// transferUserInfo: `Data`(`[WatchLoggedSet]` の JSON)
     static let loggedSets = "wk.loggedSets.v1"
 }
