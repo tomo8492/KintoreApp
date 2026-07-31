@@ -31,6 +31,9 @@ struct SessionView: View {
     @State private var store: SessionStore?
     @State private var initError: String?
 
+    /// B1: ツールバーのバツボタン用。store が running のときだけ確認ダイアログを挟む。
+    @State private var showCloseConfirm = false
+
     /// currentItem が nil のときに autoScroll の id 引数に渡す固定 UUID。
     /// body 毎に UUID() を生成すると .task(id:) が毎回発火するため、定数で逃がす。
     private static let placeholderScrollId = UUID()
@@ -50,6 +53,51 @@ struct SessionView: View {
         }
         .navigationTitle("session.title")
         .navigationBarTitleDisplayMode(.inline)
+        // B1: fullScreenCover で提示される SessionView には入力パネル以外に
+        // 閉じる手段が無く、空プランや initError(session.error.no-input)の
+        // ContentUnavailableView 表示時にユーザーが画面から出られなくなる
+        // (脱出ハッチ無し)。store の有無・状態に関わらず常に押せる
+        // バツボタンをツールバーに用意する。
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    handleCloseTapped()
+                } label: {
+                    Image(systemName: "xmark")
+                }
+                .accessibilityLabel(Text("common.close"))
+            }
+        }
+        .confirmationDialog(
+            Text("session.close.confirm.title"),
+            isPresented: $showCloseConfirm,
+            titleVisibility: .visible
+        ) {
+            Button(role: .destructive) {
+                // B1: abort() が status を .aborted にして FinishedView(中断表示)へ
+                // 遷移させる。ここで追加で dismiss() は呼ばない
+                // (ユーザーは中断サマリー画面を見てから FinishedView 自身の
+                // Close ボタンで閉じる)。
+                store?.abort()
+            } label: {
+                Text("session.close.confirm.abort")
+            }
+            Button(role: .cancel) {
+            } label: {
+                Text("common.cancel")
+            }
+        }
+    }
+
+    /// B1: ツールバーのバツボタンのハンドラ。
+    /// - store が running 中: 誤タップで進行を失わないよう確認ダイアログを挟む。
+    /// - それ以外(store 無し / initError / finished / aborted): 即座に閉じる。
+    private func handleCloseTapped() {
+        if let store, store.status == .running {
+            showCloseConfirm = true
+        } else {
+            dismiss()
+        }
     }
 
     // MARK: - Content
@@ -188,7 +236,36 @@ struct SessionView: View {
         // C3: AppDependency 経由で LiveActivityClient を SessionStore に DI する。
         let liveActivity = appDependency.liveActivity
 
-        // 1. SceneStorage に有効な復元情報があれば復元優先
+        // B6: initialOutput が非 nil ということは、呼び出し元(Builder / Templates)が
+        // ユーザーの明示的な操作(「このメニューで始める」「使う」)を経て今まさに
+        // SessionView を提示したということ。この場合、SceneStorage に残っている
+        // スナップショットは(たとえ running 状態のものであっても)定義上すべて古い
+        // 情報であり、ユーザーが今選んだワークアウトを無言で置き換えてしまうと
+        // 事故になる。よって initialOutput 経路では復元よりも新規生成を常に優先し、
+        // 残っていたスナップショットは無条件に破棄する。
+        // スナップショット復元は initialOutput が無い経路(=前回の実行中セッションに
+        // そのまま戻ってきた場合)にのみ試みる。
+        if let output = initialOutput {
+            snapshotString = ""
+            do {
+                store = try SessionStore(
+                    modelContext: modelContext,
+                    goal: goal,
+                    output: output,
+                    includesWarmup: includesWarmup,
+                    includesCooldown: includesCooldown,
+                    liveActivity: liveActivity,
+                    watchSync: appDependency.watchSync
+                )
+            } catch let appError as AppError {
+                initError = appError.errorDescription
+            } catch {
+                initError = error.localizedDescription
+            }
+            return
+        }
+
+        // initialOutput が無い経路でのみスナップショット復元を試みる。
         if let snapshot = SessionRestoreSnapshot.decoded(from: snapshotString) {
             do {
                 store = try SessionStore(
@@ -205,28 +282,8 @@ struct SessionView: View {
             }
         }
 
-        // 2. Builder からの新規セッション
-        guard let output = initialOutput else {
-            initError = String(localized: "session.error.no-input",
-                               defaultValue: "セッション情報がありません")
-            return
-        }
-
-        do {
-            store = try SessionStore(
-                modelContext: modelContext,
-                goal: goal,
-                output: output,
-                includesWarmup: includesWarmup,
-                includesCooldown: includesCooldown,
-                liveActivity: liveActivity,
-                watchSync: appDependency.watchSync
-            )
-        } catch let appError as AppError {
-            initError = appError.errorDescription
-        } catch {
-            initError = error.localizedDescription
-        }
+        initError = String(localized: "session.error.no-input",
+                           defaultValue: "セッション情報がありません")
     }
 }
 

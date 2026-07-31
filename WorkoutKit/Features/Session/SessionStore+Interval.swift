@@ -37,9 +37,17 @@ extension SessionStore {
                 self?.intervalTimer.stop()
                 _ = await previous.value
             }
-            guard let self else { return }
+            // B8: 上の await の間に(このタスク自身が)supersede されてキャンセル
+            // された場合、そのまま続けると一瞬だけ古いカウントダウンが復活して
+            // 見える(前の intervalTask を止めるために先に呼ばれた新しい
+            // startIntervalCountdown が、その後さらに別の呼び出しでキャンセルされた
+            // ケースなど)。self の生存確認と同じ guard でまとめて弾く。
+            guard let self, !Task.isCancelled else { return }
             self.isIntervalRunning = true
             self.intervalSecondsRemaining = seconds
+            // B7: 壁時計の終了時刻を保存する。Live Activity 側の intervalEndsAt も
+            // この値をそのまま使う(liveActivityState() 参照、二重計算をやめて統一)。
+            self.intervalEndsAt = Date().addingTimeInterval(TimeInterval(seconds))
             self.updateLiveActivity()
             let stream = self.intervalTimer.start(seconds: seconds)
             for await value in stream {
@@ -48,6 +56,7 @@ extension SessionStore {
             }
             self.isIntervalRunning = false
             self.intervalSecondsRemaining = nil
+            self.intervalEndsAt = nil
             // 休憩終了時に Live Activity の intervalEndsAt を nil に更新する。
             self.updateLiveActivity()
         }
@@ -63,8 +72,32 @@ extension SessionStore {
         let wasRunning = isIntervalRunning
         isIntervalRunning = false
         intervalSecondsRemaining = nil
+        intervalEndsAt = nil
         if wasRunning {
             updateLiveActivity()
+        }
+    }
+
+    // MARK: - B7: フォアグラウンド復帰時の残り秒数補正
+
+    /// SessionLifecycleModifier が scenePhase == .active への遷移で呼ぶ。
+    /// IntervalTimer はティックベースでサスペンド中の経過時間を失うため、
+    /// 壁時計の `intervalEndsAt` から残り秒数を計算し直し、カウントダウンを補正する。
+    /// - 休憩中でなければ何もしない。
+    /// - 残り秒数が 0 以下(=サスペンド中に休憩が終わっていた)なら、
+    ///   `stopIntervalCountdown()` で自然終了と同じ状態遷移(isIntervalRunning /
+    ///   intervalSecondsRemaining / intervalEndsAt のクリアと Live Activity 更新)にする。
+    /// - IntervalTimer 自体には残り秒数だけを差し替える API が無いため、休憩が
+    ///   まだ続いている場合は `startIntervalCountdown(seconds:)` を呼び直し、
+    ///   「停止して補正後の残り秒数で再起動」する。
+    func reconcileIntervalCountdown(now: Date = .now) {
+        guard isIntervalRunning, let endsAt = intervalEndsAt else { return }
+
+        let remaining = Int(endsAt.timeIntervalSince(now).rounded())
+        if remaining <= 0 {
+            stopIntervalCountdown()
+        } else {
+            startIntervalCountdown(seconds: remaining)
         }
     }
 }

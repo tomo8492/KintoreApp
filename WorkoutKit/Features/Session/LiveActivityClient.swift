@@ -63,10 +63,17 @@ final class LiveActivityClient {
     // MARK: - Lifecycle
 
     /// セッション開始時に Live Activity を起動する。
-    /// - 既存の Activity が残っていればローカルにキャプチャしてから `self.activity` を nil にし、
-    ///   キャプチャ済みのインスタンスをバックグラウンド Task で end する。
-    ///   `self.activity` を直接 await した先で参照するパターンだと、新規 request が先に
-    ///   走った場合に await が「新 Activity の終了」を待ってしまい永久ブロックになる。
+    /// - B5-1: 既存の Activity が残っていれば **この関数の中で同期的に**
+    ///   `self.activity` をローカル変数 `stale` へキャプチャしてから `self.activity`
+    ///   を nil にし、`stale` だけを `scheduleEnd(of:reason:)` に値として渡して
+    ///   終了予約する。以前の実装は `scheduleEnd()` の Task 本体の中で
+    ///   `self.activity` を読み直していたため、`Task { }` はクロージャ生成時点では
+    ///   実行されず呼び出し元の同期コードが完了してから走る性質上、この
+    ///   `start()` が(restart の end 予約直後に)新しい Activity を request して
+    ///   `self.activity` を書き換えると、Task 実行時にはそちらを end してしまう
+    ///   バグがあった(restart したはずが新規セッションの Activity を即終了して
+    ///   しまう)。値渡しにすることで、Task が実際に走る時点の `self.activity` の
+    ///   状態に関わらず「本当に end すべきだったもの」だけを終了できる。
     /// - 失敗(権限なし、内部エラー等)時は静かにログだけ残し、SessionStore は通常通り続行する。
     func start(
         attributes: SessionLiveActivityAttributes,
@@ -77,14 +84,27 @@ final class LiveActivityClient {
             return
         }
 
-        // 既存 Activity が残っていれば、新規 request の前にチェーンへ end を予約する。
-        // Task で投げて忘れる ── ではなく pendingTask に乗せて直列化する。
-        if activity != nil {
-            scheduleEnd(reason: "restart")
+        // B5-2: プロセス再起動をまたいだ孤児 Activity を掃除する。前回プロセスが
+        // force-quit された場合など、`self.activity` が nil でも OS 側には Live
+        // Activity が残っていることがある(生き残れるのは force-quit サバイバー
+        // だけなので、現在追跡中のもの以外は無条件に古いとみなしてよい)。
+        let trackedId = activity?.id
+        for orphan in Activity<SessionLiveActivityAttributes>.activities where orphan.id != trackedId {
+            scheduleEnd(of: orphan, reason: "orphan")
+        }
+
+        // 既存 Activity が残っていれば、新規 request の前に同期的にローカル退避して
+        // `self.activity` を nil 化する(上のドキュメントコメント参照)。
+        if let stale = activity {
+            self.activity = nil
+            scheduleEnd(of: stale, reason: "restart")
         }
 
         do {
-            let content = ActivityContent(state: state, staleDate: nil)
+            // B5-3: staleDate を無制限(nil)にせず 4 時間の上限を持たせる。
+            // 通常は明示的な update() / end() で常に新鮮な状態・終了に保たれるが、
+            // 万一それらが呼ばれず終わった場合の孤児化バックストップとして機能する。
+            let content = ActivityContent(state: state, staleDate: Date.now.addingTimeInterval(4 * 3600))
             activity = try Activity.request(
                 attributes: attributes,
                 content: content,
@@ -112,7 +132,10 @@ final class LiveActivityClient {
 
     /// セッション終了 / 中断時に呼ぶ同期 API。chain に予約して即座に戻る。
     func end() {
-        scheduleEnd(reason: "end")
+        // B5-1 と同じ理由で、同期的にローカル退避してから値渡しする。
+        guard let stale = activity else { return }
+        activity = nil
+        scheduleEnd(of: stale, reason: "end")
     }
 
     // MARK: - Test / shutdown helper
@@ -124,18 +147,16 @@ final class LiveActivityClient {
 
     // MARK: - Internal
 
-    private func scheduleEnd(reason: String) {
+    /// B5-1: `self.activity` を読み直さず、呼び出し元が同期的に退避した
+    /// `staleActivity` だけを終了する。呼び出し元は必ず `self.activity = nil` を
+    /// 済ませてから渡すこと(このメソッド自体は `self.activity` に触れない)。
+    private func scheduleEnd(of staleActivity: Activity<SessionLiveActivityAttributes>, reason: String) {
         let prior = pendingTask
-        pendingTask = Task { @MainActor [weak self] in
+        pendingTask = Task { @MainActor in
             await prior?.value
-            guard let self, let activity = self.activity else { return }
-            // await 前に id / content をローカル退避してから self.activity を nil 化。
-            // これで後段で activity を再参照せずに済む(@preconcurrency import で
-            // ActivityKit の非 Sendable も含めた sending 警告自体を抑制)。
-            let id = activity.id
-            let content = activity.content
-            self.activity = nil
-            await activity.end(content, dismissalPolicy: .immediate)
+            let id = staleActivity.id
+            let content = staleActivity.content
+            await staleActivity.end(content, dismissalPolicy: .immediate)
             Logger.session.info("LiveActivity ended: id=\(id, privacy: .public) reason=\(reason, privacy: .public)")
         }
     }

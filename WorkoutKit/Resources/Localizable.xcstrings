@@ -27559,6 +27559,42 @@
         }
       }
     },
+    "session.close.confirm.abort" : {
+      "comment" : "B1: SessionView 左上のバツボタンから閉じようとした際の中断確認ダイアログ、destructive ボタン。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End workout"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中断して閉じる"
+          }
+        }
+      }
+    },
+    "session.close.confirm.title" : {
+      "comment" : "B1: SessionView 左上のバツボタンから閉じようとした際の中断確認ダイアログのタイトル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End this workout?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ワークアウトを中断しますか?"
+          }
+        }
+      }
+    },
     "session.stop.confirm.title" : {
       "comment" : "誤タップ防止用の中断確認ダイアログのタイトル。2026 gym UX ベストプラクティスとして destructive 動作には必ず確認を挟む。",
       "extractionState" : "manual",
@@ -29125,23 +29161,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "(コピー)"
-          }
-        }
-      }
-    },
-    "templates.edit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編集"
           }
         }
       }

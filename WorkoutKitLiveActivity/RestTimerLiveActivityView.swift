@@ -16,6 +16,23 @@ import ActivityKit
 import SwiftUI
 import WidgetKit
 
+// MARK: - Countdown text helper (B2)
+//
+// `Text(timerInterval: .now ... endTime, countsDown: true)` は ClosedRange を
+// 構築するため、endTime が既に過去(endTime < .now)だと lowerBound > upperBound で
+// トラップする。RestTimerManager の自動終了(B3)より前にこの View が一瞬でも
+// endTime <= .now な状態で再描画されると即クラッシュになるため、期限切れ時は
+// 固定表示にフォールバックする。数字のみの "0:00" はロケール非依存なので
+// verbatim で問題ない。
+@ViewBuilder
+private func restCountdownText(endTime: Date) -> some View {
+    if endTime > .now {
+        Text(timerInterval: .now ... endTime, countsDown: true)
+    } else {
+        Text(verbatim: "0:00")
+    }
+}
+
 struct RestTimerLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: RestTimerAttributes.self) { context in
@@ -42,7 +59,7 @@ struct RestTimerLiveActivity: Widget {
                     .accessibilityHidden(true)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(timerInterval: .now ... context.state.endTime, countsDown: true)
+                    restCountdownText(endTime: context.state.endTime)
                         .font(.title2.monospacedDigit().weight(.semibold))
                         .frame(maxWidth: 92)
                         .foregroundStyle(.tint)
@@ -63,14 +80,14 @@ struct RestTimerLiveActivity: Widget {
                     .foregroundStyle(.tint)
                     .accessibilityLabel(Text("rest.live.title"))
             } compactTrailing: {
-                Text(timerInterval: .now ... context.state.endTime, countsDown: true)
+                restCountdownText(endTime: context.state.endTime)
                     .monospacedDigit()
                     .foregroundStyle(.tint)
                     .frame(maxWidth: 56)
             } minimal: {
                 // minimal は情報を捨てずカウントダウン残時間を表示。
                 // 複数 Live Activity が並走したときも識別できるよう色は tint で着色。
-                Text(timerInterval: .now ... context.state.endTime, countsDown: true)
+                restCountdownText(endTime: context.state.endTime)
                     .monospacedDigit()
                     .foregroundStyle(.tint)
             }
@@ -109,7 +126,7 @@ private struct RestTimerLockScreenView: View {
                 Text("rest.live.title")
                     .font(.headline)
                 Spacer()
-                Text(timerInterval: .now ... state.endTime, countsDown: true)
+                restCountdownText(endTime: state.endTime)
                     .font(.title.monospacedDigit())
                     .foregroundStyle(.primary)
             }

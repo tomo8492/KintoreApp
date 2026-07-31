@@ -56,6 +56,12 @@ final class SessionStore {
 
     var intervalSecondsRemaining: Int? = nil
     var isIntervalRunning: Bool = false
+    /// B7: 休憩カウントダウンの壁時計終了時刻。IntervalTimer はティックベースで
+    /// アプリがサスペンドされていた間の経過時間を失う(Task.sleep も一緒に止まる)ため、
+    /// フォアグラウンド復帰時にこの値から残り秒数を再計算して補正する
+    /// (`reconcileIntervalCountdown(now:)` 参照)。SessionStore+LiveActivity の
+    /// intervalEndsAt 計算ともここを単一の情報源として共有する。
+    var intervalEndsAt: Date? = nil
     /// セット完了通知。C3 Live Activity / 外部購読者用。
     var onSetCompleted: ((ExerciseSet) -> Void)? = nil
 

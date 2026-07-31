@@ -94,6 +94,9 @@ extension SessionStore {
         guard status == .running, currentItem != nil else { return }
         Logger.session.info("skipCurrentExercise at index=\(self.currentItemIndex)")
         stopIntervalCountdown()
+        // B4: スキップ時もレストタイマー Live Activity をロック画面から消す。
+        // abort() / finish() と同じ経路(RestTimerManager.stop())を使う。
+        Task { await stopRestTimerLiveActivity() }
         currentSetIndex = 0
         if currentItemIndex < plan.count - 1 {
             currentItemIndex += 1

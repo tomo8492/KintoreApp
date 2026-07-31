@@ -57,9 +57,14 @@ extension SessionStore {
             displayName = ""
         }
 
+        // B7: intervalEndsAt(壁時計基準)を単一の情報源として使う。以前はここで
+        // `Date().addingTimeInterval(TimeInterval(remaining))` を毎回計算し直して
+        // いたが、呼ばれるタイミングによって数百ms〜1秒ずれた終了時刻が Widget に
+        // 渡ることがあった。SessionStore+Interval.swift が起動時に確定させた
+        // intervalEndsAt をそのまま使うことで、フォアグラウンドの表示ともズレなく揃う。
         let endsAt: Date?
-        if let remaining = intervalSecondsRemaining, remaining > 0 {
-            endsAt = Date().addingTimeInterval(TimeInterval(remaining))
+        if isIntervalRunning, let remaining = intervalSecondsRemaining, remaining > 0 {
+            endsAt = intervalEndsAt
         } else {
             endsAt = nil
         }

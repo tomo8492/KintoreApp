@@ -3,8 +3,9 @@
 // テンプレ一覧画面。アクション:
 //   ・「使う」(Free): GeneratorOutput を組み立てて返す(B2 SessionStore に渡す想定)
 //   ・「複製」(Free): プリセットを user-created としてコピー
-//   ・「編集」(Pro): customTemplates ゲート不通過時は Paywall
-//   ・「削除」(Pro): 同上(プリセットを Pro 経由でだけ消せる)
+//   ・「削除」(Pro): customTemplates ゲート不通過時は Paywall
+// B9: 「編集」スワイプアクションは Pro ゲートを通すだけで実 UI が無い no-op だった
+// ため削除(v1.1 で編集 UI と一緒に再導入予定)。
 // View には @State / @Observable Store を直接持たせる(ViewModel 禁止)。
 // シート群とローカライズ補助は TemplateSheets.swift / TemplateSupport.swift に分離。
 
@@ -144,16 +145,8 @@ struct TemplatesView: View {
                                 Image(systemName: "trash")
                             }
                         }
-                        Button {
-                            handleEdit(template)
-                        } label: {
-                            Label {
-                                Text("templates.edit")
-                            } icon: {
-                                Image(systemName: "pencil")
-                            }
-                        }
-                        .tint(.blue)
+                        // B9: 編集スワイプアクションは Pro ゲートを通すだけで実 UI が
+                        // 無い no-op だったため削除(v1.1 で編集 UI と一緒に再導入予定)。
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                         Button {
@@ -187,15 +180,6 @@ struct TemplatesView: View {
             return
         }
         showingCreate = true
-    }
-
-    private func handleEdit(_ template: Template) {
-        guard dependency.proGate.check(.customTemplates) else {
-            paywallFeature = .customTemplates
-            return
-        }
-        // 詳細画面に編集導線がある想定。ここでは Paywall ガードのみ通す。
-        // (E1 範囲では編集 UI は最小実装)
     }
 
     private func handleDelete(_ template: Template) {

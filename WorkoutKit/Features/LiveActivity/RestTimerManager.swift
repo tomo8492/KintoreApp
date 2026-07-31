@@ -44,6 +44,11 @@ final class RestTimerManager {
 
     private var activity: Activity<RestTimerAttributes>?
 
+    /// B3-1: endTime を過ぎても Live Activity が残り続けないための自動終了タスク。
+    /// start() で都度キャンセルして新しい endTime に合わせて張り直す。
+    /// stop() / endInternal でもキャンセルする(手動終了と競合させないため)。
+    private var expiryTask: Task<Void, Never>?
+
     // MARK: - Init
 
     /// `static let shared` の lazy init を MainActor 外から通すため nonisolated。
@@ -75,6 +80,23 @@ final class RestTimerManager {
         }
         guard seconds > 0 else { return }
 
+        // B3-2: プロセス再起動をまたいだ孤児 Activity を掃除する。前回プロセスが
+        // force-quit された場合など、`activity` が nil でも OS 側には Live Activity が
+        // 残っていることがある(生き残れるのは force-quit サバイバーだけなので、
+        // 現在追跡中のもの以外は無条件に古いとみなしてよい)。
+        let trackedId = activity?.id
+        for orphan in Activity<RestTimerAttributes>.activities where orphan.id != trackedId {
+            Task { @MainActor in
+                await orphan.end(orphan.content, dismissalPolicy: .immediate)
+                Logger.session.info("RestTimer ended orphan: id=\(orphan.id, privacy: .public)")
+            }
+        }
+
+        // 新規起動するので、直前の自動終了タスクはいったん無効化する
+        // (新しい endTime に合わせて末尾で張り直す)。
+        expiryTask?.cancel()
+        expiryTask = nil
+
         // 既存の rest activity が居れば畳んでから新規起動する。
         // 重要: fire-and-forget で endInternal(self) を回すと、後段で代入される
         // 新しい self.activity を Task 完了時に誤って end してしまう race があるため、
@@ -105,6 +127,8 @@ final class RestTimerManager {
                 pushType: nil
             )
             Logger.session.info("RestTimer started: id=\(self.activity?.id ?? "?", privacy: .public), seconds=\(seconds, privacy: .public)")
+            // B3-1: endTime + 5秒後にまだ同じ Activity が生きていれば自動終了する保険。
+            scheduleExpiry(for: activity, endTime: endTime)
         } catch {
             Logger.session.error("RestTimer Activity.request failed: \(error.localizedDescription, privacy: .public)")
             activity = nil
@@ -118,6 +142,10 @@ final class RestTimerManager {
 
     private func endInternal(reason: String) async {
         guard let activity = self.activity else { return }
+        // B3-1: 自動終了タスクもここで畳む。手動 stop / 期限切れどちらの経路でも
+        // end() が二重に走らないようにする。
+        expiryTask?.cancel()
+        expiryTask = nil
         // `await activity.end(...)` の前に id / content をローカルへ取り出し、
         // self.activity を nil 化して aliasing を解消する。`activity` を後段では使わない。
         let id = activity.id
@@ -125,6 +153,22 @@ final class RestTimerManager {
         self.activity = nil
         await activity.end(content, dismissalPolicy: .immediate)
         Logger.session.info("RestTimer ended: id=\(id, privacy: .public) reason=\(reason, privacy: .public)")
+    }
+
+    /// B3-1: endTime を過ぎても Live Activity が残り続けないための保険タスクを張る。
+    /// `endTime + 5秒` まで待ち、その時点でもまだ `trackedActivity` と同じ Activity を
+    /// 追跡していれば endInternal で終了する。途中で start() / stop() により
+    /// 追跡対象が入れ替わっていれば(id が一致しなければ)何もしない。
+    private func scheduleExpiry(for trackedActivity: Activity<RestTimerAttributes>?, endTime: Date) {
+        guard let trackedActivity else { return }
+        let expiryId = trackedActivity.id
+        let delay = max(0, endTime.timeIntervalSinceNow) + 5
+        expiryTask = Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .seconds(delay))
+            guard !Task.isCancelled else { return }
+            guard let self, self.activity?.id == expiryId else { return }
+            await self.endInternal(reason: "expiry")
+        }
     }
 
     /// 既存 Activity の残時間だけ更新したい場合(例: ユーザーが手動で +30 秒)。
@@ -142,5 +186,7 @@ final class RestTimerManager {
         )
         let content = ActivityContent(state: newState, staleDate: newEnd.addingTimeInterval(30))
         await activity.update(content)
+        // B3-3: 延長した分だけ自動終了タスクも新しい endTime に合わせて張り直す。
+        scheduleExpiry(for: activity, endTime: newEnd)
     }
 }

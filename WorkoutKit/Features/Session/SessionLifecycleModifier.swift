@@ -13,6 +13,10 @@ struct SessionLifecycleModifier: ViewModifier {
     let store: SessionStore
     @Binding var snapshotString: String
 
+    /// B7: フォアグラウンド復帰時に休憩カウントダウンを壁時計基準で補正するため観測する。
+    /// (以前は本 Modifier は scenePhase を一切観測していなかった)
+    @Environment(\.scenePhase) private var scenePhase
+
     func body(content: Content) -> some View {
         content
             .onAppear { handleAppear() }
@@ -23,6 +27,13 @@ struct SessionLifecycleModifier: ViewModifier {
                 if newStatus != .running {
                     // 終了/中断時は復元情報をクリアして次回起動でゴミが残らないようにする。
                     snapshotString = ""
+                }
+            }
+            .onChange(of: scenePhase) { _, newPhase in
+                if newPhase == .active {
+                    // B7: IntervalTimer はティックベースでサスペンド中の経過時間を
+                    // 失う。フォアグラウンド復帰のたびに壁時計基準で補正する。
+                    store.reconcileIntervalCountdown()
                 }
             }
     }
