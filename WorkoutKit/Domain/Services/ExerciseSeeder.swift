@@ -8,6 +8,14 @@ import SwiftData
 import OSLog
 
 enum ExerciseSeeder {
+    /// E1: seed の「世代」。JSON の内容やバックフィル対象フィールドを変更したら
+    /// この値をインクリメントすること。インクリメントすると、次回起動時に
+    /// 「既に seed 済みだから何もしない」高速パスをバイパスして、
+    /// フル経路(JSON デコード + 345 件 upsert/backfill)がもう一度走る。
+    static let seedVersion = 1
+    /// 上記バージョンを保存する UserDefaults キー。
+    static let seedVersionDefaultsKey = "workoutkit.exerciseSeed.version"
+
     /// JSON の1要素に対応する DTO。Exercise への詰め替えはここで集約する。
     struct SeedRecord: Decodable, Sendable {
         let slug: String
@@ -43,8 +51,24 @@ enum ExerciseSeeder {
         in context: ModelContext,
         bundle: Bundle = .main,
         resourceName: String = "exercises_seed",
-        resourceExtension: String = "json"
+        resourceExtension: String = "json",
+        defaults: UserDefaults = .standard
     ) throws -> Int {
+        // E1: 起動高速パス。既にこのバージョンで seed 済み、かつストアに Exercise が
+        // 1 件以上あるなら、763KB の JSON デコード + 345 回の FetchDescriptor を
+        // まるごとスキップする。バージョンが古い(= seedVersion をインクリメントした)
+        // 場合はここを通らず、下のフル経路(upsert/backfill)が走る。
+        let storedVersion = defaults.integer(forKey: seedVersionDefaultsKey)
+        if storedVersion == seedVersion {
+            var existenceCheck = FetchDescriptor<Exercise>()
+            existenceCheck.fetchLimit = 1
+            let hasAny = !(try context.fetch(existenceCheck)).isEmpty
+            if hasAny {
+                Logger.data.info("seed skipped: already seeded at version \(seedVersion)")
+                return 0
+            }
+        }
+
         guard let url = bundle.url(forResource: resourceName, withExtension: resourceExtension) else {
             Logger.data.error("seed file not found in bundle: \(resourceName).\(resourceExtension)")
             throw AppError.dataCorruption("seed file missing")
@@ -101,6 +125,10 @@ enum ExerciseSeeder {
         if context.hasChanges {
             try context.save()
         }
+        // フル経路が最後まで成功したときだけバージョンを記録する。
+        // 途中で throw した場合は保存されないため、次回起動時にまた
+        // フル経路が走り直す(=中途半端な状態を「seed 済み」と誤認しない)。
+        defaults.set(seedVersion, forKey: seedVersionDefaultsKey)
         Logger.data.info("seeded \(inserted) new exercises (total records: \(records.count))")
         return inserted
     }

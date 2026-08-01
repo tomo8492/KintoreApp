@@ -132,9 +132,33 @@ extension FormAnnotationSet: Codable {
 // MARK: - Loader
 
 enum FormAnnotationLoader {
+    // E3: プロセス内キャッシュ。`ExerciseDetailView` の computed property から
+    // body 再評価のたびに呼ばれるため、同一 slug に対する `Data(contentsOf:)` +
+    // `JSONDecoder().decode` の再実行を避ける。「JSON が無い/壊れている」という
+    // 失敗結果(nil)も CachedEntry として保存し、ディスクを毎回叩き直さないようにする。
+    //
+    // スレッド安全性: NSCache は Apple のドキュメント上スレッドセーフであり、
+    // `FormAnnotationLoader` は enum(インスタンス状態を持たない)なので、この
+    // static キャッシュ以外に共有可変状態は無い。`nonisolated(unsafe)` は
+    // ExerciseAnnotationLoader の `@unchecked Sendable` と同じ根拠(NSCache 自体の
+    // スレッド安全性)で付与している。新しい `.shared` シングルトンは追加しない
+    // (キャッシュはこの enum のプライベート実装詳細)。
+    nonisolated(unsafe) private static let cache = NSCache<NSString, CachedEntry>()
+
     /// `<slug>-annotations.json` をメインバンドルから読み込む。
     /// 失敗時は nil(=従来表示にフォールバック)。
     static func load(slug: String, bundle: Bundle = .main) -> FormAnnotationSet? {
+        let key = slug as NSString
+        if let cached = cache.object(forKey: key) {
+            return cached.value
+        }
+
+        let value = decodeFromBundle(slug: slug, bundle: bundle)
+        cache.setObject(CachedEntry(value: value), forKey: key)
+        return value
+    }
+
+    private static func decodeFromBundle(slug: String, bundle: Bundle) -> FormAnnotationSet? {
         let resource = "\(slug)-annotations"
         guard let url = bundle.url(forResource: resource, withExtension: "json") else {
             return nil
@@ -146,6 +170,13 @@ enum FormAnnotationLoader {
             Logger.app.error("Failed to load form annotations \(resource, privacy: .public): \(String(describing: error), privacy: .public)")
             return nil
         }
+    }
+
+    /// NSCache は値型を直接保持できないので、参照型の薄いラッパーで包む
+    /// (ExerciseAnnotationLoader.CachedEntry と同じパターン)。
+    private final class CachedEntry: NSObject {
+        let value: FormAnnotationSet?
+        init(value: FormAnnotationSet?) { self.value = value }
     }
 }
 
@@ -311,13 +342,21 @@ struct AnnotatedFormView: View {
         autoPlayGeneration += 1
     }
 
-    /// 2.5 秒間隔でフレームを進める無限ループ。Reduce Motion がオンの場合や
-    /// フレームが 1 枚以下の場合は何もせず即 return する。
+    /// 2.5 秒間隔でフレームを進める無限ループ。Reduce Motion がオンの場合・
+    /// Low Power Mode がオンの場合・フレームが 1 枚以下の場合は何もせず即 return する。
     /// Timer/Combine は使わず `Task.sleep` のみで実装(CLAUDE.md §11 準拠)。
     /// `.task(id:)` が id 変化時・View 破棄時に自動で cancel してくれるため、
     /// 明示的な後始末は不要。
+    ///
+    /// E5: Low Power Mode 中はクロスフェードアニメーションによるバッテリー消費を
+    /// 避けるため自動再生を止める。`ProcessInfo.isLowPowerModeEnabled` は変化を
+    /// 通知する仕組みが無い(NSNotificationObserver を追加すると CLAUDE.md の
+    /// Combine 禁止方針とは別に「監視オブザーバの後始末」という新しい複雑さが増える)
+    /// ため、通知を購読する代わりにループの各反復(2.5 秒ごと)で毎回問い合わせる。
+    /// これにより、ループの外(開始前)だけでなく途中で Low Power Mode が有効になった
+    /// 場合も次の反復で確実に停止する。
     private func runAutoPlayLoop() async {
-        guard annotationSet.frames.count > 1, !reduceMotion else { return }
+        guard annotationSet.frames.count > 1, !reduceMotion, !ProcessInfo.processInfo.isLowPowerModeEnabled else { return }
 
         // 直近の手動操作から manualPauseDuration 秒経っていなければ、
         // 残り時間分だけ先に待ってからループを開始する。
@@ -331,7 +370,7 @@ struct AnnotatedFormView: View {
 
         while !Task.isCancelled {
             try? await Task.sleep(for: .seconds(Self.autoPlayInterval))
-            guard !Task.isCancelled else { return }
+            guard !Task.isCancelled, !ProcessInfo.processInfo.isLowPowerModeEnabled else { return }
             advanceToNextFrame()
         }
     }

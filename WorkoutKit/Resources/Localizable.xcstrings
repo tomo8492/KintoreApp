@@ -28769,6 +28769,42 @@
         }
       }
     },
+    "store.recovered.message" : {
+      "comment" : "E2: ModelContainer 初期化がストア破損等で失敗し、ストアを再作成した後に一度だけ表示するアラートの本文。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't open your saved data, so the database was rebuilt. Previous records could not be recovered."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存データを読み込めなかったため、データベースを作り直しました。以前の記録は復元できませんでした。"
+          }
+        }
+      }
+    },
+    "store.recovered.title" : {
+      "comment" : "E2: ModelContainer 初期化がストア破損等で失敗し、ストアを再作成した後に一度だけ表示するアラートのタイトル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data was reset"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データを再作成しました"
+          }
+        }
+      }
+    },
     "tab.history" : {
       "comment" : "RootView 履歴タブ。",
       "extractionState" : "manual",

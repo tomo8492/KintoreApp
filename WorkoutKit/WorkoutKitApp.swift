@@ -41,26 +41,91 @@ struct WorkoutKitApp: App {
     /// Transaction.updates が間に合わないケースの保険)。
     @Environment(\.scenePhase) private var scenePhase
 
+    /// E2: ストア破損等で `ModelContainer` の初期化に失敗した場合、この 1 回に限り
+    /// 「データを再作成しました」バナーを RootView 側で表示するためのフラグキー。
+    static let storeDidRecoverDefaultsKey = "workoutkit.store.didRecover"
+
     init() {
+        self.modelContainer = Self.makeModelContainer()
+    }
+
+    /// E2: ModelContainer 構築を「通常配置 → 既存ストアを退避して作り直し →
+    /// 最終手段としてインメモリ」の 3 段構えにする。
+    /// 従来は初回の `ModelContainer(for:)` 失敗を即 `fatalError` していたため、
+    /// ストアファイル破損(ディスク書き込み中クラッシュ、OS アップデート起因等)が
+    /// 起きたユーザーは二度と起動できなくなっていた。
+    private static func makeModelContainer() -> ModelContainer {
+        let schema = Schema(versionedSchema: SchemaV1.self)
+
+        // Step 1: 通常配置(デフォルトの appSupport/default.store)で試す。
         do {
-            // ModelContainer.init(for:) は Schema インスタンスを取る。
-            // VersionedSchema 型をそのまま渡すオーバーロードは無いので
-            // 一旦 Schema(versionedSchema:) でくるんでから渡す。
-            let schema = Schema(versionedSchema: SchemaV1.self)
             let configuration = ModelConfiguration(
                 schema: schema,
                 isStoredInMemoryOnly: false
             )
-            self.modelContainer = try ModelContainer(
+            return try ModelContainer(
                 for: schema,
                 migrationPlan: WorkoutKitMigrationPlan.self,
                 configurations: configuration
             )
         } catch {
-            // ここで失敗するとアプリが起動できない。実機で頻発したら
-            // クリーンインストール導線(設定→リセット)を後で追加する。
             Logger.app.fault("ModelContainer init failed: \(error.localizedDescription, privacy: .public)")
-            fatalError("Failed to initialize ModelContainer: \(error)")
+        }
+
+        // Step 2: 既存ストアファイルが壊れている可能性が高いので、明示的な URL で
+        // 退避(リネーム)してから同じ URL に作り直す。migrationPlan を経由すると
+        // 壊れたストアをまた読みにいってしまうため、ここでは migrationPlan なしで
+        // 新規ストアとして作る。
+        let storeURL = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false).url
+        moveAsideCorruptStore(at: storeURL)
+        do {
+            let recoveryConfiguration = ModelConfiguration(
+                schema: schema,
+                url: storeURL
+            )
+            let container = try ModelContainer(for: schema, configurations: recoveryConfiguration)
+            UserDefaults.standard.set(true, forKey: storeDidRecoverDefaultsKey)
+            Logger.app.error("ModelContainer recovered by recreating store at \(storeURL.path, privacy: .public)")
+            return container
+        } catch {
+            Logger.app.fault("ModelContainer recovery (recreate store) failed: \(error.localizedDescription, privacy: .public)")
+        }
+
+        // Step 3: 最終手段。インメモリで起動し、少なくともアプリはクラッシュせず使える
+        // 状態にする(このセッション内のデータは保存されない)。
+        do {
+            let inMemoryConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: schema, configurations: inMemoryConfiguration)
+            UserDefaults.standard.set(true, forKey: storeDidRecoverDefaultsKey)
+            Logger.app.fault("ModelContainer falling back to in-memory store; changes will not persist")
+            return container
+        } catch {
+            // インメモリ構成の ModelContainer 初期化はディスク I/O やマイグレーションに
+            // 依存しないため、Schema 自体が壊れていない限り実質的に失敗しない。
+            // ここまで到達するのはスキーマ定義そのものが不正なプログラマエラーの場合のみで、
+            // 復旧不能なため fatalError は妥当(§4.1 ModelContext は @MainActor 前提のため
+            // これ以上フォールバックする手段が無い)。
+            Logger.app.fault("ModelContainer in-memory fallback failed: \(error.localizedDescription, privacy: .public)")
+            fatalError("Failed to initialize ModelContainer even in-memory: \(error)")
+        }
+    }
+
+    /// 壊れている疑いのあるストアファイル一式(store 本体 + -wal / -shm)を
+    /// タイムスタンプ付きでリネーム退避する。退避に失敗しても(ファイルが
+    /// そもそも存在しない等)復旧処理自体は継続する。
+    private static func moveAsideCorruptStore(at storeURL: URL) {
+        let fileManager = FileManager.default
+        let suffix = "corrupt-\(Int(Date.now.timeIntervalSince1970))"
+        let relatedExtensions = ["", "-wal", "-shm"]
+        for ext in relatedExtensions {
+            let source = URL(fileURLWithPath: storeURL.path + ext)
+            guard fileManager.fileExists(atPath: source.path) else { continue }
+            let destination = URL(fileURLWithPath: storeURL.path + ext + "." + suffix)
+            do {
+                try fileManager.moveItem(at: source, to: destination)
+            } catch {
+                Logger.app.error("Failed to move aside corrupt store file \(source.lastPathComponent, privacy: .public): \(error.localizedDescription, privacy: .public)")
+            }
         }
     }
 

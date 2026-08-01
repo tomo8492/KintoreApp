@@ -94,4 +94,12 @@ struct FormAnnotationLoaderTests {
     func loaderReturnsNilForUnknownSlug() {
         #expect(FormAnnotationLoader.load(slug: "this-slug-does-not-exist-xyz-7777") == nil)
     }
+
+    @Test("E3: 同一 slug への連続 load はキャッシュ経由でも同じ値を返す")
+    func repeatedLoadReturnsEqualValueFromCache() {
+        let first = FormAnnotationLoader.load(slug: "barbell-back-squat")
+        let second = FormAnnotationLoader.load(slug: "barbell-back-squat")
+        #expect(first != nil)
+        #expect(first == second)
+    }
 }

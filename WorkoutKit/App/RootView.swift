@@ -23,6 +23,11 @@ struct RootView: View {
     @State private var forcedPaywall: PaywallContext?
     @State private var trialTracker = LaunchTrialTracker()
 
+    /// E2: `WorkoutKitApp.makeModelContainer()` がストア破損から自動復旧した場合に
+    /// 一度だけ「データを再作成しました」を知らせるアラート。ホットパス(起動処理)を
+    /// 塞がないよう `.onAppear` で UserDefaults フラグを読み、表示後は即クリアする。
+    @State private var isStoreRecoveredAlertPresented = false
+
     #if DEBUG
     /// M6 screenshot 撮影用: `-WORKOUTKIT_SEED_COMPLETED_SESSION 1` 起動引数で
     /// 完了済セッションを seed し、自動で完了画面 (SessionFinishedContent) を
@@ -42,9 +47,18 @@ struct RootView: View {
             // 初回起動日を記録するだけ(冪等)。Paywall 表示可否の判定は entitlement
             // (proGate.isPro)の解決を待つ必要があるため `.task` 側へ移した(C1)。
             trialTracker.recordFirstLaunchIfNeeded()
+            presentStoreRecoveredAlertIfNeeded()
             #if DEBUG
             applyScreenshotSeedIfNeeded()
             #endif
+        }
+        .alert(
+            "store.recovered.title",
+            isPresented: $isStoreRecoveredAlertPresented
+        ) {
+            Button("common.ok", role: .cancel) {}
+        } message: {
+            Text("store.recovered.message")
         }
         .task {
             // C1: `proGate.isPro` は起動直後 false スタートで、PurchaseManager の非同期
@@ -79,6 +93,17 @@ struct RootView: View {
             )
         }
         #endif
+    }
+
+    // MARK: - Store recovery (E2)
+
+    /// `WorkoutKitApp.storeDidRecoverDefaultsKey` が立っていれば、アラートを 1 回だけ
+    /// 出してすぐにフラグをクリアする(次回起動以降は出さない)。
+    private func presentStoreRecoveredAlertIfNeeded() {
+        let defaults = UserDefaults.standard
+        guard defaults.bool(forKey: WorkoutKitApp.storeDidRecoverDefaultsKey) else { return }
+        defaults.removeObject(forKey: WorkoutKitApp.storeDidRecoverDefaultsKey)
+        isStoreRecoveredAlertPresented = true
     }
 
     #if DEBUG

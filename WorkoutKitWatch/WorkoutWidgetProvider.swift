@@ -28,9 +28,27 @@ struct WorkoutWidgetProvider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WorkoutWidgetEntry>) -> Void) {
         let entry = currentEntry()
-        // 次の更新は 1 時間後。Smart Stack の更新コストはそれで十分。
-        let refresh = Calendar.current.date(byAdding: .hour, value: 1, to: entry.date) ?? entry.date
+        // E4: 次の更新は「1 時間後」と「翌日 0 時」の早い方。1 時間固定だと、
+        // 例えば 23:30 に見た「完了・N セット」が日付を跨いだ後も最大 1 時間
+        // そのまま表示され続けてしまう(今日 0 セットになったはずなのに古い実績が
+        // 残る)。日付が変わるタイミングでは早めに再評価させることでこれを防ぐ。
+        let refresh = nextRefreshDate(after: entry.date)
         completion(Timeline(entries: [entry], policy: .after(refresh)))
+    }
+
+    /// `date` を起点に「1 時間後」と「翌日の 0 時(ローカルタイム)」を比較し、
+    /// 早い方を返す。`Calendar` の日付演算はどちらも失敗し得るため、失敗時は
+    /// もう一方(最終的には `date` 自身)にフォールバックし、強制アンラップしない。
+    private func nextRefreshDate(after date: Date) -> Date {
+        let calendar = Calendar.autoupdatingCurrent
+        let oneHourLater = calendar.date(byAdding: .hour, value: 1, to: date) ?? date
+
+        let startOfToday = calendar.startOfDay(for: date)
+        guard let nextMidnight = calendar.date(byAdding: .day, value: 1, to: startOfToday) else {
+            return oneHourLater
+        }
+
+        return min(oneHourLater, nextMidnight)
     }
 
     // MARK: - Data fetch

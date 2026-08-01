@@ -142,13 +142,26 @@ enum WorkoutInsightGenerator {
         }
     }
 
+    /// E6: プロンプトに列挙する種目数の上限。`buildCueContext` の `maxExercises`
+    /// (フォームキュー引用、こちらは 3 件)とは別の上限で、種目リスト行そのものを
+    /// 際限なく積むとプロンプト長・推論コストが種目数に比例して膨らむため設ける。
+    private static let maxPromptExercises = 12
+
     @available(iOS 26, *)
     private static func buildPrompt(_ input: WorkoutInsightInput) -> String {
         var lines: [String] = []
         lines.append("目的: \(input.goalRaw)")
         lines.append("今日の種目:")
-        for ex in input.todayExercises {
+        let exercisesForPrompt = input.todayExercises.prefix(maxPromptExercises)
+        for ex in exercisesForPrompt {
             lines.append("- \(ex.name): \(ex.setCount) セット / 総ボリューム \(Int(ex.totalVolumeKg)) kg")
+        }
+        let omittedCount = input.todayExercises.count - exercisesForPrompt.count
+        if omittedCount > 0 {
+            // モデル向けの文脈情報であり、ユーザーには表示しない(Localizable.xcstrings
+            // への登録は不要)。省略があったことだけモデルに伝え、要約が「全種目を
+            // 網羅したかのような」誤った断定をしないようにする。
+            lines.append("(他 \(omittedCount) 種目は省略)")
         }
         if let delta = input.volumeDeltaKgVsLastTime {
             let sign = delta >= 0 ? "+" : ""
