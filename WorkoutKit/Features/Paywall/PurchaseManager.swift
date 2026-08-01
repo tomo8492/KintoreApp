@@ -308,7 +308,12 @@ final class PurchaseManager {
 
     /// `SubscriptionPeriod` を概算「日数」に変換する。
     /// PaywallView の「7-day free trial」表記用の概算なので月/年は近似でよい。
-    private static func daysIn(_ period: SubscriptionPeriod) -> Int {
+    ///
+    /// C2 で `import StoreKit` を足した結果、`SubscriptionPeriod` が
+    /// `RevenueCat.SubscriptionPeriod` と `StoreKit.SubscriptionPeriod`
+    /// (= `Product.SubscriptionPeriod` の typealias)で曖昧になったため、
+    /// 引数元(`StoreProductDiscount.subscriptionPeriod`)に合わせて明示修飾する。
+    private static func daysIn(_ period: RevenueCat.SubscriptionPeriod) -> Int {
         let n = period.value
         switch period.unit {
         case .day:   return n
