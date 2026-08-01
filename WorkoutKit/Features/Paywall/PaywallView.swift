@@ -2,12 +2,18 @@
 // CLAUDE.md v1.0 §6-6 準拠。
 //
 // サブスク前提のハードペイウォール。月額 / 年額の 2 プランを並べ、年額をデフォルト選択。
-// 「月額より ¥3,260 お得」バッジ + 7 日無料トライアルを強調する。
+// 「お得額」バッジ + 7 日無料トライアルを強調する。
+//
+// C3: お得額 / %OFF / 月あたり換算は PurchaseManager 側で取得した実価格(Decimal)から
+// `PurchaseOffering.yearlySavings` が算出する(本 View はハードコード値を一切持たない)。
+// 実際のオファリングが取得できていない(フォールバック価格文字列のみの)間は
+// バッジ類を一切表示しない(誤った金額を見せないため)。
 //
 // 2026 UX ベストプラクティス(RevenueCat + Adapty + Apple HIG 統合):
 //   - Visual Trial Timeline(Apple-endorsed): 今日 / 5 日目リマインダー / 7 日目課金
-//   - Price anchoring: 年額に「月あたり ¥408」「40% OFF」を併記
+//   - Price anchoring: 年額に「月あたり」「%OFF」を併記(値はすべて実価格から算出)
 //   - Dynamic CTA copy: トライアル有なら「7 日間 無料で始める」、無なら「プレミアムに登録」
+//     (トライアル有無は StoreKit 2 の isEligibleForIntroOffer 判定込み。C2 参照)
 //   - Haptic feedback: プラン選択時の `.selection` フィードバック
 //   - Cancel anytime trust signal: plan subtitle に明示
 //
@@ -42,10 +48,6 @@ struct PaywallView: View {
 
     enum PlanKind { case monthly, yearly }
     enum Status: Equatable { case idle, purchasing, restoring }
-
-    /// 年額の割引率(¥680×12 = ¥8,160 → ¥4,900 で約 39.9% OFF)。
-    /// Localizable に %lld で渡す。
-    private static let yearlyPercentOff: Int = 40
 
     var body: some View {
         ScrollView {
@@ -148,7 +150,6 @@ struct PaywallView: View {
                 titleKey: "hard-paywall.plan.yearly.title",
                 priceText: offering?.yearly?.displayPrice ?? "¥4,900",
                 subtitleKey: "hard-paywall.plan.yearly.subtitle",
-                badgeKey: "hard-paywall.plan.yearly.badge",
                 trialDays: offering?.yearly?.trialDays,
                 isYearly: true
             )
@@ -157,7 +158,6 @@ struct PaywallView: View {
                 titleKey: "hard-paywall.plan.monthly.title",
                 priceText: offering?.monthly?.displayPrice ?? "¥680",
                 subtitleKey: "hard-paywall.plan.monthly.subtitle",
-                badgeKey: nil,
                 trialDays: offering?.monthly?.trialDays,
                 isYearly: false
             )
@@ -169,11 +169,13 @@ struct PaywallView: View {
         titleKey: LocalizedStringKey,
         priceText: String,
         subtitleKey: LocalizedStringKey,
-        badgeKey: LocalizedStringKey?,
         trialDays: Int?,
         isYearly: Bool
     ) -> some View {
         let isSelected = selectedPlanKind == kind
+        // C3: お得額 / %OFF / 月あたり換算は実オファリングが揃っているときだけ算出される。
+        // フォールバック価格文字列だけの間はすべて非表示にする(誤った金額を出さない)。
+        let savings = isYearly ? yearlySavings : nil
         return Button {
             // 2026 UX: 触覚フィードバックでプラン切替を体感的に伝える。
             // `.selection` は柔らかい tick。`.success` だと購入完了と混同するので避ける。
@@ -191,16 +193,14 @@ struct PaywallView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
                         Text(titleKey).font(.headline)
-                        if let badgeKey {
-                            Text(badgeKey)
+                        if let savings {
+                            Text("hard-paywall.plan.yearly.badge \(savings.savingsText)")
                                 .font(.caption.bold())
                                 .padding(.horizontal, 8).padding(.vertical, 2)
                                 .background(Color.accentColor, in: .capsule)
                                 .foregroundStyle(.white)
-                        }
-                        // 年額には「% OFF」も併記(price anchoring 強化、Adapty 2026)。
-                        if isYearly {
-                            Text("hard-paywall.plan.yearly.percent-off \(Self.yearlyPercentOff)")
+                            // 年額には「% OFF」も併記(price anchoring 強化、Adapty 2026)。
+                            Text("hard-paywall.plan.yearly.percent-off \(savings.percentOff)")
                                 .font(.caption.bold())
                                 .padding(.horizontal, 8).padding(.vertical, 2)
                                 .background(AppColor.success.opacity(0.85), in: .capsule)
@@ -208,9 +208,9 @@ struct PaywallView: View {
                         }
                     }
                     Text(priceText).font(.title3.weight(.semibold))
-                    // 年額のみ「月あたり ¥408」を併記する(月額との比較を直感化)。
-                    if isYearly, let monthlyEquivalent = monthlyEquivalentText(from: priceText) {
-                        Text("hard-paywall.plan.yearly.monthly-equivalent \(monthlyEquivalent)")
+                    // 年額のみ「月あたり」を併記する(月額との比較を直感化)。
+                    if let savings {
+                        Text("hard-paywall.plan.yearly.monthly-equivalent \(savings.monthlyEquivalentText)")
                             .font(.caption.monospacedDigit())
                             .foregroundStyle(.secondary)
                     }
@@ -463,25 +463,10 @@ struct PaywallView: View {
         }
     }
 
-    /// 年額表示価格(例: "¥4,900")から月あたり換算文字列(例: "¥408")を生成。
-    /// ロケール記号や桁区切りを保つため、数値部分だけ抜き出して 12 で割る。
-    /// 抽出失敗時は nil を返して併記表示を諦める(安全側)。
-    private func monthlyEquivalentText(from yearlyPriceText: String) -> String? {
-        let digits = yearlyPriceText.filter { $0.isNumber }
-        guard let yearly = Int(digits), yearly > 0 else { return nil }
-        let monthly = Int((Double(yearly) / 12.0).rounded())
-        // 通貨記号と区切り文字をローカライズして再構築する。
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
-        // ¥/$/€ 等は yearlyPriceText の prefix を引き継ぐのが最も自然。
-        // (ロケール推測に失敗しても元の通貨を保てる)
-        let prefix = yearlyPriceText.prefix { !$0.isNumber }
-        formatter.currencySymbol = String(prefix)
-        if let formatted = formatter.string(from: NSNumber(value: monthly)) {
-            return formatted
-        }
-        return "\(prefix)\(monthly)"
+    /// C3: お得額 / %OFF / 月あたり換算(実価格 Decimal 由来)。
+    /// 両プランの実オファリングが揃っていない間は nil(バッジ類は表示しない)。
+    private var yearlySavings: YearlySavings? {
+        offering?.yearlySavings
     }
 
     private var alertBinding: Binding<Bool> {

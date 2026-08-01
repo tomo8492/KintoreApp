@@ -23929,20 +23929,20 @@
         }
       }
     },
-    "hard-paywall.plan.yearly.badge" : {
-      "comment" : "年額プランのお得バッジ。月額 ¥680 × 12 = ¥8,160 - 年額 ¥4,900 = ¥3,260 が正しい差額。Apple Guideline 3.1.2 (accurate pricing) に従い実際の差額を表示する。",
+    "hard-paywall.plan.yearly.badge %@" : {
+      "comment" : "C3: 年額プランのお得バッジ。月額×12 と年額実価格(Decimal)の差額を PurchaseOffering.yearlySavings で算出し、フォーマット済み文字列を差し込む。Apple Guideline 3.1.2 (accurate pricing) に従い実際の差額のみを表示する(オファリング未取得時はバッジ自体を非表示にする)。",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Save ¥3,260"
+            "value" : "Save %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¥3,260 お得"
+            "value" : "%@ お得"
           }
         }
       }
@@ -28092,6 +28092,24 @@
         }
       }
     },
+    "settings.dataio" : {
+      "comment" : "C4: Settings → データ移行(CSV/JSON インポート・エクスポート)行のラベル。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Import & Export"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データのインポート / エクスポート"
+          }
+        }
+      }
+    },
     "settings.language.footer" : {
       "comment" : "Settings: 言語の補足。",
       "extractionState" : "manual",
@@ -28326,6 +28344,24 @@
         }
       }
     },
+    "settings.purchases.upgrade" : {
+      "comment" : "C4: Settings → 購入セクション、未購入時のみ表示するアップグレード行。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upgrade to Premium"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレミアムにアップグレード"
+          }
+        }
+      }
+    },
     "settings.section.about" : {
       "comment" : "Settings: About セクション見出し。",
       "extractionState" : "manual",
@@ -28340,6 +28376,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アプリについて"
+          }
+        }
+      }
+    },
+    "settings.section.data" : {
+      "comment" : "C4: Settings → データ移行セクション見出し。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データ"
           }
         }
       }

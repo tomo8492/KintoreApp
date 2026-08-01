@@ -39,16 +39,34 @@ struct RootView: View {
             }
         }
         .onAppear {
-            // 初回起動日を記録(冪等)し、試用期間外 & 非 Pro なら Paywall 強制表示。
+            // 初回起動日を記録するだけ(冪等)。Paywall 表示可否の判定は entitlement
+            // (proGate.isPro)の解決を待つ必要があるため `.task` 側へ移した(C1)。
             trialTracker.recordFirstLaunchIfNeeded()
+            #if DEBUG
+            applyScreenshotSeedIfNeeded()
+            #endif
+        }
+        .task {
+            // C1: `proGate.isPro` は起動直後 false スタートで、PurchaseManager の非同期
+            // refresh() 完了後にしか実体を反映しない。onAppear の同期判定のままだと
+            // 有効なサブスク保有者にも毎回起動時ハードペイウォールが出てしまうため、
+            // refresh() を待ってから判定する。
+            // `refresh()` は `isConfigured == false`(API キー未設定 / configure 未実行)
+            // なら即座に return する(ハングしない)ので、未 Pro 判定はそのまま素通りする
+            // — 無料ユーザーの Paywall 表示判定は引き続き機能する。
+            await dependency.purchaseManager.refresh()
             if trialTracker.shouldShowHardPaywallOnLaunch(proGate: dependency.proGate) {
                 // reason=nil で起動時の包括的な提示。閉じても再表示しない
                 // (毎起動で出すと UX を破壊するため、現状は 1 ロード 1 回)。
                 forcedPaywall = PaywallContext(feature: .unlimitedHistory)
             }
-            #if DEBUG
-            applyScreenshotSeedIfNeeded()
-            #endif
+        }
+        .onChange(of: dependency.proGate.isPro) { _, isPro in
+            // C1: refresh() が上の .task より遅れて完了した場合や、Paywall 提示中に
+            // 購入 / 復元が成立した場合に、出しっぱなしの強制 Paywall を閉じる。
+            if isPro {
+                forcedPaywall = nil
+            }
         }
         .sheet(item: $forcedPaywall) { ctx in
             PaywallView(reason: ctx.feature)

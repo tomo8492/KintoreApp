@@ -19,6 +19,9 @@ struct SettingsView: View {
     @AppStorage(SettingsKey.theme)      private var themeRaw: String = ThemePreference.system.rawValue
 
     @State private var restoreState: RestoreState = .idle
+    /// C4: 購入セクションの「プレミアムにアップグレード」行から提示する Paywall。
+    /// reason は特定の Pro 機能に紐付かない包括提示なので nil で渡す。
+    @State private var showingUpgradePaywall = false
 
     var body: some View {
         NavigationStack {
@@ -26,6 +29,7 @@ struct SettingsView: View {
                 displaySection
                 languageSection
                 purchasesSection
+                dataSection
                 aboutSection
                 legalSection
             }
@@ -40,6 +44,9 @@ struct SettingsView: View {
                 if let message = state.alertMessage {
                     Text(message)
                 }
+            }
+            .sheet(isPresented: $showingUpgradePaywall) {
+                PaywallView(reason: nil)
             }
         }
     }
@@ -128,6 +135,25 @@ struct SettingsView: View {
                                      ? "settings.purchases.status.pro"
                                      : "settings.purchases.status.free"))
 
+            // C4: 未購入時のみ、復元行の上にアップグレード導線を出す。
+            // Settings 単体で開いても購入まで到達できるように(従来は Paywall への入口が
+            // 起動 3 日後の強制表示 / 各 Pro 機能タップ時にしかなかった)。
+            if !dependency.proGate.isPro {
+                Button {
+                    showingUpgradePaywall = true
+                } label: {
+                    Label {
+                        Text("settings.purchases.upgrade")
+                    } icon: {
+                        SettingsRowIcon(systemName: "sparkles", tint: AppColor.accent)
+                    }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                }
+                .accessibilityLabel(Text("settings.purchases.upgrade"))
+                .accessibilityAddTraits(.isButton)
+            }
+
             Button {
                 Task { await runRestore() }
             } label: {
@@ -153,6 +179,25 @@ struct SettingsView: View {
             Text("settings.section.purchases")
         } footer: {
             Text("settings.purchases.footer")
+        }
+    }
+
+    // C4: データ移行(CSV/JSON インポート・エクスポート)への導線。DataIOView 内部が
+    // すでに ProFeatureGate.check(.csvImport / .csvExport) + showProPaywall で
+    // 自前ゲートしているため(DataIOView.swift 参照)、ここは素の NavigationLink でよい。
+    private var dataSection: some View {
+        Section {
+            NavigationLink {
+                DataIOView()
+            } label: {
+                Label {
+                    Text("settings.dataio")
+                } icon: {
+                    SettingsRowIcon(systemName: "square.and.arrow.up.on.square", tint: .gray)
+                }
+            }
+        } header: {
+            Text("settings.section.data")
         }
     }
 

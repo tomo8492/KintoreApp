@@ -21,6 +21,7 @@ import Foundation
 import OSLog
 import Observation
 import RevenueCat
+import StoreKit
 
 // MARK: - 公開エラー型
 
@@ -53,7 +54,15 @@ struct PurchaseOffering: Sendable, Equatable {
 struct PurchasePlan: Sendable, Equatable {
     let productID: String
     let displayPrice: String       // ロケール整形済(例: "¥980" / "¥4,900")
-    let trialDays: Int?            // 7 / nil
+    let trialDays: Int?            // 7 / nil (ユーザーがトライアル対象でなければ nil。C2 参照)
+    /// C3: 実価格(Decimal)。年額の「お得額 / %OFF / 月あたり換算」計算に使う
+    /// (RevenueCat `StoreProduct.price`)。Double 往復による丸め誤差を避けるため、
+    /// PaywallView 側の金額計算もすべて Decimal のまま行うこと。
+    let price: Decimal
+    /// C3: `StoreProduct.currencyCode`。金額フォーマット(NumberFormatter.currencyCode)に使う。
+    /// 実際の `NumberFormatter` インスタンスは Sendable ではないため保持しない
+    /// (`PurchasePlan` は `Sendable` 必須)。取得できない場合は nil(端末ロケールへフォールバック)。
+    let currencyCode: String?
     /// 内部用に rcPackage を握っておく(actor 越しでも Sendable のため id だけ持つ)。
     let rcIdentifier: String
 }
@@ -62,6 +71,66 @@ enum PurchaseResultOutcome: Sendable, Equatable {
     case success
     case cancelled
     case pending           // App Store の保留(承認待ち)
+}
+
+// MARK: - YearlySavings (C3)
+
+/// 年額プランの「お得額 / 割引率 / 月あたり換算」を実価格(Decimal)から算出した表示用モデル。
+/// PaywallView はこれが nil の間、バッジ / %OFF / 月あたり換算のいずれも表示しない
+/// (フォールバック価格文字列のみのときに誤った数値を出さないため)。
+struct YearlySavings: Sendable, Equatable {
+    let savingsText: String
+    let percentOff: Int
+    let monthlyEquivalentText: String
+}
+
+extension PurchaseOffering {
+    /// 月額 ×12 と年額の実価格差から「お得額 / 割引率 / 月あたり換算」を算出する。
+    /// - 両プランの Offering が揃っていない(nil)場合や、通貨フォーマットに失敗した場合は nil。
+    /// - Decimal 演算のみを使用する(Double への往復を挟むと丸め誤差が出るため §11-1 準拠)。
+    /// - 通貨表記は年額プランの `currencyCode` を優先して統一する。取得できない場合は
+    ///   端末ロケールの `.currency` 通貨表記へフォールバックする。
+    var yearlySavings: YearlySavings? {
+        guard let monthly, let yearly else { return nil }
+        let monthlyTotal = monthly.price * 12
+        let savings = monthlyTotal - yearly.price
+        guard monthlyTotal > 0, savings > 0 else { return nil }
+
+        let percent = (savings / monthlyTotal) * 100
+        let monthlyEquivalent = yearly.price / 12
+
+        guard
+            let savingsText = Self.formattedCurrency(savings, currencyCode: yearly.currencyCode),
+            let monthlyEquivalentText = Self.formattedCurrency(monthlyEquivalent, currencyCode: yearly.currencyCode)
+        else { return nil }
+
+        return YearlySavings(
+            savingsText: savingsText,
+            percentOff: Self.roundedInt(percent),
+            monthlyEquivalentText: monthlyEquivalentText
+        )
+    }
+
+    /// Decimal を四捨五入して Int にする(Double 往復なし。`NSDecimalRound` は Decimal ネイティブ)。
+    private static func roundedInt(_ value: Decimal) -> Int {
+        var input = value
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &input, 0, .plain)
+        return NSDecimalNumber(decimal: rounded).intValue
+    }
+
+    /// `currencyCode` があれば厳密にその通貨で整形し、なければ端末ロケールの `.currency` 整形へ
+    /// フォールバックする。整形に失敗した場合(不正な currencyCode 等)は nil を返し、
+    /// 呼び出し側(`yearlySavings`)は当該バッジ自体を非表示にする。
+    private static func formattedCurrency(_ value: Decimal, currencyCode: String?) -> String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 0
+        if let currencyCode {
+            formatter.currencyCode = currencyCode
+        }
+        return formatter.string(from: NSDecimalNumber(decimal: value))
+    }
 }
 
 // MARK: - PurchaseManager
@@ -180,10 +249,19 @@ final class PurchaseManager {
         if let p = monthlyPkg { cachedPackages[p.identifier] = p }
         if let p = yearlyPkg  { cachedPackages[p.identifier] = p }
 
-        let result = PurchaseOffering(
-            monthly: monthlyPkg.map { plan(from: $0) },
-            yearly:  yearlyPkg.map  { plan(from: $0) }
-        )
+        // C2: trialDays は「商品に設定されたトライアル」だけでなく「このユーザーが実際に
+        // トライアル対象か」を StoreKit 2 で確認してから確定させる(Guideline 3.1.2)。
+        // Optional.map は非同期クロージャを取れないため、ここは明示的に await する。
+        var monthlyPlan: PurchasePlan?
+        if let monthlyPkg {
+            monthlyPlan = await eligibilityAdjustedPlan(from: monthlyPkg)
+        }
+        var yearlyPlan: PurchasePlan?
+        if let yearlyPkg {
+            yearlyPlan = await eligibilityAdjustedPlan(from: yearlyPkg)
+        }
+
+        let result = PurchaseOffering(monthly: monthlyPlan, yearly: yearlyPlan)
         self.offering = result
         return result
     }
@@ -195,7 +273,36 @@ final class PurchaseManager {
             productID: product.productIdentifier,
             displayPrice: product.localizedPriceString,
             trialDays: trialDays,
+            price: product.price,
+            currencyCode: product.currencyCode,
             rcIdentifier: package.identifier
+        )
+    }
+
+    /// C2 (Guideline 3.1.2): `plan(from:)` が設定値から仮に立てた `trialDays` を、
+    /// StoreKit 2 の実際のトライアル資格で確定させる。
+    ///
+    /// 依存: `StoreProduct.sk2Product`(RevenueCat v5 が公開する `StoreKit.Product` への
+    /// ブリッジ。プロパティ名は RC v4/v5 で安定しているが、リポジトリ内に他の使用例が
+    /// なかったため SDK 更新時はここを優先的に確認すること)経由で
+    /// `Product.SubscriptionInfo.isEligibleForIntroOffer`(`Bool { get async }`)を読む。
+    /// `sk2Product` / `subscription` が取得できない場合は判定不能なので、設定値を
+    /// そのまま残す(fail open。既存動作を壊さない)。
+    private func eligibilityAdjustedPlan(from package: Package) async -> PurchasePlan {
+        let base = plan(from: package)
+        guard base.trialDays != nil else { return base }
+        guard let subscription = package.storeProduct.sk2Product?.subscription else {
+            return base
+        }
+        let isEligible = await subscription.isEligibleForIntroOffer
+        guard !isEligible else { return base }
+        return PurchasePlan(
+            productID: base.productID,
+            displayPrice: base.displayPrice,
+            trialDays: nil,
+            price: base.price,
+            currencyCode: base.currencyCode,
+            rcIdentifier: base.rcIdentifier
         )
     }
 
