@@ -223,6 +223,10 @@ struct AnnotatedFormView: View {
                         .clipped()
                         .id(currentFrame.id)
                         .transition(.opacity)
+                        // D6 修正: ラベルを付けないと VoiceOver がアセットパスをそのまま
+                        // 読み上げてしまう。意味のある情報は下の AnnotationCard 側に
+                        // あるため、写真自体は読み上げから隠す。
+                        .accessibilityHidden(true)
 
                     // 引き出し線 → ドット → ラベル を annotation ごとに描画。
                     // 線が円の上に乗らないよう、線→ドット→ラベル の順で重ねる。

@@ -73,6 +73,14 @@ struct HistoryChartsView: View {
             // Charts API の BarMark.cornerRadius(_:) パラメータ(AppRadius 対象外、意図的に維持)。
             .cornerRadius(2)
         }
+        // D7 修正: 手書きの legend(下記)が HStack の .foregroundStyle(.secondary) を
+        // 継承してしまい全スウォッチが灰色になっていた。ここで bar 側の色付けを
+        // ドメイン(部位グループの表示名)に明示的に固定し、下の legend の
+        // Circle にも同じ色関数(Self.legendColor)を使わせることで一致させる。
+        .chartForegroundStyleScale(
+            domain: Muscle.Group.allCases.map(\.localizedTitle),
+            range: Muscle.Group.allCases.map(Self.legendColor(for:))
+        )
         .chartLegend(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .weekOfYear)) { value in
@@ -92,12 +100,26 @@ struct HistoryChartsView: View {
                 HStack(spacing: 4) {
                     Circle()
                         .frame(width: 8, height: 8)
+                        .foregroundStyle(Self.legendColor(for: group))
                     Text(group.localizedTitle)
                         .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
         }
-        .foregroundStyle(.secondary)
+    }
+
+    /// 部位グループごとの棒/凡例カラー。DesignTokens(AppColor)には部位別の
+    /// パレットが定義されていないため、判別しやすいシステムカラー 4 色を
+    /// ここで固定する(bar の .chartForegroundStyleScale と legend の両方で
+    /// 同じ関数を参照することで、常に一致させる)。
+    private static func legendColor(for group: Muscle.Group) -> Color {
+        switch group {
+        case .upperBody: return .blue
+        case .core:      return .purple
+        case .lowerBody: return .green
+        case .fullBody:  return .orange
+        }
     }
 
     // MARK: - Advanced (Pro)

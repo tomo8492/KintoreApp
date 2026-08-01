@@ -72,7 +72,7 @@ struct ManualEntryView: View {
 
             Picker("manual-entry.goal", selection: $store.goal) {
                 ForEach(Goal.allCases, id: \.self) { goal in
-                    Text(LocalizedStringKey("goal.\(goal.rawValue)")).tag(goal)
+                    Text(GoalLabels.displayName(for: goal)).tag(goal)
                 }
             }
 

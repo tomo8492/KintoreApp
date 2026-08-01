@@ -49,8 +49,11 @@ struct CommonMistakesCard: View {
                 RoundedRectangle(cornerRadius: AppRadius.control, style: .continuous)
                     .fill(AppColor.destructive.opacity(0.10))
             )
+            // D5 修正: .accessibilityLabel を付けると .combine で連結された
+            // 見出し+各ミステイクの本文が上書きされ、VoiceOver がラベル
+            // キーだけを読み上げてしまう(中身が読めなくなる)。StepsCardView
+            // と同じ方針で、ラベル指定を外し .combine の自然な連結に任せる。
             .accessibilityElement(children: .combine)
-            .accessibilityLabel(Text("a11y.library.detail.common-mistakes.label"))
         }
     }
 }

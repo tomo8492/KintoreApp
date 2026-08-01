@@ -45,7 +45,7 @@ struct HistorySessionRow: View {
             Text(UnitsFormatter.formatHistoryDate(session.startedAt))
                 .font(.subheadline.weight(.semibold))
             HStack(spacing: 8) {
-                Text(session.goal.rawValue)
+                Text(GoalLabels.displayName(for: session.goal))
                 Text("•")
                 Text(durationLabel)
                 Text("•")

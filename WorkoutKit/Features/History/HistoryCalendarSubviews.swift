@@ -89,7 +89,7 @@ struct HistoryCalendarDaySessionsSheet: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(UnitsFormatter.formatHistoryDate(session.startedAt))
                                     .font(.subheadline.weight(.semibold))
-                                Text(session.goal.rawValue)
+                                Text(GoalLabels.displayName(for: session.goal))
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }

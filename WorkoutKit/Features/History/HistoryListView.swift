@@ -173,7 +173,7 @@ private struct HistoryListRow: View {
                     .font(.headline.monospacedDigit())
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
-                Text(session.goal.rawValue)
+                Text(GoalLabels.displayName(for: session.goal))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
@@ -217,7 +217,7 @@ private struct HistoryListRow: View {
         )
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(Text("\(timeOfDay), \(session.goal.rawValue)"))
+        .accessibilityLabel(Text("\(timeOfDay), \(GoalLabels.displayName(for: session.goal))"))
         .accessibilityValue(Text("\(durationLabel), \(volumeLabel), \(setsLabel)"))
     }
 

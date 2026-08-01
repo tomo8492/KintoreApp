@@ -4515,7 +4515,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro feature — exports your history as a CSV file."
+            "value" : "Premium feature — exports your history as a CSV file."
           }
         },
         "ja" : {
@@ -4532,7 +4532,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro feature — imports exercises from a file."
+            "value" : "Premium feature — imports exercises from a file."
           }
         },
         "ja" : {
@@ -4566,7 +4566,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro feature — unlocks history older than 30 days."
+            "value" : "Premium feature — unlocks history older than 30 days."
           }
         },
         "ja" : {
@@ -4740,7 +4740,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro feature — opens the paywall."
+            "value" : "Premium feature — opens the paywall."
           }
         },
         "ja" : {
@@ -4827,13 +4827,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Restores any prior Pro purchase from your Apple ID."
+            "value" : "Restores any prior Premium purchase from your Apple ID."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apple ID から過去の Pro 購入を復元します"
+            "value" : "Apple ID から過去のプレミアム購入を復元します"
           }
         }
       }
@@ -4982,13 +4982,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Re-checks your Apple ID for prior Pro purchases."
+            "value" : "Re-checks your Apple ID for prior Premium purchases."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apple ID の購入履歴から Pro を復元します"
+            "value" : "Apple ID の購入履歴からプレミアムを復元します"
           }
         }
       }
@@ -5797,9 +5797,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld exercises"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld exercise"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld exercises"
+                }
+              }
+            }
           }
         },
         "ja" : {
@@ -6214,6 +6226,60 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "履歴を CSV で書き出す"
+          }
+        }
+      }
+    },
+    "data-io.result.csv" : {
+      "comment" : "DataIO: CSV インポート結果。引数順: 追加件数, 更新件数, スキップ件数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSV: %lld added / %lld updated / %lld skipped"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSV: 追加 %lld / 更新 %lld / スキップ %lld"
+          }
+        }
+      }
+    },
+    "data-io.result.export" : {
+      "comment" : "DataIO: CSV エクスポート完了メッセージ。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exported history as CSV"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴を CSV にエクスポートしました"
+          }
+        }
+      }
+    },
+    "data-io.result.json" : {
+      "comment" : "DataIO: JSON インポート結果。引数順: 追加種目数, 更新種目数, 追加セッション数。",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JSON: exercises +%lld ~%lld / sessions +%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JSON: 種目 +%lld ~%lld / セッション +%lld"
           }
         }
       }
@@ -29466,9 +29532,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld sets"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld set"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sets"
+                }
+              }
+            }
           }
         },
         "ja" : {
@@ -29484,9 +29562,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld workouts"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld workout"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld workouts"
+                }
+              }
+            }
           }
         },
         "ja" : {
@@ -29728,9 +29818,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld sets"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld set"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sets"
+                }
+              }
+            }
           }
         },
         "ja" : {

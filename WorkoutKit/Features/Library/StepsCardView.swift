@@ -47,8 +47,12 @@ struct StepsCardView: View {
                     }
                 }
             }
+            // D5 修正: .accessibilityLabel を付けると .combine で連結された
+            // 見出し+各ステップの本文が上書きされ、VoiceOver が
+            // "a11y.library.detail.steps.label" だけを読み上げてしまう
+            // (中身が読めなくなる)。ラベル指定を外し、.combine の自然な
+            // 連結読み上げに任せる。
             .accessibilityElement(children: .combine)
-            .accessibilityLabel(Text("a11y.library.detail.steps.label"))
             .onAppear(perform: resolveStepImagesIfNeeded)
         }
     }

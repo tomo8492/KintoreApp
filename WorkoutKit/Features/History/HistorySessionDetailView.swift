@@ -47,7 +47,7 @@ struct HistorySessionDetailView: View {
                 Text(UnitsFormatter.formatHistoryDate(session.startedAt))
                     .font(.headline)
                 HStack(spacing: 16) {
-                    metaItem(icon: "target", value: session.goal.rawValue)
+                    metaItem(icon: "target", value: GoalLabels.displayName(for: session.goal))
                     metaItem(icon: "clock", value: durationLabel)
                     metaItem(icon: "scalemass", value: volumeLabel)
                 }
